@@ -1,0 +1,411 @@
+// Colors config dialog — real workflow.
+//
+// Upstream: `ColorsConfigView.xaml` + `ColorsConfigViewModel.cs`. The
+// view has one editable row per `SettingsD4.DefaultColor*` field
+// (`D4Companion.Entities/SettingsD4.cs:18-24`, all defaulting to
+// `Colors.Green` = `#008000`); clicking a row's swatch opens the
+// upstream `SetAffixTypeColor` picker and the chosen color is written to
+// the settings on every change (`ColorsConfigViewModel.cs:145-193`).
+//
+// d4lc adaptation: the seven values are projected on the root `AppWindow`
+// as the `settings-colors-*` in-out string properties (see
+// `main_window.slint`) so Rust can read them on confirm. Each row is
+// edited with the shared dark hex/name field; the swatch previews the
+// value when it matches the palette and cycles to the next palette entry
+// on click, so the mouse-only upstream flow (click the swatch, pick a
+// color) still has a control here while the free-text field keeps
+// arbitrary colors reachable. Confirm validates every value as a color
+// and persists it through `d4lc_config::save_app_settings`; Cancel
+// discards the drafts.
+import { DarkLineEdit } from "dark_line_edit.slint";
+
+// Palette used by the swatch preview + click-to-cycle. Mirrors
+// `d4lc_gui::affix::AFFIX_COLOR_PALETTE` (the SetAffixColor dialog
+// palette) so both color surfaces offer the same set.
+struct DefaultColorPaletteEntry {
+    hex: string,
+    color: color,
+}
+
+export component ColorsConfigDialog {
+    in property <string> dialog-title: @tr("Default colors config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust reads them via
+    // `app.get_settings_colors_*` on confirm.
+    in-out property <string> settings-colors-implicit: "#008000";
+    in-out property <string> settings-colors-normal: "#008000";
+    in-out property <string> settings-colors-greater: "#008000";
+    in-out property <string> settings-colors-tempered: "#008000";
+    in-out property <string> settings-colors-aspects: "#008000";
+    in-out property <string> settings-colors-uniques: "#008000";
+    in-out property <string> settings-colors-runes: "#008000";
+
+    callback confirm();
+    callback cancel();
+
+    property <[DefaultColorPaletteEntry]> palette: [
+        { hex: "#FFFFFF", color: #FFFFFF },
+        { hex: "#FF0000", color: #FF0000 },
+        { hex: "#FF8800", color: #FF8800 },
+        { hex: "#FFFF00", color: #FFFF00 },
+        { hex: "#00FF00", color: #00FF00 },
+        { hex: "#00FFFF", color: #00FFFF },
+        { hex: "#0088FF", color: #0088FF },
+        { hex: "#8800FF", color: #8800FF },
+        { hex: "#FF00FF", color: #FF00FF },
+        { hex: "#888888", color: #888888 },
+    ];
+
+    // Palette position of `value`, or -1 when the value is not one of
+    // the palette colors (a named color or a custom hex).
+    function palette-index(value: string) -> int {
+        if value == "#FFFFFF" { return 0; }
+        if value == "#FF0000" { return 1; }
+        if value == "#FF8800" { return 2; }
+        if value == "#FFFF00" { return 3; }
+        if value == "#00FF00" { return 4; }
+        if value == "#00FFFF" { return 5; }
+        if value == "#0088FF" { return 6; }
+        if value == "#8800FF" { return 7; }
+        if value == "#FF00FF" { return 8; }
+        if value == "#888888" { return 9; }
+        return -1;
+    }
+
+    // Next palette color after `value` (a custom color starts the cycle
+    // over at the first entry).
+    function next-palette-hex(value: string) -> string {
+        if value == "#FFFFFF" { return "#FF0000"; }
+        if value == "#FF0000" { return "#FF8800"; }
+        if value == "#FF8800" { return "#FFFF00"; }
+        if value == "#FFFF00" { return "#00FF00"; }
+        if value == "#00FF00" { return "#00FFFF"; }
+        if value == "#00FFFF" { return "#0088FF"; }
+        if value == "#0088FF" { return "#8800FF"; }
+        if value == "#8800FF" { return "#FF00FF"; }
+        if value == "#FF00FF" { return "#888888"; }
+        return "#FFFFFF";
+    }
+
+    // Swatch preview: the palette brush for a known value, a neutral
+    // frame otherwise.
+    function swatch-brush(value: string) -> brush {
+        if value == "#FFFFFF" { return #FFFFFF; }
+        if value == "#FF0000" { return #FF0000; }
+        if value == "#FF8800" { return #FF8800; }
+        if value == "#FFFF00" { return #FFFF00; }
+        if value == "#00FF00" { return #00FF00; }
+        if value == "#00FFFF" { return #00FFFF; }
+        if value == "#0088FF" { return #0088FF; }
+        if value == "#8800FF" { return #8800FF; }
+        if value == "#FF00FF" { return #FF00FF; }
+        if value == "#888888" { return #888888; }
+        return #555555;
+    }
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 5px;
+
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        Text {
+            text: @tr("Defaults for new preset entries; existing entry colors stay untouched. Click a swatch to cycle the palette or type a hex value.");
+            color: #AAAAAA;
+            font-size: 11px;
+            wrap: word-wrap;
+        }
+
+        // ── Row 0: Implicit (ColorsConfigView.xaml:39-45) ──────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Rectangle {
+                background: swatch-brush(settings-colors-implicit);
+                border-radius: 3px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                accessible-role: button;
+                accessible-label: @tr("Implicit default color swatch");
+                TouchArea {
+                    clicked => {
+                        settings-colors-implicit = next-palette-hex(settings-colors-implicit);
+                    }
+                }
+            }
+            Text {
+                text: @tr("Implicit");
+                color: #EEEEEE;
+                font-size: 13px;
+                vertical-alignment: center;
+                preferred-width: 90px;
+            }
+            DarkLineEdit {
+                text <=> settings-colors-implicit;
+                placeholder-text: @tr("#RRGGBB or color name");
+            }
+        }
+
+        // ── Row 1: Normal ──────────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Rectangle {
+                background: swatch-brush(settings-colors-normal);
+                border-radius: 3px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                accessible-role: button;
+                accessible-label: @tr("Normal default color swatch");
+                TouchArea {
+                    clicked => {
+                        settings-colors-normal = next-palette-hex(settings-colors-normal);
+                    }
+                }
+            }
+            Text {
+                text: @tr("Normal");
+                color: #EEEEEE;
+                font-size: 13px;
+                vertical-alignment: center;
+                preferred-width: 90px;
+            }
+            DarkLineEdit {
+                text <=> settings-colors-normal;
+                placeholder-text: @tr("#RRGGBB or color name");
+            }
+        }
+
+        // ── Row 2: Greater ─────────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Rectangle {
+                background: swatch-brush(settings-colors-greater);
+                border-radius: 3px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                accessible-role: button;
+                accessible-label: @tr("Greater default color swatch");
+                TouchArea {
+                    clicked => {
+                        settings-colors-greater = next-palette-hex(settings-colors-greater);
+                    }
+                }
+            }
+            Text {
+                text: @tr("Greater");
+                color: #EEEEEE;
+                font-size: 13px;
+                vertical-alignment: center;
+                preferred-width: 90px;
+            }
+            DarkLineEdit {
+                text <=> settings-colors-greater;
+                placeholder-text: @tr("#RRGGBB or color name");
+            }
+        }
+
+        // ── Row 3: Tempered ────────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Rectangle {
+                background: swatch-brush(settings-colors-tempered);
+                border-radius: 3px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                accessible-role: button;
+                accessible-label: @tr("Tempered default color swatch");
+                TouchArea {
+                    clicked => {
+                        settings-colors-tempered = next-palette-hex(settings-colors-tempered);
+                    }
+                }
+            }
+            Text {
+                text: @tr("Tempered");
+                color: #EEEEEE;
+                font-size: 13px;
+                vertical-alignment: center;
+                preferred-width: 90px;
+            }
+            DarkLineEdit {
+                text <=> settings-colors-tempered;
+                placeholder-text: @tr("#RRGGBB or color name");
+            }
+        }
+
+        // ── Row 4: Aspects ─────────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Rectangle {
+                background: swatch-brush(settings-colors-aspects);
+                border-radius: 3px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                accessible-role: button;
+                accessible-label: @tr("Aspects default color swatch");
+                TouchArea {
+                    clicked => {
+                        settings-colors-aspects = next-palette-hex(settings-colors-aspects);
+                    }
+                }
+            }
+            Text {
+                text: @tr("Aspects");
+                color: #EEEEEE;
+                font-size: 13px;
+                vertical-alignment: center;
+                preferred-width: 90px;
+            }
+            DarkLineEdit {
+                text <=> settings-colors-aspects;
+                placeholder-text: @tr("#RRGGBB or color name");
+            }
+        }
+
+        // ── Row 5: Uniques ─────────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Rectangle {
+                background: swatch-brush(settings-colors-uniques);
+                border-radius: 3px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                accessible-role: button;
+                accessible-label: @tr("Uniques default color swatch");
+                TouchArea {
+                    clicked => {
+                        settings-colors-uniques = next-palette-hex(settings-colors-uniques);
+                    }
+                }
+            }
+            Text {
+                text: @tr("Uniques");
+                color: #EEEEEE;
+                font-size: 13px;
+                vertical-alignment: center;
+                preferred-width: 90px;
+            }
+            DarkLineEdit {
+                text <=> settings-colors-uniques;
+                placeholder-text: @tr("#RRGGBB or color name");
+            }
+        }
+
+        // ── Row 6: Runes ───────────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Rectangle {
+                background: swatch-brush(settings-colors-runes);
+                border-radius: 3px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                accessible-role: button;
+                accessible-label: @tr("Runes default color swatch");
+                TouchArea {
+                    clicked => {
+                        settings-colors-runes = next-palette-hex(settings-colors-runes);
+                    }
+                }
+            }
+            Text {
+                text: @tr("Runes");
+                color: #EEEEEE;
+                font-size: 13px;
+                vertical-alignment: center;
+                preferred-width: 90px;
+            }
+            DarkLineEdit {
+                text <=> settings-colors-runes;
+                placeholder-text: @tr("#RRGGBB or color name");
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

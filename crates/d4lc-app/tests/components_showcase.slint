@@ -1,0 +1,160 @@
+// Test-only showcase for the headless building-block contract
+// (`tests/components_contract.rs`).
+//
+// It is not part of the shipping UI: `build.rs` compiles it into `OUT_DIR`
+// (with the same debug-info gate as `main_window.slint`) so the contract test
+// can measure the real element tree, and nothing links it into the app.
+//
+// It carries one instance of every reusable building block, the compile-time
+// guard for the legacy `Metro` colour tokens, the `FlexboxLayout` wrap case, and
+// the debug screen's left control column (`DebugScreenShowcase`) assembled
+// from those blocks.
+
+import { Metro } from "../ui/theme.slint";
+import { SectionTitle } from "../ui/components/section_title.slint";
+import { Card } from "../ui/components/card.slint";
+import { KeyValueGrid } from "../ui/components/key_value_grid.slint";
+import { StatusBadge, StatusKind } from "../ui/components/status_badge.slint";
+import { IconButton } from "../ui/components/icon_button.slint";
+import { LabeledStepper } from "../ui/components/labeled_stepper.slint";
+import { DebugScreen } from "../ui/screens/debug_screen.slint";
+
+// The FlexboxLayout wrap case: three fixed 100x40 cells inside a 220px box can
+// only fit two per row, so the flex box must wrap onto two rows. Not exported:
+// exporting a non-Window component emits a deprecation warning that
+// `-D warnings` rejects; the element is still named for the debug tree.
+component FlexWrapBox inherits FlexboxLayout {
+    spacing-horizontal: 10px;
+    spacing-vertical: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    alignment: start;
+    cross-axis-alignment: start;
+
+    Rectangle { width: 100px; height: 40px; background: Metro.status-ok; }
+    Rectangle { width: 100px; height: 40px; background: Metro.status-info; }
+    Rectangle { width: 100px; height: 40px; background: Metro.status-warn; }
+}
+
+export component ComponentsShowcase inherits Window {
+    width: 640px;
+    height: 820px;
+    background: Metro.panel;
+
+    // Compile/runtime guard for the legacy colour token surface: the shipping
+    // screens still consume these names, so the showcase fails to compile (and
+    // the contract test fails to load) if one of them is renamed. The test
+    // asserts the count is the 15 legacy tokens.
+    in property <[color]> legacy-tokens: [
+        Metro.panel, Metro.panel-alt, Metro.input, Metro.card,
+        Metro.accent, Metro.accent-hover, Metro.chrome-on-accent, Metro.tier-text,
+        Metro.text, Metro.text-dim, Metro.muted, Metro.border,
+        Metro.chip-fg, Metro.chip-fg-greater, Metro.chip-fg-family,
+    ];
+
+    VerticalLayout {
+        padding: Metro.spacing-lg;
+        spacing: Metro.spacing-lg;
+
+        SectionTitle { title: "Building blocks"; subtitle: "headless contract"; }
+
+        Card {
+            title: "Anzeige";
+            KeyValueGrid {
+                rows: [
+                    { key: "Status", value: "live" },
+                    { key: "Generation", value: "1234" },
+                    { key: "Detail", value: "a value long enough to elide at the panel edge" },
+                ];
+            }
+        }
+
+        HorizontalLayout {
+            spacing: Metro.spacing-sm;
+            StatusBadge { kind: StatusKind.ok; text: "ok"; }
+            StatusBadge { kind: StatusKind.warn; text: "warn"; }
+            StatusBadge { kind: StatusKind.error; text: "error"; }
+            StatusBadge { kind: StatusKind.info; text: "info"; }
+        }
+
+        HorizontalLayout {
+            spacing: Metro.spacing-sm;
+            IconButton { label: "Reload"; }
+            IconButton { label: "Screenshot"; accent: true; }
+        }
+
+        LabeledStepper {
+            label: "Tooltip width";
+            minimum: 100;
+            maximum: 1000;
+            value: 300;
+            unit: "px";
+            hint: "scanned tooltip width";
+        }
+
+        LabeledStepper {
+            label: "Tooltip max height";
+            minimum: 100;
+            maximum: 1000;
+            value: 500;
+            unit: "px";
+            hint: "scanned tooltip height";
+        }
+
+        FlexWrapBox { width: 220px; }
+    }
+}
+
+// The debug screen's left control column, on the same blocks and the same
+// tokens. The contract test measures its card group, the stepper raster and
+// the accessible names; the pilot matrix addresses those names through the
+// real input pipeline, so this is the fast gate's half of that contract.
+//
+// The pager sits on the last upstream caption (`active-panel-index: 10`,
+// `ItemTypePowerOcrResults`) so the contract can assert the caption the port
+// had truncated, without seeding any panel content (the image/OCR/perf panel
+// blocks only render with models).
+export component DebugScreenShowcase inherits Window {
+    width: 1150px;
+    height: 1500px;
+    background: Metro.panel;
+
+    // Defaults only apart from the pager index: the contract measures the
+    // structure, not seeded state. The explicit size keeps the control
+    // column's scroll view taller than its content: a flickable only visits
+    // the children its viewport intersects, and the contract measures the
+    // whole raster.
+    DebugScreen {
+        width: 1150px;
+        height: 1500px;
+        active-panel-index: 10;
+    }
+}
+
+// The debug screen's right panes with one live OCR panel seeded: the OCR
+// panel must render inside a card with its source line and its rows.
+// Only `ocr-panels` is seeded; the stage and performance
+// cards need bitmaps/large models and stay covered by their Rust projection
+// tests.
+export component DebugPanelShowcase inherits Window {
+    width: 1150px;
+    height: 1000px;
+    background: Metro.panel;
+
+    DebugScreen {
+        width: 1150px;
+        height: 1000px;
+        active-panel-index: 8;
+        ocr-panels: [
+            {
+                title: "OCR Results",
+                source: "Live, generation 3.",
+                note: "Live OCR text lines of the accepted snapshot.",
+                columns: ["Segment", "Text", "Kind"],
+                rows: [
+                    { id: "0", text: "+10 Strength", source: "affix" },
+                ],
+            },
+        ];
+    }
+}

@@ -1,0 +1,42 @@
+// SectionTitle — the typographic heading of a debug group (title + optional
+// caption).
+//
+// Deliberately NOT an extension of `SectionHeader`: SectionHeader is the affix
+// rail's bordered 42px bar with a 40px slot icon (upstream `Border` +
+// `AffixView.xaml:162-173`), and reusing it would drag that boxed chrome into
+// every debug card whose heading is plain type. `SectionHeader` therefore
+// stays untouched for the affix screen, and this is its plain-typography
+// sibling for the debug surface.
+//
+// Every value the component consumes comes from the `Metro` tokens; the
+// optional caption is the only content, so there are no literal colours, font
+// sizes or pixel distances here.
+
+import { Metro } from "../theme.slint";
+
+export component SectionTitle {
+    in property <string> title;
+    in property <string> subtitle: "";
+
+    VerticalLayout {
+        spacing: Metro.spacing-xs;
+
+        Text {
+            text: root.title;
+            color: Metro.text;
+            font-size: Metro.font-size-title;
+            font-weight: Metro.font-weight-title;
+            vertical-alignment: center;
+            overflow: elide;
+        }
+
+        if root.subtitle != "" : Text {
+            text: root.subtitle;
+            color: Metro.text-dim;
+            font-size: Metro.font-size-caption;
+            font-weight: Metro.font-weight-caption;
+            vertical-alignment: center;
+            overflow: elide;
+        }
+    }
+}

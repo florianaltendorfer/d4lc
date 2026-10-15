@@ -1,0 +1,403 @@
+{
+  "affix_preset": {
+    "affixes": [
+      {
+        "affix_id": "AttackSpeed_Basics;UNIQUE_AttackSpeed_Basics",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": true,
+        "is_tempered": false,
+        "item_type": "helm",
+        "label": "Basic Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      },
+      {
+        "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": true,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "helm",
+        "label": "Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      },
+      {
+        "affix_id": "Barrier_Strength_Percent;S11_BarrierGeneration;Talisman_Charm_Affix_UNIQUE_Barrier_Strength_Percent;Talisman_SealAffix_Normal_BarrierGeneration;Tempered_Generic_BarrierGain_Tier1;Tempered_Generic_BarrierGain_Tier2;Tempered_Generic_BarrierGain_Tier3;UNIQUE_Barrier_Strength_Percent",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "chest",
+        "label": "Barrier Generation",
+        "tuning_prisms": [
+          "TuningStone_4"
+        ]
+      },
+      {
+        "affix_id": "Berserk_Damage;Berserk_Damage_Greater_UNIQUE;Talisman_Charm_Affix_UNIQUE_Damage_Barb_WhileBerserking_GIGA;Tempered_Damage_Barb_WhileBerserking_Tier1;Tempered_Damage_Barb_WhileBerserking_Tier2;Tempered_Damage_Barb_WhileBerserking_Tier3;UNIQUE_Damage_Barb_WhileBerserking_GIGA",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "amulet",
+        "label": "Damage while Berserking",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      },
+      {
+        "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "ring",
+        "label": "Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      },
+      {
+        "affix_id": "Barrier_Strength_Percent;S11_BarrierGeneration;Talisman_Charm_Affix_UNIQUE_Barrier_Strength_Percent;Talisman_SealAffix_Normal_BarrierGeneration;Tempered_Generic_BarrierGain_Tier1;Tempered_Generic_BarrierGain_Tier2;Tempered_Generic_BarrierGain_Tier3;UNIQUE_Barrier_Strength_Percent",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": true,
+        "item_type": "chest",
+        "label": "Barrier Generation",
+        "tuning_prisms": [
+          "TuningStone_4"
+        ]
+      }
+    ],
+    "name": "Endgame"
+  },
+  "affix_preset_name": "Endgame",
+  "aspects": [
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "helm",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "chest",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "gloves",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "pants",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "boots",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "amulet",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "ring",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "weapon",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "ranged",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "Legendary_Generic_110",
+      "item_type": "offhand",
+      "kind": "Aspect"
+    }
+  ],
+  "class_name": null,
+  "items": [
+    {
+      "affixes": [
+        {
+          "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": true,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "helm",
+          "label": "Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        },
+        {
+          "affix_id": "AttackSpeed_Basics;UNIQUE_AttackSpeed_Basics",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": true,
+          "is_tempered": false,
+          "item_type": "helm",
+          "label": "Basic Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        }
+      ],
+      "item_type": "helm"
+    },
+    {
+      "affixes": [
+        {
+          "affix_id": "Barrier_Strength_Percent;S11_BarrierGeneration;Talisman_Charm_Affix_UNIQUE_Barrier_Strength_Percent;Talisman_SealAffix_Normal_BarrierGeneration;Tempered_Generic_BarrierGain_Tier1;Tempered_Generic_BarrierGain_Tier2;Tempered_Generic_BarrierGain_Tier3;UNIQUE_Barrier_Strength_Percent",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "chest",
+          "label": "Barrier Generation",
+          "tuning_prisms": [
+            "TuningStone_4"
+          ]
+        },
+        {
+          "affix_id": "Barrier_Strength_Percent;S11_BarrierGeneration;Talisman_Charm_Affix_UNIQUE_Barrier_Strength_Percent;Talisman_SealAffix_Normal_BarrierGeneration;Tempered_Generic_BarrierGain_Tier1;Tempered_Generic_BarrierGain_Tier2;Tempered_Generic_BarrierGain_Tier3;UNIQUE_Barrier_Strength_Percent",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": true,
+          "item_type": "chest",
+          "label": "Barrier Generation",
+          "tuning_prisms": [
+            "TuningStone_4"
+          ]
+        }
+      ],
+      "item_type": "chest"
+    },
+    {
+      "affixes": [
+        {
+          "affix_id": "Berserk_Damage;Berserk_Damage_Greater_UNIQUE;Talisman_Charm_Affix_UNIQUE_Damage_Barb_WhileBerserking_GIGA;Tempered_Damage_Barb_WhileBerserking_Tier1;Tempered_Damage_Barb_WhileBerserking_Tier2;Tempered_Damage_Barb_WhileBerserking_Tier3;UNIQUE_Damage_Barb_WhileBerserking_GIGA",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "amulet",
+          "label": "Damage while Berserking",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        }
+      ],
+      "item_type": "amulet"
+    },
+    {
+      "affixes": [
+        {
+          "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "ring",
+          "label": "Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        }
+      ],
+      "item_type": "ring"
+    }
+  ],
+  "non_affix_preset": {
+    "name": "Endgame",
+    "powers": [
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "helm",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "chest",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "gloves",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "pants",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "boots",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "amulet",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "ring",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "weapon",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "ranged",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Legendary_Generic_110",
+        "item_type": "offhand",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Helm_Unique_Generic_002;S14_Helm_Unique_Generic_002",
+        "item_type": null,
+        "kind": "Unique"
+      }
+    ],
+    "runes": [
+      {
+        "color": "#008000",
+        "id": "Item_Rune_Condition_HitHealthierEnemy",
+        "item_type": null,
+        "kind": "Rune"
+      }
+    ],
+    "sigils": []
+  },
+  "paragon_boards": [
+    {
+      "active_nodes": [
+        20,
+        39
+      ],
+      "glyph": "enchanter",
+      "name": "spiritborn-starting-board",
+      "rotation": "90°"
+    },
+    {
+      "active_nodes": [
+        0,
+        22
+      ],
+      "glyph": "abyssal",
+      "name": "warlock-starting-board",
+      "rotation": "0°"
+    }
+  ],
+  "paragon_routes": [
+    {
+      "boards": [
+        {
+          "active_nodes": [
+            20,
+            39
+          ],
+          "glyph": "enchanter",
+          "name": "spiritborn-starting-board",
+          "rotation": "90°"
+        },
+        {
+          "active_nodes": [
+            0,
+            22
+          ],
+          "glyph": "abyssal",
+          "name": "warlock-starting-board",
+          "rotation": "0°"
+        }
+      ],
+      "step_name": null
+    }
+  ],
+  "provider": "Mobalytics",
+  "runes": [
+    {
+      "color": "#008000",
+      "id": "Item_Rune_Condition_HitHealthierEnemy",
+      "item_type": null,
+      "kind": "Rune"
+    }
+  ],
+  "source_build_id": "moba-build-001",
+  "source_build_name": "Spiritborn Leveling",
+  "source_trace": [
+    "BuildsManagerMobalytics.ParseJsonBuildBySlug",
+    "BuildsManagerMobalytics.ConvertBuildVariants",
+    "BuildsManagerMobalytics.CreatePresetFromMobalyticsBuild",
+    "BuildsManagerMobalytics.GetAllParagonBoards"
+  ],
+  "source_url_or_file": "tests/fixtures/imports/mobalytics/source/build_slugified_rotation.json",
+  "uniques": [
+    {
+      "color": "#008000",
+      "id": "Helm_Unique_Generic_002;S14_Helm_Unique_Generic_002",
+      "item_type": null,
+      "kind": "Unique"
+    }
+  ],
+  "unmapped_entries": [],
+  "variant_name": "Endgame",
+  "warnings": []
+}

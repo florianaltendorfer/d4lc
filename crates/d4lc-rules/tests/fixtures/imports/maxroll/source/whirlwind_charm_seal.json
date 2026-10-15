@@ -1,0 +1,6 @@
+{
+  "data": "{\"profiles\": [{\"name\": \"Charm Seal\", \"items\": {\"4\": 100, \"20\": 200, \"21\": 201, \"26\": 202}, \"paragon\": {\"steps\": []}}], \"items\": {\"100\": {\"id\": \"HLM_base05\", \"explicits\": [{\"nid\": 578834, \"greater\": false}, {\"nid\": 1341731, \"greater\": true}], \"implicits\": [{\"nid\": 2573119}], \"tempered\": [], \"aspects\": [], \"sockets\": [null, \"Rune_Condition_HitHealthierEnemy\", \"Gem_Diamond\"]}, \"200\": {\"id\": \"Talisman_Seal_Generic_001\", \"explicits\": [{\"nid\": 578834, \"greater\": false}], \"implicits\": [{\"nid\": 2573119}], \"tempered\": [], \"aspects\": [], \"sockets\": []}, \"201\": {\"id\": \"Talisman_Charm_Generic_001\", \"explicits\": [{\"nid\": 1341731, \"greater\": true}], \"implicits\": [], \"tempered\": [{\"nid\": 2067743}], \"aspects\": [], \"sockets\": []}, \"202\": {\"id\": \"Talisman_Charm_Generic_002\", \"explicits\": [{\"nid\": 1210863, \"greater\": false}], \"implicits\": [], \"tempered\": [], \"aspects\": [], \"sockets\": []}}}",
+  "date": "2026-06-30T15:00:00Z",
+  "id": "maxroll-charm-seal",
+  "name": "Charm Seal Source IDs"
+}

@@ -1,0 +1,135 @@
+import { ScrollView } from "std-widgets.slint";
+import { Metro } from "../theme.slint";
+
+// Logging screen — Slint rendering of LoggingView.xaml.
+// Upstream: LoggingView.xaml:1-16, LoggingViewModel.cs:1-145
+// Commands: ClearLogMessagesCommand → clear_log callback.
+//
+// State from d4lc-gui is wired through log-messages property;
+// log buffer is populated by runtime events (not fake data).
+
+export struct LogEntry {
+    timestamp: string,
+    message: string,
+}
+
+export component LoggingScreen {
+    // ── State properties (set from Rust) ────────────────────────────────
+    in property <[LogEntry]> log-messages: [];
+
+    // ── Callbacks (1 command from LoggingViewModel.cs) ──────────────────
+    callback clear_log();
+
+    // ── Layout (upstream readme layout: page title + ClearLog + list;
+    // mirrors LoggingView.xaml:10-15 DockPanel). Colours come from the
+    // `Metro` tokens, so this screen carries no literal of its own. ──────
+    VerticalLayout {
+        spacing: 0px;
+
+        // ── Page title (upstream ContentTemplate header label) ─────────
+        HorizontalLayout {
+            padding-left: 24px;
+            padding-top: 10px;
+            padding-bottom: 4px;
+
+            Text {
+                text: @tr("Logging");
+                color: Metro.text-strong;
+                font-size: 40px;
+                font-weight: 300;
+                vertical-alignment: center;
+            }
+        }
+
+        // ── Top bar: ClearLog button ────────────────────────────────────
+        // Mirrors LoggingView.xaml:11-12
+        HorizontalLayout {
+            padding-left: 24px;
+            padding-right: 16px;
+            padding-bottom: 6px;
+            spacing: 8px;
+
+            // Clear button
+            // (upstream ClearLogMessagesCommand anchor).
+            Rectangle {
+                background: Metro.accent;
+                border-radius: 4px;
+                preferred-width: 90px;
+                min-width: 90px;
+                max-width: 90px;
+                preferred-height: 28px;
+                min-height: 28px;
+                max-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Clear Log");
+                Text {
+                    text: @tr("Clear log");
+                    color: Metro.text-strong;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { clear_log(); }
+                }
+            }
+
+            Rectangle {
+                background: transparent;
+            }
+        }
+
+        // ── Main: scrollable log message list ───────────────────────────
+        // Mirrors LoggingView.xaml:14 — ListBox ItemsSource=LogMessages
+        ScrollView {
+            VerticalLayout {
+                padding-left: 24px;
+                padding-right: 16px;
+                padding-bottom: 8px;
+                spacing: 2px;
+
+                for entry in log-messages: Rectangle {
+                    background: Metro.surface-deep;
+                    border-radius: 3px;
+                    preferred-height: 24px;
+                    min-height: 24px;
+
+                    HorizontalLayout {
+                        padding-left: 6px;
+                        padding-right: 6px;
+                        spacing: 8px;
+
+                        // Timestamp column
+                        Text {
+                            text: entry.timestamp;
+                            color: Metro.text-dim;
+                            font-size: 11px;
+                            font-family: "monospace";
+                            vertical-alignment: center;
+                            overflow: elide;
+                        }
+
+                        // Message text
+                        Text {
+                            text: entry.message;
+                            color: Metro.text-strong;
+                            font-size: 12px;
+                            vertical-alignment: center;
+                            overflow: elide;
+                        }
+                    }
+                }
+
+                // Empty state
+                if log-messages.length == 0: Text {
+                    text: @tr("No log messages yet. Runtime events will appear here.");
+                    color: Metro.text-dim;
+                    font-size: 13px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,81 @@
+// KeyValueGrid — the two-column label/value raster of the debug panels.
+//
+// Replaces the performance panel's hand-built
+// `HorizontalLayout { Text "Label:"; Text value }` rows (DebugView.xaml
+// performance block): one fixed label column flushes every label left and
+// starts every value at the same x, and a long value elides at the panel edge
+// instead of running under it while the full text stays reachable through a
+// tooltip on hover.
+//
+// Spacing, type and colours come from the `Metro` tokens. The only intrinsic
+// dimension is the label column width: it is a property (not a literal in a
+// binding) so a caller can pin the same column across several grids.
+
+import { Metro } from "../theme.slint";
+
+export struct KeyValueRow {
+    key: string,
+    value: string,
+}
+
+export component KeyValueGrid inherits GridLayout {
+    in property <[KeyValueRow]> rows;
+    // Width of the fixed label column; the value column takes the remainder.
+    in property <length> label-width: 160px;
+
+    spacing: Metro.spacing-sm;
+
+    for row in root.rows : Row {
+        key-label := Text {
+            text: row.key;
+            color: Metro.text-dim;
+            font-size: Metro.font-size-caption;
+            vertical-alignment: center;
+            min-width: root.label-width;
+            max-width: root.label-width;
+            overflow: elide;
+        }
+
+        // The value cell is a plain container: the grid's cells are
+        // layout-managed, so the text is centred by a layout rather than by
+        // pixel offsets, and the cell is what carries the tooltip.
+        Rectangle {
+            background: transparent;
+
+            VerticalLayout {
+                alignment: center;
+
+                key-value := Text {
+                    text: row.value;
+                    color: Metro.text;
+                    font-size: Metro.font-size-body;
+                    vertical-alignment: center;
+                    overflow: elide;
+                }
+            }
+
+            // The tooltip carries the full value the cell elides. Slint's
+            // `Tooltip.text` is `styled-text` and cannot take a runtime string,
+            // so the content is a token-styled element — which also keeps the
+            // popup in the app's dark palette instead of the widget style's.
+            Tooltip {
+                Rectangle {
+                    background: Metro.panel-alt;
+                    border-width: 1px;
+                    border-color: Metro.border;
+                    border-radius: Metro.radius-sm;
+
+                    HorizontalLayout {
+                        padding: Metro.spacing-sm;
+
+                        Text {
+                            text: row.value;
+                            color: Metro.text;
+                            font-size: Metro.font-size-caption;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

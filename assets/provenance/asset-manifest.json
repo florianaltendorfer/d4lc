@@ -1,0 +1,3625 @@
+{
+  "schema_version": 2,
+  "upstream": {
+    "url": "https://github.com/josdemmers/Diablo4Companion.git",
+    "branch": "master",
+    "last_reviewed_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+    "last_reviewed_release": "v5.4.0.0"
+  },
+  "items": [
+    {
+      "destination_path": "assets/original/data/Affixes.deDE.json",
+      "source_path": "D4Companion/Data/Affixes.deDE.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a03c1875a543ed7176cc31ccf0889aaf81a8131e78a870ebfcbbbf8ae99dd5c0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.enUS.json",
+      "source_path": "D4Companion/Data/Affixes.enUS.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "49519f7fed0d633ca2db2eebb01f44fb36eab26c43094961faffbbd23ac8a72c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.esES.json",
+      "source_path": "D4Companion/Data/Affixes.esES.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "de6512195616ce4b985b93e7d7f3c599930df924707174627f1e3c7c4105db5c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.esMX.json",
+      "source_path": "D4Companion/Data/Affixes.esMX.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "85d3bb8fd11660f5a028c4238e841f7d3f5117a03dcac381fb5509afeed34033",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.frFR.json",
+      "source_path": "D4Companion/Data/Affixes.frFR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "597fabbfe95205824d984c15dff7b21e5a907db81e091c139ceef18fa48dc68c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.itIT.json",
+      "source_path": "D4Companion/Data/Affixes.itIT.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f46ce365292088beeb6e841329f513fb0c00979a0e7867e0a32e0538a5df70df",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.jaJP.json",
+      "source_path": "D4Companion/Data/Affixes.jaJP.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "92ab19b4e856f4954386d9575afe9cd7fbe1e1e8bf79ce2bca41c752c15c41dc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.koKR.json",
+      "source_path": "D4Companion/Data/Affixes.koKR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9ac4f52a082d4517f1f699b01fddda74b62aff46c48ebe771a319ec347731eb1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.plPL.json",
+      "source_path": "D4Companion/Data/Affixes.plPL.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8ec8ce3d5c236b24710658e652c55d6861c3c984e915ed1311e44a71f471444d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.ptBR.json",
+      "source_path": "D4Companion/Data/Affixes.ptBR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a04fc54be833a9de6c0e58d05bf4ceb8fe03d965b3c54e707b008393b639ca81",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.ruRU.json",
+      "source_path": "D4Companion/Data/Affixes.ruRU.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0088295e0c52c903d720ded8792417408e5f72141c8bf50d3a4cf0b41fc751c5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.trTR.json",
+      "source_path": "D4Companion/Data/Affixes.trTR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "02c7f9bc8d40dd025474fb5c01e2e74ecc1b6985efee699d63d14eaf2b261968",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.zhCN.json",
+      "source_path": "D4Companion/Data/Affixes.zhCN.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5959064468dc027b8acc40615871040ff341b43e63779d5176cb2b644e5c17e1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Affixes.zhTW.json",
+      "source_path": "D4Companion/Data/Affixes.zhTW.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "77bd865fa1d135bd155b6468ac6c83e274bf1d7f504ec327fa9262dc56ddb4fd",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.deDE.json",
+      "source_path": "D4Companion/Data/Aspects.deDE.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6fb32803dedeaf3414b7ee40545eff767a1d9b7f46367d0812f8bc96a75c9c04",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.enUS.json",
+      "source_path": "D4Companion/Data/Aspects.enUS.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3292c217581eca2c953dab6e197b021b90f9a0c740338c4f6ea3b158b55567e1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.esES.json",
+      "source_path": "D4Companion/Data/Aspects.esES.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ca9ab1782c42a798b7a2431a09062f11dc0ba61a006cb26713ac44c0a88e5855",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.esMX.json",
+      "source_path": "D4Companion/Data/Aspects.esMX.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "53ac8baaca850d53a521ffc20d02b9db6c90620467beacf499070e2f8829c5a2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.frFR.json",
+      "source_path": "D4Companion/Data/Aspects.frFR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5d3cf62fd1c2b92e622c472f44f08631fe30e5820270333d2acaf91609bed6db",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.itIT.json",
+      "source_path": "D4Companion/Data/Aspects.itIT.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "65599744ad79a3987cb3de47ebe32e8a60be53d48c91d24718845ab3a2cd86d0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.jaJP.json",
+      "source_path": "D4Companion/Data/Aspects.jaJP.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c8c0abcd47a1632dd9af3475ec108c96e734dba0810157b8f60ec3eb511d9374",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.koKR.json",
+      "source_path": "D4Companion/Data/Aspects.koKR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "caae3af0270a871203e64947e92425b97a8bc59b2419e32c9cc3f6acea847032",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.plPL.json",
+      "source_path": "D4Companion/Data/Aspects.plPL.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5f64bc75bcb5129e8f7ca9f749297cbf772a8cc7f076d983bb1f1ae5d56e6c42",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.ptBR.json",
+      "source_path": "D4Companion/Data/Aspects.ptBR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "302609c59ea93903f788504d14d0972911da5863ba6b32bdfe3ab668596a4eae",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.ruRU.json",
+      "source_path": "D4Companion/Data/Aspects.ruRU.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a09b6eea2f6faf687174f8e9481432bd07fe37d527eb93881cc925c4b0349453",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.trTR.json",
+      "source_path": "D4Companion/Data/Aspects.trTR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1581bffc8f4755a95235dbc394979f4fe2599b04998fad5fc0ae582387b9cc95",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.zhCN.json",
+      "source_path": "D4Companion/Data/Aspects.zhCN.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f9c3936c4de5efd151b3bf985f2b217c0d08a9ff5c1517bcbade4d16f270f979",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Aspects.zhTW.json",
+      "source_path": "D4Companion/Data/Aspects.zhTW.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f5e8fb0b0abbc01d4f932d01d6690b9fc0cc60db7a6e77a07f2cde98bfd5fed8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.deDE.json",
+      "source_path": "D4Companion/Data/ItemTypes.deDE.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8e2dc9d4bb2b7aea3b48a137bc9e9d27fc5ee318865b1b7c9c20e0918cfedc69",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.enUS.json",
+      "source_path": "D4Companion/Data/ItemTypes.enUS.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "df3a042c7764eb433751bb20f18d4fb6b3057c2db9d507b1dc7c62a5759eb6f6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.esES.json",
+      "source_path": "D4Companion/Data/ItemTypes.esES.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "57823a9306dd5b632b6fa2cbccb97448139aa3356a4841d1c9e20a12745bbe77",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.esMX.json",
+      "source_path": "D4Companion/Data/ItemTypes.esMX.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "180f9a91512ff9df305e0f0b7b5cabff6b858eb6d447a7052db54626392cade0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.frFR.json",
+      "source_path": "D4Companion/Data/ItemTypes.frFR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "acb6c68818654853999ec4485b905340ba1049eeb8d8420621d640785ca506ad",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.itIT.json",
+      "source_path": "D4Companion/Data/ItemTypes.itIT.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0a9f04172e182a3693c91a92400c6fee4d232420dfb3d1857798f4e7f3b51e8b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.jaJP.json",
+      "source_path": "D4Companion/Data/ItemTypes.jaJP.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e1b0b803eb1850e34e22ba756fac715eb68d8d3c8b8783e009b8e393fcbbca04",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.koKR.json",
+      "source_path": "D4Companion/Data/ItemTypes.koKR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "339b0ad95907839798e337bd5ef8e7bfea083265b87fb0ef156ac66f9d6e1fcc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.plPL.json",
+      "source_path": "D4Companion/Data/ItemTypes.plPL.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7cfe38897fcb96b0e0a2717f698aa045829524226b669c4a184665d6b029e634",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.ptBR.json",
+      "source_path": "D4Companion/Data/ItemTypes.ptBR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "da70d9aa2e07e8d58b7c103a559673a59672e72f4c3eb43e8a2e1843faf224f8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.ruRU.json",
+      "source_path": "D4Companion/Data/ItemTypes.ruRU.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "929bf270a54075ca0fa1d73828e8f8523d26a65a22ea101c010813b2a1633195",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.trTR.json",
+      "source_path": "D4Companion/Data/ItemTypes.trTR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9fb2d8fa84cbd320d8b53c4ec57287b561d44aa7480b887dd2a6076462f51fe6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.zhCN.json",
+      "source_path": "D4Companion/Data/ItemTypes.zhCN.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1365a8596e2a47bd051c152a6e0889aeb51bd0256c92dc01f9042933b4e8a526",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ItemTypes.zhTW.json",
+      "source_path": "D4Companion/Data/ItemTypes.zhTW.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "77042366637da5078a7bdbaeae6d719377ed66639e5ca602fa49b69b9d48c7f5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.deDE.json",
+      "source_path": "D4Companion/Data/ParagonBoards.deDE.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "04b15bf2b26f3e4bf338f43301ccd66462b7fac7662caad7770f13be69a20a9d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.enUS.json",
+      "source_path": "D4Companion/Data/ParagonBoards.enUS.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8dfd492989b7ef74aae021400942eac5826ec420e196a231e01a08c46dc86b36",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.esES.json",
+      "source_path": "D4Companion/Data/ParagonBoards.esES.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9e47e0b8f8ebd18d795833477e8167450a80ebbbbfbf88d2aaca0b676b57a135",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.esMX.json",
+      "source_path": "D4Companion/Data/ParagonBoards.esMX.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8796153d9666b2ef754c37b42209f92cc44b84165558afc983d00fca270581ad",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.frFR.json",
+      "source_path": "D4Companion/Data/ParagonBoards.frFR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ce260aadbba7f338ccd3fe05bb2471bbdb0db8636443d334a4e9588352afb7f5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.itIT.json",
+      "source_path": "D4Companion/Data/ParagonBoards.itIT.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ed603781a0a3945916002a77d696a60eeb4fe0f9bca6660b95b3db13ddab1f84",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.jaJP.json",
+      "source_path": "D4Companion/Data/ParagonBoards.jaJP.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "64027698ef1584c4214ae91c514599470cee1f32a8329bb8264475ac636325a1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.koKR.json",
+      "source_path": "D4Companion/Data/ParagonBoards.koKR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "fd29c7ae105bd683a62a7a3d3f8b1297e8eddac14bb63a3c51a1645754c6b071",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.plPL.json",
+      "source_path": "D4Companion/Data/ParagonBoards.plPL.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "24032bf008b0fb54750ef3e3b7689ca1ac057a7ace1518b35b9dcb628e88a7f2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.ptBR.json",
+      "source_path": "D4Companion/Data/ParagonBoards.ptBR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "de468ab6fbe7852a757696627a44b6ecdd5887d1de117d05f4ffde7a3c0921cb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.ruRU.json",
+      "source_path": "D4Companion/Data/ParagonBoards.ruRU.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "731af8e7260b7a5d759192616e695eac5cc491b3d9fa0f1cb27ce2cefb6378bc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.trTR.json",
+      "source_path": "D4Companion/Data/ParagonBoards.trTR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c158cee8ce60dbcb2fe195da031b0ae91c17fe7949207dd09e6766b148a37e8c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.zhCN.json",
+      "source_path": "D4Companion/Data/ParagonBoards.zhCN.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ac0112857ef6bc44675249b7e8bee813dfeb38cd3d67eff2e845bee01133b14b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonBoards.zhTW.json",
+      "source_path": "D4Companion/Data/ParagonBoards.zhTW.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bcbdf301df2f48f93b9efe5a77f9e66de603441f794215425b43c469d746b245",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.deDE.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.deDE.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b15da15c156af35962771d074437d20d83dae042745f6837d9f75e6c5a882932",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.enUS.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.enUS.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8ed6034a0c6d1ade5fd82baf079ff30667958bb49aab609b02435fac06b78798",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.esES.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.esES.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6f5562b3c45f5a603962c78758060bcfadc6d99be63c7a36c056e248fa0b09f0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.esMX.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.esMX.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7d5ea608b9f5e8df7cfdc2a92e89e5768eeaf534a914bddf19e38c961f36fdbd",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.frFR.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.frFR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0d7176bbef33dac7f603c69e87e690b6e5c5fa0fb074b189613d233f869fefaa",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.itIT.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.itIT.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c5686a6a320829719b66e3d54b75eb6c6c270c5f50234228d8141f105dc43184",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.jaJP.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.jaJP.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "cd990ef49f505737ded62a1d0004c628a41ca702445c4f2e55a77c0b35979a93",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.koKR.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.koKR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "26ad2dc72100ac87194b25ebfa14ad465b4aa506a1c4701f36691f84d78271b8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.plPL.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.plPL.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f61943a9976b0c2aa9abe3d1b49be731a14b875a3631016a452466dcbbffc8cf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.ptBR.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.ptBR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ce5d0937f026124f072de1a10a6694820c731f59f7854ef86756be15e01d6270",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.ruRU.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.ruRU.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "33da27c88a7f73df8fe3a0e806b727d9911ab88ed8d99e18becf0b3b203e7f25",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.trTR.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.trTR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0b9fdd2723bcbbcb4ca0c265863fd111fe5d09cb0fda5e43666a046d11655974",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.zhCN.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.zhCN.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "dc2d7bd56eed813279228915478ccfa9723881995427276797f94176a0dc1c2e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/ParagonGlyphs.zhTW.json",
+      "source_path": "D4Companion/Data/ParagonGlyphs.zhTW.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e6503002ecf983031401b8d693bd6cde590b4736f4251552d502b6fbac2cdf89",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.deDE.json",
+      "source_path": "D4Companion/Data/Runes.deDE.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "00d4c3f4bc8917e962d22d07625bea25cfeecb0de6f39d4c39b878147dd90048",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.enUS.json",
+      "source_path": "D4Companion/Data/Runes.enUS.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e4c2310d9ef30805d9ab1d39ec900125e3d2adb20115b467fd80ba37d7828dc2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.esES.json",
+      "source_path": "D4Companion/Data/Runes.esES.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "520a8b6bec5ca584ef14a3745c02189fe9f9160e7ee995599e488a27608c4094",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.esMX.json",
+      "source_path": "D4Companion/Data/Runes.esMX.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e022756226ff51ad7134c632185ce72f55d4395ef40eb222b2679bdeb11e5310",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.frFR.json",
+      "source_path": "D4Companion/Data/Runes.frFR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0f3520ee7a503c9c89e66b16eb0267eb2cee6e36708a66db4bd725828e49c8a2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.itIT.json",
+      "source_path": "D4Companion/Data/Runes.itIT.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2d991185c7c654a3deb20d5dfb835db2ea46248838b81af4a8d2ed9c939ba88c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.jaJP.json",
+      "source_path": "D4Companion/Data/Runes.jaJP.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bf9a2eff228c71812e69dbbbfa1abf035d8a7eadd9612508ae94f8917cf6377f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.koKR.json",
+      "source_path": "D4Companion/Data/Runes.koKR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "47005dea99479788280eeed2fbb9710fce53670692ba5ba30d3e306e3a721496",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.plPL.json",
+      "source_path": "D4Companion/Data/Runes.plPL.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "39b367506573361d41ca11419ba1d5c27f0330b3fc66b7acc506e2c998a9334f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.ptBR.json",
+      "source_path": "D4Companion/Data/Runes.ptBR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6ac32ca6538786a8d4efd21d761833db1e957cba3b247de4c9cc5106d876848b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.ruRU.json",
+      "source_path": "D4Companion/Data/Runes.ruRU.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "83b7febdfdb1f2a215fd5f978d987ba333f756f83421846462f777bbb3d73d0f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.trTR.json",
+      "source_path": "D4Companion/Data/Runes.trTR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "22f79ee2333a86f43bb4ad3c294cdfb8deacf56393070a7482d69245198fd78c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.zhCN.json",
+      "source_path": "D4Companion/Data/Runes.zhCN.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bc11ccedba4a540b958fac25914ad769e085a572fcc3a459e7750844f2f97f9a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Runes.zhTW.json",
+      "source_path": "D4Companion/Data/Runes.zhTW.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f04524993af96c5d8485faf637d342a67b9dfa8fd176ba40f83c372c4aa1ecb5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.deDE.json",
+      "source_path": "D4Companion/Data/Sigils.deDE.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b7a22f8542bac1d2605141d895aafa45719a2001e15c62aaba738efb894b3c5e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.enUS.json",
+      "source_path": "D4Companion/Data/Sigils.enUS.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3fb253c2c17ef56c16d788a0fc20dda657fd1202229d055f6d4272e1c99f7b06",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.esES.json",
+      "source_path": "D4Companion/Data/Sigils.esES.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b052a4721b85c396d11ad02cc7168f8d3a36d13d252d7ced5aab6de065b81f8d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.esMX.json",
+      "source_path": "D4Companion/Data/Sigils.esMX.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "656084b7d80c1805967161175d4056a567a027c77422006a60815bd406a8059f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.frFR.json",
+      "source_path": "D4Companion/Data/Sigils.frFR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "317468c2d70f76dd04993af8047b60bb02826c70009c15b79ac9910ef1ea3371",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.itIT.json",
+      "source_path": "D4Companion/Data/Sigils.itIT.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3cec42a097d64cdf3b9b1bb926bd73f0ed91bb0c6463ca7070e58a0385c4d8e3",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.jaJP.json",
+      "source_path": "D4Companion/Data/Sigils.jaJP.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2081ed66907aa83ca723d4e59efdadb192b080d935c789b3788dabbc479f3be6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.koKR.json",
+      "source_path": "D4Companion/Data/Sigils.koKR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "016ebf5a0fae17bab101274e448ef896382c1abe5a0d4d5d518c9ed8c557fd16",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.plPL.json",
+      "source_path": "D4Companion/Data/Sigils.plPL.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "46bda2f5f302ac66132f981e5eee942a698fe2b7463b98f68b261c3a1b2f8923",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.ptBR.json",
+      "source_path": "D4Companion/Data/Sigils.ptBR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "044eda452a0d708bcd672d825fbd79973aaafadbdfba50b683cf6c5454576cf2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.ruRU.json",
+      "source_path": "D4Companion/Data/Sigils.ruRU.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "508ed8bbf8d2abbf6935a46c612e078d519467a2bf79f11b21e201246d5a3d67",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.trTR.json",
+      "source_path": "D4Companion/Data/Sigils.trTR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5850670a4cc73da283ac2e2f995db8af88aaf9d19c1b37db2e216c6fe0257f1e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.zhCN.json",
+      "source_path": "D4Companion/Data/Sigils.zhCN.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "90244dd1d35ec6638a9d3bf44179b3e1fcd27b75e920ade7e174de627acc7f7a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Sigils.zhTW.json",
+      "source_path": "D4Companion/Data/Sigils.zhTW.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "589bb958823d658ef8740d14877752f272e37e1ad377b9d45290e1d63c8ad412",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.deDE.json",
+      "source_path": "D4Companion/Data/Uniques.deDE.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d8456da021be5d50b371a4d85188f7b53d001768c57403d7b0baeaed46e524ec",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.enUS.json",
+      "source_path": "D4Companion/Data/Uniques.enUS.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1226120e18c66b1034acf2dcfbc40c449c1c72dd73041fb1abfae917bf1bb84b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.esES.json",
+      "source_path": "D4Companion/Data/Uniques.esES.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1b9b4279fbb5f81816cc707ee85775c6c36ae9b2aaf0707b3fb3fd0b5caba608",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.esMX.json",
+      "source_path": "D4Companion/Data/Uniques.esMX.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "da77aa290b3ff4d5e9e87673dcd9e433cff44e9136a0e297541faa1a19ca0667",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.frFR.json",
+      "source_path": "D4Companion/Data/Uniques.frFR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5522f493fdc372a5efde0553a9674ec6813c60e72aa4696bf2aa514f1d6cb8d6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.itIT.json",
+      "source_path": "D4Companion/Data/Uniques.itIT.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "419d88da2b4cd016609bc5ccb134258c78b8f05ccfc3ddbab43cb531a03108cf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.jaJP.json",
+      "source_path": "D4Companion/Data/Uniques.jaJP.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "28b69e49dfa12b385fda7c465315fdc48b1f4e8d63d06e5d15944d77cbe1fa89",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.koKR.json",
+      "source_path": "D4Companion/Data/Uniques.koKR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c10b879ee509c6495c37f546a1827924d11eec92c5b97ccebd02d08ce73615c0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.plPL.json",
+      "source_path": "D4Companion/Data/Uniques.plPL.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1747368f5b6d07a7c9d17ac58117fde3b02bd6ad6737ef2bbfd362c497357069",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.ptBR.json",
+      "source_path": "D4Companion/Data/Uniques.ptBR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5bb58051887a432c6237ca7e1f3a2bd0dc88271692aa6e157233c1449daa99c1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.ruRU.json",
+      "source_path": "D4Companion/Data/Uniques.ruRU.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2f4d52dde227f6ccc1e887e32481d784a86b65a4b75e71c1e783aadc120230ab",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.trTR.json",
+      "source_path": "D4Companion/Data/Uniques.trTR.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4da80612d0a182a5bb03429b6fd1f0ca8539b5e7f98d9dd30d9bd543f3ca4a5a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.zhCN.json",
+      "source_path": "D4Companion/Data/Uniques.zhCN.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e1b5fa30bbc398ce0d39dc26b8a1cffda755208be089f36c42f6a0c2ff5ab556",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/data/Uniques.zhTW.json",
+      "source_path": "D4Companion/Data/Uniques.zhTW.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ac5f1374dbf764698d7cc9048632a9fe14dea76a5c81d786fe053f73209af4f4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/affix_tempered.png",
+      "source_path": "D4Companion/Images/affix_tempered.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f8c971480cdbffc9753ed11ff5e3707cd965967b06ab33e861d3106b70181ff4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/aspect_codex.png",
+      "source_path": "D4Companion/Images/aspect_codex.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "77dabd49b4226dd5227cd9de37f968a5b4d5c55331a5d09a098c0c338f7299ef",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/aspect_drop.png",
+      "source_path": "D4Companion/Images/aspect_drop.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "19f5d93b38aee94ec89d4c39423a7ec2a2c4364a6f2acbc54b0e7e1ef61ce5e4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/aspect_icon.png",
+      "source_path": "D4Companion/Images/aspect_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "34bf76c131d10f0babb01f2b19cc036a4a64073ae5fb7350cc59e31304978af9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/aspect_seasonal.png",
+      "source_path": "D4Companion/Images/aspect_seasonal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "28537404f380a4ffa561ffabe19a6007586d86e901661d0a821cdec8f91980d7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/class_icon_barb.png",
+      "source_path": "D4Companion/Images/class_icon_barb.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c52420a39e4880a636e4861b31ac7d247928c7e980be6cf7d10e032f346aaceb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/class_icon_druid.png",
+      "source_path": "D4Companion/Images/class_icon_druid.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2e1c46ec56cd248140ad5498f6c4933b6fbedcd4c304ca29a62d5364e0ac1bad",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/class_icon_necro.png",
+      "source_path": "D4Companion/Images/class_icon_necro.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1731d46a08d6221bb26c2cbf3afbecf42566388a826b36127deafe3ecde891b6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/class_icon_paladin.png",
+      "source_path": "D4Companion/Images/class_icon_paladin.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bb27dd222e8b8b20904a290ae4654878e66402bfa40b67f1e1798dd3afe9659d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/class_icon_rogue.png",
+      "source_path": "D4Companion/Images/class_icon_rogue.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c990f503b7104b7533aa1180b680ca2e29b5e07af56c38611f8ff74db8f30013",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/class_icon_sorc.png",
+      "source_path": "D4Companion/Images/class_icon_sorc.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ae405f49696858193b94788b8ddac866bd70d205e99508af88087b625b0b502f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/class_icon_spiritborn.png",
+      "source_path": "D4Companion/Images/class_icon_spiritborn.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4f46035d9b2e8e8deecb34cb93b924634171d2222b0fa368ad02ce844675ffb2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/class_icon_warlock.png",
+      "source_path": "D4Companion/Images/class_icon_warlock.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e38545668b6bdb59115bcc4ea6690eca4ae9639ef6baff9d5cbc9275df70fdc6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/feet_icon.png",
+      "source_path": "D4Companion/Images/feet_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6fd74ba85695300ba424000d18dca38921c365fd2d5b24a551a8f12fe8695d57",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_barb_off.png",
+      "source_path": "D4Companion/Images/filter_icon_barb_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "be7c479afcac546486bb3a7b757bb31eaa15f287f82b6b5dcfc927ce47e15f4e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_barb_on.png",
+      "source_path": "D4Companion/Images/filter_icon_barb_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2dadbd7cc255463a5268eaed0eea0fec3e30a00b4cb8381064d9f271c2cd862c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_core_off.png",
+      "source_path": "D4Companion/Images/filter_icon_core_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "79cb114f74b8a0bc40ac8e0065cc2e8337b571fb5df7e13be375dbde176057e6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_core_on.png",
+      "source_path": "D4Companion/Images/filter_icon_core_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7d05a89cf67d986e091421eeac1c229caef67423ac0bb98ce54396472bab15f3",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_druid_off.png",
+      "source_path": "D4Companion/Images/filter_icon_druid_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "fd396240b5e53407f0c6419ea2903c9ef821c2227f53db9cfb22c07006428c23",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_druid_on.png",
+      "source_path": "D4Companion/Images/filter_icon_druid_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "99ceb33c7893f6a948da1abf22efe2286375e9c2f226a4f9e08cceb7ce60d1ef",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_dungeon_loc_off.png",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_loc_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "841cee9479ad9e8602b299c41ca03ac82ea1c5c85da10babb8a6031a0fbc4867",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_dungeon_loc_on.png",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_loc_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "05926d5a5b0e003e9d7bb6cc106b06c4f3c03e02a3ccbe09636c68f830982a05",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_dungeon_neg1_off.png",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_neg1_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1b0d16ca62463a9d5caacd5b0b200dd1c4448a7fa793c5d076f2cde742a09169",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_dungeon_neg1_on.png",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_neg1_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8668becd1b452701be76ae456ae4cbe00274de3841e31bd28599c94526a0b713",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_dungeon_neg2_off.png",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_neg2_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "cc4aa89004a799bd516d6da0b8f1c92c03d655631a1c615aa25ab9bf9a9460df",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_dungeon_neg2_on.png",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_neg2_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6041e51df5ffe57484962ad60d600a11fcb41237655795588a401213237c2673",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_dungeon_pos_off.png",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_pos_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "eb9145af653b5e4588d9772e1696ea1a5091b75b94841d6eb57651d2ba795066",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_dungeon_pos_on.png",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_pos_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0d8ff529727c9443b969611512e339775dbc7e61a61d120fd455a4d0096243f4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_necro_off.png",
+      "source_path": "D4Companion/Images/filter_icon_necro_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "489999bb0462bb719e0fd98c13fcc4f939df545a217a01bac35d0a4221ac7654",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_necro_on.png",
+      "source_path": "D4Companion/Images/filter_icon_necro_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ef5685a3d9644c9c8fc508350ba802c2a6ba751f8256c6e9d2b2e637f58559dc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_paladin_off.png",
+      "source_path": "D4Companion/Images/filter_icon_paladin_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "612e26d5f4bbc1537e8237bf3d424116a5639889a8e88e47224623f4924d0d79",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_paladin_on.png",
+      "source_path": "D4Companion/Images/filter_icon_paladin_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "092e9a4645d1fa03ee7a28a546a9286ddea94fde4cd2fc34856ba8b512229be3",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_rogue_off.png",
+      "source_path": "D4Companion/Images/filter_icon_rogue_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5e30c536417f40166ce9a40a8941f96de21bb9c18ec1fbb5b69e362d422641ca",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_rogue_on.png",
+      "source_path": "D4Companion/Images/filter_icon_rogue_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "977d2aa3285d9dcd5c9d57bae23b025b62944b41f0d591b0329a326ce4252d2a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_rune_condition_off.png",
+      "source_path": "D4Companion/Images/filter_icon_rune_condition_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "13f5c4c333d02ba4e9628adc9b03cf5430276b8583d087de3e90582a01ba4b0f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_rune_condition_on.png",
+      "source_path": "D4Companion/Images/filter_icon_rune_condition_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6b325e5589dca149e55708c7f56c47712c3fada9cc3f4a13dc6f60fca73136c8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_rune_effect_off.png",
+      "source_path": "D4Companion/Images/filter_icon_rune_effect_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0fc7952cfb7a8417496767106a42c6f4867ce5b08a062d5957b23df964952fc6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_rune_effect_on.png",
+      "source_path": "D4Companion/Images/filter_icon_rune_effect_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bde1d40d150d308864d704a2778a17dfb01ff650112dfbbb48f422b486448351",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_sorc_off.png",
+      "source_path": "D4Companion/Images/filter_icon_sorc_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "38ecc691302e14fdf33dfbd6f6c4148bab458bba4ee46c68dfa44e64a771cf7f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_sorc_on.png",
+      "source_path": "D4Companion/Images/filter_icon_sorc_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9628f3daa6d16a315e09fb98235c92dd859466b864b476bc1252995b3470f34b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_spiritborn_off.png",
+      "source_path": "D4Companion/Images/filter_icon_spiritborn_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "430ee681e7892d1aa77946071626ef3db65b1ea2b97e665e77ff2b5d913de416",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_spiritborn_on.png",
+      "source_path": "D4Companion/Images/filter_icon_spiritborn_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f030d66901a9b6c91b9169def47ddf9a553e4c6c0ef7d33ffd2fca8b139219bd",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_warlock_off.png",
+      "source_path": "D4Companion/Images/filter_icon_warlock_off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "23efa3d5a570137f83e08d18343f03ce261b2b95e86525cdb838fe8ebf9805ea",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/filter_icon_warlock_on.png",
+      "source_path": "D4Companion/Images/filter_icon_warlock_on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "43b1e6164a3d7f383158fbae10e0578f2e7f53b8b0f062af57cbc5dd0f0de73e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/hands_icon.png",
+      "source_path": "D4Companion/Images/hands_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6c0372354f0b651ae7fbae91ecf64ac1c9a6ad3acc1cf73c3c9c563417011920",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/head_icon.png",
+      "source_path": "D4Companion/Images/head_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a57c940dd4252d7b40f75326c66c5143b3d17ef832a23a551d321819f0610ab6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/legs_icon.png",
+      "source_path": "D4Companion/Images/legs_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9b6d0b0a4b81e25d17a9f47cb1ec0f3612e8d13a455c03949ccf111d06c61189",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/mainhand_icon.png",
+      "source_path": "D4Companion/Images/mainhand_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2a035e6651c117e8b2751d9b87e0aedeab66214f1a24681be35301668841e8ff",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/neck_icon.png",
+      "source_path": "D4Companion/Images/neck_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7ef84e690aa0ebbed3d68beb7d4b7e496618c62904d13ce081bf5df51d3f61db",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/offhand_icon.png",
+      "source_path": "D4Companion/Images/offhand_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a3c4afce00c96c4f8574d65a87499abaf8c93032b815f6a3cb3bef45fdc89ac0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/overlay-off.png",
+      "source_path": "D4Companion/Images/overlay-off.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f094b407a802a0b7c01701e0dd7a7aeec2445a93f5146fc2ff6555bc9aa0a424",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/overlay-on.png",
+      "source_path": "D4Companion/Images/overlay-on.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5008393c040872b82d7da977c44c70218959eca7828d5f2eab71ed10d863a233",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/ranged_icon.png",
+      "source_path": "D4Companion/Images/ranged_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e087014430f06b4419b9cfff805b8287a42c7f277bd24aedbc668e21bbb07dae",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/ring_icon.png",
+      "source_path": "D4Companion/Images/ring_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c95d01aacd035839c6c8edf2cb3b06518c7798d3721a7dc0a49df32b691d934d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/rune_condition.png",
+      "source_path": "D4Companion/Images/rune_condition.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d400332328da6a4bddadae1f104d8de58a666fb201835ec83b23196b45668d7a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/rune_effect.png",
+      "source_path": "D4Companion/Images/rune_effect.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "98572011e2727ff7c315e962abe44ac90669c4776195efa64ef3ea29f76af5e8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/rune_icon.png",
+      "source_path": "D4Companion/Images/rune_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "912c99945bcfedb8b34ae2905c22279171b601cf96b34e06c77398b485b23fec",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/seasonal_icon.png",
+      "source_path": "D4Companion/Images/seasonal_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "78d9a34b90e19f2a2d45f9cb4057f58ef258c3f38eedfb7890bf26db9859cb6d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/sigil_icon.png",
+      "source_path": "D4Companion/Images/sigil_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "114d60975b75e898d95ec162b6f7249813dc1c9fc878884db94bb272f762867d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/torso_icon.png",
+      "source_path": "D4Companion/Images/torso_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4df8c37d73bbd598665d5c80aae8af23b4f78d986ba056f4be5795bace622a84",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/unique_icon.png",
+      "source_path": "D4Companion/Images/unique_icon.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "58ea523d64e2ed12f0e7404e9948ff4ea6987caa6c436b388e9b6f859e30ee68",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/website_icon_d4builds.png",
+      "source_path": "D4Companion/Images/website_icon_d4builds.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3e99e5fe1963216fd9311259be7a4784b0093ce17c5e39a9bd537767394c38a0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/website_icon_infinitybuilds.png",
+      "source_path": "D4Companion/Images/website_icon_infinitybuilds.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "40586eaa75ad7e79db603b4cb038d33800c5f78c09935808132d30a10b8ed4ce",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/website_icon_maxroll.png",
+      "source_path": "D4Companion/Images/website_icon_maxroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c09a96538dd0d48ede934efb043adf845b1782c34c17b3e38a6b156e321c1232",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/images/website_icon_mobalytics.png",
+      "source_path": "D4Companion/Images/website_icon_mobalytics.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f64182a540a518dfdf20a8240a4b7d88b53af31f440d663f38baccf38e2718cc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a256e76127e2af63740a7c22d5924ec66d649f8b15cef9d989ccb46e784a3e44",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "79bb7bf589dcc3069f5c80fe230cb5aede4c14f6fa212e6a64b9918d8d11036b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_gc_square.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/tooltip_gc_square.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2eb915ace6593e3deaff71336775b32fd2758129f5624200dc1df006319fe1e6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "37a610b7926dbd82464187e9b1cfb61363adb91b0b7be876f20bd82da27e3ca8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_gc_y.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/tooltip_gc_y.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ea3ec4ea1c7e72554a6beffb3525aebb2e0d36b49cbcad90079671e616ce61e0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "429a4461cf277910e54c6d9d827e51a9eba87fefc9e4306520a8c70d3bb683df",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_kb_all_esES.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/tooltip_kb_all_esES.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "598d43af5f4a86b321fba8cb3f02d5e837e5c688efd64e535c9dbbddee44a18f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "598d43af5f4a86b321fba8cb3f02d5e837e5c688efd64e535c9dbbddee44a18f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7bb71a5db821ee53d397f41f1661dda8ea783c81d54453cb454b1419b13486da",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/config.json",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "57d93289b7d78ebdd6672cb3cd7e3370edc285c0e83707409eb48444e9dac20f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "cb274da64b943bb338d6ee43be087e60f5e488282b6ffa84b0e3cec3534cf056",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_greater_master.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_greater_master.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "dd941ba7d5b5a34603e66fb52b52cb9758347293d41e60f151544886e2aabe45",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_masterworking.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_masterworking.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d2b42d301f60976d39637a028bd2357c635867de0887af17af033652b858c1df",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "867e4f2b6ee557523b6baf53e50272cbd36d868a127f9dbec8d9db6d019b3248",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0664bbaba1c11d20917c175d746f132d5f90a7833c51ec434534ee2e6b7c13b3",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "794953b944f5daee0df32ed809841841e80123346510c5484e170deed0b8676d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bf9117d32ba4fa9c23ee737aba3f06ae65eecb1c6f66acae27fff13db6573ea9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "765cb2351050dd602465489778d709287e04ee8a75b471382f2aaaacf9112554",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "28c28f75b339e9ac9f50cc3ba29e42fd1ea38bd620d441a2d7af682949eb42f2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "cff5a2f044719e89a1a53c50082d020f0a67bdc7803b0946b3f76eb68554507a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "46228fb1b0df26f44019fc2bb08c4de2174a49c90e92a0edf73bdedc950f08ff",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9b1669fcc0878d4aeba062f0bab575fa6666b129bc544ad2a62b2328d89dfb17",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0c74755cc02449f7400916c027e2c8c0411b171184de27ab3639323b01132b22",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-affixes_transfiguring.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-affixes_transfiguring.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b97b369de96b589012f1ef007a7d262d9bcc6d6d1fac94889b6ece96767d0e0b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6f2f563fc057e23320cad07ec6eb4cc3ada42e28739a9c2ddd350e56026c4a27",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f48cb1b00adbee7d6924838d0bf107c9f707ae0204c29cf9dfcb33320074f45e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1d0080df5a0eff25d6fa93c61176b89c6fb3c62f2fee5c1e3e2be4b14bd9470d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-socket_1.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b69e35ddd73d5c2ec3e38079729ce33d88022571e8937b722081d61c661e524e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "372c2697e367a417cc60140df2cb7f5d95aa5c94a085af035a52e905af8e9bc8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "389e967c10fae8518773759335eeb7c5c01176d319d7861dcad1cc7166d896f5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b9526b26245b7c13028d82567506eaaa729bc5d78021c9223267842077238b57",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ca828440d20056bcb50d85fde3470968ac86fcdb0066692b9022db17bbf33dd6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c7005b36ac7779f30ff461dc2fcc76f64a3701a2c4a57706fb0aeeadcb6b3aaf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-splitter_1.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-splitter_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5708d92ac51c8a4ec3f8fc87c121e7fe0e07834f75b0cf62d1df01bf0b62c273",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-splitter_2.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-splitter_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0507e94ac3968dff2cc4767bc112a1aae7a441986a860739333d9fc061ecd035",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-splitter_top_1.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-splitter_top_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "34f0eb4361196b9a951757758ec0fb8930b2c869edbcf95d9a121ee4a20ff198",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-splitter_top_2.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-splitter_top_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a102a0ea9a34f6cd2e17678c21e142d1c18b65074b2f030e4c3b342ade10d7b6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SMF/dot-splitter_top_3.png",
+      "source_path": "downloads/systempresets/1080p_SMF.zip::1080p_SMF/dot-splitter_top_3.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "df4d824d6d153ca3a1ae3782866d4a4f6f837b48bb8bb9229bd03a646c780b38",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/Tooltips/Optional/tooltip_kb_sigil_salvage_esMX.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/Tooltips/Optional/tooltip_kb_sigil_salvage_esMX.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "04e5c68a3450fdce62f8e80b1e3728d5373b84a8cb99f25c62e9bf67aa0b0a50",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "440bad8a8af04455155e3f9107c1e182e054384b7d17e77402190f83e2c70265",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "312add68258e5e855aaded76bd6fc631d5d521944a0c0e3704576baed0cdde2b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "57ce3783e13b5719b58760d2cbd920a395acedcdaaba9dfbced7cf7b2375505d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/Tooltips/tooltip_kb_all_esES.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/Tooltips/tooltip_kb_all_esES.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7e02c03de484a6e2c858a053b42265b988dce3b2ce6631962ce5a095232336e8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7e02c03de484a6e2c858a053b42265b988dce3b2ce6631962ce5a095232336e8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/config.json",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "61d8ce83f0b886b1867f9672b18f2d0fbb418f51b36434575aefc55b61a77b23",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "86f8e79bb319582e68471b072ef019e66dfe5fcba9befc2495f123e7ff1da6a9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_greater_master.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_greater_master.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7607b51440ec6404d6578706509b65e1e6ccd1aead0c1d76fcca8a7cbc661513",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_masterworking.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_masterworking.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "65dea5953e203555bab69425d933c769e65f3a8dd744784f6fb5fd0208777dfc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1bf2cb3b20dec29fd6d4cd6edea171c263e34ea3abd04a8fb23b21aeb8aad5a0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "24c41256641958ebc26141716a72f187090a0d8b564fae0610ec3d80cc33eadf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5141da957734329f602959e322bc0df6f1fca0f56aad6de5d245092d95b860b4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3207904b33cc984e3bc4d9435c57056f19d8c903dcc6149e7520cf348e999624",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "dbf2575bea8ad8e18a103757c301054ec329b9c79f171f786086b2bac6334a4c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4ff31248951d157f7eaa081befed2939446624b2d92e2d965f62fcfb55fdabe7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a52587703709591dceb3eed9068089caa0ccb6d7b75631d7c2feeb486db907c6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a95b0bb859d2126097fce31fb638546f4426c654db1a45a28e0d714d234b9ce4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "07e12abfd38c05bc902aefcf63167827959a7173b3a510b9c91e3bd458887711",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "19ae96af17ced488f1e3fddb1937bfd03963369eefdf3afdfdf0f4cc6b060dba",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-affixes_transfiguring.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-affixes_transfiguring.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bbe32c6a9b2e0f124a3159bc69820d14297fbc13c150df7570ccb693fb178a67",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b9f4060cc8d0e82e0e8b687834219cfec10fae9f5e541bac0cd21af65050bc26",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "75fa0c4a71e28c577fd89fa893b6766c11b7a79714e8e03c9d0fcce88e61e8da",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "51422dc6a25d302cbee5dea35061e3543c96bb6ab294cadafefaedfe8ae175e9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-socket_1.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d1ec414b15482ad5bdf71e26d73e4596f3d7ea75f122fc16430079511ef871b8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "18af995a91556b6e31037133eede3ff0953b775fc035d455471c1e461b2118bf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5baa3c5fa5e0165b138287f39fb0a6683bd78d8b5e5f0477132d122a4c4fbc81",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f053bfda4c5ecad66a26f8a689cbe7a110fd775ab03939abc73011dfe9afd982",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "87443ecb80be64262a9d542e92098b27958de0343da5f41e3432440cf93c2147",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b8b7df7d0e97d4ac628680df0d1b770d81c2dcca9d1609028cdfdce0777e1f52",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-splitter_1.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-splitter_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6fded8eb9a7d0c8d636876b04a12bce8a232fd9329e831b12376d5a4ac16fcf5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-splitter_2.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-splitter_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "17e6d11d73ce07e002f7094f2a32a2a984f98e7130c2d6a66fceda44974bacf9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-splitter_top_1.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-splitter_top_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d826c51c750d8af558cafe7497a1206f9d0dc51a25d5da18dcb57f4daec793f0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-splitter_top_2.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-splitter_top_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "be77408007e691852c8e19a22de2258d82a74d79487ec4f810f07cdc37968135",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1080p_SSF/dot-splitter_top_3.png",
+      "source_path": "downloads/systempresets/1080p_SSF.zip::1080p_SSF/dot-splitter_top_3.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e9984958ee966b27ae68d2cdfb70d58325d3e2d33b3b84f3a2dda668f3d4606b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/Tooltips/Optional/tooltip_kb_clear.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/Tooltips/Optional/tooltip_kb_clear.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "afe3724f98f3930b98e8f6ac7fce218e9e67cd27e66d0de5bb151b00c2c3b914",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/Tooltips/Optional/tooltip_kb_select.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/Tooltips/Optional/tooltip_kb_select.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1abe3cf90c1de1672bd2fa2015ba932e6c53f7918056c565c31f9caf44f170eb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_gc_a.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/Tooltips/tooltip_gc_a.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "52d68611c196766635b5ab0b65f7a19f49e570c2efe6c7d29383202e087aace8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7e086ec1b30480fa9962942e01d1b7c166f9d79907a26508de93c9a99f7b596b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0a85937feb622a62b0f91da9a490bcc9f6021b91030abe654050f6435dccb6ff",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_kb_all_esES.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/Tooltips/tooltip_kb_all_esES.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "33e75a8a010a13ad379ba25f84cb4af4a637d897c81eb4d26bad55fb92dea599",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_kb_all_esMX.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/Tooltips/tooltip_kb_all_esMX.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "33e75a8a010a13ad379ba25f84cb4af4a637d897c81eb4d26bad55fb92dea599",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/config.json",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f8ba4ee130e67bba5bca1d90c868d3ae028c01bc036a052899f3ed169e097065",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1636cd1a7521da5aa81904128c559df52a966c6a592d5872dd05e5f1d549aa00",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_masterworking.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_masterworking.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d74cba592210f6e91a09174207e80667f5099bb6c4365d2269682cad54ec8f20",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_masterworking_2.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_masterworking_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "16adb2c4e3eeebdb2cba7116832e4a1b2f5605db1e7d0889a8efcb6076946431",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "da4ce596c2a01334694234489af1d7c1933bd84d8796162e182a12cf8f0823ef",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2f7838a851004cc717c34ee2a9c2975563fe1ee3a532114d75c3010df4445f06",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bfa1d382efb9f6093ffbd6a4fdab79eba424fffaea09535a67a7ebe967d3b1ba",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a88d6fd277d33dfa3d877e54e5ac583dbc092770bb7a046189010fb8c19a3519",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_sanctified.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_sanctified.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "fc0a1699da7f7ad359b7c50a4495e99b9b600839883ca5f0bd6c14e47560fdf8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8666900673b932ff3abd32c3d7fb8eebc9d7b5ef54075a4c21fcc4746de1b6eb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "176863b059f6dd80ea04380b21e4eab8c19a21dac1b8eaaff91f85b85ad1a4c9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3e42b053a0dcd00dbff7e89c088ad07dab9facfc3fab69ed47e5cbd32494ccbf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ba638748a456b4a73d4298c7bc1f79f31511db21d831ab521d77e84b0e1d5d15",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "53dfa4b68c9bc208466a8c04e97f58eb4cca7cce90798422d14e4f58e7c3320f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "36222cc2873f878dd778b856957feb7015bb5b5048686617cfe21a678793eea0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "da806c92277f6623cf12f66f4070728b4a4b3cecd2b173b2bc6acdcb35bb69c1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ec1740b4fe61500fb12385aa9f6ead8d7133a5564fe09c4e19afa687f435cbd7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0401f3819d492f7b4bc40d2d1fbc2f43a84a2b5bbc86fb78d739031274da3018",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-socket_1.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "925d7ca3560f67f9e00304a9d625a0646589780ccedda2d5ea8bbb9342ff02da",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "be858ecf6e398b3baef82f53119651efa6054a3c03b4ca8ef1d526d4cddaa2f6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "75ea7f19e5b57085acd13b9ed3b8acca53d8f97417cc9319737c88e86c10cdd0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6a219867b84319ccf3764fa120f14f5a9ac8c43bd2137c63a3f83a31cc0230b1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2c9fea624ec7bf92d90ec2f49e09e5b116bb5f5709d6a644e36dd830202c72f2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0fcd7ecf5b5e96064f82d5b6fa33a13bf908096ee6e851176ddf22f87e549f3a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-splitter_1.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-splitter_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1a943c20e7ef533f3ed5791f7bf8f114638e9d69509af04e33d3ed4eb648c953",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-splitter_2.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-splitter_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c4b561685262d23cd86b3d52f05cb0317126b77e4592da915fa446e6b7619ebb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-splitter_top_1.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-splitter_top_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ce7974b3a2d2b70aabc03b0a8777b396c1d5a910a412002af4f7e4789088281d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-splitter_top_2.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-splitter_top_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7535c6e2dcd221620212e14058ea9e933cb611971c23c889f6c4f402bcc5a770",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-splitter_top_3.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-splitter_top_3.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "fc67f7d7d137316bd4029529b078d00ffef0cb2ab52c1ba42aa8ab06226b2356",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_HSF/dot-splitter_top_4.png",
+      "source_path": "downloads/systempresets/1440p_HSF.zip::1440p_HSF/dot-splitter_top_4.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "49b7f96511f39882ce4989b9cb8413a1b533b31837422a1da6d0d2923ab899bc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b39c35de3cba87e1a047012f20f1401ce61e7d05e6f469d1b4cccc7c20904da0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "300081c63a93b3b911e3db22e27de008edc666b01a89277ae73fa2b351727a29",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_gc_square.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/tooltip_gc_square.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d7020685a24e56d1f9a2489020de2c4b1e4daf0a0912edca1a77216a5cb31217",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8fe5b7c06d7d5d9c8151be960e406ddd958583314e088b1e9e97c864f83e763c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "dc3da8505894954750c9861aa641b09aa693b0d74fc4645c61991677aba13cfc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all_esES.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/tooltip_kb_all_esES.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "36f5268b5bb0adf31dee324551a94cb70cafce24527c87eb52ad023b2c56722b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5bebd655fef682fd07b7d3ef4667885ceaf9c0f9bd8027e40d01b73b1decc77f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "69c1de4895b592610cc361601a9e799bbd00cec41f4d7faaa30f66ae3bff2186",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all_itIT.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/Tooltips/tooltip_kb_all_itIT.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "64c4531214e7328fa655ab7fdc1d207c41b1bce00121d95f836a8ae01fe92d40",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/config.json",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "177cc8f4a104f86fc2c2f92727c70a5a00d0e985b65d6c15e17da54fb7cfc106",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3b159f05f818e020475db1e42b83280b9c54cf891e9064eee7342214bf8ac9b5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_greater_master.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_greater_master.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "90a01f67176c94195988fb3e084f1900c146c5bc6f284f40a748a996cf44b803",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_masterworking.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_masterworking.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f0f193b6065c072a81165f01211b9cc0f4f6af3cf0d45ca9c558dbcb1af618a7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "38758aa36f19ea7de91fd9a378a047bde02b456d92d861352945e2fa8053e153",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0d9dc6fa26a6e1d742829f998f01f9256c8c1cc33b3da684e78b4641db9bfb53",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9de63af9c83d72867deafaf9254756024f0004c5b52c46e73f9659d552fef2ca",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "599a9bb43a0a3a2ad25e9c6adbe8b98ebf5c4fa5cac1a5df2ca10b270eb133b3",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9051df8bbaba21cead4d47e04fc4ca32e370d60ba5e498d51d3b83062ddee46d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b0ac63bd2b7ab534eb84f6fb1ea2b1c7eb0faef172fa8ead8e7b15528392a88d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "43f89bc2252b41a12bc23cc66963b6b7d00bb32ac59438f372488d36d56a4872",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d252e90085a7d7a658b40d1c418d96a6fd1bcdd37ad396989f58b3b39fd1986f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4732787652aed68aa21bf8f749603fb9eb92b80e662da51edace5c7bba1f86a1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7ff6b05f703b6ca415f438a6dfa5289599fd23f8b8f1fccf8719ebe9c5d87bc0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-affixes_transfiguring.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-affixes_transfiguring.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "be4368626890b79e13c629d8acb117de8afa92980d31c91b701de9cffb05630e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d33e2d4c6e40d01673626e0cb467be9614ae6102a7019cddac449b32b7d4a075",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a9b662028f641e33ebed851842d518205481431e7e28a346cad74dac11960e5c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a263ca6060564373234fab41ee0a762987d93134e3998ca92c1fec27915a6b92",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-socket_1.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e859cb4f3384b91f9a3d3013822e4641d047f61b4b513ceff5a24daef1ac5e4d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "835b0da9e6b434ddf38e638cfcf029264931a864b524e1a4178ff270d8c368fb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0aa0e544b39afc04e320eccb40f7d17504ac25f7539c5b1bcf6465ab629e1cd6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bfb8589926468de803c40da469ed376703c236d872d85dda265381ca1d70ae4d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8693edb1d674d0a3599c9ca6d9a52ef5fdaff7c78b5f1707594ec90494d912b9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "581ca845e18a2d37f045d97af7589e1c54bed9f23d8c4b6e02a3cf54b8bcc97c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-splitter_1.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-splitter_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "639f42e07253f92da956791ea0f27d05930778022240ef72b799099c1dbf50cb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-splitter_2.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-splitter_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4297950debf60a3fad08f9d058eb805651a40daf0d137e15ffbfc8ce46c7e0cf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-splitter_3.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-splitter_3.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ffb8f13a3659d926e87a3a2f641fbd4872782a710ede8ba032f1823a06222d9f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-splitter_top_1.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-splitter_top_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "548d6525dd4a867c03fe9a8467d81070a09d935acceaf6a08f2dff099fed0038",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF/dot-splitter_top_2.png",
+      "source_path": "downloads/systempresets/1440p_SMF.zip::1440p_SMF/dot-splitter_top_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9531d5a810cc6229d221321e4e26bc28f6f43005466852f4e4deb1cdc3dc99bd",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "20fe99f02a4c386d1c4d1d31411e64decf8e4f9b4b554fc565c15460f3643b89",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_space.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_space.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "300081c63a93b3b911e3db22e27de008edc666b01a89277ae73fa2b351727a29",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a3b8ac3c3a3ca6729e6bb41a7ffea255bd745b16f6978e5c95045150455c738e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4eca1b6a6fb3e5b8a3eaa67ecd0cd910c0c6848b4e0878ec0e3c0eb47b41c167",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "81a4698b573434ca2e8c815dfba31fbfcbc2ec2e0cfcc25102a4539c1a47034d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/config.json",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3e1b85a466a9462bbe22440d0efe5f49307ec7a778985e3a62dff058be3d3d66",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6d412a2930b80da0f5ab8ab72e0707bdc5c4b590ee0b0d5c04e3323b2be17aef",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_greater_master.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_greater_master.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ad75a25d1fec1f1a5abf32b386b19044fac9a51a53be894cd160e637a7997a68",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_masterworking.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_masterworking.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ec8fa304f22116375c60aefa596c4c3a55c726dee3fd024b5724f06fd25b503d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6204ea68d66a2e899f00ce1546d9f86464f2f38ddefbc7caa551cef81c16ef18",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_normal_2.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_normal_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "489f4c26640c29104632f82b9f983713dcb0a4196ea71307f8ef0b8e8cbc8e4c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "97661401019d0e432643c7204079b683a5adfb5336b9b93750c5118a0179d929",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "08d857ad14409f2bad4fc3724d78e6ccc290517b7c23e2f9451eb7392d91fb2d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b805c5274bbe64050b9cfc9a3de93a03b4e04681f867c3e688a30416535679ac",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3358fb42c454cf646cfdcc88593f68bc10fe63489c77992f7381e50434abe779",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "391a86759a934de1bd61be58134b0e25bfa048f8b9afb4da55675d9d8afaf223",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "dbd50874559d42714cb9521c951f5f8e8b75dfd730ee15f6ac8214d202419c0d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "46be5a9d391eae2b1a2fa8c5a02c8a4cc7cd2ffc8d5685e28b959664d373b8f8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bde14bd2030b35b777229297e18a0aaeca1fe42a4334d0d12dec9e92851655a2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "262c40dd12598115b0ece22d1ad642db6777a00616758aac94dcf6162d69773f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_transfiguring.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-affixes_transfiguring.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1b79ce67f45fb42b8b9be48178a7ccb3fbcd4930690757ac03e8efee9250d5b5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b749e2386cf06d0e58d9621d0f3d0e53dd396f6323748cf3cff582e95cdec3ea",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "37365ae7e2554267b96c62bcc048d80dc39ab8c8c853dbd88fb5c0923bb1b090",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-aspects_seasonal.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-aspects_seasonal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7679abd6c638026185529e277ede1805a8200c1623ea748f60f26af560df1410",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4594d8e9656a5689b118cf78bae04bed26d8069b705d0d7b064db23261e27bc0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_1.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "165f90a84044dbe76eee2f341f2e02c6b7c8a42303f49042146759cfe05e3a6d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ba9d8dd229813f3e4e04066cf3f09d16552ef2f36ff75452cc16b20a4ae51632",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0aa0e544b39afc04e320eccb40f7d17504ac25f7539c5b1bcf6465ab629e1cd6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bfb8589926468de803c40da469ed376703c236d872d85dda265381ca1d70ae4d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8693edb1d674d0a3599c9ca6d9a52ef5fdaff7c78b5f1707594ec90494d912b9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "581ca845e18a2d37f045d97af7589e1c54bed9f23d8c4b6e02a3cf54b8bcc97c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_1.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-splitter_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "fe4fe70876be12b4236d441aa49db6465793c8356a00e6eac44963029fd23e0d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_2.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-splitter_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4297950debf60a3fad08f9d058eb805651a40daf0d137e15ffbfc8ce46c7e0cf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_3.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-splitter_3.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ffb8f13a3659d926e87a3a2f641fbd4872782a710ede8ba032f1823a06222d9f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_top_1.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-splitter_top_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e47a99aa5892984245197b04a1d1ff2047dc1cf6163cc7fa04d46ae4b43dc939",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_top_2.png",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip::1440p_SMF_zhCN/dot-splitter_top_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "73e4823108dea2e9845bc5252bcb71ca54debe198898cc1f47fd7c6c03e1959b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "752a0d8f46d7ebbef3c68a2ea34f80634c9d711e1961271024fc8eacdb8c97c2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7d6c4f302352608c26c58e30ccb47ae64375d0fc2894ca1be4bb016ae9acbc70",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7abe8297b22025703212a3eef88d274861554a017322ac0f60d7baa0cb3ed52a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/Tooltips/tooltip_kb_all_esES.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/Tooltips/tooltip_kb_all_esES.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "17bb498d1542f741deb5e4103f03000320df7000a4d0664d4ce4cc0997ff6534",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "17bb498d1542f741deb5e4103f03000320df7000a4d0664d4ce4cc0997ff6534",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/config.json",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "177cc8f4a104f86fc2c2f92727c70a5a00d0e985b65d6c15e17da54fb7cfc106",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "10bec7f522c141ad07d5c0acd1607d3608ce21e5ae4b16d48638e121a857d574",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_greater_master.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_greater_master.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7a300db6e91bf57a30dbf16d7eb5814ac48b40ea94e7e51c477c22fb76f05f37",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_masterworking.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_masterworking.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "cbc7bb013e1f88e4987aa0a3732c0447191998e789a3159169f34361b2305fbf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c6bdadaea28462218f82f6cb0c75a259683d58dae0400ea93332d05f41b46822",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c11a11115edef63f4d330e108297c2b8fa5e5e76f9035914308212af7afd2f81",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f1994587b3ab7d94281853b908a358a0f3674656c4b06da868e85cb6367d0ce6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f6d80997eff7e75cad01e4a3b22aa76a49db62e888cbfd3c4ea862c3ae5e4ee0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "39c817cf1133ce2adc0445ae8ae9358ab6fdb15b41acb22e243c9f5c8c1f6502",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "decbae252081d7c689ac9c4ccf3aac87b334af9aafc99ba5f34c59834410f7f7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "173f9a14a6da5a8ec1d2c653252cb8136c7b6a657acb786ad9a0cec112276d2b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "054fd1281e4c960fbf628d3a21fc355f265e0de1d38bfbdd16b67ac7e1b1c761",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "642e7eacdcd91e6892a0d6c789feb75b38596caef58fb3949af3f2d09f50c693",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "488b08ea2c53356bbfb718366eb9a240b089c0002640677125b8cd814639f599",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-affixes_transfiguring.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-affixes_transfiguring.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e98266d7f7d79b9eae2c26e2b6981fc1d3c278dcb74efe84e646b019fcbb963c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "375f6d9ef5fe1c1e07bee3fdd37ba14ace9c842cb8de3c075ccb3cb7a743a503",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "14821e9216da1b370e4d481069313630a13d6f55f65237e1ab0212abcd2b271a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e7e43071faed1e4139d01fcc7faf11678e4bf1c1690c67de7b40e46e3d0374d1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-socket_1.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f823a0579e858d3965c56247579d357060d7e0fa79f3e63b095371dff1c7498f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f8c8fe0b08f8008f3533893268478f34b29273c4f0da40b26b53d0955348dd2b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c895d6e47a65c8604c1050a1263f5037192980461bdbd07d119506001e0915ec",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "df4492fe7937aaa78d2b5d6edccba18d57a1aa13c93770e6064b25f6ee996fb5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b0f8c45206309616b619bc1de7f3d4428010c70e138adfae93091b73271bdebc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "921c61b3f31011a20fb84589ae9f2c04f01ae09d55a1e567eaef7a43dc1ab9ec",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-splitter_1.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-splitter_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8ca1a30baa7060255bcf6b757248abf99b9101d01ae948f86d22771a1237258a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-splitter_2.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-splitter_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "054cdd70950fa9b780d0fccf28ba6fdfaa7122e70ff364f7d1bd18ab1b907832",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1440p_SSF/dot-splitter_top_1.png",
+      "source_path": "downloads/systempresets/1440p_SSF.zip::1440p_SSF/dot-splitter_top_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9354ed65efbd510ed54da15d0a4c4188ea2fefc6a94436161b7374aa5fd8a520",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0b1b500efcdf0bd05bbe6740d940f097210b5aa46ef39b8c1e70966213dcf77a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_gc_square.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/Tooltips/tooltip_gc_square.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e5f623911eccba9a45d1d72c876f1d7a5984eb1bf07e3e57af746c635eecbc26",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6020231362e354a90992939bce79d12b580d9bf9ce021ed42c59de5e9523c8a1",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "fab26957bd45bd0ab9e3db2ee028c77564c3b4bb05bf0968874ddeaf040b3b96",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_kb_all_esES.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/Tooltips/tooltip_kb_all_esES.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "374229bc5b06275c4224eda9964ab3ca912aa6e08c288d902e3375afe347fa54",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "374229bc5b06275c4224eda9964ab3ca912aa6e08c288d902e3375afe347fa54",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "dfa7be9db0141c6cdd9c836f4a681a37b53abae21eab632cc86c1f9446d02917",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_kb_all_itIT.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/Tooltips/tooltip_kb_all_itIT.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b9113fc5ce8961151c752b3583253edaf83d8a144f6c84ed1c766c67aa7d8541",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/config.json",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "85bac93237e8cb4ae3b53b28258ff22a690ac4a682e7a6821d801b99ac475f88",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1742218ee2023465a8a85f437e0d5768883b9ae7ff147b16e5839bef4b79480c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_greater_master.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_greater_master.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bb2c7f250786018c2ca64d30c1d5c153bb6676977ec9f00000fd2c7f28bcad01",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_masterworking.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_masterworking.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "cde0d97d4b8091d0817a75f2fa4b78a5b13e8e73047685b6987edcf7851fb023",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0b20a69165300c7b6925c1834a2ba3bef34841d9da7ccf8423b2f40d319d5380",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a55eec6ee45c06873df8d4b9747c87c3b99ff3e8b66520e9e063bf259d840df6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "89fea2a2d1310a1f80356f544622752c4a9412380f8eeddf0334e2caa57f7d41",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "c12fd21a41f68970b6e96f5abbf70ad2a17cab6963efcd2b067ab28120bc0306",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "eb3cdaa65a3bafba1b6f6eac2a69f8a88bbbd0f0faef3e8082e700a901c6972c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e8229a1330eb900ffa4cfb0bbda2920583e4b70ca4d3e2cdb857d859f3aaf18c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b57a792952e8b634915f9e1c96f46d01bc4528bb4acd50fd753e12a35b4a0ad4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1cb6041c5cbbc40e09d5038a273683b1f44bbc23078763a7e18c6888dbc38b8e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3882001427211ac939dd99b9486a949af611e7c8a15b2d7a8afd2985eb772308",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bae073e548add9156b6240dede502c5bdcc71d6e08e6014fed4a68ec72b6569a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-affixes_transfiguring.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-affixes_transfiguring.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "64e0756b264852bb0dc82450dc98965f22741534548f97c51089306d9c8f54d9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1abc2b31ea765b8f43288c821c5f77d05d5e7770a16db2f661b7925b4f47e4bd",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "818197b1181be67ebf2a41b70f3835d3a7fae576e516e849129a4016fe0efe84",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3edbdb7263b89c9abbcddd5733e4bff49610f2c5c583a5b0d033415e2c3ed923",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-socket_1.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "985b798ed599ae3e127c1f847019f2b9e3e24720e506d21effdad3c071282541",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8b67fad63048538e80a0804c8eaa70e3a5141cad57e55c06467974f789c8e938",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0aa0e544b39afc04e320eccb40f7d17504ac25f7539c5b1bcf6465ab629e1cd6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bfb8589926468de803c40da469ed376703c236d872d85dda265381ca1d70ae4d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8693edb1d674d0a3599c9ca6d9a52ef5fdaff7c78b5f1707594ec90494d912b9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "581ca845e18a2d37f045d97af7589e1c54bed9f23d8c4b6e02a3cf54b8bcc97c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-splitter.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-splitter.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "50a21f3fc35284d49349430755b5802e0fdd3854261f82e3e7b996474a8fc6b6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-splitter_2.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-splitter_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "632969330b52c6af2b0a26b7ca5a290140be1eaafc7af7fb4923900425b93116",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-splitter_3.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-splitter_3.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e075bc8113aa37bdd776b91eb2bbc40aeaaa18fbea48d841996940088cf7b681",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-splitter_4.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-splitter_4.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "79f9dacc64bae896bec343992d393512b9e3cd82d58d0af38dfac1c16580af1e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-splitter_top.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-splitter_top.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "81cb1117b210747c4c998c8b51e0241e698c5cea5f42d4575bc6ba8e2aead584",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-splitter_top_2.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-splitter_top_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "76aa75284a2a3b399bfb473de3b0d0ff72178f583c36a81cdff8ec88f65cbee2",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-splitter_top_3.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-splitter_top_3.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "acccdf9426a8b88886979bca7b0934b75d9d2ee250e7cdbca9164d8abf0b7890",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF/dot-splitter_top_4.png",
+      "source_path": "downloads/systempresets/1600p_SMF.zip::1600p_SMF/dot-splitter_top_4.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0b98ae2565ae96b1e8d7aefa1efb5f66be6af72a369622dfd9e274058d041043",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "20fe99f02a4c386d1c4d1d31411e64decf8e4f9b4b554fc565c15460f3643b89",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a3b8ac3c3a3ca6729e6bb41a7ffea255bd745b16f6978e5c95045150455c738e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bb356cdd547a90046a75709698555ea3504d8da4e72aea22c4d197beea4fbbb7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/config.json",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "85bac93237e8cb4ae3b53b28258ff22a690ac4a682e7a6821d801b99ac475f88",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b11225b5dabaaccff4f704b8502504e3d37c98f53c9c0fc8fe834fd911c47fe9",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d5b7115ce44306997957b4f4556d46ef16bd1cb5613e6d29bda62aff6db47403",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "73146b988a26f391d91dd4db556fc1162faa092651b17e43a2217230abbdbbba",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/dot-aspects_seasonal.png",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/dot-aspects_seasonal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7679abd6c638026185529e277ede1805a8200c1623ea748f60f26af560df1410",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/1600p_SMF_zhCN/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip::1600p_SMF_zhCN/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "97b8d70f7d51913c08bd8d5506fe900cd72bf396e8a798f6c6fbac078fe48fbe",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/Tooltips/Optional/tooltip_kb_all_salvage.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/Tooltips/Optional/tooltip_kb_all_salvage.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8dfc9ce52085f8f91271e33b983261a4792e9c298bf68c3e8c1d99c31967c39c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/Tooltips/tooltip_gc_a.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/Tooltips/tooltip_gc_a.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "fdc94ed4ee99d86e910fb3764f5bcc81a8cbbbb09d8274042bf0ce5f23236b52",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9015f570ebc105f1a9a8e549c8ceb423444952a42d7a9231a8b6f00050e9827a",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/Tooltips/tooltip_gc_y.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/Tooltips/tooltip_gc_y.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b162517cdff944df72086f2a1445850cf464e3003e70af70fd5ad6104d7d1dc7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3908cb348d9962fd854b1003df70edf79ede0bfb2f0eeceb4cad94bb5a17da03",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/config.json",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "ae38c59b33c3de1b2c1e1dac9694dfeb398fc16c4fc0f79677af628238ee33c8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b5f72a894213ebd4f735f77e45de67fcdc69281a8940c316b1d9ac45cb052480",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6707d43829392ce79220cb8730de3f8c37e1b3fd584b444614a31bd4c4d2bc98",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "65569075ed17239e14232fba17feca4f24f7d854f5c429a27f35b7569754a3c3",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "78f89b3bc3a60b16bba2c921ef218637e290e4406caff049e038968fdc18c68b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8d3724c9c58fc0362a8a8d475d53566b5dbd71ecd6661bc61de526da5a0eed75",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1d07e01170e74ea06fd279945893b4a90d584f5752edcb4143bd530f33b5387e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "74219cbb1c41d068111559ee6711728efd8e7c82c992753ffa9f6b464bbab7fb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b03b6e26717c4155f81928fbe163d4b1b95608fbbd233818b57c174f6b0f185e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7e3c29b97176880a5f6085399a5d5f4bb312cf46b45e1955f89b161b6ca6d942",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "99a2907a3c86417195a03c5719b949c6274f1aade571ff55a6bce13db09b3cbb",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d3df270125646bfbc2b93ba27c381419381036b218648fb93e857d9ac2c873f4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9e7966813d18c0815f953d6304ced90efa5ea7f6f46448d41ad9817c107235b5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "56bf05636c0aba9b172e8e33ab9a6fb3550ea54ff77e332d459391d75251fc3b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "03b4594222ebbf6aa3fe5564690dab97978e6286d6dffb7fce20ab7855c9d635",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-socket_1.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e9b8e2517420bd26b9a0fc808deb70d7dee32ea90d7a952f812df08a036e2388",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f639aa99582ba8d50c948ae7743f1c99fc00d1964b5a61203026b97a8b367777",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5ca9ced4d5e159fe2e560ffe0e0e537adb01c58dd78b27708b339b70dc897e5d",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "dc32281f20a268a0e481525dc04069d7705a8304cf690f3e920da0f7aea8ad9f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3c6bac3409b0109a266b5ccd958851add895805a1d411694cec5c108c4f0ff03",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "dcb42a8971ed5e5b3767123341b33387cc89f745f5234b4c157a0fef96f1f46b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-splitter_1.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-splitter_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "38978f0aa08b1bdea5ca783c5c84d6687e22c254d8c9c694743092509ff9ba78",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-splitter_top_1.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-splitter_top_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3f9cadce53d09a365ec3338aebd59329b878d2540481590a66f72cab5490011c",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_HSF/dot-splitter_top_2.png",
+      "source_path": "downloads/systempresets/2160p_HSF.zip::2160p_HSF/dot-splitter_top_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0c69eb6bb56c371570d334fabdbe9c462ada4cba7f73a3ddafe6d74b4a92f8aa",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/Tooltips/tooltip_gc_square.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/Tooltips/tooltip_gc_square.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "74fe0d376e73e46a045f5f4a6d287987e1e148779928a2517be36d18b4179baa",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/Tooltips/tooltip_gc_x.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/Tooltips/tooltip_gc_x.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "300aebe7d3bfd0aec5e470b3faf5f9504d8c0652bcb52ac02b8f08c38cec9575",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/Tooltips/tooltip_kb_all.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/Tooltips/tooltip_kb_all.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "39892312969b5cd91b95d6aaabf61f4064cd27fab832b1dcb73f1646d4c00a45",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/config.json",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/config.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a3d580cd56239b710dbd4f17b8dbe436cb8691a81ed67d1018da39ce146bc09e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_greater.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_greater.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9562055e363c18ec9384b9e3972e778dccb8005d0ca1791ec174147252f54a55",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_masterworking.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_masterworking.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "6d66fe0479ea134dcd728df041a0011eaea1eef125396da2ac8ce5c45a75b287",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_normal.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_normal.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bfe12bfe8368d9caf358fb7c891460828698729458a5957e0bc2cfebb2706bae",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_reroll.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_reroll.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "fdf49601f100e48076d5e3d5f01e9d85842f7e91a4a4adec56c29c933487ac86",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_rune_invocation.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_rune_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b18c0ec6eb1563b7ace7b1ac8a1fa7ae12b99987cef7416540d99894c880917f",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_rune_ritual.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_rune_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "1b8b0bc3106dfb591d1a9bf11ceca195c1d6662e846c580870b500b778312b1b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_sanctified.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_sanctified.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "9dcc4d7966b40868fec306d28c369de17e2efe90a9a49feb46cbbf8f6b261ea7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_defensive.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_temper_defensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "4f78fa20e7d585dbb175118b3658ffcf418bf253b962c6b4f715ce827f5a0e21",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_mobility.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_temper_mobility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0e076587c8def9da0db385f58fd1ff2ce7493f9786621de010d0eef2b7be3b34",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_offensive.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_temper_offensive.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "99b5ad19e0970df38217547857298a1f676d7455f708c59fbb052663b9049df0",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_resource.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_temper_resource.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "b4d2a74e1d67fd11423ae5381777d098484786c3cc2539467b4ed5fba2061065",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_utility.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_temper_utility.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "830558b81d5093af1d8bf1d82d2671b93b35997ed7b21b62f206e0f7eed291f6",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_weapons.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-affixes_temper_weapons.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "5df8b54473e1ba61f09e68b0c6165d596e92a04a6d8a689d84d45b8df8a459ed",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-aspects_legendary.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-aspects_legendary.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "51a81a66fc2cd6d2c4e1824121957bda717a98f37d6fc97a306296ab2e662ca8",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-aspects_mythic.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-aspects_mythic.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7d283fa50b6420d4eab8357b28d8e8a4f01c9c657c5e2c3fd963528f6d2b3eba",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-aspects_unique.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-aspects_unique.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a4103783ff011e92ccd9c40e854cb564f7016b8bb2ddae5a6a7d5a5b8a5f6fcd",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-socket_1.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-socket_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "816ff9c3ea4d73d71d84621bfa742209a9be4ff775a72e12ae82293ec0411965",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-socket_1_mask.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-socket_1_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "702ed14e5326e108108e6014e855d6106eea60a1ece4ac26f13ed701f9ad7cf5",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-socket_2.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-socket_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d8829864b4cd28cb1012f8743eae75660023345156a8c96fc0604d252e7d514e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-socket_2_mask.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-socket_2_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bcbcc2fad53d37bf981c88c420d693dc6a2443f051f9b046bdf0054c9e71ef74",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-socket_invocation.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-socket_invocation.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "81988eb651fbc87175b3fcfe1440585d57acd333f9269f489b0242943a5e1393",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-socket_invocation_mask.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-socket_invocation_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "2bdf77afe3068aff3b266e354aad97564e8a326eee2a6fb650591b324d02fbbc",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-socket_ritual.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-socket_ritual.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "935b5e18793d0f34261e05f4423e2e7f8e3dcdd53ecbab2df2ff31f6983ab536",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-socket_ritual_mask.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-socket_ritual_mask.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "42a339fed116c5376ac6c453c7e8af92d625c681c39050ff7d298da7322db7d4",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-splitter_1.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-splitter_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "475879565c3fb97d137cc9da6296ef623f0b8508854c0eb39dd600c6308ad6b7",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-splitter_2.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-splitter_2.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "750f53e79956519f0ddfaef631dd1f1c0c4e8c4000d611547cf2cea6cd748874",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/2160p_SSF/dot-splitter_top_1.png",
+      "source_path": "downloads/systempresets/2160p_SSF.zip::2160p_SSF/dot-splitter_top_1.png",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "faf8e3cf97d2ff4817e39806ebbbb5b3db5a6aca3c69e91b17695715de970197",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/systempresets.json",
+      "source_path": "downloads/systempresets/systempresets.json",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "3f074a7777d00e90adc38fd9cdabdcc47286bff4ad2a15b5238865244a814f2e",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/1080p_SMF.zip",
+      "source_path": "downloads/systempresets/1080p_SMF.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "32063bd577edc0b829ecbc5c4a727ca851bcf94784d873d90232cf533ea46149",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/1080p_SSF.zip",
+      "source_path": "downloads/systempresets/1080p_SSF.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "bd2682cdfffcc4bb40dc4e44dfebf68cea7d24737c3088cc8ec6344ea00bf6ff",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/1440p_HSF.zip",
+      "source_path": "downloads/systempresets/1440p_HSF.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "849607250e7a82b599c8c537402257fc0ae29ed622e91c1db5febb9847402b92",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/1440p_SMF.zip",
+      "source_path": "downloads/systempresets/1440p_SMF.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a14f530ece73fd6f4ee82d57647f83e22df08512935517b0ae35a7ddd9353fa3",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/1440p_SMF_zhCN.zip",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "f67cdcd1f99b0097f68398d31afd726796e007fa1c7f5677cdb69738afeb382b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/1440p_SSF.zip",
+      "source_path": "downloads/systempresets/1440p_SSF.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8d648e940f145960b7dae26011dba1d167b46d4ff5a9b03f2d4c8126b3698eaf",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/1600p_SMF.zip",
+      "source_path": "downloads/systempresets/1600p_SMF.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "8e44c6e2fc78edbf86f9e4e1ddd7911f6faae276b9e39275935261c423912dfa",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/1600p_SMF_zhCN.zip",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "e91612eeccf523b4fb1f2c8e6812d6fcec95397feaefd230728e799181138c43",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/2160p_HSF.zip",
+      "source_path": "downloads/systempresets/2160p_HSF.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "d3e760e119c9f3a8dc4395214216dc37a0088bb66dbae4aa5faa03da12b85823",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "assets/original/systempresets/zips/2160p_SSF.zip",
+      "source_path": "downloads/systempresets/2160p_SSF.zip",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "a1ccc03d24b6256e7ee5b5004b3edb022717d51dd6e162d09496bdcb3db2d41a",
+      "license": "MIT"
+    }
+  ],
+  "derived_files": [
+    {
+      "destination_path": "crates/d4lc-app/assets/d4lc.png",
+      "source_path": "D4Companion/Images/app.ico",
+      "derivation": "single 128x128 32-bpp frame extracted and Lanczos-upscaled to 256x256 RGBA PNG (Python PIL); see crates/d4lc-app/assets/ICON_README.md",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "7feef008a29ae576289cd21021b5a440449f284a72f0a45d92309390f030065b",
+      "license": "MIT"
+    },
+    {
+      "destination_path": "crates/d4lc-app/assets/website_icon_d2core.png",
+      "source_path": "D4Companion/Images/website_icon_d2core.png",
+      "derivation": "the upstream file carries an AVIF payload behind a .png name, which the Slint image decoder rejects; decoded and re-encoded as a 33x33 RGBA PNG (Python PIL)",
+      "upstream_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+      "sha256": "0ab2085cf81c8c281e4aa26d60145acc11be95d482bff5eaf392e1c7c189c0c5",
+      "license": "MIT"
+    }
+  ],
+  "notes": [
+    "items covers byte-identical copies under assets/original and is regenerated by scripts/update_asset_manifest.py.",
+    "derived_files records converted assets (e.g. the bundled app icon) whose destination bytes intentionally differ from the upstream source, so they stay out of the copied-file sha256 parity gate (cargo run -p d4lc-cli -- upstream-asset-parity); scripts/update_asset_manifest.py does not regenerate this section.",
+    "derived_files source_path is relative to upstream/Diablo4Companion."
+  ]
+}

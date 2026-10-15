@@ -1,0 +1,31 @@
+[package]
+name = "d4lc-runtime"
+version = "1.0.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+d4lc-assets = { path = "../d4lc-assets" }
+d4lc-capture = { path = "../d4lc-capture" }
+d4lc-config = { path = "../d4lc-config" }
+d4lc-core = { path = "../d4lc-core" }
+d4lc-detect = { path = "../d4lc-detect" }
+d4lc-fuzzy = { path = "../d4lc-fuzzy" }
+d4lc-ocr = { path = "../d4lc-ocr" }
+d4lc-parse = { path = "../d4lc-parse" }
+d4lc-rules = { path = "../d4lc-rules" }
+d4lc-vision = { path = "../d4lc-vision" }
+# d4lc code only reads and writes PNG, so it requests no other codec.
+# Slint still enables `jpeg` on the shared `image` crate in the app build.
+image = { version = "0.25", default-features = false, features = ["png"] }
+serde_json.workspace = true
+
+[features]
+# Wayland capture via the ScreenCast portal + PipeWire. Forwards to the
+# capture crate's feature; the default build never links libpipewire.
+wayland-portal = ["d4lc-capture/wayland-portal"]
+
+[lints]
+workspace = true

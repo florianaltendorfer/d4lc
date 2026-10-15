@@ -1,0 +1,1060 @@
+// Overlay config dialog — real workflow.
+//
+// Upstream: `OverlayConfigView.xaml` + `OverlayConfigViewModel.cs`
+// (three TabItems: General / Features / Performance). d4lc keeps the
+// port's five existing rows (enable, always-on-top, menu lock, font size,
+// type-area offset — the port's own placement for those settings) and
+// adds the upstream rows whose config fields exist and are consumed:
+//
+// General
+// - `ShowOverlayIcon` (`SettingsD4.cs:84`) — overlay icon marker; the
+//   overlay surfaces consume `show_overlay_icon`.
+// - `OverlayIconPosX` / `OverlayIconPosY` (`SettingsD4.cs:68-69`,
+//   upstream slider range 0..=1000) — the X11/Wayland overlay paths read
+//   both positions.
+// Features
+// - `IsItemPowerLimitEnabled` + `ItemPowerLimit` (`SettingsD4.cs:35,62`,
+//   upstream NumericUpDown 100..=800) — the rules engine consumes the
+//   item-power rule.
+// - `SelectedOverlayMarkerMode` (`SettingsD4.cs:96`, the ComboBox over
+//   "Show All" / "Hide Unwanted") — projected into the rule overlay
+//   marker mode.
+// - `IsTradeOverlayEnabled` (`SettingsD4.cs:59`) — the trade-overlay
+//   cross-entry (the trade config dialog edits the same field).
+// Performance (`OverlayConfigView.xaml:183-217`)
+// - `ScreenCaptureDelay` (`SettingsD4.cs:77`, 5..=500 ms) — the pause
+//   between captures; `screen_capture_delay`, read per tick by the live
+//   loop (upstream `ScreenCaptureHandler.cs:266`).
+// - `OverlayUpdateDelay` (`SettingsD4.cs:70`, 5..=500 ms) — the pause after
+//   each processing pass; `overlay_update_delay`, read per tick by the live
+//   loop (upstream `ScreenProcessHandler.cs:148`).
+// - `ScanHeight` (`SettingsD4.cs:76`, 10..=100 %) — the share of the screen
+//   searched for the item tooltip; `scan_height_percent`, read by the
+//   detector in mouse mode (upstream `ScreenProcessHandler.cs:566`). The
+//   config stores it as a float; the dialog edits whole percent.
+// - `IsSocketDetectionEnabled` / `IsTemperedAffixDetectionEnabled`
+//   (`SettingsD4.cs:41-42`) — gate the OCR pipeline's socket / tempered
+//   detection.
+//
+// - `IsAspectDetectionEnabled` (`SettingsD4.cs:27`,
+//   `OverlayConfigView.xaml:231-234`) — the same setting as the Aspect
+//   config dialog's toggle; gates the aspect OCR in the segment plan.
+//
+// Not projected here (recorded, not invented): `SelectedSigilDisplayMode`
+// keeps its own dialog (Sigil config).
+//
+// Form contract: every value is a root `settings-overlay-*` in-out
+// property (see `main_window.slint`), read + validated on confirm and
+// persisted through `d4lc_config::save_app_settings`. Cancel discards the
+// drafts. The section chips are dialog-local state mirroring the upstream
+// TabControl.
+import { LabeledStepper } from "../components/labeled_stepper.slint";
+
+export component OverlayConfigDialog {
+    in property <string> dialog-title: @tr("Overlay config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust reads them via
+    // `app.get_settings_overlay_*`.
+    in-out property <bool> settings-overlay-enabled: false;
+    in-out property <bool> settings-overlay-top-most: false;
+    in-out property <int> settings-overlay-font-size: 18;
+    in-out property <bool> settings-overlay-menu-locked: false;
+    in-out property <int> settings-overlay-type-area-offset-left: 0;
+    in-out property <bool> settings-overlay-show-icon: false;
+    in-out property <int> settings-overlay-icon-pos-x: 0;
+    in-out property <int> settings-overlay-icon-pos-y: 0;
+    in-out property <bool> settings-overlay-item-power-enabled: false;
+    in-out property <int> settings-overlay-item-power-limit: 800;
+    in-out property <string> settings-overlay-marker-mode: "Show All";
+    in-out property <bool> settings-overlay-trade-overlay: true;
+    in-out property <bool> settings-overlay-socket-detection: true;
+    in-out property <bool> settings-overlay-tempered-detection: true;
+    in-out property <bool> settings-overlay-aspect-detection: true;
+    // Float props: the stepper component edits `float`; Rust rounds.
+    in-out property <float> settings-overlay-screen-capture-delay: 50;
+    in-out property <float> settings-overlay-update-delay: 5;
+    in-out property <float> settings-overlay-scan-height: 50;
+
+    // Upstream TabControl selection (General / Features / Performance).
+    in-out property <int> section: 0;
+
+    callback confirm();
+    callback cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 6px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Section chips (upstream TabControl headers) ─────────────
+        HorizontalLayout {
+            spacing: 4px;
+
+            Rectangle {
+                background: section == 0 ? #CC3333 : #555555;
+                border-radius: 4px;
+                preferred-width: 72px;
+                preferred-height: 22px;
+                min-width: 72px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Overlay general section");
+                Text {
+                    text: @tr("General");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { section = 0; }
+                }
+            }
+
+            Rectangle {
+                background: section == 1 ? #CC3333 : #555555;
+                border-radius: 4px;
+                preferred-width: 72px;
+                preferred-height: 22px;
+                min-width: 72px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Overlay features section");
+                Text {
+                    text: @tr("Features");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { section = 1; }
+                }
+            }
+
+            Rectangle {
+                background: section == 2 ? #CC3333 : #555555;
+                border-radius: 4px;
+                preferred-width: 72px;
+                preferred-height: 22px;
+                min-width: 72px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Overlay performance section");
+                Text {
+                    text: @tr("Performance");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { section = 2; }
+                }
+            }
+        }
+
+        // ══ General (upstream TabItem "General") ════════════════════
+        if section == 0: VerticalLayout {
+            spacing: 6px;
+
+            // ── OverlayEnabled toggle
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Enable overlay");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-enabled ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Enable overlay");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-enabled ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-enabled = !settings-overlay-enabled;
+                        }
+                    }
+                }
+            }
+
+            // ── IsTopMost toggle (port addition: upstream edits IsTopMost
+            // only on the Debug view, DebugView.xaml:68)
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Always on top");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-top-most ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Always on top");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-top-most ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-top-most = !settings-overlay-top-most;
+                        }
+                    }
+                }
+            }
+
+            // ── OverlayMenuLocked toggle (port setting, existing row)
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Lock overlay menu");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-menu-locked ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Lock overlay menu");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-menu-locked ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-menu-locked = !settings-overlay-menu-locked;
+                        }
+                    }
+                }
+            }
+
+            // ── IsOverlayIconVisible toggle (ShowOverlayIcon)
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Show Overlay Icon");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-show-icon ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Show overlay icon");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-show-icon ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-show-icon = !settings-overlay-show-icon;
+                        }
+                    }
+                }
+            }
+
+            // ── OverlayFontSize (10..=50)
+            HorizontalLayout {
+                spacing: 6px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Font Size");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+                Text {
+                    text: settings-overlay-font-size;
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 36px;
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Overlay font size decrement");
+                    Text {
+                        text: "-";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-font-size = max(settings-overlay-font-size - 1, 10);
+                        }
+                    }
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Overlay font size increment");
+                    Text {
+                        text: "+";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-font-size = min(settings-overlay-font-size + 1, 50);
+                        }
+                    }
+                }
+            }
+
+            // ── OverlayIconPosX (0..=1000)
+            HorizontalLayout {
+                spacing: 6px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Overlay icon X");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+                Text {
+                    text: settings-overlay-icon-pos-x;
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 36px;
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Overlay icon X decrement");
+                    Text {
+                        text: "-";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-icon-pos-x = max(settings-overlay-icon-pos-x - 1, 0);
+                        }
+                    }
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Overlay icon X increment");
+                    Text {
+                        text: "+";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-icon-pos-x = min(settings-overlay-icon-pos-x + 1, 1000);
+                        }
+                    }
+                }
+            }
+
+            // ── OverlayIconPosY (0..=1000)
+            HorizontalLayout {
+                spacing: 6px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Overlay icon Y");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+                Text {
+                    text: settings-overlay-icon-pos-y;
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 36px;
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Overlay icon Y decrement");
+                    Text {
+                        text: "-";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-icon-pos-y = max(settings-overlay-icon-pos-y - 1, 0);
+                        }
+                    }
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Overlay icon Y increment");
+                    Text {
+                        text: "+";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-icon-pos-y = min(settings-overlay-icon-pos-y + 1, 1000);
+                        }
+                    }
+                }
+            }
+
+            // ── TypeAreaOffsetLeft (0..=25, DebugView.xaml:108-109)
+            HorizontalLayout {
+                spacing: 6px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Type Area Offset (Left):");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+                Text {
+                    text: settings-overlay-type-area-offset-left;
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 36px;
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Type-area offset left decrement");
+                    Text {
+                        text: "-";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-type-area-offset-left = max(settings-overlay-type-area-offset-left - 1, 0);
+                        }
+                    }
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Type-area offset left increment");
+                    Text {
+                        text: "+";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-type-area-offset-left = min(settings-overlay-type-area-offset-left + 1, 25);
+                        }
+                    }
+                }
+            }
+        }
+
+        // ══ Features (upstream TabItem "Features") ══════════════════
+        if section == 1: VerticalLayout {
+            spacing: 6px;
+
+            // ── IsItemPowerLimitEnabled toggle (SettingsD4.cs:35)
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Item Power Limit");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-item-power-enabled ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Item power limit");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-item-power-enabled ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-item-power-enabled = !settings-overlay-item-power-enabled;
+                        }
+                    }
+                }
+            }
+
+            // ── ItemPowerLimit (100..=800)
+            HorizontalLayout {
+                spacing: 6px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Item power minimum");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+                Text {
+                    text: settings-overlay-item-power-limit;
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 36px;
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Item power limit decrement");
+                    Text {
+                        text: "-";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-item-power-limit = max(settings-overlay-item-power-limit - 1, 100);
+                        }
+                    }
+                }
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 24px;
+                    preferred-height: 24px;
+                    min-width: 24px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Item power limit increment");
+                    Text {
+                        text: "+";
+                        color: #EEEEEE;
+                        font-size: 14px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-item-power-limit = min(settings-overlay-item-power-limit + 1, 800);
+                        }
+                    }
+                }
+            }
+
+            // ── SelectedOverlayMarkerMode ComboBox over
+            // "Show All" / "Hide Unwanted" (OverlayConfigViewModel.cs:276-284)
+            HorizontalLayout {
+                spacing: 6px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Markers");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-marker-mode == "Show All" ? #CC3333 : #555555;
+                    border-radius: 4px;
+                    preferred-width: 88px;
+                    preferred-height: 24px;
+                    min-width: 88px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Marker mode show all");
+                    Text {
+                        text: @tr("Show All");
+                        color: #EEEEEE;
+                        font-size: 11px;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-marker-mode = "Show All";
+                        }
+                    }
+                }
+
+                Rectangle {
+                    background: settings-overlay-marker-mode == "Hide Unwanted" ? #CC3333 : #555555;
+                    border-radius: 4px;
+                    preferred-width: 110px;
+                    preferred-height: 24px;
+                    min-width: 110px;
+                    min-height: 24px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Marker mode hide unwanted");
+                    Text {
+                        text: @tr("Hide Unwanted");
+                        color: #EEEEEE;
+                        font-size: 11px;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-marker-mode = "Hide Unwanted";
+                        }
+                    }
+                }
+            }
+
+            // ── IsTradeOverlayEnabled toggle (SettingsD4.cs:59; the same
+            // field the trade config dialog edits)
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Trade Overlay");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-trade-overlay ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Overlay trade overlay");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-trade-overlay ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-trade-overlay = !settings-overlay-trade-overlay;
+                        }
+                    }
+                }
+            }
+        }
+
+        // ══ Performance (upstream TabItem "Performance") ════════════
+        if section == 2: VerticalLayout {
+            spacing: 6px;
+
+            // ── ScreenCaptureDelay / OverlayUpdateDelay / ScanHeight
+            // (OverlayConfigView.xaml:192-217 NumericUpDown rows)
+            LabeledStepper {
+                label: @tr("Screencapture Delay");
+                minimum: 5;
+                maximum: 500;
+                value <=> settings-overlay-screen-capture-delay;
+                unit: "ms";
+                hint: @tr("Time in ms between screencaptures. Default 50ms.");
+                label-width: 150px;
+            }
+            LabeledStepper {
+                label: @tr("Overlay Update Delay");
+                minimum: 5;
+                maximum: 500;
+                value <=> settings-overlay-update-delay;
+                unit: "ms";
+                hint: @tr("Time in ms between overlay updates. Default 5ms.");
+                label-width: 150px;
+            }
+            LabeledStepper {
+                label: @tr("Scan Height (%)");
+                minimum: 10;
+                maximum: 100;
+                value <=> settings-overlay-scan-height;
+                unit: "%";
+                hint: @tr("Percentage of screen to scan for item tooltip.");
+                label-width: 150px;
+            }
+
+            // ── IsSocketDetectionEnabled toggle (SettingsD4.cs:41)
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Socket Detection");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-socket-detection ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Socket detection");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-socket-detection ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-socket-detection = !settings-overlay-socket-detection;
+                        }
+                    }
+                }
+            }
+
+            // ── IsTemperedAffixDetectionEnabled toggle
+            // (SettingsD4.cs:42)
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Tempered Affix Detection");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-tempered-detection ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Tempered affix detection");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-tempered-detection ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-tempered-detection = !settings-overlay-tempered-detection;
+                        }
+                    }
+                }
+            }
+
+            // ── IsAspectDetectionEnabled toggle
+            // (OverlayConfigView.xaml:231-234)
+            HorizontalLayout {
+                spacing: 8px;
+                alignment: center;
+
+                Text {
+                    text: @tr("Aspect Detection");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: left;
+                    vertical-alignment: center;
+                    preferred-width: 150px;
+                }
+
+                Rectangle {
+                    background: settings-overlay-aspect-detection ? #CC3333 : #555555;
+                    border-radius: 10px;
+                    preferred-width: 36px;
+                    preferred-height: 20px;
+                    min-width: 36px;
+                    min-height: 20px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: switch;
+                    accessible-label: @tr("Aspect detection");
+
+                    Rectangle {
+                        background: #EEEEEE;
+                        border-radius: 9px;
+                        width: 16px;
+                        height: 16px;
+                        x: settings-overlay-aspect-detection ? 18px : 2px;
+                        y: 2px;
+                    }
+
+                    TouchArea {
+                        clicked => {
+                            settings-overlay-aspect-detection = !settings-overlay-aspect-detection;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,2873 @@
+[
+  {
+    "IdSno": 1314288,
+    "IdName": "DungeonAffix_Positive_StunCausesBurning",
+    "Name": "Control Impaired Explosions",
+    "Description": "操作障害効果を受けると、周囲に爆発が生じる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2382540,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_01_Cellar",
+    "Name": "[PH] Sphinx 01 Cellar",
+    "Description": "missing description",
+    "DungeonZoneInfo": "の Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2380546,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_03",
+    "Name": "[PH] The Mountain's Hidden Heart",
+    "Description": "PH",
+    "DungeonZoneInfo": "の Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2454812,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_03_Part02",
+    "Name": "[PH] The Temple Swallowed to Time",
+    "Description": "missing description",
+    "DungeonZoneInfo": "の Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2354533,
+    "IdName": "DungeonAffix_Minor_S9_Barrier",
+    "Name": "ささやかなる庇護",
+    "Description": "一部のモンスターがライフ最大値の50%分の障壁を得る。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1585493,
+    "IdName": "World_DGN_Naha_MurmuringSpiral",
+    "Name": "つぶやきの螺旋",
+    "Description": "折り重なる鱗と螺旋が催眠術のような効果を生んでいる。近づきすぎた者がいたようだ。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113763,
+    "IdName": "World_DGN_Scos_TwistedHollow",
+    "Name": "ねじれの虚ろ",
+    "Description": "まさに野生動物の宝庫だ。ここに答えが眠っているかもしれない。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113455,
+    "IdName": "World_DGN_Hawe_AkkhansGrasp",
+    "Name": "アクハンの手",
+    "Description": "破れた墓の封印から、邪悪な気配と血がにじみ出ている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321618,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_LifeSteal",
+    "Name": "アスタロスのライフ吸収",
+    "Description": "アスタロスが15%のライフ吸収効果を得る。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2358422,
+    "IdName": "DungeonAffix_Major_Astaroth_MeteorPersist",
+    "Name": "アスタロスの天変地異",
+    "Description": "戦闘中、メテオが常に空から降り注ぐ。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2322097,
+    "IdName": "DungeonAffix_Major_Astaroth_Invuln",
+    "Name": "アスタロスの忠実なる乗騎",
+    "Description": "アスタロスはライフのしきい値に達するたびに激高の融合体が倒されるまでダメージ無効になる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2321901,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_DeathPulse",
+    "Name": "アスタロスの暗黒波動",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321691,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_BloodBlisters",
+    "Name": "アスタロスの血ぶくれ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113629,
+    "IdName": "World_DGN_Frac_AnicasClaim",
+    "Name": "アニカ・クレーム",
+    "Description": "この暗いトンネルは非人間種族の手によって掘られた。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2360109,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Amethyst",
+    "Name": "アメジスト貯蔵所",
+    "Description": "アメジストの箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321540,
+    "IdName": "DungeonAffix_Positive_Astaroth_AndarielBossMats",
+    "Name": "アンダリエルの供物",
+    "Description": "アスタロスの報酬にアンダリエルの秘蔵品を開けるのに必要な針刺し人形が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314422,
+    "IdName": "DungeonAffix_Minor_Monster_SunderArmor",
+    "Name": "アーマーブレイカー",
+    "Description": "モンスターの遠距離攻撃が、6秒間にわたって防御力を7%低下させる。この効果は最大35%まで蓄積する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113567,
+    "IdName": "World_DGN_Kehj_YshariSanctum",
+    "Name": "イシャリ・サンクタム",
+    "Description": "邪教徒が古の聖域を穢している。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113063,
+    "IdName": "World_DGN_Kehj_Inferno",
+    "Name": "インフェルノ",
+    "Description": "我らは地獄を求め、岩の奥へと進んだ。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114338,
+    "IdName": "World_DGN_Hawe_Witchwater",
+    "Name": "ウィッチウォーター",
+    "Description": "夢の中で歌を歌って、ナンガリの邪教徒は獲物をここへおびき寄せる。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585521,
+    "IdName": "World_DGN_Naha_UlarianSepulcher",
+    "Name": "ウラリアン埋葬所",
+    "Description": "呪われた、誰もが恐れる埋葬地。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321562,
+    "IdName": "DungeonAffix_Positive_Astaroth_Urivar",
+    "Name": "ウリヴァーの供物",
+    "Description": "アスタロスの報酬にウリヴァーの秘蔵品を開けるのに必要な裁判官の仮面が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114151,
+    "IdName": "World_DGN_Kehj_UldursCave",
+    "Name": "ウルダーの洞窟",
+    "Description": "殺人者と死肉喰らいの巣窟。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2360150,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Emerald",
+    "Name": "エメラルド貯蔵所",
+    "Description": "エメラルドの箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114038,
+    "IdName": "World_DGN_Hawe_RuinsofEridu",
+    "Name": "エリドゥの遺跡",
+    "Description": "かつては立派だった砦は沼に飲み込まれてしまっている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2355998,
+    "IdName": "DungeonAffix_Minor_S9_Tethering",
+    "Name": "エリート（ヘルバウンド）",
+    "Description": "エリートモンスターが「ヘルバウンド」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2354691,
+    "IdName": "DungeonAffix_Minor_S9_ChillingWinds",
+    "Name": "エリート（冷たき風）",
+    "Description": "エリートモンスターが「冷たき風」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2373211,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Vampiric)",
+    "Name": "エリート（吸血）",
+    "Description": "エリートモンスターが「吸血」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373219,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Waller)",
+    "Name": "エリート（岩の壁）",
+    "Description": "エリートモンスターが「岩の壁」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314333,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Suppressor)",
+    "Name": "エリート（抑圧者）",
+    "Description": "エリートモンスターが「抑圧者」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2355995,
+    "IdName": "DungeonAffix_Minor_S9_Suppressor",
+    "Name": "エリート（抑圧者）",
+    "Description": "エリートモンスターが「抑圧者」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314342,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Poison)",
+    "Name": "エリート（毒エンチャント）",
+    "Description": "エリートモンスターが「毒エンチャント」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373215,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Explosive)",
+    "Name": "エリート（爆発力）",
+    "Description": "エリートモンスターが「爆発力」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314339,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Electric Lance)",
+    "Name": "エリート（電撃槍）",
+    "Description": "エリートモンスターが「電撃槍」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113909,
+    "IdName": "World_DGN_Step_OnyxHold",
+    "Name": "オニキス砦",
+    "Description": "この牢獄の廊下では、今もアンデッドの看守が見回りをしている。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2336907,
+    "IdName": "DungeonAffix_Positive_Chests_Obols",
+    "Name": "オボール貯蔵所",
+    "Description": "オボールの箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114264,
+    "IdName": "World_DGN_Scos_Aldurwood",
+    "Name": "オルダーウッド",
+    "Description": "この腐敗した森では、木々が樹液のように血を流す。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381228,
+    "IdName": "DungeonAffix_Major_Horde_Khazra",
+    "Name": "カズラの群れ",
+    "Description": "騒々しい羊頭の獣がこの場を占拠しており、そのライフが30%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113092,
+    "IdName": "World_DGN_Scos_CalibelsMine",
+    "Name": "カリベルの鉱山",
+    "Description": "この鉱山を乗っ取った盗賊は、その秘密を知る由もない。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113085,
+    "IdName": "World_DGN_Kehj_PrisonofCaldeum",
+    "Name": "カルディウムの牢獄",
+    "Description": "この牢獄には何か邪悪な存在が蠢いている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113847,
+    "IdName": "World_DGN_Frac_CalderaGate",
+    "Name": "カルデラ・ゲート",
+    "Description": "この氷の洞窟にいる悪魔は徐々に力を増している。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113366,
+    "IdName": "World_DGN_Scos_GaranHold",
+    "Name": "ガラン砦",
+    "Description": "かつては立派だった砦も、今は焼かれる運命にある。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314233,
+    "IdName": "DungeonAffix_Positive_CooldownReductionOnKill",
+    "Name": "キル時にクールダウン時間短縮",
+    "Description": "モンスターを倒すと、クールダウンが0.25秒短縮される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314297,
+    "IdName": "DungeonAffix_Positive_AttackMoveSpeedOnKill",
+    "Name": "クイックキラー",
+    "Description": "モンスターを倒すと、攻撃速度と移動速度が2.0%上昇する。この効果は最大20%まで蓄積する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585570,
+    "IdName": "World_DGN_Naha_CavesofKutokue",
+    "Name": "クトクーの洞窟",
+    "Description": "岩壁の間に絶望の叫びがこだまする。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314244,
+    "IdName": "DungeonAffix_Positive_IncreasedCritChance",
+    "Name": "クリティカルヒット率増加",
+    "Description": "自分のクリティカルヒット率が9%上昇する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113900,
+    "IdName": "World_DGN_Kehj_CrusadersCathedral",
+    "Name": "クルセイダーの大聖堂",
+    "Description": "騎士たちがこの神殿を占拠した。ここの不死の戦士たちも強奪した。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321566,
+    "IdName": "DungeonAffix_Positive_Astaroth_Grigoire",
+    "Name": "グリゴワールの供物",
+    "Description": "アスタロスの報酬にグリゴワールの秘蔵品を開けるのに必要な生ける鋼が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113676,
+    "IdName": "World_DGN_Step_GuulrahnSlums",
+    "Name": "グールラーンの貧民街",
+    "Description": "グールラーンの街の通りは、いまも人食い族の支配下にある。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114146,
+    "IdName": "World_DGN_Step_GuulrahnCanals",
+    "Name": "グールラーンの運河",
+    "Description": "この下には、人食い族の暴君でさえ手を出さない存在がいる。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113877,
+    "IdName": "World_DGN_Step_KomdorTemple",
+    "Name": "コムドール神殿",
+    "Description": "三位一体教団により、羊頭の獣として永遠にサンクチュアリをさまようよう呪いがかけられている。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113896,
+    "IdName": "World_DGN_Frac_KorDraganBarracks",
+    "Name": "コー・ドラガンの兵舎",
+    "Description": "名誉ある殿堂は、死者が徘徊するままになっている。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113098,
+    "IdName": "World_DGN_Frac_KorValarRamparts",
+    "Name": "コー・ヴァラーの防壁",
+    "Description": "懺悔の騎士の罪が隠された腐敗した砦。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114192,
+    "IdName": "World_DGN_Hawe_GhoaRuins",
+    "Name": "ゴアの廃墟",
+    "Description": "かつての砦。人間の手によって作られた物は、すべて沼に呑み込まれた。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314215,
+    "IdName": "DungeonAffix_Positive_GoldFind",
+    "Name": "ゴールド探知",
+    "Description": "獲得ゴールドが30%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2281775,
+    "IdName": "DungeonAffix_Positive_Chests_Gold",
+    "Name": "ゴールド貯蔵所",
+    "Description": "ゴールドの箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360156,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Sapphire",
+    "Name": "サファイア貯蔵所",
+    "Description": "サファイアの箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113484,
+    "IdName": "World_DGN_Scos_SaratsLair",
+    "Name": "サラットの巣窟",
+    "Description": "野生動物の巣であったが、今は魔物が住んでいる。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511968,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Shadow Enchanted)",
+    "Name": "シャドウエンチャント",
+    "Description": "エリートモンスターが「シャドウエンチャント」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314231,
+    "IdName": "DungeonAffix_Positive_ShadowDamage",
+    "Name": "シャドウダメージ",
+    "Description": "自分が与えるシャドウダメージが15%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314411,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraShadow",
+    "Name": "シャドウ攻撃",
+    "Description": "モンスターの与える物理ダメージに20%のシャドウダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113581,
+    "IdName": "World_DGN_Kehj_SiroccoCaverns",
+    "Name": "シロッコの洞窟",
+    "Description": "この洞窟には不快な存在が蔓延っている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114092,
+    "IdName": "World_DGN_Kehj_ShivtaRuins",
+    "Name": "シヴタの廃墟",
+    "Description": "アルカーナスの腐敗が廃墟ににじみ出ている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114196,
+    "IdName": "World_DGN_Scos_JalalsVigil",
+    "Name": "ジャラルの夜警",
+    "Description": "守護者の苦痛により、森には嫌な雰囲気が漂っている。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585603,
+    "IdName": "World_DGN_Naha_SkatsimiFane",
+    "Name": "スカツィミ神殿",
+    "Description": "はるか昔に信仰は消え失せ、今や何が残っているか知る由もない。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314213,
+    "IdName": "DungeonAffix_Major_StormbanesWrath",
+    "Name": "ストームベインの憤怒",
+    "Description": "闇のモノリスがプレイヤーを追い回し、付近にいるとパルスを放って大ダメージを与える。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2360127,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Diamond",
+    "Name": "ダイヤモンド貯蔵所",
+    "Description": "ダイヤモンドの箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2358423,
+    "IdName": "DungeonAffix_Major_Astaroth_TeleDoT",
+    "Name": "テレポートの残滓",
+    "Description": "アスタロスがテレポートしたときに、継続ダメージを与えるゾーンをその場に残すようになる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2321538,
+    "IdName": "DungeonAffix_Positive_Astaroth_DurielBossMats",
+    "Name": "デュリエルの供物",
+    "Description": "アスタロスの報酬にデュリエルの秘蔵品を開けるのに必要な苦痛の欠片が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360160,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Topaz",
+    "Name": "トパーズ貯蔵所",
+    "Description": "トパーズの箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113857,
+    "IdName": "World_DGN_Scos_DomhainneTunnels",
+    "Name": "ドメイン・トンネル",
+    "Description": "コーバックの住人たちいわく、カズラの巣から叫び声が聞こえるという。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113695,
+    "IdName": "World_DGN_Frac_NostravaDeepwood",
+    "Name": "ノストラヴァの深淵の森",
+    "Description": "この森にはアンデッドが徘徊している。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114247,
+    "IdName": "World_DGN_Kehj_HakansRefuge",
+    "Name": "ハカンの避難所",
+    "Description": "廃墟と化したこの壮麗な邸宅には、さまざまな思い出がこもっている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314354,
+    "IdName": "DungeonAffix_Minor_Monster_AttackFaster",
+    "Name": "ハンター",
+    "Description": "モンスターの速度が異様に上がり、移動速度と攻撃速度が33%上昇する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314368,
+    "IdName": "DungeonAffix_Minor_Monster_AttackBehind",
+    "Name": "バックスタッバー",
+    "Description": "背後から近距離のモンスターの攻撃を受けると脆弱状態になる。脆弱状態で受けるダメージが35%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1585622,
+    "IdName": "World_DGN_Naha_FaraiCliffs",
+    "Name": "ファライの崖",
+    "Description": "余所者たちの血が月下に鈍く光っている。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113946,
+    "IdName": "World_DGN_Scos_FeralsDen",
+    "Name": "フェラルの住処",
+    "Description": "ドルイドの憎しみにより荒れ果てた小屋。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114026,
+    "IdName": "World_DGN_Kehj_SepulcherOfTheForsworn",
+    "Name": "フォースウォーンの埋葬所",
+    "Description": "バールの祭壇の下には邪悪が蠢いている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314417,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceResistance",
+    "Name": "ブレイカー耐性",
+    "Description": "モンスターの遠距離攻撃が、6秒間にわたって全属性耐性を5%低下させる。この効果は最大25%まで蓄積する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321556,
+    "IdName": "DungeonAffix_Positive_Astaroth_BelialBossMats",
+    "Name": "ベリアルの供物",
+    "Description": "アスタロスの報酬にベリアルの秘蔵品を開けるのに必要な裏切り者の骸が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2347209,
+    "IdName": "DungeonAffix_Positive_S08_Apparition",
+    "Name": "ベリアルの幻影",
+    "Description": "エリート幻影がこのダンジョンに侵入した。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321161,
+    "IdName": "DungeonAffix_Positive_SeasonalCurrency",
+    "Name": "ホラドリムの小瓶",
+    "Description": "このダンジョンのモンスターは、より多くのホラドリムの小瓶をドロップする。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2332268,
+    "IdName": "DungeonAffix_Positive_S09_Horadric_Secret",
+    "Name": "ホラドリムの潜窟",
+    "Description": "この場所には常にホラドリムの潜窟が1つ存在する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336857,
+    "IdName": "DungeonAffix_Positive_Chests_Elixirs",
+    "Name": "ボーナス宝箱: エリクサー",
+    "Description": "エリクサーの宝箱が非常に高い確率で出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336855,
+    "IdName": "DungeonAffix_Positive_Chests_BossMaterials",
+    "Name": "ボーナス宝箱: ボス素材",
+    "Description": "召喚素材箱が非常に高い確率で出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336911,
+    "IdName": "DungeonAffix_Positive_Chests_Runes",
+    "Name": "ボーナス宝箱: ルーン",
+    "Description": "ルーンの宝箱が非常に高い確率で出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336917,
+    "IdName": "DungeonAffix_Positive_Chests_Weapons",
+    "Name": "ボーナス宝箱: 武器",
+    "Description": "武器の宝箱が非常に高い確率で出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336914,
+    "IdName": "DungeonAffix_Positive_Chests_SigilPowder",
+    "Name": "ボーナス宝箱: 紋章の粉",
+    "Description": "紋章の粉の宝箱が非常に高い確率で出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336861,
+    "IdName": "DungeonAffix_Positive_Chests_Herbs",
+    "Name": "ボーナス宝箱: 薬草",
+    "Description": "薬草の宝箱が非常に高い確率で出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336863,
+    "IdName": "DungeonAffix_Positive_Chests_Jewelry",
+    "Name": "ボーナス宝箱: 装飾品",
+    "Description": "装飾品の宝箱が非常に高い確率で出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336723,
+    "IdName": "DungeonAffix_Positive_Chests_Armor",
+    "Name": "ボーナス宝箱: 防具",
+    "Description": "防具の宝箱が非常に高い確率で出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314370,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceHealing",
+    "Name": "ポーションブレイカー",
+    "Description": "モンスターの遠距離攻撃が、次のポーションのクールダウンを0.75秒延長する。この効果は最大7秒まで延長する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114287,
+    "IdName": "World_DGN_Scos_MadduxWatch",
+    "Name": "マダックスの監視所",
+    "Description": "この放棄された前哨基地は死者を踏みつけにしている。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114168,
+    "IdName": "World_DGN_Frac_MercysReach",
+    "Name": "マーシーの手",
+    "Description": "朽ちかけたこの砦は、かつては山々に通じる拠点として用いられた。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2330764,
+    "IdName": "DungeonAffix_Major_Astaroth_Meteor",
+    "Name": "メテオストーム",
+    "Description": "アスタロスのメテオ攻撃が増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314444,
+    "IdName": "DungeonAffix_Minor_Monster_AntiOverpower",
+    "Name": "モンスターにオーバーパワー耐性",
+    "Description": "モンスターの攻撃が、プレイヤーの次のオーバーパワーダメージを12%減少させる。この効果は最大60%まで蓄積する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314448,
+    "IdName": "DungeonAffix_Minor_Monster_AntiCrit",
+    "Name": "モンスターにクリティカル耐性",
+    "Description": "モンスターの攻撃が、プレイヤーのクリティカルヒットダメージを3秒間にわたって6%減少させる。この効果は最大60%まで蓄積する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314376,
+    "IdName": "DungeonAffix_Minor_Monster_LessShadow",
+    "Name": "モンスターにシャドウ耐性",
+    "Description": "モンスターが受けるシャドウダメージが40%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314397,
+    "IdName": "DungeonAffix_Minor_Monster_LessCold",
+    "Name": "モンスターに冷気耐性",
+    "Description": "モンスターが受ける冷気ダメージが40%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314446,
+    "IdName": "DungeonAffix_Minor_Monster_AntiCC",
+    "Name": "モンスターに操作障害効果耐性",
+    "Description": "モンスターに与えた操作障害効果の持続時間が40%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314393,
+    "IdName": "DungeonAffix_Minor_Monster_LessPoison",
+    "Name": "モンスターに毒耐性",
+    "Description": "モンスターが受ける毒ダメージが60%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314380,
+    "IdName": "DungeonAffix_Minor_Monster_LessBleeding",
+    "Name": "モンスターに流血耐性",
+    "Description": "モンスターが受ける流血ダメージが60%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314437,
+    "IdName": "DungeonAffix_Minor_Monster_LessFire",
+    "Name": "モンスターに火炎耐性",
+    "Description": "モンスターが受ける火炎ダメージが40%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314382,
+    "IdName": "DungeonAffix_Minor_Monster_LessBurning",
+    "Name": "モンスターに炎上耐性",
+    "Description": "モンスターが受ける炎上ダメージが60%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314388,
+    "IdName": "DungeonAffix_Minor_Monster_LessPhysical",
+    "Name": "モンスターに物理耐性",
+    "Description": "モンスターが受ける物理ダメージが30%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314442,
+    "IdName": "DungeonAffix_Minor_Monster_AntiVulnerable",
+    "Name": "モンスターに脆弱効果耐性",
+    "Description": "モンスターに与えた脆弱効果の持続時間が60%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314395,
+    "IdName": "DungeonAffix_Minor_Monster_LessLightning",
+    "Name": "モンスターに電撃耐性",
+    "Description": "モンスターが受ける電撃ダメージが40%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314356,
+    "IdName": "DungeonAffix_Minor_Monster_HPBonus",
+    "Name": "モンスターのライフ",
+    "Description": "モンスターのライフが30%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314372,
+    "IdName": "DungeonAffix_Minor_Monster_LifeSteal",
+    "Name": "モンスターのライフ吸収",
+    "Description": "非ボスモンスターが15%のライフ吸収能力を得る。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 966310656,
+    "IdName": "MonsterLevel",
+    "Name": "モンスターのレベル: ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Misc"
+  },
+  {
+    "IdSno": 1314378,
+    "IdName": "DungeonAffix_Minor_Monster_LessCorruption",
+    "Name": "モンスターの継続シャドウダメージ耐性",
+    "Description": "モンスターが受ける継続シャドウダメージが60%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314454,
+    "IdName": "DungeonAffix_Minor_Monster_HPRegen",
+    "Name": "モンスターの自然回復",
+    "Description": "非ボスモンスターのライフが毎秒最大値の1.5%回復する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314360,
+    "IdName": "DungeonAffix_Minor_Monster_ReflectNonPhysical",
+    "Name": "モンスターの荊棘の加護",
+    "Description": "モンスターがダメージの8%を反射する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113049,
+    "IdName": "World_DGN_Hawe_MaugansWorks",
+    "Name": "モーガンの成果",
+    "Description": "犯罪者や脱走兵が住み着いている朽ちた広間。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113584,
+    "IdName": "World_DGN_Frac_Maulwood",
+    "Name": "モールウッド",
+    "Description": "盗賊たちはこの森と、そこに棲む化け物たちを手中に収めている。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321525,
+    "IdName": "DungeonAffix_Positive_Astaroth_MoreUniques",
+    "Name": "ユニーク戦利品",
+    "Description": "アスタロスの報酬により多くのユニーク・アイテムが入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113937,
+    "IdName": "World_DGN_Frac_RimescarCavern",
+    "Name": "ライムスカー洞窟",
+    "Description": "悪魔の手に再び渡り、魔法で汚染された洞窟。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585460,
+    "IdName": "World_DGN_Naha_RazaksDescent",
+    "Name": "ラザクの降下",
+    "Description": "光が断たれたこの場所では、意思が根底から歪められる。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113192,
+    "IdName": "World_DGN_Scos_RaethwindWilds",
+    "Name": "ラースウィンドの原野",
+    "Description": "あまりにも多くの者たちがこの森で消息を絶っている。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314364,
+    "IdName": "DungeonAffix_Minor_Monster_DrainResource",
+    "Name": "リソース焼失",
+    "Description": "遠距離の敵の攻撃が命中するたび、リソース消費後に消費したリソースの30%を追加で失う。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113903,
+    "IdName": "World_DGN_Hawe_LeviathansMaw",
+    "Name": "リヴァイアサンの胃",
+    "Description": "この水没した廃墟には邪教徒が潜んでいる。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113112,
+    "IdName": "World_DGN_Scos_LubansRest",
+    "Name": "ルバンの安息所",
+    "Description": "女戦士とその信奉者が墓から蘇った。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2360152,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Ruby",
+    "Name": "ルビー貯蔵所",
+    "Description": "ルビーの箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321559,
+    "IdName": "DungeonAffix_Positive_Astaroth_Ancestral",
+    "Name": "レジェンダリー戦利品",
+    "Description": "アスタロスの報酬に祖霊のアイテム1つが確定で入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321564,
+    "IdName": "DungeonAffix_Positive_Astaroth_Varshaan",
+    "Name": "ヴァーシャンの供物",
+    "Description": "アスタロスの報酬にヴァーシャンの秘蔵品を開けるのに必要なマリグナントの心臓が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2354687,
+    "IdName": "DungeonAffix_Minor_S9_Explosive",
+    "Name": "不安定な実験",
+    "Description": "モンスターが一定確率で死亡後しばらくすると爆発し、周囲に大きな範囲ダメージを与える。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113440,
+    "IdName": "World_DGN_Scos_WretchedDelve",
+    "Name": "不快の洞穴",
+    "Description": "悪魔のような疫病が、今やトゥール・ドゥルラの古い墓に蔓延している。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381230,
+    "IdName": "DungeonAffix_Major_Horde_Undead",
+    "Name": "不死者の群れ",
+    "Description": "不浄な不死者がこの場で蘇っており、そのライフが30%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1585530,
+    "IdName": "World_DGN_Naha_VileHive",
+    "Name": "不浄なる巣",
+    "Description": "忌まわしい巣からカサカサと動き回る悪鬼たちの音がする。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511973,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Splitter)",
+    "Name": "両断者エリート",
+    "Description": "エリートモンスターが「両断者」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314405,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraPoison",
+    "Name": "中毒攻撃",
+    "Description": "モンスターの与える物理ダメージに3秒間で30%の中毒ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113542,
+    "IdName": "World_DGN_Frac_DeadMansDredge",
+    "Name": "亡き者の潜心",
+    "Description": "この洞窟に棲む捕食者たちは人間を狩りの対象としている。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381222,
+    "IdName": "DungeonAffix_Major_Horde_Cannibals",
+    "Name": "人食いの群れ",
+    "Description": "不浄な人食いがこの場を穢しており、そのライフが30%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1114114,
+    "IdName": "World_DGN_Hawe_BastionOfFaith",
+    "Name": "信仰心の砦",
+    "Description": "彷徨い、飢えた騎士たちは獣となった。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1582559,
+    "IdName": "DungeonAffix_Major_Elemental_Totems",
+    "Name": "元素のトーテム",
+    "Description": "戦闘中ランダムに元素のトーテムが出現し、破壊されるまで付近の敵にバフを与える。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113468,
+    "IdName": "World_DGN_Hawe_BlindBurrows",
+    "Name": "光なき巣穴",
+    "Description": "ここの蜘蛛は肉の味を覚えてしまっている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114156,
+    "IdName": "World_DGN_Hawe_LightsRefuge",
+    "Name": "光の安息地",
+    "Description": "忘れられた家には、歯と鎧でできた巣が存在している。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113451,
+    "IdName": "World_DGN_Frac_LightsWatch",
+    "Name": "光の監視所",
+    "Description": "かつては騎士団の砦だったが、現在は盗賊などが住みついて別の目的に利用している。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1898340,
+    "IdName": "DungeonAffix_Major_Monster_Barrier",
+    "Name": "冒涜の障壁",
+    "Description": "モンスターがライフ最大値の50%分の障壁を得る。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314415,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraCold",
+    "Name": "冷気攻撃",
+    "Description": "モンスターの与える物理ダメージに20%の冷気ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2373236,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraFrostbiting",
+    "Name": "凍傷攻撃",
+    "Description": "モンスターの与える物理ダメージに3秒間で30%の凍傷ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314248,
+    "IdName": "DungeonAffix_Positive_FrostDamage",
+    "Name": "凍結ダメージ",
+    "Description": "自分が与える凍結ダメージが15%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511953,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Executioner)",
+    "Name": "処刑人エリート",
+    "Description": "エリートモンスターが「処刑人」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511865,
+    "IdName": "DungeonAffix_Positive_GildedElites",
+    "Name": "卑劣なる光輝",
+    "Description": "有り余る富が溢れるこの場所では、エリートモンスターが「金箔」の特性を持つ。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2358424,
+    "IdName": "DungeonAffix_Positive_Astaroth_Reputation",
+    "Name": "厳かなる秘密",
+    "Description": "アスタロスを倒すと大量のホラドリムの知識が手に入る。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114067,
+    "IdName": "World_DGN_Hawe_HauntedRefuge",
+    "Name": "取り憑かれた隠れ家",
+    "Description": "古い教会は三角州に飲み込まれ、徐々に浸水している。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113315,
+    "IdName": "World_DGN_Step_AncientsLament",
+    "Name": "古の嘆き",
+    "Description": "苦悶に満ちた魂が囚われる墓にして牢獄。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113084,
+    "IdName": "World_DGN_Hawe_AncientReservoir",
+    "Name": "古代の貯蔵庫",
+    "Description": "この廃墟の地下を汚れた泉が流れる。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113090,
+    "IdName": "World_DGN_Scos_Oldstones",
+    "Name": "古石場",
+    "Description": "廃墟となった砦はカズラの巣窟となっているが、連中はそこが呪われた場所であることに気付いていない。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2355993,
+    "IdName": "DungeonAffix_Minor_S9_Summoner",
+    "Name": "召喚エリート",
+    "Description": "エリートモンスターが「召喚師」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113478,
+    "IdName": "World_DGN_Frac_BlackAsylum",
+    "Name": "呪われた収容所",
+    "Description": "打ち捨てられた監獄。囚人たちの怨嗟に満ちている。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113708,
+    "IdName": "World_DGN_Step_Mournfield",
+    "Name": "嘆きの地",
+    "Description": "ここには生者と死者がうろつき、襲い掛かってくる。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113148,
+    "IdName": "World_DGN_Scos_WhisperingPines",
+    "Name": "囁きの松",
+    "Description": "アスタロスはいなくなったが、この砦に対する奴の掌握は今も緩んでいない。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113812,
+    "IdName": "World_DGN_Step_WhisperingVault",
+    "Name": "囁く宝物庫",
+    "Description": "狂気の霊が囁く学問の殿堂。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314246,
+    "IdName": "DungeonAffix_Positive_IncreasedHealing",
+    "Name": "回復量増加",
+    "Description": "自分の被回復量が15%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314420,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceDodge",
+    "Name": "回避ブレイカー",
+    "Description": "モンスターの遠距離攻撃が、6秒間にわたって回避率を12%低下させる。この効果は最大60%まで蓄積する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1975499,
+    "IdName": "DungeonAffix_Positive_S05_Rep_Shrines",
+    "Name": "地獄の幸先",
+    "Description": "追加の獄炎の祭壇が出現し、このダンジョン終了時に獲得するグリフ経験値が20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113649,
+    "IdName": "World_DGN_Step_BuriedHalls",
+    "Name": "埋められた広間",
+    "Description": "三位一体教団はこの古き館を奪還すべく戦っている。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113105,
+    "IdName": "World_DGN_Hawe_EarthenWound",
+    "Name": "大地の傷",
+    "Description": "ここに巣くっていた悪魔どもは、人食い族の餌食となった。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113127,
+    "IdName": "World_DGN_Frac_LostArchives",
+    "Name": "失われた書庫",
+    "Description": "中にあるものについて考えを巡らせる者は多いが、足を踏み入れようとする者はほとんどいない。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113337,
+    "IdName": "World_DGN_Hawe_LostKeep",
+    "Name": "失われた砦",
+    "Description": "この朽ちかけた砦もまた、大聖堂によって放置されたものだ。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2343040,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Protection",
+    "Name": "守護の祭壇",
+    "Description": "ここでは守護の祭壇が各所に出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2361576,
+    "IdName": "DungeonAffix_Positive_TreasureGoblins",
+    "Name": "宝物殿破り",
+    "Description": "異様に多くのトレジャーゴブリンがこの場所を荒らしている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336859,
+    "IdName": "DungeonAffix_Positive_Chests_Gems",
+    "Name": "宝石貯蔵所",
+    "Description": "宝石の欠片の箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114021,
+    "IdName": "World_DGN_Kehj_DesertedUnderpass",
+    "Name": "寂れた地下道",
+    "Description": "廃墟となった監視所の地下の洞窟には脅威が潜んでいる。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113836,
+    "IdName": "World_DGN_Step_SealedArchives",
+    "Name": "封印されし書庫",
+    "Description": "古き魔術師の館。かつては安息の地であったが、今は墓地になりはてている。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321163,
+    "IdName": "DungeonAffix_Positive_SeasonalReputation",
+    "Name": "尊崇されし領域",
+    "Description": "ここではモンスターから得られる聖なる恩寵の獲得量が増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113350,
+    "IdName": "World_DGN_Kehj_CollapsedVault",
+    "Name": "崩れた宝物庫",
+    "Description": "古き宝物は死者の手の中にある。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113738,
+    "IdName": "World_DGN_Scos_Hive",
+    "Name": "巣窟",
+    "Description": "飽くなき飢えがこの化け物に食物を求めさせる。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321574,
+    "IdName": "DungeonAffix_Positive_Astaroth_LordZir",
+    "Name": "帝王ジアの供物",
+    "Description": "アスタロスの報酬に帝王ジアの秘蔵品を開けるのに必要な絶妙なる血が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511827,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Illusory)",
+    "Name": "幻影呼びしエリート",
+    "Description": "エリートモンスターが「幻影呼びし」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314346,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Shadow)",
+    "Name": "強化エリート（シャドウエンチャント）",
+    "Description": "エリートは常に「シャドウエンチャント」の特性を持つ。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314344,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Frost)",
+    "Name": "強化エリート（冷気エンチャント）",
+    "Description": "エリートは常に「冷気エンチャント」の特性を持つ。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314335,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Teleporter)",
+    "Name": "強化エリート（瞬間移動）",
+    "Description": "エリートは常に「瞬間移動」の特性を持つ。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314260,
+    "IdName": "DungeonAffix_Major_Avenger",
+    "Name": "復讐者が集いし",
+    "Description": "モンスターを倒してからしばらくすると、付近のモンスターを怒らせ、より多くのダメージを与えてくる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2343038,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Lethal",
+    "Name": "必殺の祭壇",
+    "Description": "ここでは必殺の祭壇が各所に出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113361,
+    "IdName": "World_DGN_Kehj_HallsoftheDamned",
+    "Name": "忌まわしき者の広間",
+    "Description": "ここはかつて、三位一体の魔術師が奇妙な魔術を生み出していた場所だ…",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113710,
+    "IdName": "World_DGN_Kehj_ForgottenRuins",
+    "Name": "忘られの遺跡",
+    "Description": "禁じられた魔術師の広間にある骨には蛇が棲みついている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585586,
+    "IdName": "World_DGN_Naha_ForgottenRemains",
+    "Name": "忘れられし亡骸",
+    "Description": "この近所では村人が謎の失踪を遂げている。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2236740,
+    "IdName": "DungeonAffix_Positive_S07_ForgottenAltar",
+    "Name": "忘れられし祭壇",
+    "Description": "このワールドでは常に忘れられし祭壇が1基出現します。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2282166,
+    "IdName": "DungeonAffix_Positive_ExperiencePools",
+    "Name": "忘れられし英知",
+    "Description": "ここには敵が集めた知識が蓄えられており、追加の経験値を獲得できる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113401,
+    "IdName": "World_DGN_Step_ForgottenDepths",
+    "Name": "忘れ去られし深遠",
+    "Description": "これらの神聖な石の下には、闇が横たわっている。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113931,
+    "IdName": "World_DGN_Hawe_Oblivion",
+    "Name": "忘却",
+    "Description": "エリマンの炎の悪魔たちが、この崩れかけた牢獄に逃げ込んだ。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314252,
+    "IdName": "DungeonAffix_Major_Nightmare Portal",
+    "Name": "悪夢のポータル",
+    "Description": "戦闘中、プレイヤーの近くに悪夢のポータルがランダムに開き、危険なモンスターが流れ込んで来る。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1585629,
+    "IdName": "World_DGN_Naha_ForgeofMalice",
+    "Name": "悪意の鍛冶場",
+    "Description": "この隠された鍛冶場では未だ憎悪の炎が燃えている。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114046,
+    "IdName": "World_DGN_Hawe_FetidMausoleum",
+    "Name": "悪臭漂う霊廟",
+    "Description": "エリドゥの眠らざる死者のための忘れられた墓。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113919,
+    "IdName": "World_DGN_Scos_DemonsWake",
+    "Name": "悪魔の痕跡",
+    "Description": "リリスに襲撃された砦はいまだに燃え続けている。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381224,
+    "IdName": "DungeonAffix_Major_Horde_Demons",
+    "Name": "悪魔の群れ",
+    "Description": "穢らわしいヘルスポーンがこの場を征圧しており、そのライフが30%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511905,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Infested)",
+    "Name": "感染したエリート",
+    "Description": "エリートモンスターが「感染した」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2343014,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Conduit",
+    "Name": "感電の祭壇",
+    "Description": "ここでは感電の祭壇が各所に出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2420535,
+    "IdName": "DungeonAffix_Positive_Astaroth_MephistoBossMats",
+    "Name": "憎悪の先駆者の供物",
+    "Description": "厭わしき心臓などのアスタロスの報酬は、憎悪の先駆者の秘蔵品の開封に使用する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113294,
+    "IdName": "World_DGN_Scos_PenitentCairns",
+    "Name": "懺悔の積石",
+    "Description": "グレンフォークは精霊が神聖視する洞穴を避けるようにしている。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113289,
+    "IdName": "World_DGN_Kehj_AbandonedMineworks",
+    "Name": "打ち捨てられた採鉱場",
+    "Description": "トンネルの迷路。死んだ者が今もここでさまよっている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314366,
+    "IdName": "DungeonAffix_Minor_Monster_Unstoppable",
+    "Name": "抑圧不可のモンスター",
+    "Description": "モンスターのライフが30%未満になると抑圧不可になる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314391,
+    "IdName": "DungeonAffix_Positive_EvadePushesEnemies",
+    "Name": "押し退けの回避",
+    "Description": "回避すると敵を押し戻す。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314384,
+    "IdName": "DungeonAffix_Minor_Monster_LessMelee",
+    "Name": "接近戦ディフェンダー",
+    "Description": "モンスターが近距離の標的から受けるダメージが40%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113803,
+    "IdName": "World_DGN_Frac_DerelictLodge",
+    "Name": "放棄された小屋",
+    "Description": "かつての狩猟小屋。現在は悪魔が棲みついている。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2379014,
+    "IdName": "DungeonAffix_Major_Bloody_Mess",
+    "Name": "昏き予兆",
+    "Description": "ここは何かがおかしい。何者か、または何かに付け狙われている…",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2321552,
+    "IdName": "DungeonAffix_Positive_Astaroth_Jewels",
+    "Name": "星界の予言",
+    "Description": "アスタロスの報酬に貴重なホラドリムの宝玉が1個入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113590,
+    "IdName": "World_DGN_Step_DarkRavine",
+    "Name": "暗き渓谷",
+    "Description": "三位一体の儀式場。悲鳴がはるか遠くにまでこだましている。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113431,
+    "IdName": "World_DGN_Step_PathoftheBlind",
+    "Name": "暗闇の道",
+    "Description": "三位一体教団の入信希望者が参加儀式を行う血塗られた場所。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511979,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Veiled)",
+    "Name": "曇り霞エリート",
+    "Description": "エリートモンスターが「曇り霞」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314358,
+    "IdName": "DungeonAffix_Positive_EvadeLeavesPoison",
+    "Name": "有毒回避",
+    "Description": "回避を使用すると、最初にすり抜けた敵の足下か移動した先に有害な毒の池を残す。 ",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113392,
+    "IdName": "World_DGN_Kehj_CrumblingHekma",
+    "Name": "朽ちゆくヘクマ",
+    "Description": "憎悪に満ちたザカラム教の地下墓地。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2004860,
+    "IdName": "DungeonAffix_Major_Hellfire",
+    "Name": "業火",
+    "Description": "モンスターが業火の影響を受けるようになり、倒されたときにその影響をプレイヤーが引き継ぐ。業火はダメージを増加するが、蓄積1ごとに継続ダメージが与えらえる。ポーションを使用するとこの燃え上がる業火の影響を軽減できる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314350,
+    "IdName": "DungeonAffix_Major_DeathPulse",
+    "Name": "死の影",
+    "Description": "モンスターを倒すと一定確率で少し後に不安定なパルスが放たれ、大きな範囲ダメージを与える。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314227,
+    "IdName": "DungeonAffix_Positive_PoisonDamage",
+    "Name": "毒ダメージ",
+    "Description": "自分が与える毒ダメージが15%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2373240,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraPoisonDirect",
+    "Name": "毒攻撃",
+    "Description": "モンスターの与える物理ダメージに20%の毒ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114193,
+    "IdName": "World_DGN_Scos_SunkenRuins",
+    "Name": "水没した廃墟",
+    "Description": "ある治療師が反逆のネクロマンサーになったという噂が流れている。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113576,
+    "IdName": "World_DGN_Kehj_SunkenLibrary",
+    "Name": "水没した書庫",
+    "Description": "古の書庫に封じられた秘密を死者が守っている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1894221,
+    "IdName": "DungeonAffix_Major_Boss_MegaDemon_Tier96",
+    "Name": "氷に包まれた獣",
+    "Description": "この凍結した洞窟の最奥には、さらに手強い氷に包まれた獣が待っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113291,
+    "IdName": "World_DGN_Frac_ImmortalEmanation",
+    "Name": "永久の放出",
+    "Description": "愚か者が足を踏み入れた時、ここは狩り場と化す。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113905,
+    "IdName": "World_DGN_Scos_FloodedDepths",
+    "Name": "沈みし深み",
+    "Description": "難破船に入り込んでいるのは水だけではない。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585486,
+    "IdName": "World_DGN_Naha_SeethingUnderpass",
+    "Name": "沸騰の地下道",
+    "Description": "水没した通路から腐敗が浮上する。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314407,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraBleeding",
+    "Name": "流血攻撃",
+    "Description": "モンスターの与える物理ダメージに3秒間で30%の流血ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113549,
+    "IdName": "World_DGN_Step_SeasideDescent",
+    "Name": "海辺の下降",
+    "Description": "難破船の墓場に囲まれた入り江。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113928,
+    "IdName": "World_DGN_Kehj_FadingEcho",
+    "Name": "消えゆく反響",
+    "Description": "これらの廃墟は、増大しつつある悪魔の軍勢の住処となっている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113208,
+    "IdName": "World_DGN_Scos_Underroot",
+    "Name": "深き根",
+    "Description": "トゥール・ドゥルラの地下深くにある廃墟。その根には腐敗が満ちている。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2232949,
+    "IdName": "World_DGN_QST_Skov_DeathCurse_02",
+    "Name": "溺れし者カーサリー",
+    "Description": "",
+    "DungeonZoneInfo": "の Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585554,
+    "IdName": "World_DGN_Naha_RemnantsofRage",
+    "Name": "激高の残骸",
+    "Description": "閉じられたこの空間で、何か不穏なものが蠢いている。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314256,
+    "IdName": "DungeonAffix_Major_Volcanic",
+    "Name": "火山",
+    "Description": "戦闘中、プレイヤーの周囲に定期的に炎の塊が噴出する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1690800,
+    "IdName": "DungeonAffix_Minor_Monster_Traps_Fire01",
+    "Name": "火炎の罠",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314313,
+    "IdName": "DungeonAffix_Positive_FireDamage",
+    "Name": "火炎ダメージ",
+    "Description": "自分が与える火炎ダメージが15%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314424,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraFire",
+    "Name": "火炎攻撃",
+    "Description": "モンスターの与える物理ダメージに20%の火炎ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314409,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraBurning",
+    "Name": "炎上攻撃",
+    "Description": "モンスターの与える物理ダメージに3秒間で30%の炎上ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114271,
+    "IdName": "World_DGN_Hawe_ShadowedPlunge",
+    "Name": "無謀な賭け",
+    "Description": "蛇の邪教徒たちは罪のない人々を生贄にしている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114081,
+    "IdName": "World_DGN_Hawe_EndlessGates",
+    "Name": "無限の門",
+    "Description": "不浄なる生物が領域の狭間で暴れている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511957,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Frenzied)",
+    "Name": "熱狂を帯しエリート",
+    "Description": "エリートモンスターが「熱狂を帯し」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2343034,
+    "IdName": "DungeonAffix_Positive_PowerShrines_BlastWave",
+    "Name": "爆風の祭壇",
+    "Description": "ここでは爆風の祭壇が各所に出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314293,
+    "IdName": "DungeonAffix_Positive_PhysicalDamage",
+    "Name": "物理ダメージ",
+    "Description": "自分が与える物理ダメージが15%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511951,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Berserker)",
+    "Name": "狂戦士エリート",
+    "Description": "エリートモンスターが「狂戦士」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2361559,
+    "IdName": "DungeonAffix_Positive_Chests_SeasonalCurrency",
+    "Name": "獄炎の歪み貯蔵所",
+    "Description": "獄炎の歪みが数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585511,
+    "IdName": "World_DGN_Naha_BeastGraveyard",
+    "Name": "獣の墓地",
+    "Description": "聖なる巨獣を漁って一儲けしようという肚の墓荒しがよく訪れる。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113184,
+    "IdName": "World_DGN_Step_ChampionsDemise",
+    "Name": "王者の死",
+    "Description": "昔は美しかったこの故郷も、今はデーモンたちが跋扈している。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2266169,
+    "IdName": "DungeonAffix_Major_CultistLure",
+    "Name": "生贄の子羊",
+    "Description": "捕らえた敵を誘導して祭壇に捧げると追加の報酬を得られる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113793,
+    "IdName": "World_DGN_Hawe_HeathensKeep",
+    "Name": "異教徒の砦",
+    "Description": "この騎士たちは新たな盟主に忠誠を誓っている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113270,
+    "IdName": "World_DGN_Kehj_HereticsAsylum",
+    "Name": "異端者の収容所",
+    "Description": "腐敗した残虐な者たちの監獄。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314229,
+    "IdName": "DungeonAffix_Positive_DamageReductionForMissingHealth",
+    "Name": "百戦錬磨",
+    "Description": "失っているライフ10%ごとに、受けるダメージが6%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585610,
+    "IdName": "World_DGN_Naha_SleeplessHollow",
+    "Name": "眠らざるホロウ",
+    "Description": "死者が忘れられた後、肉と骨は甦る。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114089,
+    "IdName": "World_DGN_Scos_Stockades",
+    "Name": "砦柵",
+    "Description": "暴動の後、この牢獄は壁で隔絶され、墓となった。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2343032,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Artillery",
+    "Name": "砲撃の祭壇",
+    "Description": "ここでは砲撃の祭壇が各所に出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114299,
+    "IdName": "World_DGN_Scos_BrokenBulwark",
+    "Name": "破られた防塁",
+    "Description": "かつてドナンの領地だったが、残りの部分と共に蹂躙された。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113980,
+    "IdName": "World_DGN_Step_GrinningLabyrinth",
+    "Name": "破顔の迷宮",
+    "Description": "迷路の広間は、はるかに偉大な戦士たちを挫折させてきた。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321165,
+    "IdName": "DungeonAffix_Positive_MoreGoblins",
+    "Name": "確定トレジャーゴブリン",
+    "Description": "ダンジョンにトレジャーゴブリンが出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511994,
+    "IdName": "DungeonAffix_Positive_AncestralElites",
+    "Name": "祖霊の埋葬地",
+    "Description": "古の財宝が眠るこの場所では、エリートモンスターが「レジェンダリー」の特性を持つ。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1828297,
+    "IdName": "DungeonAffix_Positive_GlyphXP",
+    "Name": "祖霊の恩恵",
+    "Description": "このダンジョン内で獲得する経験値が10%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1894518,
+    "IdName": "DungeonAffix_Positive_GlyphXP_EvergreenVersion",
+    "Name": "祖霊の覚醒",
+    "Description": "このダンジョン終了時に獲得するグリフ経験値が20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511992,
+    "IdName": "DungeonAffix_Positive_MythicElites",
+    "Name": "神秘の楽園",
+    "Description": "想像の範疇を超えた、夢のような場所だ…",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585547,
+    "IdName": "World_DGN_Naha_HallowedStones",
+    "Name": "神聖なる石",
+    "Description": "邪悪の嵐の向こうに、消え入りそうな希望が弱々しく光る。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113500,
+    "IdName": "World_DGN_Frac_HallowedOssuary",
+    "Name": "神聖なる納骨堂",
+    "Description": "穢されて再び力を得た殉教者の墓。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113156,
+    "IdName": "World_DGN_Frac_ForbiddenCity",
+    "Name": "禁じられた都市",
+    "Description": "開放された古墳。内部の穢れが溢れ出てきている。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585561,
+    "IdName": "World_DGN_Naha_HierophantPyre",
+    "Name": "秘儀司祭の火葬場",
+    "Description": "かつてサンケクアの反乱者を焼くために使われた炎が再び点された。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113768,
+    "IdName": "World_DGN_Step_ShiftingCity",
+    "Name": "移ろう街",
+    "Description": "これらの廃墟は、かつてカーラ・イースの民が一時身を寄せていた場所だ。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314211,
+    "IdName": "DungeonAffix_Major_Drifting Shade",
+    "Name": "移ろう闇",
+    "Description": "「移ろう闇」がプレイヤーを追いかけ回し、接触すると爆発して大ダメージを与え、さらに悪夢の領域を生み出して犠牲者を眩暈状態にする。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314217,
+    "IdName": "DungeonAffix_Positive_PeriodicLightning",
+    "Name": "稲妻を呼ぶ者",
+    "Description": "時々、周囲の敵にダメージを与える電撃を発生させる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113636,
+    "IdName": "World_DGN_Frac_DefiledCatacomb",
+    "Name": "穢された地下墓地",
+    "Description": "墓荒らしたちが、この墓所の誘惑について警告している。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113145,
+    "IdName": "World_DGN_Frac_SanguineChapel",
+    "Name": "紅き教会",
+    "Description": "ザカラム教の放棄された教会。雪に埋もれた建物の中にはヴァンパイアが入り込んでいる。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113766,
+    "IdName": "World_DGN_Step_CharnelHouse",
+    "Name": "納骨堂",
+    "Description": "まだ息のある者も含め、ここには数々の遺体が収容されている。悪魔の餌だ。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2336905,
+    "IdName": "DungeonAffix_Positive_Chests_Materials",
+    "Name": "素材貯蔵所",
+    "Description": "素材の箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511947,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Sinful Torment)",
+    "Name": "罪深き苦痛エリート",
+    "Description": "エリートモンスターが「罪深き苦痛」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2330767,
+    "IdName": "DungeonAffix_Major_Astaroth_EliteSummons",
+    "Name": "群れの激高",
+    "Description": "激高の融合体がエリートの人狼を召喚するようになる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1498609,
+    "IdName": "World_DGN_S02_Kehj_TombofHallows",
+    "Name": "聖人たちの墓",
+    "Description": "広間には死が満ちる。古の死も、最近の死も。死にゆく者、不死の者。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113343,
+    "IdName": "World_DGN_Kehj_TomboftheSaints",
+    "Name": "聖者の墓",
+    "Description": "この荒涼とした墓は、かつては並外れた豪勢さを誇っていた。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113988,
+    "IdName": "World_DGN_Kehj_RenegadesRetreat",
+    "Name": "背教者の隠れ家",
+    "Description": "背教の騎士たちがイナリウスの聖戦の戦利品を奪っている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585540,
+    "IdName": "World_DGN_Naha_PutrescentLarder",
+    "Name": "腐りかけの食料庫",
+    "Description": "とんでもなく不快な臭いが、ラクニが肉を保管する場所を指し示している。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113852,
+    "IdName": "World_DGN_Kehj_PutridAquifer",
+    "Name": "腐敗した水",
+    "Description": "死が水を穢している。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113107,
+    "IdName": "World_DGN_Kehj_CorruptedGrotto",
+    "Name": "腐敗の岩屋",
+    "Description": "不毛の岩地の下には忘れられた死者が閉じ込められている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314399,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraCorruption",
+    "Name": "腐敗攻撃",
+    "Description": "モンスターの与える物理ダメージに3秒間にわたり30%の腐敗ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113331,
+    "IdName": "World_DGN_Step_CarrionFields",
+    "Name": "腐肉の地",
+    "Description": "この土地を汚した者たちは、永遠に彷徨うよう呪われた。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113188,
+    "IdName": "World_DGN_Scos_MarinersRefuge",
+    "Name": "船乗りの避難所",
+    "Description": "溺れし者たちは、難破した船の水夫たちを深みへとおびき寄せる。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113196,
+    "IdName": "World_DGN_Frac_RitualTower",
+    "Name": "苛まれた廃墟",
+    "Description": "最後に人間がこの見張り塔を使用してから数世紀が経っている。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511949,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Anguished Souls)",
+    "Name": "苦悶する魂エリート",
+    "Description": "エリートモンスターが「苦悶する魂」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314236,
+    "IdName": "DungeonAffix_Positive_Thorns",
+    "Name": "荊棘の加護",
+    "Description": "敵を攻撃後、3秒間にわたって荊棘の加護が200増加する。最大蓄積量は1000。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585596,
+    "IdName": "World_DGN_Naha_RuinedWild",
+    "Name": "荒れ果てた原野",
+    "Description": "かつては霊性を帯びた場であったが、今や不穏な者たちの集会場となっている。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2373251,
+    "IdName": "DungeonAffix_Major_Berserkers",
+    "Name": "荒れ狂う",
+    "Description": "モンスターが無謀になり、受けるダメージが20%、与えるダメージが50%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 410196226,
+    "IdName": "ItemDungeonAffixResses",
+    "Name": "蘇生可能数: ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Misc"
+  },
+  {
+    "IdSno": 2381226,
+    "IdName": "DungeonAffix_Major_Horde_Insects",
+    "Name": "虫の群れ",
+    "Description": "悪疫をもたらす害虫がこの場に蔓延り、そのライフが30%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113297,
+    "IdName": "World_DGN_Hawe_SerpentsLair",
+    "Name": "蛇の巣",
+    "Description": "かつてモーロンの玉座があった場所。新たな女王を求めている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2330769,
+    "IdName": "DungeonAffix_Major_Astaroth_Pounce",
+    "Name": "融合体の跳躍",
+    "Description": "激高の融合体がアスタロスの下馬後も飛びかかって攻撃してくるようになる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314352,
+    "IdName": "DungeonAffix_Major_Blood Blister",
+    "Name": "血ぶくれ",
+    "Description": "モンスターを倒すと一定確率で「血ぶくれ」が出現する。血ぶくれはしばらくすると爆発し、大きな範囲ダメージを与える。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113784,
+    "IdName": "World_DGN_Step_BloodsoakedCrag",
+    "Name": "血塗れの岩山",
+    "Description": "肉を喰らう者たちの食事の場。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2229221,
+    "IdName": "DungeonAffix_Positive_TreasureHunt",
+    "Name": "装備探査",
+    "Description": "ホラドリムの遺物を発見すると装備の箱を獲得する。遺物を発見するほどその品質が上がっていく。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585475,
+    "IdName": "World_DGN_Naha_BetrayedTomb",
+    "Name": "裏切られし墓所",
+    "Description": "悍ましい苦悶にホロウどもが絶叫を響かせ、その声に精霊たちも身をよじる。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113981,
+    "IdName": "World_DGN_Step_BetrayersRow",
+    "Name": "裏切り者の紛争",
+    "Description": "嫉妬に狂った街の奇妙な残骸。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321159,
+    "IdName": "DungeonAffix_Positive_MoreObducite",
+    "Name": "覆鉱石鉱山",
+    "Description": "ここではモンスターからドロップする覆鉱石が増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113861,
+    "IdName": "World_DGN_Scos_VaultofTheForsaken",
+    "Name": "見捨てられし者の宝物庫",
+    "Description": "水浸しになった洞窟で響く声が多くの人々を死へと誘った。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114262,
+    "IdName": "World_DGN_Frac_ForsakenQuarry",
+    "Name": "見捨てられた石切り場",
+    "Description": "かつては殺風景な坑道だった場所が、今やおぞましい儀式場と化している。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2361572,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Channeling",
+    "Name": "詠唱の祭壇",
+    "Description": "ここでは詠唱の祭壇が各所に出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2346041,
+    "IdName": "DungeonAffix_Positive_Astaroth_Gold",
+    "Name": "豊富なゴールド",
+    "Description": "アスタロスの報酬に大量のゴールドが入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321549,
+    "IdName": "DungeonAffix_Positive_Astaroth_SeasonalCurrency",
+    "Name": "豊富なホラドリムの小瓶",
+    "Description": "アスタロスの報酬に大量のホラドリムの小瓶が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2346039,
+    "IdName": "DungeonAffix_Positive_Astaroth_Materials",
+    "Name": "豊富な作成用素材",
+    "Description": "アスタロスの報酬に大量の作成用素材が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321590,
+    "IdName": "DungeonAffix_Positive_Astaroth_RareKeys",
+    "Name": "豊富な鍵",
+    "Description": "アスタロスの報酬に貴重なダンジョンの鍵が入っている。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1719009,
+    "IdName": "DungeonAffix_Positive_ExtraShrines",
+    "Name": "追加の祭壇",
+    "Description": "ダンジョンに追加の祭壇が出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321114,
+    "IdName": "DungeonAffix_Positive_ExtraResplendent",
+    "Name": "追加の輝く宝箱",
+    "Description": "ダンジョンに追加の輝く宝箱が出現する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314374,
+    "IdName": "DungeonAffix_Minor_Monster_ChanceSlow",
+    "Name": "遅延の射撃",
+    "Description": "モンスターの遠距離攻撃が、50%の確率で標的の移動速度を低下させる。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113504,
+    "IdName": "World_DGN_Scos_HowlingWarren",
+    "Name": "遠吠え響く巣穴",
+    "Description": "人間の肉に飢えた狼とワーグが巣くう汚れた場所。",
+    "DungeonZoneInfo": "の スコスグレン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314386,
+    "IdName": "DungeonAffix_Minor_Monster_LessRanged",
+    "Name": "遠距離戦ディフェンダー",
+    "Description": "モンスターが遠距離の標的から受けるダメージが60%減少する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2381199,
+    "IdName": "DungeonAffix_Major_Horde_Cultists",
+    "Name": "邪教徒の群れ",
+    "Description": "腐敗した狂信者がここを崇拝の場とし、そのライフが30%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113472,
+    "IdName": "World_DGN_Frac_CultistRefuge",
+    "Name": "邪教徒の隠れ家",
+    "Description": "ノストラヴァの邪教徒たちの最後の砦。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585468,
+    "IdName": "World_DGN_Naha_IronCenotaph",
+    "Name": "鉄の慰霊碑",
+    "Description": "クラスト陥落前に鉄狼団はここを最初の根城とした。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113530,
+    "IdName": "World_DGN_Hawe_IronHold",
+    "Name": "鉄の砦",
+    "Description": "老朽化した牢獄の奥深くには災厄が蠢いている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511964,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Saw Blades)",
+    "Name": "鋸刃エリート",
+    "Description": "エリートモンスターが「鋸刃」の特性を持ち、ダメージが20%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113153,
+    "IdName": "World_DGN_Hawe_BelfryZakara",
+    "Name": "鐘楼のザカラ",
+    "Description": "ザカラムが建造したこの大聖堂は、今では海を崇めるためのものになっている。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2373228,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraSparking",
+    "Name": "閃光攻撃",
+    "Description": "モンスターの与える物理ダメージに3秒間で30%の閃光ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314450,
+    "IdName": "DungeonAffix_Minor_Monster_BarrierKiller",
+    "Name": "障壁の破壊者",
+    "Description": "モンスターが障壁に与えるダメージが100%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2516764,
+    "IdName": "DungeonAffix_Positive_LegendaryElites",
+    "Name": "隠された武器庫",
+    "Description": "古の財宝が眠るこの場所では、エリートモンスターが「レジェンダリー」の特性を持つ。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2226100,
+    "IdName": "DungeonAffix_Positive_LegendaryVendor",
+    "Name": "隠れレジェンダリー商人",
+    "Description": "ダンジョンのどこかに秘密の商人が出現する…",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113194,
+    "IdName": "World_DGN_Kehj_Conclave",
+    "Name": "集会場",
+    "Description": "冒涜的な儀式の話が人々を恐怖に陥れている。",
+    "DungeonZoneInfo": "の ケジスタン",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314209,
+    "IdName": "DungeonAffix_Major_Lightning Storm",
+    "Name": "雷嵐",
+    "Description": "プレイヤーの頭上に稲妻が集まる。防御ドームの中に入って重大な被害を避けよう。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314238,
+    "IdName": "DungeonAffix_Positive_LightningDamage",
+    "Name": "電撃ダメージ",
+    "Description": "自分が与える電撃ダメージが15%増加する。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314413,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraLightning",
+    "Name": "電撃攻撃",
+    "Description": "モンスターの与える物理ダメージに20%の電撃ダメージが追加される。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113997,
+    "IdName": "World_DGN_Frac_HoarfrostDemise",
+    "Name": "霜降る終焉",
+    "Description": "羊頭の獣が棲む冷たい洞窟。死体と骨が散乱している。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113728,
+    "IdName": "World_DGN_Step_PallidDelve",
+    "Name": "青白き洞穴",
+    "Description": "崩れつつあるこの鉱山では人食い族が闇の力を守っている。",
+    "DungeonZoneInfo": "の 乾きの平原",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114205,
+    "IdName": "World_DGN_Frac_Zenith",
+    "Name": "頂点",
+    "Description": "山脈の地下に広がる地図に載っていないトンネル。",
+    "DungeonZoneInfo": "の 破砕山脈",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113805,
+    "IdName": "World_DGN_Hawe_SteadfastBarracks",
+    "Name": "頑丈な兵舎",
+    "Description": "長きにわたって埋められている邪悪な存在に引き寄せられた、野蛮な狂信者の巣窟。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2360158,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Skull",
+    "Name": "頭蓋骨貯蔵所",
+    "Description": "頭蓋骨の箱が数多く保管されてきた場所。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114071,
+    "IdName": "World_DGN_Hawe_FacelessShrine",
+    "Name": "顔なき者の祠",
+    "Description": "ハウザーにいくつかある、さほど閉鎖的でない教団の1つ。罪人を歓迎している。",
+    "DungeonZoneInfo": "の ハウザー",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585504,
+    "IdName": "World_DGN_Naha_FeedingGrounds",
+    "Name": "餌場",
+    "Description": "活きのいい犠牲者が悪魔どもの餌にされている。",
+    "DungeonZoneInfo": "の ナハントゥ",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314240,
+    "IdName": "DungeonAffix_Positive_MagicFind",
+    "Name": "魔術的探知",
+    "Description": "敵から発見するアイテムが増える。",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  }
+]

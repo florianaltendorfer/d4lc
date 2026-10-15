@@ -1,0 +1,40 @@
+// One gear-slot / family section header of the wanted-entry rail
+// (upstream `Border` with a 1px `#333333` border, a 40px slot icon and the
+// localized caption, `AffixView.xaml:162-173`).
+
+import { Metro } from "../theme.slint";
+
+export component SectionHeader {
+    in property <image> icon;
+    in property <string> caption;
+
+    Rectangle {
+        background: transparent;
+        border-width: 1px;
+        border-color: Metro.border;
+        preferred-height: 42px;
+        min-height: 42px;
+        max-height: 42px;
+        // Accessibility: the section announces its upstream caption.
+        accessible-role: text;
+        accessible-label: caption;
+
+        HorizontalLayout {
+            padding: 0px;
+            spacing: 4px;
+
+            Image {
+                width: 40px;
+                height: 40px;
+                source: root.icon;
+            }
+
+            Text {
+                text: root.caption;
+                color: Metro.text;
+                font-size: 13px;
+                vertical-alignment: center;
+            }
+        }
+    }
+}

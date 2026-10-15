@@ -1,0 +1,15 @@
+[package]
+name = "xtask"
+version = "0.1.0"
+publish = false
+edition.workspace = true
+license.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+clap.workspace = true
+roxmltree = "0.21"
+sha2 = "0.10"
+
+[lints]
+workspace = true

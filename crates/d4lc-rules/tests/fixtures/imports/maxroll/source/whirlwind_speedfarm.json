@@ -1,0 +1,6 @@
+{
+  "data": "{\"profiles\":[{\"name\":\"Speedfarm\",\"items\":{\"4\":100},\"paragon\":{\"steps\":[]}}],\"items\":{\"100\":{\"id\":\"HLM_base05\",\"explicits\":[{\"nid\":578834,\"greater\":false}],\"implicits\":[{\"nid\":2573119}],\"tempered\":[],\"aspects\":[],\"sockets\":[null,\"Rune_Condition_HitHealthierEnemy\"]}}}",
+  "date": "2026-05-31",
+  "id": "barb-whirlwind-speedfarm",
+  "name": "Whirlwind Speedfarm"
+}

@@ -1,0 +1,575 @@
+// Paragon config dialog — real workflow.
+//
+// Upstream: `ParagonConfigView.xaml` + `ParagonConfigViewModel.cs`. The
+// view edits the collapsed-board switch and the five paragon layout
+// numerics (`D4Companion.Entities/SettingsD4.cs:28,71-75`); the numeric
+// ranges mirror the dialog's own NumericUpDown bounds
+// (`ParagonConfigView.xaml:39-104`):
+//
+// - `ParagonBorderSize`         1..=10   (default 2)
+// - `ParagonNodeSize`           10..=100 (default 40)
+// - `ParagonNodeSizeCollapsed`  10..=100 (default 23)
+// - `ParagonLeftOffsetCollapsed` -1000..=1000 (default -200)
+// - `ParagonTopOffsetCollapsed`  -1000..=1000 (default -50)
+//
+// Form contract (no Slint globals): every value is projected on the root `AppWindow` as a
+// `settings-paragon-*` in-out property (see `main_window.slint`), bound
+// two-way here, read by Rust on confirm, validated to the ranges above,
+// applied to `state.shell.settings`, and persisted through
+// `d4lc_config::save_app_settings`. Cancel discards the drafts.
+//
+// Upstream's `ParagonConfigView.xaml` has no D2Core row; the
+// `IsImportParagonD2CoreEnabled` provider toggle is edited from the
+// build-import workflow only.
+export component ParagonConfigDialog {
+    in property <string> dialog-title: @tr("Paragon config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust reads them via
+    // `app.get_settings_paragon_*`.
+    in-out property <bool> settings-paragon-mode-active: false;
+    in-out property <bool> settings-paragon-show-browser-mobalytics-enabled: false;
+    in-out property <bool> settings-paragon-collapsed-board: false;
+    in-out property <int> settings-paragon-border-size: 2;
+    in-out property <int> settings-paragon-node-size: 40;
+    in-out property <int> settings-paragon-node-size-collapsed: 23;
+    in-out property <int> settings-paragon-left-offset-collapsed: -200;
+    in-out property <int> settings-paragon-top-offset-collapsed: -50;
+
+    callback confirm();
+    callback cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 6px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── IsParagonModeActive toggle (SettingsView.xaml:170)
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Paragon Mode");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-paragon-mode-active ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Enable paragon mode");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-paragon-mode-active ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-paragon-mode-active = !settings-paragon-mode-active;
+                    }
+                }
+            }
+        }
+
+        // ── IsShowBrowserMobalyticsEnabled toggle
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Show browser");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-paragon-show-browser-mobalytics-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Show Mobalytics browser");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-paragon-show-browser-mobalytics-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-paragon-show-browser-mobalytics-enabled = !settings-paragon-show-browser-mobalytics-enabled;
+                    }
+                }
+            }
+        }
+
+        // ── IsCollapsedParagonboardEnabled toggle
+        // (ParagonConfigView.xaml:59-65)
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Use Collapsed Board");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-paragon-collapsed-board ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Use collapsed board");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-paragon-collapsed-board ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-paragon-collapsed-board = !settings-paragon-collapsed-board;
+                    }
+                }
+            }
+        }
+
+        // ── ParagonBorderSize (1..=10)
+        HorizontalLayout {
+            spacing: 6px;
+
+            Text {
+                text: @tr("Border Size");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 170px;
+            }
+            Text {
+                text: settings-paragon-border-size;
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 36px;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Paragon border size decrement");
+                Text {
+                    text: "-";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-border-size = max(settings-paragon-border-size - 1, 1);
+                    }
+                }
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Paragon border size increment");
+                Text {
+                    text: "+";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-border-size = min(settings-paragon-border-size + 1, 10);
+                    }
+                }
+            }
+        }
+
+        // ── ParagonNodeSize (10..=100)
+        HorizontalLayout {
+            spacing: 6px;
+
+            Text {
+                text: @tr("Node Size");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 170px;
+            }
+            Text {
+                text: settings-paragon-node-size;
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 36px;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Paragon node size decrement");
+                Text {
+                    text: "-";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-node-size = max(settings-paragon-node-size - 1, 10);
+                    }
+                }
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Paragon node size increment");
+                Text {
+                    text: "+";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-node-size = min(settings-paragon-node-size + 1, 100);
+                    }
+                }
+            }
+        }
+
+        // ── ParagonNodeSizeCollapsed (10..=100)
+        HorizontalLayout {
+            spacing: 6px;
+
+            Text {
+                text: @tr("Node Size (Collapsed)");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 170px;
+            }
+            Text {
+                text: settings-paragon-node-size-collapsed;
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 36px;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Collapsed node size decrement");
+                Text {
+                    text: "-";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-node-size-collapsed = max(settings-paragon-node-size-collapsed - 1, 10);
+                    }
+                }
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Collapsed node size increment");
+                Text {
+                    text: "+";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-node-size-collapsed = min(settings-paragon-node-size-collapsed + 1, 100);
+                    }
+                }
+            }
+        }
+
+        // ── ParagonLeftOffsetCollapsed (-1000..=1000)
+        HorizontalLayout {
+            spacing: 6px;
+
+            Text {
+                text: @tr("Left Offset (Collapsed)");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 170px;
+            }
+            Text {
+                text: settings-paragon-left-offset-collapsed;
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 36px;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Left offset collapsed decrement");
+                Text {
+                    text: "-";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-left-offset-collapsed = max(settings-paragon-left-offset-collapsed - 1, -1000);
+                    }
+                }
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Left offset collapsed increment");
+                Text {
+                    text: "+";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-left-offset-collapsed = min(settings-paragon-left-offset-collapsed + 1, 1000);
+                    }
+                }
+            }
+        }
+
+        // ── ParagonTopOffsetCollapsed (-1000..=1000)
+        HorizontalLayout {
+            spacing: 6px;
+
+            Text {
+                text: @tr("Top Offset (Collapsed)");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 170px;
+            }
+            Text {
+                text: settings-paragon-top-offset-collapsed;
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 36px;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Top offset collapsed decrement");
+                Text {
+                    text: "-";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-top-offset-collapsed = max(settings-paragon-top-offset-collapsed - 1, -1000);
+                    }
+                }
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 24px;
+                preferred-height: 24px;
+                min-width: 24px;
+                min-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Top offset collapsed increment");
+                Text {
+                    text: "+";
+                    color: #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-paragon-top-offset-collapsed = min(settings-paragon-top-offset-collapsed + 1, 1000);
+                    }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

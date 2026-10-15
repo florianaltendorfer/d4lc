@@ -1,0 +1,85 @@
+{
+  "affix_preset": {
+    "affixes": [],
+    "name": "Starter"
+  },
+  "affix_preset_name": "Starter",
+  "aspects": [],
+  "class_name": null,
+  "items": [],
+  "non_affix_preset": {
+    "name": "Starter",
+    "powers": [],
+    "runes": [],
+    "sigils": []
+  },
+  "paragon_boards": [],
+  "provider": "Mobalytics",
+  "runes": [],
+  "source_build_id": "moba-build-unknown",
+  "source_build_name": "Unknown Source IDs",
+  "source_trace": [
+    "BuildsManagerMobalytics.ParseJsonBuild",
+    "BuildsManagerMobalytics.ConvertBuildVariants",
+    "BuildsManagerMobalytics.CreatePresetFromMobalyticsBuild"
+  ],
+  "source_url_or_file": "tests/fixtures/imports/mobalytics/source/build_unknown_ids.json",
+  "uniques": [],
+  "unmapped_entries": [
+    {
+      "message": "affix text did not map to a canonical imported id",
+      "source_field": "Gloves[0].AffixText",
+      "source_value": "Imaginary Affix",
+      "upstream_method": "BuildsManagerMobalytics.ConvertItemAffix"
+    },
+    {
+      "message": "aspect name did not map to a canonical imported id",
+      "source_field": "Aspect[0]",
+      "source_value": "missing",
+      "upstream_method": "BuildsManagerMobalytics.ConvertItemAspect"
+    },
+    {
+      "message": "rune name did not map to a canonical imported id",
+      "source_field": "Runes[0]",
+      "source_value": "Bogus Rune",
+      "upstream_method": "BuildsManagerMobalytics.ConvertItemRune"
+    },
+    {
+      "message": "unique name did not map to a canonical imported id",
+      "source_field": "Uniques[0]",
+      "source_value": "not a real unique",
+      "upstream_method": "BuildsManagerMobalytics.ConvertItemUnique"
+    }
+  ],
+  "variant_name": "Starter",
+  "warnings": [
+    {
+      "message": "affix text did not map to a canonical imported id",
+      "provider": "Mobalytics",
+      "source_field": "Gloves[0].AffixText",
+      "source_value": "Imaginary Affix",
+      "upstream_method": "BuildsManagerMobalytics.ConvertItemAffix"
+    },
+    {
+      "message": "aspect name did not map to a canonical imported id",
+      "provider": "Mobalytics",
+      "source_field": "Aspect[0]",
+      "source_value": "missing",
+      "upstream_method": "BuildsManagerMobalytics.ConvertItemAspect"
+    },
+    {
+      "message": "rune name did not map to a canonical imported id",
+      "provider": "Mobalytics",
+      "source_field": "Runes[0]",
+      "source_value": "Bogus Rune",
+      "upstream_method": "BuildsManagerMobalytics.ConvertItemRune"
+    },
+    {
+      "message": "unique name did not map to a canonical imported id",
+      "provider": "Mobalytics",
+      "source_field": "Uniques[0]",
+      "source_value": "not a real unique",
+      "upstream_method": "BuildsManagerMobalytics.ConvertItemUnique"
+    }
+  ]
+}

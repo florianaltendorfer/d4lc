@@ -1,0 +1,118 @@
+{
+  "affix_preset": {
+    "affixes": [
+      {
+        "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "amulet",
+        "label": "Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      }
+    ],
+    "name": "Starter"
+  },
+  "affix_preset_name": "Starter",
+  "aspects": [],
+  "class_name": null,
+  "items": [
+    {
+      "affixes": [
+        {
+          "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "amulet",
+          "label": "Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        }
+      ],
+      "item_type": "amulet"
+    }
+  ],
+  "non_affix_preset": {
+    "name": "Starter",
+    "powers": [],
+    "runes": [],
+    "sigils": []
+  },
+  "paragon_boards": [],
+  "provider": "D4Builds",
+  "runes": [],
+  "source_build_id": "sorc-arc-lash-starter",
+  "source_build_name": "Arc Lash Starter",
+  "source_trace": [
+    "BuildsManagerD4Builds.LoadAvailableD4BuildsBuilds",
+    "BuildsManagerD4Builds.ConvertBuildVariants",
+    "BuildsManagerD4Builds.CreatePresetFromD4BuildsBuild"
+  ],
+  "source_url_or_file": "tests/fixtures/imports/d4builds/arc_lash_unknown.json",
+  "uniques": [],
+  "unmapped_entries": [
+    {
+      "message": "affix text did not map to a canonical imported id",
+      "source_field": "Gloves[0].AffixText",
+      "source_value": "Imaginary Affix",
+      "upstream_method": "BuildsManagerD4Builds.ConvertItemAffix"
+    },
+    {
+      "message": "aspect name did not map to a canonical imported id",
+      "source_field": "Aspect[0]",
+      "source_value": "Missing Aspect",
+      "upstream_method": "BuildsManagerD4Builds.ConvertItemAspect"
+    },
+    {
+      "message": "rune name did not map to a canonical imported id",
+      "source_field": "Runes[0]",
+      "source_value": "Bogus Rune",
+      "upstream_method": "BuildsManagerD4Builds.ConvertItemRune"
+    },
+    {
+      "message": "unique name did not map to a canonical imported id",
+      "source_field": "Uniques[0]",
+      "source_value": "Not A Real Unique",
+      "upstream_method": "BuildsManagerD4Builds.ConvertItemUnique"
+    }
+  ],
+  "variant_name": "Starter",
+  "warnings": [
+    {
+      "message": "affix text did not map to a canonical imported id",
+      "provider": "D4Builds",
+      "source_field": "Gloves[0].AffixText",
+      "source_value": "Imaginary Affix",
+      "upstream_method": "BuildsManagerD4Builds.ConvertItemAffix"
+    },
+    {
+      "message": "aspect name did not map to a canonical imported id",
+      "provider": "D4Builds",
+      "source_field": "Aspect[0]",
+      "source_value": "Missing Aspect",
+      "upstream_method": "BuildsManagerD4Builds.ConvertItemAspect"
+    },
+    {
+      "message": "rune name did not map to a canonical imported id",
+      "provider": "D4Builds",
+      "source_field": "Runes[0]",
+      "source_value": "Bogus Rune",
+      "upstream_method": "BuildsManagerD4Builds.ConvertItemRune"
+    },
+    {
+      "message": "unique name did not map to a canonical imported id",
+      "provider": "D4Builds",
+      "source_field": "Uniques[0]",
+      "source_value": "Not A Real Unique",
+      "upstream_method": "BuildsManagerD4Builds.ConvertItemUnique"
+    }
+  ]
+}

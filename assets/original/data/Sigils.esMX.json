@@ -1,0 +1,2873 @@
+[
+  {
+    "IdSno": 2321590,
+    "IdName": "DungeonAffix_Positive_Astaroth_RareKeys",
+    "Name": "Abundancia de Llaves",
+    "Description": "Las recompensas de Astaroth incluyen Llaves de Calabozos valiosas.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2346039,
+    "IdName": "DungeonAffix_Positive_Astaroth_Materials",
+    "Name": "Abundancia de Materiales",
+    "Description": "Las recompensas de Astaroth incluyen una gran cantidad de materiales de oficio.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2346041,
+    "IdName": "DungeonAffix_Positive_Astaroth_Gold",
+    "Name": "Abundancia de Oro",
+    "Description": "Las recompensas de Astaroth incluyen una gran suma de oro.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321549,
+    "IdName": "DungeonAffix_Positive_Astaroth_SeasonalCurrency",
+    "Name": "Abundancia de Viales ",
+    "Description": "Las recompensas de Astaroth incluyen una gran cantidad de Viales Horádricos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585622,
+    "IdName": "World_DGN_Naha_FaraiCliffs",
+    "Name": "Acantilados de Farai",
+    "Description": "La sangre de los extranjeros brilla a la luz de la Luna",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113852,
+    "IdName": "World_DGN_Kehj_PutridAquifer",
+    "Name": "Acuífero Pútrido",
+    "Description": "La muerte tiñe el agua.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114338,
+    "IdName": "World_DGN_Hawe_Witchwater",
+    "Name": "Agua Embrujada",
+    "Description": "Cultistas Nangari atraen a sus presas aquí con canciones cantadas en sueños.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113803,
+    "IdName": "World_DGN_Frac_DerelictLodge",
+    "Name": "Albergue Abandonado",
+    "Description": "Otrora albergue de caza, ahora bajo el mando de los demonios.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114168,
+    "IdName": "World_DGN_Frac_MercysReach",
+    "Name": "Alcance de la Piedad",
+    "Description": "Esta fortaleza en ruinas alguna vez fue un medio para atravesar las montañas. ",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2236740,
+    "IdName": "DungeonAffix_Positive_S07_ForgottenAltar",
+    "Name": "Altar Olvidado",
+    "Description": "Este mundo siempre hará aparecer un Altar Olvidado.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2347209,
+    "IdName": "DungeonAffix_Positive_S08_Apparition",
+    "Name": "Apariciones de Belial",
+    "Description": "Las Apariciones de Élite invadieron este calabozo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114205,
+    "IdName": "World_DGN_Frac_Zenith",
+    "Name": "Apogeo",
+    "Description": "Bajo las cumbres se extienden túneles sin cartografiar. ",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113127,
+    "IdName": "World_DGN_Frac_LostArchives",
+    "Name": "Archivos Perdidos",
+    "Description": "Muchos intentan adivinar lo que se encuentra dentro, pero pocos se atreven a aventurarse en su interior.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113836,
+    "IdName": "World_DGN_Step_SealedArchives",
+    "Name": "Archivos Sellados",
+    "Description": "Un ancestral salón de magos. Alguna vez fue un refugio, ahora es un cementerio. ",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2358422,
+    "IdName": "DungeonAffix_Major_Astaroth_MeteorPersist",
+    "Name": "Armagedón de Astaroth",
+    "Description": "Lloverán meteoros continuamente desde el cielo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511994,
+    "IdName": "DungeonAffix_Positive_AncestralElites",
+    "Name": "Armería escondida",
+    "Description": "Aquí se guardan objetos excepcionales, lo cual otorga un poderoso afijo de botín a los monstruos de Élite.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2516764,
+    "IdName": "DungeonAffix_Positive_LegendaryElites",
+    "Name": "Armería escondida",
+    "Description": "Aquí se guardan objetos excepcionales, lo cual otorga un poderoso afijo de botín a los monstruos de Élite.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314297,
+    "IdName": "DungeonAffix_Positive_AttackMoveSpeedOnKill",
+    "Name": "Asesino Veloz",
+    "Description": "Al matar un monstruo obtienes un 2% de velocidad de ataque y de movimiento. Se acumula hasta un máximo de un 20%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2379014,
+    "IdName": "DungeonAffix_Major_Bloody_Mess",
+    "Name": "Augurio Oscuro",
+    "Description": "Este lugar da mala espina. Alguien o algo te acecha aquí...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113208,
+    "IdName": "World_DGN_Scos_Underroot",
+    "Name": "Bajorraíz",
+    "Description": "Ruinas en las profundidades de Túr Dúlra, sus raíces desbordan podredumbre.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114114,
+    "IdName": "World_DGN_Hawe_BastionOfFaith",
+    "Name": "Baluarte de la Fe",
+    "Description": "Perdidos y famélicos, estos caballeros se convirtieron en bestias.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113805,
+    "IdName": "World_DGN_Hawe_SteadfastBarracks",
+    "Name": "Barracas Inalterables",
+    "Description": "Un nido de fanáticos salvajes, atraídos a un mal enterrado hace mucho.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113896,
+    "IdName": "World_DGN_Frac_KorDraganBarracks",
+    "Name": "Barracas de Kor Dragan",
+    "Description": "Los honorables salones fueron abandonados para que los muertos deambulen.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113590,
+    "IdName": "World_DGN_Step_DarkRavine",
+    "Name": "Barranco Oscuro",
+    "Description": " Un sitio de ritual del Trino. Los gritos resuenan a lo largo y a lo ancho. ",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113676,
+    "IdName": "World_DGN_Step_GuulrahnSlums",
+    "Name": "Barriadas de Guulrahn",
+    "Description": "Los caníbales aún controlan las calles de la ciudad de Guulrahn.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114299,
+    "IdName": "World_DGN_Scos_BrokenBulwark",
+    "Name": "Bastión Quebrado",
+    "Description": "Otrora parte de la propiedad de Donan, y arrasada con el resto.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113366,
+    "IdName": "World_DGN_Scos_GaranHold",
+    "Name": "Bastión de Garan",
+    "Description": "Una poderosa fortaleza en su tiempo, condenada a arder.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113530,
+    "IdName": "World_DGN_Hawe_IronHold",
+    "Name": "Bastión de Hierro",
+    "Description": "Un flagelo se agita en las entrañas de una prisión decadente.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113909,
+    "IdName": "World_DGN_Step_OnyxHold",
+    "Name": "Bastión de Ónix",
+    "Description": "Celadores no muertos aún patrullan los pasillos de esta prisión.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113576,
+    "IdName": "World_DGN_Kehj_SunkenLibrary",
+    "Name": "Biblioteca Sumergida",
+    "Description": "Los muertos guardan secretos confinados en la antigua bóveda.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113695,
+    "IdName": "World_DGN_Frac_NostravaDeepwood",
+    "Name": "Bosque Profundo de Nostrava",
+    "Description": "Los no muertos vagan entre los árboles.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113584,
+    "IdName": "World_DGN_Frac_Maulwood",
+    "Name": "Bosque Violento",
+    "Description": "Los bandidos reclamaron estos bosques y sus monstruos.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114264,
+    "IdName": "World_DGN_Scos_Aldurwood",
+    "Name": "Bosque de Aldur",
+    "Description": "En este bosque corrupto, la sangre corre como savia de los árboles.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321559,
+    "IdName": "DungeonAffix_Positive_Astaroth_Ancestral",
+    "Name": "Botín Legendario",
+    "Description": "Las recompensas de Astaroth incluyen un objeto ancestral garantizado.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321525,
+    "IdName": "DungeonAffix_Positive_Astaroth_MoreUniques",
+    "Name": "Botín Único",
+    "Description": "Las recompensas de Astaroth incluyen más objetos únicos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113350,
+    "IdName": "World_DGN_Kehj_CollapsedVault",
+    "Name": "Bóveda Colapsada",
+    "Description": "Estos antiguos tesoros yacen en manos muertas.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113812,
+    "IdName": "World_DGN_Step_WhisperingVault",
+    "Name": "Bóveda Susurrante",
+    "Description": "Salones de eruditos embrujados por espíritus susurrantes de demencia.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113861,
+    "IdName": "World_DGN_Scos_VaultofTheForsaken",
+    "Name": "Bóveda de los Olvidados",
+    "Description": "Las voces de estas cavernas inundadas atraen a muchos a su perdición.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113431,
+    "IdName": "World_DGN_Step_PathoftheBlind",
+    "Name": "Camino de los Ciegos",
+    "Description": "Los sangrientos campos de iniciación de los aspirantes del Trino.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113153,
+    "IdName": "World_DGN_Hawe_BelfryZakara",
+    "Name": "Campanario de Zakara",
+    "Description": "Los Zakarum construyeron esta Catedral. Ahora, honra al mar. ",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113708,
+    "IdName": "World_DGN_Step_Mournfield",
+    "Name": "Campo de los Lamentos",
+    "Description": "Lo que camina aquí está tanto vivo como muerto y te robará.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113331,
+    "IdName": "World_DGN_Step_CarrionFields",
+    "Name": "Campos de Carroña",
+    "Description": "Los profanadores de esta tierra fueron condenados a vagar por ella para siempre.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114146,
+    "IdName": "World_DGN_Step_GuulrahnCanals",
+    "Name": "Canales de Guulrahn",
+    "Description": "Debajo hay una podredumbre que ni el tirano caníbal se atreve a tocar.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114262,
+    "IdName": "World_DGN_Frac_ForsakenQuarry",
+    "Name": "Cantera Olvidada",
+    "Description": "Estos pozos de mina que alguna vez fueron yermos ahora albergan rituales espantosos.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113145,
+    "IdName": "World_DGN_Frac_SanguineChapel",
+    "Name": "Capilla Sanguinolenta",
+    "Description": "Una iglesia abandonada de Zakarum llena de nieve e invadida por vampiros.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113636,
+    "IdName": "World_DGN_Frac_DefiledCatacomb",
+    "Name": "Catacumba Profanada",
+    "Description": "Los saqueadores de tumbas advierten sobre las tentaciones de esta cripta.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113900,
+    "IdName": "World_DGN_Kehj_CrusadersCathedral",
+    "Name": "Catedral de los Guerreros Divinos",
+    "Description": "Los caballeros se adueñaron de este templo y de sus guerreros no muertos.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585596,
+    "IdName": "World_DGN_Naha_RuinedWild",
+    "Name": "Caverna Infestada",
+    "Description": "Un lugar espiritual que ahora alberga invitados indeseables.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113937,
+    "IdName": "World_DGN_Frac_RimescarCavern",
+    "Name": "Caverna de Rimescar",
+    "Description": "Una cueva reclamada por demonios y enferma por su magia. ",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113581,
+    "IdName": "World_DGN_Kehj_SiroccoCaverns",
+    "Name": "Cavernas de Siroco",
+    "Description": "Una infestación pestilente ha reclamado estas cavernas.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314354,
+    "IdName": "DungeonAffix_Minor_Monster_AttackFaster",
+    "Name": "Cazadores",
+    "Description": "Los monstruos tienen una velocidad antinatural aquí, y se mueven y atacan un 33% más rápido.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1585511,
+    "IdName": "World_DGN_Naha_BeastGraveyard",
+    "Name": "Cementerio de Bestias",
+    "Description": "Los carroñeros suelen venir a sacar provecho de los gigantes sagrados.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113567,
+    "IdName": "World_DGN_Kehj_YshariSanctum",
+    "Name": "Cenobio de Yshari",
+    "Description": "Cultistas corruptos del antiguo Cenobio.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585468,
+    "IdName": "World_DGN_Naha_IronCenotaph",
+    "Name": "Cenotafio de Hierro",
+    "Description": "El primer hogar de los Lobos de Hierro antes de la caída de Kurast.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113768,
+    "IdName": "World_DGN_Step_ShiftingCity",
+    "Name": "Ciudad Cambiante",
+    "Description": "Estas ruinas fueron alguna vez un refugio para la gente de Qara-Yisu.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113156,
+    "IdName": "World_DGN_Frac_ForbiddenCity",
+    "Name": "Ciudad Prohibida",
+    "Description": "Una antigua tumba yace abierta, y su corrupción se derrama.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321114,
+    "IdName": "DungeonAffix_Positive_ExtraResplendent",
+    "Name": "Cofres Resplandecientes Extra",
+    "Description": "El calabozo tendrá más Cofres Resplandecientes.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336914,
+    "IdName": "DungeonAffix_Positive_Chests_SigilPowder",
+    "Name": "Cofres adicionales: Polvo de Sello",
+    "Description": "Los cofres de Polvo de Sello aparecen con una frecuencia extremadamente alta.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336723,
+    "IdName": "DungeonAffix_Positive_Chests_Armor",
+    "Name": "Cofres adicionales: armadura",
+    "Description": "Los cofres de armadura aparecen con una frecuencia extremadamente alta.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336917,
+    "IdName": "DungeonAffix_Positive_Chests_Weapons",
+    "Name": "Cofres adicionales: armas",
+    "Description": "Los cofres de armas aparecen con una frecuencia extremadamente alta.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336857,
+    "IdName": "DungeonAffix_Positive_Chests_Elixirs",
+    "Name": "Cofres adicionales: elíxires",
+    "Description": "Los cofres de elíxires aparecen con una frecuencia extremadamente alta.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336861,
+    "IdName": "DungeonAffix_Positive_Chests_Herbs",
+    "Name": "Cofres adicionales: hierbas",
+    "Description": "Los cofres de hierbas aparecen con una frecuencia extremadamente alta.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336863,
+    "IdName": "DungeonAffix_Positive_Chests_Jewelry",
+    "Name": "Cofres adicionales: joyas",
+    "Description": "Los cofres de joyas aparecen con una frecuencia extremadamente alta.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336855,
+    "IdName": "DungeonAffix_Positive_Chests_BossMaterials",
+    "Name": "Cofres adicionales: materiales de jefes",
+    "Description": "Los cofres de materiales de invocación aparecen con una frecuencia extremadamente alta.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336911,
+    "IdName": "DungeonAffix_Positive_Chests_Runes",
+    "Name": "Cofres adicionales: runas",
+    "Description": "Los cofres de runas aparecen con una frecuencia extremadamente alta.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113738,
+    "IdName": "World_DGN_Scos_Hive",
+    "Name": "Colmena",
+    "Description": "Una voluntad insaciable lleva a estas criaturas a alimentarse.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585530,
+    "IdName": "World_DGN_Naha_VileHive",
+    "Name": "Colmena Vil",
+    "Description": "El sonido de alimañas deslizándose hace eco en este nido fétido.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2322097,
+    "IdName": "DungeonAffix_Major_Astaroth_Invuln",
+    "Name": "Corcel Leal de Astaroth",
+    "Description": "Astaroth será inmune al daño al alcanzar cada umbral de Vida hasta que mates a la Amalgama de Furia.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2266169,
+    "IdName": "DungeonAffix_Major_CultistLure",
+    "Name": "Corderos al Matadero",
+    "Description": "Atrae a los enemigos capturados al sagrario para sacrificarlos y obtener recompensas adicionales.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113981,
+    "IdName": "World_DGN_Step_BetrayersRow",
+    "Name": "Corredor del Traidor",
+    "Description": "Los retorcidos restos de un poblado enloquecido por la envidia. ",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113946,
+    "IdName": "World_DGN_Scos_FeralsDen",
+    "Name": "Cubil de los Salvajes",
+    "Description": "Un albergue corrupto por el odio de los druidas.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114151,
+    "IdName": "World_DGN_Kehj_UldursCave",
+    "Name": "Cueva de Uldur",
+    "Description": "Una guarida de ladrones y devoradores carroñeros.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585570,
+    "IdName": "World_DGN_Naha_CavesofKutokue",
+    "Name": "Cuevas de Kutokue",
+    "Description": "Las paredes hacen eco de gritos de desesperación.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2332268,
+    "IdName": "DungeonAffix_Positive_S09_Horadric_Secret",
+    "Name": "Cámara Horádrica Acorazada",
+    "Description": "Este lugar siempre contendrá una Cámara Horádrica Acorazada.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113194,
+    "IdName": "World_DGN_Kehj_Conclave",
+    "Name": "Cónclave",
+    "Description": "Historias de rituales profanos mantienen a la gente aterrorizada.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314313,
+    "IdName": "DungeonAffix_Positive_FireDamage",
+    "Name": "Daño de fuego",
+    "Description": "Infliges un 15% más de daño de fuego.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314244,
+    "IdName": "DungeonAffix_Positive_IncreasedCritChance",
+    "Name": "Daño de golpe crítico aumentado",
+    "Description": "Tu probabilidad de golpe crítico aumenta un 9%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314248,
+    "IdName": "DungeonAffix_Positive_FrostDamage",
+    "Name": "Daño de hielo",
+    "Description": "Infliges un 15% más de daño de hielo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314238,
+    "IdName": "DungeonAffix_Positive_LightningDamage",
+    "Name": "Daño de rayo",
+    "Description": "Infliges un 15% más de daño de rayo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314231,
+    "IdName": "DungeonAffix_Positive_ShadowDamage",
+    "Name": "Daño de sombra",
+    "Description": "Infliges un 15% más de daño de sombra.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314227,
+    "IdName": "DungeonAffix_Positive_PoisonDamage",
+    "Name": "Daño de veneno",
+    "Description": "Infliges un 15% más de daño de veneno.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314293,
+    "IdName": "DungeonAffix_Positive_PhysicalDamage",
+    "Name": "Daño físico",
+    "Description": "Infliges un 15% más de daño físico.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314386,
+    "IdName": "DungeonAffix_Minor_Monster_LessRanged",
+    "Name": "Defensores a distancia",
+    "Description": "Los monstruos reciben un 60% menos de daño de los objetivos lejanos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314384,
+    "IdName": "DungeonAffix_Minor_Monster_LessMelee",
+    "Name": "Defensores de melé",
+    "Description": "Los monstruos reciben un 40% menos de daño de los objetivos cercanos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113112,
+    "IdName": "World_DGN_Scos_LubansRest",
+    "Name": "Descanso de Luban",
+    "Description": "Una guerrera y sus seguidoras se han levantado de sus tumbas.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321901,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_DeathPulse",
+    "Name": "Descarga Letal de Astaroth",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113549,
+    "IdName": "World_DGN_Step_SeasideDescent",
+    "Name": "Descenso Costero",
+    "Description": "Una cala rodeada por un cementerio de naufragios.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113728,
+    "IdName": "World_DGN_Step_PallidDelve",
+    "Name": "Descenso Pálido",
+    "Description": "Los caníbales guardan un oscuro poder en las minas derruidas.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585460,
+    "IdName": "World_DGN_Naha_RazaksDescent",
+    "Name": "Descenso de Razak",
+    "Description": "Donde la luz se pierde y las intenciones se retuercen en las raíces.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585540,
+    "IdName": "World_DGN_Naha_PutrescentLarder",
+    "Name": "Despensa Putrescente",
+    "Description": "El aire repugnante confirma el lugar donde los Lacuni almacenan sus carnes.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1894518,
+    "IdName": "DungeonAffix_Positive_GlyphXP_EvergreenVersion",
+    "Name": "Despertar Ancestral",
+    "Description": "Se obtiene un 20% más de experiencia de glifo al completar este calabozo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113919,
+    "IdName": "World_DGN_Scos_DemonsWake",
+    "Name": "Despertar del Demonio",
+    "Description": "La fortaleza todavía arde por el ataque de Lilith.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113455,
+    "IdName": "World_DGN_Hawe_AkkhansGrasp",
+    "Name": "Dominio de Akán",
+    "Description": "La maldad y la sangre se filtran a través de los sellos rotos de la tumba.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113542,
+    "IdName": "World_DGN_Frac_DeadMansDredge",
+    "Name": "Dragado del Hombre Muerto",
+    "Description": "Los depredadores que habitan en esta cueva cazan humanos.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314229,
+    "IdName": "DungeonAffix_Positive_DamageReductionForMissingHealth",
+    "Name": "Dureza de Batalla",
+    "Description": "Obtienes un 6% de reducción de daño por cada 10% de Vida que te falte.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113928,
+    "IdName": "World_DGN_Kehj_FadingEcho",
+    "Name": "Eco Débil",
+    "Description": "Estas ruinas ahora albergan un creciente ejército de demonios. ",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113291,
+    "IdName": "World_DGN_Frac_ImmortalEmanation",
+    "Name": "Emanación Inmortal",
+    "Description": "Un terreno de caza, en el que la presa es lo suficientemente ingenua como para entrar. ",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114089,
+    "IdName": "World_DGN_Scos_Stockades",
+    "Name": "Empalizadas",
+    "Description": "Después de un motín, esta prisión se tapió y convirtió en una tumba.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314391,
+    "IdName": "DungeonAffix_Positive_EvadePushesEnemies",
+    "Name": "Empuje de Evasor",
+    "Description": "Usar Evadir aleja a los enemigos. ",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113192,
+    "IdName": "World_DGN_Scos_RaethwindWilds",
+    "Name": "Espesura de Raethwind",
+    "Description": "Demasiados se han perdido en este bosque.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314236,
+    "IdName": "DungeonAffix_Positive_Thorns",
+    "Name": "Espinas",
+    "Description": "Después de atacar a un enemigo, tus Espinas aumentan en 200 durante 3 segundos, hasta un límite de 1000 al máximo de acumulaciones.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314360,
+    "IdName": "DungeonAffix_Minor_Monster_ReflectNonPhysical",
+    "Name": "Espinas de monstruo",
+    "Description": "Los monstruos reflejan un 8% del daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1585493,
+    "IdName": "World_DGN_Naha_MurmuringSpiral",
+    "Name": "Espiral Murmurante",
+    "Description": "Las escamas y las espirales hipnotizan, y algunas se acercan demasiado.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511865,
+    "IdName": "DungeonAffix_Positive_GildedElites",
+    "Name": "Esplendor Vil",
+    "Description": "Aquí se disfruta del lujo y el exceso, lo cual otorga el afijo \"Dorado\" a los monstruos de Élite.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314358,
+    "IdName": "DungeonAffix_Positive_EvadeLeavesPoison",
+    "Name": "Evasión Venenosa",
+    "Description": "Al usar Evadir, dejas un charco dañino de veneno debajo del primer enemigo que atravieses al evadir o en tu destino. ",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113440,
+    "IdName": "World_DGN_Scos_WretchedDelve",
+    "Name": "Excavación Miserable",
+    "Description": "Una plaga demoníaca infecta ahora las viejas tumbas de Túr Dúlra.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2354687,
+    "IdName": "DungeonAffix_Minor_S9_Explosive",
+    "Name": "Experimentos Inestables",
+    "Description": "Los monstruos pueden explotar al morir, lo cual inflige mucho daño de área a su alrededor tras un tiempo breve.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2229221,
+    "IdName": "DungeonAffix_Positive_TreasureHunt",
+    "Name": "Exploración de Equipo",
+    "Description": "Encuentra Artefactos Horádricos para obtener alijos de equipo de una calidad cada vez más mayor.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314288,
+    "IdName": "DungeonAffix_Positive_StunCausesBurning",
+    "Name": "Explosiones de pérdida de control",
+    "Description": "Creas una explosión a tu alrededor cada vez que te golpean con efectos que debilitan el control.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113903,
+    "IdName": "World_DGN_Hawe_LeviathansMaw",
+    "Name": "Fauces del Leviatán",
+    "Description": "Los cultistas acechan en estas ruinas inundadas.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1828297,
+    "IdName": "DungeonAffix_Positive_GlyphXP",
+    "Name": "Favor de los Ancestros",
+    "Description": "Se obtiene un 10% más de experiencia mientras estés en este calabozo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585629,
+    "IdName": "World_DGN_Naha_ForgeofMalice",
+    "Name": "Forja de la Malicia",
+    "Description": "Los fuegos del odio siguen ardiendo en este refugio oculto.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113337,
+    "IdName": "World_DGN_Hawe_LostKeep",
+    "Name": "Fortaleza Perdida",
+    "Description": "Otra fortaleza putrefacta abandonada por la Catedral.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2004860,
+    "IdName": "DungeonAffix_Major_Hellfire",
+    "Name": "Fuego Infernal",
+    "Description": "Los monstruos están afectados por Fuego Infernal, el cual transfieren a los jugadores al morir. El Fuego Infernal aumenta el daño, pero inflige daño con el tiempo por cada acumulación. Usar una poción alivia el Fuego Infernal con una explosión feroz.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2330767,
+    "IdName": "DungeonAffix_Major_Astaroth_EliteSummons",
+    "Name": "Furia de la Manada",
+    "Description": "La Amalgama de Furia ahora invoca Hombres Lobo de Élite.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373228,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraSparking",
+    "Name": "Golpes Chispeantes",
+    "Description": "Un equivalente al 30% del daño físico infligido por los monstruos se aplica como daño adicional de chispas durante 3 segundos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2373236,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraFrostbiting",
+    "Name": "Golpes Congelantes",
+    "Description": "Un equivalente al 30% del daño físico infligido por los monstruos se aplica como daño adicional de congelamiento durante 3 segundos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314399,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraCorruption",
+    "Name": "Golpes Corruptores",
+    "Description": "Un equivalente al 30% del daño físico infligido por los monstruos se aplica como daño adicional de corrupción durante 3 segundos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314407,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraBleeding",
+    "Name": "Golpes Desangradores",
+    "Description": "Un equivalente al 30% del daño físico infligido por los monstruos se aplica como daño adicional de sangrado durante 3 segundos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314413,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraLightning",
+    "Name": "Golpes Eléctricos",
+    "Description": "Un equivalente al 20% del daño físico infligido por los monstruos se aplica como daño adicional de rayo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314415,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraCold",
+    "Name": "Golpes Gélidos",
+    "Description": "Un equivalente al 20% del daño físico infligido por los monstruos se aplica como daño adicional de frío.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314409,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraBurning",
+    "Name": "Golpes Incendiarios",
+    "Description": "Un equivalente al 30% del daño físico infligido por los monstruos se aplica como daño adicional de quemadura durante 3 segundos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314405,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraPoison",
+    "Name": "Golpes Ponzoñosos",
+    "Description": "Un equivalente al 30% del daño físico infligido por los monstruos se aplica como daño adicional de envenenamiento durante 3 segundos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314411,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraShadow",
+    "Name": "Golpes Sombríos",
+    "Description": "Un equivalente al 20% del daño físico infligido por los monstruos se aplica como daño adicional de sombra.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2373240,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraPoisonDirect",
+    "Name": "Golpes Venenosos",
+    "Description": "Un equivalente al 20% del daño físico infligido por los monstruos se aplica como daño adicional de veneno.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314424,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraFire",
+    "Name": "Golpes Ígneos",
+    "Description": "Un equivalente al 20% del daño físico infligido por los monstruos se aplica como daño adicional de fuego.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113107,
+    "IdName": "World_DGN_Kehj_CorruptedGrotto",
+    "Name": "Gruta Corrompida",
+    "Description": "Los muertos olvidados yacen bajo la inhóspita roca.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113484,
+    "IdName": "World_DGN_Scos_SaratsLair",
+    "Name": "Guarida de Sarat",
+    "Description": "Lo que alguna vez fue una guarida de criaturas salvajes se ha convertido en un nido.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113297,
+    "IdName": "World_DGN_Hawe_SerpentsLair",
+    "Name": "Guarida de la Serpiente",
+    "Description": "Antiguamente, la sede del trono de Mohlon. Quieren otra reina.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314215,
+    "IdName": "DungeonAffix_Positive_GoldFind",
+    "Name": "Hallazgo de oro",
+    "Description": "Encuentras un 30% más de oro.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314240,
+    "IdName": "DungeonAffix_Positive_MagicFind",
+    "Name": "Hallazgo mágico",
+    "Description": "Encuentras más objetos de enemigos. ",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113392,
+    "IdName": "World_DGN_Kehj_CrumblingHekma",
+    "Name": "Hekma Derruido",
+    "Description": "Una catacumba infestada de odio de la fe Zakarum. ",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113105,
+    "IdName": "World_DGN_Hawe_EarthenWound",
+    "Name": "Herida Terrenal",
+    "Description": "Los demonios que moraban en este lugar se convirtieron en un festín para los caníbales.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381228,
+    "IdName": "DungeonAffix_Major_Horde_Khazra",
+    "Name": "Horda de Khazra",
+    "Description": "Los ruidosos Faunos poblaron este lugar y obtienen un 30% más de Vida.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381222,
+    "IdName": "DungeonAffix_Major_Horde_Cannibals",
+    "Name": "Horda de caníbales",
+    "Description": "Los asquerosos caníbales profanaron este lugar y obtienen un 30% más de Vida.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381199,
+    "IdName": "DungeonAffix_Major_Horde_Cultists",
+    "Name": "Horda de cultistas",
+    "Description": "Los fanáticos corruptos rinden culto en este lugar y obtienen un 30% más de Vida.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381224,
+    "IdName": "DungeonAffix_Major_Horde_Demons",
+    "Name": "Horda de demonios",
+    "Description": "Los viles engendros infernales conquistaron este lugar y obtienen un 30% más de Vida.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381226,
+    "IdName": "DungeonAffix_Major_Horde_Insects",
+    "Name": "Horda de insectos",
+    "Description": "Los insectos pestilentes infestaron este lugar y obtienen un 30% más de Vida.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381230,
+    "IdName": "DungeonAffix_Major_Horde_Undead",
+    "Name": "Horda de no muertos",
+    "Description": "Los no muertos profanados se levantaron en este lugar y obtienen un 30% más de Vida.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113063,
+    "IdName": "World_DGN_Kehj_Inferno",
+    "Name": "Infierno",
+    "Description": "Hemos tallado en la roca para buscar el Infierno.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2361576,
+    "IdName": "DungeonAffix_Positive_TreasureGoblins",
+    "Name": "Invasión del Tesoro",
+    "Description": "Una cantidad desconcertante de Trasgos del Tesoro invadió este lugar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314217,
+    "IdName": "DungeonAffix_Positive_PeriodicLightning",
+    "Name": "Invocador de Rayo",
+    "Description": "Ocasionalmente atraes descargas fulminantes que dañan a los enemigos cercanos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314213,
+    "IdName": "DungeonAffix_Major_StormbanesWrath",
+    "Name": "Ira de Tormenta",
+    "Description": "Un monolito oscuro persigue a los jugadores e inflige un daño intenso cuando están cerca.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373251,
+    "IdName": "DungeonAffix_Major_Berserkers",
+    "Name": "Iracundo",
+    "Description": "Los monstruos aquí son temerarios, reciben un 20% más de daño e infligen un 50% más.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1894221,
+    "IdName": "DungeonAffix_Major_Boss_MegaDemon_Tier96",
+    "Name": "La Bestia en el Hielo",
+    "Description": "Enfrenta a una Bestia en el Hielo más desafiante al final de esta cueva congelada.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113980,
+    "IdName": "World_DGN_Step_GrinningLabyrinth",
+    "Name": "Laberinto Sonriente",
+    "Description": "Esos salones laberínticos han quebrado a grandiosos guerreros.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113315,
+    "IdName": "World_DGN_Step_AncientsLament",
+    "Name": "Lamento Ancestral",
+    "Description": "Una tumba y una prisión para las afligidas almas atrapadas dentro. ",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113504,
+    "IdName": "World_DGN_Scos_HowlingWarren",
+    "Name": "Madriguera Aullante",
+    "Description": "Una guarida de lobos y huargos corruptos, hambrientos de carne humana.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113468,
+    "IdName": "World_DGN_Hawe_BlindBurrows",
+    "Name": "Madrigueras Ciegas",
+    "Description": "Las arañas de este lugar adquirieron un gusto por la carne. ",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2232949,
+    "IdName": "World_DGN_QST_Skov_DeathCurse_02",
+    "Name": "Maledictorio Ahogado",
+    "Description": "",
+    "DungeonZoneInfo": "en Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113478,
+    "IdName": "World_DGN_Frac_BlackAsylum",
+    "Name": "Manicomio Negro",
+    "Description": "Una prisión abandonada que rebosa de los lamentos de sus prisioneros.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113270,
+    "IdName": "World_DGN_Kehj_HereticsAsylum",
+    "Name": "Manicomio de los Herejes",
+    "Description": "Un hogar carcelero para los corruptos y crueles.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114046,
+    "IdName": "World_DGN_Hawe_FetidMausoleum",
+    "Name": "Mausoleo Fétido",
+    "Description": "Una tumba olvidada de los muertos inquietos de Eridu.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113294,
+    "IdName": "World_DGN_Scos_PenitentCairns",
+    "Name": "Menhires Penitentes",
+    "Description": "Los glenianos saben que deben evitar las grutas que los espíritus consideran sagradas.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2226100,
+    "IdName": "DungeonAffix_Positive_LegendaryVendor",
+    "Name": "Mercader de Objetos Legendarios Oculto",
+    "Description": "Un mercader oculto aparece en alguna parte del calabozo...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113092,
+    "IdName": "World_DGN_Scos_CalibelsMine",
+    "Name": "Mina de Calibel",
+    "Description": "Los bandidos que se apoderaron de la mina ignoran sus secretos.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321159,
+    "IdName": "DungeonAffix_Positive_MoreObducite",
+    "Name": "Mina de Obducita",
+    "Description": "Los monstruos sueltan más Obducita en este lugar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113289,
+    "IdName": "World_DGN_Kehj_AbandonedMineworks",
+    "Name": "Minas Abandonadas",
+    "Description": "Un laberinto de túneles, aún transitados por quienes murieron aquí.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2355993,
+    "IdName": "DungeonAffix_Minor_S9_Summoner",
+    "Name": "Monstruos de Élite Invocadores",
+    "Description": "Los monstruos de Élite tienen el afijo \"Invocador\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314366,
+    "IdName": "DungeonAffix_Minor_Monster_Unstoppable",
+    "Name": "Monstruos imparables",
+    "Description": "Los monstruos se vuelven imparables cuando la vida está debajo del 30%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113997,
+    "IdName": "World_DGN_Frac_HoarfrostDemise",
+    "Name": "Muerte de Escarcha",
+    "Description": "Una cueva gélida de Faunos, repleta de cadáveres y huesos.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113184,
+    "IdName": "World_DGN_Step_ChampionsDemise",
+    "Name": "Muerte del Campeador",
+    "Description": "Alguna vez fueron unas hermosas tierras natales, ahora están plagadas de demonios.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113098,
+    "IdName": "World_DGN_Frac_KorValarRamparts",
+    "Name": "Murallas de Kor Valar",
+    "Description": "Una fortaleza corrupta que alberga los pecados de los Penitentes.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 966310656,
+    "IdName": "MonsterLevel",
+    "Name": "Nivel de monstruos: ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Misc"
+  },
+  {
+    "IdSno": 1113049,
+    "IdName": "World_DGN_Hawe_MaugansWorks",
+    "Name": "Obras de Maugan",
+    "Description": "Una sala putrefacta para criminales y desertores.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321540,
+    "IdName": "DungeonAffix_Positive_Astaroth_AndarielBossMats",
+    "Name": "Ofrenda de Andariel",
+    "Description": "Las recompensas de Astaroth incluyen Muñecos con Alfileres, que se requieren para abrir la Reserva de Andariel.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321556,
+    "IdName": "DungeonAffix_Positive_Astaroth_BelialBossMats",
+    "Name": "Ofrenda de Belial",
+    "Description": "Las recompensas de Astaroth incluyen Cadáveres del Traidor, que se requieren para abrir la Reserva de Belial.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321538,
+    "IdName": "DungeonAffix_Positive_Astaroth_DurielBossMats",
+    "Name": "Ofrenda de Duriel",
+    "Description": "Las recompensas de Astaroth incluyen Fragmentos de Agonía, que se requieren para abrir la Reserva de Duriel.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321566,
+    "IdName": "DungeonAffix_Positive_Astaroth_Grigoire",
+    "Name": "Ofrenda de Grigoire",
+    "Description": "Las recompensas de Astaroth incluyen Acero Viviente, que se requiere para abrir la Reserva de Grigoire.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321574,
+    "IdName": "DungeonAffix_Positive_Astaroth_LordZir",
+    "Name": "Ofrenda de Lord Zir",
+    "Description": "Las recompensas de Astaroth incluyen Sangre Exquisita, que se requiere para abrir la Reserva de Lord Zir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321562,
+    "IdName": "DungeonAffix_Positive_Astaroth_Urivar",
+    "Name": "Ofrenda de Urivar",
+    "Description": "Las recompensas de Astaroth incluyen Máscaras del Justiciero, que se requieren para abrir la Reserva de Urivar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321564,
+    "IdName": "DungeonAffix_Positive_Astaroth_Varshaan",
+    "Name": "Ofrenda de Varshan",
+    "Description": "Las recompensas de Astaroth incluyen Corazones Malignos, que se requieren para abrir la Reserva de Varshan.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2420535,
+    "IdName": "DungeonAffix_Positive_Astaroth_MephistoBossMats",
+    "Name": "Ofrenda del Heraldo del Odio",
+    "Description": "Las recompensas de Astaroth incluyen Corazones Abominables, los cuales se necesitan para abrir la Reserva del Heraldo del Odio",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113931,
+    "IdName": "World_DGN_Hawe_Oblivion",
+    "Name": "Olvido",
+    "Description": "Los demonios de la Pira de Eriman huyeron a esta prisión en ruinas.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113766,
+    "IdName": "World_DGN_Step_CharnelHouse",
+    "Name": "Osario",
+    "Description": "Los cuerpos se almacenan aquí, algunos aún con vida. Comida para demonios.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113500,
+    "IdName": "World_DGN_Frac_HallowedOssuary",
+    "Name": "Osario Bendito",
+    "Description": "Una tumba de mártires, profanada y fortalecida de nuevo.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511992,
+    "IdName": "DungeonAffix_Positive_MythicElites",
+    "Name": "Paraíso Mítico",
+    "Description": "Solo en tus sueños más descabellados podrías imaginar un lugar como este...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585486,
+    "IdName": "World_DGN_Naha_SeethingUnderpass",
+    "Name": "Paso Subterráneo Bullente",
+    "Description": "La corrupción sumergida se eleva desde los canales hundidos.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114021,
+    "IdName": "World_DGN_Kehj_DesertedUnderpass",
+    "Name": "Paso Subterráneo Desierto",
+    "Description": "Una amenaza acecha en las cuevas bajo el Mirador en ruinas.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113784,
+    "IdName": "World_DGN_Step_BloodsoakedCrag",
+    "Name": "Peñasco Ensangrentado",
+    "Description": "Un terreno de banquete para aquellos hambrientos de carne. ",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585547,
+    "IdName": "World_DGN_Naha_HallowedStones",
+    "Name": "Piedras Santificadas",
+    "Description": "En medio de una tormenta de maldad, algo esperanzador titila débilmente.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113090,
+    "IdName": "World_DGN_Scos_Oldstones",
+    "Name": "Piedras Viejas",
+    "Description": "Los Khazra infestan la fortaleza en ruinas, ignorando su maldición.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113148,
+    "IdName": "World_DGN_Scos_WhisperingPines",
+    "Name": "Pinos Susurrantes",
+    "Description": "Astaroth ya no está, pero su control sobre esta fortaleza se mantiene firme. ",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585561,
+    "IdName": "World_DGN_Naha_HierophantPyre",
+    "Name": "Pira de Hierofante",
+    "Description": "Otrora usadas para quemar a quienes se oponían a Sankekur, las piras vuelven a arder.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314252,
+    "IdName": "DungeonAffix_Major_Nightmare Portal",
+    "Name": "Portal de Pesadilla",
+    "Description": "En combate, se abrirán Portales de Pesadilla al azar cerca de los jugadores, de donde brotarán monstruos peligrosos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113085,
+    "IdName": "World_DGN_Kehj_PrisonofCaldeum",
+    "Name": "Prisión de Caldeum",
+    "Description": "Algo malvado se mueve por la prisión.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321552,
+    "IdName": "DungeonAffix_Positive_Astaroth_Jewels",
+    "Name": "Profecía Astral ",
+    "Description": "Las recompensas de Astaroth incluyen una Joya Horádrica valiosa.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113905,
+    "IdName": "World_DGN_Scos_FloodedDepths",
+    "Name": "Profundidades Inundadas",
+    "Description": "Algo más que el agua ha reclamado estos naufragios.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113401,
+    "IdName": "World_DGN_Step_ForgottenDepths",
+    "Name": "Profundidades Olvidadas",
+    "Description": "Una sombra yace debajo de estas piedras benditas.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314374,
+    "IdName": "DungeonAffix_Minor_Monster_ChanceSlow",
+    "Name": "Proyectiles Ralentizadores",
+    "Description": "Los ataques a distancia de los monstruos tienen un 50% de probabilidad de ralentizar a los objetivos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113847,
+    "IdName": "World_DGN_Frac_CalderaGate",
+    "Name": "Puerta de la Caldera",
+    "Description": "Los demonios en esta cueva helada se fortalecen.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114081,
+    "IdName": "World_DGN_Hawe_EndlessGates",
+    "Name": "Puertas del Infinito",
+    "Description": "Criaturas impías corren sin control por los reinos.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314422,
+    "IdName": "DungeonAffix_Minor_Monster_SunderArmor",
+    "Name": "Quebrantadores de armadura",
+    "Description": "Los ataques a distancia de los monstruos reducen tu armadura en un 7% durante 6 segundos, y se puede acumular hasta un 35%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314420,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceDodge",
+    "Name": "Quebrantadores de maniobras evasivas",
+    "Description": "Los ataques a distancia de los monstruos reducen la probabilidad de esquivar en un 12% durante 6 segundos, y se puede acumular hasta un 60%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314370,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceHealing",
+    "Name": "Quebrantadores de pociones",
+    "Description": "Los ataques de los monstruos desde lejos aumentan la recuperación de tu próxima poción 0.75 segundos, hasta un máximo de 7 segundos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314417,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceResistance",
+    "Name": "Quebrantadores de resistencias",
+    "Description": "Los ataques de los monstruos a distancia reducen la resistencia a todos los elementos en un 5% durante 6 segundos y se puede acumular hasta un 25%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314364,
+    "IdName": "DungeonAffix_Minor_Monster_DrainResource",
+    "Name": "Quemadura de Recursos",
+    "Description": "Cuando gastas recursos, quemas un 30% adicional de los recursos usados por cada vez que te golpeó un enemigo distante.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113629,
+    "IdName": "World_DGN_Frac_AnicasClaim",
+    "Name": "Reclamación de Anica",
+    "Description": "Manos inhumanas cavaron estos túneles. ",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314233,
+    "IdName": "DungeonAffix_Positive_CooldownReductionOnKill",
+    "Name": "Reduces tus recuperaciones con cada eliminación",
+    "Description": "Matar un monstruo reduce tus recuperaciones en 0.25 segundos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114067,
+    "IdName": "World_DGN_Hawe_HauntedRefuge",
+    "Name": "Refugio Embrujado",
+    "Description": "La vieja iglesia se hunde en el delta, ahogándose lentamente.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114247,
+    "IdName": "World_DGN_Kehj_HakansRefuge",
+    "Name": "Refugio de Hakán",
+    "Description": "Esta gran mansión está en ruinas, plagada de recuerdos.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114156,
+    "IdName": "World_DGN_Hawe_LightsRefuge",
+    "Name": "Refugio de la Luz",
+    "Description": "En un hogar olvidado yace un nido hecho de dientes y armaduras.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113472,
+    "IdName": "World_DGN_Frac_CultistRefuge",
+    "Name": "Refugio de los Cultistas",
+    "Description": "El último bastión de los cultistas de Nostrava.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113988,
+    "IdName": "World_DGN_Kehj_RenegadesRetreat",
+    "Name": "Refugio de los Renegados",
+    "Description": "Caballeros renegados recogen el botín de la cruzada de Inarius.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113188,
+    "IdName": "World_DGN_Scos_MarinersRefuge",
+    "Name": "Refugio del Marinero",
+    "Description": "Los Ahogados atraen a los marineros naufragados a las profundidades.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314454,
+    "IdName": "DungeonAffix_Minor_Monster_HPRegen",
+    "Name": "Regeneración de monstruos",
+    "Description": "Los monstruos que no son jefes regeneran 1.5% de la vida máxima por segundo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113084,
+    "IdName": "World_DGN_Hawe_AncientReservoir",
+    "Name": "Reserva Ancestral",
+    "Description": "Un manantial contaminado fluye bajo estas ruinas.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2360109,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Amethyst",
+    "Name": "Reserva de Amatistas",
+    "Description": "Aquí se escondieron varios cofres de amatistas.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360158,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Skull",
+    "Name": "Reserva de Cráneos",
+    "Description": "Aquí se escondieron varios cofres de cráneos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360127,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Diamond",
+    "Name": "Reserva de Diamantes",
+    "Description": "Aquí se escondieron varios cofres de diamantes.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2361559,
+    "IdName": "DungeonAffix_Positive_Chests_SeasonalCurrency",
+    "Name": "Reserva de Distorsión Infernal",
+    "Description": "Aquí se escondieron varios cofres de Distorsión Infernal.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360150,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Emerald",
+    "Name": "Reserva de Esmeraldas",
+    "Description": "Aquí se escondieron varios cofres de esmeraldas.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336859,
+    "IdName": "DungeonAffix_Positive_Chests_Gems",
+    "Name": "Reserva de Gemas",
+    "Description": "Aquí se escondieron varios cofres de fragmentos de gemas.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336905,
+    "IdName": "DungeonAffix_Positive_Chests_Materials",
+    "Name": "Reserva de Materiales",
+    "Description": "Aquí se escondieron varios cofres de materiales.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2281775,
+    "IdName": "DungeonAffix_Positive_Chests_Gold",
+    "Name": "Reserva de Oro",
+    "Description": "Aquí se escondieron varios cofres de oro.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360152,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Ruby",
+    "Name": "Reserva de Rubíes",
+    "Description": "Aquí se escondieron varios cofres de rubíes.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360160,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Topaz",
+    "Name": "Reserva de Topacios",
+    "Description": "Aquí se escondieron varios cofres de topacios.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360156,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Sapphire",
+    "Name": "Reserva de Zafiros",
+    "Description": "Aquí se escondieron varios cofres de zafiros.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336907,
+    "IdName": "DungeonAffix_Positive_Chests_Obols",
+    "Name": "Reserva de Óbolos",
+    "Description": "Aquí se escondieron varios cofres de Óbolos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2358423,
+    "IdName": "DungeonAffix_Major_Astaroth_TeleDoT",
+    "Name": "Residuo de Teletransportación",
+    "Description": "Ahora Astaroth deja un charco de daño persistente al teletransportarse.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314378,
+    "IdName": "DungeonAffix_Minor_Monster_LessCorruption",
+    "Name": "Resistencia de daño de sombra con el tiempo de monstruos",
+    "Description": "Los monstruos reciben un 60% menos de daño de los efectos de daño de sombra con el tiempo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314382,
+    "IdName": "DungeonAffix_Minor_Monster_LessBurning",
+    "Name": "Resistencia de monstruos a la quemadura",
+    "Description": "Los monstruos reciben un 60% menos de daño de quemadura.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314376,
+    "IdName": "DungeonAffix_Minor_Monster_LessShadow",
+    "Name": "Resistencia de monstruos a la sombra",
+    "Description": "Los monstruos reciben un 40% menos de daño de sombra.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314388,
+    "IdName": "DungeonAffix_Minor_Monster_LessPhysical",
+    "Name": "Resistencia de monstruos a lo físico",
+    "Description": "Los monstruos reciben un 30% menos de daño físico.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314448,
+    "IdName": "DungeonAffix_Minor_Monster_AntiCrit",
+    "Name": "Resistencia de monstruos a los golpes críticos",
+    "Description": "Los ataques de los monstruos reducen un 6% el daño de tus golpes críticos durante 3 segundos, lo que se acumula hasta un 60%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314442,
+    "IdName": "DungeonAffix_Minor_Monster_AntiVulnerable",
+    "Name": "Resistencia de monstruos a quedar vulnerables",
+    "Description": "La duración de los efectos de estado vulnerable contra monstruos se reduce un 60%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314444,
+    "IdName": "DungeonAffix_Minor_Monster_AntiOverpower",
+    "Name": "Resistencia de monstruos a ser abrumados",
+    "Description": "Los ataques de los monstruos reducen un 12% el daño de tu próximo ataque abrumador, lo que se acumula hasta un 60%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314446,
+    "IdName": "DungeonAffix_Minor_Monster_AntiCC",
+    "Name": "Resistencia de monstruos al control de multitudes",
+    "Description": "La duración del control de multitudes contra monstruos se reduce un 40%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314397,
+    "IdName": "DungeonAffix_Minor_Monster_LessCold",
+    "Name": "Resistencia de monstruos al frío",
+    "Description": "Los monstruos reciben un 40% menos de daño de frío.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314437,
+    "IdName": "DungeonAffix_Minor_Monster_LessFire",
+    "Name": "Resistencia de monstruos al fuego",
+    "Description": "Los monstruos reciben un 40% menos de daño de fuego.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314395,
+    "IdName": "DungeonAffix_Minor_Monster_LessLightning",
+    "Name": "Resistencia de monstruos al rayo",
+    "Description": "Los monstruos reciben un 40% menos de daño de rayo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314380,
+    "IdName": "DungeonAffix_Minor_Monster_LessBleeding",
+    "Name": "Resistencia de monstruos al sangrado",
+    "Description": "Los monstruos reciben un 60% menos de daño de sangrado.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314393,
+    "IdName": "DungeonAffix_Minor_Monster_LessPoison",
+    "Name": "Resistencia de monstruos al veneno",
+    "Description": "Los monstruos reciben un 60% menos de daño de veneno.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1585586,
+    "IdName": "World_DGN_Naha_ForgottenRemains",
+    "Name": "Restos Olvidados",
+    "Description": "Algunos pobladores han desaparecido misteriosamente en las inmediaciones.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 410196226,
+    "IdName": "ItemDungeonAffixResses",
+    "Name": "Resurrecciones permitidas: ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Misc"
+  },
+  {
+    "IdSno": 2321618,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_LifeSteal",
+    "Name": "Robo de Vida de Astaroth",
+    "Description": "Astaroth obtiene un 15% de robo de Vida.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314372,
+    "IdName": "DungeonAffix_Minor_Monster_LifeSteal",
+    "Name": "Robo de vida de monstruos",
+    "Description": "Los monstruos que no son jefes obtienen un 15% de robo de vida.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314450,
+    "IdName": "DungeonAffix_Minor_Monster_BarrierKiller",
+    "Name": "Rompebarreras",
+    "Description": "Los monstruos infligen un 100% más de daño a las barreras.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113196,
+    "IdName": "World_DGN_Frac_RitualTower",
+    "Name": "Ruinas Atormentadas",
+    "Description": "Han pasado siglos desde que esta atalaya tuvo un uso mortal.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113710,
+    "IdName": "World_DGN_Kehj_ForgottenRuins",
+    "Name": "Ruinas Olvidadas",
+    "Description": "Las serpientes infestan los huesos de estos salones de magos olvidados.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114193,
+    "IdName": "World_DGN_Scos_SunkenRuins",
+    "Name": "Ruinas Sumergidas",
+    "Description": "Los rumores hablan de un sanador que se convirtió en un nigromante renegado.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114038,
+    "IdName": "World_DGN_Hawe_RuinsofEridu",
+    "Name": "Ruinas de Eridu",
+    "Description": "Una fortaleza alguna vez formidable consumida por el pantano.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114192,
+    "IdName": "World_DGN_Hawe_GhoaRuins",
+    "Name": "Ruinas de Ghoa",
+    "Description": "Otrora una fortaleza. El pantano reclama todo lo que las manos mortales construyen.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114092,
+    "IdName": "World_DGN_Kehj_ShivtaRuins",
+    "Name": "Ruinas de Shivta",
+    "Description": "La corrupción en Alcarnus se ha esparcido por estas ruinas.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2282166,
+    "IdName": "DungeonAffix_Positive_ExperiencePools",
+    "Name": "Sabiduría Olvidada",
+    "Description": "El conocimiento que los enemigos acumulan aquí otorga experiencia adicional.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114071,
+    "IdName": "World_DGN_Hawe_FacelessShrine",
+    "Name": "Sagrario Sin Semblante",
+    "Description": "Uno de los cultos menos secretos de Hawezar. Todos los pecadores son bienvenidos.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2343038,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Lethal",
+    "Name": "Sagrarios Letales",
+    "Description": "Aparecerán Sagrarios Letales en este lugar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1719009,
+    "IdName": "DungeonAffix_Positive_ExtraShrines",
+    "Name": "Sagrarios adicionales",
+    "Description": "El calabozo tendrá más Sagrarios.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2343032,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Artillery",
+    "Name": "Sagrarios de Artillería",
+    "Description": "Aparecerán Sagrarios de Artillería en este lugar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2361572,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Channeling",
+    "Name": "Sagrarios de Canalización",
+    "Description": "Aparecerán Sagrarios de Canalización en este lugar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2343014,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Conduit",
+    "Name": "Sagrarios de Conducto",
+    "Description": "Aparecerán Sagrarios de Conducto en este lugar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2343034,
+    "IdName": "DungeonAffix_Positive_PowerShrines_BlastWave",
+    "Name": "Sagrarios de Onda Explosiva",
+    "Description": "Aparecerán Sagrarios de Onda Explosiva en este lugar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2343040,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Protection",
+    "Name": "Sagrarios de Protección",
+    "Description": "Aparecerán Sagrarios de Protección en este lugar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113361,
+    "IdName": "World_DGN_Kehj_HallsoftheDamned",
+    "Name": "Salas de los Condenados",
+    "Description": "Los magos del Trino alguna vez crearon magias extrañas aquí...",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113649,
+    "IdName": "World_DGN_Step_BuriedHalls",
+    "Name": "Salones Enterrados",
+    "Description": "El Trino lucha por reclamar estos antiguos salones.",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114271,
+    "IdName": "World_DGN_Hawe_ShadowedPlunge",
+    "Name": "Salto Tenebroso",
+    "Description": "Los Cultistas de la Serpiente sacrifican a los inocentes.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2330769,
+    "IdName": "DungeonAffix_Major_Astaroth_Pounce",
+    "Name": "Salto de Amalgama",
+    "Description": "Ahora la Amalgama de Furia continuará sus ataques de salto incluso después de que Astaroth desmonte.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314246,
+    "IdName": "DungeonAffix_Positive_IncreasedHealing",
+    "Name": "Sanación aumentada",
+    "Description": "La sanación que recibes aumenta un 15%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2358424,
+    "IdName": "DungeonAffix_Positive_Astaroth_Reputation",
+    "Name": "Secretos Macabros ",
+    "Description": "Matar a Astaroth otorga una gran cantidad de Conocimiento Horádrico.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585521,
+    "IdName": "World_DGN_Naha_UlarianSepulcher",
+    "Name": "Sepulcro de Ularian",
+    "Description": "Cementerio maldito, temido por todos.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114026,
+    "IdName": "World_DGN_Kehj_SepulcherOfTheForsworn",
+    "Name": "Sepulcro del Abjurador",
+    "Description": "La maldad se agita debajo del altar de Baal.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321163,
+    "IdName": "DungeonAffix_Positive_SeasonalReputation",
+    "Name": "Sitio Venerado",
+    "Description": "Los monstruos de este lugar otorgan más Favor Divino.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314211,
+    "IdName": "DungeonAffix_Major_Drifting Shade",
+    "Name": "Sombras Errantes",
+    "Description": "Las Sombras Errantes persiguen a sus objetivos. Al entrar en contacto explotan, provocan un daño intenso y crean un campo de pesadilla que atonta a las víctimas.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314350,
+    "IdName": "DungeonAffix_Major_DeathPulse",
+    "Name": "Sombras Letales",
+    "Description": "Al matar un monstruo, hay una probabilidad de liberar una descarga volátil tras un tiempo breve, la cual inflige mucho daño de área.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1585603,
+    "IdName": "World_DGN_Naha_SkatsimiFane",
+    "Name": "Templo Skatsimi",
+    "Description": "Hace tanto que no se practican ceremonias aquí que quién sabe qué queda de lo antiguo.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113877,
+    "IdName": "World_DGN_Step_KomdorTemple",
+    "Name": "Templo de Komdor",
+    "Description": "Una secta del Trino condenada a recorrer Santuario como faunos por siempre. ",
+    "DungeonZoneInfo": "en Estepas Áridas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585504,
+    "IdName": "World_DGN_Naha_FeedingGrounds",
+    "Name": "Terrenos de Alimentación",
+    "Description": "Aquí se alimenta a los demonios con víctimas frescas.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1975499,
+    "IdName": "DungeonAffix_Positive_S05_Rep_Shrines",
+    "Name": "Toque Infernal",
+    "Description": "Se obtienen Sagrarios Infernales adicionales y un 20% más de experiencia de glifo al terminar este calabozo.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314209,
+    "IdName": "DungeonAffix_Major_Lightning Storm",
+    "Name": "Tormenta Eléctrica",
+    "Description": "Los rayos se concentran arriba del jugador. Entra al domo de protección para evitar consecuencias graves.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2330764,
+    "IdName": "DungeonAffix_Major_Astaroth_Meteor",
+    "Name": "Tormenta de Meteoros",
+    "Description": "Ahora Astaroth cuenta con ataques de meteoros.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113793,
+    "IdName": "World_DGN_Hawe_HeathensKeep",
+    "Name": "Torreón del Pagano",
+    "Description": "Estos caballeros han jurado lealtad a un nuevo líder.",
+    "DungeonZoneInfo": "en Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314368,
+    "IdName": "DungeonAffix_Minor_Monster_AttackBehind",
+    "Name": "Traicioneros",
+    "Description": "Los ataques cercanos de monstruos desde atrás hacen que te vuelvas vulnerable. El daño vulnerable que recibes aumenta en 35%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1690800,
+    "IdName": "DungeonAffix_Minor_Monster_Traps_Fire01",
+    "Name": "Trampas de Fuego",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321165,
+    "IdName": "DungeonAffix_Positive_MoreGoblins",
+    "Name": "Trasgos del Tesoro Garantizados",
+    "Description": "El calabozo tendrá más Trasgos del Tesoro.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585475,
+    "IdName": "World_DGN_Naha_BetrayedTomb",
+    "Name": "Tumba Traicionada",
+    "Description": "Los espíritus se retuercen mientras vacuos gritan en su monstruosa agonía.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1498609,
+    "IdName": "World_DGN_S02_Kehj_TombofHallows",
+    "Name": "Tumba de las Reliquias",
+    "Description": "La Muerte está en los pasillos. Ancestral y nueva. Moribunda y eterna.",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113343,
+    "IdName": "World_DGN_Kehj_TomboftheSaints",
+    "Name": "Tumba de los Santos",
+    "Description": "Esta tumba vacía estuvo rebosante de oro en algún momento. ",
+    "DungeonZoneInfo": "en Kehjistán",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1582559,
+    "IdName": "DungeonAffix_Major_Elemental_Totems",
+    "Name": "Tótems Elementales",
+    "Description": "Durante el combate, aparecen Tótems Elementales aleatorios que potencian a los enemigos cercanos hasta ser destruidos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113857,
+    "IdName": "World_DGN_Scos_DomhainneTunnels",
+    "Name": "Túneles de Domhainne",
+    "Description": "Los residentes de Corbach dicen que se escuchan los gritos de la guarida de los Khazra.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585610,
+    "IdName": "World_DGN_Naha_SleeplessHollow",
+    "Name": "Vacío Insomne",
+    "Description": "Cuando los muertos son olvidados, la carne y el hueso se alzan una vez más.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113763,
+    "IdName": "World_DGN_Scos_TwistedHollow",
+    "Name": "Valle Retorcido",
+    "Description": "Una auténtica reserva de vida salvaje donde pueden encontrarse respuestas.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314260,
+    "IdName": "DungeonAffix_Major_Avenger",
+    "Name": "Vengadores",
+    "Description": "Al matar a un monstruo, los monstruos que estén cerca se enfurecerán después de tiempo breve e infligirán más daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1585554,
+    "IdName": "World_DGN_Naha_RemnantsofRage",
+    "Name": "Vestigios de Furia",
+    "Description": "En estos confines, tiembla algo incansable.",
+    "DungeonZoneInfo": "en Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321161,
+    "IdName": "DungeonAffix_Positive_SeasonalCurrency",
+    "Name": "Viales Horádricos",
+    "Description": "Los monstruos de este calabozo sueltan más Viales Horádricos.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314356,
+    "IdName": "DungeonAffix_Minor_Monster_HPBonus",
+    "Name": "Vida de monstruos",
+    "Description": "Los monstruos obtienen un 30% de vida adicional.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114196,
+    "IdName": "World_DGN_Scos_JalalsVigil",
+    "Name": "Vigilia de Jalal",
+    "Description": "Un bosque agrio por la agonía de su propio protector.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114287,
+    "IdName": "World_DGN_Scos_MadduxWatch",
+    "Name": "Vigilia de Maddux",
+    "Description": "Este destacamento abandonado se alza sobre los muertos.",
+    "DungeonZoneInfo": "en Escosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113451,
+    "IdName": "World_DGN_Frac_LightsWatch",
+    "Name": "Vigilia de la Luz",
+    "Description": "Una fortaleza de Caballeros, reutilizada por los bandidos y otros parásitos.",
+    "DungeonZoneInfo": "en Cumbres Fracturadas",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314256,
+    "IdName": "DungeonAffix_Major_Volcanic",
+    "Name": "Volcánico",
+    "Description": "En combate, brotan llamas cerca de los jugadores periódicamente.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2382540,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_01_Cellar",
+    "Name": "[PH] Sphinx 01 Cellar",
+    "Description": "missing description",
+    "DungeonZoneInfo": "en Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2380546,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_03",
+    "Name": "[PH] The Mountain's Hidden Heart",
+    "Description": "PH",
+    "DungeonZoneInfo": "en Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2454812,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_03_Part02",
+    "Name": "[PH] The Temple Swallowed to Time",
+    "Description": "missing description",
+    "DungeonZoneInfo": "en Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2354533,
+    "IdName": "DungeonAffix_Minor_S9_Barrier",
+    "Name": "Égida Menor",
+    "Description": "Algunos monstruos aquí obtienen un 50% de su Vida máxima como barrera.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1898340,
+    "IdName": "DungeonAffix_Major_Monster_Barrier",
+    "Name": "Égida Profana",
+    "Description": "Los monstruos obtienen un 50% de su Vida máxima como barrera.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2355998,
+    "IdName": "DungeonAffix_Minor_S9_Tethering",
+    "Name": "Élites Avérnicos",
+    "Description": "Los monstruos de Élite tienen el afijo \"Avérnico\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2373219,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Waller)",
+    "Name": "Élites Creamuros",
+    "Description": "Los monstruos de Élite tienen el afijo \"Creamuros\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511953,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Executioner)",
+    "Name": "Élites Ejecutores",
+    "Description": "Los monstruos de Élite tienen el afijo \"Ejecutor\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373215,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Explosive)",
+    "Name": "Élites Explosivos",
+    "Description": "Los monstruos de Élite tienen el afijo \"Explosivo\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511957,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Frenzied)",
+    "Name": "Élites Frenéticos",
+    "Description": "Los monstruos de Élite tienen el afijo \"Frenético\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511827,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Illusory)",
+    "Name": "Élites Ilusorios ",
+    "Description": "Los monstruos de Élite tienen el afijo \"Ilusorio\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511905,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Infested)",
+    "Name": "Élites Infestados ",
+    "Description": "Los monstruos de Élite tienen el afijo \"Infestado\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314333,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Suppressor)",
+    "Name": "Élites Inhibidores",
+    "Description": "Los monstruos de Élite tienen el afijo \"Inhibidor\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2355995,
+    "IdName": "DungeonAffix_Minor_S9_Suppressor",
+    "Name": "Élites Inhibidores",
+    "Description": "Los monstruos de Élite tienen el afijo \"Inhibidor\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2511973,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Splitter)",
+    "Name": "Élites Partidores",
+    "Description": "Los monstruos de Élite tienen el afijo \"Partidor\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373211,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Vampiric)",
+    "Name": "Élites Vampíricos",
+    "Description": "Los monstruos de Élite tienen el afijo \"Vampírico\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511979,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Veiled)",
+    "Name": "Élites Velados",
+    "Description": "Los monstruos de Élite tienen el afijo \"Velado\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511951,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Berserker)",
+    "Name": "Élites Vesánicos",
+    "Description": "Los monstruos de Élite tienen el afijo \"Vesánico\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511949,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Anguished Souls)",
+    "Name": "Élites con Almas Angustiosas ",
+    "Description": "Los monstruos de Élite tienen el afijo \"Almas Angustiosas\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511968,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Shadow Enchanted)",
+    "Name": "Élites con Encantamiento de Sombra",
+    "Description": "Los monstruos de Élite tienen el afijo \"Encantamiento de Sombra\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314342,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Poison)",
+    "Name": "Élites con Encantamiento de Veneno",
+    "Description": "Los monstruos de Élite tienen el afijo \"Encantamiento de Veneno\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511964,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Saw Blades)",
+    "Name": "Élites con Hojas Serradas",
+    "Description": "Los monstruos de Élite tienen el afijo \"Hojas Serradas\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314339,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Electric Lance)",
+    "Name": "Élites con Lanza de Choque",
+    "Description": "Los monstruos de Élite tienen el afijo \"Lanza de Choque\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511947,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Sinful Torment)",
+    "Name": "Élites con Tormento Pecaminoso ",
+    "Description": "Los monstruos de Élite tienen el afijo \"Tormento Pecaminoso\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2354691,
+    "IdName": "DungeonAffix_Minor_S9_ChillingWinds",
+    "Name": "Élites con Viento Escalofriante",
+    "Description": "Los monstruos de Élite tienen el afijo \"Viento Escalofriante\" e infligen un 20% más de daño.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314344,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Frost)",
+    "Name": "Élites potenciados (Encantamiento de Frío)",
+    "Description": "Los enemigos de Élite siempre tienen el afijo “Encantamiento de Frío”.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314346,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Shadow)",
+    "Name": "Élites potenciados (Encantamiento de Sombra)",
+    "Description": "Los enemigos de Élite siempre tienen el afijo “Encantamiento de Sombra”.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314335,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Teleporter)",
+    "Name": "Élites potenciados (Teletransportador)",
+    "Description": "Los enemigos de Élite siempre tienen el afijo \"Teletransportador\".",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314352,
+    "IdName": "DungeonAffix_Major_Blood Blister",
+    "Name": "Úlceras Sangrantes",
+    "Description": "Al matar un monstruo, hay una probabilidad de que aparezca una Úlcera Sangrante. Después de un tiempo breve, explotará e infligirá mucho daño de área.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2321691,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_BloodBlisters",
+    "Name": "Úlceras Sangrantes de Astaroth",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  }
+]

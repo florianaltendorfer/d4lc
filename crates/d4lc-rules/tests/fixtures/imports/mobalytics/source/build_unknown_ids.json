@@ -1,0 +1,98 @@
+{
+  "data": {
+    "game": {
+      "documents": {
+        "userGeneratedDocumentById": {
+          "data": {
+            "id": "moba-build-unknown",
+            "data": {
+              "name": "Unknown Source IDs",
+              "buildVariants": {
+                "values": [
+                  {
+                    "id": "variant-starter",
+                    "genericBuilder": {
+                      "slots": [
+                        {
+                          "gameSlotSlug": "gloves",
+                          "gameEntity": {
+                            "slug": "generic-gloves",
+                            "title": "Legendary Gloves",
+                            "type": "legendaryItems",
+                            "modifiers": {
+                              "gearStats": [
+                                {
+                                  "id": "Imaginary Affix",
+                                  "isGreater": false
+                                }
+                              ],
+                              "implicitStats": [],
+                              "socketStats": [
+                                {
+                                  "slug": "Bogus Rune",
+                                  "type": "runes"
+                                }
+                              ],
+                              "temperingStats": []
+                            }
+                          }
+                        },
+                        {
+                          "gameSlotSlug": "aspect-slot",
+                          "gameEntity": {
+                            "slug": "missing-aspect",
+                            "title": "Missing Aspect",
+                            "type": "aspects",
+                            "modifiers": {
+                              "gearStats": [],
+                              "implicitStats": [],
+                              "socketStats": [],
+                              "temperingStats": []
+                            }
+                          }
+                        },
+                        {
+                          "gameSlotSlug": "helm",
+                          "gameEntity": {
+                            "slug": "not-a-real-unique",
+                            "title": "Not A Real Unique",
+                            "type": "uniqueItems",
+                            "modifiers": {
+                              "gearStats": [],
+                              "implicitStats": [],
+                              "socketStats": [],
+                              "temperingStats": []
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "paragon": {
+                      "nodes": [],
+                      "boards": []
+                    }
+                  }
+                ]
+              }
+            },
+            "updatedAt": "2026-05-31T15:00:00Z",
+            "content": [
+              {
+                "__typename": "NgfDocumentCmWidgetContentVariantsV1",
+                "data": {
+                  "title": "Build Variants",
+                  "childrenVariants": [
+                    {
+                      "id": "variant-starter",
+                      "title": "Starter"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

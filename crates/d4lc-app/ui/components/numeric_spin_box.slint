@@ -1,0 +1,138 @@
+// Numeric spin box — Slint rendering of MahApps.Metro NumericUpDown.
+// Upstream: DebugView.xaml:74-184 (13 NumericUpDown instances).
+// Restyled to the upstream readme-003 layout: label above a right-aligned
+// value box followed by "+" and "-" buttons.
+//
+// Usage: NumericSpinBox { label: "Tooltip width:"; minimum: 100; maximum: 1000; step-size: 1; value: tooltip-width; }
+
+import { NumberText } from "number_text.slint";
+
+export component NumericSpinBox {
+    in property <string> label;
+    in property <float> minimum: 0;
+    in property <float> maximum: 100;
+    in property <float> step-size: 1;
+    in-out property <float> value;
+    // Set false when the caller renders the label itself and this component
+    // only contributes the stepper (LabeledStepper puts the label in its own
+    // raster column). The label is still the accessible name either way.
+    in property <bool> show-label: true;
+    // Optional change notification (bound only where the Rust side
+    // listens, e.g. TypeAreaOffsetLeft).
+    callback changed(float);
+
+    VerticalLayout {
+        spacing: 4px;
+
+        // Label text
+        if root.show-label : Text {
+            text: label;
+            color: #FFFFFF;
+            font-size: 12px;
+            vertical-alignment: center;
+        }
+
+        // Numeric input row: value box, plus, minus (upstream order)
+        HorizontalLayout {
+            spacing: 4px;
+            preferred-height: 28px;
+            min-height: 28px;
+
+            // Value box (right-aligned value)
+            // Accessibility: the box exposes the spinbox role with the
+            // row label, plus the increment/decrement accessible
+            // actions (screen readers and the headless real-input test
+            // harness drive the steppers through them); the two
+            // labeled stepper buttons sit next to the box.
+            Rectangle {
+                background: #1F1F1F;
+                border-width: 1px;
+                border-color: #3F3F46;
+                border-radius: 3px;
+                accessible-role: spinbox;
+                accessible-label: root.label;
+                accessible-action-increment => {
+                    value = min(value + step-size, maximum);
+                    changed(value);
+                }
+                accessible-action-decrement => {
+                    value = max(value - step-size, minimum);
+                    changed(value);
+                }
+
+                HorizontalLayout {
+                    padding-left: 8px;
+                    padding-right: 8px;
+
+                    Text {
+                        // Never `text: value`: that would use the selected
+                        // language's decimal separator.
+                        text: NumberText.format(value);
+                        color: #FFFFFF;
+                        font-size: 13px;
+                        horizontal-alignment: right;
+                        vertical-alignment: center;
+                        overflow: elide;
+                        width: 100%;
+                    }
+                }
+            }
+
+            // Increment button
+            Rectangle {
+                background: #1F1F1F;
+                border-width: 1px;
+                border-color: #3F3F46;
+                border-radius: 3px;
+                preferred-width: 28px;
+                min-width: 28px;
+                max-width: 28px;
+                min-height: 28px;
+                accessible-role: button;
+                accessible-label: @tr("{} increment", root.label);
+                Text {
+                    text: "+";
+                    color: #FFFFFF;
+                    font-size: 16px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        value = min(value + step-size, maximum);
+                        changed(value);
+                    }
+                }
+            }
+
+            // Decrement button
+            Rectangle {
+                background: #1F1F1F;
+                border-width: 1px;
+                border-color: #3F3F46;
+                border-radius: 3px;
+                preferred-width: 28px;
+                min-width: 28px;
+                max-width: 28px;
+                min-height: 28px;
+                accessible-role: button;
+                accessible-label: @tr("{} decrement", root.label);
+                Text {
+                    text: "-";
+                    color: #FFFFFF;
+                    font-size: 16px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        value = max(value - step-size, minimum);
+                        changed(value);
+                    }
+                }
+            }
+        }
+    }
+}

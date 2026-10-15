@@ -1,0 +1,1718 @@
+// Tabbed build-import dialog (upstream `ImportAffixPresetView`).
+//
+// One dialog with seven tabs replaces the five per-provider download
+// dialogs and the old cross-provider import dialog:
+//
+// | # | Tab             | Content                                        |
+// |---|-----------------|------------------------------------------------|
+// | 0 | Local           | preset combo + import / export / remove        |
+// | 1 | Merge           | Build 1 / Build 2 / Build 1+2 merge rows       |
+// | 2 | 🌐 D2Core       | provider layout                                |
+// | 3 | 🌐 D4Builds     | provider layout                                |
+// | 4 | 🌐 InfinityBuilds | provider layout                                |
+// | 5 | 🌐 Maxroll      | provider layout                                |
+// | 6 | 🌐 Mobalytics   | provider layout + URL status + Show browser    |
+// |   |                 | + nested Builds/Profiles sub-tabs              |
+//
+// Every provider tab shares one layout: the URL row (field | Add | Web |
+// info, the buttons at fixed sizes and positions on every tab), a
+// fixed-height hint line with the validation result / extracted id (the
+// Mobalytics URL status), the per-tab preset combo with remove, the
+// "Import paragon boards" toggle, and the two bordered lists (downloaded
+// builds / variants of the selected build). Mobalytics adds the "Show
+// browser" toggle and the upstream nested "Builds"/"Profiles" tab control
+// (`SelectedTabIndexMobalytics`): the Builds page is the regular dual list,
+// the Profiles page lists the stored profiles (name + Upd/Web/X) and the
+// selected profile's published builds whose Add fills the URL field.
+// Upstream placed Add inline on some providers and below the field on
+// others; the port keeps one position so the buttons never jump.
+//
+// The Local tab mirrors upstream tab 0: the preset combo plus the Import
+// (file picker), Export, and Remove (confirmation) buttons, with the
+// row tooltips from the upstream resx (rsTooltipImportPreset /
+// rsTooltipExportPreset / rsTooltipRemovePreset). The Merge tab mirrors
+// upstream tab 1: one row per `rsCapBuild1` / `rsCapBuild2` /
+// `rsCapBuild12` with the resx info tooltips, a change-color checkbox, a
+// 20 px color swatch (upstream `SetAffixColorView`, gated by the row's
+// checkbox), and the preset combos / the `rsCapMerge` button.
+//
+// The upstream nested MahApps dialogs (import progress — a compact
+// centred panel with Cancel —, Confirm name,
+// Delete confirm, Set affix color) render as overlay layers inside this
+// dialog with the same copy. All state flows through root in-out
+// properties on `main_window.slint` (the project's no-Slint-global host
+// plumbing); Rust seeds, gates, and drives the background downloads and
+// the file import / export / merge flows.
+import { ComboBox, ScrollView } from "std-widgets.slint";
+import { DarkLineEdit } from "dark_line_edit.slint";
+import { SetAffixColorDialog } from "set_affix_color_dialog.slint";
+import { PlusIcon, RefreshIcon, InfoOutlineIcon, CloseIcon, ExitArrowIcon } from "../components/icons.slint";
+
+// One stored provider build in the left list (`{Name} ({Date})` tooltip).
+export struct ImportBuildRow {
+    id: string,
+    name: string,
+    date: string,
+}
+
+// ---------------------------------------------------------------------------
+// Small building blocks (dark dialog look, shared with the other dialogs).
+// ---------------------------------------------------------------------------
+
+component IconTextButton inherits Rectangle {
+    in property <string> label;
+    // Optional distinct accessible label — the Local tab's buttons must
+    // stay findable next to the AffixScreen's own Import/Remove chips.
+    in property <string> a11y-label: "";
+    in property <bool> enabled: true;
+    // Width-locked (min = preferred = max) so a layout can never stretch
+    // the button across the dialog: upstream rows keep compact fixed
+    // Plus/Web/Refresh/CloseThick buttons at the row end.
+    in property <length> button-width: 26px;
+    callback clicked();
+
+    background: enabled ? #3A3A3A : #2A2A2A;
+    border-width: 1px;
+    border-color: #4A4A4A;
+    border-radius: 3px;
+    min-width: root.button-width;
+    preferred-width: root.button-width;
+    max-width: root.button-width;
+    preferred-height: 24px;
+    min-height: 24px;
+    max-height: 24px;
+    accessible-role: button;
+    accessible-label: root.a11y-label != "" ? root.a11y-label : root.label;
+
+    Text {
+        text: root.label;
+        color: root.enabled ? #EEEEEE : #777777;
+        font-size: 11px;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    if root.enabled: TouchArea {
+        clicked => { root.clicked(); }
+    }
+}
+
+component WideButton inherits Rectangle {
+    in property <string> label;
+    in property <bool> enabled: true;
+    in property <bool> primary: false;
+    callback clicked();
+
+    background: !root.enabled ? #2A2A2A : (root.primary ? #CC3333 : #555555);
+    border-radius: 4px;
+    preferred-width: 80px;
+    preferred-height: 28px;
+    min-height: 28px;
+    max-height: 28px;
+    accessible-role: button;
+    accessible-label: root.label;
+
+    Text {
+        text: root.label;
+        color: root.enabled ? #EEEEEE : #777777;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+    }
+
+    if root.enabled: TouchArea {
+        clicked => { root.clicked(); }
+    }
+}
+
+component InfoIcon inherits Rectangle {
+    InfoOutlineIcon {
+        width: 15px;
+        height: 15px;
+        x: (parent.width - self.width) / 2;
+        y: (parent.height - self.height) / 2;
+        icon-color: #8A8A8A;
+    }
+}
+
+// Info icon with the visible hover tooltip of the build-row pattern —
+// the Merge tab rows carry the upstream resx tooltips
+// (rsTooltipMergeBuild1 / 2 / 12) and Slint has no native tooltip.
+component TooltipIcon inherits Rectangle {
+    in property <string> tooltip;
+    preferred-width: 22px;
+    min-width: 22px;
+    max-width: 22px;
+    preferred-height: 24px;
+    min-height: 24px;
+
+    InfoIcon {}
+
+    hover := TouchArea {}
+
+    if hover.has-hover: Rectangle {
+        background: #161616F2;
+        border-width: 1px;
+        border-color: #5A5A5A;
+        border-radius: 3px;
+        x: 0;
+        y: parent.height + 4px;
+        width: 250px;
+        height: tooltip_text.preferred-height + 8px;
+
+        tooltip_text := Text {
+            x: 4px;
+            width: parent.width - 8px;
+            y: 4px;
+            text: root.tooltip;
+            color: #EEEEEE;
+            font-size: 11px;
+            wrap: word-wrap;
+        }
+    }
+}
+
+// The Merge tab's change-color checkbox (upstream `CheckBox
+// IsChecked="{Binding ChangeColorBuild1}"`). Drawn as the dialog's dark
+// square with the red accent fill — the headless rasterizer renders it
+// deterministically, unlike a font check glyph.
+component CheckSquare inherits Rectangle {
+    in property <bool> checked;
+    in property <string> label;
+    callback toggled(bool);
+
+    background: transparent;
+    min-width: 18px;
+    max-width: 18px;
+    min-height: 18px;
+    max-height: 18px;
+    accessible-role: checkbox;
+    accessible-label: root.label;
+    accessible-checked: root.checked;
+
+    Rectangle {
+        background: transparent;
+        border-width: 1px;
+        border-color: #6A6A6A;
+        border-radius: 3px;
+        x: 0;
+        y: 0;
+        width: parent.width;
+        height: parent.height;
+
+        Rectangle {
+            background: #CC3333;
+            border-radius: 1px;
+            x: 3px;
+            y: 3px;
+            width: parent.width - 6px;
+            height: parent.height - 6px;
+            visible: root.checked;
+        }
+    }
+
+    TouchArea {
+        clicked => { root.toggled(!root.checked); }
+    }
+}
+
+// The Merge tab's 20 px color swatch (upstream `Label Background=
+// "{Binding ColorBuildN …}"`, Width=20). Slint cannot convert a string
+// property to a brush, so the hex is matched against the picker palette
+// (mirroring `set_affix_color_dialog.slint`) plus the default normal
+// color seed; unknown values render the neutral placeholder gray.
+component ColorSwatch inherits Rectangle {
+    in property <string> hex;
+    // Upstream gates the swatch click on the row's change-color checkbox
+    // (CanSetAffixColorBuild{N}Execute = ChangeColorBuild{N}): a disabled
+    // swatch does not react, like the dialog's other gated buttons.
+    in property <bool> enabled: false;
+    callback clicked();
+    min-width: 20px;
+    max-width: 20px;
+    min-height: 20px;
+    max-height: 20px;
+    border-width: 1px;
+    border-color: root.enabled ? #8A8A8A : #6A6A6A;
+    border-radius: 3px;
+    background: root.hex == "#FFFFFF" ? #FFFFFF
+        : root.hex == "#FF0000" ? #FF0000
+        : root.hex == "#FF8800" ? #FF8800
+        : root.hex == "#FFFF00" ? #FFFF00
+        : root.hex == "#00FF00" ? #00FF00
+        : root.hex == "#00FFFF" ? #00FFFF
+        : root.hex == "#0088FF" ? #0088FF
+        : root.hex == "#8800FF" ? #8800FF
+        : root.hex == "#FF00FF" ? #FF00FF
+        : root.hex == "#888888" ? #888888
+        : root.hex == "#008000" ? #008000
+        : #555555;
+    accessible-role: button;
+    accessible-label: @tr("Color {}", root.hex);
+    accessible-enabled: root.enabled;
+
+    if root.enabled: TouchArea {
+        clicked => { root.clicked(); }
+    }
+}
+
+// Simple labeled toggle (dark look, matches the settings screen switch).
+component ToggleRow inherits Rectangle {
+    in property <string> label;
+    in property <bool> checked: false;
+    callback toggled(bool);
+
+    background: transparent;
+    preferred-height: 24px;
+    min-height: 24px;
+    max-height: 24px;
+
+    HorizontalLayout {
+        spacing: 8px;
+
+        // Toggle track
+        Rectangle {
+            background: root.checked ? #B01E24 : #4A4A4A;
+            accessible-role: switch;
+            accessible-label: root.label;
+            border-radius: 10px;
+            preferred-width: 36px;
+            min-width: 36px;
+            max-width: 36px;
+            preferred-height: 20px;
+            min-height: 20px;
+            max-height: 20px;
+
+            Rectangle {
+                background: #FFFFFF;
+                border-radius: 9px;
+                width: 16px;
+                height: 16px;
+                x: root.checked ? 18px : 2px;
+                y: 2px;
+            }
+
+            TouchArea {
+                clicked => { root.toggled(!root.checked); }
+            }
+        }
+
+        Text {
+            text: root.label;
+            color: #DDDDDD;
+            font-size: 12px;
+            vertical-alignment: center;
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// Provider tab (the shared layout of tabs 2-6).
+// ---------------------------------------------------------------------------
+
+component ProviderTab inherits Rectangle {
+    in property <string> watermark: "";
+    // What the hint line calls the extracted id ("Build ID", "Planner
+    // ID"); empty for providers whose id is the URL itself.
+    in property <string> id-label: "";
+    in property <bool> show-url-status: false;
+    in property <bool> show-show-browser: false;
+    in property <string> url-status: "";
+    in property <bool> show-browser: false;
+    // Mobalytics: the upstream nested "Builds"/"Profiles" tab control
+    // (`SelectedTabIndexMobalytics`) with the stored profiles and the
+    // selected profile's published builds.
+    in property <bool> show-sub-tabs: false;
+    in-out property <int> selected-sub-tab: 0;
+    in property <[ImportBuildRow]> profiles;
+    in property <int> selected-profile-index: -1;
+    in property <[ImportBuildRow]> profile-variants;
+    in property <int> selected-profile-variant-index: -1;
+    in property <[ImportBuildRow]> builds;
+    in property <int> selected-build-index: -1;
+    in property <[string]> variants;
+    in property <int> selected-variant-index: -1;
+    in property <string> extracted-id: "";
+    // The URL / id passes the provider's Add gate.
+    in property <bool> url-valid: false;
+    // An import is running (the Add button waits for it).
+    in property <bool> busy: false;
+    in property <[string]> preset-names;
+    in-out property <string> selected-preset: "";
+    in property <bool> paragon-enabled: true;
+    in-out property <string> url;
+
+    callback url-edited();
+    callback add-clicked();
+    callback build-selected(int);
+    callback build-update(int);
+    callback build-web(int);
+    callback build-remove(int);
+    callback variant-add(int);
+    callback profile-selected(int);
+    callback profile-update(int);
+    callback profile-web(int);
+    callback profile-remove(int);
+    callback profile-variant-add(int);
+    callback visit-web();
+    callback paragon-toggled(bool);
+    callback show-browser-toggled(bool);
+    callback preset-remove();
+    callback preset-selected(string);
+
+    VerticalLayout {
+        padding-top: 8px;
+        padding-bottom: 4px;
+        spacing: 6px;
+
+        // Row 1, identical on every provider tab: the URL field takes the
+        // free width; Add, Web and the info icon keep fixed sizes, so the
+        // buttons never move when the tab changes. Enter in the field
+        // acts like Add.
+        HorizontalLayout {
+            spacing: 4px;
+
+            url-field := DarkLineEdit {
+                text <=> root.url;
+                placeholder-text: root.watermark;
+                watermark-hides-on-focus: true;
+                horizontal-stretch: 1;
+                min-width: 120px;
+                edited => { root.url-edited(); }
+                accepted => {
+                    if (root.url-valid && !root.busy) {
+                        root.add-clicked();
+                    }
+                }
+            }
+
+            IconTextButton {
+                label: @tr("Add");
+                a11y-label: @tr("Add build");
+                button-width: 56px;
+                enabled: root.url-valid && !root.busy;
+                clicked => { root.add-clicked(); }
+            }
+
+            // Opens the entered build, or the provider's build overview
+            // while the field is empty.
+            IconTextButton {
+                label: @tr("Web");
+                a11y-label: root.url == "" ? @tr("Open provider website") : @tr("Open entered build in browser");
+                button-width: 48px;
+                clicked => { root.visit-web(); }
+            }
+
+            InfoIcon {
+                preferred-width: 22px;
+                min-width: 22px;
+                max-width: 22px;
+            }
+        }
+
+        // Row 2: one fixed-height hint line under the field — the URL
+        // validation result (and the extracted id), or the Mobalytics URL
+        // status. Its height never changes, so nothing below jumps.
+        Rectangle {
+            min-height: 16px;
+            max-height: 16px;
+            clip: true;
+
+            Text {
+                width: parent.width;
+                height: parent.height;
+                vertical-alignment: center;
+                font-size: 11px;
+                overflow: elide;
+                accessible-role: text;
+                text: root.url == "" ? @tr("Paste a build URL, then press Add.")
+                    : root.url-valid ? (root.show-url-status ? root.url-status
+                        : root.id-label != "" ? root.id-label + ": " + root.extracted-id
+                        : @tr("Build URL detected."))
+                    : (root.show-url-status ? root.url-status : @tr("Not a valid build URL for this provider."));
+                color: root.url != "" && !root.url-valid ? #E0A060 : #8A9AAA;
+            }
+        }
+
+        // Preset combo + remove (DeleteOutline parity). Upstream keeps
+        // the combo at a fixed 125 width with the remove button right
+        // after it.
+        HorizontalLayout {
+            spacing: 4px;
+
+            ComboBox {
+                model: root.preset-names;
+                current-value <=> root.selected-preset;
+                min-width: 125px;
+                preferred-width: 125px;
+                max-width: 125px;
+                max-height: 28px;
+                selected(value) => { root.preset-selected(value); }
+                accessible-role: combobox;
+                accessible-label: @tr("Import preset target");
+            }
+
+            IconTextButton {
+                label: @tr("Remove");
+                button-width: 56px;
+                enabled: root.selected-preset != "";
+                clicked => { root.preset-remove(); }
+            }
+        }
+
+        // Per-tab "Import paragon boards" toggle (saved immediately).
+        HorizontalLayout {
+            spacing: 4px;
+
+            ToggleRow {
+                label: @tr("Import paragon boards");
+                checked: root.paragon-enabled;
+                toggled(value) => { root.paragon-toggled(value); }
+            }
+
+            InfoIcon {
+                preferred-width: 22px;
+                min-width: 22px;
+                max-width: 22px;
+            }
+        }
+
+        // Mobalytics: "Show browser" toggle.
+        if root.show-show-browser: ToggleRow {
+            label: @tr("Show browser");
+            checked: root.show-browser;
+            toggled(value) => { root.show-browser-toggled(value); }
+        }
+
+        // Mobalytics: the upstream nested "Builds"/"Profiles" tab control
+        // (MetroAnimatedSingleRowTabControl, `SelectedTabIndexMobalytics`).
+        if root.show-sub-tabs: HorizontalLayout {
+            spacing: 4px;
+
+            property <[string]> sub-tab-titles: [@tr("Builds"), @tr("Profiles")];
+
+            for title[idx] in sub-tab-titles: Rectangle {
+                background: root.selected-sub-tab == idx ? #CC3333 : #3A3A3A;
+                border-radius: 3px;
+                preferred-height: 26px;
+                min-height: 26px;
+                max-height: 26px;
+                width: 90px;
+                accessible-role: button;
+                accessible-label: title;
+
+                Text {
+                    text: title;
+                    color: root.selected-sub-tab == idx ? #FFFFFF : #CCCCCC;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+
+                TouchArea {
+                    clicked => { root.selected-sub-tab = idx; }
+                }
+            }
+        }
+
+        // Two bordered lists: downloaded builds / variants of the selected
+        // build (height 150 like upstream). The Mobalytics nested control
+        // hides them while its "Profiles" page is selected.
+        HorizontalLayout {
+            visible: !root.show-sub-tabs || root.selected-sub-tab == 0;
+            spacing: 4px;
+
+            Rectangle {
+                border-width: 1px;
+                border-color: #333333;
+                horizontal-stretch: 2;
+
+                ScrollView {
+                    VerticalLayout {
+                        alignment: start;
+
+                        for build[idx] in root.builds: Rectangle {
+                            background: idx == root.selected-build-index ? #4A2226 : #333333;
+                            border-radius: 3px;
+                            preferred-height: 26px;
+                            min-height: 26px;
+
+                            HorizontalLayout {
+                                padding-left: 4px;
+                                padding-right: 2px;
+                                spacing: 2px;
+
+                                // Name (ellipsis, never past the row
+                                // buttons — upstream
+                                // TextTrimming=CharacterEllipsis); click
+                                // selects; hover shows the visible
+                                // `{Name} ({Date})` tooltip (upstream
+                                // TextBlock.ToolTip).
+                                Rectangle {
+                                    background: transparent;
+                                    horizontal-stretch: 1;
+                                    min-width: 0;
+                                    clip: true;
+                                    accessible-role: text;
+                                    accessible-label: build.name + " (" + build.date + ")";
+
+                                    Text {
+                                        width: parent.width;
+                                        text: build.name;
+                                        color: #EEEEEE;
+                                        font-size: 13px;
+                                        vertical-alignment: center;
+                                        overflow: elide;
+                                        wrap: no-wrap;
+                                    }
+
+                                    name-hover := TouchArea {
+                                        clicked => { root.build-selected(idx); }
+                                    }
+
+                                    if name-hover.has-hover: Rectangle {
+                                        background: #161616F2;
+                                        border-width: 1px;
+                                        border-color: #5A5A5A;
+                                        border-radius: 3px;
+                                        width: parent.width;
+                                        height: parent.height;
+
+                                        Text {
+                                            x: 4px;
+                                            width: parent.width - 8px;
+                                            height: parent.height;
+                                            text: build.name + " (" + build.date + ")";
+                                            color: #EEEEEE;
+                                            font-size: 12px;
+                                            vertical-alignment: center;
+                                        }
+                                    }
+                                }
+
+                                IconTextButton {
+                                    label: @tr("Upd");
+                                    clicked => { root.build-update(idx); }
+                                }
+
+                                IconTextButton {
+                                    label: @tr("Web");
+                                    clicked => { root.build-web(idx); }
+                                }
+
+                                IconTextButton {
+                                    label: "X";
+                                    clicked => { root.build-remove(idx); }
+                                }
+                            }
+                        }
+
+                        if root.builds.length == 0: Text {
+                            text: @tr("No stored builds for this provider yet.");
+                            color: #868686;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+
+            Rectangle {
+                border-width: 1px;
+                border-color: #333333;
+                horizontal-stretch: 3;
+
+                ScrollView {
+                    VerticalLayout {
+                        alignment: start;
+
+                        for variant[idx] in root.variants: Rectangle {
+                            background: idx == root.selected-variant-index ? #4A2226 : #333333;
+                            border-radius: 3px;
+                            preferred-height: 26px;
+                            min-height: 26px;
+
+                            HorizontalLayout {
+                                padding-left: 4px;
+                                padding-right: 2px;
+                                spacing: 2px;
+
+                                Rectangle {
+                                    background: transparent;
+                                    horizontal-stretch: 1;
+                                    accessible-role: text;
+                                    accessible-label: variant;
+
+                                    Text {
+                                        text: variant;
+                                        color: #EEEEEE;
+                                        font-size: 13px;
+                                        vertical-alignment: center;
+                                        overflow: elide;
+                                    }
+                                }
+
+                                IconTextButton {
+                                    label: @tr("Add");
+                                    clicked => { root.variant-add(idx); }
+                                }
+                            }
+                        }
+
+                        if root.variants.length == 0: Text {
+                            text: @tr("Select a build to list its variants.");
+                            color: #868686;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Mobalytics "Profiles" page: stored profiles on the left (rows:
+        // name + Upd/Web/X), the selected profile's published builds on
+        // the right with the `{Name} ({Date})` tooltip and the Add button
+        // that fills the URL field (upstream
+        // `AddMobalyticsProfileBuildVariantExecute`).
+        if root.show-sub-tabs: HorizontalLayout {
+            visible: root.selected-sub-tab == 1;
+            spacing: 4px;
+
+            Rectangle {
+                border-width: 1px;
+                border-color: #333333;
+                horizontal-stretch: 2;
+
+                ScrollView {
+                    VerticalLayout {
+                        alignment: start;
+
+                        for profile[idx] in root.profiles: Rectangle {
+                            background: idx == root.selected-profile-index ? #4A2226 : #333333;
+                            border-radius: 3px;
+                            preferred-height: 26px;
+                            min-height: 26px;
+
+                            HorizontalLayout {
+                                padding-left: 4px;
+                                padding-right: 2px;
+                                spacing: 2px;
+
+                                // Name (ellipsis); click selects; hover
+                                // shows the profile name (upstream
+                                // TextBlock.ToolTip = Name).
+                                Rectangle {
+                                    background: transparent;
+                                    horizontal-stretch: 1;
+                                    min-width: 0;
+                                    clip: true;
+                                    accessible-role: text;
+                                    accessible-label: profile.name;
+
+                                    Text {
+                                        width: parent.width;
+                                        text: profile.name;
+                                        color: #EEEEEE;
+                                        font-size: 13px;
+                                        vertical-alignment: center;
+                                        overflow: elide;
+                                        wrap: no-wrap;
+                                    }
+
+                                    profile-name-hover := TouchArea {
+                                        // Clickable row: carries the button
+                                        // role + the profile name so tests
+                                        // and screen readers select it by
+                                        // name.
+                                        accessible-role: button;
+                                        accessible-label: profile.name;
+                                        clicked => { root.profile-selected(idx); }
+                                    }
+
+                                    if profile-name-hover.has-hover: Rectangle {
+                                        background: #161616F2;
+                                        border-width: 1px;
+                                        border-color: #5A5A5A;
+                                        border-radius: 3px;
+                                        width: parent.width;
+                                        height: parent.height;
+
+                                        Text {
+                                            x: 4px;
+                                            width: parent.width - 8px;
+                                            height: parent.height;
+                                            text: profile.name;
+                                            color: #EEEEEE;
+                                            font-size: 12px;
+                                            vertical-alignment: center;
+                                        }
+                                    }
+                                }
+
+                                IconTextButton {
+                                    label: @tr("Upd");
+                                    clicked => { root.profile-update(idx); }
+                                }
+
+                                IconTextButton {
+                                    label: @tr("Web");
+                                    clicked => { root.profile-web(idx); }
+                                }
+
+                                IconTextButton {
+                                    label: "X";
+                                    clicked => { root.profile-remove(idx); }
+                                }
+                            }
+                        }
+
+                        if root.profiles.length == 0: Text {
+                            text: @tr("No stored profiles for this provider yet.");
+                            color: #868686;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+
+            Rectangle {
+                border-width: 1px;
+                border-color: #333333;
+                horizontal-stretch: 3;
+
+                ScrollView {
+                    VerticalLayout {
+                        alignment: start;
+
+                        for variant[idx] in root.profile-variants: Rectangle {
+                            background: idx == root.selected-profile-variant-index ? #4A2226 : #333333;
+                            border-radius: 3px;
+                            preferred-height: 26px;
+                            min-height: 26px;
+
+                            HorizontalLayout {
+                                padding-left: 4px;
+                                padding-right: 2px;
+                                spacing: 2px;
+
+                                Rectangle {
+                                    background: transparent;
+                                    horizontal-stretch: 1;
+                                    min-width: 0;
+                                    clip: true;
+                                    accessible-role: text;
+                                    accessible-label: variant.name + " (" + variant.date + ")";
+
+                                    Text {
+                                        width: parent.width;
+                                        text: variant.name;
+                                        color: #EEEEEE;
+                                        font-size: 13px;
+                                        vertical-alignment: center;
+                                        overflow: elide;
+                                        wrap: no-wrap;
+                                    }
+
+                                    variant-hover := TouchArea {}
+
+                                    if variant-hover.has-hover: Rectangle {
+                                        background: #161616F2;
+                                        border-width: 1px;
+                                        border-color: #5A5A5A;
+                                        border-radius: 3px;
+                                        width: parent.width;
+                                        height: parent.height;
+
+                                        Text {
+                                            x: 4px;
+                                            width: parent.width - 8px;
+                                            height: parent.height;
+                                            text: variant.name + " (" + variant.date + ")";
+                                            color: #EEEEEE;
+                                            font-size: 12px;
+                                            vertical-alignment: center;
+                                        }
+                                    }
+                                }
+
+                                IconTextButton {
+                                    label: @tr("Add");
+                                    a11y-label: @tr("Add profile build to URL field");
+                                    clicked => { root.profile-variant-add(idx); }
+                                }
+                            }
+                        }
+
+                        if root.profile-variants.length == 0: Text {
+                            text: @tr("Select a profile to list its builds.");
+                            color: #868686;
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// ---------------------------------------------------------------------------
+// The dialog.
+// ---------------------------------------------------------------------------
+
+export component ImportPresetDialog inherits Rectangle {
+    in property <string> dialog-title: @tr("Import preset");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Tab strip state (upstream `SelectedTabIndex`; two-way so Rust can
+    // seed the initial tab from the website selection).
+    in-out property <int> import-tab-index: 0;
+
+    // Per-provider form values, models, and toggles (root in-out props on
+    // `main_window.slint`, seeded and read by Rust).
+    in-out property <string> import-d2core-url: "";
+    in property <string> import-d2core-extracted-id: "";
+    in property <bool> import-d2core-add-enabled: false;
+    in property <[ImportBuildRow]> import-d2core-builds;
+    in property <int> import-d2core-selected-build-index: -1;
+    in property <[string]> import-d2core-variants;
+    in property <int> import-d2core-selected-variant-index: -1;
+    in-out property <bool> import-d2core-paragon-enabled: true;
+
+    in-out property <string> import-d4builds-url: "";
+    in property <string> import-d4builds-extracted-id: "";
+    in property <bool> import-d4builds-add-enabled: false;
+    in property <[ImportBuildRow]> import-d4builds-builds;
+    in property <int> import-d4builds-selected-build-index: -1;
+    in property <[string]> import-d4builds-variants;
+    in property <int> import-d4builds-selected-variant-index: -1;
+    in-out property <bool> import-d4builds-paragon-enabled: true;
+
+    in-out property <string> import-infinity-url: "";
+    in property <string> import-infinity-extracted-id: "";
+    in property <bool> import-infinity-add-enabled: false;
+    in property <[ImportBuildRow]> import-infinity-builds;
+    in property <int> import-infinity-selected-build-index: -1;
+    in property <[string]> import-infinity-variants;
+    in property <int> import-infinity-selected-variant-index: -1;
+    in-out property <bool> import-infinity-paragon-enabled: true;
+
+    in-out property <string> import-maxroll-url: "";
+    in property <string> import-maxroll-extracted-id: "";
+    in property <bool> import-maxroll-add-enabled: false;
+    in property <[ImportBuildRow]> import-maxroll-builds;
+    in property <int> import-maxroll-selected-build-index: -1;
+    in property <[string]> import-maxroll-variants;
+    in property <int> import-maxroll-selected-variant-index: -1;
+    in-out property <bool> import-maxroll-paragon-enabled: true;
+
+    in-out property <string> import-mobalytics-url: "";
+    in property <string> import-mobalytics-extracted-id: "";
+    in property <bool> import-mobalytics-add-enabled: false;
+    in property <[ImportBuildRow]> import-mobalytics-builds;
+    in property <int> import-mobalytics-selected-build-index: -1;
+    in property <[string]> import-mobalytics-variants;
+    in property <int> import-mobalytics-selected-variant-index: -1;
+    in-out property <bool> import-mobalytics-paragon-enabled: true;
+    in property <string> import-mobalytics-url-status: "";
+    in-out property <bool> import-mobalytics-show-browser: false;
+    // Nested "Builds"/"Profiles" tab control (upstream
+    // `SelectedTabIndexMobalytics`) and the profile rows.
+    in-out property <int> import-mobalytics-selected-sub-tab: 0;
+    in property <[ImportBuildRow]> import-mobalytics-profiles;
+    in property <int> import-mobalytics-selected-profile-index: -1;
+    in property <[ImportBuildRow]> import-mobalytics-profile-variants;
+    in property <int> import-mobalytics-selected-profile-variant-index: -1;
+
+    // Per-tab preset combo (shared model, dialog-local selection).
+    in property <[string]> import-preset-names;
+    in-out property <string> import-selected-preset: "";
+
+    // Compact import progress panel (upstream `{Provider}DownloadView`):
+    // provider, current step, elapsed time, the provider's latest status
+    // line, and — after a failure — the classified error with Close.
+    in property <bool> import-progress-visible: false;
+    in property <string> import-progress-provider: "";
+    in property <string> import-progress-step: "";
+    in property <string> import-progress-elapsed: "";
+    in property <string> import-progress-status: "";
+    in property <string> import-progress-build-name: "";
+    in property <[string]> import-progress-variants;
+    in property <bool> import-progress-failed: false;
+    in property <string> import-progress-error-title: "";
+    in property <string> import-progress-error: "";
+
+    // Single-active-download guard: true from job start until the
+    // completion drain (success, or Maxroll's dialog-less failure)
+    // or the overlay's Done (failure with the overlay kept open)
+    // releases it. The per-tab Add buttons gate on it and the Rust
+    // start_download refuses a second job while it is set — upstream
+    // gets the same serialization from its one modal download dialog.
+    in property <bool> import-download-active: false;
+
+    // Confirm-name overlay (upstream `SetPresetNameView`).
+    in property <bool> import-name-visible: false;
+    in-out property <string> import-name-text: "";
+    in property <[string]> import-name-suggestions;
+    in property <bool> import-name-overwrite-warning: false;
+
+    // Delete-preset confirm overlay (upstream `ShowMessageAsync`).
+    in property <bool> import-delete-visible: false;
+
+    // Merge tab (upstream `ChangeColorBuild1/2/12`, `ColorBuild1/2/12`,
+    // `SelectedAffixPresetBuild1/2`). The row colors are hex strings
+    // seeded with the port's default normal color (`Settings
+    // .DefaultColorNormal` = Green) and written back from the embedded
+    // color picker; the checkboxes and selections live here so Rust
+    // reads the full option set at merge time.
+    in-out property <string> import-merge-build1: "";
+    in-out property <string> import-merge-build2: "";
+    in-out property <bool> import-merge-change-color1: false;
+    in-out property <bool> import-merge-change-color2: false;
+    in-out property <bool> import-merge-change-color12: false;
+    in-out property <string> import-merge-color1: "#008000";
+    in-out property <string> import-merge-color2: "#008000";
+    in-out property <string> import-merge-color12: "#008000";
+
+    // Embedded color-picker overlay (upstream `SetAffixColorView` as a
+    // nested dialog over the import dialog). `import-color-picker-row`
+    // selects the merge row the picked color is written back to
+    // (0 = Build 1, 1 = Build 2, 2 = Build 1+2).
+    in property <bool> import-color-picker-visible: false;
+    in-out property <string> import-color-picker-value: "#008000";
+    in property <int> import-color-picker-row: 0;
+
+    callback import-url-changed(string, string);
+    callback import-add-clicked(string);
+    callback import-build-selected(string, int);
+    callback import-build-update(string, int);
+    callback import-build-web(string, int);
+    callback import-build-remove(string, int);
+    callback import-variant-add(string, int);
+    // Mobalytics profile rows (upstream Select/Update/Web/Remove profile
+    // commands and `AddMobalyticsProfileBuildVariantExecute`).
+    callback import-profile-selected(string, int);
+    callback import-profile-update(string, int);
+    callback import-profile-web(string, int);
+    callback import-profile-remove(string, int);
+    callback import-profile-variant-add(string, int);
+    callback import-visit-web(string);
+    callback import-paragon-toggled(string, bool);
+    callback import-show-browser-toggled(bool);
+    callback import-preset-remove();
+    callback import-delete-confirm();
+    callback import-delete-cancel();
+    callback import-name-suggestion-selected(string);
+    callback import-name-text-changed();
+    callback import-name-done();
+    callback import-name-cancel();
+    // Close of the failure panel / Cancel of the running import.
+    callback import-progress-done();
+    callback import-progress-cancel();
+    // Local tab (upstream `ImportAffixPresetCommandExecute` via the
+    // OpenFileDialog, `ExportAffixPresetCommandExecute`; the remove
+    // button shares `import-preset-remove` with the provider tabs).
+    callback import-local-import();
+    callback import-local-export();
+    // Merge tab (upstream `MergeBuildsCommand` and the
+    // `SetAffixColorBuild{N}Command` swatch clicks).
+    callback import-merge-clicked();
+    callback import-merge-color-clicked(int);
+    callback import-color-picker-done();
+    callback import-color-picker-cancel();
+    // Shared Done button (upstream `ImportAffixPresetDoneExecute`).
+    callback done();
+    callback cancel();
+
+    property <[string]> tab-titles: [
+        @tr("Local"), @tr("Merge"), @tr("🌐 D2Core"), @tr("🌐 D4Builds"),
+        @tr("🌐 InfinityBuilds"), @tr("🌐 Maxroll"), @tr("🌐 Mobalytics"),
+    ];
+
+    VerticalLayout {
+        padding: 16px;
+        padding-top: 12px;
+        spacing: 6px;
+
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // Tab strip (upstream MetroAnimatedSingleRowTabControl).
+        HorizontalLayout {
+            spacing: 2px;
+
+            for title[idx] in tab-titles: Rectangle {
+                background: import-tab-index == idx ? #CC3333 : #3A3A3A;
+                border-radius: 3px;
+                preferred-height: 26px;
+                min-height: 26px;
+                max-height: 26px;
+                horizontal-stretch: 1;
+                accessible-role: button;
+                accessible-label: title;
+
+                Text {
+                    text: title;
+                    color: import-tab-index == idx ? #FFFFFF : #CCCCCC;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                    overflow: elide;
+                }
+
+                TouchArea {
+                    clicked => { import-tab-index = idx; }
+                }
+            }
+        }
+
+        // Tab content.
+        Rectangle {
+            clip: true;
+
+            // Tab 0: Local (upstream `ImportAffixPresetView.xaml:20-38`):
+            // the preset combo plus the Import (file picker), Export, and
+            // Remove buttons in one row; Remove flows through the same
+            // Delete confirmation overlay the provider tabs use.
+            if import-tab-index == 0: VerticalLayout {
+                padding-top: 12px;
+                spacing: 8px;
+
+                HorizontalLayout {
+                    spacing: 4px;
+
+                    ComboBox {
+                        model: import-preset-names;
+                        current-value <=> import-selected-preset;
+                        min-width: 125px;
+                        preferred-width: 125px;
+                        max-width: 125px;
+                        max-height: 28px;
+                        accessible-role: combobox;
+                        accessible-label: @tr("Import preset target");
+                    }
+
+                    // Upstream Plus icon button, tooltip
+                    // rsTooltipImportPreset. The a11y labels are scoped
+                    // to this tab ("local preset") so the harness and
+                    // screen readers never hit the AffixScreen's own
+                    // Import/Remove preset chips underneath the dialog.
+                    IconTextButton {
+                        label: @tr("Import");
+                        button-width: 48px;
+                        a11y-label: @tr("Import local preset");
+                        enabled: true;
+                        clicked => { root.import-local-import(); }
+                    }
+
+                    // Upstream Export icon button; CanExecute requires a
+                    // selected preset with a non-empty name.
+                    IconTextButton {
+                        label: @tr("Export");
+                        button-width: 48px;
+                        a11y-label: @tr("Export local preset");
+                        enabled: import-selected-preset != "";
+                        clicked => { root.import-local-export(); }
+                    }
+
+                    // Upstream DeleteOutline icon button; same
+                    // confirmation flow as the provider tabs' remove.
+                    IconTextButton {
+                        label: @tr("Remove");
+                        a11y-label: @tr("Remove local preset");
+                        button-width: 56px;
+                        enabled: import-selected-preset != "";
+                        clicked => { root.import-preset-remove(); }
+                    }
+                }
+
+                Rectangle { background: transparent; vertical-stretch: 1; }
+            }
+
+            // Tab 1: Merge (upstream `ImportAffixPresetView.xaml:42-95`):
+            // the Build 1 / Build 2 / Build 1+2 rows with the resx info
+            // tooltips, change-color checkboxes, 20 px swatches, the two
+            // preset combos, and the Merge button (enabled iff both
+            // selections are non-empty, upstream CanMergeBuildsExecute).
+            if import-tab-index == 1: VerticalLayout {
+                padding-top: 12px;
+                spacing: 8px;
+
+                // Row: Build 1 (rsCapBuild1).
+                HorizontalLayout {
+                    spacing: 4px;
+
+                    Text {
+                        text: @tr("Build 1");
+                        color: #DDDDDD;
+                        font-size: 12px;
+                        width: 60px;
+                        vertical-alignment: center;
+                        overflow: elide;
+                    }
+
+                    TooltipIcon {
+                        tooltip: @tr("Choose a base build. Enable checkbox to change current colors.");
+                    }
+
+                    CheckSquare {
+                        checked <=> root.import-merge-change-color1;
+                        label: @tr("Change color Build 1");
+                        toggled(value) => { root.import-merge-change-color1 = value; }
+                    }
+
+                    ColorSwatch {
+                        hex: root.import-merge-color1;
+                        enabled: root.import-merge-change-color1;
+                        clicked => { root.import-merge-color-clicked(0); }
+                    }
+
+                    ComboBox {
+                        model: import-preset-names;
+                        current-value <=> import-merge-build1;
+                        min-width: 125px;
+                        preferred-width: 125px;
+                        max-width: 125px;
+                        max-height: 28px;
+                        accessible-role: combobox;
+                        accessible-label: @tr("Merge Build 1 preset");
+                    }
+                }
+
+                // Row: Build 2 (rsCapBuild2).
+                HorizontalLayout {
+                    spacing: 4px;
+
+                    Text {
+                        text: @tr("Build 2");
+                        color: #DDDDDD;
+                        font-size: 12px;
+                        width: 60px;
+                        vertical-alignment: center;
+                        overflow: elide;
+                    }
+
+                    TooltipIcon {
+                        tooltip: @tr("Choose build to merge. Enable checkbox to change current colors.");
+                    }
+
+                    CheckSquare {
+                        checked <=> root.import-merge-change-color2;
+                        label: @tr("Change color Build 2");
+                        toggled(value) => { root.import-merge-change-color2 = value; }
+                    }
+
+                    ColorSwatch {
+                        hex: root.import-merge-color2;
+                        enabled: root.import-merge-change-color2;
+                        clicked => { root.import-merge-color-clicked(1); }
+                    }
+
+                    ComboBox {
+                        model: import-preset-names;
+                        current-value <=> import-merge-build2;
+                        min-width: 125px;
+                        preferred-width: 125px;
+                        max-width: 125px;
+                        max-height: 28px;
+                        accessible-role: combobox;
+                        accessible-label: @tr("Merge Build 2 preset");
+                    }
+                }
+
+                // Row: Build 1+2 (rsCapBuild12) — hosts the Merge button
+                // (rsCapMerge) instead of a preset combo.
+                HorizontalLayout {
+                    spacing: 4px;
+
+                    Text {
+                        text: @tr("Build 1+2");
+                        color: #DDDDDD;
+                        font-size: 12px;
+                        width: 60px;
+                        vertical-alignment: center;
+                        overflow: elide;
+                    }
+
+                    TooltipIcon {
+                        tooltip: @tr("Enable checkbox to change colors for duplicated affixes. Otherwise colors from build 1 will be used.");
+                    }
+
+                    CheckSquare {
+                        checked <=> root.import-merge-change-color12;
+                        label: @tr("Change color Build 1+2");
+                        toggled(value) => { root.import-merge-change-color12 = value; }
+                    }
+
+                    ColorSwatch {
+                        hex: root.import-merge-color12;
+                        enabled: root.import-merge-change-color12;
+                        clicked => { root.import-merge-color-clicked(2); }
+                    }
+
+                    // Upstream keeps the Merge button at a fixed 125
+                    // width instead of stretching it across the row.
+                    WideButton {
+                        label: @tr("Merge");
+                        min-width: 125px;
+                        preferred-width: 125px;
+                        max-width: 125px;
+                        enabled: root.import-merge-build1 != "" && root.import-merge-build2 != "";
+                        clicked => { root.import-merge-clicked(); }
+                    }
+                }
+
+                Rectangle { background: transparent; vertical-stretch: 1; }
+            }
+
+            // Tab 2: 🌐 D2Core.
+            if import-tab-index == 2: ProviderTab {
+                watermark: @tr("e.g. https://www.d2core.com/d4/planner?bd=23tb");
+                id-label: @tr("Build ID");
+                url <=> root.import-d2core-url;
+                extracted-id: root.import-d2core-extracted-id;
+                url-valid: root.import-d2core-add-enabled;
+                busy: root.import-download-active;
+                builds: root.import-d2core-builds;
+                selected-build-index: root.import-d2core-selected-build-index;
+                variants: root.import-d2core-variants;
+                selected-variant-index: root.import-d2core-selected-variant-index;
+                preset-names: root.import-preset-names;
+                selected-preset <=> root.import-selected-preset;
+                paragon-enabled: root.import-d2core-paragon-enabled;
+                url-edited => { root.import-url-changed("D2Core", root.import-d2core-url); }
+                add-clicked => { root.import-add-clicked("D2Core"); }
+                build-selected(index) => { root.import-build-selected("D2Core", index); }
+                build-update(index) => { root.import-build-update("D2Core", index); }
+                build-web(index) => { root.import-build-web("D2Core", index); }
+                build-remove(index) => { root.import-build-remove("D2Core", index); }
+                variant-add(index) => { root.import-variant-add("D2Core", index); }
+                visit-web => { root.import-visit-web("D2Core"); }
+                paragon-toggled(value) => { root.import-d2core-paragon-enabled = value; root.import-paragon-toggled("D2Core", value); }
+                preset-remove => { root.import-preset-remove(); }
+                preset-selected(value) => { root.import-selected-preset = value; }
+            }
+
+            // Tab 3: 🌐 D4Builds.
+            if import-tab-index == 3: ProviderTab {
+                watermark: @tr("e.g. 660881f7-cb6a-4162-be62-29f0afeb37bf");
+                id-label: @tr("Build ID");
+                url <=> root.import-d4builds-url;
+                extracted-id: root.import-d4builds-extracted-id;
+                url-valid: root.import-d4builds-add-enabled;
+                busy: root.import-download-active;
+                builds: root.import-d4builds-builds;
+                selected-build-index: root.import-d4builds-selected-build-index;
+                variants: root.import-d4builds-variants;
+                selected-variant-index: root.import-d4builds-selected-variant-index;
+                preset-names: root.import-preset-names;
+                selected-preset <=> root.import-selected-preset;
+                paragon-enabled: root.import-d4builds-paragon-enabled;
+                url-edited => { root.import-url-changed("D4Builds", root.import-d4builds-url); }
+                add-clicked => { root.import-add-clicked("D4Builds"); }
+                build-selected(index) => { root.import-build-selected("D4Builds", index); }
+                build-update(index) => { root.import-build-update("D4Builds", index); }
+                build-web(index) => { root.import-build-web("D4Builds", index); }
+                build-remove(index) => { root.import-build-remove("D4Builds", index); }
+                variant-add(index) => { root.import-variant-add("D4Builds", index); }
+                visit-web => { root.import-visit-web("D4Builds"); }
+                paragon-toggled(value) => { root.import-d4builds-paragon-enabled = value; root.import-paragon-toggled("D4Builds", value); }
+                preset-remove => { root.import-preset-remove(); }
+                preset-selected(value) => { root.import-selected-preset = value; }
+            }
+
+            // Tab 4: 🌐 InfinityBuilds.
+            if import-tab-index == 4: ProviderTab {
+                watermark: @tr("e.g. https://infinitybuilds.gg/en/builds/pestilent-swarmskuna-spiritborn-vAB2c3aMt2");
+                url <=> root.import-infinity-url;
+                extracted-id: root.import-infinity-extracted-id;
+                url-valid: root.import-infinity-add-enabled;
+                busy: root.import-download-active;
+                builds: root.import-infinity-builds;
+                selected-build-index: root.import-infinity-selected-build-index;
+                variants: root.import-infinity-variants;
+                selected-variant-index: root.import-infinity-selected-variant-index;
+                preset-names: root.import-preset-names;
+                selected-preset <=> root.import-selected-preset;
+                paragon-enabled: root.import-infinity-paragon-enabled;
+                url-edited => { root.import-url-changed("InfinityBuilds", root.import-infinity-url); }
+                add-clicked => { root.import-add-clicked("InfinityBuilds"); }
+                build-selected(index) => { root.import-build-selected("InfinityBuilds", index); }
+                build-update(index) => { root.import-build-update("InfinityBuilds", index); }
+                build-web(index) => { root.import-build-web("InfinityBuilds", index); }
+                build-remove(index) => { root.import-build-remove("InfinityBuilds", index); }
+                variant-add(index) => { root.import-variant-add("InfinityBuilds", index); }
+                visit-web => { root.import-visit-web("InfinityBuilds"); }
+                paragon-toggled(value) => { root.import-infinity-paragon-enabled = value; root.import-paragon-toggled("InfinityBuilds", value); }
+                preset-remove => { root.import-preset-remove(); }
+                preset-selected(value) => { root.import-selected-preset = value; }
+            }
+
+            // Tab 5: 🌐 Maxroll.
+            if import-tab-index == 5: ProviderTab {
+                watermark: @tr("e.g. t3jx0916");
+                id-label: @tr("Planner ID");
+                url <=> root.import-maxroll-url;
+                extracted-id: root.import-maxroll-extracted-id;
+                url-valid: root.import-maxroll-add-enabled;
+                busy: root.import-download-active;
+                builds: root.import-maxroll-builds;
+                selected-build-index: root.import-maxroll-selected-build-index;
+                variants: root.import-maxroll-variants;
+                selected-variant-index: root.import-maxroll-selected-variant-index;
+                preset-names: root.import-preset-names;
+                selected-preset <=> root.import-selected-preset;
+                paragon-enabled: root.import-maxroll-paragon-enabled;
+                url-edited => { root.import-url-changed("Maxroll", root.import-maxroll-url); }
+                add-clicked => { root.import-add-clicked("Maxroll"); }
+                build-selected(index) => { root.import-build-selected("Maxroll", index); }
+                build-update(index) => { root.import-build-update("Maxroll", index); }
+                build-web(index) => { root.import-build-web("Maxroll", index); }
+                build-remove(index) => { root.import-build-remove("Maxroll", index); }
+                variant-add(index) => { root.import-variant-add("Maxroll", index); }
+                visit-web => { root.import-visit-web("Maxroll"); }
+                paragon-toggled(value) => { root.import-maxroll-paragon-enabled = value; root.import-paragon-toggled("Maxroll", value); }
+                preset-remove => { root.import-preset-remove(); }
+                preset-selected(value) => { root.import-selected-preset = value; }
+            }
+
+            // Tab 6: 🌐 Mobalytics (status line + Show browser + the
+            // upstream nested Builds/Profiles tab control).
+            if import-tab-index == 6: ProviderTab {
+                watermark: @tr("e.g. https://mobalytics.gg/diablo-4/builds/warlock-blazing-scream");
+                show-url-status: true;
+                show-show-browser: true;
+                show-sub-tabs: true;
+                selected-sub-tab <=> root.import-mobalytics-selected-sub-tab;
+                url <=> root.import-mobalytics-url;
+                extracted-id: root.import-mobalytics-extracted-id;
+                url-valid: root.import-mobalytics-add-enabled;
+                busy: root.import-download-active;
+                builds: root.import-mobalytics-builds;
+                selected-build-index: root.import-mobalytics-selected-build-index;
+                variants: root.import-mobalytics-variants;
+                selected-variant-index: root.import-mobalytics-selected-variant-index;
+                profiles: root.import-mobalytics-profiles;
+                selected-profile-index: root.import-mobalytics-selected-profile-index;
+                profile-variants: root.import-mobalytics-profile-variants;
+                selected-profile-variant-index: root.import-mobalytics-selected-profile-variant-index;
+                url-status: root.import-mobalytics-url-status;
+                show-browser: root.import-mobalytics-show-browser;
+                preset-names: root.import-preset-names;
+                selected-preset <=> root.import-selected-preset;
+                paragon-enabled: root.import-mobalytics-paragon-enabled;
+                url-edited => { root.import-url-changed("Mobalytics", root.import-mobalytics-url); }
+                add-clicked => { root.import-add-clicked("Mobalytics"); }
+                build-selected(index) => { root.import-build-selected("Mobalytics", index); }
+                build-update(index) => { root.import-build-update("Mobalytics", index); }
+                build-web(index) => { root.import-build-web("Mobalytics", index); }
+                build-remove(index) => { root.import-build-remove("Mobalytics", index); }
+                variant-add(index) => { root.import-variant-add("Mobalytics", index); }
+                profile-selected(index) => { root.import-profile-selected("Mobalytics", index); }
+                profile-update(index) => { root.import-profile-update("Mobalytics", index); }
+                profile-web(index) => { root.import-profile-web("Mobalytics", index); }
+                profile-remove(index) => { root.import-profile-remove("Mobalytics", index); }
+                profile-variant-add(index) => { root.import-profile-variant-add("Mobalytics", index); }
+                visit-web => { root.import-visit-web("Mobalytics"); }
+                paragon-toggled(value) => { root.import-mobalytics-paragon-enabled = value; root.import-paragon-toggled("Mobalytics", value); }
+                show-browser-toggled(value) => { root.import-mobalytics-show-browser = value; root.import-show-browser-toggled(value); }
+                preset-remove => { root.import-preset-remove(); }
+                preset-selected(value) => { root.import-selected-preset = value; }
+            }
+        }
+
+        // Done (bottom right, closes the dialog).
+        HorizontalLayout {
+            alignment: end;
+
+            WideButton {
+                // Upstream hard-codes "Done" on the Local and Merge tabs
+                // (ImportAffixPresetView.xaml:35,93) and binds rsCapDone on
+                // the provider tabs.
+                label: root.import-tab-index <= 1 ? @tr("d4lc" => "Done") : @tr("Done");
+                primary: true;
+                clicked => { root.done(); }
+            }
+        }
+    }
+
+    // ── Overlay: import progress ──────────────────────────────────────
+    // A dimmed layer over the whole dialog blocks its input (the upstream
+    // modal CustomDialog pattern — without it a second download could be
+    // started), while the panel itself stays compact and centred. Cancel
+    // is available from the first moment of the import; after a failure
+    // the panel shows the classified error and Close.
+    if import-progress-visible: Rectangle {
+        width: root.width;
+        height: root.height;
+        background: #121212B0;
+
+        // Modal blocker: swallows every click outside the panel.
+        TouchArea { }
+
+        progress-panel := Rectangle {
+            width: min(400px, parent.width - 32px);
+            height: progress-layout.preferred-height;
+            x: (parent.width - self.width) / 2;
+            y: (parent.height - self.height) / 2;
+            background: #2A2A2A;
+            border-width: 1px;
+            border-color: root.import-progress-failed ? #8A3A3A : #4A4A4A;
+            border-radius: 6px;
+            accessible-role: groupbox;
+            accessible-label: root.import-progress-failed ? root.import-progress-error-title : @tr("Importing build");
+
+            progress-layout := VerticalLayout {
+                padding: 14px;
+                spacing: 6px;
+
+                Text {
+                    text: root.import-progress-failed ? root.import-progress-error-title : @tr("Importing build");
+                    color: root.import-progress-failed ? #FF8080 : #EEEEEE;
+                    font-size: 14px;
+                    font-weight: 700;
+                    overflow: elide;
+                }
+
+                // "D2Core · Loading build page · 3 s"
+                Text {
+                    text: root.import-progress-failed ? root.import-progress-provider
+                        : root.import-progress-elapsed == "" ? root.import-progress-provider + " · " + root.import-progress-step
+                        : root.import-progress-provider + " · " + root.import-progress-step + " · " + root.import-progress-elapsed;
+                    color: #BBBBBB;
+                    font-size: 12px;
+                    overflow: elide;
+                }
+
+                // Indeterminate activity bar while the import runs.
+                if !root.import-progress-failed: Rectangle {
+                    min-height: 4px;
+                    max-height: 4px;
+                    background: #3A3A3A;
+                    border-radius: 2px;
+                    clip: true;
+
+                    Rectangle {
+                        width: parent.width * 0.3;
+                        height: parent.height;
+                        x: (parent.width * 1.3) * Math.mod(animation-tick() / 1ms, 1600) / 1600 - parent.width * 0.3;
+                        background: #CC3333;
+                        border-radius: 2px;
+                    }
+                }
+
+                // The provider's latest status line (one line, elided).
+                if !root.import-progress-failed && root.import-progress-status != "": Text {
+                    text: root.import-progress-status;
+                    color: #999999;
+                    font-size: 11px;
+                    overflow: elide;
+                }
+
+                // The build the flow sees, with its variant count (never a
+                // growing list).
+                if !root.import-progress-failed && root.import-progress-build-name != "": Text {
+                    text: root.import-progress-variants.length == 0 ? root.import-progress-build-name
+                        : @tr("{} — {} variant(s)", root.import-progress-build-name, root.import-progress-variants.length);
+                    color: #BBBBBB;
+                    font-size: 11px;
+                    overflow: elide;
+                }
+
+                // The failure message: wraps, and scrolls past 120 px.
+                if root.import-progress-failed: ScrollView {
+                    min-height: min(error-layout.preferred-height, 120px);
+                    max-height: 120px;
+
+                    error-layout := VerticalLayout {
+                        alignment: start;
+
+                        Text {
+                            width: progress-panel.width - 44px;
+                            text: root.import-progress-error;
+                            color: #DDDDDD;
+                            font-size: 12px;
+                            wrap: word-wrap;
+                        }
+                    }
+                }
+
+                HorizontalLayout {
+                    alignment: end;
+                    padding-top: 4px;
+
+                    if !root.import-progress-failed: WideButton {
+                        label: @tr("Cancel");
+                        clicked => { root.import-progress-cancel(); }
+                    }
+
+                    if root.import-progress-failed: WideButton {
+                        label: @tr("Close");
+                        primary: true;
+                        clicked => { root.import-progress-done(); }
+                    }
+                }
+            }
+        }
+    }
+
+    // ── Overlay: Confirm name (upstream "Confirm name") ───────────────
+    if import-name-visible: Rectangle {
+        background: #1F1F1FE8;
+
+        VerticalLayout {
+            padding: 16px;
+            spacing: 8px;
+
+            Text {
+                text: @tr("Confirm name");
+                color: #EEEEEE;
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+            HorizontalLayout {
+                spacing: 6px;
+
+                name-field := DarkLineEdit {
+                    text <=> root.import-name-text;
+                    placeholder-text: @tr("Preset name");
+                    horizontal-stretch: 1;
+                    edited => { root.import-name-text-changed(); }
+                    accepted => { root.import-name-done(); }
+                }
+
+                if import-name-overwrite-warning: Text {
+                    text: @tr("This name will overwrite an existing preset.");
+                    color: #FF5555;
+                    font-size: 11px;
+                    wrap: word-wrap;
+                    vertical-alignment: center;
+                }
+            }
+
+            Text {
+                text: @tr("Suggestions");
+                color: #BBBBBB;
+                font-size: 12px;
+            }
+
+            ComboBox {
+                model: import-name-suggestions;
+                min-width: 200px;
+                preferred-width: 200px;
+                max-height: 28px;
+                selected(value) => { root.import-name-suggestion-selected(value); }
+                accessible-role: combobox;
+                accessible-label: @tr("Preset name suggestions");
+            }
+
+            Rectangle { background: transparent; vertical-stretch: 1; }
+
+            HorizontalLayout {
+                alignment: end;
+                spacing: 8px;
+
+                WideButton {
+                    label: @tr("Done");
+                    primary: true;
+                    clicked => { root.import-name-done(); }
+                }
+
+                WideButton {
+                    label: @tr("Cancel");
+                    clicked => { root.import-name-cancel(); }
+                }
+            }
+        }
+    }
+
+    // ── Overlay: Delete preset confirmation ───────────────────────────
+    if import-delete-visible: Rectangle {
+        background: #1F1F1FE8;
+
+        VerticalLayout {
+            padding: 16px;
+            spacing: 10px;
+
+            Text {
+                text: @tr("Delete");
+                color: #EEEEEE;
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+            Text {
+                text: @tr("Are you sure you want to delete preset \"{}\"", import-selected-preset);
+                color: #DDDDDD;
+                font-size: 12px;
+                wrap: word-wrap;
+            }
+
+            Rectangle { background: transparent; vertical-stretch: 1; }
+
+            HorizontalLayout {
+                alignment: end;
+                spacing: 8px;
+
+                WideButton {
+                    label: @tr("OK");
+                    primary: true;
+                    clicked => { root.import-delete-confirm(); }
+                }
+
+                WideButton {
+                    label: @tr("Cancel");
+                    clicked => { root.import-delete-cancel(); }
+                }
+            }
+        }
+    }
+
+    // ── Overlay: Set affix color (upstream `SetAffixColorView`) ───────
+    // Upstream shows the picker as a nested modal over the import
+    // dialog, seeded with the clicked row's own color (see the
+    // controller note on the upstream Build-2 seeding bug). The host
+    // dialog box is single-slot, so — like the progress / Confirm-name /
+    // Delete layers above — the picker renders as an overlay inside this
+    // dialog and writes the confirmed color back to that row only.
+    if import-color-picker-visible: Rectangle {
+        background: #1F1F1FE8;
+
+        Rectangle {
+            background: #2A2A2A;
+            border-width: 1px;
+            border-color: #4A4A4A;
+            border-radius: 6px;
+            width: 420px;
+            height: 400px;
+            x: (parent.width - self.width) / 2;
+            y: (parent.height - self.height) / 2;
+
+            SetAffixColorDialog {
+                // Explicit size: as a child of a plain Rectangle (no
+                // layout) the component would otherwise take its
+                // preferred height and overflow the box.
+                width: 420px;
+                height: 400px;
+                dialog-title: @tr("Set affix color");
+                dialog-error: root.dialog-error;
+                dialog-error-visible: root.dialog-error-visible;
+                // The row is tracked by index (import-color-picker-row);
+                // the picker form only needs the color value.
+                set-affix-color-value <=> root.import-color-picker-value;
+                confirm => { root.import-color-picker-done(); }
+                cancel => { root.import-color-picker-cancel(); }
+            }
+        }
+    }
+}

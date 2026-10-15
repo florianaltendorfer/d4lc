@@ -1,0 +1,38 @@
+[package]
+name = "d4lc-overlay-wayland"
+version = "1.0.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+# Unlike `d4lc-overlay-x11`, the Wayland stack is not feature-gated: it is
+# pure Rust (no C/link-time dependency like X11), so the protocol-double
+# test suite always compiles and the backend states are exercised
+# by the default `cargo test` invocation.
+[dependencies]
+d4lc-core = { path = "../d4lc-core" }
+d4lc-rules = { path = "../d4lc-rules" }
+# Shared overlay status model + descriptor render-op expansion.
+d4lc-overlay-x11 = { path = "../d4lc-overlay-x11" }
+wayland-client = "0.31"
+smithay-client-toolkit = "0.21"
+# `embedded-graphics` draws the greater-affix triangle marker (its
+# `Triangle` primitive with a black stroke) on the SHM canvas. Text does not
+# use it: both overlay backends rasterize through the shared bounded text
+# path in `d4lc-overlay-x11` (`swash` + `fontdb`). MIT / Apache-2.0.
+embedded-graphics = "0.8"
+
+[dev-dependencies]
+# In-process Wayland compositor double for deterministic protocol tests.
+wayland-server = "0.31"
+wayland-protocols-wlr = { version = "0.3", features = ["server"] }
+serde_json.workspace = true
+
+[lints.clippy]
+all = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+
+[lints.rust]
+unsafe_code = "deny"

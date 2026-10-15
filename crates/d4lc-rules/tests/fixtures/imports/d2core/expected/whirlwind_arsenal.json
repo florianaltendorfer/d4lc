@@ -1,0 +1,319 @@
+{
+  "affix_preset": {
+    "affixes": [
+      {
+        "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": true,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "helm",
+        "label": "Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      },
+      {
+        "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "ring",
+        "label": "Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      },
+      {
+        "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": true,
+        "item_type": "ring",
+        "label": "Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      }
+    ],
+    "name": "Whirlwind Arsenal"
+  },
+  "affix_preset_name": "Whirlwind Arsenal",
+  "aspects": [
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "helm",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "chest",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "gloves",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "pants",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "boots",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "amulet",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "ring",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "weapon",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "ranged",
+      "kind": "Aspect"
+    },
+    {
+      "color": "Green",
+      "id": "legendary_barb_057",
+      "item_type": "offhand",
+      "kind": "Aspect"
+    }
+  ],
+  "class_name": null,
+  "items": [
+    {
+      "affixes": [
+        {
+          "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": true,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "helm",
+          "label": "Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        }
+      ],
+      "item_type": "helm"
+    },
+    {
+      "affixes": [
+        {
+          "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "ring",
+          "label": "Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        },
+        {
+          "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": true,
+          "item_type": "ring",
+          "label": "Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        }
+      ],
+      "item_type": "ring"
+    }
+  ],
+  "non_affix_preset": {
+    "name": "Whirlwind Arsenal",
+    "powers": [
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "helm",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "chest",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "gloves",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "pants",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "boots",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "amulet",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "ring",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "weapon",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "ranged",
+        "kind": "Aspect"
+      },
+      {
+        "color": "Green",
+        "id": "legendary_barb_057",
+        "item_type": "offhand",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Helm_Unique_Generic_002;S14_Helm_Unique_Generic_002",
+        "item_type": null,
+        "kind": "Unique"
+      }
+    ],
+    "runes": [
+      {
+        "color": "Green",
+        "id": "Item_Rune_Condition_AllSkillsOnCD",
+        "item_type": null,
+        "kind": "Rune"
+      }
+    ],
+    "sigils": []
+  },
+  "paragon_boards": [
+    {
+      "active_nodes": [
+        20,
+        41
+      ],
+      "glyph": "Marshal",
+      "index": 1,
+      "name": "Start",
+      "rotation": "90°"
+    },
+    {
+      "active_nodes": [
+        0,
+        21
+      ],
+      "glyph": "Ire",
+      "index": 2,
+      "name": "Blood Rage",
+      "rotation": "0°"
+    }
+  ],
+  "paragon_routes": [
+    {
+      "boards": [
+        {
+          "active_nodes": [
+            20,
+            41
+          ],
+          "glyph": "Marshal",
+          "index": 1,
+          "name": "Start",
+          "rotation": "90°"
+        },
+        {
+          "active_nodes": [
+            0,
+            21
+          ],
+          "glyph": "Ire",
+          "index": 2,
+          "name": "Blood Rage",
+          "rotation": "0°"
+        }
+      ],
+      "step_name": null
+    }
+  ],
+  "provider": "D2Core",
+  "runes": [
+    {
+      "color": "Green",
+      "id": "Item_Rune_Condition_AllSkillsOnCD",
+      "item_type": null,
+      "kind": "Rune"
+    }
+  ],
+  "source_build_id": "barb-d2-whirlwind",
+  "source_build_name": "Whirlwind Arsenal",
+  "source_trace": [
+    "BuildsManagerD2Core.LoadAvailableD2CoreBuilds",
+    "BuildsManagerD2Core.CreatePresetFromD2CoreBuild",
+    "AffixManager.GetParagonBoardLocalisation",
+    "AffixManager.GetParagonGlyphLocalisationByNumber"
+  ],
+  "source_url_or_file": "tests/fixtures/imports/d2core/source/whirlwind_arsenal.json",
+  "uniques": [
+    {
+      "color": "#008000",
+      "id": "Helm_Unique_Generic_002;S14_Helm_Unique_Generic_002",
+      "item_type": null,
+      "kind": "Unique"
+    }
+  ],
+  "unmapped_entries": [],
+  "variant_name": "Whirlwind Arsenal",
+  "warnings": []
+}

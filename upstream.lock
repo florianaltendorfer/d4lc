@@ -1,0 +1,5 @@
+url = "https://github.com/josdemmers/Diablo4Companion.git"
+branch = "master"
+last_reviewed_commit = "d508a473515fb6239a93a7a1a146b7ad007f01b1"
+last_reviewed_release = "v5.4.0.0"
+notes = "Run scripts/check_upstream.sh after fetching the upstream submodule at v5.4.0.0."

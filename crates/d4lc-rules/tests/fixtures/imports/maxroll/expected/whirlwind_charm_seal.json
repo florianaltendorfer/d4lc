@@ -1,0 +1,77 @@
+{
+  "affix_preset": {
+    "affixes": [
+      {
+        "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": true,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "helm",
+        "label": "Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      }
+    ],
+    "name": "Charm Seal"
+  },
+  "affix_preset_name": "Charm Seal",
+  "aspects": [],
+  "class_name": null,
+  "items": [
+    {
+      "affixes": [
+        {
+          "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": true,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "helm",
+          "label": "Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        }
+      ],
+      "item_type": "helm"
+    }
+  ],
+  "non_affix_preset": {
+    "name": "Charm Seal",
+    "powers": [],
+    "runes": [
+      {
+        "color": "Green",
+        "id": "Item_Rune_Condition_HitHealthierEnemy",
+        "item_type": null,
+        "kind": "Rune"
+      }
+    ],
+    "sigils": []
+  },
+  "paragon_boards": [],
+  "provider": "Maxroll",
+  "runes": [
+    {
+      "color": "Green",
+      "id": "Item_Rune_Condition_HitHealthierEnemy",
+      "item_type": null,
+      "kind": "Rune"
+    }
+  ],
+  "source_build_id": "maxroll-charm-seal",
+  "source_build_name": "Charm Seal Source IDs",
+  "source_trace": [
+    "BuildsManagerMaxroll.LoadAvailableMaxrollBuilds",
+    "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+  ],
+  "source_url_or_file": "tests/fixtures/imports/maxroll/source/whirlwind_charm_seal.json",
+  "uniques": [],
+  "unmapped_entries": [],
+  "variant_name": "Charm Seal",
+  "warnings": []
+}

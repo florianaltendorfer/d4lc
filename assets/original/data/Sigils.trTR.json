@@ -1,0 +1,2873 @@
+[
+  {
+    "IdSno": 1113455,
+    "IdName": "World_DGN_Hawe_AkkhansGrasp",
+    "Name": "Akkhan'ın Kavrayışı",
+    "Description": "Mezarın parçalanmış mühürlerinden kötülük ve kan sızıyor.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114264,
+    "IdName": "World_DGN_Scos_Aldurwood",
+    "Name": "Aldur Koruluğu",
+    "Description": "Bu yozlaşmış ormanda ağaçlardan su gibi kan akıyor.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314215,
+    "IdName": "DungeonAffix_Positive_GoldFind",
+    "Name": "Altın Bulma",
+    "Description": "%30 daha fazla altın bulursun.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2281775,
+    "IdName": "DungeonAffix_Positive_Chests_Gold",
+    "Name": "Altın Rezervi",
+    "Description": "Burada birçok Altın sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2346041,
+    "IdName": "DungeonAffix_Positive_Astaroth_Gold",
+    "Name": "Altın Serveti",
+    "Description": "Astaroth'un ödülleri büyük miktarda altın içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360109,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Amethyst",
+    "Name": "Ametist Rezervi",
+    "Description": "Burada birçok Ametist sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321590,
+    "IdName": "DungeonAffix_Positive_Astaroth_RareKeys",
+    "Name": "Anahtar Serveti",
+    "Description": "Astaroth'un ödülleri, değerli zindan anahtarları içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321540,
+    "IdName": "DungeonAffix_Positive_Astaroth_AndarielBossMats",
+    "Name": "Andariel'in Adağı",
+    "Description": "Astaroth'un ödülleri, Andariel'in İstifini açmak için gereken İğneli Bebekleri içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113629,
+    "IdName": "World_DGN_Frac_AnicasClaim",
+    "Name": "Anica'nın Talebi",
+    "Description": "Bu karanlık tüneller, insana ait olmayan eller tarafından oyuldu. ",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314244,
+    "IdName": "DungeonAffix_Positive_IncreasedCritChance",
+    "Name": "Artırılmış Kritik Vuruş",
+    "Description": "Kritik Vuruş ihtimalin %9 artar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314246,
+    "IdName": "DungeonAffix_Positive_IncreasedHealing",
+    "Name": "Artırılmış İyileşme",
+    "Description": "Alınan İyileşmen %15 artar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321618,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_LifeSteal",
+    "Name": "Astaroth'un Can Çalması",
+    "Description": "Astaroth %15 Can Çalma kazanır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321691,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_BloodBlisters",
+    "Name": "Astaroth'un Kan Kabarcıkları",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2358422,
+    "IdName": "DungeonAffix_Major_Astaroth_MeteorPersist",
+    "Name": "Astaroth'un Mahşeri",
+    "Description": "Gökten sürekli olarak Meteor yağar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2322097,
+    "IdName": "DungeonAffix_Major_Astaroth_Invuln",
+    "Name": "Astaroth'un Sadık Yoldaşı",
+    "Description": "Astaroth, Öfke Bileşimi öldürülene kadar her can sınırına ulaştığında hasara karşı bağışıklık kazanır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2321901,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_DeathPulse",
+    "Name": "Astaroth'un Ölümcül Darbesi",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321552,
+    "IdName": "DungeonAffix_Positive_Astaroth_Jewels",
+    "Name": "Astral Kehanet",
+    "Description": "Astaroth'un ödülleri, değerli bir Horadrim Mücevheri içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1828297,
+    "IdName": "DungeonAffix_Positive_GlyphXP",
+    "Name": "Ataların Lütfu",
+    "Description": "Bu zindandayken %10 daha fazla Tecrübe kazanırsın.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314313,
+    "IdName": "DungeonAffix_Positive_FireDamage",
+    "Name": "Ateş Hasarı",
+    "Description": "%15 daha fazla Ateş hasarı verirsin.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1690800,
+    "IdName": "DungeonAffix_Minor_Monster_Traps_Fire01",
+    "Name": "Ateş Tuzakları",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314424,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraFire",
+    "Name": "Ateş Vuruşları",
+    "Description": "Canavarlar ek olarak Fiziksel hasarının %20'si kadarını Ateş hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314354,
+    "IdName": "DungeonAffix_Minor_Monster_AttackFaster",
+    "Name": "Avcılar",
+    "Description": "Canavarlar burada doğaüstü bir hıza sahiptir, %33 daha hızlı hareket ederler ve saldırırlar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113928,
+    "IdName": "World_DGN_Kehj_FadingEcho",
+    "Name": "Azalan Yankı",
+    "Description": "Bu harabeler, büyüyen iblis ordularına ev sahibi oldu. ",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113343,
+    "IdName": "World_DGN_Kehj_TomboftheSaints",
+    "Name": "Azizlerin Mezarı",
+    "Description": "Bu boş mezar bir zamanlar altın doluydu. ",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314450,
+    "IdName": "DungeonAffix_Minor_Monster_BarrierKiller",
+    "Name": "Bariyer Kıranlar",
+    "Description": "Canavarlar, Bariyerlere %100 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314333,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Suppressor)",
+    "Name": "Baskılayıcı Seçkinler",
+    "Description": "Seçkin canavarlar, \"Baskılayıcı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2355995,
+    "IdName": "DungeonAffix_Minor_S9_Suppressor",
+    "Name": "Baskılayıcı Seçkinler",
+    "Description": "Seçkin canavarlar, \"Baskılayıcı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114193,
+    "IdName": "World_DGN_Scos_SunkenRuins",
+    "Name": "Batık Harabeler",
+    "Description": "Bir şifacının hain bir ölüm büyücüsüne dönüştüğüne dair söylentiler ortalığı karıştırıyor.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113576,
+    "IdName": "World_DGN_Kehj_SunkenLibrary",
+    "Name": "Batık Kütüphane",
+    "Description": "Ölü muhafızın sırları, kadim mahzende saklanıyor.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511951,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Berserker)",
+    "Name": "Başıbozuk Seçkinler",
+    "Description": "Seçkin canavarlar, \"Başıbozuk\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2321556,
+    "IdName": "DungeonAffix_Positive_Astaroth_BelialBossMats",
+    "Name": "Belial'ın Adağı",
+    "Description": "Astaroth'un ödülleri, Belial'ın İstifini açmak için gereken Hain Kabukları içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2347209,
+    "IdName": "DungeonAffix_Positive_S08_Apparition",
+    "Name": "Belial'ın Tezahürleri",
+    "Description": "Bu zindanı Seçkin Tezahürler işgal etti.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585504,
+    "IdName": "World_DGN_Naha_FeedingGrounds",
+    "Name": "Beslenme Alanı",
+    "Description": "Burada iblisler taze kurbanlarla besleniyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2336863,
+    "IdName": "DungeonAffix_Positive_Chests_Jewelry",
+    "Name": "Bonus Sandıklar: Mücevherat",
+    "Description": "Mücevherat sandıkları son derece yüksek bir oranla ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336861,
+    "IdName": "DungeonAffix_Positive_Chests_Herbs",
+    "Name": "Bonus Sandıklar: Mücevherler",
+    "Description": "Bitki sandıkları son derece yüksek bir oranla ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336914,
+    "IdName": "DungeonAffix_Positive_Chests_SigilPowder",
+    "Name": "Bonus Sandıklar: Mühür Tozu",
+    "Description": "Mühür tozu sandıkları son derece yüksek bir oranla ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336855,
+    "IdName": "DungeonAffix_Positive_Chests_BossMaterials",
+    "Name": "Bonus Sandıklar: Patron Malzemeleri",
+    "Description": "Çağırma malzemesi sandıkları son derece yüksek bir oranla ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336911,
+    "IdName": "DungeonAffix_Positive_Chests_Runes",
+    "Name": "Bonus Sandıklar: Rünler",
+    "Description": "Rün sandıkları son derece yüksek bir oranla ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336917,
+    "IdName": "DungeonAffix_Positive_Chests_Weapons",
+    "Name": "Bonus Sandıklar: Silahlar",
+    "Description": "Silah sandıkları son derece yüksek bir oranla ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336723,
+    "IdName": "DungeonAffix_Positive_Chests_Armor",
+    "Name": "Bonus Sandıklar: Zırh",
+    "Description": "Zırh sandıkları son derece yüksek bir oranla ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336857,
+    "IdName": "DungeonAffix_Positive_Chests_Elixirs",
+    "Name": "Bonus Sandıklar: İksirler",
+    "Description": "İksir sandıkları son derece yüksek bir oranla ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2232949,
+    "IdName": "World_DGN_QST_Skov_DeathCurse_02",
+    "Name": "Boğulmuş Lanetistan",
+    "Description": "",
+    "DungeonZoneInfo": ":  içinde Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314248,
+    "IdName": "DungeonAffix_Positive_FrostDamage",
+    "Name": "Buz Hasarı",
+    "Description": "%15 daha fazla Buz hasarı verirsin.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2373236,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraFrostbiting",
+    "Name": "Buz Yanığı Vuruşları",
+    "Description": "Canavarlar 3 saniye boyunca ek olarak Fiziksel hasarının %30'u kadarını Buz Yanığı hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1894221,
+    "IdName": "DungeonAffix_Major_Boss_MegaDemon_Tier96",
+    "Name": "Buzdaki Canavar",
+    "Description": "Bu donmuş mağaranın sonunda daha zorlu bir Buzdaki Canavarla yüzleş.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381226,
+    "IdName": "DungeonAffix_Major_Horde_Insects",
+    "Name": "Böcek Sürüsü",
+    "Description": "Tehlikeli böcekler burayı işgal eder ve ayrıca %30 ilave can kazanırlar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1114338,
+    "IdName": "World_DGN_Hawe_Witchwater",
+    "Name": "Cadı Suyu",
+    "Description": "Nangari tarikatçıları, rüyalarda söyledikleri şarkılarla avlarını buraya çekiyor.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113085,
+    "IdName": "World_DGN_Kehj_PrisonofCaldeum",
+    "Name": "Caldeum Hapishanesi",
+    "Description": "Bu hapishanenin içinde kötü şeyler dönüyor.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113092,
+    "IdName": "World_DGN_Scos_CalibelsMine",
+    "Name": "Calibel'in Madeni",
+    "Description": "Eşkıyalar, ele geçirdikleri madenin sırlarından bihaber.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314437,
+    "IdName": "DungeonAffix_Minor_Monster_LessFire",
+    "Name": "Canavar Ateş Direnci",
+    "Description": "Canavarlar %40 daha az Ateş hasarı alır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314444,
+    "IdName": "DungeonAffix_Minor_Monster_AntiOverpower",
+    "Name": "Canavar Aşırı Güç Direnci",
+    "Description": "Canavar saldırıları, sıradaki Aşırı Güçlü saldırının hasarını %12 azaltır. Etki %60'a kadar birikebilir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1898340,
+    "IdName": "DungeonAffix_Major_Monster_Barrier",
+    "Name": "Canavar Bariyeri",
+    "Description": "Canavarlar, Maksimum Canlarının %50'sini Bariyer olarak kazanır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314372,
+    "IdName": "DungeonAffix_Minor_Monster_LifeSteal",
+    "Name": "Canavar Can Çalması",
+    "Description": "Patron olmayan canavarlar %15 Can Çalma kazanır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314356,
+    "IdName": "DungeonAffix_Minor_Monster_HPBonus",
+    "Name": "Canavar Canı",
+    "Description": "Canavarlar ekstra %30 can kazanır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314360,
+    "IdName": "DungeonAffix_Minor_Monster_ReflectNonPhysical",
+    "Name": "Canavar Dikenleri",
+    "Description": "Canavarlar hasarın %8'ini yansıtır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314388,
+    "IdName": "DungeonAffix_Minor_Monster_LessPhysical",
+    "Name": "Canavar Fiziksel Direnci",
+    "Description": "Canavarlar %30 daha az Fiziksel hasar alır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314376,
+    "IdName": "DungeonAffix_Minor_Monster_LessShadow",
+    "Name": "Canavar Gölge Direnci",
+    "Description": "Canavarlar %40 daha az Gölge hasarı alır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314380,
+    "IdName": "DungeonAffix_Minor_Monster_LessBleeding",
+    "Name": "Canavar Kanama Direnci",
+    "Description": "Canavarlar %60 daha az Kanama hasarı alır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314446,
+    "IdName": "DungeonAffix_Minor_Monster_AntiCC",
+    "Name": "Canavar Kitle Kontrol Direnci",
+    "Description": "Canavarların Kitle Kontrol süresi %40 azalır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314448,
+    "IdName": "DungeonAffix_Minor_Monster_AntiCrit",
+    "Name": "Canavar Kritik Direnci",
+    "Description": "Canavar saldırıları, Kritik Vuruşlarının hasarını 3 saniyeliğine %6 azaltır. Etki %60'a kadar birikir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1585511,
+    "IdName": "World_DGN_Naha_BeastGraveyard",
+    "Name": "Canavar Mezarlığı",
+    "Description": "Leşçiler sık sık buraya kutsal devlerden çıkar elde etmeye geliyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314442,
+    "IdName": "DungeonAffix_Minor_Monster_AntiVulnerable",
+    "Name": "Canavar Savunmasızlık Direnci",
+    "Description": "Canavarlara uygulanan Savunmasızlık Etkilerinin süresi %60 azalır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 966310656,
+    "IdName": "MonsterLevel",
+    "Name": "Canavar Seviyesi: ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Misc"
+  },
+  {
+    "IdSno": 1314397,
+    "IdName": "DungeonAffix_Minor_Monster_LessCold",
+    "Name": "Canavar Soğuk Direnci",
+    "Description": "Canavarlar %40 daha az Soğuk hasarı alır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314382,
+    "IdName": "DungeonAffix_Minor_Monster_LessBurning",
+    "Name": "Canavar Yanma Direnci",
+    "Description": "Canavarlar %60 daha az Yanma hasarı alır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314454,
+    "IdName": "DungeonAffix_Minor_Monster_HPRegen",
+    "Name": "Canavar Yenilemesi",
+    "Description": "Patron olmayan canavarlar saniye başına %1,5 Maksimum Can yeniler.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314395,
+    "IdName": "DungeonAffix_Minor_Monster_LessLightning",
+    "Name": "Canavar Yıldırım Direnci",
+    "Description": "Canavarlar %40 daha az Yıldırım hasarı alır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314393,
+    "IdName": "DungeonAffix_Minor_Monster_LessPoison",
+    "Name": "Canavar Zehir Direnci",
+    "Description": "Canavarlar %60 daha az Zehir hasarı alır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2004860,
+    "IdName": "DungeonAffix_Major_Hellfire",
+    "Name": "Cehennem Ateşi",
+    "Description": "Canavarlar, öldürüldüklerinde oyunculara aktarılan Cehennem Ateşi etkisi altındadır. Cehennem Ateşi, hasarı artırır ancak her birikme için zamanla hasar verir. Bir iksir kullanmak, ateşli bir patlama ile cehennem ateşinin etkilerinin azaltılmasına yardımcı olur.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2361559,
+    "IdName": "DungeonAffix_Positive_Chests_SeasonalCurrency",
+    "Name": "Cehennem Bükümü Rezervi",
+    "Description": "Burada birçok Cehennem Bükümü sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1975499,
+    "IdName": "DungeonAffix_Positive_S05_Rep_Shrines",
+    "Name": "Cehennemin Dokunduğu",
+    "Description": "Bu zindanın sonunda ekstra Cehennem Mabetleri ve %20 daha fazla Oyma Tecrübesi kazanılır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2355998,
+    "IdName": "DungeonAffix_Minor_S9_Tethering",
+    "Name": "Cehennemlik Seçkinler",
+    "Description": "Seçkin canavarlar, \"Cehennemlik\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113392,
+    "IdName": "World_DGN_Kehj_CrumblingHekma",
+    "Name": "Dağılan Hekma",
+    "Description": "Zakarum inancının nefret dolu bir yer altı mezarı. ",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585468,
+    "IdName": "World_DGN_Naha_IronCenotaph",
+    "Name": "Demir Anıt Mezar",
+    "Description": "Demir Kurtların Kurast yıkılmadan önceki ilk evi.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113530,
+    "IdName": "World_DGN_Hawe_IronHold",
+    "Name": "Demir Sığınak",
+    "Description": "Çürüyen hapishanenin iç kısımlarında hareketli bir musibet var.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2354687,
+    "IdName": "DungeonAffix_Minor_S9_Explosive",
+    "Name": "Dengesiz Deneyler",
+    "Description": "Canavarlar, öldüklerinde bir gecikmenin ardından patlayarak etraflarına ağır alan hasarı verebilir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113549,
+    "IdName": "World_DGN_Step_SeasideDescent",
+    "Name": "Deniz Kenarı Yokuşu",
+    "Description": "Gemi enkazı mezarlığının arasında bulunan bir koy.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113188,
+    "IdName": "World_DGN_Scos_MarinersRefuge",
+    "Name": "Denizci Sığınağı",
+    "Description": "Boğulmuş, kazazede denizcileri derinlere çeker.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113208,
+    "IdName": "World_DGN_Scos_Underroot",
+    "Name": "Derinkök",
+    "Description": "Túr Dúlra'nın derinlerindeki kökleri çürük dolu harabeler.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113768,
+    "IdName": "World_DGN_Step_ShiftingCity",
+    "Name": "Değişen Şehir",
+    "Description": "Bu harabeler bir zamanlar Qara-Yisu halkı için bir sığınaktı.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314236,
+    "IdName": "DungeonAffix_Positive_Thorns",
+    "Name": "Dikenler",
+    "Description": "Bir düşmana saldırdıktan sonra Dikenlerin 3 saniyeliğine 200 artar. Birikerek 1.000'e kadar çıkabilir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314417,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceResistance",
+    "Name": "Direnç Kıranlar",
+    "Description": "Uzaktan gelen canavar saldırıları, 6 saniyeliğine Tüm Elementlere Direnci %5 azaltır. Bu etki %25'e kadar birikir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113857,
+    "IdName": "World_DGN_Scos_DomhainneTunnels",
+    "Name": "Domhainne Tünelleri",
+    "Description": "Corbach sakinleri, Keçi Adamların ininden gelen çığlıkları duyuyor.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114205,
+    "IdName": "World_DGN_Frac_Zenith",
+    "Name": "Doruk",
+    "Description": "Tepelerin altındaki keşfedilmemiş tüneller. ",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314366,
+    "IdName": "DungeonAffix_Minor_Monster_Unstoppable",
+    "Name": "Durdurulamaz Canavarlar",
+    "Description": "Canavarlar canları %30'un altına düştüğünde Durdurulamaz hâle gelir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321538,
+    "IdName": "DungeonAffix_Positive_Astaroth_DurielBossMats",
+    "Name": "Duriel'in Adağı",
+    "Description": "Astaroth'un ödülleri, Duriel'in İstifini açmak için gereken Izdırap Parçacıklarını içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2373219,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Waller)",
+    "Name": "Duvarcı Seçkinler",
+    "Description": "Seçkin canavarlar, \"Duvarcı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2229221,
+    "IdName": "DungeonAffix_Positive_TreasureHunt",
+    "Name": "Ekipman Oyuğu",
+    "Description": "Gittikçe artan kalitede teçhizat zulaları kazanmak için Horadrim Eserlerini bul.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1719009,
+    "IdName": "DungeonAffix_Positive_ExtraShrines",
+    "Name": "Ekstra Mabetler",
+    "Description": "Zindanda ekstra mabetler bulunur.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113196,
+    "IdName": "World_DGN_Frac_RitualTower",
+    "Name": "Elem Harabeleri",
+    "Description": "Asırlardır hiçbir ölümlünün kullanmadığı bir gözetleme kulesi.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1582559,
+    "IdName": "DungeonAffix_Major_Elemental_Totems",
+    "Name": "Element Totemleri",
+    "Description": "Çarpışma sırasında, yok edilene kadar yakındaki düşmanları güçlendiren rastgele Element Totemleri ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2360127,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Diamond",
+    "Name": "Elmas Rezervi",
+    "Description": "Burada birçok Elmas sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114038,
+    "IdName": "World_DGN_Hawe_RuinsofEridu",
+    "Name": "Eridu Harabeleri",
+    "Description": "Bataklık tarafından mahvedilen, bir zamanlar kudretli olan bir kale.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321559,
+    "IdName": "DungeonAffix_Positive_Astaroth_Ancestral",
+    "Name": "Esanevi Ganimetler",
+    "Description": "Astaroth'un ödüllerinin bir Kadim öğe içermesi garantidir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113090,
+    "IdName": "World_DGN_Scos_Oldstones",
+    "Name": "Eski Taşlar",
+    "Description": "Keçi adam, harap kaleyi lanetinden bihaber şekilde istila etti.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113997,
+    "IdName": "World_DGN_Frac_HoarfrostDemise",
+    "Name": "Eskibuz Ölümü",
+    "Description": "Cesetlerle ve kemiklerle dolu buzdan bir Keçi Adam mağarası.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321525,
+    "IdName": "DungeonAffix_Positive_Astaroth_MoreUniques",
+    "Name": "Eşsiz Ganimetler",
+    "Description": "Astaroth'un ödülleri daha fazla Eşsiz öğe içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585622,
+    "IdName": "World_DGN_Naha_FaraiCliffs",
+    "Name": "Farai Uçurumları",
+    "Description": "Yabancıların kanı, ay ışığında parıldıyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314293,
+    "IdName": "DungeonAffix_Positive_PhysicalDamage",
+    "Name": "Fiziksel Hasar",
+    "Description": "%15 daha fazla Fiziksel hasar verirsin.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314213,
+    "IdName": "DungeonAffix_Major_StormbanesWrath",
+    "Name": "Fırtına Ziyanının Gazabı",
+    "Description": "Karanlık bir monolit, oyuncuları kovalar ve yakınlarındayken ağır hasarı belirtmek için titreşir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113812,
+    "IdName": "World_DGN_Step_WhisperingVault",
+    "Name": "Fısıldayan Mahzen",
+    "Description": "Delilerin fısıldayan ruhlarının musallat olduğu alim koridorlar.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113148,
+    "IdName": "World_DGN_Scos_WhisperingPines",
+    "Name": "Fısıldayan Çamlar",
+    "Description": "Astaroth artık yok ancak bu kale üzerindeki hakimiyeti sürüyor. ",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113366,
+    "IdName": "World_DGN_Scos_GaranHold",
+    "Name": "Garan'ın Sığınağı",
+    "Description": "Bir zamanlar kudretli olan kale, yanmaya mahkûm edildi.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321165,
+    "IdName": "DungeonAffix_Positive_MoreGoblins",
+    "Name": "Garantili Hazine Goblinleri",
+    "Description": "Zindanda Hazine Goblinleri ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114192,
+    "IdName": "World_DGN_Hawe_GhoaRuins",
+    "Name": "Ghoa Harabeleri",
+    "Description": "Bir zamanlar kaleydi. Bataklık, ölümlülerin elleriyle inşa edilen her şeyi geri alıyor.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2226100,
+    "IdName": "DungeonAffix_Positive_LegendaryVendor",
+    "Name": "Gizli Efsanevi Satıcı",
+    "Description": "Zindanda bir yerlerde gizli bir satıcı ortaya çıkar...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2516764,
+    "IdName": "DungeonAffix_Positive_LegendaryElites",
+    "Name": "Gizli Silah Deposu",
+    "Description": "Olağanüstü öğeler burada tutulur, seçkin canavarlara güçlü bir ganimet eki verirler.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511994,
+    "IdName": "DungeonAffix_Positive_AncestralElites",
+    "Name": "Gizli Silah Deposu",
+    "Description": "Olağanüstü öğeler burada tutulur, seçkin canavarlara güçlü bir ganimet eki verirler.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321566,
+    "IdName": "DungeonAffix_Positive_Astaroth_Grigoire",
+    "Name": "Grigoire'nın Adağı",
+    "Description": "Astaroth'un ödülleri, Grigoire'nın İstifini açmak için gereken Canlı Çelik içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114146,
+    "IdName": "World_DGN_Step_GuulrahnCanals",
+    "Name": "Guulrahn Kanalları",
+    "Description": "Aşağıda yamyam tiranın bile dokunamayacağı çürümüş bir şey var.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113676,
+    "IdName": "World_DGN_Step_GuulrahnSlums",
+    "Name": "Guulrahn Varoşları",
+    "Description": "Guulrahn'ın sokaklarına hâlâ yamyamlar hâkim.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511968,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Shadow Enchanted)",
+    "Name": "Gölge Efsunlu Seçkinler",
+    "Description": "Seçkin canavarlar, \"Gölge Efsunlu\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314231,
+    "IdName": "DungeonAffix_Positive_ShadowDamage",
+    "Name": "Gölge Hasarı",
+    "Description": "%15 daha fazla Gölge hasarı verirsin.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314411,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraShadow",
+    "Name": "Gölge Vuruşları",
+    "Description": "Canavarlar ek olarak Fiziksel hasarının %20'si kadarını Gölge hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114271,
+    "IdName": "World_DGN_Hawe_ShadowedPlunge",
+    "Name": "Gölgeli Atılım",
+    "Description": "Yılan Tarikatçıları masumu kurban ediyor.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113649,
+    "IdName": "World_DGN_Step_BuriedHalls",
+    "Name": "Gömülü Salonlar",
+    "Description": "Triune, bu kadim salonları geri almak için savaşıyor.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321114,
+    "IdName": "DungeonAffix_Positive_ExtraResplendent",
+    "Name": "Göz Alıcı Sandıklar",
+    "Description": "Zindanda ekstra Göz Alıcı Sandıklar ortaya çıkar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511947,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Sinful Torment)",
+    "Name": "Günahkâr İşkence Seçkinleri ",
+    "Description": "Seçkin canavarlar, \"Günahkâr İşkence\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314346,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Shadow)",
+    "Name": "Güçlendirilmiş Seçkinler (Gölge Efsunlu)",
+    "Description": "Seçkinlerin her zaman \"Gölge Efsunlu\" eki bulunur.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314335,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Teleporter)",
+    "Name": "Güçlendirilmiş Seçkinler (Işınlanan)",
+    "Description": "Seçkinlerin her zaman \"Işınlanan\" eki bulunur.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314344,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Frost)",
+    "Name": "Güçlendirilmiş Seçkinler (Soğuk Efsunlu)",
+    "Description": "Seçkinlerin her zaman \"Soğuk Efsunlu\" eki bulunur.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113981,
+    "IdName": "World_DGN_Step_BetrayersRow",
+    "Name": "Hainin Sokağı",
+    "Description": "Hasetten deliye dönen bir kasabanın bozulmuş kalıntıları. ",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113988,
+    "IdName": "World_DGN_Kehj_RenegadesRetreat",
+    "Name": "Hainin İnzivası",
+    "Description": "Hain şövalyeler, Inarius'un seferinden kalan ganimetleri topluyor.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314368,
+    "IdName": "DungeonAffix_Minor_Monster_AttackBehind",
+    "Name": "Hainler",
+    "Description": "Arkandan yapılan yakın mesafe canavar saldırıları seni Savunmasız bırakır. Savunmasızken alınan hasar %35 artar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114247,
+    "IdName": "World_DGN_Kehj_HakansRefuge",
+    "Name": "Hakan'ın Sığınağı",
+    "Description": "Anılarla dolup taşan, harabeler içinde kalmış büyük malikâne.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2361576,
+    "IdName": "DungeonAffix_Positive_TreasureGoblins",
+    "Name": "Hazine Gediği",
+    "Description": "Şaşırtıcı sayıda hazine goblini bu bölgeyi istila etmiş.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585493,
+    "IdName": "World_DGN_Naha_MurmuringSpiral",
+    "Name": "Homurdanan Sarmal",
+    "Description": "Pullar ve sarmallar hipnotize eder ve bazıları çok yaklaşır.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2332268,
+    "IdName": "DungeonAffix_Positive_S09_Horadric_Secret",
+    "Name": "Horadrim Kasa Odası",
+    "Description": "Bu bölgede hep bir Horadrim Kasa Odası ortaya çıkacak.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321161,
+    "IdName": "DungeonAffix_Positive_SeasonalCurrency",
+    "Name": "Horadrim Tüpleri",
+    "Description": "Bu zindandaki düşmanlar, daha fazla Horadrim Tüpü düşürür.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2381230,
+    "IdName": "DungeonAffix_Major_Horde_Undead",
+    "Name": "Hortlak Sürüsü",
+    "Description": "Kirletilmiş hortlaklar burada dirilir ve ayrıca %30 ilave can kazanırlar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314297,
+    "IdName": "DungeonAffix_Positive_AttackMoveSpeedOnKill",
+    "Name": "Hızlı Katil",
+    "Description": "Canavar öldürmek, %2,0 Saldırı ve Hareket Hızı kazandırır. %20'ye kadar birikir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114021,
+    "IdName": "World_DGN_Kehj_DesertedUnderpass",
+    "Name": "Issız Alt Geçit",
+    "Description": "Harap Tepe'nin altındaki mağaralarda pusuda bekleyen bir tehdit var.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511949,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Anguished Souls)",
+    "Name": "Izdıraplı Ruhlar Seçkinleri ",
+    "Description": "Seçkin canavarlar, \"Izdıraplı Ruhlar\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113451,
+    "IdName": "World_DGN_Frac_LightsWatch",
+    "Name": "Işık Gözcüsü",
+    "Description": "Eşkıyalar ve diğer parazitler tarafından kullanım amacı değiştirilen bir Şövalye kalesi.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114156,
+    "IdName": "World_DGN_Hawe_LightsRefuge",
+    "Name": "Işık Sığınağı",
+    "Description": "Unutulmuş evde diş ve zırhtan yapılmış bir yuva var.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2358423,
+    "IdName": "DungeonAffix_Major_Astaroth_TeleDoT",
+    "Name": "Işınlanma Kalıntısı",
+    "Description": "Astaroth artık, ışınlandığında ardında bir kalıcı hasar havuzu bırakır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1114196,
+    "IdName": "World_DGN_Scos_JalalsVigil",
+    "Name": "Jalal'ın Nöbeti",
+    "Description": "Koruyucusunun ızdırabından dolayı kasvetli olan bir orman.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113315,
+    "IdName": "World_DGN_Step_AncientsLament",
+    "Name": "Kadim Ağıt",
+    "Description": "Izdırap çeken ruhların hapsedildiği bir mezar ve hapishane. ",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113084,
+    "IdName": "World_DGN_Hawe_AncientReservoir",
+    "Name": "Kadim Sarnıç",
+    "Description": "Bu harabelerin altından zehirli bir pınar akıyor.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1894518,
+    "IdName": "DungeonAffix_Positive_GlyphXP_EvergreenVersion",
+    "Name": "Kadim Uyanış",
+    "Description": "Bu zindanın sonunda %20 daha fazla Oyma Tecrübesi kazanırsın.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360158,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Skull",
+    "Name": "Kafatası Rezervi",
+    "Description": "Burada birçok Kafatası sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113847,
+    "IdName": "World_DGN_Frac_CalderaGate",
+    "Name": "Kaldera Kapısı",
+    "Description": "Bu buzdan mağaranın içindeki iblisler güçleniyor.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314352,
+    "IdName": "DungeonAffix_Major_Blood Blister",
+    "Name": "Kan Kabarcığı",
+    "Description": "Canavar öldürdüğünde bir Kan Kabarcığı oluşma ihtimali doğar. Bu kabarcık, kısa bir gecikmeden sonra patlayarak ağır alan hasarı verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113784,
+    "IdName": "World_DGN_Step_BloodsoakedCrag",
+    "Name": "Kana Bulanmış Kayalık",
+    "Description": "Ete aç olanlar için bir ziyafet alanı. ",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2343014,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Conduit",
+    "Name": "Kanal Mabetleri",
+    "Description": "Bu bölge boyunca Kanal Mabetleri ortaya çıkacak.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314407,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraBleeding",
+    "Name": "Kanatan Vuruşlar",
+    "Description": "Canavarlar 3 saniye boyunca ek olarak Fiziksel hasarlarının %30'unu Kanama hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113478,
+    "IdName": "World_DGN_Frac_BlackAsylum",
+    "Name": "Kara Tımarhane",
+    "Description": "Mahkûmlarının feryatlarıyla dolup taşan terk edilmiş bir hapishane.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2379014,
+    "IdName": "DungeonAffix_Major_Bloody_Mess",
+    "Name": "Karanlık Alamet",
+    "Description": "Burası uygun değil. Biri ya da bir şey, burada seni izliyor...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113590,
+    "IdName": "World_DGN_Step_DarkRavine",
+    "Name": "Karanlık Vadi",
+    "Description": " Bir Triune ayini alanı. Her yerde çığlıklar yankılanıyor. ",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314364,
+    "IdName": "DungeonAffix_Minor_Monster_DrainResource",
+    "Name": "Kaynak Yakma",
+    "Description": "Bir kaynak harcadıktan sonra Uzaktaki bir düşmandan her isabet alışında bu harcadığın kaynaktan ilaveten %30 daha kaybedersin.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113127,
+    "IdName": "World_DGN_Frac_LostArchives",
+    "Name": "Kayıp Arşivler",
+    "Description": "Birçok kişi içeride ne olduğunu tahmin ediyor ama bakmaya cesaret edebilen pek az kişi var.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113337,
+    "IdName": "World_DGN_Hawe_LostKeep",
+    "Name": "Kayıp Kale",
+    "Description": "Katedralin terk ettiği, çürüyen başka bir kale daha.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381228,
+    "IdName": "DungeonAffix_Major_Horde_Khazra",
+    "Name": "Keçi Adam Sürüsü",
+    "Description": "Anıran keçi adamlar burayı ele geçirir ve ayrıca %30 ilave can kazanırlar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113937,
+    "IdName": "World_DGN_Frac_RimescarCavern",
+    "Name": "Kireçli Yara İzi Mağarası",
+    "Description": "İblislerin geri aldığı ve sihirleriyle hastalık bulaştırdığı bir mağara. ",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113636,
+    "IdName": "World_DGN_Frac_DefiledCatacomb",
+    "Name": "Kirletilmiş Yer Altı Mezarı",
+    "Description": "Mezar soyguncuları, bu türbenin cazibesiyle ilgili uyarıda bulunuyor.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585540,
+    "IdName": "World_DGN_Naha_PutrescentLarder",
+    "Name": "Kokuşmuş Ambar",
+    "Description": "İğrenç hava, Lacuni'lerin etlerini nerede sakladığını belli ediyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113877,
+    "IdName": "World_DGN_Step_KomdorTemple",
+    "Name": "Komdor Tapınağı",
+    "Description": "Korunak'ta sonsuza dek keçi adam şeklinde dolaşmak üzere lanetlenen bir Triune tarikatı. ",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314288,
+    "IdName": "DungeonAffix_Positive_StunCausesBurning",
+    "Name": "Kontrol Engelleyici Patlamalar",
+    "Description": "Kontrol Engelleyici Etkilerden isabet almak, etrafında bir patlama yaratır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113896,
+    "IdName": "World_DGN_Frac_KorDraganBarracks",
+    "Name": "Kor Dragan Kışlası",
+    "Description": "Şanlı salonlar, ölülerin gezindiği bir yer hâline geldi.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113098,
+    "IdName": "World_DGN_Frac_KorValarRamparts",
+    "Name": "Kor Valar Surları",
+    "Description": "Tövbekârların günahlarını gizleyen yozlaşmış bir kale.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2343040,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Protection",
+    "Name": "Koruma Mabetleri",
+    "Description": "Bu bölge boyunca Koruma Mabetleri ortaya çıkacak.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113738,
+    "IdName": "World_DGN_Scos_Hive",
+    "Name": "Kovan",
+    "Description": "Doyumsuz bir irade, bu yaratıkları beslenmeye teşvik ediyor.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2266169,
+    "IdName": "DungeonAffix_Major_CultistLure",
+    "Name": "Kurbanlık kuzular",
+    "Description": "Ele geçirilmiş düşmanları mabede çekerek kurban et ve ilave ödüller kazan.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1585570,
+    "IdName": "World_DGN_Naha_CavesofKutokue",
+    "Name": "Kutokue Mağaraları",
+    "Description": "Duvarlardan çaresizlik çığlıkları yankılanıyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113500,
+    "IdName": "World_DGN_Frac_HallowedOssuary",
+    "Name": "Kutsal Kemik Odası",
+    "Description": "Kirletilen ve yeniden güçlendirilen bir şehit mezarı.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1498609,
+    "IdName": "World_DGN_S02_Kehj_TombofHallows",
+    "Name": "Kutsal Mezarlık",
+    "Description": "Ölüm koridorlarda. Eski ve taze. Ölüm ve ölümsüzlük.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585547,
+    "IdName": "World_DGN_Naha_HallowedStones",
+    "Name": "Kutsal Taşlar",
+    "Description": "Kötülük denizinin ortasında zayıf bir umut ışığı titreşiyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113900,
+    "IdName": "World_DGN_Kehj_CrusadersCathedral",
+    "Name": "Kutsal Şövalyelerin Katedrali",
+    "Description": "Bu tapınağı ve tapınağın hortlak savaşçılarını şövalyeler ele geçirdi.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314252,
+    "IdName": "DungeonAffix_Major_Nightmare Portal",
+    "Name": "Kâbus Portalı",
+    "Description": "Çarpışmadayken oyuncuların yakınlarında içinden tehlikeli canavarlar çıkan rastgele Kâbus Portalları açılır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113270,
+    "IdName": "World_DGN_Kehj_HereticsAsylum",
+    "Name": "Kâfirler Tımarhanesi",
+    "Description": "Yozlaşmışların ve acımasızların hapishanesi.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113793,
+    "IdName": "World_DGN_Hawe_HeathensKeep",
+    "Name": "Kâfirlerin Kalesi",
+    "Description": "Bu Şövalyeler, yeni lidere sadakat sözü verdi.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585486,
+    "IdName": "World_DGN_Naha_SeethingUnderpass",
+    "Name": "Köpüren Alt Geçit",
+    "Description": "Derinlerdeki yozlaşma, batık kanallardan yükseliyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113468,
+    "IdName": "World_DGN_Hawe_BlindBurrows",
+    "Name": "Kör Yuvalar",
+    "Description": "Buradaki örümcekler ete aç. ",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113431,
+    "IdName": "World_DGN_Step_PathoftheBlind",
+    "Name": "Körlerin Yolu",
+    "Description": "Triune adaylarının kana bulanmış kabul töreni alanı.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511865,
+    "IdName": "DungeonAffix_Positive_GildedElites",
+    "Name": "Kötücül Görkem",
+    "Description": "Burada görkemli bir aşırılığın keyfi sürülür, seçkin canavarlara \"Yaldızlı\" ekini verirler.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585629,
+    "IdName": "World_DGN_Naha_ForgeofMalice",
+    "Name": "Kötülük Ocağı",
+    "Description": "Nefret ateşi, bu gizli sığınakta yanmaya devam ediyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2354533,
+    "IdName": "DungeonAffix_Minor_S9_Barrier",
+    "Name": "Küçük Koruma",
+    "Description": "Buradaki bazı canavarlar, Maksimum Canlarının %50'sini Bariyer olarak kazanır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114299,
+    "IdName": "World_DGN_Scos_BrokenBulwark",
+    "Name": "Kırık Siper",
+    "Description": "Bir zamanlar Donan'ın arazisinin bir parçasıydı ve arazinin geri kalanıyla birlikte yerle bir edildi.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2373228,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraSparking",
+    "Name": "Kıvılcım Vuruşları",
+    "Description": "Canavarlar 3 saniye boyunca ek olarak Fiziksel hasarının %30'u kadarını Kıvılcım hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113145,
+    "IdName": "World_DGN_Frac_SanguineChapel",
+    "Name": "Kızıl Şapel",
+    "Description": "Karlarla kaplı, vampirler tarafından istila edilmiş, terk edilmiş bir Zakarum kilisesi.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113361,
+    "IdName": "World_DGN_Kehj_HallsoftheDamned",
+    "Name": "Lanetli Salonlar",
+    "Description": "Triune sihirbazları, bir zamanlar burada tuhaf sihirler yapılmasına önayak oluyordu...",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114067,
+    "IdName": "World_DGN_Hawe_HauntedRefuge",
+    "Name": "Lanetli Sığınak",
+    "Description": "Deltaya batan, yavaşça sular altında kalan eski kilise.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113903,
+    "IdName": "World_DGN_Hawe_LeviathansMaw",
+    "Name": "Leviathan'ın Çenesi",
+    "Description": "Bu su basmış harabelerde tarikatçılar gizleniyor.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113852,
+    "IdName": "World_DGN_Kehj_PutridAquifer",
+    "Name": "Leş Kokulu Sutaşır",
+    "Description": "Suyu ölüm sarıyor.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113331,
+    "IdName": "World_DGN_Step_CarrionFields",
+    "Name": "Leş Tarlaları",
+    "Description": "Bu toprağı kirletenler, sonsuza dek burada gezinmek üzere lanetlendi.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321574,
+    "IdName": "DungeonAffix_Positive_Astaroth_LordZir",
+    "Name": "Lort Zir'in Adağı",
+    "Description": "Astaroth'un ödülleri, Lort Zir'in İstifini açmak için gereken Enfes Kan içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113112,
+    "IdName": "World_DGN_Scos_LubansRest",
+    "Name": "Luban'ın Dinlenme Yeri",
+    "Description": "Bir savaşçı ve takipçileri mezarlarından çıktı.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114287,
+    "IdName": "World_DGN_Scos_MadduxWatch",
+    "Name": "Maddux Karakolu",
+    "Description": "Bu terk edilmiş karakol, ölülerin üzerinde duruyor.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585596,
+    "IdName": "World_DGN_Naha_RuinedWild",
+    "Name": "Mahvolmuş Yaban",
+    "Description": "Davetsiz misafirlere yuva olmuş bir maneviyat evi.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2336905,
+    "IdName": "DungeonAffix_Positive_Chests_Materials",
+    "Name": "Malzeme Rezervi",
+    "Description": "Burada birçok Malzeme sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2346039,
+    "IdName": "DungeonAffix_Positive_Astaroth_Materials",
+    "Name": "Malzeme Servetleri",
+    "Description": "Astaroth'un ödülleri büyük miktarda üretim malzemesi içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113049,
+    "IdName": "World_DGN_Hawe_MaugansWorks",
+    "Name": "Maugan'ın Çalışmaları",
+    "Description": "Suçluların ve kaçakların çürüdüğü bir koridor.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585530,
+    "IdName": "World_DGN_Naha_VileHive",
+    "Name": "Menhus Kovan",
+    "Description": "Nahoş yuvadan ifritlerin sesleri yankılanıyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314386,
+    "IdName": "DungeonAffix_Minor_Monster_LessRanged",
+    "Name": "Menzil Savunucuları",
+    "Description": "Canavarlar, uzak hedeflerden %60 daha az hasar alır",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114168,
+    "IdName": "World_DGN_Frac_MercysReach",
+    "Name": "Merhametin Eli",
+    "Description": "Bu çökmekte olan kale, bir zamanlar dağlara giden bir yoldu. ",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314374,
+    "IdName": "DungeonAffix_Minor_Monster_ChanceSlow",
+    "Name": "Mermi Yavaşlatma",
+    "Description": "Uzaktan gelen canavar saldırıları, %50 ihtimalle hedefleri yavaşlatır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2336907,
+    "IdName": "DungeonAffix_Positive_Chests_Obols",
+    "Name": "Metelik Rezervi",
+    "Description": "Burada birçok Metelik sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2330764,
+    "IdName": "DungeonAffix_Major_Astaroth_Meteor",
+    "Name": "Meteor Fırtınası",
+    "Description": "Astaroth'un artık daha fazla meteor saldırısı var.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113766,
+    "IdName": "World_DGN_Step_CharnelHouse",
+    "Name": "Mezar Evi",
+    "Description": "Burada bedenler tutuluyor, bazıları hâlâ canlı. İblisler için yiyecek.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511992,
+    "IdName": "DungeonAffix_Positive_MythicElites",
+    "Name": "Mitik Cennet",
+    "Description": "Böyle bir yeri ancak en çılgın rüyalarında görebilirdin...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336859,
+    "IdName": "DungeonAffix_Positive_Chests_Gems",
+    "Name": "Mücevher Rezervi",
+    "Description": "Burada birçok Mücevher Parçası sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113836,
+    "IdName": "World_DGN_Step_SealedArchives",
+    "Name": "Mühürlü Arşivler",
+    "Description": "Kadim bir sihirbaz salonu. Bir zamanlar sığınaktı, şimdi ise mezarlık. ",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2420535,
+    "IdName": "DungeonAffix_Positive_Astaroth_MephistoBossMats",
+    "Name": "Nefret Müjdecisinin Adağı",
+    "Description": "Astaroth'un ödülleri arasında Nefret Müjdecisinin İstifi'ni açmak için gerekli olan Tiksindirici Kalp bulunur.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113695,
+    "IdName": "World_DGN_Frac_NostravaDeepwood",
+    "Name": "Nostrava Derin Koruluğu",
+    "Description": "Ağaçların arasında hortlaklar geziyor.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321159,
+    "IdName": "DungeonAffix_Positive_MoreObducite",
+    "Name": "Obducite Madeni",
+    "Description": "Canavarlar burada ilave Obducite düşürür.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113909,
+    "IdName": "World_DGN_Step_OnyxHold",
+    "Name": "Oniks Sığınağı",
+    "Description": "Bu hapishanede hâlâ hortlak bekçiler devriye geziyor.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511905,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Infested)",
+    "Name": "Parazitli Seçkinler ",
+    "Description": "Seçkin canavarlar, \"Parazitli\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373215,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Explosive)",
+    "Name": "Patlayıcı Seçkinler",
+    "Description": "Seçkin canavarlar, \"Patlayıcı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1114046,
+    "IdName": "World_DGN_Hawe_FetidMausoleum",
+    "Name": "Pis Kokulu Mozole",
+    "Description": "Huzursuz ölü Eridu'nun unutulmuş mezarı.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314391,
+    "IdName": "DungeonAffix_Positive_EvadePushesEnemies",
+    "Name": "Püskürtücü Kaçınma",
+    "Description": "Kaçınma kullanmak, düşmanları geri püskürtür. ",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113192,
+    "IdName": "World_DGN_Scos_RaethwindWilds",
+    "Name": "Raethwind Yabanı",
+    "Description": "Birçok kişi bu ormanlarda kaybolup gitti.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585460,
+    "IdName": "World_DGN_Naha_RazaksDescent",
+    "Name": "Razak'ın Yokuşu",
+    "Description": "Işığın kaybolduğu ve niyetlerin kökten çürüdüğü yer.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2360156,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Sapphire",
+    "Name": "Safir Rezervi",
+    "Description": "Burada birçok Safir sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113484,
+    "IdName": "World_DGN_Scos_SaratsLair",
+    "Name": "Sarat'ın İni",
+    "Description": "Bir zamanlar vahşi yaşam ini olan yer, şimdi bir yuvaya dönüştü.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113805,
+    "IdName": "World_DGN_Hawe_SteadfastBarracks",
+    "Name": "Sarsılmaz Kışla",
+    "Description": "Uzun zamandır gömülü olan kötülüğe doğru çekilen vahşi bağnazların yuvası.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314229,
+    "IdName": "DungeonAffix_Positive_DamageReductionForMissingHealth",
+    "Name": "Savaşla Kazanılan Sertlik",
+    "Description": "Kaybettiğin her %10 Can için %6 hasar azaltma kazanırsın.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321163,
+    "IdName": "DungeonAffix_Positive_SeasonalReputation",
+    "Name": "Saygıdeğer Site",
+    "Description": "Canavarlar burada ek İlahi Lütuf kazandırır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114092,
+    "IdName": "World_DGN_Kehj_ShivtaRuins",
+    "Name": "Shivta Harabeleri",
+    "Description": "Alcarnus'un yozlaşmışlığı, bu harabelere sızmış.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314240,
+    "IdName": "DungeonAffix_Positive_MagicFind",
+    "Name": "Sihirli Bulma",
+    "Description": "Düşmanlarda daha fazla öğe bulursun. ",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113581,
+    "IdName": "World_DGN_Kehj_SiroccoCaverns",
+    "Name": "Sirocco Mağaraları",
+    "Description": "Bu mağaraları pis bir veba sardı.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585603,
+    "IdName": "World_DGN_Naha_SkatsimiFane",
+    "Name": "Skatsimi Tapınağı",
+    "Description": "Uzun zamandır ibadet görmeyen bu yerden geriye ne kalmış kim bilir.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113728,
+    "IdName": "World_DGN_Step_PallidDelve",
+    "Name": "Solgun Oyuk",
+    "Description": "Yamyamlar, çöken madenlerde karanlık bir güç himaye ediyor.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114081,
+    "IdName": "World_DGN_Hawe_EndlessGates",
+    "Name": "Sonsuz Kapılar",
+    "Description": "Günahkâr yaratıklar, diyarlar arasında zıvanadan çıkmış bir şekilde koşuşturuyor.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314415,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraCold",
+    "Name": "Soğuk Vuruşlar",
+    "Description": "Canavarlar ek olarak Fiziksel hasarının %20'si kadarını Soğuk hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2354691,
+    "IdName": "DungeonAffix_Minor_S9_ChillingWinds",
+    "Name": "Soğutucu Rüzgâr Seçkinleri",
+    "Description": "Seçkin canavarlar, \"Soğutucu Rüzgâr\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314211,
+    "IdName": "DungeonAffix_Major_Drifting Shade",
+    "Name": "Sürüklenen Gölgeler",
+    "Description": "Sürüklenen Gölgeler, oyuncuları kovalar. Hedefine ulaştığında patlayarak ağır hasar verir ve kurbanları Afallatan bir Kâbus Alanı oluşturur.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2330767,
+    "IdName": "DungeonAffix_Major_Astaroth_EliteSummons",
+    "Name": "Sürünün Gazabı",
+    "Description": "Öfke Bileşimi artık seçkin kurt adamlar çağırır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113980,
+    "IdName": "World_DGN_Step_GrinningLabyrinth",
+    "Name": "Sırıtan Labirent",
+    "Description": "Bu dolambaçlı koridorlar, çok büyük savaşçıların üstesinden geldi.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314420,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceDodge",
+    "Name": "Sıyrılma Kıranlar",
+    "Description": "Uzaktan gelen canavar saldırıları, sıyrılma ihtimalini 6 saniye boyunca %12 azaltır ve %60'a kadar birikir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2330769,
+    "IdName": "DungeonAffix_Major_Astaroth_Pounce",
+    "Name": "Sıçrayan Bileşim",
+    "Description": "Öfke Bileşimi artık Astaroth indiğinde de atılma saldırıları yapmaya devam eder.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113063,
+    "IdName": "World_DGN_Kehj_Inferno",
+    "Name": "Tamu",
+    "Description": "Cehennemi aramak için kayayı oyduk.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381199,
+    "IdName": "DungeonAffix_Major_Horde_Cultists",
+    "Name": "Tarikatçı Sürüsü",
+    "Description": "Yozlaşmış bağnazlar burada tapınır ve ayrıca %30 ilave can kazanırlar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113472,
+    "IdName": "World_DGN_Frac_CultistRefuge",
+    "Name": "Tarikatçı Sığınağı",
+    "Description": "Nostrava tarikatçılarının son tabyası.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113905,
+    "IdName": "World_DGN_Scos_FloodedDepths",
+    "Name": "Taşkın Derinlikler",
+    "Description": "Bu gemi enkazlarına sulardan daha fazlası sahip çıktı.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585561,
+    "IdName": "World_DGN_Naha_HierophantPyre",
+    "Name": "Tefsirci Ateşi",
+    "Description": "Bir zamanlar Sankekur'un muhaliflerini yakmak için kullanılan ateşler yeniden yanıyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113803,
+    "IdName": "World_DGN_Frac_DerelictLodge",
+    "Name": "Terk Edilmiş Kulübe",
+    "Description": "Bir zamanlar bir avcı kulübesiydi, artık iblisler hüküm sürüyor.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113289,
+    "IdName": "World_DGN_Kehj_AbandonedMineworks",
+    "Name": "Terk Edilmiş Madenler",
+    "Description": "Burada ölenlerin hâlâ içinde yürüdüğü bir tünel labirenti.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114262,
+    "IdName": "World_DGN_Frac_ForsakenQuarry",
+    "Name": "Terk Edilmiş Taş Ocağı",
+    "Description": "Bir zamanlar çorak olan bu maden kuyuları, artık korkunç ayinlerin yuvası.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113861,
+    "IdName": "World_DGN_Scos_VaultofTheForsaken",
+    "Name": "Terk Edilmişlerin Mahzeni",
+    "Description": "Bu su basmış mağaraların sesi, birçok kişiyi ölüme çağırıyor.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511964,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Saw Blades)",
+    "Name": "Testere Bıçakları Seçkinleri",
+    "Description": "Seçkin canavarlar, \"Testere Bıçakları\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113584,
+    "IdName": "World_DGN_Frac_Maulwood",
+    "Name": "Tokmak Koruluğu",
+    "Description": "Eşkıyalar bu ormanları ve canavarlarını ele geçirdi.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2360160,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Topaz",
+    "Name": "Topaz Rezervi",
+    "Description": "Burada birçok Topaz sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113105,
+    "IdName": "World_DGN_Hawe_EarthenWound",
+    "Name": "Toprak Yarası",
+    "Description": "Yamyamlar, burada yaşayan iblislerle bir ziyafet çekti.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2343032,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Artillery",
+    "Name": "Topçu Mabetleri",
+    "Description": "Bu bölge boyunca Topçu Mabetleri ortaya çıkacak.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113294,
+    "IdName": "World_DGN_Scos_PenitentCairns",
+    "Name": "Tövbe Höyüğü",
+    "Description": "Vadi halkı, ruhların kutsal ilan ettiği mağaralardan uzak durulması gerektiğini bilir.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321549,
+    "IdName": "DungeonAffix_Positive_Astaroth_SeasonalCurrency",
+    "Name": "Tüp Serveti",
+    "Description": "Astaroth'un ödülleri büyük miktarda Horadrim Tüpü içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585521,
+    "IdName": "World_DGN_Naha_UlarianSepulcher",
+    "Name": "Ularian Mezarı",
+    "Description": "Herkese korku saçan lanetli mezarlık.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114151,
+    "IdName": "World_DGN_Kehj_UldursCave",
+    "Name": "Uldur'un Mağarası",
+    "Description": "Katillerin ve leşçil besleyenlerin ini.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113504,
+    "IdName": "World_DGN_Scos_HowlingWarren",
+    "Name": "Uluyan İn",
+    "Description": "İnsan etine aç kurtların ve wargların yozlaşmış ini.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2282166,
+    "IdName": "DungeonAffix_Positive_ExperiencePools",
+    "Name": "Unutulmuş Bilgelik",
+    "Description": "Düşmanlar burada, ekstra tecrübe kazandıran bilgi istifler.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113401,
+    "IdName": "World_DGN_Step_ForgottenDepths",
+    "Name": "Unutulmuş Derinlikler",
+    "Description": "Bu kutsal kayaların altında bir gölge var.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113710,
+    "IdName": "World_DGN_Kehj_ForgottenRuins",
+    "Name": "Unutulmuş Harabeler",
+    "Description": "Bu yasaklanmış sihirbaz salonlarının temellerini yılanlar istila etmiş.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585586,
+    "IdName": "World_DGN_Naha_ForgottenRemains",
+    "Name": "Unutulmuş Kalıntılar",
+    "Description": "Bu civardaki köylüler gizemli bir şekilde ortadan kaybolmuş.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2236740,
+    "IdName": "DungeonAffix_Positive_S07_ForgottenAltar",
+    "Name": "Unutulmuş Sunak",
+    "Description": "Bu dünyada hep bir Unutulmuş Sunak ortaya çıkacak.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321562,
+    "IdName": "DungeonAffix_Positive_Astaroth_Urivar",
+    "Name": "Urivar'ın Adağı",
+    "Description": "Astaroth'un ödülleri, Urivar'ın İstifini açmak için gereken Yargıç Maskeleri içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585610,
+    "IdName": "World_DGN_Naha_SleeplessHollow",
+    "Name": "Uykusuz Kovuk",
+    "Description": "Ölüler unutulduğunda et ve kemik yeniden doğar.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2373211,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Vampiric)",
+    "Name": "Vampir Seçkinler",
+    "Description": "Seçkin canavarlar, \"Vampir\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2321564,
+    "IdName": "DungeonAffix_Positive_Astaroth_Varshaan",
+    "Name": "Varshan'ın Adağı",
+    "Description": "Astaroth'un ödülleri, Varshan'ın İstifini açmak için gereken Habis Kalpler içerir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314256,
+    "IdName": "DungeonAffix_Major_Volcanic",
+    "Name": "Volkanik",
+    "Description": "Çarpışmadayken oyuncuların yakınlarında belirli aralıklarla alev sıçramaları gerçekleşir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113946,
+    "IdName": "World_DGN_Scos_FeralsDen",
+    "Name": "Yabanilerin İni",
+    "Description": "Druidlerin nefreti ile yozlaşmış bir kulübe.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2360152,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Ruby",
+    "Name": "Yakut Rezervi",
+    "Description": "Burada birçok Yakut sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314409,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraBurning",
+    "Name": "Yakıcı Vuruşlar",
+    "Description": "Canavarlar 3 saniye boyunca ek olarak Fiziksel hasarının %30'u kadarını Yanma hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314384,
+    "IdName": "DungeonAffix_Minor_Monster_LessMelee",
+    "Name": "Yakın Dövüş Savunucuları",
+    "Description": "Canavarlar, yakın hedeflerden %40 daha az hasar alır",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2381222,
+    "IdName": "DungeonAffix_Major_Horde_Cannibals",
+    "Name": "Yamyam Sürüsü",
+    "Description": "İğrenç yamyamlar burayı lekeler ve ayrıca %30 ilave can kazanırlar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511827,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Illusory)",
+    "Name": "Yanıltıcı Seçkinler ",
+    "Description": "Seçkin canavarlar, \"Yanıltıcı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511973,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Splitter)",
+    "Name": "Yarıcı Seçkinler",
+    "Description": "Seçkin canavarlar, \"Yarıcı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113708,
+    "IdName": "World_DGN_Step_Mournfield",
+    "Name": "Yas Tarlası",
+    "Description": "Burada yürüyen şey hem canlı hem de ölü ve seni soyacak.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113156,
+    "IdName": "World_DGN_Frac_ForbiddenCity",
+    "Name": "Yasaklanmış Şehir",
+    "Description": "Etrafa yozlaşma saçan, açık duran kadim bir mezar.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114026,
+    "IdName": "World_DGN_Kehj_SepulcherOfTheForsworn",
+    "Name": "Yeminlilerin Mezarı",
+    "Description": "Baal sunağının aşağısında kötülükler dönüyor.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113931,
+    "IdName": "World_DGN_Hawe_Oblivion",
+    "Name": "Yok Oluş",
+    "Description": "Eriman'ın Ateşinin iblisleri, bu çökmekte olan hapishaneye kaçtı.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113107,
+    "IdName": "World_DGN_Kehj_CorruptedGrotto",
+    "Name": "Yozlaşmış Mağara",
+    "Description": "Unutulmuş ölüler, cevhersiz kayanın altında çürüyor.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314399,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraCorruption",
+    "Name": "Yozlaştıran Vuruşlar",
+    "Description": "Canavarlar 3 saniye boyunca ek olarak Fiziksel hasarının %30'u kadarını Yozlaşma hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113567,
+    "IdName": "World_DGN_Kehj_YshariSanctum",
+    "Name": "Yshari Kutsal Alanı",
+    "Description": "Tarikatçılar, kadim Kutsal Alanı yozlaştırdı.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2361572,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Channeling",
+    "Name": "Yönlendirme Mabetleri",
+    "Description": "Bu bölge boyunca Yönlendirme Mabetleri ortaya çıkacak.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114071,
+    "IdName": "World_DGN_Hawe_FacelessShrine",
+    "Name": "Yüzsüz Mabet",
+    "Description": "Hawezar'ın pek gizli olmayan tarikatlarından biri. Günahkârlara daima kapıları açıktır.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113297,
+    "IdName": "World_DGN_Hawe_SerpentsLair",
+    "Name": "Yılanın İni",
+    "Description": "Bir zamanlar Mohlon'un tahtının bulunduğu yer. Başka bir kraliçe istiyorlar.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314209,
+    "IdName": "DungeonAffix_Major_Lightning Storm",
+    "Name": "Yıldırım Fırtınası",
+    "Description": "Yıldırım, oyuncunun üzerinde toplanır. Şiddetli sonuçlardan kaçınmak için korunma kubbesine sığın.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314238,
+    "IdName": "DungeonAffix_Positive_LightningDamage",
+    "Name": "Yıldırım Hasarı",
+    "Description": "%15 daha fazla Yıldırım hasarı verirsin.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314413,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraLightning",
+    "Name": "Yıldırım Vuruşları",
+    "Description": "Canavarlar ek olarak Fiziksel hasarının %20'si kadarını Yıldırım hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314217,
+    "IdName": "DungeonAffix_Positive_PeriodicLightning",
+    "Name": "Yıldırım Çağıran",
+    "Description": "Ara sıra yakındaki düşmanlara hasar veren yıldırım darbeleri çağırırsın.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2358424,
+    "IdName": "DungeonAffix_Positive_Astaroth_Reputation",
+    "Name": "Zalim Sırlar",
+    "Description": "Astaroth'u öldürmek, büyük miktarda Horadrim Bilgisi kazandırır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314378,
+    "IdName": "DungeonAffix_Minor_Monster_LessCorruption",
+    "Name": "Zamanla Canavar Gölge Hasarı Direnci",
+    "Description": "Canavarlar, zamanla Gölge hasarı etkilerinden %60 azaltılmış hasar alırlar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314342,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Poison)",
+    "Name": "Zehir Efsunlu Seçkinler",
+    "Description": "Seçkin canavarlar, \"Zehir Efsunlu\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314227,
+    "IdName": "DungeonAffix_Positive_PoisonDamage",
+    "Name": "Zehir Hasarı",
+    "Description": "%15 daha fazla Zehir hasarı verirsin",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2373240,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraPoisonDirect",
+    "Name": "Zehir Vuruşları",
+    "Description": "Canavarlar ek olarak Fiziksel hasarının %20'si kadarını Zehir hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314405,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraPoison",
+    "Name": "Zehirleyen Vuruşlar",
+    "Description": "Canavarlar 3 saniye boyunca ek olarak Fiziksel hasarlarının %30'unu Zehir hasarı olarak verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314358,
+    "IdName": "DungeonAffix_Positive_EvadeLeavesPoison",
+    "Name": "Zehirli Kaçınma",
+    "Description": "Kaçın kullanmak, kaçınarak içinden geçtiğin veya vardığın yerde bulunan ilk düşmanın altında bir Zehir havuzu oluşturur. ",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360150,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Emerald",
+    "Name": "Zümrüt Rezervi",
+    "Description": "Burada birçok Zümrüt sandığı zulalanmış.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314422,
+    "IdName": "DungeonAffix_Minor_Monster_SunderArmor",
+    "Name": "Zırh Kıranlar",
+    "Description": "Uzaktan gelen canavar saldırıları, Zırhını 6 saniye boyunca %7 azaltır ve %35'e kadar birikir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2382540,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_01_Cellar",
+    "Name": "[PH] Sphinx 01 Cellar",
+    "Description": "missing description",
+    "DungeonZoneInfo": ":  içinde Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2380546,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_03",
+    "Name": "[PH] The Mountain's Hidden Heart",
+    "Description": "PH",
+    "DungeonZoneInfo": ":  içinde Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2454812,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_03_Part02",
+    "Name": "[PH] The Temple Swallowed to Time",
+    "Description": "missing description",
+    "DungeonZoneInfo": ":  içinde Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113153,
+    "IdName": "World_DGN_Hawe_BelfryZakara",
+    "Name": "Çan Kulesi Zakara",
+    "Description": "Bu katedrali Zakarum inşa etti. Artık denizi şereflendiriyor. ",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113763,
+    "IdName": "World_DGN_Scos_TwistedHollow",
+    "Name": "Çarpık Boşluk",
+    "Description": "Cevapların gizlenebileceği gerçek bir vahşi yaşam sarnıcı.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2355993,
+    "IdName": "DungeonAffix_Minor_S9_Summoner",
+    "Name": "Çağırıcı Seçkinler",
+    "Description": "Seçkin canavarlar, \"Çağırıcı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113350,
+    "IdName": "World_DGN_Kehj_CollapsedVault",
+    "Name": "Çökmüş Mahzen",
+    "Description": "Bu kadim hazineler ulaşılamaz yerlerde.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511957,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Frenzied)",
+    "Name": "Çılgına Dönmüş Seçkinler",
+    "Description": "Seçkin canavarlar, \"Çılgına Dönmüş\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1585554,
+    "IdName": "World_DGN_Naha_RemnantsofRage",
+    "Name": "Öfke Kalıntıları",
+    "Description": "Burada bir şey huzursuzca titriyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2373251,
+    "IdName": "DungeonAffix_Major_Berserkers",
+    "Name": "Öfkeli",
+    "Description": "Buradaki canavarlar pervasızdır; %20 daha fazla hasar alır ve %50 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314233,
+    "IdName": "DungeonAffix_Positive_CooldownReductionOnKill",
+    "Name": "Öldürerek Bekleme Sürelerini Azaltma",
+    "Description": "Bir canavarı öldürmek, bekleme sürelerini 0,25 saniye azaltır.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113542,
+    "IdName": "World_DGN_Frac_DeadMansDredge",
+    "Name": "Ölü Adamın Tırmığı",
+    "Description": "Bu mağarada yaşayan yırtıcılar, insanları avlıyor.",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314350,
+    "IdName": "DungeonAffix_Major_DeathPulse",
+    "Name": "Ölümcül Gölgeler",
+    "Description": "Bir canavarı öldürmek, kısa bir gecikmenin ardından patlayıcı bir dalga yayarak ağır alan hasarı verme ihtimaline sahiptir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2343038,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Lethal",
+    "Name": "Ölümcül Mabetler",
+    "Description": "Bu bölge boyunca Ölümcül Mabetler ortaya çıkacak.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113291,
+    "IdName": "World_DGN_Frac_ImmortalEmanation",
+    "Name": "Ölümsüz Tecelli",
+    "Description": "Avın girmesinin aptallık olacağı bir av alanı. ",
+    "DungeonZoneInfo": ":  içinde Kırık Tepeler",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511979,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Veiled)",
+    "Name": "Örtülü Seçkinler",
+    "Description": "Seçkin canavarlar, \"Örtülü\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113194,
+    "IdName": "World_DGN_Kehj_Conclave",
+    "Name": "Özel Meclis",
+    "Description": "Kirli ayinlerle ilgili hikâyeler, insanların içini korkuyla kaplıyor.",
+    "DungeonZoneInfo": ":  içinde Kehjistan",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381224,
+    "IdName": "DungeonAffix_Major_Horde_Demons",
+    "Name": "İblis Sürüsü",
+    "Description": "Menhus cehennem yaratıkları burayı ele geçirir ve ayrıca %30 ilave can kazanırlar.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113919,
+    "IdName": "World_DGN_Scos_DemonsWake",
+    "Name": "İblisin İzi",
+    "Description": "Kale, Lilith'in saldırısından beri hâlâ yanıyor.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585475,
+    "IdName": "World_DGN_Naha_BetrayedTomb",
+    "Name": "İhanete Uğramış Mezar",
+    "Description": "Ruhlar, boşluklardan gelen korkunç ızdırap çığlıkları arasında kıvranıyor.",
+    "DungeonZoneInfo": ":  içinde Nahantu",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314370,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceHealing",
+    "Name": "İksir Kıranlar",
+    "Description": "Uzaktan gelen canavar saldırıları, sıradaki iksirinin bekleme süresini 0,75 saniye artırır. En fazla 7 saniyeye kadar birikir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114114,
+    "IdName": "World_DGN_Hawe_BastionOfFaith",
+    "Name": "İnanç Kalesi",
+    "Description": "Kaybolan ve çok acıkan şövalyeler, canavara dönüşmüş.",
+    "DungeonZoneInfo": ":  içinde Hawezar",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511953,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Executioner)",
+    "Name": "İnfazcı Seçkinler",
+    "Description": "Seçkin canavarlar, \"İnfazcı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314260,
+    "IdName": "DungeonAffix_Major_Avenger",
+    "Name": "İntikamcılar",
+    "Description": "Canavar öldürmek, ölen canavarın yakınındaki canavarları kısa bir gecikmenin ardından öfkelendirerek daha fazla hasar vermelerine neden olur.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 410196226,
+    "IdName": "ItemDungeonAffixResses",
+    "Name": "İzin Verilen Diriltme Sayısı: ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Misc"
+  },
+  {
+    "IdSno": 1113440,
+    "IdName": "World_DGN_Scos_WretchedDelve",
+    "Name": "İğrenç Oyuk",
+    "Description": "Túr Dúlra'nın eski mezarlarına şeytani bir veba yayılmış.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113184,
+    "IdName": "World_DGN_Step_ChampionsDemise",
+    "Name": "Şampiyonun Ölümü",
+    "Description": "Bir zamanlar güzel olan memleket toprakları artık iblislerle kaplı.",
+    "DungeonZoneInfo": ":  içinde Kurak Bozkırlar",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114089,
+    "IdName": "World_DGN_Scos_Stockades",
+    "Name": "Şarampol",
+    "Description": "Bu hapishane, bir ayaklanmadan sonra tecrit edilerek mezarlığa dönüştürüldü.",
+    "DungeonZoneInfo": ":  içinde Scosglen",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2343034,
+    "IdName": "DungeonAffix_Positive_PowerShrines_BlastWave",
+    "Name": "Şok Dalgası Mabetleri",
+    "Description": "Bu bölge boyunca Şok Dalgası Mabetleri ortaya çıkacak.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314339,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Electric Lance)",
+    "Name": "Şok Kargısı Seçkinleri",
+    "Description": "Seçkin canavarlar, \"Şok Kargısı\" ekine sahip olur ve %20 daha fazla hasar verir.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  }
+]

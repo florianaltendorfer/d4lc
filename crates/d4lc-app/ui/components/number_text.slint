@@ -1,0 +1,18 @@
+// Number text with an en-US decimal point.
+//
+// Slint renders a number bound to text with the decimal separator of the
+// selected translation (`0,05` in German). The UI language only decides which
+// strings show, as upstream's resource lookup does, so every displayed number
+// is formatted here and never depends on that locale. Up to three decimals,
+// trailing zeros dropped; a whole number has no point at all.
+export global NumberText {
+    pure public function format(value: float) -> string {
+        let thousandths = Math.round(Math.abs(value) * 1000);
+        let whole = Math.floor(thousandths / 1000);
+        let fraction = thousandths - whole * 1000;
+        let digits = Math.mod(fraction, 100) == 0 ? "\{fraction / 100}"
+            : Math.mod(fraction, 10) == 0 ? ((fraction < 100 ? "0" : "") + "\{fraction / 10}")
+            : ((fraction < 10 ? "00" : fraction < 100 ? "0" : "") + "\{fraction}");
+        return (value < 0 && thousandths > 0 ? "-" : "") + "\{whole}" + (fraction == 0 ? "" : "." + digits);
+    }
+}

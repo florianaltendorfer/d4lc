@@ -1,0 +1,47 @@
+{
+  "data": {
+    "_id": "barb-d2-warning",
+    "title": "Warning Cases",
+    "_createTime": 1717200000000,
+    "_updateTime": 1717203600000,
+    "variants": [
+      {
+        "name": "Starter",
+        "gear": {
+          "gloves": {
+            "itemType": "Gloves",
+            "key": "ignored",
+            "mods": [
+              {
+                "greater": false,
+                "name": "Imaginary_Affix"
+              }
+            ],
+            "sockets": [],
+            "type": "rare"
+          },
+          "amulet": {
+            "itemType": "Amulet",
+            "key": "Unknown_Unique_Item",
+            "mods": [
+              {
+                "greater": false,
+                "name": "AttackSpeed"
+              }
+            ],
+            "sockets": [],
+            "type": "uniqueItem"
+          },
+          "totem": {
+            "itemType": "Totem",
+            "key": "Affix_unknown",
+            "mods": [],
+            "sockets": [],
+            "type": "legendary"
+          }
+        },
+        "paragon": {}
+      }
+    ]
+  }
+}

@@ -1,0 +1,650 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Optional package version override without leading v
+        required: false
+        type: string
+      preflight:
+        description: Build and upload artifacts only; skip GitHub Release mutation
+        required: false
+        default: true
+        type: boolean
+
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+# Nothing by default; every job states the minimum it needs.
+permissions: {}
+
+jobs:
+  # The full verification (formatting, clippy, all test tiers, GUI pilots,
+  # visual smoke, MSRV build, cargo-deny, asset parity) of exactly the
+  # commit this run builds. Packaging, and therefore every release
+  # mutation, depends on it: a red, cancelled or skipped verification
+  # leaves no artifacts and no draft.
+  verify:
+    uses: ./.github/workflows/verify.yml
+    permissions:
+      contents: read
+
+  package-linux-release:
+    needs: verify
+    # Pinned runner: the release build must not move with `ubuntu-latest`.
+    runs-on: ubuntu-24.04
+    # Ubuntu 22.04 is the glibc 2.35 baseline. Pinned by multi-arch index
+    # digest so every release starts from the same base image (tag 22.04 as
+    # of 2026-09-24). Bump: resolve the current index digest of
+    # docker.io/library/ubuntu:22.04 (registry `Docker-Content-Digest`) and
+    # replace it here.
+    container:
+      image: ubuntu:22.04@sha256:5ec03bb3441e8b0bf3b4f9cd4629a1ae763010dc3035bb8da3ae6cf026486401
+    defaults:
+      run:
+        shell: bash
+    outputs:
+      version: ${{ steps.package.outputs.version }}
+    permissions:
+      # Only uploads workflow artifacts; the release mutation happens in
+      # publish-draft.
+      contents: read
+    env:
+      CARGO_TERM_COLOR: always
+      RUST_BACKTRACE: 1
+      # Pinned release tools: every binary is verified by SHA256 after
+      # download. Bump by updating version and digest together, with the
+      # digest taken from the tool's official release notes.
+      APPIMAGE_TOOL_VERSION: "1.9.1"
+      APPIMAGE_TOOL_SHA256: ed4ce84f0d9caff66f50bcca6ff6f35aae54ce8135408b3fa33abfc3cb384eb0
+      CARGO_ABOUT_VERSION: "0.9.2"
+      # Digest as published for the 0.9.2 release asset (the asset was
+      # re-uploaded at some point; the previously pinned fec1818… no longer
+      # matched any published 0.9.2 file and failed the check). Upstream later
+      # renamed the release tag from v0.9.2 to 0.9.2, so the download path
+      # carries no leading v; digest unchanged and re-verified against the
+      # published asset.
+      CARGO_ABOUT_SHA256: 9099a59e820c38a68b9d65f300662a567d56562f9a10f6aa4c7e86c17c2566af
+      # AppImage runtime embedded into the shipped AppImage. Digest is the
+      # GitHub release asset digest of AppImage/type2-runtime tag 20251108,
+      # asset runtime-x86_64 (944632 bytes).
+      APPIMAGE_RUNTIME_VERSION: "20251108"
+      APPIMAGE_RUNTIME_SHA256: 2fca8b443c92510f1483a883f60061ad09b46b978b2631c807cd873a47ec260d
+      # Release toolchain. RUSTUP_TOOLCHAIN overrides the `stable` channel of
+      # rust-toolchain.toml for this job only, so release binaries are built
+      # by a fixed compiler while development tracks stable. Must stay at or
+      # above the workspace rust-version (MSRV).
+      RUSTUP_TOOLCHAIN: "1.98.1"
+      # Launchpad signing-key fingerprints of the two PPAs below (Launchpad
+      # API `signing_key_fingerprint`). add-apt-repository fetches the keys
+      # over HTTPS; the install step refuses any other key.
+      TESSERACT_PPA_FINGERPRINT: 03645B99FA4163FE8C2508BC3A788ED11EFFCAF9
+      PIPEWIRE_PPA_FINGERPRINT: FC43B7352BCC0EC8AF2EEB8B25088A0359807596
+      D4LC_MAINTAINER: Florian Josef Altendorfer <info@altendorfer.dev>
+    steps:
+      - name: Bootstrap container
+        run: |
+          set -euo pipefail
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y git curl ca-certificates
+          git config --global --add safe.directory /__w/d4lc/d4lc
+
+      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          submodules: recursive
+
+      # dtolnay/rust-toolchain@stable (686976e191b89faba57d3206551f0f330d8cb249)
+      - uses: dtolnay/rust-toolchain@686976e191b89faba57d3206551f0f330d8cb249
+        with:
+          toolchain: ${{ env.RUSTUP_TOOLCHAIN }}
+          components: rustfmt, clippy
+
+      - name: Install Linux packaging dependencies
+        run: |
+          set -euo pipefail
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y software-properties-common
+          # Ubuntu 22.04 (the glibc 2.35 baseline of the release) ships
+          # Tesseract 4.1.1, while development and CI build against 5.x. The
+          # PPA provides Tesseract 5 for 22.04.
+          add-apt-repository -y ppa:alex-p/tesseract-ocr5
+          # The pipewire crate needs PipeWire headers newer than the 0.3.48
+          # of 22.04 (libspa does not compile against them), so the build
+          # takes the headers from the upstream PipeWire PPA. The binary only
+          # needs the libpipewire-0.3 symbols the older runtime also exports.
+          add-apt-repository -y ppa:pipewire-debian/pipewire-upstream
+          # The keyring must hold exactly one primary key, the expected one;
+          # an extra key in the same file would be trusted for every source.
+          verify_ppa_key() {
+            local keyring=$1 expected=$2 actual
+            actual="$(gpg --show-keys --with-colons "$keyring" \
+              | awk -F: '/^pub:/ {primary = 1; next} /^fpr:/ && primary {print $10} {primary = 0}')"
+            if [ "$actual" != "$expected" ]; then
+              echo "::error::$keyring has primary key fingerprint(s) '${actual//$'\n'/ }', expected exactly $expected" >&2
+              exit 1
+            fi
+          }
+          verify_ppa_key /etc/apt/trusted.gpg.d/alex-p-ubuntu-tesseract-ocr5.gpg "$TESSERACT_PPA_FINGERPRINT"
+          verify_ppa_key /etc/apt/trusted.gpg.d/pipewire-debian-ubuntu-pipewire-upstream.gpg "$PIPEWIRE_PPA_FINGERPRINT"
+          apt-get update
+          DEBIAN_FRONTEND=noninteractive apt-get install -y \
+            clang \
+            libclang-dev \
+            dpkg-dev \
+            desktop-file-utils \
+            file \
+            fonts-dejavu-core \
+            libfontconfig1-dev \
+            libfuse2 \
+            libleptonica-dev \
+            libpipewire-0.3-dev \
+            libtesseract-dev \
+            libx11-dev \
+            libxcursor1 \
+            libxext-dev \
+            libxi6 \
+            libxkbcommon-dev \
+            libxkbcommon-x11-0 \
+            libgl1 \
+            libegl1 \
+            libgl1-mesa-dri \
+            libglx-mesa0 \
+            libegl-mesa0 \
+            pkg-config \
+            tesseract-ocr \
+            tesseract-ocr-eng \
+            wget \
+            xvfb \
+            zsync
+          tesseract_version="$(pkg-config --modversion tesseract)"
+          case "$tesseract_version" in
+            5.*) echo "Building against Tesseract $tesseract_version" ;;
+            *)
+              echo "::error::Tesseract 5 is required for the release build, found $tesseract_version" >&2
+              exit 1
+              ;;
+          esac
+
+      - name: Verify dpkg-deb is installed
+        run: |
+          command -v dpkg-deb >/dev/null \
+            || (echo "::error::dpkg-deb is required for the .deb release artifact" >&2; exit 1)
+          dpkg-deb --version >/tmp/dpkg-version.txt 2>&1
+          head -n 1 /tmp/dpkg-version.txt
+
+      - name: Install appimagetool and the AppImage runtime
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.local/bin"
+          url="https://github.com/AppImage/appimagetool/releases/download/${APPIMAGE_TOOL_VERSION}/appimagetool-x86_64.AppImage"
+          echo "Downloading ${url}"
+          curl -fsSL --retry 3 -o "$HOME/.local/bin/appimagetool" "$url"
+          echo "${APPIMAGE_TOOL_SHA256}  $HOME/.local/bin/appimagetool" | sha256sum -c -
+          chmod +x "$HOME/.local/bin/appimagetool"
+          export PATH="$HOME/.local/bin:$PATH"
+          "$HOME/.local/bin/appimagetool" --version || true
+          runtime_file="$HOME/.local/share/appimage/runtime-x86_64"
+          mkdir -p "$(dirname "$runtime_file")"
+          runtime_url="https://github.com/AppImage/type2-runtime/releases/download/${APPIMAGE_RUNTIME_VERSION}/runtime-x86_64"
+          echo "Downloading ${runtime_url}"
+          curl -fsSL --retry 3 -o "$runtime_file" "$runtime_url"
+          echo "${APPIMAGE_RUNTIME_SHA256}  ${runtime_file}" | sha256sum -c -
+          echo "D4LC_APPIMAGE_RUNTIME_FILE=${runtime_file}" >> "$GITHUB_ENV"
+
+      - name: Verify packaging tools
+        run: |
+          set -euo pipefail
+          command -v cargo >/dev/null
+          command -v dpkg-deb >/dev/null
+          command -v xvfb-run >/dev/null
+          test -x "$HOME/.local/bin/appimagetool" \
+            || (echo "::error::appimagetool not executable" >&2; exit 1)
+          test -f "$D4LC_APPIMAGE_RUNTIME_FILE" \
+            || (echo "::error::pinned AppImage runtime missing" >&2; exit 1)
+          echo "All packaging tools present"
+
+      - name: Build release binaries
+        run: |
+          set -euo pipefail
+          # Primary payload: Slint desktop app, X11-first, native OCR,
+          # Wayland ScreenCast capture via the portal.
+          cargo build --release --locked \
+            -p d4lc-app \
+            --features "real-runtime leptess-backend wayland-portal"
+          # Optional debug CLI for /opt/d4lc/bin/d4lc-debug.
+          cargo build --release --locked \
+            -p d4lc-cli \
+            --features leptess-backend
+
+      - name: Generate Rust dependency notices
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 3 -o /tmp/cargo-about.tar.gz \
+            "https://github.com/EmbarkStudios/cargo-about/releases/download/${CARGO_ABOUT_VERSION}/cargo-about-${CARGO_ABOUT_VERSION}-x86_64-unknown-linux-musl.tar.gz"
+          echo "${CARGO_ABOUT_SHA256}  /tmp/cargo-about.tar.gz" | sha256sum -c -
+          tar xzf /tmp/cargo-about.tar.gz -C /tmp
+          install -m 0755 "/tmp/cargo-about-${CARGO_ABOUT_VERSION}-x86_64-unknown-linux-musl/cargo-about" /usr/local/bin/cargo-about
+          mkdir -p "$RUNNER_TEMP/notices"
+          cargo about generate --locked \
+            --manifest-path crates/d4lc-app/Cargo.toml \
+            --features "real-runtime leptess-backend wayland-portal" \
+            --config packaging/about.toml \
+            packaging/notices.hbs > "$RUNNER_TEMP/notices/rust-dependency-notices.html"
+          test -s "$RUNNER_TEMP/notices/rust-dependency-notices.html"
+
+      # Shipped as docs/build-environment.txt: the toolchain, pinned tools,
+      # apt sources and the exact version of every package installed in the
+      # build container, including the PPA-provided Tesseract/Leptonica
+      # libraries that are bundled into lib/.
+      - name: Record build environment
+        run: |
+          set -euo pipefail
+          out="$RUNNER_TEMP/notices/build-environment.txt"
+          {
+            echo "# d4lc release build environment"
+            # Same literal as job.container.image (which cannot read env).
+            echo "container_image=ubuntu:22.04@sha256:5ec03bb3441e8b0bf3b4f9cd4629a1ae763010dc3035bb8da3ae6cf026486401"
+            grep -E '^(PRETTY_NAME|VERSION_ID)=' /etc/os-release
+            echo "rustc=$(rustc --version)"
+            echo "cargo=$(cargo --version)"
+            echo "appimagetool=${APPIMAGE_TOOL_VERSION} sha256=${APPIMAGE_TOOL_SHA256}"
+            echo "appimage_runtime=type2-runtime ${APPIMAGE_RUNTIME_VERSION} sha256=${APPIMAGE_RUNTIME_SHA256}"
+            echo "cargo_about=${CARGO_ABOUT_VERSION} sha256=${CARGO_ABOUT_SHA256}"
+            echo "ppa_tesseract=ppa:alex-p/tesseract-ocr5 key=${TESSERACT_PPA_FINGERPRINT}"
+            echo "ppa_pipewire=ppa:pipewire-debian/pipewire-upstream key=${PIPEWIRE_PPA_FINGERPRINT}"
+            echo
+            echo "## apt sources"
+            grep -h '^deb ' /etc/apt/sources.list /etc/apt/sources.list.d/*.list
+            echo
+            echo "## installed packages (dpkg-query)"
+            dpkg-query -W -f='${Package}=${Version}\n' | sort
+          } > "$out"
+          test -s "$out"
+
+      - name: Build release artifacts
+        id: package
+        env:
+          VERSION_INPUT: ${{ github.event_name == 'workflow_dispatch' && inputs.version || '' }}
+        run: |
+          set -euo pipefail
+          export PATH="$HOME/.local/bin:$PATH"
+          output_path="$RUNNER_TEMP/package-summary.txt"
+          cmd=(./scripts/package_linux_release.sh
+            --skip-build
+            --binary target/release/d4lc-app
+            --debug-binary target/release/d4lc
+            --primary-name d4lc
+            --debug-name d4lc-debug
+            --deb
+            --appimage)
+          # OCR language packs: upstream ships `D4Companion/tessdata/*.traineddata`
+          # inside the application folder (13 packs covering the 14 game
+          # languages) and the port follows that shape, so release bundles
+          # carry the same packs instead of relying on the host's system
+          # tessdata. The upstream checkout is available here
+          # (`actions/checkout` runs with `submodules: recursive`). The
+          # packaging script copies the directory into the bundle root and
+          # exports `TESSDATA_PREFIX=<bundle>/tessdata` from the launcher
+          # wrappers; a bundle built without this flag, or a user-set
+          # `TESSDATA_PREFIX`, keeps the system-tessdata fallback.
+          cmd+=(--tessdata-dir upstream/Diablo4Companion/D4Companion/tessdata)
+          cmd+=(--doc-file "$RUNNER_TEMP/notices/rust-dependency-notices.html")
+          cmd+=(--doc-file "$RUNNER_TEMP/notices/build-environment.txt")
+          if [ -n "$VERSION_INPUT" ]; then
+            cmd+=(--version "$VERSION_INPUT")
+          fi
+
+          "${cmd[@]}" | tee "$output_path"
+
+          version="$(awk -F= '/^version=/{print $2}' "$output_path")"
+          tarball="$(awk -F= '/^tarball=/{print $2}' "$output_path")"
+          sha256sums="$(awk -F= '/^sha256sums=/{print $2}' "$output_path")"
+          deb_artifact="$(awk -F= '/^deb_artifact=/{print $2}' "$output_path")"
+          appimage_artifact="$(awk -F= '/^appimage_artifact=/{print $2}' "$output_path")"
+          packaging_summary="$(awk -F= '/^artifacts_dir=/{print $2}' "$output_path")/package-summary.txt"
+
+          test -n "$version"
+          test -f "$tarball"
+          test -f "$sha256sums"
+          test -f "$packaging_summary"
+
+          # .deb and .AppImage are mandatory. Fail loudly
+          # if either is SKIPPED or missing.
+          if [ "$deb_artifact" = "SKIPPED" ] || [ ! -f "$deb_artifact" ]; then
+            echo "::error::.deb artifact missing or SKIPPED: $deb_artifact" >&2
+            exit 1
+          fi
+          if [ "$appimage_artifact" = "SKIPPED" ] || [ ! -f "$appimage_artifact" ]; then
+            echo "::error::.AppImage artifact missing or SKIPPED: $appimage_artifact" >&2
+            exit 1
+          fi
+
+          {
+            echo "version=$version"
+            echo "tarball=$tarball"
+            echo "sha256sums=$sha256sums"
+            echo "deb_artifact=$deb_artifact"
+            echo "appimage_artifact=$appimage_artifact"
+            echo "packaging_summary=$packaging_summary"
+          } >> "$GITHUB_OUTPUT"
+
+      # The package metadata must name the commit this run checked out
+      # (github.sha, the commit the verify job tested); a dirty tree or a
+      # different revision means the artifacts are not that commit's build.
+      - name: Verify build identity
+        env:
+          PACKAGING_SUMMARY: ${{ steps.package.outputs.packaging_summary }}
+        run: |
+          set -euo pipefail
+          revision="$(awk -F= '/^git_revision=/{print $2; exit}' "$PACKAGING_SUMMARY")"
+          if [ "$revision" != "$GITHUB_SHA" ]; then
+            echo "::error::package git_revision '$revision' is not the workflow commit $GITHUB_SHA" >&2
+            exit 1
+          fi
+          echo "Artifacts built from $GITHUB_SHA"
+
+      - name: Smoke test packaged artifacts (Xvfb)
+        run: |
+          set -euo pipefail
+          export PATH="$HOME/.local/bin:$PATH"
+          artifacts_dir="$(dirname "${{ steps.package.outputs.packaging_summary }}")"
+          ./scripts/smoke_release_artifacts.sh "$artifacts_dir"
+
+      # The smoked artifacts are the ones SHA256SUMS names, byte for byte.
+      - name: Verify artifact checksums
+        env:
+          SHA256SUMS: ${{ steps.package.outputs.sha256sums }}
+          TARBALL: ${{ steps.package.outputs.tarball }}
+          DEB_ARTIFACT: ${{ steps.package.outputs.deb_artifact }}
+          APPIMAGE_ARTIFACT: ${{ steps.package.outputs.appimage_artifact }}
+        run: |
+          set -euo pipefail
+          ./scripts/verify_release_checksums.sh "$SHA256SUMS" "$TARBALL" "$DEB_ARTIFACT" "$APPIMAGE_ARTIFACT"
+
+      # EXPECTED_ASSETS gate (Zed release.yml pattern): the exact expected
+      # release artifact set (tarball, .deb, .AppImage, SHA256SUMS,
+      # package-summary) must exist AND be non-empty before any upload or
+      # release mutation. Failure mode this prevents: a partial or truncated
+      # packaging result (or any future step between packaging and publish
+      # that drops an artifact) silently reaching the release steps and
+      # creating a GitHub Release with an incomplete asset set. Any missing
+      # or zero-size artifact aborts the job here — before the first upload —
+      # with the full offending list.
+      - name: Verify expected release artifacts
+        env:
+          TARBALL: ${{ steps.package.outputs.tarball }}
+          DEB_ARTIFACT: ${{ steps.package.outputs.deb_artifact }}
+          APPIMAGE_ARTIFACT: ${{ steps.package.outputs.appimage_artifact }}
+          SHA256SUMS: ${{ steps.package.outputs.sha256sums }}
+          PACKAGING_SUMMARY: ${{ steps.package.outputs.packaging_summary }}
+        run: |
+          set -euo pipefail
+          ./scripts/check_expected_artifacts.sh 5 "$TARBALL" "$DEB_ARTIFACT" "$APPIMAGE_ARTIFACT" "$SHA256SUMS" "$PACKAGING_SUMMARY"
+
+      # actions/upload-artifact v4 (ea165f8d65b6e75b540449e92b4886f43607fa02)
+      - name: Upload packaging artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: linux-release-${{ steps.package.outputs.version }}
+          path: |
+            ${{ steps.package.outputs.tarball }}
+            ${{ steps.package.outputs.deb_artifact }}
+            ${{ steps.package.outputs.appimage_artifact }}
+            ${{ steps.package.outputs.sha256sums }}
+            ${{ steps.package.outputs.packaging_summary }}
+            debug-output/release-smoke/**
+          if-no-files-found: error
+
+  # Install the .deb through apt into clean containers: the 22.04 build
+  # baseline and the newer 24.04. Proves the Depends field is satisfiable and
+  # that the packaged binaries start on a host that never had the build tools.
+  install-test-deb:
+    needs: package-linux-release
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        ubuntu: ["22.04", "24.04"]
+    container:
+      image: ubuntu:${{ matrix.ubuntu }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      # actions/download-artifact v4 (d3f86a106a0bac45b974a628896c90dbdf5c8093)
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: linux-release-${{ needs.package-linux-release.outputs.version }}
+          path: release-artifacts
+      - name: Install the .deb and start it
+        run: |
+          set -euo pipefail
+          deb="$(find release-artifacts -name 'd4lc_*.deb' | head -n 1)"
+          sums="$(find release-artifacts -name 'SHA256SUMS' | head -n 1)"
+          test -n "$deb"
+          test -n "$sums"
+          # The installed package is the one SHA256SUMS names.
+          ./scripts/verify_release_checksums.sh "$sums" "$deb"
+          ./scripts/smoke_deb_install.sh "$deb"
+
+  # The draft release is created only after the verification of this commit,
+  # the packaging job (build, package smoke under Xvfb, artifact set check)
+  # and the .deb install test all passed; a failure in any leaves no draft
+  # behind. scripts/publish_draft_release.sh enforces the release identity
+  # (existing tag on this commit, matching versions) and never modifies a
+  # published release.
+  publish-draft:
+    needs: [verify, package-linux-release, install-test-deb]
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && inputs.preflight == false)
+    runs-on: ubuntu-24.04
+    # One publish at a time per repository, whatever ref started the run (a
+    # tag push and a manual run of the same version must not race on the
+    # same draft). Never cancelled midway.
+    concurrency:
+      group: release-publish
+      cancel-in-progress: false
+    permissions:
+      # Creates or updates the draft release and uploads its assets.
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      # The publish script and the crate version of the built commit.
+      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      # actions/download-artifact v4 (d3f86a106a0bac45b974a628896c90dbdf5c8093)
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: linux-release-${{ needs.package-linux-release.outputs.version }}
+          path: release-artifacts
+
+      - name: Locate the verified artifacts
+        id: artifacts
+        run: |
+          set -euo pipefail
+          find_one() {
+            local found
+            found="$(find release-artifacts -type f -name "$1" | head -n 1)"
+            if [ -z "$found" ]; then
+              echo "::error::artifact $1 is missing from the verified artifact set" >&2
+              exit 1
+            fi
+            echo "$found"
+          }
+          {
+            echo "tarball=$(find_one 'd4lc-*-linux-*.tar.gz')"
+            echo "deb_artifact=$(find_one 'd4lc_*.deb')"
+            echo "appimage_artifact=$(find_one '*.AppImage')"
+            echo "sha256sums=$(find_one 'SHA256SUMS')"
+            echo "packaging_summary=$(find_one 'package-summary.txt')"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Write release notes
+        id: release_notes
+        env:
+          PACKAGE_VERSION: ${{ needs.package-linux-release.outputs.version }}
+          DEB_ARTIFACT: ${{ steps.artifacts.outputs.deb_artifact }}
+          APPIMAGE_ARTIFACT: ${{ steps.artifacts.outputs.appimage_artifact }}
+          TARBALL: ${{ steps.artifacts.outputs.tarball }}
+          SHA256SUMS: ${{ steps.artifacts.outputs.sha256sums }}
+        run: |
+          notes_path="$RUNNER_TEMP/release-notes.md"
+          tarball_name="$(basename "$TARBALL")"
+          deb_name="$(basename "$DEB_ARTIFACT")"
+          appimage_name="$(basename "$APPIMAGE_ARTIFACT")"
+          sums_name="$(basename "$SHA256SUMS")"
+          cat > "$notes_path" <<EOF
+          # d4lc ${PACKAGE_VERSION}
+
+          Versions with an \`-rc.N\` suffix are release candidates for public
+          testing, **not stable 1.0 releases**. X11 is the primary target.
+          Back up settings and presets before testing and report problems
+          with the exact version. Wayland remains experimental.
+
+          ## Highlights
+
+          - Native Linux port of Diablo4Companion v5.4.0.0 in Rust: no .NET,
+            Wine or VM.
+          - Affix, trade and paragon overlays.
+          - UI languages: German, English, Spanish, French and Simplified
+            Chinese. Simplified Chinese needs a system CJK font (for example
+            Noto Sans CJK).
+          - Settings live in \`~/.config/d4lc\` (or \`D4LC_CONFIG_ROOT\`).
+
+          ## Artifacts
+
+          - Linux tarball: \`${tarball_name}\`
+          - Debian package: \`${deb_name}\`
+          - AppImage: \`${appimage_name}\`
+          - Checksums: \`${sums_name}\`
+
+          ## Primary payload
+
+          - The user-facing entry point is the Slint desktop app
+            (\`d4lc-app\`), installed as \`/usr/bin/d4lc\` by the .deb
+            and launched by the AppImage \`AppRun\`.
+          - The debug CLI (\`d4lc-cli\`) is bundled as
+            \`/usr/bin/d4lc-debug\` / \`/opt/d4lc/bin/d4lc-debug\` for
+            debug workflows. It is **not** the primary user-facing app.
+
+          ## Runtime requirements
+
+          - x86_64 Linux with glibc 2.35 or newer (the artifacts are built
+            on Ubuntu 22.04).
+          - Linux X11 session with \`DISPLAY\` set for the primary capture
+            and overlay path.
+          - X server with SHAPE; MIT-SHM is the preferred capture path,
+            with XGetImage as the fallback.
+          - The bundle includes OCR libraries and upstream tessdata packs.
+            A custom \`TESSDATA_PREFIX\` overrides the bundled packs. The
+            runtime requirements file lists remaining host dependencies.
+          - Wayland (experimental): the build compiles ScreenCast-portal
+            capture via the \`wayland-portal\` feature (PipeWire); runtime
+            hosts need \`xdg-desktop-portal\` with a PipeWire backend.
+            Wayland capture is synthetic-validated only; X11 remains the
+            supported release target for capture/overlay parity. On
+            Wayland-only hosts the desktop launcher may still start via
+            XWayland.
+
+          ## Upstream provenance
+
+          - Upstream baseline: \`d508a473515fb6239a93a7a1a146b7ad007f01b1\`
+            / \`v5.4.0.0\` (pinned in \`upstream.lock\`).
+          The licence and provenance documents are in the \`docs/\` folder of
+          the bundle (\`/opt/d4lc/docs\`, also reachable as
+          \`/usr/share/doc/d4lc\` in the .deb).
+
+          - Upstream LICENSE: \`docs/upstream-LICENSE\` (MIT), taken from the
+            \`upstream/Diablo4Companion\` submodule. d4lc's own licence is
+            \`docs/LICENSE\`.
+          - Provenance files: \`docs/license-provenance.json\`,
+            \`docs/upstream-file-manifest.json\`,
+            \`docs/asset-manifest.json\`.
+          - Rust dependency notices: \`docs/rust-dependency-notices.html\`
+            (generated from the locked manifest with cargo-about); the
+            royalty-free Slint desktop licence text ships as
+            \`docs/slint-LICENSE\`.
+          - Bundled tessdata: Apache-2.0, see \`docs/tessdata-LICENSE\` and
+            \`docs/tessdata-provenance.md\`.
+          - Overlay font: Inconsolata Bold 3.000 is embedded (used when the
+            system has no Consolas Bold), SIL Open Font License 1.1, see
+            \`docs/Inconsolata-OFL.txt\` and \`docs/bundled-fonts.json\`.
+          - Bundled libraries: the licence texts of the shared libraries
+            shipped in \`lib/\` (Tesseract, Leptonica and their image-codec
+            chain) are in \`docs/third-party/<package>.copyright\`, and
+            \`docs/bundled-libs.txt\` lists the library files.
+
+          ## Validation status
+
+          Build commit: \`${GITHUB_SHA}\`. Before this draft was created,
+          the release workflow ran on exactly this commit:
+
+          - the full verification (formatting, Clippy, unit and integration
+            tests including recorded-frame OCR, headless GUI pilots, the
+            desktop visual smoke under Xvfb, the minimum-Rust-version build,
+            \`cargo deny\` and the upstream asset parity check);
+          - the packaged startup smoke test of these artifacts under Xvfb;
+          - installation of the .deb on clean Ubuntu 22.04 and 24.04.
+
+          ## Known limitations / help wanted
+
+          - Not all character classes, builds, resolutions or game languages
+            have been tested in a live game session.
+          - Trading and the trade overlay are not validated end to end.
+          - Rune recognition and data coverage need live-game validation.
+          - Windows has not been tested; these artifacts are Linux-only.
+
+          Not covered by this workflow:
+
+          - A live Diablo IV session on X11 with these artifacts. Earlier
+            versions were checked in a live game session; whether this
+            release was, is recorded in the release description below, not
+            implied by this list.
+          - Imports from the live provider sites through a real browser
+            (D2Core, D4Builds, Mobalytics): the workflow uses recorded
+            provider data only.
+          - A real Wayland session: Wayland capture and overlay are covered
+            by automated protocol tests only.
+
+          ## Benchmark / validation links
+
+          - Detection, OCR scheduling, and hot-path performance benchmark
+            evidence is kept outside the repository and is not part of
+            this bundle.
+          EOF
+          printf 'path=%s\n' "$notes_path" >> "$GITHUB_OUTPUT"
+          printf 'package_version=%s\n' "$PACKAGE_VERSION" >> "$GITHUB_OUTPUT"
+
+      # A tag push publishes that tag. A manual run uses v<package version>,
+      # which must already exist and point to the commit the run was started
+      # on; the script refuses any mismatch and never creates or moves tags.
+      - name: Create or refresh the draft GitHub Release
+        env:
+          RELEASE_TAG: ${{ github.event_name == 'push' && github.ref_name || format('v{0}', needs.package-linux-release.outputs.version) }}
+          PACKAGE_VERSION: ${{ needs.package-linux-release.outputs.version }}
+          PACKAGING_SUMMARY: ${{ steps.artifacts.outputs.packaging_summary }}
+          NOTES_FILE: ${{ steps.release_notes.outputs.path }}
+          TARBALL: ${{ steps.artifacts.outputs.tarball }}
+          DEB_ARTIFACT: ${{ steps.artifacts.outputs.deb_artifact }}
+          APPIMAGE_ARTIFACT: ${{ steps.artifacts.outputs.appimage_artifact }}
+          SHA256SUMS: ${{ steps.artifacts.outputs.sha256sums }}
+        run: |
+          set -euo pipefail
+          ./scripts/publish_draft_release.sh \
+            --tag "$RELEASE_TAG" \
+            --sha "$GITHUB_SHA" \
+            --version "$PACKAGE_VERSION" \
+            --summary "$PACKAGING_SUMMARY" \
+            --notes "$NOTES_FILE" \
+            "$TARBALL" "$DEB_ARTIFACT" "$APPIMAGE_ARTIFACT" "$SHA256SUMS" "$PACKAGING_SUMMARY"

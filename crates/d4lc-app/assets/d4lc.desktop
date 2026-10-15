@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=d4lc
+Comment=Diablo IV tooltip reader and loot-filter overlay
+Exec=d4lc-app
+Icon=d4lc
+Terminal=false
+Categories=Game;
+

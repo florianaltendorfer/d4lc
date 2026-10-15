@@ -1,0 +1,95 @@
+# This is an Arch PKGBUILD for the d4lc AUR package.
+# Maintainer: Florian Josef Altendorfer <info@altendorfer.dev>
+# Publish flow (AUR): see packaging/README-AUR.md in the source repository.
+#
+# The package reuses the repository's own release packaging
+# (scripts/package_linux_release.sh): build the Slint desktop app plus the
+# debug CLI, stage the relocatable bundle, and install the staged deb-root
+# layout (opt/d4lc + /usr/bin wrappers + desktop entry + icon) unchanged.
+
+pkgname=d4lc
+pkgver=1.0.0rc1
+_tag=1.0.0-rc.1
+pkgrel=1
+pkgdesc="Linux port of Diablo4Companion: Diablo IV tooltip OCR and loot-filter overlay"
+arch=('x86_64')
+url="https://github.com/florianaltendorfer/d4lc"
+license=('MIT')
+# The release bundle ships its own libtesseract/libleptonica (and codec
+# chain) under /opt/d4lc/lib; the host libraries it leaves out match the .deb
+# Depends of scripts/package_linux_release.sh. The binary package carries no
+# tessdata (the packaging script runs without --tessdata-dir), so OCR reads the
+# system tesseract-data packs: English is required, the others are optional.
+depends=(
+  'bash'
+  'glibc'
+  'gcc-libs'
+  'libx11'
+  'libxcursor'
+  'libxext'
+  'libxi'
+  'libxkbcommon-x11'
+  'freetype2'
+  'curl'
+  'openssl'
+  'zlib'
+  'libpipewire'
+  'fontconfig'
+  'hicolor-icon-theme'
+  'tesseract-data-eng'
+)
+optdepends=(
+  'tesseract-data-deu: German OCR data (install the tesseract-data-* pack of each game language you enable)'
+  'chromium: build imports from D2Core, D4Builds and Mobalytics (google-chrome or D4LC_CHROME_BIN also work)'
+  'xdg-utils: open the title-bar and import-dialog links'
+  'xorg-xwd: x11-command capture backend'
+  'xdg-desktop-portal: Wayland ScreenCast capture'
+  'noto-fonts-cjk: Chinese glyphs for the Simplified Chinese UI language (any CJK font works)'
+)
+makedepends=('cargo' 'pkgconf' 'git' 'clang' 'tesseract' 'leptonica')
+source=(
+  "$pkgname-$pkgver.tar.gz::https://github.com/florianaltendorfer/d4lc/archive/refs/tags/v$_tag.tar.gz"
+  "d4lc-upstream-LICENSE::https://raw.githubusercontent.com/josdemmers/Diablo4Companion/d508a473515fb6239a93a7a1a146b7ad007f01b1/LICENSE"
+)
+# Before AUR publication, replace SKIP with the checksum of the public
+# v$_tag source archive (updpkgsums). Never publish to the AUR with SKIP.
+sha256sums=('SKIP' '1921c035859329ae2a2202ce3861a0bc0e173c0fc0aad7d7a98b53abaf244f06')
+options=('!strip')  # keep symbols for the panic hook's crash logs
+
+prepare() {
+  cd "$pkgname-$_tag"
+  # The release tarball does not include the pinned upstream submodule; the
+  # packaging script only needs its LICENSE file.
+  mkdir -p upstream/Diablo4Companion
+  install -m 0644 "$srcdir/d4lc-upstream-LICENSE" upstream/Diablo4Companion/LICENSE
+}
+
+build() {
+  cd "$pkgname-$_tag"
+  export CARGO_TERM_COLOR=never
+  cargo build --release --locked -p d4lc-app --features "real-runtime leptess-backend wayland-portal"
+  cargo build --release --locked -p d4lc-cli --features leptess-backend
+  ./scripts/package_linux_release.sh \
+    --skip-build \
+    --binary target/release/d4lc-app \
+    --debug-binary target/release/d4lc \
+    --primary-name d4lc \
+    --debug-name d4lc-debug
+}
+
+check() {
+  cd "$pkgname-$_tag"
+  local staged="target/package/linux-release/d4lc-$_tag/deb-root/opt/d4lc/bin"
+  test -x "$staged/d4lc-real"
+  test -x "$staged/d4lc-debug-real"
+  "$staged/d4lc-debug-real" workspace-report --root . >/dev/null
+}
+
+package() {
+  cd "$pkgname-$_tag"
+  local staged="target/package/linux-release/d4lc-$_tag/deb-root"
+  cp -r "$staged/opt" "$pkgdir/"
+  cp -r "$staged/usr" "$pkgdir/"
+  install -Dm0644 LICENSE "$pkgdir/usr/share/licenses/$pkgname/LICENSE"
+  install -Dm0644 "$srcdir/d4lc-upstream-LICENSE" "$pkgdir/usr/share/licenses/$pkgname/upstream-LICENSE"
+}

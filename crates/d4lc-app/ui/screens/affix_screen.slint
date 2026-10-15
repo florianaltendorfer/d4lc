@@ -1,0 +1,1479 @@
+// Affix screen — Slint rendering of AffixView.xaml.
+//
+// Upstream: `AffixView.xaml:1-2013`, `AffixViewModel.cs`.
+//
+// Layout parity (upstream readme-002):
+//
+// - left column: overlay on/off icon + language combo, the "Gear Affix
+//   Presets" block (exactly three rows: preset combo + rename/delete,
+//   "Enter name" + add, website combo + import), then the scrollable
+//   wanted-entry rail grouped under the gear-slot section headers
+//   (`AffixView.xaml:150-1118`);
+// - right column: the filter-icon strip above the "Enter filter" field
+//   (`AffixView.xaml:1122-1495`), the Affixes/Aspects/Sigils/Uniques/Runes
+//   tab row (`AffixView.xaml:1497`), and the wrap grid of fixed-size cards
+//   with the category config (cog) card first
+//   (`AffixView.xaml:1499-2007`).
+//
+// This file is an assembly: the repeated structures live in
+// `../components/` (`CatalogGrid`, `CatalogCard`, `ConfigCell`, `AffixChip`,
+// `SectionHeader`) and the colours come from the `Metro` tokens in
+// `../theme.slint`.
+//
+// The upstream images (slot / class / website / overlay / filter-strip icons)
+// are vendored byte-identically under `assets/original/images` (provenance in
+// `assets/provenance/asset-manifest.json` and `licenses/license-provenance.json`).
+
+import { ComboBox, ScrollView } from "std-widgets.slint";
+import { Metro } from "../theme.slint";
+import { CatalogGrid } from "../components/catalog_grid.slint";
+import { CardMarker, CatalogCard, ConfigCell } from "../components/catalog_card.slint";
+import { AffixChip } from "../components/affix_chip.slint";
+import { SectionHeader } from "../components/section_header.slint";
+import {
+    PencilIcon,
+    TrashIcon,
+    PlusIcon,
+    ExitArrowIcon,
+    PowerIcon,
+} from "../components/icons.slint";
+
+// One row of the wanted-entry rail: an upstream section header (the ten gear
+// slots and the four family sections) or one wanted chip. Rust groups the
+// preset's wanted entries into these rows (`actions::affix::rail_rows`), so
+// the rail is a single repetition and the grouping stays data logic.
+export struct AffixRailRow {
+    // "affix" | "aspect" | "sigil" | "unique" | "rune"; "" for a header row.
+    kind: string,
+    // Header: the localized section caption; chip: the localized description.
+    label: string,
+    // Header: the section token ("helm" .. "offhand", "aspect", ...).
+    token: string,
+    // Chip: the kind-tagged entry key the chip callbacks carry.
+    key: string,
+    // Chip: the preset color swatch.
+    color: color,
+    // Chip: the preset entry's type flags (upstream `AffixTypeTo*` colors).
+    is-tempered-or-implicit: bool,
+    is-greater: bool,
+    // The tab the row belongs to (0=Affixes, 1=Aspects, 2=Sigils,
+    // 3=Uniques, 4=Runes).
+    tab: int,
+    is-header: bool,
+}
+
+// ── Local chrome ──────────────────────────────────────────────────────
+// The three controls below are affix-screen specific (the std-widgets have no
+// metro text-tab, icon-button or image-toggle equivalents), so they stay
+// local to this screen and take their colours from the `Metro` tokens.
+
+// Dark-styled single-line text input (upstream MahApps dark TextBox look,
+// 28px field height).
+//
+// Kept instead of the std-widgets `LineEdit`: the std control's 32px
+// min-height and its clear-button affordance do not match the upstream field,
+// and its accessibility tree exposes only a placeholder text (the harness and
+// the screen's own labels address these fields by accessible label).
+component DarkLineEdit {
+    in property <string> placeholder-text: "";
+    in-out property <string> text <=> input.text;
+    // Fires on every user edit (never on programmatic text writes) with the
+    // field's new text, so the owning screen can push the live value through
+    // its own callback. The affix catalog filter uses this: upstream's
+    // `AffixTextFilter` setter re-filters the active catalog view on every
+    // keystroke (AffixViewModel.cs:248-256,434-456).
+    callback edited(string);
+
+    Rectangle {
+        background: Metro.input;
+        border-width: 1px;
+        border-color: input.has-focus ? Metro.text-dim : Metro.border;
+        border-radius: 3px;
+        preferred-height: 28px;
+        min-height: 28px;
+        max-height: 28px;
+        // Text stays inside the field frame (same as the std LineEditBase).
+        clip: true;
+
+        // Placeholder shown while the field is empty
+        if input.text == "": Text {
+            x: 8px;
+            width: parent.width - 16px;
+            height: parent.height;
+            text: root.placeholder-text;
+            color: Metro.text-dim;
+            font-size: 13px;
+            vertical-alignment: center;
+        }
+
+        // Center like the std LineEditBase: let the input fill the field
+        // and rely on vertical-alignment. Y-centering against
+        // `preferred-height` collapses (an empty input reports ~zero
+        // height) and bottom-pins the glyphs.
+        input := TextInput {
+            x: 8px;
+            width: parent.width - 16px;
+            height: parent.height;
+            color: Metro.text;
+            font-size: 13px;
+            vertical-alignment: center;
+            // Accessibility + headless real-input test harness: the
+            // placeholder doubles as the accessible label.
+            accessible-label: root.placeholder-text;
+
+            // The builtin `edited` is argument-less, so the field's own text
+            // is forwarded: both the key pipeline and the accessibility
+            // `SetValue` path (headless `set_element_value`) assign `text`
+            // before they emit `edited`.
+            edited => { root.edited(input.text); }
+        }
+    }
+}
+
+// Square icon button used inside the presets panel
+// (upstream PackIconMaterial icon buttons, AffixView.xaml:101-148).
+// `label` carries the accessible/button name per instance
+// (upstream command-map anchor: Rename/Remove/Add/Import preset).
+// `enabled` mirrors upstream RelayCommand canExecute gating: a
+// disabled button ignores clicks (the TouchArea stops reacting)
+// and dims, like MahApps renders CanExecute == false commands.
+component PanelIconButton {
+    in property <string> label;
+    in property <bool> enabled: true;
+    callback clicked();
+
+    Rectangle {
+        background: Metro.panel-alt;
+        border-width: 1px;
+        border-color: Metro.border;
+        border-radius: 4px;
+        preferred-width: 28px;
+        min-width: 28px;
+        max-width: 28px;
+        preferred-height: 28px;
+        min-height: 28px;
+        max-height: 28px;
+        opacity: root.enabled ? 1.0 : 0.45;
+        // Accessibility + headless real-input test harness.
+        accessible-role: button;
+        accessible-label: root.label;
+        // Project the gate into the a11y tree so the headless
+        // real-input harness can assert it via the testing backend.
+        accessible-enabled: root.enabled;
+
+        TouchArea {
+            enabled: root.enabled;
+            clicked => { clicked(); }
+        }
+
+        @children
+    }
+}
+
+// Category switcher text (upstream TabControl headers: large light
+// captions, active red, inactive gray).
+component CategorySwitchItem {
+    in property <string> label;
+    in property <bool> active;
+    callback clicked();
+
+    TouchArea {
+        clicked => { clicked(); }
+        // Accessibility + headless real-input test harness.
+        accessible-role: button;
+        accessible-label: label;
+
+        Text {
+            text: label;
+            color: active ? Metro.accent-hover : Metro.text-dim;
+            font-size: 28px;
+            font-weight: 300;
+            vertical-alignment: center;
+        }
+    }
+}
+
+// One filter-strip icon toggle (upstream's `filter_icon_*_on/off` image
+// pairs, `AffixView.xaml:1124-1488`): the caller passes the image for the
+// current state, so the toggle itself stays stateless. `label` is the
+// upstream caption/tooltip (rsCap* / rsTooltip*).
+component FilterIconToggle {
+    in property <image> icon;
+    in property <string> label;
+    in property <string> tooltip;
+    callback toggled();
+
+    Rectangle {
+        background: transparent;
+        preferred-width: 40px;
+        min-width: 40px;
+        max-width: 40px;
+        preferred-height: 40px;
+        min-height: 40px;
+        max-height: 40px;
+        // Accessibility + headless real-input test harness: the strip
+        // toggles are found and clicked by their upstream caption.
+        accessible-role: button;
+        accessible-label: root.label;
+
+        Image {
+            width: parent.width;
+            height: parent.height;
+            source: root.icon;
+        }
+
+        TouchArea {
+            clicked => { toggled(); }
+        }
+
+        Tooltip { text: @markdown("\{tooltip}"); }
+    }
+}
+
+// One rail row: an upstream section header or one wanted chip. The row's
+// kind tag routes the chip callbacks to the matching kind's handler.
+//
+// The row's root is a zero-spacing layout holding the one branch the row
+// kind selects: a plain multi-branch component carries no layout information
+// of its own, so a VerticalLayout parent sizes such a row from the deepest
+// text leaf and stacks the rows on top of each other. Through the layout root
+// the parent sees the branch's real height (the 42px upstream section header,
+// the 28px chip row) and the branch fills the row width.
+//
+// `shown` gates both branches: a row of another tab must not reserve layout
+// space. `visible: false` alone does not collapse a layout child (measured:
+// the four family headers of the inactive tabs added 168px to the rail's
+// content height on the Affixes tab), so the hidden row keeps an empty
+// zero-spacing layout instead of a branch — the layout reports 0 for min,
+// max, preferred and stretch.
+component RailRow {
+    in property <AffixRailRow> row-data;
+    in property <bool> shown: true;
+    callback color-clicked(string);
+    callback remove-clicked(string);
+    callback edit-clicked(string);
+
+    VerticalLayout {
+        spacing: 0px;
+
+        if shown && row-data.is-header: SectionHeader {
+            // The upstream section icons (Height=40 slot/family images).
+            icon: row-data.token == "helm" ? @image-url("../../../../assets/original/images/head_icon.png") : row-data.token == "chest" ? @image-url("../../../../assets/original/images/torso_icon.png") : row-data.token == "gloves" ? @image-url("../../../../assets/original/images/hands_icon.png") : row-data.token == "pants" ? @image-url("../../../../assets/original/images/legs_icon.png") : row-data.token == "boots" ? @image-url("../../../../assets/original/images/feet_icon.png") : row-data.token == "amulet" ? @image-url("../../../../assets/original/images/neck_icon.png") : row-data.token == "ring" ? @image-url("../../../../assets/original/images/ring_icon.png") : row-data.token == "weapon" ? @image-url("../../../../assets/original/images/mainhand_icon.png") : row-data.token == "ranged" ? @image-url("../../../../assets/original/images/ranged_icon.png") : row-data.token == "offhand" ? @image-url("../../../../assets/original/images/offhand_icon.png") : row-data.token == "aspect" ? @image-url("../../../../assets/original/images/aspect_icon.png") : row-data.token == "sigil" ? @image-url("../../../../assets/original/images/sigil_icon.png") : row-data.token == "unique" ? @image-url("../../../../assets/original/images/unique_icon.png") : @image-url("../../../../assets/original/images/rune_icon.png");
+            caption: row-data.label;
+        }
+
+        if shown && !row-data.is-header: AffixChip {
+            entry-label: row-data.label;
+            entry-color: row-data.color;
+            chip-bg: row-data.is-tempered-or-implicit ? Metro.muted : Metro.card;
+            // Affix chips carry the upstream type foreground (orange while the
+            // entry is greater); the family chips stay light gray like upstream.
+            chip-fg: row-data.kind == "affix" ? (row-data.is-greater ? Metro.chip-fg-greater : Metro.chip-fg) : Metro.chip-fg-family;
+
+            color-clicked => { color-clicked(row-data.key); }
+            remove-clicked => { remove-clicked(row-data.key); }
+            edit-clicked => { edit-clicked(row-data.key); }
+        }
+    }
+}
+
+// ── Data structs for Rust → Slint binding ─────────────────────────────
+
+// One projected affix catalog row: the localized description (upstream
+// `AffixIdToDescriptionConverter`), the preset's wanted state (the swatch
+// color, the slot the id is wanted for, the preset's own display label and
+// the type flags that pick the chip colors). The left rail renders the
+// wanted rows out of the same models, so one row carries both faces.
+export struct AffixEntry {
+    id: string,
+    // The id the entry callbacks address: the selected preset's own entry id
+    // while the row is wanted (the data row's id can list several ids the
+    // preset file stores one at a time), the row's own id otherwise.
+    key-id: string,
+    // The localized affix description (`Description`).
+    label: string,
+    // The preset entry's display name ("" while not wanted).
+    wanted-label: string,
+    // The slot the id is wanted for ("" while not wanted).
+    item-type: string,
+    // The wanted entry's color (irrelevant while not wanted).
+    color: color,
+    is-wanted: bool,
+    // `IsTemperingAvailable` (catalog attribute marker).
+    is-tempered: bool,
+    // The preset entry's tempered rule flag (upstream chip background).
+    wanted-is-tempered: bool,
+    // The preset entry's greater/implicit flags (upstream chip foreground
+    // and background: `AffixTypeToFgSolidBrushConverter` /
+    // `AffixTypeToBgSolidBrushConverter`).
+    wanted-is-greater: bool,
+    wanted-is-implicit: bool,
+    // `AllowedForPlayerClass` markers.
+    class-sorc: bool,
+    class-druid: bool,
+    class-barb: bool,
+    class-rogue: bool,
+    class-necro: bool,
+    class-spirit: bool,
+    class-pala: bool,
+    class-warlk: bool,
+}
+
+export struct AspectEntry {
+    id: string,
+    // The id the entry callbacks address: the selected preset's own entry id
+    // while the row is wanted (the data row's id can list several ids the
+    // preset file stores one at a time), the row's own id otherwise.
+    key-id: string,
+    // Localized `Name`.
+    label: string,
+    wanted-label: string,
+    description: string,
+    color: color,
+    is-wanted: bool,
+    is-codex: bool,
+    is-seasonal: bool,
+    is-drop-only: bool,
+    dungeon: string,
+    class-sorc: bool,
+    class-druid: bool,
+    class-barb: bool,
+    class-rogue: bool,
+    class-necro: bool,
+    class-spirit: bool,
+    class-pala: bool,
+    class-warlk: bool,
+}
+
+export struct SigilEntry {
+    id: string,
+    // The id the entry callbacks address: the selected preset's own entry id
+    // while the row is wanted (the data row's id can list several ids the
+    // preset file stores one at a time), the row's own id otherwise.
+    key-id: string,
+    // Localized `Name` (dungeon sigils carry their zone).
+    label: string,
+    wanted-label: string,
+    description: string,
+    color: color,
+    is-wanted: bool,
+    // Dungeon tier text while the tier display is enabled.
+    tier-label: string,
+    is-seasonal: bool,
+}
+
+export struct UniqueEntry {
+    id: string,
+    // The id the entry callbacks address: the selected preset's own entry id
+    // while the row is wanted (the data row's id can list several ids the
+    // preset file stores one at a time), the row's own id otherwise.
+    key-id: string,
+    label: string,
+    wanted-label: string,
+    description: string,
+    color: color,
+    is-wanted: bool,
+    class-sorc: bool,
+    class-druid: bool,
+    class-barb: bool,
+    class-rogue: bool,
+    class-necro: bool,
+    class-spirit: bool,
+    class-pala: bool,
+    class-warlk: bool,
+}
+
+export struct RuneEntry {
+    id: string,
+    // The id the entry callbacks address: the selected preset's own entry id
+    // while the row is wanted (the data row's id can list several ids the
+    // preset file stores one at a time), the row's own id otherwise.
+    key-id: string,
+    label: string,
+    wanted-label: string,
+    description: string,
+    color: color,
+    is-wanted: bool,
+    is-condition: bool,
+    is-effect: bool,
+}
+
+export component AffixScreen {
+    // ── State properties (set from Rust) ───────────────────────────────
+
+    // Preset management
+    in property <[string]> preset-names: [];
+    in-out property <string> selected-preset: "";
+    in-out property <string> new-preset-name: "";
+    // Build-import website combo (upstream
+    // `AffixViewModel.InitBuildImportWebsites`, AffixViewModel.cs:1664-1675):
+    // the upstream display names in upstream order; the selection
+    // persists as `SelectedBuildImportWebsite` (remember-last-website)
+    // and the Import button opens the tabbed import dialog on that
+    // provider's tab (upstream `ImportAffixPresetCommandExecute`).
+    in property <[string]> import-providers: ["D2Core.com", "D4Builds.gg", "InfinityBuilds.gg", "Maxroll.gg", "Mobalytics.gg"];
+    in-out property <string> selected-import-provider: "Maxroll.gg";
+
+    // Overlay + language
+    in property <bool> overlay-enabled: false;
+    // Game-data language (upstream AffixViewModel.SelectedAffixLanguage).
+    // The model and selection live on the root (seeded from config in
+    // `wiring.rs`), so this combo and the settings-screen combo always
+    // show the same data language.
+    in-out property <string> selected-language: "";
+    in property <[string]> languages: [];
+
+    // Filter-icon strip toggles (class: 9, category: 4, rune: 2)
+    in property <[bool]> class-toggles;
+    in property <[bool]> category-toggles;
+    in property <[bool]> rune-toggles;
+
+    // Active tab index: 0=Affixes, 1=Aspects, 2=Sigils, 3=Uniques, 4=Runes
+    in-out property <int> active-tab-index: 0;
+
+    // Filter text (upstream `AffixTextFilter`, AffixViewModel.cs:248-256).
+    // Host-bound (two-way in main_window) so the typed filter survives the
+    // tab switch — the screen is re-instantiated with the tab — and the
+    // live re-filter reaches Rust through `affix-filter-text-changed`.
+    in-out property <string> affix-filter-text: "";
+    // Catalog render window in rows (host-bound; see the browsing-state
+    // block below).
+    in-out property <int> affix-catalog-window: 60;
+
+    // ── Catalog browsing state ─────────────────────────────────────────
+    // The per-tab catalog models are the entry models above (Rust
+    // projects the localized game-data indexes into them, upstream
+    // AffixView.xaml:1499-1996).
+    property <int> catalog-count: active-tab-index == 0 ? affix-entries.length : active-tab-index == 1 ? aspect-entries.length : active-tab-index == 2 ? sigil-entries.length : active-tab-index == 3 ? unique-entries.length : rune-entries.length;
+    // Empty-grid text: distinguishes "no data" from "nothing matched".
+    property <string> catalog-empty-text: affix-filter-text == "" ? @tr("No catalog entries available.") : @tr("No entries match the filter.");
+    // Rendered window of the active tab's grid: the projection carries the
+    // localized catalog, but Rust windows the projected models to the first
+    // `affix-catalog-window` rows per tab (plus the preset's wanted rows), so
+    // a grid instantiates a bounded number of cards — the port's equivalent of
+    // upstream's VirtualizingWrapPanel (AffixView.xaml:1499-1996), which
+    // materializes only the visible viewport too. The window resets whenever
+    // the row set changes (tab switch, filter edit) and grows one page per
+    // bottom-edge gesture (the `scrolled` handler below): the page stays at
+    // the reviewed 60 rows so one growth stays cheap, and the gesture anchor
+    // is what keeps a gesture from re-projecting per scroll event.
+    property <int> catalog-page-size: 60;
+    // A full window means the projection may have stopped early.
+    property <bool> catalog-has-more: catalog-count >= affix-catalog-window;
+    // The scroll position of the last window growth and the gesture step that
+    // has to happen before another page is asked for. The bottom-edge
+    // condition stays true while the user keeps scrolling at the end of the
+    // grid, and every growth re-projects the windowed models and re-lays out
+    // every card: without this anchor one gesture at the end asks for another
+    // page per scroll event and the grid judders.
+    property <length> catalog-extend-anchor: 0px;
+    property <length> catalog-extend-step: 64px;
+
+    // The wanted-entry rail rows (section headers + wanted chips), projected
+    // by `actions::affix::rail_rows`.
+    in property <[AffixRailRow]> affix-rail-rows;
+
+    // Entry lists
+    in property <[AffixEntry]> affix-entries;
+    in property <[AspectEntry]> aspect-entries;
+    in property <[SigilEntry]> sigil-entries;
+    in property <[UniqueEntry]> unique-entries;
+    in property <[RuneEntry]> rune-entries;
+
+    // ── Callbacks (all 38 commands + language_selected) ────────────────
+
+    // Preset management (4) + ComboBox switch (the switch must
+    // re-project the selected preset's entries into the entry models —
+    // upstream re-binds the lists when the preset ComboBox changes).
+    callback create-preset();
+    callback rename-preset();
+    callback remove-preset();
+    callback import-preset();
+    callback preset-selected(string);
+
+    // Entry addressing: every entry callback receives a kind-tagged key
+    // `"<kind>:<id>:<item-type>"` (kind: affix|aspect|sigil|unique|rune;
+    // the item-type segment stays empty when the entry has none or the
+    // kind does not project one). Keys — not per-kind list indices —
+    // are the callback contract: handlers resolve the key against the
+    // mixed-kind preset entry list, so an index in one kind's view can
+    // never address a different kind's entry.
+    // Affix entry (3)
+    callback set-affix-entry(string);
+    callback set-affix-color(string);
+    callback remove-affix-entry(string);
+
+    // Aspect entry (3)
+    callback set-aspect-entry(string);
+    callback set-aspect-color(string);
+    callback remove-aspect-entry(string);
+
+    // Unique entry (2)
+    callback set-unique-entry(string);
+    callback remove-unique-entry(string);
+
+    // Rune entry (2)
+    callback set-rune-entry(string);
+    callback remove-rune-entry(string);
+
+    // Sigil entry (3): the two entry callbacks plus the card's dungeon
+    // tier button, which carries the same sigil id the Sigil config
+    // dialog's tier rows report (upstream
+    // `SetSigilDungeonTierToNextCommand`, SigilInfoVM.cs:139-149).
+    callback set-sigil-entry(string);
+    callback remove-sigil-entry(string);
+    callback cycle-sigil-tier(string);
+
+    // Config dialogs (5)
+    callback open-affix-config();
+    callback open-aspect-config();
+    callback open-sigil-config();
+    callback open-unique-config();
+    callback open-rune-config();
+
+    // Overlay toggle (1)
+    callback toggle-affix-overlay();
+
+    // Language (1)
+    callback language-selected(string);
+
+    // Filter state notification (the filter-icon strip's class, category and
+    // rune toggles all report the full three-array state).
+    callback affix-filters-changed([bool], [bool], [bool]);
+
+    // Live keyword filter: one callback per edit of the filter field,
+    // carrying the field's new text. The host forwards it so the catalog
+    // projection re-filters on every keystroke and on a toggle change
+    // (upstream `AffixTextFilter` setter/`RefreshAffixViewFilter`,
+    // AffixViewModel.cs:248-256,434-456).
+    callback affix-filter-text-changed(string);
+
+    // Catalog render window (rows per tab): the grid's bottom-edge scroll
+    // sends the next window size, and a tab switch or filter edit resets it
+    // to one page. Rust windows the projected catalog models to that many
+    // rows (upstream's VirtualizingWrapPanel materializes only the visible
+    // viewport, AffixView.xaml:1499-1996).
+    callback affix-catalog-window-changed(int);
+
+    // Website change: upstream saves `SelectedBuildImportWebsite`
+    // immediately on every combo change (AffixViewModel.cs:415-418).
+    callback import-website-changed(string);
+
+    // The website combo's leading logo (upstream renders the provider image
+    // inside every combo item; the std ComboBox draws text only, so the
+    // selected provider's logo stands beside the combo instead).
+    property <image> selected-provider-icon: selected-import-provider == "D2Core.com" ? @image-url("../../assets/website_icon_d2core.png") : selected-import-provider == "D4Builds.gg" ? @image-url("../../../../assets/original/images/website_icon_d4builds.png") : selected-import-provider == "InfinityBuilds.gg" ? @image-url("../../../../assets/original/images/website_icon_infinitybuilds.png") : selected-import-provider == "Mobalytics.gg" ? @image-url("../../../../assets/original/images/website_icon_mobalytics.png") : @image-url("../../../../assets/original/images/website_icon_maxroll.png");
+
+    // Bottom-edge auto-extension of the catalog render window (the port's
+    // replacement for upstream's VirtualizingWrapPanel materializing the
+    // next viewport while scrolling). `scroll-y` is the grid's `content-y`:
+    // the growth is tied to the gesture's own progress, so a growth that
+    // shifts the bottom edge under the pointer cannot trigger the next one.
+    function extend-catalog-window(scroll-y: length) {
+        if (catalog-has-more && (scroll-y > catalog-extend-anchor + catalog-extend-step || scroll-y < catalog-extend-anchor - catalog-extend-step)) {
+            catalog-extend-anchor = scroll-y;
+            affix-catalog-window-changed(affix-catalog-window + catalog-page-size);
+        }
+    }
+
+    // Restart the browsing window: one page, and a fresh gesture anchor. The
+    // row set changes on a tab switch or a filter edit, so the old anchor no
+    // longer describes the grid the user is looking at.
+    function reset-catalog-window() {
+        catalog-extend-anchor = 0px;
+        affix-catalog-window-changed(catalog-page-size);
+    }
+
+    // ── Layout (upstream AffixView.xaml:36-2013: left presets column,
+    // right filter strip / filter field / tabs / card grid) ─────────────
+    VerticalLayout {
+        spacing: 0px;
+
+        // ── Page title (port shell convention; the upstream view sits under
+        // the shell's own header) ────────────────────────────────────────
+        HorizontalLayout {
+            padding-left: 24px;
+            padding-top: 10px;
+            padding-bottom: 4px;
+
+            Text {
+                text: @tr("Affixes");
+                color: Metro.text;
+                font-size: 40px;
+                font-weight: 300;
+                vertical-alignment: center;
+            }
+        }
+
+        HorizontalLayout {
+            spacing: 0px;
+
+            // ═══════════════════════════════════════════════════════
+            // Left column: control row + presets panel + wanted-entry rail
+            // ═══════════════════════════════════════════════════════
+            affix-left-column := Rectangle {
+                background: Metro.panel;
+                preferred-width: 272px;
+                min-width: 272px;
+                max-width: 272px;
+                horizontal-stretch: 0;
+
+                VerticalLayout {
+                    padding-left: 10px;
+                    padding-right: 12px;
+                    padding-top: 4px;
+                    padding-bottom: 8px;
+                    spacing: 6px;
+
+                    // ── Control row: overlay on/off icon + language ───
+                    // Upstream AffixView.xaml:49-98 (the overlay image pair
+                    // plus the language ComboBox).
+                    HorizontalLayout {
+                        spacing: 6px;
+
+                        // Overlay on/off toggle (upstream ToggleOverlayCommand
+                        // anchor, `AffixView.xaml:49-98`). The vendored
+                        // `overlay-on/off.png` chrome art is a near-black tile
+                        // (`assets/original/images/overlay-off.png`): on the
+                        // dark panel it reads as a smudge, so the port draws
+                        // the chrome icon from its own vector set with the
+                        // Metro tokens — the same light-on-red treatment the
+                        // header's window commands use — and keeps the state
+                        // in the plate: accent + white while the overlay is
+                        // enabled, panel + dim while it is off.
+                        overlay-power-button := Rectangle {
+                            background: overlay-enabled ? Metro.accent : Metro.panel-alt;
+                            border-width: 1px;
+                            border-color: overlay-enabled ? Metro.accent : Metro.border;
+                            border-radius: 4px;
+                            preferred-width: 30px;
+                            min-width: 30px;
+                            max-width: 30px;
+                            preferred-height: 30px;
+                            min-height: 30px;
+                            max-height: 30px;
+                            accessible-role: button;
+                            accessible-label: @tr("Toggle affix overlay");
+                            accessible-checked: overlay-enabled;
+
+                            // The requested size is the icon's drawing
+                            // area: ring, bar and stroke scale with it (see
+                            // `IconMetrics` in components/icons.slint), so
+                            // no per-call offset correction is needed here.
+                            PowerIcon {
+                                width: 18px;
+                                height: 18px;
+                                x: (parent.width - self.width) / 2;
+                                y: (parent.height - self.height) / 2;
+                                icon-color: overlay-enabled ? Metro.chrome-on-accent : Metro.text-dim;
+                            }
+
+                            TouchArea {
+                                clicked => { toggle-affix-overlay(); }
+                            }
+
+                            property <string> overlay-tooltip: overlay-enabled ? @tr("Disable the in-game overlay") : @tr("Enabled the in-game overlay");
+                            Tooltip { text: @markdown("\{overlay-tooltip}"); }
+                        }
+
+                        language-combobox := ComboBox {
+                            model: languages;
+                            preferred-width: 125px;
+                            min-width: 125px;
+                            max-width: 125px;
+                            max-height: 28px;
+                            current-value <=> selected-language;
+                            selected(value) => {
+                                language-selected(value);
+                            }
+                            // Accessibility + headless real-input test harness.
+                            accessible-role: combobox;
+                            accessible-label: @tr("Affix language");
+                        }
+
+                        Rectangle {
+                            background: transparent;
+                        }
+                    }
+
+                    // ── Gear Affix Presets block ───────────────────────
+                    // Upstream AffixView.xaml:101-148: exactly three rows.
+                    // `vertical-stretch: 0` keeps the block hugging its four
+                    // rows: the left column's leftover height belongs to the
+                    // rail below it (an auto-height sibling otherwise absorbs
+                    // that space, which opens a hole under the group header).
+                    affix-presets-panel := Rectangle {
+                        background: Metro.panel-alt;
+                        border-width: 1px;
+                        border-color: Metro.border;
+                        border-radius: 4px;
+                        vertical-stretch: 0;
+
+                        VerticalLayout {
+                            padding: 8px;
+                            spacing: 6px;
+
+                            // Section header (upstream MetroHeader
+                            // rsCapGearAffixPresets).
+                            Text {
+                                text: @tr("Gear Affix Presets:");
+                                color: Metro.text;
+                                font-size: 14px;
+                            }
+
+                            // Row 1: preset ComboBox + rename + remove
+                            HorizontalLayout {
+                                spacing: 4px;
+
+                                preset-combobox := ComboBox {
+                                    model: preset-names;
+                                    preferred-width: 157px;
+                                    min-width: 157px;
+                                    max-width: 157px;
+                                    max-height: 28px;
+                                    current-value <=> selected-preset;
+                                    // Switching presets must re-project the
+                                    // entries (upstream re-binds the wanted
+                                    // lists when the preset ComboBox changes).
+                                    selected(value) => {
+                                        preset-selected(value);
+                                    }
+                                    // Accessibility + headless real-input test harness.
+                                    accessible-role: combobox;
+                                    accessible-label: @tr("Preset");
+                                }
+
+                                PanelIconButton {
+                                    label: @tr("Rename preset");
+                                    // Upstream parity: CanRenameAffixPresetCommandExecute
+                                    // requires a selected preset with a
+                                    // non-whitespace name (AffixViewModel.cs). Ported
+                                    // preset names cannot be blank (create/rename
+                                    // validate), so the empty selection string is
+                                    // the equivalent gate.
+                                    enabled: selected-preset != "";
+                                    PencilIcon {
+                                        width: 15px;
+                                        height: 15px;
+                                        x: (parent.width - self.width) / 2;
+                                        y: (parent.height - self.height) / 2;
+                                        icon-color: Metro.text;
+                                    }
+                                    clicked => { rename-preset(); }
+                                }
+
+                                PanelIconButton {
+                                    label: @tr("Remove preset");
+                                    // Upstream parity: CanRemoveAffixPresetNameExecute
+                                    // (same predicate as rename).
+                                    enabled: selected-preset != "";
+                                    // 15px drawing area; lid, handle and
+                                    // body scale with it (icons.slint
+                                    // `IconMetrics`).
+                                    TrashIcon {
+                                        width: 15px;
+                                        height: 15px;
+                                        x: (parent.width - self.width) / 2;
+                                        y: (parent.height - self.height) / 2;
+                                        icon-color: Metro.text;
+                                    }
+                                    clicked => { remove-preset(); }
+                                }
+                            }
+
+                            // Row 2: new preset name + add
+                            HorizontalLayout {
+                                spacing: 4px;
+
+                                // Named so the headless real-input test
+                                // harness can address the field by element id.
+                                new-preset-name-field := DarkLineEdit {
+                                    preferred-width: 157px;
+                                    min-width: 157px;
+                                    max-width: 157px;
+                                    text <=> new-preset-name;
+                                    placeholder-text: @tr("Enter name");
+                                }
+
+                                PanelIconButton {
+                                    label: @tr("Create preset");
+                                    PlusIcon {
+                                        width: 15px;
+                                        height: 15px;
+                                        x: (parent.width - self.width) / 2;
+                                        y: (parent.height - self.height) / 2;
+                                        icon-color: Metro.text;
+                                    }
+                                    clicked => { create-preset(); }
+                                }
+                            }
+
+                            // Row 3: provider logo + website ComboBox + import
+                            HorizontalLayout {
+                                spacing: 4px;
+
+                                Image {
+                                    width: 20px;
+                                    height: 20px;
+                                    y: (parent.height - self.height) / 2;
+                                    source: selected-provider-icon;
+                                }
+
+                                import-provider-combobox := ComboBox {
+                                    model: import-providers;
+                                    preferred-width: 133px;
+                                    min-width: 133px;
+                                    max-width: 133px;
+                                    max-height: 28px;
+                                    current-value <=> selected-import-provider;
+                                    // Remember-last-website, saved
+                                    // immediately (upstream parity).
+                                    selected(value) => {
+                                        import-website-changed(value);
+                                    }
+                                    // Accessibility + headless real-input test harness.
+                                    accessible-role: combobox;
+                                    accessible-label: @tr("Import provider");
+                                }
+
+                                PanelIconButton {
+                                    label: @tr("Import preset");
+                                    // 15px drawing area; box and arrow scale
+                                    // with it (icons.slint `IconMetrics`).
+                                    ExitArrowIcon {
+                                        width: 15px;
+                                        height: 15px;
+                                        x: (parent.width - self.width) / 2;
+                                        y: (parent.height - self.height) / 2;
+                                        icon-color: Metro.text;
+                                    }
+                                    clicked => { import-preset(); }
+                                }
+                            }
+                        }
+                    }
+
+                    // ── Wanted entries: slot-grouped rail ───────────────
+                    // Upstream groups the wanted affixes under the ten gear
+                    // slot headers (AffixView.xaml:162-865) and appends the
+                    // wanted aspect/sigil/unique/rune lists
+                    // (AffixView.xaml:866-1130); the chips show the localized
+                    // description with the type-based colors and the preset
+                    // color swatch. The sections are conditional elements, so
+                    // only the wanted rows of the active tab exist.
+                    affix-rail-scroll := ScrollView {
+                        // The rail owns the left column's leftover height (the
+                        // preset block hugs its content above it).
+                        vertical-stretch: 1;
+                        // The rail yields before the column does: the std
+                        // ScrollView's own 50px min-height would otherwise be
+                        // the column's floor, so a window shorter than the
+                        // fixed control row + presets block + 50px would push
+                        // the whole column past the window bottom (measured:
+                        // at 1150x300 the column bottom sat at 361). With the
+                        // floor at 0 the fixed rows stay inside the window and
+                        // the rail takes whatever is left.
+                        min-height: 0px;
+
+                        // Named so the headless harness can measure the rail's
+                        // content height against the scroll view's viewport.
+                        affix-rail-content := VerticalLayout {
+                            // Bound the rail's content width to the scroll
+                            // view's own width (not to `visible-width`, which
+                            // is derived from the viewport the content sizes —
+                            // that binding is circular and resolves to zero
+                            // width, collapsing every row). The 16px leaves
+                            // the ScrollView's scrollbar room so each row's
+                            // remove control stays clickable.
+                            width: affix-rail-scroll.width - 16px;
+                            spacing: 0px;
+
+                            // One flat row list: a section header or a
+                            // wanted chip per row (the slot/family grouping
+                            // is projected in Rust). Only the active tab's
+                            // rows are laid out: `visible` keeps the other
+                            // tabs' rows out of the accessibility tree and
+                            // `shown` collapses their layout space, so the
+                            // rail's content height is the visible row stack
+                            // and the scroll range ends at the last row.
+                            for row in affix-rail-rows: RailRow {
+                                visible: row.tab == active-tab-index;
+                                shown: row.tab == active-tab-index;
+                                width: parent.width;
+                                row-data: row;
+
+                                color-clicked(key) => {
+                                    if row.kind == "aspect" { set-aspect-color(key); }
+                                    else if row.kind == "sigil" { set-affix-color(key); }
+                                    else if row.kind == "unique" { set-affix-color(key); }
+                                    else if row.kind == "rune" { set-affix-color(key); }
+                                    else { set-affix-color(key); }
+                                }
+                                remove-clicked(key) => {
+                                    if row.kind == "aspect" { remove-aspect-entry(key); }
+                                    else if row.kind == "sigil" { remove-sigil-entry(key); }
+                                    else if row.kind == "unique" { remove-unique-entry(key); }
+                                    else if row.kind == "rune" { remove-rune-entry(key); }
+                                    else { remove-affix-entry(key); }
+                                }
+                                edit-clicked(key) => {
+                                    if row.kind == "aspect" { set-aspect-entry(key); }
+                                    else if row.kind == "sigil" { set-sigil-entry(key); }
+                                    else if row.kind == "unique" { set-unique-entry(key); }
+                                    else if row.kind == "rune" { set-rune-entry(key); }
+                                    else { set-affix-entry(key); }
+                                }
+                            }
+
+                            if catalog-count == 0: Text {
+                                text: @tr("No affix entries. Use the sidebar to add presets.");
+                                color: Metro.muted;
+                                font-size: 12px;
+                                wrap: word-wrap;
+                            }
+                        }
+                    }
+                }
+
+                // ── Rail scroll affordance ────────────────────────────
+                // The std ScrollView thumb is a 2px `#373737` line on the
+                // `#262626` panel — invisible in practice — so a rail whose
+                // content continues below the fold reads as a list that runs
+                // out of the window: the last row is simply sliced at the
+                // viewport edge with no sign that more rows exist. A
+                // higher-contrast scrollbar would change the shared theme, so
+                // the rail signals the remaining rows with its own token-only
+                // fade: while the content extends below the viewport, the
+                // last visible row fades into the panel; at the end of the
+                // list the fade is gone. Absolute child of the column
+                // rectangle (not of its layout), so it never takes layout
+                // space and never intercepts pointer input.
+                if affix-rail-scroll.visible-height > 1px && affix-rail-scroll.content-y + affix-rail-scroll.content-height > affix-rail-scroll.visible-height + 1px: affix-rail-fade := Rectangle {
+                    x: affix-rail-scroll.x;
+                    y: affix-rail-scroll.y + affix-rail-scroll.height - self.height;
+                    width: affix-rail-scroll.width;
+                    height: 18px;
+                    background: @linear-gradient(180deg, Metro.panel.transparentize(1) 0%, Metro.panel 100%);
+                }
+            }
+
+            // ═══════════════════════════════════════════════════════
+            // Right column: filter strip, filter field, tabs, card grid
+            // ═══════════════════════════════════════════════════════
+            Rectangle {
+                background: Metro.panel;
+
+                VerticalLayout {
+                    padding-left: 10px;
+                    padding-right: 16px;
+                    padding-top: 4px;
+                    padding-bottom: 8px;
+                    spacing: 6px;
+
+                    // ── Filter-icon strip ─────────────────────────────
+                    // Upstream AffixView.xaml:1122-1490: one image toggle per
+                    // class (Affixes/Aspects/Uniques tabs), per sigil
+                    // category (Sigils tab) and per rune kind (Runes tab).
+                    HorizontalLayout {
+                        spacing: 2px;
+
+                        // Class filters (upstream order: Core, Barbarian,
+                        // Druid, Necromancer, Paladin, Rogue, Sorcerer,
+                        // Spiritborn, Warlock).
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[0] ? @image-url("../../../../assets/original/images/filter_icon_core_on.png") : @image-url("../../../../assets/original/images/filter_icon_core_off.png");
+                            label: @tr("Core");
+                            tooltip: @tr("Core");
+                            toggled => {
+                                affix-filters-changed(
+                                    [!class-toggles[0], class-toggles[1], class-toggles[2], class-toggles[3], class-toggles[4], class-toggles[5], class-toggles[6], class-toggles[7], class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[1] ? @image-url("../../../../assets/original/images/filter_icon_barb_on.png") : @image-url("../../../../assets/original/images/filter_icon_barb_off.png");
+                            label: @tr("Barbarian");
+                            tooltip: @tr("Barbarian");
+                            toggled => {
+                                affix-filters-changed(
+                                    [class-toggles[0], !class-toggles[1], class-toggles[2], class-toggles[3], class-toggles[4], class-toggles[5], class-toggles[6], class-toggles[7], class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[2] ? @image-url("../../../../assets/original/images/filter_icon_druid_on.png") : @image-url("../../../../assets/original/images/filter_icon_druid_off.png");
+                            label: @tr("Druid");
+                            tooltip: @tr("Druid");
+                            toggled => {
+                                affix-filters-changed(
+                                    [class-toggles[0], class-toggles[1], !class-toggles[2], class-toggles[3], class-toggles[4], class-toggles[5], class-toggles[6], class-toggles[7], class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[3] ? @image-url("../../../../assets/original/images/filter_icon_necro_on.png") : @image-url("../../../../assets/original/images/filter_icon_necro_off.png");
+                            label: @tr("Necromancer");
+                            tooltip: @tr("Necromancer");
+                            toggled => {
+                                affix-filters-changed(
+                                    [class-toggles[0], class-toggles[1], class-toggles[2], !class-toggles[3], class-toggles[4], class-toggles[5], class-toggles[6], class-toggles[7], class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[4] ? @image-url("../../../../assets/original/images/filter_icon_paladin_on.png") : @image-url("../../../../assets/original/images/filter_icon_paladin_off.png");
+                            label: @tr("Paladin");
+                            tooltip: @tr("Paladin");
+                            toggled => {
+                                affix-filters-changed(
+                                    [class-toggles[0], class-toggles[1], class-toggles[2], class-toggles[3], !class-toggles[4], class-toggles[5], class-toggles[6], class-toggles[7], class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[5] ? @image-url("../../../../assets/original/images/filter_icon_rogue_on.png") : @image-url("../../../../assets/original/images/filter_icon_rogue_off.png");
+                            label: @tr("Rogue");
+                            tooltip: @tr("Rogue");
+                            toggled => {
+                                affix-filters-changed(
+                                    [class-toggles[0], class-toggles[1], class-toggles[2], class-toggles[3], class-toggles[4], !class-toggles[5], class-toggles[6], class-toggles[7], class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[6] ? @image-url("../../../../assets/original/images/filter_icon_sorc_on.png") : @image-url("../../../../assets/original/images/filter_icon_sorc_off.png");
+                            label: @tr("Sorcerer");
+                            tooltip: @tr("Sorcerer");
+                            toggled => {
+                                affix-filters-changed(
+                                    [class-toggles[0], class-toggles[1], class-toggles[2], class-toggles[3], class-toggles[4], class-toggles[5], !class-toggles[6], class-toggles[7], class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[7] ? @image-url("../../../../assets/original/images/filter_icon_spiritborn_on.png") : @image-url("../../../../assets/original/images/filter_icon_spiritborn_off.png");
+                            label: @tr("Spiritborn");
+                            tooltip: @tr("Spiritborn");
+                            toggled => {
+                                affix-filters-changed(
+                                    [class-toggles[0], class-toggles[1], class-toggles[2], class-toggles[3], class-toggles[4], class-toggles[5], class-toggles[6], !class-toggles[7], class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 0 || active-tab-index == 1 || active-tab-index == 3: FilterIconToggle {
+                            icon: class-toggles[8] ? @image-url("../../../../assets/original/images/filter_icon_warlock_on.png") : @image-url("../../../../assets/original/images/filter_icon_warlock_off.png");
+                            label: @tr("Warlock");
+                            tooltip: @tr("Warlock");
+                            toggled => {
+                                affix-filters-changed(
+                                    [class-toggles[0], class-toggles[1], class-toggles[2], class-toggles[3], class-toggles[4], class-toggles[5], class-toggles[6], class-toggles[7], !class-toggles[8]],
+                                    category-toggles,
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        // Sigil category filters (upstream order: Dungeons,
+                        // Positive, Minor, Major).
+                        if active-tab-index == 2: FilterIconToggle {
+                            icon: category-toggles[0] ? @image-url("../../../../assets/original/images/filter_icon_dungeon_loc_on.png") : @image-url("../../../../assets/original/images/filter_icon_dungeon_loc_off.png");
+                            label: @tr("Dungeons");
+                            tooltip: @tr("Dungeons");
+                            toggled => {
+                                affix-filters-changed(
+                                    class-toggles,
+                                    [!category-toggles[0], category-toggles[1], category-toggles[2], category-toggles[3]],
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 2: FilterIconToggle {
+                            icon: category-toggles[1] ? @image-url("../../../../assets/original/images/filter_icon_dungeon_pos_on.png") : @image-url("../../../../assets/original/images/filter_icon_dungeon_pos_off.png");
+                            label: @tr("Positive");
+                            tooltip: @tr("Positive");
+                            toggled => {
+                                affix-filters-changed(
+                                    class-toggles,
+                                    [category-toggles[0], !category-toggles[1], category-toggles[2], category-toggles[3]],
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 2: FilterIconToggle {
+                            icon: category-toggles[2] ? @image-url("../../../../assets/original/images/filter_icon_dungeon_neg1_on.png") : @image-url("../../../../assets/original/images/filter_icon_dungeon_neg1_off.png");
+                            label: @tr("Minor");
+                            tooltip: @tr("Minor");
+                            toggled => {
+                                affix-filters-changed(
+                                    class-toggles,
+                                    [category-toggles[0], category-toggles[1], !category-toggles[2], category-toggles[3]],
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 2: FilterIconToggle {
+                            icon: category-toggles[3] ? @image-url("../../../../assets/original/images/filter_icon_dungeon_neg2_on.png") : @image-url("../../../../assets/original/images/filter_icon_dungeon_neg2_off.png");
+                            label: @tr("Major");
+                            tooltip: @tr("Major");
+                            toggled => {
+                                affix-filters-changed(
+                                    class-toggles,
+                                    [category-toggles[0], category-toggles[1], category-toggles[2], !category-toggles[3]],
+                                    rune-toggles
+                                );
+                            }
+                        }
+
+                        // Rune kind filters (upstream rune condition/effect).
+                        if active-tab-index == 4: FilterIconToggle {
+                            icon: rune-toggles[0] ? @image-url("../../../../assets/original/images/filter_icon_rune_condition_on.png") : @image-url("../../../../assets/original/images/filter_icon_rune_condition_off.png");
+                            label: @tr("Rune condition");
+                            tooltip: @tr("Rune of Ritual");
+                            toggled => {
+                                affix-filters-changed(
+                                    class-toggles,
+                                    category-toggles,
+                                    [!rune-toggles[0], rune-toggles[1]]
+                                );
+                            }
+                        }
+
+                        if active-tab-index == 4: FilterIconToggle {
+                            icon: rune-toggles[1] ? @image-url("../../../../assets/original/images/filter_icon_rune_effect_on.png") : @image-url("../../../../assets/original/images/filter_icon_rune_effect_off.png");
+                            label: @tr("Rune effect");
+                            tooltip: @tr("Rune of Invocation");
+                            toggled => {
+                                affix-filters-changed(
+                                    class-toggles,
+                                    category-toggles,
+                                    [rune-toggles[0], !rune-toggles[1]]
+                                );
+                            }
+                        }
+
+                        Rectangle {
+                            background: transparent;
+                        }
+                    }
+
+                    // ── Filter field (upstream "Enter filter" box) ────
+                    // Named so the headless real-input test harness can
+                    // address the field by element id.
+                    affix-filter-field := DarkLineEdit {
+                        text <=> affix-filter-text;
+                        placeholder-text: @tr("Enter filter");
+                        // `;`-separated terms AND-combine in the projection
+                        // (`d4lc_gui::affix::catalog::CatalogFilter`); the
+                        // narrower row set restarts at the first page.
+                        edited(text) => {
+                            reset-catalog-window();
+                            affix-filter-text-changed(text);
+                        }
+                    }
+
+                    // ── Tab row (upstream TabControl headers) ─────────
+                    HorizontalLayout {
+                        spacing: 16px;
+
+                        CategorySwitchItem {
+                            label: @tr("Affixes");
+                            active: active-tab-index == 0;
+                            clicked => { active-tab-index = 0; reset-catalog-window(); }
+                        }
+
+                        CategorySwitchItem {
+                            label: @tr("Aspects");
+                            active: active-tab-index == 1;
+                            clicked => { active-tab-index = 1; reset-catalog-window(); }
+                        }
+
+                        CategorySwitchItem {
+                            label: @tr("Sigils");
+                            active: active-tab-index == 2;
+                            clicked => { active-tab-index = 2; reset-catalog-window(); }
+                        }
+
+                        CategorySwitchItem {
+                            label: @tr("Uniques");
+                            active: active-tab-index == 3;
+                            clicked => { active-tab-index = 3; reset-catalog-window(); }
+                        }
+
+                        CategorySwitchItem {
+                            label: @tr("Runes");
+                            active: active-tab-index == 4;
+                            clicked => { active-tab-index = 4; reset-catalog-window(); }
+                        }
+
+                        Rectangle {
+                            background: transparent;
+                        }
+                    }
+
+                    // Empty-grid text: distinguishes "no data" from
+                    // "nothing matched" (the tab's own catalog model).
+                    if catalog-count == 0: Text {
+                        text: catalog-empty-text;
+                        color: Metro.muted;
+                        font-size: 12px;
+                        wrap: word-wrap;
+                    }
+
+                    // ── Tab content: config cell + catalog wrap grid ───
+                    // Upstream's VirtualizingWrapPanel equivalent: one
+                    // `CatalogGrid` per tab places the cells row-major (the
+                    // category config cell first), so the column count
+                    // follows the viewport width and only the windowed rows
+                    // exist in the element tree. The grid sizes itself: its
+                    // wrapped height is the ScrollView's content height, so
+                    // the viewport starts at the first cell.
+                    //
+                    // Affix tab (0): 250x75 cards
+                    if active-tab-index == 0: affix-grid-scroll := ScrollView {
+                        scrolled => {
+                            if (affix-grid-scroll.content-height + affix-grid-scroll.content-y <= affix-grid-scroll.visible-height + 32px) {
+                                extend-catalog-window(affix-grid-scroll.content-y);
+                            }
+                        }
+
+                        CatalogGrid {
+                            width: affix-grid-scroll.visible-width - 26px;
+
+                            ConfigCell {
+                                label: @tr("Affix config");
+                                cell-width: 250px;
+                                cell-height: 75px;
+                                clicked => { open-affix-config(); }
+                            }
+
+                            for entry[idx] in affix-entries: CatalogCard {
+                                card-width: 250px;
+                                card-height: 75px;
+                                markers: [
+                                    {
+                                        icon: @image-url("../../../../assets/original/images/affix_tempered.png"),
+                                        label: entry.is-tempered ? @tr("Tempering available.") : "",
+                                    },
+                                ];
+                                show-classes: true;
+                                class-sorc: entry.class-sorc;
+                                class-druid: entry.class-druid;
+                                class-barb: entry.class-barb;
+                                class-rogue: entry.class-rogue;
+                                class-necro: entry.class-necro;
+                                class-spirit: entry.class-spirit;
+                                class-pala: entry.class-pala;
+                                class-warlk: entry.class-warlk;
+                                entry-description: entry.label;
+                                add-label: @tr("Set affix: {}", entry.label);
+
+                                add-clicked => { set-affix-entry("affix:" + entry.key-id + ":" + entry.item-type); }
+                            }
+                        }
+                    }
+
+                    // Aspect tab (1): 300x130 cards
+                    if active-tab-index == 1: aspect-grid-scroll := ScrollView {
+                        scrolled => {
+                            if (aspect-grid-scroll.content-height + aspect-grid-scroll.content-y <= aspect-grid-scroll.visible-height + 32px) {
+                                extend-catalog-window(aspect-grid-scroll.content-y);
+                            }
+                        }
+
+                        CatalogGrid {
+                            width: aspect-grid-scroll.visible-width - 26px;
+
+                            ConfigCell {
+                                label: @tr("Aspect config");
+                                cell-width: 300px;
+                                cell-height: 130px;
+                                clicked => { open-aspect-config(); }
+                            }
+
+                            for entry[idx] in aspect-entries: CatalogCard {
+                                card-width: 300px;
+                                card-height: 130px;
+                                markers: [
+                                    {
+                                        icon: @image-url("../../../../assets/original/images/aspect_codex.png"),
+                                        label: entry.is-codex ? @tr("Codex ({})", entry.dungeon) : "",
+                                    },
+                                    {
+                                        icon: @image-url("../../../../assets/original/images/aspect_seasonal.png"),
+                                        label: entry.is-seasonal ? @tr("Seasonal") : "",
+                                    },
+                                    {
+                                        icon: @image-url("../../../../assets/original/images/aspect_drop.png"),
+                                        label: entry.is-drop-only ? @tr("Drop only") : "",
+                                    },
+                                ];
+                                show-classes: true;
+                                class-sorc: entry.class-sorc;
+                                class-druid: entry.class-druid;
+                                class-barb: entry.class-barb;
+                                class-rogue: entry.class-rogue;
+                                class-necro: entry.class-necro;
+                                class-spirit: entry.class-spirit;
+                                class-pala: entry.class-pala;
+                                class-warlk: entry.class-warlk;
+                                show-name: true;
+                                entry-name: entry.label;
+                                entry-description: entry.description;
+                                add-label: @tr("Add entry: {}", entry.label);
+
+                                add-clicked => { set-aspect-entry("aspect:" + entry.key-id + ":"); }
+                            }
+                        }
+                    }
+
+                    // Sigil tab (2): 250x130 cards
+                    if active-tab-index == 2: sigil-grid-scroll := ScrollView {
+                        scrolled => {
+                            if (sigil-grid-scroll.content-height + sigil-grid-scroll.content-y <= sigil-grid-scroll.visible-height + 32px) {
+                                extend-catalog-window(sigil-grid-scroll.content-y);
+                            }
+                        }
+
+                        CatalogGrid {
+                            width: sigil-grid-scroll.visible-width - 26px;
+
+                            ConfigCell {
+                                label: @tr("Sigil config");
+                                cell-width: 250px;
+                                cell-height: 130px;
+                                clicked => { open-sigil-config(); }
+                            }
+
+                            for entry[idx] in sigil-entries: CatalogCard {
+                                card-width: 250px;
+                                card-height: 130px;
+                                markers: [
+                                    {
+                                        icon: @image-url("../../../../assets/original/images/seasonal_icon.png"),
+                                        label: entry.is-seasonal ? @tr("Seasonal") : "",
+                                    },
+                                ];
+                                tier-label: entry.tier-label;
+                                show-name: true;
+                                entry-name: entry.label;
+                                entry-description: entry.description;
+                                add-label: @tr("Add entry: {}", entry.label);
+
+                                add-clicked => { set-sigil-entry("sigil:" + entry.key-id + ":"); }
+                                cycle-tier-clicked => { cycle-sigil-tier(entry.id); }
+                            }
+                        }
+                    }
+
+                    // Unique tab (3): 300x130 cards
+                    if active-tab-index == 3: unique-grid-scroll := ScrollView {
+                        scrolled => {
+                            if (unique-grid-scroll.content-height + unique-grid-scroll.content-y <= unique-grid-scroll.visible-height + 32px) {
+                                extend-catalog-window(unique-grid-scroll.content-y);
+                            }
+                        }
+
+                        CatalogGrid {
+                            width: unique-grid-scroll.visible-width - 26px;
+
+                            ConfigCell {
+                                label: @tr("Unique config");
+                                cell-width: 300px;
+                                cell-height: 130px;
+                                clicked => { open-unique-config(); }
+                            }
+
+                            for entry[idx] in unique-entries: CatalogCard {
+                                card-width: 300px;
+                                card-height: 130px;
+                                show-classes: true;
+                                class-sorc: entry.class-sorc;
+                                class-druid: entry.class-druid;
+                                class-barb: entry.class-barb;
+                                class-rogue: entry.class-rogue;
+                                class-necro: entry.class-necro;
+                                class-spirit: entry.class-spirit;
+                                class-pala: entry.class-pala;
+                                class-warlk: entry.class-warlk;
+                                show-name: true;
+                                entry-name: entry.label;
+                                entry-description: entry.description;
+                                add-label: @tr("Add entry: {}", entry.label);
+
+                                add-clicked => { set-unique-entry("unique:" + entry.key-id + ":"); }
+                            }
+                        }
+                    }
+
+                    // Rune tab (4): 250x90 cards
+                    if active-tab-index == 4: rune-grid-scroll := ScrollView {
+                        scrolled => {
+                            if (rune-grid-scroll.content-height + rune-grid-scroll.content-y <= rune-grid-scroll.visible-height + 32px) {
+                                extend-catalog-window(rune-grid-scroll.content-y);
+                            }
+                        }
+
+                        CatalogGrid {
+                            width: rune-grid-scroll.visible-width - 26px;
+
+                            ConfigCell {
+                                label: @tr("Rune config");
+                                cell-width: 250px;
+                                cell-height: 90px;
+                                clicked => { open-rune-config(); }
+                            }
+
+                            for entry[idx] in rune-entries: CatalogCard {
+                                card-width: 250px;
+                                card-height: 90px;
+                                markers: [
+                                    {
+                                        icon: @image-url("../../../../assets/original/images/rune_condition.png"),
+                                        label: entry.is-condition ? @tr("Rune of Ritual") : "",
+                                    },
+                                    {
+                                        icon: @image-url("../../../../assets/original/images/rune_effect.png"),
+                                        label: entry.is-effect ? @tr("Rune of Invocation") : "",
+                                    },
+                                ];
+                                name-in-header: true;
+                                entry-name: entry.label;
+                                entry-description: entry.description;
+                                add-label: @tr("Add entry: {}", entry.label);
+
+                                add-clicked => { set-rune-entry("rune:" + entry.key-id + ":"); }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

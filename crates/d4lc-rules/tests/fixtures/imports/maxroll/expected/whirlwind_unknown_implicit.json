@@ -1,0 +1,125 @@
+{
+  "affix_preset": {
+    "affixes": [],
+    "name": "Starter"
+  },
+  "affix_preset_name": "Starter",
+  "aspects": [],
+  "class_name": null,
+  "items": [],
+  "non_affix_preset": {
+    "name": "Starter",
+    "powers": [
+      {
+        "color": "#008000",
+        "id": "Helm_Unique_Generic_001;S14_Helm_Unique_Generic_001",
+        "item_type": null,
+        "kind": "Unique"
+      }
+    ],
+    "runes": [
+      {
+        "color": "Green",
+        "id": "Item_Rune_Condition_HitHealthierEnemy",
+        "item_type": null,
+        "kind": "Rune"
+      }
+    ],
+    "sigils": []
+  },
+  "paragon_boards": [],
+  "provider": "Maxroll",
+  "runes": [
+    {
+      "color": "Green",
+      "id": "Item_Rune_Condition_HitHealthierEnemy",
+      "item_type": null,
+      "kind": "Rune"
+    }
+  ],
+  "source_build_id": "sorc-arc-lash",
+  "source_build_name": "Arc Lash",
+  "source_trace": [
+    "BuildsManagerMaxroll.LoadAvailableMaxrollBuilds",
+    "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+  ],
+  "source_url_or_file": "tests/fixtures/imports/maxroll/source/whirlwind_unknown_implicit.json",
+  "uniques": [
+    {
+      "color": "#008000",
+      "id": "Helm_Unique_Generic_001;S14_Helm_Unique_Generic_001",
+      "item_type": null,
+      "kind": "Unique"
+    }
+  ],
+  "unmapped_entries": [
+    {
+      "message": "Imported Maxroll build contains unknown implicit affix sno: 9999991.",
+      "source_field": "Items[100].Implicits[0]",
+      "source_value": "9999991",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    },
+    {
+      "message": "Imported Maxroll build contains unknown affix sno: 9999992.",
+      "source_field": "Items[101].Explicits[0]",
+      "source_value": "9999992",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    },
+    {
+      "message": "Imported Maxroll build contains unknown tempered affix sno: 9999993.",
+      "source_field": "Items[101].Tempered[0]",
+      "source_value": "9999993",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    },
+    {
+      "message": "Imported Maxroll build contains unknown itemtype id: 99.",
+      "source_field": "Items[99]",
+      "source_value": "999",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    },
+    {
+      "message": "Imported Maxroll build contains unknown aspect sno: 9999994.",
+      "source_field": "Aspect[0]",
+      "source_value": "9999994",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    }
+  ],
+  "variant_name": "Starter",
+  "warnings": [
+    {
+      "message": "Imported Maxroll build contains unknown implicit affix sno: 9999991.",
+      "provider": "Maxroll",
+      "source_field": "Items[100].Implicits[0]",
+      "source_value": "9999991",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    },
+    {
+      "message": "Imported Maxroll build contains unknown affix sno: 9999992.",
+      "provider": "Maxroll",
+      "source_field": "Items[101].Explicits[0]",
+      "source_value": "9999992",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    },
+    {
+      "message": "Imported Maxroll build contains unknown tempered affix sno: 9999993.",
+      "provider": "Maxroll",
+      "source_field": "Items[101].Tempered[0]",
+      "source_value": "9999993",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    },
+    {
+      "message": "Imported Maxroll build contains unknown itemtype id: 99.",
+      "provider": "Maxroll",
+      "source_field": "Items[99]",
+      "source_value": "999",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    },
+    {
+      "message": "Imported Maxroll build contains unknown aspect sno: 9999994.",
+      "provider": "Maxroll",
+      "source_field": "Aspect[0]",
+      "source_value": "9999994",
+      "upstream_method": "BuildsManagerMaxroll.CreatePresetFromMaxrollBuild"
+    }
+  ]
+}

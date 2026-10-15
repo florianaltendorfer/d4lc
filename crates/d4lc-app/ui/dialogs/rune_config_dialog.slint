@@ -1,0 +1,242 @@
+// Rune config dialog — upstream `RuneConfigView.xaml` +
+// `RuneConfigViewModel.cs`.
+//
+// Control set (upstream XAML lines in brackets):
+//
+// - "Rune detection" toggle [RuneConfigView.xaml:30-32] →
+//   `IsRuneDetectionEnabled` (RuneConfigViewModel.cs:63-73). Consumer:
+//   the OCR segment plan, no affix OCR for rune tooltips
+//   (`ScreenProcessHandler.cs:419`).
+// - "Multi-build mode" toggle [RuneConfigView.xaml:39-45] →
+//   `IsMultiBuildModeEnabled` (RuneConfigViewModel.cs:51-61). Consumer: the
+//   multi-build rule projection and the build-import rotation mirror.
+// - "Multi-build config" / "Manage colors" buttons [XAML:44-47, 52-59] →
+//   `SetMultiBuildCommand` / `SetColorsCommand`: they open the existing
+//   `multi_build_config` and `colors_config` dialogs through the host's
+//   `open-multi-build-config` / `dialog-open-colors` callbacks.
+// - Close [XAML:64-65, upstream `RuneConfigDoneCommand`]: the upstream
+//   toggle saves from its setter, so Done only closes; this dialog keeps
+//   the port's existing "Close" label (the harness's config-dialog cycle
+//   asserts it).
+//
+// ## Host contract
+//
+// `settings-rule-multi-build-enabled` and
+// `settings-rule-rune-detection-enabled` are two-way bound to host root
+// properties seeded from `state.shell.settings` when the dialog opens. The
+// toggles report through `rule-toggle-changed`, which the host forwards to
+// the root callback wired to
+// `actions::affix_dialogs::handle_rule_setting_toggled`.
+//
+// Harness: the toggles are UI toggles, so `TOGGLE_SWEEP_TABLE` in
+// `testing_harness.rs` needs rows for "Rune detection" and "Multi-build mode"
+// with source `ui/dialogs/rune_config_dialog.slint` —
+// the toggle-table source scan asserts the table matches the .slint sources
+// exactly.
+
+export component RuneConfigDialog {
+    in property <string> dialog-title: @tr("Rune Config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    in-out property <bool> settings-rule-rune-detection-enabled: true;
+    in-out property <bool> settings-rule-multi-build-enabled: false;
+
+    callback confirm();
+    callback cancel();
+    callback rule-toggle-changed(string, bool);
+    callback open-multi-build-config();
+    callback open-colors-config();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Rune detection ───────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Rune Detection");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-rule-rune-detection-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Rune detection");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-rule-rune-detection-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-rule-rune-detection-enabled = !settings-rule-rune-detection-enabled;
+                        rule-toggle-changed("rune_detection_enabled", settings-rule-rune-detection-enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Multi-build mode ───────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Multi Build Mode");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-rule-multi-build-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Multi-build mode");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-rule-multi-build-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-rule-multi-build-enabled = !settings-rule-multi-build-enabled;
+                        rule-toggle-changed("multi_build_mode_enabled", settings-rule-multi-build-enabled);
+                    }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 130px;
+                preferred-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Multi-build config");
+                Text {
+                    text: @tr("Multi-build config");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { open-multi-build-config(); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 110px;
+                preferred-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Manage colors");
+                Text {
+                    text: @tr("Manage Colors");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { open-colors-config(); }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Close / Cancel ─────────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Close");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

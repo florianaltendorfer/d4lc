@@ -1,0 +1,77 @@
+{
+  "data": {
+    "game": {
+      "documents": {
+        "userGeneratedDocumentById": {
+          "data": {
+            "id": "moba-build-multi-token",
+            "data": {
+              "name": "Multi Token Source IDs",
+              "buildVariants": {
+                "values": [
+                  {
+                    "id": "variant-starter",
+                    "genericBuilder": {
+                      "slots": [
+                        {
+                          "gameSlotSlug": "gloves",
+                          "gameEntity": {
+                            "slug": "generic-gloves",
+                            "title": "Legendary Gloves",
+                            "type": "legendaryItems",
+                            "modifiers": {
+                              "gearStats": [
+                                {
+                                  "id": "greater-attack-speed",
+                                  "isGreater": true
+                                },
+                                {
+                                  "id": "lucky-hit-vulnerable-damage",
+                                  "isGreater": false
+                                }
+                              ],
+                              "implicitStats": [
+                                {
+                                  "id": "movement-speed"
+                                }
+                              ],
+                              "socketStats": [],
+                              "temperingStats": [
+                                {
+                                  "id": "imaginary-multi-token-affix"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    },
+                    "paragon": {
+                      "nodes": [],
+                      "boards": []
+                    }
+                  }
+                ]
+              }
+            },
+            "updatedAt": "2026-06-30T15:00:00Z",
+            "content": [
+              {
+                "__typename": "NgfDocumentCmWidgetContentVariantsV1",
+                "data": {
+                  "title": "Build Variants",
+                  "childrenVariants": [
+                    {
+                      "id": "variant-starter",
+                      "title": "Starter"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

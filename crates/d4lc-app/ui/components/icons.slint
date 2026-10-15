@@ -1,0 +1,625 @@
+// Minimal geometric icon set for the d4lc desktop shell.
+// Upstream WPF uses MahApps PackIconMaterial glyphs; we approximate the exact
+// kinds used by upstream MainWindow.xaml (Github, CoffeeOutline,
+// HelpCircleOutline, Tooltip, ScaleBalance, TooltipTextOutline, Bug, Cog)
+// with Slint Path / Rectangle primitives so no image dependency is added.
+//
+// ── One size contract for every icon ────────────────────────────────────
+// Every glyph below is authored on the same 24x24 design grid and derives
+// its geometry from the size the caller requests (`IconMetrics`, directly
+// below). An icon requested at 15, 18 or 24px therefore draws the same
+// glyph, inset and stroked proportionally — there is no second, hidden
+// "designed for" size that a request can miss:
+//
+//   drawing area    the icon element's own width/height (preferred 24px)
+//   visible contour IconMetrics.contour(size) — the 20/24 glyph box
+//   inner padding   IconMetrics.pad(size) — the 2/24 margin on each side
+//   stroke weight   IconMetrics.stroke(size, n) — n/24, never below 1px
+//   grid distance   IconMetrics.unit(size, n) — n units of the 24 grid
+//
+// Callers request a size (`width`/`height`); they never correct the glyph
+// with per-call offsets.
+
+// The single size contract every icon in this file consumes. `size` is the
+// requested icon size (the drawing area), `units` a distance on the 24x24
+// design grid the glyph is authored on. At 24px every function reproduces
+// the grid value exactly, so the 24px rendering is unchanged by the
+// proportional form.
+export global IconMetrics {
+    public pure function unit(size: length, units: float) -> length {
+        size * (units / 24.0)
+    }
+
+    // The inner margin between the drawing area and the visible contour:
+    // two grid units on each side, so the optical margin stays constant at
+    // any requested size.
+    public pure function pad(size: length) -> length {
+        size * (2.0 / 24.0)
+    }
+
+    // The visible contour of a glyph: the drawing area minus both inner
+    // margins.
+    public pure function contour(size: length) -> length {
+        size - 2 * IconMetrics.pad(size)
+    }
+
+    // Stroke weight in grid units (2 units for every contour in this file,
+    // 2.5 for the two thin diagonal/rounded strokes). Below ~12px a
+    // proportional stroke would vanish, so it is clamped to one device
+    // pixel: a small icon keeps a visible contour instead of a fading one.
+    public pure function stroke(size: length, units: float) -> length {
+        max(IconMetrics.unit(size, units), 1px)
+    }
+}
+
+// ── Header window-command icons (white on the red app header) ──────────
+
+// Upstream Kind=Github (MainWindow.xaml:36-39).
+export component GithubIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    // Face plate (grid x 4..20 centered, y 4..20, radius 8).
+    Rectangle {
+        y: IconMetrics.unit(parent.height, 4.0);
+        width: IconMetrics.unit(parent.width, 16.0);
+        height: IconMetrics.unit(parent.height, 16.0);
+        x: (parent.width - self.width) / 2;
+        border-width: IconMetrics.stroke(parent.width, 2.0);
+        border-color: icon-color;
+        border-radius: IconMetrics.unit(parent.width, 8.0);
+    }
+
+    // Ears
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 4 8 L 7 3 L 9.5 7 Z M 20 8 L 17 3 L 14.5 7 Z";
+        fill: icon-color;
+    }
+}
+
+// Upstream Kind=CoffeeOutline (MainWindow.xaml:41-44).
+export component CoffeeOutlineIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    // Cup body (outline)
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 4 6 L 16 6 L 16 14 C 16 16.2 14.2 18 12 18 L 8 18 C 5.8 18 4 16.2 4 14 Z";
+        stroke: icon-color;
+        stroke-width: IconMetrics.stroke(parent.width, 2.0);
+        fill: transparent;
+    }
+
+    // Handle
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 17.0);
+        y: IconMetrics.unit(parent.height, 8.0);
+        width: IconMetrics.unit(parent.width, 4.0);
+        height: IconMetrics.unit(parent.height, 6.0);
+        border-width: IconMetrics.stroke(parent.width, 2.0);
+        border-color: icon-color;
+        border-radius: IconMetrics.unit(parent.width, 2.0);
+    }
+}
+
+// Upstream Kind=HelpCircleOutline (MainWindow.xaml:46-49).
+export component HelpCircleOutlineIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Rectangle {
+        width: IconMetrics.contour(parent.width);
+        height: IconMetrics.contour(parent.height);
+        x: (parent.width - self.width) / 2;
+        y: (parent.height - self.height) / 2;
+        border-width: IconMetrics.stroke(parent.width, 2.0);
+        border-color: icon-color;
+        border-radius: IconMetrics.contour(parent.width) / 2;
+    }
+
+    Text {
+        text: "?";
+        color: icon-color;
+        font-size: IconMetrics.unit(parent.width, 13.0);
+        font-weight: 700;
+        horizontal-alignment: center;
+        vertical-alignment: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+// ── Nav rail icons (upstream hamburger menu kinds) ──────────────────────
+
+// Upstream Kind=Tooltip — the Affixes nav entry (MainWindow.xaml:116).
+export component TooltipIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 3 4 L 21 4 L 21 17 L 11 17 L 6 21.5 L 6 17 L 3 17 Z";
+        fill: icon-color;
+    }
+}
+
+// Upstream Kind=ScaleBalance — the Trading nav entry (MainWindow.xaml:121).
+export component ScaleBalanceIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    // Column
+    Rectangle {
+        x: (parent.width - IconMetrics.unit(parent.width, 2.0)) / 2;
+        y: IconMetrics.unit(parent.height, 4.0);
+        width: IconMetrics.unit(parent.width, 2.0);
+        height: IconMetrics.unit(parent.height, 14.0);
+        background: icon-color;
+    }
+
+    // Crossbar
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 3.0);
+        y: IconMetrics.unit(parent.height, 6.0);
+        width: IconMetrics.unit(parent.width, 18.0);
+        height: IconMetrics.unit(parent.height, 2.0);
+        background: icon-color;
+    }
+
+    // Base
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 6.0);
+        y: IconMetrics.unit(parent.height, 18.0);
+        width: IconMetrics.unit(parent.width, 12.0);
+        height: IconMetrics.unit(parent.height, 2.0);
+        background: icon-color;
+    }
+
+    // Pans
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 3.5 8 L 9.5 8 L 6.5 14 Z M 14.5 8 L 20.5 8 L 17.5 14 Z";
+        fill: icon-color;
+    }
+}
+
+// Upstream Kind=TooltipTextOutline — the Logging nav entry
+// (MainWindow.xaml:126).
+export component TooltipTextOutlineIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 3 4 L 21 4 L 21 17 L 11 17 L 6 21.5 L 6 17 L 3 17 Z";
+        stroke: icon-color;
+        stroke-width: IconMetrics.stroke(parent.width, 2.0);
+        fill: transparent;
+    }
+
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 6.0);
+        y: IconMetrics.unit(parent.height, 8.0);
+        width: IconMetrics.unit(parent.width, 12.0);
+        height: IconMetrics.unit(parent.height, 2.0);
+        background: icon-color;
+    }
+
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 6.0);
+        y: IconMetrics.unit(parent.height, 12.0);
+        width: IconMetrics.unit(parent.width, 8.0);
+        height: IconMetrics.unit(parent.height, 2.0);
+        background: icon-color;
+    }
+}
+
+// Upstream Kind=Bug — the Debug nav entry (MainWindow.xaml:131).
+export component BugIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    // Body
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 8.0);
+        y: IconMetrics.unit(parent.height, 8.0);
+        width: IconMetrics.unit(parent.width, 8.0);
+        height: IconMetrics.unit(parent.height, 11.0);
+        border-radius: IconMetrics.unit(parent.width, 4.0);
+        background: icon-color;
+    }
+
+    // Head
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 9.5);
+        y: IconMetrics.unit(parent.height, 4.0);
+        width: IconMetrics.unit(parent.width, 5.0);
+        height: IconMetrics.unit(parent.height, 5.0);
+        border-radius: IconMetrics.unit(parent.width, 2.5);
+        background: icon-color;
+    }
+
+    // Legs (three per side) + body seam
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 4 9 L 8 11 M 3.5 13 L 8 13 M 4 17 L 8 15 M 20 9 L 16 11 M 20.5 13 L 16 13 M 20 17 L 16 15 M 12 8 L 12 19";
+        stroke: icon-color;
+        stroke-width: IconMetrics.stroke(parent.width, 2.0);
+        fill: transparent;
+    }
+}
+
+// Upstream Kind=Cog — the Settings nav entry (MainWindow.xaml:143).
+// Solid 8-tooth polygon (precomputed; avoids element rotation, which
+// Slint Rectangles do not expose).
+export component CogIcon {
+    in property <color> icon-color: #FFFFFF;
+    // Center hole must read as the surface the gear sits on
+    // (red active block or dark rail / panel).
+    in property <color> hole-color: #1B1B1B;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 23.40 12.00 L 23.09 14.66 L 20.18 14.66 L 18.08 18.08 L 20.06 20.06 L 17.96 21.72 L 15.90 19.66 L 12.00 20.60 L 12.00 23.40 L 9.34 23.09 L 9.34 20.18 L 5.92 18.08 L 3.94 20.06 L 2.28 17.96 L 4.34 15.90 L 3.40 12.00 L 0.60 12.00 L 0.91 9.34 L 3.82 9.34 L 5.92 5.92 L 3.94 3.94 L 6.04 2.28 L 8.10 4.34 L 12.00 3.40 L 12.00 0.60 L 14.66 0.91 L 14.66 3.82 L 18.08 5.92 L 20.06 3.94 L 21.72 6.04 L 19.66 8.10 L 20.60 12.00 Z";
+        fill: icon-color;
+    }
+
+    Rectangle {
+        x: (parent.width - IconMetrics.unit(parent.width, 6.0)) / 2;
+        y: (parent.height - IconMetrics.unit(parent.height, 6.0)) / 2;
+        width: IconMetrics.unit(parent.width, 6.0);
+        height: IconMetrics.unit(parent.height, 6.0);
+        border-radius: IconMetrics.unit(parent.width, 3.0);
+        background: hole-color;
+    }
+}
+
+// ── Panel / action icons ────────────────────────────────────────────────
+
+// Overlay power symbol (affixes control row). Requested at 18px there;
+// the ring, the bar and the stroke all follow that request.
+export component PowerIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Rectangle {
+        width: IconMetrics.unit(parent.width, 16.0);
+        height: IconMetrics.unit(parent.height, 16.0);
+        x: (parent.width - self.width) / 2;
+        y: IconMetrics.unit(parent.height, 6.0);
+        border-width: IconMetrics.stroke(parent.width, 2.0);
+        border-color: icon-color;
+        border-radius: IconMetrics.unit(parent.width, 8.0);
+    }
+
+    Rectangle {
+        x: (parent.width - IconMetrics.unit(parent.width, 2.0)) / 2;
+        y: IconMetrics.unit(parent.height, 2.0);
+        width: IconMetrics.unit(parent.width, 2.0);
+        height: IconMetrics.unit(parent.height, 10.0);
+        background: icon-color;
+    }
+}
+
+// Camera (debug screenshot).
+export component CameraIcon {
+    in property <color> icon-color: #FFFFFF;
+    in property <color> hole-color: #1F1F1F;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    // Top notch
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 8.0);
+        y: IconMetrics.unit(parent.height, 4.0);
+        width: IconMetrics.unit(parent.width, 8.0);
+        height: IconMetrics.unit(parent.height, 4.0);
+        background: icon-color;
+    }
+
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 3.0);
+        y: IconMetrics.unit(parent.height, 7.0);
+        width: IconMetrics.unit(parent.width, 18.0);
+        height: IconMetrics.unit(parent.height, 13.0);
+        border-radius: IconMetrics.unit(parent.width, 2.0);
+        background: icon-color;
+    }
+
+    Rectangle {
+        x: (parent.width - IconMetrics.unit(parent.width, 8.0)) / 2;
+        y: IconMetrics.unit(parent.height, 10.0);
+        width: IconMetrics.unit(parent.width, 8.0);
+        height: IconMetrics.unit(parent.height, 8.0);
+        border-radius: IconMetrics.unit(parent.width, 4.0);
+        background: hole-color;
+    }
+}
+
+// Refresh (reload preset images).
+export component RefreshIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Rectangle {
+        width: IconMetrics.unit(parent.width, 14.0);
+        height: IconMetrics.unit(parent.height, 14.0);
+        x: (parent.width - self.width) / 2;
+        y: (parent.height - self.height) / 2;
+        border-width: IconMetrics.stroke(parent.width, 2.5);
+        border-color: icon-color;
+        border-radius: IconMetrics.unit(parent.width, 7.0);
+    }
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 14 1 L 22 6 L 13 8 Z";
+        fill: icon-color;
+    }
+}
+
+// Export (save debug images): arrow into tray.
+export component ExportIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 11 2 L 13 2 L 13 10 L 17 10 L 12 15 L 7 10 L 11 10 Z";
+        fill: icon-color;
+    }
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 4 14 L 8 14 L 8 17 L 16 17 L 16 14 L 20 14 L 20 20 L 4 20 Z";
+        fill: icon-color;
+    }
+}
+
+// Trash (remove preset). One component: lid, handle and body all derive
+// from the requested size — no caller-side offset correction.
+export component TrashIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    // Lid — the full glyph width (grid x 4..20, y 6..8).
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 4.0);
+        y: IconMetrics.unit(parent.height, 6.0);
+        width: IconMetrics.unit(parent.width, 16.0);
+        height: IconMetrics.unit(parent.height, 2.0);
+        background: icon-color;
+    }
+
+    // Handle (grid x 9..15, y 3..5).
+    Rectangle {
+        x: IconMetrics.unit(parent.width, 9.0);
+        y: IconMetrics.unit(parent.height, 3.0);
+        width: IconMetrics.unit(parent.width, 6.0);
+        height: IconMetrics.unit(parent.height, 2.0);
+        background: icon-color;
+    }
+
+    // Body (grid y 9..21, tapering from x 6..18 to x 7..17).
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 6 9 L 18 9 L 17 21 L 7 21 Z";
+        fill: icon-color;
+    }
+}
+
+// Pencil (rename preset).
+export component PencilIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 4 20 L 5.5 15.5 L 15 6 L 18 9 L 8.5 18.5 Z M 16.5 4.5 L 18 3 L 21 6 L 19.5 7.5 Z";
+        fill: icon-color;
+    }
+}
+
+// Import/export arrow out of a box (provider import go button). One
+// component: box and arrow both scale with the requested size.
+export component ExitArrowIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 3 4 L 13 4 L 13 7 L 6 7 L 6 17 L 13 17 L 13 20 L 3 20 Z";
+        fill: icon-color;
+    }
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 13 8 L 21 12 L 13 16 Z";
+        fill: icon-color;
+    }
+}
+
+// Upstream Kind=InformationOutline (SettingsView info buttons).
+export component InfoOutlineIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Rectangle {
+        width: IconMetrics.contour(parent.width) * 0.9;
+        height: IconMetrics.contour(parent.height) * 0.9;
+        x: (parent.width - self.width) / 2;
+        y: (parent.height - self.height) / 2;
+        border-width: IconMetrics.stroke(parent.width, 2.0);
+        border-color: icon-color;
+        border-radius: self.width / 2;
+    }
+
+    Rectangle {
+        x: (parent.width - IconMetrics.unit(parent.width, 2.0)) / 2;
+        y: IconMetrics.unit(parent.height, 10.0);
+        width: IconMetrics.unit(parent.width, 2.0);
+        height: IconMetrics.unit(parent.height, 7.0);
+        background: icon-color;
+    }
+
+    Rectangle {
+        x: (parent.width - IconMetrics.unit(parent.width, 2.0)) / 2;
+        y: IconMetrics.unit(parent.height, 7.0);
+        width: IconMetrics.unit(parent.width, 2.0);
+        height: IconMetrics.unit(parent.height, 2.0);
+        background: icon-color;
+    }
+}
+
+// Plus (create preset / add affix card).
+export component PlusIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Rectangle {
+        x: (parent.width - IconMetrics.unit(parent.width, 14.0)) / 2;
+        y: (parent.height - IconMetrics.unit(parent.height, 2.5)) / 2;
+        width: IconMetrics.unit(parent.width, 14.0);
+        height: IconMetrics.unit(parent.height, 2.5);
+        background: icon-color;
+    }
+
+    Rectangle {
+        x: (parent.width - IconMetrics.unit(parent.width, 2.5)) / 2;
+        y: (parent.height - IconMetrics.unit(parent.height, 14.0)) / 2;
+        width: IconMetrics.unit(parent.width, 2.5);
+        height: IconMetrics.unit(parent.height, 14.0);
+        background: icon-color;
+    }
+}
+
+// Close / remove (X).
+export component CloseIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 5.5 5.5 L 18.5 18.5 M 18.5 5.5 L 5.5 18.5";
+        stroke: icon-color;
+        stroke-width: IconMetrics.stroke(parent.width, 2.5);
+        fill: transparent;
+    }
+}
+
+// Pager chevron pointing left.
+export component ChevronLeftIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 15 3 L 6 12 L 15 21 L 15 17 L 10 12 L 15 7 Z";
+        fill: icon-color;
+    }
+}
+
+// Pager chevron pointing right.
+export component ChevronRightIcon {
+    in property <color> icon-color: #FFFFFF;
+
+    preferred-width: 24px;
+    preferred-height: 24px;
+
+    Path {
+        width: 100%;
+        height: 100%;
+        viewbox-width: 24;
+        viewbox-height: 24;
+        commands: "M 9 3 L 18 12 L 9 21 L 9 17 L 14 12 L 9 7 Z";
+        fill: icon-color;
+    }
+}

@@ -1,0 +1,3 @@
+[submodule "upstream/Diablo4Companion"]
+	path = upstream/Diablo4Companion
+	url = https://github.com/josdemmers/Diablo4Companion.git

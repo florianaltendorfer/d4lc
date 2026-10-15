@@ -1,0 +1,33 @@
+# cargo-about configuration for the release bundles' Rust dependency
+# notices. The accepted list mirrors the license family deny.toml allows,
+# restricted to the one Slint license leg this project elects: the
+# royalty-free desktop license (AboutSlint attribution is shown in the GUI
+# settings screen). cargo-about cannot attach the Slint crates' LICENSES
+# file to the LicenseRef id, so those crates appear in the generated
+# notices without embedded text; the full license text ships separately as
+# licenses/slint-LICENSE in every bundle. Verified locally: `cargo about
+# generate --fail` exits 0 with this config on the shipped feature graph.
+accepted = [
+  "MIT",
+  "Apache-2.0",
+  "Apache-2.0 WITH LLVM-exception",
+  "BSD-2-Clause",
+  "BSD-3-Clause",
+  "ISC",
+  "Unicode-3.0",
+  "Zlib",
+  "BSL-1.0",
+  "MPL-2.0",
+  "CDLA-Permissive-2.0",
+  "NCSA",
+  "Unlicense",
+  "LicenseRef-Slint-Royalty-free-2.0",
+]
+ignore-build-dependencies = true
+ignore-dev-dependencies = true
+targets = ["x86_64-unknown-linux-gnu"]
+
+# The Slint crates elect the royalty-free desktop license. cargo-about
+# cannot attach their LICENSES file to the LicenseRef id, so the full text
+# ships separately as licenses/slint-LICENSE in every bundle; the generated
+# notices list the crates under the license id.

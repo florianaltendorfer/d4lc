@@ -1,0 +1,86 @@
+{
+  "Date": "2026-05-31",
+  "Id": "barb-whirlwind-endgame",
+  "Name": "Whirlwind Endgame",
+  "Variants": [
+    {
+      "Name": "Endgame",
+      "Helm": [
+        {
+          "AffixText": "Movement Speed",
+          "IsImplicit": true
+        }
+      ],
+      "Boots": [
+        {
+          "AffixText": "Movement Speed",
+          "IsTempered": true
+        }
+      ],
+      "Ring": [
+        {
+          "AffixText": "Attack Speed"
+        }
+      ],
+      "Aspect": [
+        "Bold Chieftain's Aspect"
+      ],
+      "Runes": [
+        "Yul"
+      ],
+      "Uniques": [
+        "Harlequin Crest"
+      ],
+      "ParagonBoards": [
+        {
+          "Name": "Starting Board",
+          "Glyph": "Marshal",
+          "Rotation": "90°",
+          "Nodes": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false
+          ]
+        },
+        {
+          "Name": "Blood Rage",
+          "Glyph": "Territorial",
+          "Rotation": "180°",
+          "Nodes": [
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false
+          ]
+        }
+      ]
+    },
+    {
+      "Name": "Speedfarm",
+      "Amulet": [
+        {
+          "AffixText": "Attack Speed"
+        }
+      ],
+      "Aspect": [
+        "Bold Chieftain's Aspect"
+      ],
+      "Runes": [
+        "Yul"
+      ],
+      "Uniques": [],
+      "ParagonBoards": []
+    }
+  ]
+}

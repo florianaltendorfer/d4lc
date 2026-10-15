@@ -1,0 +1,512 @@
+[
+  {
+    "IdSno": "2530516",
+    "IdName": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Subpower_Brimstone",
+    "Description": "Item_Rune_Effect_Subpower_Brimstone",
+    "DescriptionClean": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneDescription": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Subpower_Brimstone"
+  },
+  {
+    "IdSno": "2531290",
+    "IdName": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Warlock_ChainPrison",
+    "Description": "Item_Rune_Effect_Warlock_ChainPrison",
+    "DescriptionClean": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneDescription": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Warlock_ChainPrison"
+  },
+  {
+    "IdSno": "2080567",
+    "IdName": "Item_Rune_Condition_HitHealthierEnemy",
+    "RuneType": "condition",
+    "Name": "アフ",
+    "Description": "幸運の一撃: 非健全状態の敵に対して最大100%の確率。",
+    "DescriptionClean": "幸運の一撃: 非健全状態の敵に対して最大100の確率。",
+    "RuneDescription": "{c_RuneCondition}{c_label}幸運の一撃:{/c} 非{c_important}健全{/c}状態の敵に対して最大{c_number}[100|%|]{/c}の確率。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2060651",
+    "IdName": "Item_Rune_Effect_FlatCDR",
+    "RuneType": "effect",
+    "Name": "イオム",
+    "Description": "発動中のクールダウンを#秒短縮する。",
+    "DescriptionClean": "発動中のクールダウンを秒短縮する。",
+    "RuneDescription": "{c_RuneEffect}発動中のクールダウンを{c_number}{s1}{/c}秒短縮する。",
+    "RuneOverflowBehavior": "クールダウンをさらに短縮"
+  },
+  {
+    "IdSno": "2165976",
+    "IdName": "Item_Rune_Condition_Bomb",
+    "RuneType": "condition",
+    "Name": "イグニ",
+    "Description": "0.3秒ごとに供物を貯める。非基本スキルを使用すると貯めていた供物を獲得する（最大500）。",
+    "DescriptionClean": "0.3秒ごとに供物を貯める。非基本スキルを使用すると貯めていた供物を獲得する（最大500）。",
+    "RuneDescription": "{c_RuneCondition}{c_number}0.3{/c}秒ごとに供物を貯める。非{c_important}基本{/c}スキルを使用すると貯めていた供物を獲得する{c_gray}（最大500）{/c}。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2020680",
+    "IdName": "Item_Rune_Condition_OnPetKillOrDie",
+    "RuneType": "condition",
+    "Name": "ウル",
+    "Description": "ミニオンまたは使い魔が敵を倒すか死亡する。",
+    "DescriptionClean": "ミニオンまたは使い魔が敵を倒すか死亡する。",
+    "RuneDescription": "{c_RuneCondition}{c_important}ミニオン{/c}または{c_important}使い魔{/c}が敵を倒すか死亡する。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2040699",
+    "IdName": "Item_Rune_Condition_OnCastCrossClassSkill",
+    "RuneType": "condition",
+    "Name": "エクソル",
+    "Description": "別のクラスのスキルを引き起こす。",
+    "DescriptionClean": "別のクラスのスキルを引き起こす。",
+    "RuneDescription": "{c_RuneCondition}別のクラスのスキルを引き起こす。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2006150",
+    "IdName": "Item_Rune_Effect_Subpower_DancingBolts",
+    "RuneType": "effect",
+    "Name": "オノ",
+    "Description": "ドルイドのダンシングボルトを引き起こし、敵を追尾してダメージを与える。",
+    "DescriptionClean": "ドルイドのダンシングボルトを引き起こし、敵を追尾してダメージを与える。",
+    "RuneDescription": "{c_RuneEffect}ドルイドの{c_important}ダンシングボルト{/c}を引き起こし、敵を追尾してダメージを与える。{/c}",
+    "RuneOverflowBehavior": "出現するボルト増加"
+  },
+  {
+    "IdSno": "1969850",
+    "IdName": "Item_Rune_Effect_Barbarian_WarCry",
+    "RuneType": "effect",
+    "Name": "オーム",
+    "Description": "バーバリアンのスキル〈ウォークライ〉を引き起こして#秒間、与えるダメージを15%増加する。",
+    "DescriptionClean": "バーバリアンのスキル〈ウォークライ〉を引き起こして秒間、与えるダメージを15増加する。",
+    "RuneDescription": "{c_RuneEffect}バーバリアンのスキル{c_important}〈ウォークライ〉{/c}を引き起こして{c_number}{s1}{/c}秒間、与えるダメージを{c_number}15%{/c}増加する。{/c}",
+    "RuneOverflowBehavior": "持続時間の延長"
+  },
+  {
+    "IdSno": "2081284",
+    "IdName": "Item_Rune_Condition_OnTakeDamage",
+    "RuneType": "condition",
+    "Name": "カア",
+    "Description": "ライフ最大値の#%を失う。",
+    "DescriptionClean": "ライフ最大値のを失う。",
+    "RuneDescription": "{c_RuneCondition}ライフ最大値の{c_number}{s1}%{/c}を失う。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969098",
+    "IdName": "Item_Rune_Effect_CritBuff",
+    "RuneType": "effect",
+    "Name": "ガア",
+    "Description": "5秒間、クリティカルヒット率が#%上昇する。上昇量は最大で25%。",
+    "DescriptionClean": "5秒間、クリティカルヒット率が上昇する。上昇量は最大で25。",
+    "RuneDescription": "{c_RuneEffect}{c_number}5{/c}秒間、クリティカルヒット率が{c_number}{s1}%{/c}上昇する。上昇量は最大で{c_number}25%{/c}。{/c}",
+    "RuneOverflowBehavior": "複数の蓄積を獲得"
+  },
+  {
+    "IdSno": "2004804",
+    "IdName": "Item_Rune_Effect_Druid_EarthenBulwark",
+    "RuneType": "effect",
+    "Name": "キュー",
+    "Description": "#秒間、ドルイドのスキル〈大地の護り〉を引き起こし、障壁を獲得する。",
+    "DescriptionClean": "秒間、ドルイドのスキル〈大地の護り〉を引き起こし、障壁を獲得する。",
+    "RuneDescription": "{c_RuneEffect}{c_number}{s1}{/c}秒間{/c}、ドルイドのスキル{c_important}〈大地の護り〉を引き起こし、{c_important}{u}障壁{/u}{/c}を獲得する。{/c}",
+    "RuneOverflowBehavior": "持続時間の延長"
+  },
+  {
+    "IdSno": "2043181",
+    "IdName": "Item_Rune_Effect_MobilityBuff",
+    "RuneType": "effect",
+    "Name": "クア",
+    "Description": "#秒間、移動速度が10%上昇する。上昇量は最大で50%。",
+    "DescriptionClean": "秒間、移動速度が10上昇する。上昇量は最大で50。",
+    "RuneDescription": "{c_RuneEffect}{c_number}{s1}{/c}秒間、移動速度が{c_number}10%{/c}上昇する。上昇量は最大で{c_number}50%{/c}。{/c}",
+    "RuneOverflowBehavior": "持続時間の延長"
+  },
+  {
+    "IdSno": "2059626",
+    "IdName": "Item_Rune_Effect_ResourceToDamage",
+    "RuneType": "effect",
+    "Name": "クアックス",
+    "Description": "基本または防御以外のスキルを使用すると、プライマリリソースをすべて消費して1秒間、ダメージが最大#%増加する。",
+    "DescriptionClean": "基本または防御以外のスキルを使用すると、プライマリリソースをすべて消費して1秒間、ダメージが最大増加する。",
+    "RuneDescription": "{c_RuneEffect}{c_important}基本{/c}または{c_important}防御{/c}以外のスキルを使用すると、プライマリリソースをすべて消費して{c_number}1{/c}秒間、ダメージが最大{c_number}{s1}%{/c}増加する。{/c}",
+    "RuneOverflowBehavior": "ダメージをさらに増加"
+  },
+  {
+    "IdSno": "2039678",
+    "IdName": "Item_Rune_Effect_Spiritborn_Vortex",
+    "RuneType": "effect",
+    "Name": "クライ",
+    "Description": "スピリットボーンのスキル〈渦〉を引き起こし、ダメージを与えて敵を引き寄せる。",
+    "DescriptionClean": "スピリットボーンのスキル〈渦〉を引き起こし、ダメージを与えて敵を引き寄せる。",
+    "RuneDescription": "{c_RuneEffect}スピリットボーンのスキル{c_important}〈渦〉{/c}を引き起こし、ダメージを与えて敵を引き寄せる。{/c}",
+    "RuneOverflowBehavior": "範囲が最大100%拡大"
+  },
+  {
+    "IdSno": "2432807",
+    "IdName": "Item_Rune_Effect_Paladin_Rally",
+    "RuneType": "effect",
+    "Name": "ケル",
+    "Description": "パラディンのスキル〈奮起〉が発動し、リソースと移動速度上昇効果を#秒間獲得する。",
+    "DescriptionClean": "パラディンのスキル〈奮起〉が発動し、リソースと移動速度上昇効果を秒間獲得する。",
+    "RuneDescription": "{c_RuneEffect}パラディンのスキル{c_important}〈奮起〉{/c}が発動し、リソースと移動速度上昇効果を{c_number}{s1}{/c}秒間獲得する。{/c}",
+    "RuneOverflowBehavior": "リソース増加"
+  },
+  {
+    "IdSno": "2021640",
+    "IdName": "Item_Rune_Effect_MaxHPIncrease",
+    "RuneType": "effect",
+    "Name": "ザル",
+    "Description": "#秒間、ライフ最大値が20%増加する。",
+    "DescriptionClean": "秒間、ライフ最大値が20増加する。",
+    "RuneDescription": "{c_RuneEffect}{c_number}{s1}{/c}秒間、ライフ最大値が{c_number}20%{/c}増加する。{/c}",
+    "RuneOverflowBehavior": "ライフ最大値が増加"
+  },
+  {
+    "IdSno": "1968549",
+    "IdName": "Item_Rune_Condition_OnCastUltimateSkill",
+    "RuneType": "condition",
+    "Name": "ザン",
+    "Description": "奥義スキルを使用する。",
+    "DescriptionClean": "奥義スキルを使用する。",
+    "RuneDescription": "{c_RuneCondition}{c_important}奥義{/c}スキルを使用する。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2060617",
+    "IdName": "Item_Rune_Condition_CastRepeatSkill",
+    "RuneType": "condition",
+    "Name": "シア",
+    "Description": "スキルを5回使用した後3秒間、消耗状態になる。",
+    "DescriptionClean": "スキルを5回使用した後3秒間、消耗状態になる。",
+    "RuneDescription": "{c_RuneCondition}スキルを{c_number}5{/c}回使用した後{c_number}3{/c}秒間、消耗状態になる。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2433257",
+    "IdName": "Item_Rune_Effect_Subpower_Spear",
+    "RuneType": "effect",
+    "Name": "ジド",
+    "Description": "パラディンの〈福音の槍〉が発動し、付近の敵にダメージを与える。",
+    "DescriptionClean": "パラディンの〈福音の槍〉が発動し、付近の敵にダメージを与える。",
+    "RuneDescription": "{c_RuneEffect}パラディンの{c_important}〈福音の槍〉{/c}が発動し、付近の敵にダメージを与える。{/c}",
+    "RuneOverflowBehavior": "ダメージ増加"
+  },
+  {
+    "IdSno": "2039542",
+    "IdName": "Item_Rune_Effect_Sorcerer_Teleport",
+    "RuneType": "effect",
+    "Name": "ジャー",
+    "Description": "次の回避がソーサラーのスキル〈テレポート〉になり、転瞬の距離が伸び、ダメージを与えて抑圧不可になる。",
+    "DescriptionClean": "次の回避がソーサラーのスキル〈テレポート〉になり、転瞬の距離が伸び、ダメージを与えて抑圧不可になる。",
+    "RuneDescription": "{c_RuneEffect}次の回避がソーサラーのスキル{c_important}〈テレポート〉{/c}になり、転瞬の距離が伸び、ダメージを与えて{c_important}{u}抑圧不可{/u}{/c}になる。",
+    "RuneOverflowBehavior": "余剰の供物を貯める"
+  },
+  {
+    "IdSno": "1969845",
+    "IdName": "Item_Rune_Effect_Sorcerer_FrostNova",
+    "RuneType": "effect",
+    "Name": "スル",
+    "Description": "ソーサラーのスキル〈フロストノヴァ（秘術）〉を引き起こし、敵を凍結させて脆弱状態にする。",
+    "DescriptionClean": "ソーサラーのスキル〈フロストノヴァ（秘術）〉を引き起こし、敵を凍結させて脆弱状態にする。",
+    "RuneDescription": "{c_RuneEffect}ソーサラーのスキル{c_important}〈フロストノヴァ（秘術）〉{/c}を引き起こし、敵を{c_important}{u}凍結{/u}{/c}させて{c_important}{u}脆弱{/u}{/c}状態にする。{/c}",
+    "RuneOverflowBehavior": "範囲が最大100%拡大"
+  },
+  {
+    "IdSno": "2057115",
+    "IdName": "Item_Rune_Effect_SummonSpiritWolf",
+    "RuneType": "effect",
+    "Name": "セエ",
+    "Description": "8秒間、使い魔として狼の精霊を召喚して敵を攻撃させる。",
+    "DescriptionClean": "8秒間、使い魔として狼の精霊を召喚して敵を攻撃させる。",
+    "RuneDescription": "{c_RuneEffect}{c_number}8{/c}秒間、{c_important}使い魔{/c}として狼の精霊を召喚して敵を攻撃させる。{/c}",
+    "RuneOverflowBehavior": "複数の狼を召喚"
+  },
+  {
+    "IdSno": "1968096",
+    "IdName": "Item_Rune_Condition_OnEvade",
+    "RuneType": "condition",
+    "Name": "セム",
+    "Description": "回避を発動させる。",
+    "DescriptionClean": "回避を発動させる。",
+    "RuneDescription": "{c_RuneCondition}回避を発動させる。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968671",
+    "IdName": "Item_Rune_Effect_ReduceUltimateCD",
+    "RuneType": "effect",
+    "Name": "ゼック",
+    "Description": "発動中の奥義のクールダウン時間を#秒短縮する。",
+    "DescriptionClean": "発動中の奥義のクールダウン時間を秒短縮する。",
+    "RuneDescription": "{c_RuneEffect}発動中の{c_important}奥義{/c}のクールダウン時間を{c_number}{s1}{/c}秒短縮する。{/c}",
+    "RuneOverflowBehavior": "クールダウンをさらに短縮"
+  },
+  {
+    "IdSno": "1968106",
+    "IdName": "Item_Rune_Condition_OnCastCoreSkill",
+    "RuneType": "condition",
+    "Name": "タム",
+    "Description": "非連続発動のコアスキルを使用する。",
+    "DescriptionClean": "非連続発動のコアスキルを使用する。",
+    "RuneDescription": "{c_RuneCondition}非{c_important}連続発動{/c}の{c_important}コア{/c}スキルを使用する。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2040870",
+    "IdName": "Item_Rune_Effect_Subpower_Swarm",
+    "RuneType": "effect",
+    "Name": "タル",
+    "Description": "スピリットボーンの悪疫の虫の群れを引き起こし、敵にダメージを与える。",
+    "DescriptionClean": "スピリットボーンの悪疫の虫の群れを引き起こし、敵にダメージを与える。",
+    "RuneDescription": "{c_RuneEffect}スピリットボーンの{c_important}悪疫の虫の群れ{/c}を引き起こし、敵にダメージを与える。{/c}",
+    "RuneOverflowBehavior": "出現する群れ増加"
+  },
+  {
+    "IdSno": "2166984",
+    "IdName": "Item_Rune_Effect_Subpower_LightningBolt",
+    "RuneType": "effect",
+    "Name": "チャク",
+    "Description": "ドルイドのライトニングボルトを引き起こし、付近の敵1体を撃つ。",
+    "DescriptionClean": "ドルイドのライトニングボルトを引き起こし、付近の敵1体を撃つ。",
+    "RuneDescription": "{c_RuneEffect}ドルイドの{c_important}ライトニングボルト{/c}を引き起こし、付近の敵1体を撃つ。{/c}",
+    "RuneOverflowBehavior": "出現するボルトが増加"
+  },
+  {
+    "IdSno": "2093513",
+    "IdName": "Item_Rune_Effect_Spiritborn_ConcussiveStomp",
+    "RuneType": "effect",
+    "Name": "ツィック",
+    "Description": "スピリットボーンのスキル〈コンカッシブ・ストンプ〉を引き起こし、ダメージを与えて敵をノックダウンする。",
+    "DescriptionClean": "スピリットボーンのスキル〈コンカッシブ・ストンプ〉を引き起こし、ダメージを与えて敵をノックダウンする。",
+    "RuneDescription": "{c_RuneEffect}スピリットボーンのスキル{c_important}〈コンカッシブ・ストンプ〉{/c}を引き起こし、ダメージを与えて敵をノックダウンする。{/c}",
+    "RuneOverflowBehavior": "ダメージが供物1個につき1%増加"
+  },
+  {
+    "IdSno": "1983344",
+    "IdName": "Item_Rune_Effect_Subpower_Earthquake",
+    "RuneType": "effect",
+    "Name": "テック",
+    "Description": "バーバリアンのアースクエイクを引き起こし、その範囲内の敵にダメージを与える。",
+    "DescriptionClean": "バーバリアンのアースクエイクを引き起こし、その範囲内の敵にダメージを与える。",
+    "RuneDescription": "{c_RuneEffect}バーバリアンの{c_important}アースクエイク{/c}を引き起こし、その範囲内の敵にダメージを与える。{/c}",
+    "RuneOverflowBehavior": "範囲が最大100%拡大"
+  },
+  {
+    "IdSno": "2088916",
+    "IdName": "Item_Rune_Effect_Necromancer_IronMaiden",
+    "RuneType": "effect",
+    "Name": "テブ",
+    "Description": "ネクロマンサーのスキル〈アイアンメイデン（悪意）〉を引き起こし、敵からのダメージに反撃し、その敵の死亡時に自身を回復する。",
+    "DescriptionClean": "ネクロマンサーのスキル〈アイアンメイデン（悪意）〉を引き起こし、敵からのダメージに反撃し、その敵の死亡時に自身を回復する。",
+    "RuneDescription": "{c_RuneEffect}ネクロマンサーのスキル{c_important}〈アイアンメイデン（悪意）〉{/c}を引き起こし、敵からのダメージに反撃し、その敵の死亡時に自身を回復する。{/c}",
+    "RuneOverflowBehavior": "ダメージが供物1個につき1%増加"
+  },
+  {
+    "IdSno": "2004781",
+    "IdName": "Item_Rune_Effect_Subpower_Grenades",
+    "RuneType": "effect",
+    "Name": "トゥン",
+    "Description": "ローグのスタングレネードを引き起こし、敵をスタンしてダメージを与える。",
+    "DescriptionClean": "ローグのスタングレネードを引き起こし、敵をスタンしてダメージを与える。",
+    "RuneDescription": "{c_RuneEffect}ローグの{c_important}スタングレネード{/c}を引き起こし、敵をスタンしてダメージを与える。{/c}",
+    "RuneOverflowBehavior": "出現するグレネード増加"
+  },
+  {
+    "IdSno": "2004875",
+    "IdName": "Item_Rune_Effect_Subpower_Meteorites",
+    "RuneType": "effect",
+    "Name": "トン",
+    "Description": "ソーサラーの隕石を引き起こし、敵にダメージを与える。",
+    "DescriptionClean": "ソーサラーの隕石を引き起こし、敵にダメージを与える。",
+    "RuneDescription": "{c_RuneEffect}ソーサラーの{c_important}隕石{/c}を引き起こし、敵にダメージを与える。{/c}",
+    "RuneOverflowBehavior": "出現する隕石増加"
+  },
+  {
+    "IdSno": "2155996",
+    "IdName": "Item_Rune_Condition_Summons",
+    "RuneType": "condition",
+    "Name": "ナグ",
+    "Description": "1体以上の召喚クリーチャーを5秒間維持して、召喚クリーチャー（最大6体）のそれぞれについて供物を獲得する。",
+    "DescriptionClean": "1体以上の召喚クリーチャーを5秒間維持して、召喚クリーチャー（最大6体）のそれぞれについて供物を獲得する。",
+    "RuneDescription": "{c_RuneCondition}{c_number}1{/c}体以上の{c_important}召喚クリーチャー{/c}を{c_number}5{/c}秒間維持して、{c_important}召喚クリーチャー{/c}（最大{c_number}6{/c}体）のそれぞれについて供物を獲得する。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2039602",
+    "IdName": "Item_Rune_Effect_Rogue_Concealment",
+    "RuneType": "effect",
+    "Name": "ネア",
+    "Description": "#秒間ローグのスキル〈隠遁（逆襲）〉を引き起こし、回避率と移動速度が上昇して、抑圧不可および隠密状態になる。",
+    "DescriptionClean": "秒間ローグのスキル〈隠遁（逆襲）〉を引き起こし、回避率と移動速度が上昇して、抑圧不可および隠密状態になる。",
+    "RuneDescription": "{c_RuneEffect}{s1}秒間ローグのスキル{c_important}〈隠遁（逆襲）〉{/c}を引き起こし、回避率と移動速度が上昇して、{c_important}{u}抑圧不可{/u}{/c}および{c_important}{u}隠密{/u}{/c}状態になる。{/c}",
+    "RuneOverflowBehavior": "持続時間の延長"
+  },
+  {
+    "IdSno": "2063987",
+    "IdName": "Item_Rune_Condition_OnAvoidDamage",
+    "RuneType": "condition",
+    "Name": "ネオ",
+    "Description": "戦闘中のライフへのダメージを2秒間回避する。 ",
+    "DescriptionClean": "戦闘中のライフへのダメージを2秒間回避する。",
+    "RuneDescription": "{c_RuneCondition}戦闘中のライフへのダメージを2秒間回避する。{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2089874",
+    "IdName": "Item_Rune_Condition_OnCCEnemy",
+    "RuneType": "condition",
+    "Name": "ノク",
+    "Description": "操作障害効果を与え、それがスロウまたは冷気効果ではなかった場合は2倍の供物を得る。",
+    "DescriptionClean": "操作障害効果を与え、それがスロウまたは冷気効果ではなかった場合は2倍の供物を得る。",
+    "RuneDescription": "{c_RuneCondition}操作障害効果を与え、それがスロウまたは{c_important}{u}冷気{/u}{/c}効果ではなかった場合は2倍の供物を得る。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1999351",
+    "IdName": "Item_Rune_Condition_OnMove",
+    "RuneType": "condition",
+    "Name": "バク",
+    "Description": "#メートル移動する。",
+    "DescriptionClean": "メートル移動する。",
+    "RuneDescription": "{c_RuneCondition}{c_Number}{s1}{/c}メートル移動する。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2006747",
+    "IdName": "Item_Rune_Condition_OnCCdOrInjured",
+    "RuneType": "condition",
+    "Name": "フェオ",
+    "Description": "負傷状態または操作障害効果を受けた状態になる。（クールダウン: 10秒）",
+    "DescriptionClean": "負傷状態または操作障害効果を受けた状態になる。（クールダウン: 10秒）",
+    "RuneDescription": "{c_RuneCondition}{c_important}{u}負傷{/u}{/c}状態または操作障害効果を受けた状態になる。{/c}{c_gray}（クールダウン: 10秒）{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2004453",
+    "IdName": "Item_Rune_Condition_OnSpendResource",
+    "RuneType": "condition",
+    "Name": "ポック",
+    "Description": "リソース最大値の#%を消費する。",
+    "DescriptionClean": "リソース最大値のを消費する。",
+    "RuneDescription": "{c_RuneCondition}リソース最大値の{c_Number}{s1}%{/c}を消費する。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2004723",
+    "IdName": "Item_Rune_Effect_Subpower_DesecratedGround",
+    "RuneType": "effect",
+    "Name": "メット",
+    "Description": "ネクロマンサーの不浄の地を3秒間残し、その範囲内の敵にダメージを与える。",
+    "DescriptionClean": "ネクロマンサーの不浄の地を3秒間残し、その範囲内の敵にダメージを与える。",
+    "RuneDescription": "{c_RuneEffect}ネクロマンサーの{c_important}不浄の地{/c}を{c_number}3{/c}秒間残し、その範囲内の敵にダメージを与える。{/c}",
+    "RuneOverflowBehavior": "持続時間の延長"
+  },
+  {
+    "IdSno": "2089934",
+    "IdName": "Item_Rune_Effect_Rogue_DarkShroud",
+    "RuneType": "effect",
+    "Name": "モット",
+    "Description": "ローグのスキル〈ダークシュラウド〉の影を#個獲得し、影1つごとに受けるダメージを減少させる。",
+    "DescriptionClean": "ローグのスキル〈ダークシュラウド〉の影を個獲得し、影1つごとに受けるダメージを減少させる。",
+    "RuneDescription": "{c_RuneEffect}ローグのスキル{c_important}〈ダークシュラウド〉{/c}の影を{c_number}{s1}{/c}個獲得し、影1つごとに受けるダメージを減少させる。{/c}",
+    "RuneOverflowBehavior": "複数の影を獲得"
+  },
+  {
+    "IdSno": "2063886",
+    "IdName": "Item_Rune_Condition_OnStutterStep",
+    "RuneType": "condition",
+    "Name": "モニ",
+    "Description": "機動力または妖気スキルを2回使用する。 ",
+    "DescriptionClean": "機動力または妖気スキルを2回使用する。",
+    "RuneDescription": "{c_RuneCondition}{c_important}機動力{/c}または{c_important}妖気{/c}スキルを{c_number}2{/c}回使用する。{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969053",
+    "IdName": "Item_Rune_Condition_OnPotion",
+    "RuneType": "condition",
+    "Name": "ヤックス",
+    "Description": "ライフ・ポーションを飲む。",
+    "DescriptionClean": "ライフ・ポーションを飲む。",
+    "RuneDescription": "{c_RuneCondition}ライフ・ポーションを飲む。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2004497",
+    "IdName": "Item_Rune_Condition_AllSkillsOnCD",
+    "RuneType": "condition",
+    "Name": "ユル",
+    "Description": "クールダウンのあるスキルを使用する。",
+    "DescriptionClean": "クールダウンのあるスキルを使用する。",
+    "RuneDescription": "{c_RuneCondition}クールダウンのあるスキルを使用する。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2090793",
+    "IdName": "Item_Rune_Effect_Druid_Petrify",
+    "RuneType": "effect",
+    "Name": "ヨム",
+    "Description": "ドルイドのスキル〈石化〉を引き起こし、敵をスタンして、プライマリリソースを回復する。",
+    "DescriptionClean": "ドルイドのスキル〈石化〉を引き起こし、敵をスタンして、プライマリリソースを回復する。",
+    "RuneDescription": "{c_RuneEffect}ドルイドのスキル{c_important}〈石化〉{/c}を引き起こし、敵をスタンして、プライマリリソースを回復する。{/c}",
+    "RuneOverflowBehavior": "スタン持続時間延長"
+  },
+  {
+    "IdSno": "2090244",
+    "IdName": "Item_Rune_Effect_Barbarian_ChallengingShout",
+    "RuneType": "effect",
+    "Name": "ラク",
+    "Description": "バーバリアンのスキル〈挑発の叫び〉を引き起こして#秒間、敵を挑発して受けるダメージを減少させる。",
+    "DescriptionClean": "バーバリアンのスキル〈挑発の叫び〉を引き起こして秒間、敵を挑発して受けるダメージを減少させる。",
+    "RuneDescription": "{c_RuneEffect}バーバリアンのスキル{c_important}〈挑発の叫び〉{/c}を引き起こして{c_number}{s1}{/c}秒間、敵を挑発して受けるダメージを減少させる。{/c}",
+    "RuneOverflowBehavior": "持続時間の延長"
+  },
+  {
+    "IdSno": "1968585",
+    "IdName": "Item_Rune_Effect_GainResource",
+    "RuneType": "effect",
+    "Name": "ラム",
+    "Description": "プライマリリソースを#回復する。",
+    "DescriptionClean": "プライマリリソースを回復する。",
+    "RuneDescription": "{c_RuneEffect}プライマリリソースを{c_number}{s1}{/c}回復する。{/c}",
+    "RuneOverflowBehavior": "リソース回復量増加"
+  },
+  {
+    "IdSno": "2060481",
+    "IdName": "Item_Rune_Condition_StandStill",
+    "RuneType": "condition",
+    "Name": "リス",
+    "Description": "戦闘中に#秒間静止する。",
+    "DescriptionClean": "戦闘中に秒間静止する。",
+    "RuneDescription": "{c_RuneCondition}戦闘中に{c_number}{s1}{/c}秒間静止する。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2004862",
+    "IdName": "Item_Rune_Effect_Necromancer_Decrepify",
+    "RuneType": "effect",
+    "Name": "ワット",
+    "Description": "ネクロマンサーのスキル〈衰弱（惨悽）〉を引き起こし、敵をスロウ状態にしてそのダメージを減少させ、自身が処刑できるようにする。",
+    "DescriptionClean": "ネクロマンサーのスキル〈衰弱（惨悽）〉を引き起こし、敵をスロウ状態にしてそのダメージを減少させ、自身が処刑できるようにする。",
+    "RuneDescription": "{c_RuneEffect}ネクロマンサーのスキル{c_important}〈衰弱（惨悽）〉{/c}を引き起こし、敵をスロウ状態にしてそのダメージを減少させ、自身が{c_important}{u}処刑{/u}{/c}できるようにする。{/c}",
+    "RuneOverflowBehavior": "持続時間の延長"
+  },
+  {
+    "IdSno": "2024156",
+    "IdName": "Item_Rune_Effect_BonusToAllSkills",
+    "RuneType": "effect",
+    "Name": "ヴェックス",
+    "Description": "10秒間、すべてのスキル+1。",
+    "DescriptionClean": "10秒間、すべてのスキル1。",
+    "RuneDescription": "{c_RuneEffect}{c_number}10{/c}秒間、すべてのスキル{c_number}+1{/c}。{/c}",
+    "RuneOverflowBehavior": "スキルランク上昇、最大3まで。"
+  }
+]

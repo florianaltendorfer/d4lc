@@ -1,0 +1,144 @@
+name: verify
+
+on:
+  pull_request:
+  push:
+    branches: [main, master]
+  # Manual trigger so the verify pipeline can be validated on a branch
+  # without pushing to main. Read-only permissions, no side effects.
+  workflow_dispatch:
+  # The release workflow calls this workflow for the commit it builds, so a
+  # release never depends on a verification of some other commit.
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    # Pinned, not `ubuntu-latest`: the gate must not change under a runner
+    # label migration (the label moves to Ubuntu 26 on 2026-10-19).
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    env:
+      # Hosted runners have far less free disk than the 80 GB local default
+      # of scripts/check_disk_space.sh.
+      D4LC_MIN_FREE_GB: 8
+      # The cargo configurations the verify script builds (default and
+      # release-feature clippy and test) share one target/ directory, which
+      # with incremental caches and full debuginfo does not fit the runner
+      # disk. CI gating needs neither, so both are off.
+      CARGO_INCREMENTAL: "0"
+      CARGO_PROFILE_DEV_DEBUG: "0"
+      CARGO_PROFILE_TEST_DEBUG: "0"
+    steps:
+      # The preinstalled toolchains below are unused by this job; removing
+      # them frees the disk space the build needs.
+      - name: Free runner disk space
+        run: |
+          set -euo pipefail
+          sudo rm -rf \
+            /usr/local/lib/android \
+            /usr/share/dotnet \
+            /opt/ghc \
+            /usr/local/.ghcup \
+            /opt/hostedtoolcache/CodeQL
+          df -h /
+      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          submodules: recursive
+      # dtolnay/rust-toolchain@stable (686976e191b89faba57d3206551f0f330d8cb249)
+      - uses: dtolnay/rust-toolchain@686976e191b89faba57d3206551f0f330d8cb249
+        with:
+          components: rustfmt, clippy
+      # taiki-e/install-action v2 (ab6895351a88b908e96a4697860d4ffea5e57dbe);
+      # the action verifies the binary against the SHA256 in its manifest.
+      # Version pinned so a cargo-deny release cannot change the gate
+      # between runs; bump deliberately together with deny.toml.
+      - uses: taiki-e/install-action@ab6895351a88b908e96a4697860d4ffea5e57dbe
+        with:
+          tool: cargo-deny@0.20.2
+      - name: Run cargo-deny checks
+        run: cargo deny check
+      - name: Install Linux build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            clang \
+            libclang-dev \
+            libpipewire-0.3-dev \
+            fonts-dejavu-core \
+            libfontconfig1-dev \
+            libleptonica-dev \
+            libtesseract-dev \
+            libx11-dev \
+            libxcursor1 \
+            libxext-dev \
+            libxi6 \
+            libxkbcommon-dev \
+            libxkbcommon-x11-0 \
+            libgl1 \
+            libegl1 \
+            libgl1-mesa-dri \
+            libglx-mesa0 \
+            libegl-mesa0 \
+            pkg-config \
+            tesseract-ocr \
+            tesseract-ocr-eng \
+            xvfb
+      - name: Run local verification
+        run: ./scripts/verify_local.sh
+
+  # The workspace promises `rust-version` (Cargo.toml) as its minimum Rust
+  # version; this job builds every target with exactly that compiler, with
+  # the default and with the release features. Tests run on stable above.
+  msrv:
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: read
+    env:
+      CARGO_INCREMENTAL: "0"
+      CARGO_PROFILE_DEV_DEBUG: "0"
+      CARGO_PROFILE_TEST_DEBUG: "0"
+    steps:
+      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          submodules: recursive
+      - name: Read the minimum Rust version
+        id: msrv
+        run: |
+          set -euo pipefail
+          msrv="$(awk -F'"' '/^rust-version = / { print $2; exit }' Cargo.toml)"
+          test -n "$msrv"
+          echo "version=$msrv" >> "$GITHUB_OUTPUT"
+      # dtolnay/rust-toolchain@stable (686976e191b89faba57d3206551f0f330d8cb249)
+      - uses: dtolnay/rust-toolchain@686976e191b89faba57d3206551f0f330d8cb249
+        with:
+          toolchain: ${{ steps.msrv.outputs.version }}
+      - name: Install Linux build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            clang \
+            libclang-dev \
+            libpipewire-0.3-dev \
+            libfontconfig1-dev \
+            libleptonica-dev \
+            libtesseract-dev \
+            libx11-dev \
+            libxext-dev \
+            libxkbcommon-dev \
+            pkg-config
+      - name: Build with the minimum Rust version
+        env:
+          # Overrides the `stable` channel of rust-toolchain.toml.
+          RUSTUP_TOOLCHAIN: ${{ steps.msrv.outputs.version }}
+        run: |
+          set -euo pipefail
+          rustc --version
+          cargo check --locked --workspace --all-targets
+          cargo check --locked -p d4lc-app -p d4lc-cli -p d4lc-overlay-x11 --all-targets \
+            --features "d4lc-app/real-runtime d4lc-app/leptess-backend d4lc-app/wayland-portal d4lc-cli/leptess-backend d4lc-overlay-x11/real-x11"

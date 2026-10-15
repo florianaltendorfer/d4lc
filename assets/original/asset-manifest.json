@@ -1,0 +1,2502 @@
+{
+  "schema_version": 1,
+  "source": "upstream/Diablo4Companion",
+  "items": [
+    {
+      "category": "asset",
+      "path": "assets/original/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.deDE.json",
+      "bytes": 1247838,
+      "sha256": "1e02acda13b3ec31b6776f6e7132135f22185bf7512b4e942c159bd9e868f40b"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.enUS.json",
+      "bytes": 1215836,
+      "sha256": "bfced1594168397063100da82a5ad695099ee714a0b145a011ca3adb13611ca8"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.esES.json",
+      "bytes": 1254035,
+      "sha256": "b2a144bc0eec7540b33d2c46489ae65acb7fa8284298f68aca31eb0fd0629092"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.esMX.json",
+      "bytes": 1250248,
+      "sha256": "ffddc768365caf5e45efa8fbd649ca337718882754a32ac1c9ae026a6459d1ac"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.frFR.json",
+      "bytes": 1281057,
+      "sha256": "4624f1eba3c0bcb9c042ef7433a60d9476f776710ea1316ca09f8c007b581a62"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.itIT.json",
+      "bytes": 1237952,
+      "sha256": "54965e86e603021fd0b6ddd32a08df48f982c43f673853461d5f767a40aa7fb2"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.jaJP.json",
+      "bytes": 1245613,
+      "sha256": "2ca578b966a69ae11bcc39ae73b67a61e9d35ef3f3fabb0ed5f2fcc0a11908ea"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.koKR.json",
+      "bytes": 1228768,
+      "sha256": "ec60769e239e32ba22d01437dfdd8b97e81dcc261f5f2450f88e955dbe317680"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.plPL.json",
+      "bytes": 1249277,
+      "sha256": "89ff68c3a8da2d63703ba8cc9a75ba29010c236d2ff63df8a0b0baedf3ac0872"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.ptBR.json",
+      "bytes": 1241924,
+      "sha256": "b29764592f03337eb255c3f7a52e4b56485918cb98902fb5cd49506259d27d7f"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.ruRU.json",
+      "bytes": 1352249,
+      "sha256": "b11713f0d03f9053465f571e8050216a64f8a77bae39dda015715508194a550c"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.trTR.json",
+      "bytes": 1228124,
+      "sha256": "cbeb68ba760b7d463da84355caa0f42632371afd3c6000590ab4763cdd781ee0"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.zhCN.json",
+      "bytes": 1219268,
+      "sha256": "da085c1288537295818aa5f3448f69494f03377ded347e60c844ff226400fb6d"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Affixes.zhTW.json",
+      "bytes": 1206896,
+      "sha256": "284597b1d6a336f331218d263878540b7347a76982e0fd9e8031ca1af91e9215"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.deDE.json",
+      "bytes": 538612,
+      "sha256": "90aee09c43d89ef0a2fdaae51b15f35a4e7e3b2d2995f5564e707e3cfdfbc148"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.enUS.json",
+      "bytes": 492569,
+      "sha256": "6264ffaf1fe6dcd4b302a04ecde7b5e7cc3b70530d8a830f75742b80cde80783"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.esES.json",
+      "bytes": 530391,
+      "sha256": "e5308e706e892404ee03effcc202dc250f5a6d60769cac11dbe16bd3eaf09daf"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.esMX.json",
+      "bytes": 534671,
+      "sha256": "d9754fffb79e1c428410c63dea78d3eba28bf5ba843d4c87a836dc5322e28f33"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.frFR.json",
+      "bytes": 576465,
+      "sha256": "d8dacd913bbc467f0cdbb7b6fe3333640cdc6d6b41a5150e6388f1cbf26002b2"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.itIT.json",
+      "bytes": 526401,
+      "sha256": "b653bfe870cfe66317b6e84043c854d2bcb521e11ad5d463e76f67d81134cd53"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.jaJP.json",
+      "bytes": 538998,
+      "sha256": "0fb11dca7a8faf9dd42da40b911ea438e04f95f1315493fc5155b8cecd3ba753"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.koKR.json",
+      "bytes": 531303,
+      "sha256": "7c1ae00542b53fa098f2948f2145ee5da8ec3b9a494bdf760aa49d0b8be2510a"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.plPL.json",
+      "bytes": 538623,
+      "sha256": "37418638b463a4a3adb99cdc73f49c0c06cfe4274a0d574b1ff4b7f535cb53fa"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.ptBR.json",
+      "bytes": 515787,
+      "sha256": "a4d2c50e0071e82011ed10b7f96b7d97a8784ab1f466d3a169323f17774489fd"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.ruRU.json",
+      "bytes": 688762,
+      "sha256": "efb838e79d2f2bb31cebf3e9e6564df189257b4264cc0ee442614cd039a658d6"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.trTR.json",
+      "bytes": 520191,
+      "sha256": "a3076d8c07b3efc2305855697329dcfbc03cbf79746e25213b54a86d7de5328d"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.zhCN.json",
+      "bytes": 488898,
+      "sha256": "7499f1ddd773af0ebe9e81ffd848c2fc72f44196114acf951b13ac2a4620f93d"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Aspects.zhTW.json",
+      "bytes": 485702,
+      "sha256": "ce49e537811905cfaa2cd9a4d679fd8e62b04659368ee631dfe134c832d0a0b7"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.deDE.json",
+      "bytes": 87848,
+      "sha256": "c3fad8fed05fe472a0d1bf7b1daa70082823bbf783d8a70b74c03ede3c056806"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.enUS.json",
+      "bytes": 79922,
+      "sha256": "101c1047b3d85801287ce0bcf26c22dba4f5f18e48e63e2184ac92ff0abfc49a"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.esES.json",
+      "bytes": 83739,
+      "sha256": "094b3058bfbf8e93401bd104a8d45a7aaa882d01780778cd7f3f97f1e4d5f353"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.esMX.json",
+      "bytes": 83905,
+      "sha256": "a9b96faccab96901b2b431c9b543ffb644912536e3d3504e55a00f2a6138a3d1"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.frFR.json",
+      "bytes": 82265,
+      "sha256": "cb3b04f0191074726fe2183c422dbd9f84fc2ececbb4e76d9914270f11bbf904"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.itIT.json",
+      "bytes": 83863,
+      "sha256": "9024210f03a770a99ef9f72884b1e87e22c225c0815ed1c7f51311a82e7e5b7e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.jaJP.json",
+      "bytes": 87833,
+      "sha256": "6307b1a2e2e65ea62fc10761c5203a69d592110fbfa80d32ed04cc6d498d1dca"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.koKR.json",
+      "bytes": 81051,
+      "sha256": "3c155b236fdf26245c1f505499fd1af1d8211ef28908a65c8367534b7beb1cd4"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.plPL.json",
+      "bytes": 84873,
+      "sha256": "ad589617d2fa848812279c718957144aed63cf9ddfec4b8bd2413ffda9378685"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.ptBR.json",
+      "bytes": 83078,
+      "sha256": "52e4a7cfc7d02195bc9f60d6ce4ac9c53f3a6f2a290bf4489caf60f16b4fba89"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.ruRU.json",
+      "bytes": 110480,
+      "sha256": "59d78fa38bd2aaa47b8f190ced0e63e48aa6160e60936e3ee9ce7b5cdf67ff66"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.trTR.json",
+      "bytes": 44617,
+      "sha256": "5da3d9505181ac5d4569aaed0b97b3c11e322e817862ecc2c47e6255724dd55f"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.zhCN.json",
+      "bytes": 74684,
+      "sha256": "0da6cb66a1b82f98b46889d178c4f414cc330049b6346a7dca997f468e1cac21"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ItemTypes.zhTW.json",
+      "bytes": 77228,
+      "sha256": "82a43fb411838df3267b7e650fa0f754448a20d3449558533e83afd491d8098b"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.deDE.json",
+      "bytes": 5659,
+      "sha256": "5ea94607f4c5770758bca622d57a9621f5d48bc3ab7c54058b691af5981116f2"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.enUS.json",
+      "bytes": 5511,
+      "sha256": "7e58f1e62625d4447b667f2b8c57b6dcdd46ab8067e91cdd0a612618ba78bc0d"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.esES.json",
+      "bytes": 5689,
+      "sha256": "a1df4385228783e304e72c8932f03613bf70c9b16632f024921d1f72ed3509b3"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.esMX.json",
+      "bytes": 5699,
+      "sha256": "cef485ed3b5cc61a5fb5f52d0f2acd02de6c6a92d5c4c0bc3c80faed0143ae6f"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.frFR.json",
+      "bytes": 5700,
+      "sha256": "4a3446332d776a36d312d0a3998341cfc13f1fe0f5b7b06de7fd2151e8c99034"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.itIT.json",
+      "bytes": 5677,
+      "sha256": "4b6de737db0e9b9a9423fca01bd4ea296bb88e560ba87bd6d5fbb86c0393b2bf"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.jaJP.json",
+      "bytes": 5611,
+      "sha256": "ddbb675dc7ce76700fa2ea4b320587940ad98d08d8f601b9aa687f704f246b11"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.koKR.json",
+      "bytes": 5592,
+      "sha256": "597703d1cee84004393f3de3c851a8e6bb949fb675aca000ee7ba4d57d0cf65d"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.plPL.json",
+      "bytes": 5676,
+      "sha256": "4dac7547e6b862e4042b1d97b011c295df58df9d6b01ccff8f9cb34ea049f66e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.ptBR.json",
+      "bytes": 5711,
+      "sha256": "95594db377cc8ea889f5a75733725a93cd290c6e1fecc20b2858a4d524ba87d7"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.ruRU.json",
+      "bytes": 6573,
+      "sha256": "5539ed16343c6df41f1a8769117896a161f73d8c9dc29ef777b19fc333beef1e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.trTR.json",
+      "bytes": 5575,
+      "sha256": "74d733b20e944312cf1eff6585907eb05221ebfa7de1de42c9418770dfadd750"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.zhCN.json",
+      "bytes": 5386,
+      "sha256": "a66900ba852748c9a732168ec6d589d989d76af500245d0ed7a97dbee6f1d5e3"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonBoards.zhTW.json",
+      "bytes": 5386,
+      "sha256": "2bdd7bfa4dc9069e996c309bed6eebcfd6fd12c0be1186a5d2156879b42dd288"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.deDE.json",
+      "bytes": 11919,
+      "sha256": "c0ee7bc1e61b941e5da38380ca1e82694212a889e42ca5ffc92af20d27af3b76"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.enUS.json",
+      "bytes": 11761,
+      "sha256": "272295773d72d648cea2e0fbccd5ae5128a546cf889ce688ad798d6d137c428c"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.esES.json",
+      "bytes": 11949,
+      "sha256": "72f58a3a65aa5706068b4b60ccf84b301ed15f4e5a19ced165cf8c8cd4084f76"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.esMX.json",
+      "bytes": 12013,
+      "sha256": "da907e69c34e88ad43e95079a788d77189f59f0a323c452517f057a793907a5d"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.frFR.json",
+      "bytes": 12089,
+      "sha256": "73251c4041e8f1325b13fdd926b45d1ea9fa977a85bc825cb158a2f39e17b504"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.itIT.json",
+      "bytes": 12107,
+      "sha256": "fc4533540c2e7410b097ef280ecce72c16c0c05cabf90e596e65c6c1fd09ebf4"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.jaJP.json",
+      "bytes": 11870,
+      "sha256": "60d0fa232acd8f009bfad9643eed07beab96825bef2f52b26d3a30cadcdeab70"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.koKR.json",
+      "bytes": 11852,
+      "sha256": "62fff5472e0fa8357d1e72d5d5d0fa7e73118ff9bbf8bede0e540c2fbb61174e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.plPL.json",
+      "bytes": 12079,
+      "sha256": "d9bb7f6ace0866ddca47e77af70d00538969970bcc95abfa658ed3a1ff8a1b27"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.ptBR.json",
+      "bytes": 11985,
+      "sha256": "3105df61d1fe38ca218d84a759533df37e6f4f8197a87188386139463af2989b"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.ruRU.json",
+      "bytes": 13259,
+      "sha256": "2c2199e4126842c19cb0399ba0611a18202849a6e873f933fd3c3e9f655c3cad"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.trTR.json",
+      "bytes": 11917,
+      "sha256": "8709241cbc09c61631a9ba18c1c88a4ed3338d5a0face3042c52e91f72d35f26"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.zhCN.json",
+      "bytes": 11642,
+      "sha256": "c540106d2b248624b72da4307134a7033be666ef7ee520a1492cea22acc56836"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/ParagonGlyphs.zhTW.json",
+      "bytes": 11645,
+      "sha256": "d79a3d143ade64f6d6a412c88cb3914859acadd91aaccac3f1d057189a5de9e1"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.deDE.json",
+      "bytes": 28696,
+      "sha256": "c0254e3666192fb69a88e6f1ff7a29140461179219afdc45e0ea0e36582e8f43"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.enUS.json",
+      "bytes": 25538,
+      "sha256": "453d3aeea230c55da84e10373018627fa3254bcd70d9ca01a601599b1995bd0f"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.esES.json",
+      "bytes": 27860,
+      "sha256": "74acda8c719a7a3bf0494dbae9b8510cdbc41de5f4714b953c82d395964b83a8"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.esMX.json",
+      "bytes": 28339,
+      "sha256": "a3f21cf340be2a3a85b46da8fcde5152341f68f0b91a45d07a77b6b74945cf40"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.frFR.json",
+      "bytes": 31238,
+      "sha256": "1ff9d345f982889bc0f508ceef848d827575ada8339b5346ab48dfc61b031ed2"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.itIT.json",
+      "bytes": 27067,
+      "sha256": "3d91b3fd7b3f14599d4054e1bdae50d5ea5b033c9b694fb59d0430ab6c29210e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.jaJP.json",
+      "bytes": 29082,
+      "sha256": "9848a410ef56a9a3c7a19938a061aa7930a0d2a3e748113778e4a2db7733ebfa"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.koKR.json",
+      "bytes": 28032,
+      "sha256": "d252649e16fab8d2886805c2e83d737af973486aa03336f834410d4fc88954bf"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.plPL.json",
+      "bytes": 27732,
+      "sha256": "7987a4021c753500a104f83304a4339d1d09a3fef8dcda0897805099434fc178"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.ptBR.json",
+      "bytes": 26274,
+      "sha256": "d69caa65a9f4048c49728c488f71b8fd67bbbd8ed56a9cb002ba05589b427281"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.ruRU.json",
+      "bytes": 37525,
+      "sha256": "de9871b069784daca05280d69cf856d8890a6eac27fd9c562840921f396981a2"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.trTR.json",
+      "bytes": 27999,
+      "sha256": "3ca1989a7ef825e50bfeb5afaff51ce41a9d56f0443a82655557c902860fa192"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.zhCN.json",
+      "bytes": 25712,
+      "sha256": "0924523ead60b4e1947163fb9f3992a75f84bbd6d770efd2ce6242b1fd7218c2"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Runes.zhTW.json",
+      "bytes": 25590,
+      "sha256": "78045073c6cb4375b7ce9abeae33fb35eb10ea0e0d8eeb6fbd4435b2d6a65309"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.deDE.json",
+      "bytes": 98323,
+      "sha256": "bbc94439cc5be888c3351cfb28bfa7634bab2cf8f16d13976fa6108840717d4e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.enUS.json",
+      "bytes": 92234,
+      "sha256": "0b8d2c430ef551573e2e470f2ebf12060251c4241c7c287e1310ca9a831d26ce"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.esES.json",
+      "bytes": 98777,
+      "sha256": "50c87d6f9efb08d19d4426920b3446c798a76a60d0db97d5766f8f30bb5aa773"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.esMX.json",
+      "bytes": 98822,
+      "sha256": "f204d1a67428e0aee124d03f1c20af69853d93dacc6e9c938bb67785537b097f"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.frFR.json",
+      "bytes": 103980,
+      "sha256": "180a41c740be08db93f8a5b9a0ec6ce373a2802d2bd1368584214ec637941200"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.itIT.json",
+      "bytes": 98600,
+      "sha256": "cded508793475f90e2fb4399dbd6eb71754a4717cd1097f117b58972c9aa4737"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.jaJP.json",
+      "bytes": 103000,
+      "sha256": "b3da6d90db0425490193952be9d2aafee7d5c59bbac66fb9d7e6b8d533d2114b"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.koKR.json",
+      "bytes": 100760,
+      "sha256": "1bca91f264ada34a7384a127d949775ab6ebbd3dd69d50d7fb6d2fa127c3b0d2"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.plPL.json",
+      "bytes": 98516,
+      "sha256": "61f00323e84053709e28df74b0c58b9f09fa3f01f7476d95e8d706db34eba2e6"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.ptBR.json",
+      "bytes": 96217,
+      "sha256": "34330beabd9ee62a2648647aeca5cb8be7d9a14c0adae650b749f10b952e6d9e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.ruRU.json",
+      "bytes": 123297,
+      "sha256": "94b37204032bc386b8d4b3194811e13e51d14392b24adbea8d9d04d131c04324"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.trTR.json",
+      "bytes": 98500,
+      "sha256": "6ac5aa59880ba23b6c0dd7bd8cb9bf45c4d5c77584c6d9f9bd827daa2934614e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.zhCN.json",
+      "bytes": 93422,
+      "sha256": "ea3e8d32416b39836cac110ec4c1d9bae7637fded598c9e1b1b1acaff5d1b74c"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Sigils.zhTW.json",
+      "bytes": 91845,
+      "sha256": "1b4ab8b2bfaac316100070d2569f64ca655553ed34eab61438d362b931cc999d"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.deDE.json",
+      "bytes": 393597,
+      "sha256": "d62b684adbf5a38495b8e1a68f3a9493733f68b29fbed8ee88c7a30a46e91657"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.enUS.json",
+      "bytes": 357834,
+      "sha256": "60e816faf002d9de96d5552006582ce4882b2bea71973e34eb8131aa361b6bca"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.esES.json",
+      "bytes": 384517,
+      "sha256": "6a224f499c528bbb557edf654a919abcc275ce79569db03945573d0f66e35dd8"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.esMX.json",
+      "bytes": 388019,
+      "sha256": "ae2400bdfd17d81917bb27152985848efdf00a78e8591639e9f4cc52f010b6b9"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.frFR.json",
+      "bytes": 420530,
+      "sha256": "1d2836078ae78417e1f829abea013959099ab92e26d3e5aca0cc42fec6b2e093"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.itIT.json",
+      "bytes": 384298,
+      "sha256": "ea6f448433c95f823d359bc65a589dc2fd81c321467a93a886c48579da04baaa"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.jaJP.json",
+      "bytes": 405387,
+      "sha256": "10dc9ef458c1c460daa51cb46f902e15ae233997ad76d1e3cc873bd2a797d3fe"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.koKR.json",
+      "bytes": 389375,
+      "sha256": "e00ae3bf24a27e4c598d1ad97b08f9209a51b1dfc2fcf0d59ff5cff3e3120ba3"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.plPL.json",
+      "bytes": 392573,
+      "sha256": "7492442b28e07a47e98e8198c7cd31593040477eacb53224c408c36bd06a045e"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.ptBR.json",
+      "bytes": 373610,
+      "sha256": "6a9b136e3ef9f093a3a7c9b5e369d7b694732a4f9759f0bdbfb7c2c854915025"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.ruRU.json",
+      "bytes": 513726,
+      "sha256": "60f238bb4bd22b996936427953350c9342d2d21d8d1090ce8f9ae1202b1f4b66"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.trTR.json",
+      "bytes": 379525,
+      "sha256": "afc78c75b4d77c9da6ac181c3e9075cfd8e1eb50bb26d37c2212ab0fac3e2c2c"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.zhCN.json",
+      "bytes": 356177,
+      "sha256": "c331b853dfe5cb828b10759ac91db509f27938114cc8c0b23eb313047696bbee"
+    },
+    {
+      "category": "data",
+      "path": "assets/original/data/Uniques.zhTW.json",
+      "bytes": 350321,
+      "sha256": "1664bba414eead83dece6d16c60300cb8ed2a99a876650c63b443303539bec0c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "bytes": 7031,
+      "sha256": "a256e76127e2af63740a7c22d5924ec66d649f8b15cef9d989ccb46e784a3e44"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+      "bytes": 777,
+      "sha256": "79bb7bf589dcc3069f5c80fe230cb5aede4c14f6fa212e6a64b9918d8d11036b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_gc_square.png",
+      "bytes": 1313,
+      "sha256": "2eb915ace6593e3deaff71336775b32fd2758129f5624200dc1df006319fe1e6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_gc_x.png",
+      "bytes": 1278,
+      "sha256": "37a610b7926dbd82464187e9b1cfb61363adb91b0b7be876f20bd82da27e3ca8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_gc_y.png",
+      "bytes": 2057,
+      "sha256": "ea3ec4ea1c7e72554a6beffb3525aebb2e0d36b49cbcad90079671e616ce61e0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_kb_all.png",
+      "bytes": 1334,
+      "sha256": "429a4461cf277910e54c6d9d827e51a9eba87fefc9e4306520a8c70d3bb683df"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_kb_all_esES.png",
+      "bytes": 1571,
+      "sha256": "598d43af5f4a86b321fba8cb3f02d5e837e5c688efd64e535c9dbbddee44a18f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+      "bytes": 1571,
+      "sha256": "598d43af5f4a86b321fba8cb3f02d5e837e5c688efd64e535c9dbbddee44a18f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+      "bytes": 1831,
+      "sha256": "7bb71a5db821ee53d397f41f1661dda8ea783c81d54453cb454b1419b13486da"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/1080p_SMF/config.json",
+      "bytes": 379,
+      "sha256": "57d93289b7d78ebdd6672cb3cd7e3370edc285c0e83707409eb48444e9dac20f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_greater.png",
+      "bytes": 905,
+      "sha256": "d9c94d849b8d2586736c926e46ac16af4d424dae1590f08adf87991da61d45a6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_greater_master.png",
+      "bytes": 1129,
+      "sha256": "76b94f4b797dcdebf879defef3c2fa9d52914154258ffe2902a6aa351f63445c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_masterworking.png",
+      "bytes": 1062,
+      "sha256": "d2b42d301f60976d39637a028bd2357c635867de0887af17af033652b858c1df"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_normal.png",
+      "bytes": 452,
+      "sha256": "867e4f2b6ee557523b6baf53e50272cbd36d868a127f9dbec8d9db6d019b3248"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_reroll.png",
+      "bytes": 489,
+      "sha256": "0664bbaba1c11d20917c175d746f132d5f90a7833c51ec434534ee2e6b7c13b3"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_rune_invocation.png",
+      "bytes": 875,
+      "sha256": "cd41d6721f0c55e98f181a7f15d1909ccb9181c16b786dbd8ad217dff6fc05ee"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_rune_ritual.png",
+      "bytes": 800,
+      "sha256": "bf9117d32ba4fa9c23ee737aba3f06ae65eecb1c6f66acae27fff13db6573ea9"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_defensive.png",
+      "bytes": 707,
+      "sha256": "765cb2351050dd602465489778d709287e04ee8a75b471382f2aaaacf9112554"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_mobility.png",
+      "bytes": 802,
+      "sha256": "28c28f75b339e9ac9f50cc3ba29e42fd1ea38bd620d441a2d7af682949eb42f2"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_offensive.png",
+      "bytes": 770,
+      "sha256": "cff5a2f044719e89a1a53c50082d020f0a67bdc7803b0946b3f76eb68554507a"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_resource.png",
+      "bytes": 772,
+      "sha256": "a36c790ccc8ee4fbad568abf847c1c17bf9b16752a9d072a2e2a99f5c123fab4"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_utility.png",
+      "bytes": 807,
+      "sha256": "9b1669fcc0878d4aeba062f0bab575fa6666b129bc544ad2a62b2328d89dfb17"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-affixes_temper_weapons.png",
+      "bytes": 723,
+      "sha256": "0c74755cc02449f7400916c027e2c8c0411b171184de27ab3639323b01132b22"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-aspects_legendary.png",
+      "bytes": 494,
+      "sha256": "6f2f563fc057e23320cad07ec6eb4cc3ada42e28739a9c2ddd350e56026c4a27"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-aspects_mythic.png",
+      "bytes": 738,
+      "sha256": "f48cb1b00adbee7d6924838d0bf107c9f707ae0204c29cf9dfcb33320074f45e"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-aspects_unique.png",
+      "bytes": 720,
+      "sha256": "1d0080df5a0eff25d6fa93c61176b89c6fb3c62f2fee5c1e3e2be4b14bd9470d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-socket_1.png",
+      "bytes": 1191,
+      "sha256": "b69e35ddd73d5c2ec3e38079729ce33d88022571e8937b722081d61c661e524e"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-socket_1_mask.png",
+      "bytes": 4223,
+      "sha256": "372c2697e367a417cc60140df2cb7f5d95aa5c94a085af035a52e905af8e9bc8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-socket_invocation.png",
+      "bytes": 1750,
+      "sha256": "389e967c10fae8518773759335eeb7c5c01176d319d7861dcad1cc7166d896f5"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-socket_invocation_mask.png",
+      "bytes": 4262,
+      "sha256": "b9526b26245b7c13028d82567506eaaa729bc5d78021c9223267842077238b57"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-socket_ritual.png",
+      "bytes": 1824,
+      "sha256": "ca828440d20056bcb50d85fde3470968ac86fcdb0066692b9022db17bbf33dd6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-socket_ritual_mask.png",
+      "bytes": 4261,
+      "sha256": "c7005b36ac7779f30ff461dc2fcc76f64a3701a2c4a57706fb0aeeadcb6b3aaf"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-splitter_1.png",
+      "bytes": 692,
+      "sha256": "5708d92ac51c8a4ec3f8fc87c121e7fe0e07834f75b0cf62d1df01bf0b62c273"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-splitter_2.png",
+      "bytes": 657,
+      "sha256": "0507e94ac3968dff2cc4767bc112a1aae7a441986a860739333d9fc061ecd035"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-splitter_top_1.png",
+      "bytes": 692,
+      "sha256": "34f0eb4361196b9a951757758ec0fb8930b2c869edbcf95d9a121ee4a20ff198"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SMF/dot-splitter_top_2.png",
+      "bytes": 643,
+      "sha256": "a102a0ea9a34f6cd2e17678c21e142d1c18b65074b2f030e4c3b342ade10d7b6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/Tooltips/Optional/tooltip_kb_sigil_salvage_esMX.png",
+      "bytes": 7021,
+      "sha256": "04e5c68a3450fdce62f8e80b1e3728d5373b84a8cb99f25c62e9bf67aa0b0a50"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+      "bytes": 748,
+      "sha256": "440bad8a8af04455155e3f9107c1e182e054384b7d17e77402190f83e2c70265"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/Tooltips/tooltip_gc_x.png",
+      "bytes": 1089,
+      "sha256": "312add68258e5e855aaded76bd6fc631d5d521944a0c0e3704576baed0cdde2b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/Tooltips/tooltip_kb_all.png",
+      "bytes": 1189,
+      "sha256": "57ce3783e13b5719b58760d2cbd920a395acedcdaaba9dfbced7cf7b2375505d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/Tooltips/tooltip_kb_all_esES.png",
+      "bytes": 1404,
+      "sha256": "7e02c03de484a6e2c858a053b42265b988dce3b2ce6631962ce5a095232336e8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+      "bytes": 1404,
+      "sha256": "7e02c03de484a6e2c858a053b42265b988dce3b2ce6631962ce5a095232336e8"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/1080p_SSF/config.json",
+      "bytes": 379,
+      "sha256": "61d8ce83f0b886b1867f9672b18f2d0fbb418f51b36434575aefc55b61a77b23"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_greater.png",
+      "bytes": 743,
+      "sha256": "3b93d349627fae6ce4ea7bca3c67042839c82b5f1af542013aec53288e0b5cbd"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_greater_master.png",
+      "bytes": 951,
+      "sha256": "c52322d0730f26c7ab838048b9499bfa9645a0ce10aa8eedddf635f7059fb404"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_masterworking.png",
+      "bytes": 868,
+      "sha256": "ef8e1c927c32f4e3fce6a003d99ff8ed664f86044c7be870a0322dd4dd0b9096"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_normal.png",
+      "bytes": 469,
+      "sha256": "1bf2cb3b20dec29fd6d4cd6edea171c263e34ea3abd04a8fb23b21aeb8aad5a0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_reroll.png",
+      "bytes": 400,
+      "sha256": "24c41256641958ebc26141716a72f187090a0d8b564fae0610ec3d80cc33eadf"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_rune_invocation.png",
+      "bytes": 744,
+      "sha256": "5141da957734329f602959e322bc0df6f1fca0f56aad6de5d245092d95b860b4"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_rune_ritual.png",
+      "bytes": 704,
+      "sha256": "de2631149184440a2ab5d3c5a8ba85e6d499f89346265770a15c3182bea5891b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_defensive.png",
+      "bytes": 696,
+      "sha256": "dbf2575bea8ad8e18a103757c301054ec329b9c79f171f786086b2bac6334a4c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_mobility.png",
+      "bytes": 648,
+      "sha256": "4ff31248951d157f7eaa081befed2939446624b2d92e2d965f62fcfb55fdabe7"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_offensive.png",
+      "bytes": 654,
+      "sha256": "a52587703709591dceb3eed9068089caa0ccb6d7b75631d7c2feeb486db907c6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_resource.png",
+      "bytes": 718,
+      "sha256": "db9e39643f313bef68884ab9f1d39dca6b17184c27718f5714661ee553dd422c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_utility.png",
+      "bytes": 719,
+      "sha256": "07e12abfd38c05bc902aefcf63167827959a7173b3a510b9c91e3bd458887711"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-affixes_temper_weapons.png",
+      "bytes": 646,
+      "sha256": "19ae96af17ced488f1e3fddb1937bfd03963369eefdf3afdfdf0f4cc6b060dba"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-aspects_legendary.png",
+      "bytes": 548,
+      "sha256": "b9f4060cc8d0e82e0e8b687834219cfec10fae9f5e541bac0cd21af65050bc26"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-aspects_mythic.png",
+      "bytes": 575,
+      "sha256": "224167570d6c890d6feb024083bbbd744165fc568695681829d38d4705314c24"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-aspects_unique.png",
+      "bytes": 651,
+      "sha256": "51422dc6a25d302cbee5dea35061e3543c96bb6ab294cadafefaedfe8ae175e9"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-socket_1.png",
+      "bytes": 1487,
+      "sha256": "d1ec414b15482ad5bdf71e26d73e4596f3d7ea75f122fc16430079511ef871b8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-socket_1_mask.png",
+      "bytes": 4211,
+      "sha256": "18af995a91556b6e31037133eede3ff0953b775fc035d455471c1e461b2118bf"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-socket_invocation.png",
+      "bytes": 1689,
+      "sha256": "5baa3c5fa5e0165b138287f39fb0a6683bd78d8b5e5f0477132d122a4c4fbc81"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-socket_invocation_mask.png",
+      "bytes": 4259,
+      "sha256": "f053bfda4c5ecad66a26f8a689cbe7a110fd775ab03939abc73011dfe9afd982"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-socket_ritual.png",
+      "bytes": 1812,
+      "sha256": "87443ecb80be64262a9d542e92098b27958de0343da5f41e3432440cf93c2147"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-socket_ritual_mask.png",
+      "bytes": 4265,
+      "sha256": "b8b7df7d0e97d4ac628680df0d1b770d81c2dcca9d1609028cdfdce0777e1f52"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-splitter_1.png",
+      "bytes": 712,
+      "sha256": "6fded8eb9a7d0c8d636876b04a12bce8a232fd9329e831b12376d5a4ac16fcf5"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-splitter_2.png",
+      "bytes": 654,
+      "sha256": "17e6d11d73ce07e002f7094f2a32a2a984f98e7130c2d6a66fceda44974bacf9"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-splitter_top_1.png",
+      "bytes": 842,
+      "sha256": "d826c51c750d8af558cafe7497a1206f9d0dc51a25d5da18dcb57f4daec793f0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-splitter_top_2.png",
+      "bytes": 651,
+      "sha256": "be77408007e691852c8e19a22de2258d82a74d79487ec4f810f07cdc37968135"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1080p_SSF/dot-splitter_top_3.png",
+      "bytes": 761,
+      "sha256": "e9984958ee966b27ae68d2cdfb70d58325d3e2d33b3b84f3a2dda668f3d4606b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/Tooltips/Optional/tooltip_kb_clear.png",
+      "bytes": 6459,
+      "sha256": "afe3724f98f3930b98e8f6ac7fce218e9e67cd27e66d0de5bb151b00c2c3b914"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/Tooltips/Optional/tooltip_kb_select.png",
+      "bytes": 6823,
+      "sha256": "1abe3cf90c1de1672bd2fa2015ba932e6c53f7918056c565c31f9caf44f170eb"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_gc_a.png",
+      "bytes": 1643,
+      "sha256": "52d68611c196766635b5ab0b65f7a19f49e570c2efe6c7d29383202e087aace8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_gc_x.png",
+      "bytes": 1628,
+      "sha256": "7e086ec1b30480fa9962942e01d1b7c166f9d79907a26508de93c9a99f7b596b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_kb_all.png",
+      "bytes": 2863,
+      "sha256": "0a85937feb622a62b0f91da9a490bcc9f6021b91030abe654050f6435dccb6ff"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_kb_all_esES.png",
+      "bytes": 2385,
+      "sha256": "33e75a8a010a13ad379ba25f84cb4af4a637d897c81eb4d26bad55fb92dea599"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/Tooltips/tooltip_kb_all_esMX.png",
+      "bytes": 2385,
+      "sha256": "33e75a8a010a13ad379ba25f84cb4af4a637d897c81eb4d26bad55fb92dea599"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/1440p_HSF/config.json",
+      "bytes": 382,
+      "sha256": "f8ba4ee130e67bba5bca1d90c868d3ae028c01bc036a052899f3ed169e097065"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_greater.png",
+      "bytes": 1075,
+      "sha256": "1636cd1a7521da5aa81904128c559df52a966c6a592d5872dd05e5f1d549aa00"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_masterworking.png",
+      "bytes": 649,
+      "sha256": "d74cba592210f6e91a09174207e80667f5099bb6c4365d2269682cad54ec8f20"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_masterworking_2.png",
+      "bytes": 736,
+      "sha256": "16adb2c4e3eeebdb2cba7116832e4a1b2f5605db1e7d0889a8efcb6076946431"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_normal.png",
+      "bytes": 728,
+      "sha256": "da4ce596c2a01334694234489af1d7c1933bd84d8796162e182a12cf8f0823ef"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_reroll.png",
+      "bytes": 693,
+      "sha256": "2f7838a851004cc717c34ee2a9c2975563fe1ee3a532114d75c3010df4445f06"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_rune_invocation.png",
+      "bytes": 710,
+      "sha256": "bfa1d382efb9f6093ffbd6a4fdab79eba424fffaea09535a67a7ebe967d3b1ba"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_rune_ritual.png",
+      "bytes": 604,
+      "sha256": "a88d6fd277d33dfa3d877e54e5ac583dbc092770bb7a046189010fb8c19a3519"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_sanctified.png",
+      "bytes": 741,
+      "sha256": "fc0a1699da7f7ad359b7c50a4495e99b9b600839883ca5f0bd6c14e47560fdf8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_defensive.png",
+      "bytes": 885,
+      "sha256": "8666900673b932ff3abd32c3d7fb8eebc9d7b5ef54075a4c21fcc4746de1b6eb"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_mobility.png",
+      "bytes": 1004,
+      "sha256": "176863b059f6dd80ea04380b21e4eab8c19a21dac1b8eaaff91f85b85ad1a4c9"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_offensive.png",
+      "bytes": 1189,
+      "sha256": "3e42b053a0dcd00dbff7e89c088ad07dab9facfc3fab69ed47e5cbd32494ccbf"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_resource.png",
+      "bytes": 1003,
+      "sha256": "ba638748a456b4a73d4298c7bc1f79f31511db21d831ab521d77e84b0e1d5d15"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_utility.png",
+      "bytes": 1151,
+      "sha256": "53dfa4b68c9bc208466a8c04e97f58eb4cca7cce90798422d14e4f58e7c3320f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-affixes_temper_weapons.png",
+      "bytes": 1132,
+      "sha256": "36222cc2873f878dd778b856957feb7015bb5b5048686617cfe21a678793eea0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-aspects_legendary.png",
+      "bytes": 747,
+      "sha256": "da806c92277f6623cf12f66f4070728b4a4b3cecd2b173b2bc6acdcb35bb69c1"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-aspects_mythic.png",
+      "bytes": 998,
+      "sha256": "ec1740b4fe61500fb12385aa9f6ead8d7133a5564fe09c4e19afa687f435cbd7"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-aspects_unique.png",
+      "bytes": 827,
+      "sha256": "0401f3819d492f7b4bc40d2d1fbc2f43a84a2b5bbc86fb78d739031274da3018"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-socket_1.png",
+      "bytes": 2308,
+      "sha256": "925d7ca3560f67f9e00304a9d625a0646589780ccedda2d5ea8bbb9342ff02da"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-socket_1_mask.png",
+      "bytes": 4261,
+      "sha256": "be858ecf6e398b3baef82f53119651efa6054a3c03b4ca8ef1d526d4cddaa2f6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-socket_invocation.png",
+      "bytes": 2946,
+      "sha256": "75ea7f19e5b57085acd13b9ed3b8acca53d8f97417cc9319737c88e86c10cdd0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-socket_invocation_mask.png",
+      "bytes": 4529,
+      "sha256": "6a219867b84319ccf3764fa120f14f5a9ac8c43bd2137c63a3f83a31cc0230b1"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-socket_ritual.png",
+      "bytes": 3211,
+      "sha256": "2c9fea624ec7bf92d90ec2f49e09e5b116bb5f5709d6a644e36dd830202c72f2"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-socket_ritual_mask.png",
+      "bytes": 4308,
+      "sha256": "0fcd7ecf5b5e96064f82d5b6fa33a13bf908096ee6e851176ddf22f87e549f3a"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-splitter_1.png",
+      "bytes": 1420,
+      "sha256": "1a943c20e7ef533f3ed5791f7bf8f114638e9d69509af04e33d3ed4eb648c953"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-splitter_2.png",
+      "bytes": 1417,
+      "sha256": "c4b561685262d23cd86b3d52f05cb0317126b77e4592da915fa446e6b7619ebb"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-splitter_top_1.png",
+      "bytes": 1379,
+      "sha256": "ce7974b3a2d2b70aabc03b0a8777b396c1d5a910a412002af4f7e4789088281d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-splitter_top_2.png",
+      "bytes": 1334,
+      "sha256": "7535c6e2dcd221620212e14058ea9e933cb611971c23c889f6c4f402bcc5a770"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-splitter_top_3.png",
+      "bytes": 1361,
+      "sha256": "fc67f7d7d137316bd4029529b078d00ffef0cb2ab52c1ba42aa8ab06226b2356"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_HSF/dot-splitter_top_4.png",
+      "bytes": 1620,
+      "sha256": "49b7f96511f39882ce4989b9cb8413a1b533b31837422a1da6d0d2923ab899bc"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "bytes": 9246,
+      "sha256": "b39c35de3cba87e1a047012f20f1401ce61e7d05e6f469d1b4cccc7c20904da0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/Optional/tooltip_kb_space.png",
+      "bytes": 999,
+      "sha256": "300081c63a93b3b911e3db22e27de008edc666b01a89277ae73fa2b351727a29"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_gc_square.png",
+      "bytes": 2341,
+      "sha256": "d7020685a24e56d1f9a2489020de2c4b1e4daf0a0912edca1a77216a5cb31217"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_gc_x.png",
+      "bytes": 2004,
+      "sha256": "8fe5b7c06d7d5d9c8151be960e406ddd958583314e088b1e9e97c864f83e763c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all.png",
+      "bytes": 1960,
+      "sha256": "dc3da8505894954750c9861aa641b09aa693b0d74fc4645c61991677aba13cfc"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all_esES.png",
+      "bytes": 2006,
+      "sha256": "36f5268b5bb0adf31dee324551a94cb70cafce24527c87eb52ad023b2c56722b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all_esMX.png",
+      "bytes": 2006,
+      "sha256": "5bebd655fef682fd07b7d3ef4667885ceaf9c0f9bd8027e40d01b73b1decc77f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all_frFR.png",
+      "bytes": 2751,
+      "sha256": "69c1de4895b592610cc361601a9e799bbd00cec41f4d7faaa30f66ae3bff2186"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/Tooltips/tooltip_kb_all_itIT.png",
+      "bytes": 2160,
+      "sha256": "64c4531214e7328fa655ab7fdc1d207c41b1bce00121d95f836a8ae01fe92d40"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/1440p_SMF/config.json",
+      "bytes": 382,
+      "sha256": "177cc8f4a104f86fc2c2f92727c70a5a00d0e985b65d6c15e17da54fb7cfc106"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_greater.png",
+      "bytes": 1393,
+      "sha256": "ae76568595489aff381c25fcde5009724a801e4e3535c7475c7ef6de536af515"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_greater_master.png",
+      "bytes": 1746,
+      "sha256": "9d2a343507c997cee8a0755db5d29312e0ffe0751017dfd40c5036932ab04ea0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_masterworking.png",
+      "bytes": 1469,
+      "sha256": "e1419b122f4f1c02e35c9cc77e9778b5e6a1a8182a20b13c5e40c306dd00d7a6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_normal.png",
+      "bytes": 686,
+      "sha256": "38758aa36f19ea7de91fd9a378a047bde02b456d92d861352945e2fa8053e153"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_reroll.png",
+      "bytes": 728,
+      "sha256": "0d9dc6fa26a6e1d742829f998f01f9256c8c1cc33b3da684e78b4641db9bfb53"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_rune_invocation.png",
+      "bytes": 1120,
+      "sha256": "9de63af9c83d72867deafaf9254756024f0004c5b52c46e73f9659d552fef2ca"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_rune_ritual.png",
+      "bytes": 1168,
+      "sha256": "63d27b4905c824f8975a0af08088c75ab45e3970c29d1a5382992c6213d0968d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_defensive.png",
+      "bytes": 1094,
+      "sha256": "ce53f9a81ebc6576a3f22c0a31ed7276f06327a3f4a39771e5e420380cab53fa"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_mobility.png",
+      "bytes": 1159,
+      "sha256": "b0ac63bd2b7ab534eb84f6fb1ea2b1c7eb0faef172fa8ead8e7b15528392a88d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_offensive.png",
+      "bytes": 1167,
+      "sha256": "662b7d9d6e4aac65e9359d60fa7512e85cea07ca63d694f9b4e7cca5cf6e812c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_resource.png",
+      "bytes": 1184,
+      "sha256": "bc796a362824f8e815349cf6b332a3aadf0e7ab4e1d1468e4554d3c9c5705c02"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_utility.png",
+      "bytes": 1205,
+      "sha256": "4732787652aed68aa21bf8f749603fb9eb92b80e662da51edace5c7bba1f86a1"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-affixes_temper_weapons.png",
+      "bytes": 1197,
+      "sha256": "37961c37f45f9ae295428c54be1768695eb409cfba20da2fccd63196c36b00b3"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-aspects_legendary.png",
+      "bytes": 890,
+      "sha256": "d33e2d4c6e40d01673626e0cb467be9614ae6102a7019cddac449b32b7d4a075"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-aspects_mythic.png",
+      "bytes": 1124,
+      "sha256": "a9b662028f641e33ebed851842d518205481431e7e28a346cad74dac11960e5c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-aspects_unique.png",
+      "bytes": 1153,
+      "sha256": "a263ca6060564373234fab41ee0a762987d93134e3998ca92c1fec27915a6b92"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-socket_1.png",
+      "bytes": 1912,
+      "sha256": "e859cb4f3384b91f9a3d3013822e4641d047f61b4b513ceff5a24daef1ac5e4d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-socket_1_mask.png",
+      "bytes": 4221,
+      "sha256": "835b0da9e6b434ddf38e638cfcf029264931a864b524e1a4178ff270d8c368fb"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-socket_invocation.png",
+      "bytes": 2908,
+      "sha256": "0aa0e544b39afc04e320eccb40f7d17504ac25f7539c5b1bcf6465ab629e1cd6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-socket_invocation_mask.png",
+      "bytes": 4291,
+      "sha256": "bfb8589926468de803c40da469ed376703c236d872d85dda265381ca1d70ae4d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-socket_ritual.png",
+      "bytes": 2796,
+      "sha256": "8693edb1d674d0a3599c9ca6d9a52ef5fdaff7c78b5f1707594ec90494d912b9"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-socket_ritual_mask.png",
+      "bytes": 4320,
+      "sha256": "581ca845e18a2d37f045d97af7589e1c54bed9f23d8c4b6e02a3cf54b8bcc97c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-splitter_1.png",
+      "bytes": 1055,
+      "sha256": "639f42e07253f92da956791ea0f27d05930778022240ef72b799099c1dbf50cb"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-splitter_2.png",
+      "bytes": 1049,
+      "sha256": "4297950debf60a3fad08f9d058eb805651a40daf0d137e15ffbfc8ce46c7e0cf"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-splitter_3.png",
+      "bytes": 926,
+      "sha256": "ffb8f13a3659d926e87a3a2f641fbd4872782a710ede8ba032f1823a06222d9f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-splitter_top_1.png",
+      "bytes": 1139,
+      "sha256": "548d6525dd4a867c03fe9a8467d81070a09d935acceaf6a08f2dff099fed0038"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF/dot-splitter_top_2.png",
+      "bytes": 1099,
+      "sha256": "9531d5a810cc6229d221321e4e26bc28f6f43005466852f4e4deb1cdc3dc99bd"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "bytes": 6937,
+      "sha256": "20fe99f02a4c386d1c4d1d31411e64decf8e4f9b4b554fc565c15460f3643b89"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/Optional/tooltip_kb_space.png",
+      "bytes": 999,
+      "sha256": "300081c63a93b3b911e3db22e27de008edc666b01a89277ae73fa2b351727a29"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+      "bytes": 1784,
+      "sha256": "a3b8ac3c3a3ca6729e6bb41a7ffea255bd745b16f6978e5c95045150455c738e"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/tooltip_gc_x.png",
+      "bytes": 1321,
+      "sha256": "4eca1b6a6fb3e5b8a3eaa67ecd0cd910c0c6848b4e0878ec0e3c0eb47b41c167"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+      "bytes": 1310,
+      "sha256": "81a4698b573434ca2e8c815dfba31fbfcbc2ec2e0cfcc25102a4539c1a47034d"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/config.json",
+      "bytes": 382,
+      "sha256": "3e1b85a466a9462bbe22440d0efe5f49307ec7a778985e3a62dff058be3d3d66"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_greater.png",
+      "bytes": 896,
+      "sha256": "6d412a2930b80da0f5ab8ab72e0707bdc5c4b590ee0b0d5c04e3323b2be17aef"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_greater_master.png",
+      "bytes": 1029,
+      "sha256": "62f03e9e562fa5e3097c6087171403b37fbbcf2e93d8ded8594a355e1cbd5018"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_masterworking.png",
+      "bytes": 963,
+      "sha256": "eb488e4a339f85067d8abfa2362b5b76527f3d183d8c8f2fa3e805241f0d317b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_normal.png",
+      "bytes": 458,
+      "sha256": "6204ea68d66a2e899f00ce1546d9f86464f2f38ddefbc7caa551cef81c16ef18"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_normal_2.png",
+      "bytes": 869,
+      "sha256": "489f4c26640c29104632f82b9f983713dcb0a4196ea71307f8ef0b8e8cbc8e4c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_reroll.png",
+      "bytes": 605,
+      "sha256": "97661401019d0e432643c7204079b683a5adfb5336b9b93750c5118a0179d929"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_rune_invocation.png",
+      "bytes": 849,
+      "sha256": "08d857ad14409f2bad4fc3724d78e6ccc290517b7c23e2f9451eb7392d91fb2d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_rune_ritual.png",
+      "bytes": 793,
+      "sha256": "2f04c1c6562b24d4f43ad8401ea5d86f907e2ad28c30b0a43f36cba6f35c0468"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_defensive.png",
+      "bytes": 654,
+      "sha256": "7c835246406074c8644da1d2dfcac51be4b494b39653c9841416d4f50a003677"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_mobility.png",
+      "bytes": 699,
+      "sha256": "391a86759a934de1bd61be58134b0e25bfa048f8b9afb4da55675d9d8afaf223"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_offensive.png",
+      "bytes": 711,
+      "sha256": "dbd50874559d42714cb9521c951f5f8e8b75dfd730ee15f6ac8214d202419c0d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_resource.png",
+      "bytes": 701,
+      "sha256": "46be5a9d391eae2b1a2fa8c5a02c8a4cc7cd2ffc8d5685e28b959664d373b8f8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_utility.png",
+      "bytes": 797,
+      "sha256": "bde14bd2030b35b777229297e18a0aaeca1fe42a4334d0d12dec9e92851655a2"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-affixes_temper_weapons.png",
+      "bytes": 679,
+      "sha256": "262c40dd12598115b0ece22d1ad642db6777a00616758aac94dcf6162d69773f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-aspects_legendary.png",
+      "bytes": 594,
+      "sha256": "b749e2386cf06d0e58d9621d0f3d0e53dd396f6323748cf3cff582e95cdec3ea"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-aspects_mythic.png",
+      "bytes": 707,
+      "sha256": "37365ae7e2554267b96c62bcc048d80dc39ab8c8c853dbd88fb5c0923bb1b090"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-aspects_seasonal.png",
+      "bytes": 1578,
+      "sha256": "7679abd6c638026185529e277ede1805a8200c1623ea748f60f26af560df1410"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-aspects_unique.png",
+      "bytes": 904,
+      "sha256": "4594d8e9656a5689b118cf78bae04bed26d8069b705d0d7b064db23261e27bc0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_1.png",
+      "bytes": 2979,
+      "sha256": "165f90a84044dbe76eee2f341f2e02c6b7c8a42303f49042146759cfe05e3a6d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_1_mask.png",
+      "bytes": 204,
+      "sha256": "ba9d8dd229813f3e4e04066cf3f09d16552ef2f36ff75452cc16b20a4ae51632"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_invocation.png",
+      "bytes": 2908,
+      "sha256": "0aa0e544b39afc04e320eccb40f7d17504ac25f7539c5b1bcf6465ab629e1cd6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_invocation_mask.png",
+      "bytes": 4291,
+      "sha256": "bfb8589926468de803c40da469ed376703c236d872d85dda265381ca1d70ae4d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_ritual.png",
+      "bytes": 2796,
+      "sha256": "8693edb1d674d0a3599c9ca6d9a52ef5fdaff7c78b5f1707594ec90494d912b9"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-socket_ritual_mask.png",
+      "bytes": 4320,
+      "sha256": "581ca845e18a2d37f045d97af7589e1c54bed9f23d8c4b6e02a3cf54b8bcc97c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_1.png",
+      "bytes": 1072,
+      "sha256": "fe4fe70876be12b4236d441aa49db6465793c8356a00e6eac44963029fd23e0d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_2.png",
+      "bytes": 1049,
+      "sha256": "4297950debf60a3fad08f9d058eb805651a40daf0d137e15ffbfc8ce46c7e0cf"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_3.png",
+      "bytes": 926,
+      "sha256": "ffb8f13a3659d926e87a3a2f641fbd4872782a710ede8ba032f1823a06222d9f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_top_1.png",
+      "bytes": 1057,
+      "sha256": "e47a99aa5892984245197b04a1d1ff2047dc1cf6163cc7fa04d46ae4b43dc939"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SMF_zhCN/dot-splitter_top_2.png",
+      "bytes": 996,
+      "sha256": "73e4823108dea2e9845bc5252bcb71ca54debe198898cc1f47fd7c6c03e1959b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/Tooltips/Optional/tooltip_kb_space.png",
+      "bytes": 734,
+      "sha256": "752a0d8f46d7ebbef3c68a2ea34f80634c9d711e1961271024fc8eacdb8c97c2"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/Tooltips/tooltip_gc_x.png",
+      "bytes": 1696,
+      "sha256": "7d6c4f302352608c26c58e30ccb47ae64375d0fc2894ca1be4bb016ae9acbc70"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/Tooltips/tooltip_kb_all.png",
+      "bytes": 2260,
+      "sha256": "7abe8297b22025703212a3eef88d274861554a017322ac0f60d7baa0cb3ed52a"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/Tooltips/tooltip_kb_all_esES.png",
+      "bytes": 1925,
+      "sha256": "17bb498d1542f741deb5e4103f03000320df7000a4d0664d4ce4cc0997ff6534"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/Tooltips/tooltip_kb_all_esMX.png",
+      "bytes": 1925,
+      "sha256": "17bb498d1542f741deb5e4103f03000320df7000a4d0664d4ce4cc0997ff6534"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/1440p_SSF/config.json",
+      "bytes": 382,
+      "sha256": "177cc8f4a104f86fc2c2f92727c70a5a00d0e985b65d6c15e17da54fb7cfc106"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_greater.png",
+      "bytes": 1111,
+      "sha256": "466f924e0114cbabf534bfb39f33c411f5b8df84b94e5d2d621bf54a5fa3213b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_greater_master.png",
+      "bytes": 1382,
+      "sha256": "14aa0886649f2ea28f9a572939bf3974e323b40fc5eac9247443b9e31aba1554"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_masterworking.png",
+      "bytes": 1185,
+      "sha256": "07819c17b9094ed6a6e26b6310791c41b3a8fb8913fadc64f707dd2358c7c859"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_normal.png",
+      "bytes": 569,
+      "sha256": "c6bdadaea28462218f82f6cb0c75a259683d58dae0400ea93332d05f41b46822"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_reroll.png",
+      "bytes": 565,
+      "sha256": "c11a11115edef63f4d330e108297c2b8fa5e5e76f9035914308212af7afd2f81"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_rune_invocation.png",
+      "bytes": 1029,
+      "sha256": "454b6fd0863d424f94f38e79bd7a3d3cde01e2a7e508ad11012630ffd906d778"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_rune_ritual.png",
+      "bytes": 987,
+      "sha256": "f6d80997eff7e75cad01e4a3b22aa76a49db62e888cbfd3c4ea862c3ae5e4ee0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_defensive.png",
+      "bytes": 880,
+      "sha256": "6e103cd227ff4e0487dd122f95cfc2ceb258e2d3204088f2ee3666e132b9d268"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_mobility.png",
+      "bytes": 937,
+      "sha256": "decbae252081d7c689ac9c4ccf3aac87b334af9aafc99ba5f34c59834410f7f7"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_offensive.png",
+      "bytes": 956,
+      "sha256": "173f9a14a6da5a8ec1d2c653252cb8136c7b6a657acb786ad9a0cec112276d2b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_resource.png",
+      "bytes": 1011,
+      "sha256": "bf33426cbff48fd685589e7345b56d49700e7f56ec6d6ab490f2e57e97c7516d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_utility.png",
+      "bytes": 1002,
+      "sha256": "642e7eacdcd91e6892a0d6c789feb75b38596caef58fb3949af3f2d09f50c693"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-affixes_temper_weapons.png",
+      "bytes": 946,
+      "sha256": "488b08ea2c53356bbfb718366eb9a240b089c0002640677125b8cd814639f599"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-aspects_legendary.png",
+      "bytes": 766,
+      "sha256": "375f6d9ef5fe1c1e07bee3fdd37ba14ace9c842cb8de3c075ccb3cb7a743a503"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-aspects_mythic.png",
+      "bytes": 906,
+      "sha256": "14821e9216da1b370e4d481069313630a13d6f55f65237e1ab0212abcd2b271a"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-aspects_unique.png",
+      "bytes": 902,
+      "sha256": "e7e43071faed1e4139d01fcc7faf11678e4bf1c1690c67de7b40e46e3d0374d1"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-socket_1.png",
+      "bytes": 3186,
+      "sha256": "f823a0579e858d3965c56247579d357060d7e0fa79f3e63b095371dff1c7498f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-socket_1_mask.png",
+      "bytes": 1756,
+      "sha256": "f8c8fe0b08f8008f3533893268478f34b29273c4f0da40b26b53d0955348dd2b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-socket_invocation.png",
+      "bytes": 2907,
+      "sha256": "c895d6e47a65c8604c1050a1263f5037192980461bdbd07d119506001e0915ec"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-socket_invocation_mask.png",
+      "bytes": 4283,
+      "sha256": "df4492fe7937aaa78d2b5d6edccba18d57a1aa13c93770e6064b25f6ee996fb5"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-socket_ritual.png",
+      "bytes": 2966,
+      "sha256": "b0f8c45206309616b619bc1de7f3d4428010c70e138adfae93091b73271bdebc"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-socket_ritual_mask.png",
+      "bytes": 4280,
+      "sha256": "921c61b3f31011a20fb84589ae9f2c04f01ae09d55a1e567eaef7a43dc1ab9ec"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-splitter_1.png",
+      "bytes": 1071,
+      "sha256": "8ca1a30baa7060255bcf6b757248abf99b9101d01ae948f86d22771a1237258a"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-splitter_2.png",
+      "bytes": 1121,
+      "sha256": "054cdd70950fa9b780d0fccf28ba6fdfaa7122e70ff364f7d1bd18ab1b907832"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1440p_SSF/dot-splitter_top_1.png",
+      "bytes": 1054,
+      "sha256": "9354ed65efbd510ed54da15d0a4c4188ea2fefc6a94436161b7374aa5fd8a520"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_gc_square.png",
+      "bytes": 2018,
+      "sha256": "e5f623911eccba9a45d1d72c876f1d7a5984eb1bf07e3e57af746c635eecbc26"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_gc_x.png",
+      "bytes": 2063,
+      "sha256": "11ef6037400c952c787abf112756ce6538eb7b4f8fee4b933064cf01408330c3"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/Tooltips/tooltip_kb_all.png",
+      "bytes": 1755,
+      "sha256": "fab26957bd45bd0ab9e3db2ee028c77564c3b4bb05bf0968874ddeaf040b3b96"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/1600p_SMF/config.json",
+      "bytes": 382,
+      "sha256": "85bac93237e8cb4ae3b53b28258ff22a690ac4a682e7a6821d801b99ac475f88"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-affixes_greater.png",
+      "bytes": 1799,
+      "sha256": "40c55b40acbf64eca568a65d8d51ad1ba99f0071d40f45256e186563032d2775"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-affixes_normal.png",
+      "bytes": 694,
+      "sha256": "18c688c0aff7263682109bd7e824fbb6f0e5c932bb98907233794d6b4757227d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-affixes_reroll.png",
+      "bytes": 672,
+      "sha256": "3d3187a15901b816f4a8ab976c89f0349b8be14a8e7001fd93f4799be75aee63"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-affixes_temper.png",
+      "bytes": 641,
+      "sha256": "616f3f3e3683fe795045603c7ed033b8ff46eb1b8355b56a76f7cc4edbe22949"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-aspects_legendary.png",
+      "bytes": 1012,
+      "sha256": "d6f61b796ee56f02d010a245097b7b9844bf459fd416612895026ceab6d8a760"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-aspects_unique.png",
+      "bytes": 1414,
+      "sha256": "522d26c82b37b5b4aebb38c1b03a7687fc9773480bf30c62062e1b1193b9c222"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-socket_1.png",
+      "bytes": 2563,
+      "sha256": "985b798ed599ae3e127c1f847019f2b9e3e24720e506d21effdad3c071282541"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-socket_1_mask.png",
+      "bytes": 200,
+      "sha256": "8b67fad63048538e80a0804c8eaa70e3a5141cad57e55c06467974f789c8e938"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-splitter_1.png",
+      "bytes": 1274,
+      "sha256": "fac2935b0cb1f151d5f5173ce84bdcde8774f4e6e976c0b0086b84e5565d3b50"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF/dot-splitter_top_1.png",
+      "bytes": 1356,
+      "sha256": "aadb868729d5b287f67b6aa593dbfc70478976d9a06fd4893ba02922019e6a8b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/Tooltips/Optional/tooltip_kb_sigil_salvage.png",
+      "bytes": 6937,
+      "sha256": "20fe99f02a4c386d1c4d1d31411e64decf8e4f9b4b554fc565c15460f3643b89"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/Tooltips/tooltip_gc_a.png",
+      "bytes": 1784,
+      "sha256": "a3b8ac3c3a3ca6729e6bb41a7ffea255bd745b16f6978e5c95045150455c738e"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/Tooltips/tooltip_kb_all.png",
+      "bytes": 2620,
+      "sha256": "bb356cdd547a90046a75709698555ea3504d8da4e72aea22c4d197beea4fbbb7"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/config.json",
+      "bytes": 382,
+      "sha256": "85bac93237e8cb4ae3b53b28258ff22a690ac4a682e7a6821d801b99ac475f88"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/dot-affixes_normal.png",
+      "bytes": 823,
+      "sha256": "b11225b5dabaaccff4f704b8502504e3d37c98f53c9c0fc8fe834fd911c47fe9"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/dot-affixes_reroll.png",
+      "bytes": 1420,
+      "sha256": "d5b7115ce44306997957b4f4556d46ef16bd1cb5613e6d29bda62aff6db47403"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/dot-aspects_legendary.png",
+      "bytes": 1213,
+      "sha256": "73146b988a26f391d91dd4db556fc1162faa092651b17e43a2217230abbdbbba"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/dot-aspects_seasonal.png",
+      "bytes": 1578,
+      "sha256": "7679abd6c638026185529e277ede1805a8200c1623ea748f60f26af560df1410"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/1600p_SMF_zhCN/dot-aspects_unique.png",
+      "bytes": 1374,
+      "sha256": "97b8d70f7d51913c08bd8d5506fe900cd72bf396e8a798f6c6fbac078fe48fbe"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/Tooltips/Optional/tooltip_kb_all_salvage.png",
+      "bytes": 16212,
+      "sha256": "8dfc9ce52085f8f91271e33b983261a4792e9c298bf68c3e8c1d99c31967c39c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/Tooltips/tooltip_gc_a.png",
+      "bytes": 5588,
+      "sha256": "fdc94ed4ee99d86e910fb3764f5bcc81a8cbbbb09d8274042bf0ce5f23236b52"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/Tooltips/tooltip_gc_x.png",
+      "bytes": 4883,
+      "sha256": "9015f570ebc105f1a9a8e549c8ceb423444952a42d7a9231a8b6f00050e9827a"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/Tooltips/tooltip_gc_y.png",
+      "bytes": 5117,
+      "sha256": "b162517cdff944df72086f2a1445850cf464e3003e70af70fd5ad6104d7d1dc7"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/Tooltips/tooltip_kb_all.png",
+      "bytes": 2492,
+      "sha256": "3908cb348d9962fd854b1003df70edf79ede0bfb2f0eeceb4cad94bb5a17da03"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/2160p_HSF/config.json",
+      "bytes": 383,
+      "sha256": "ae38c59b33c3de1b2c1e1dac9694dfeb398fc16c4fc0f79677af628238ee33c8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_greater.png",
+      "bytes": 2119,
+      "sha256": "b5f72a894213ebd4f735f77e45de67fcdc69281a8940c316b1d9ac45cb052480"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_normal.png",
+      "bytes": 1098,
+      "sha256": "6707d43829392ce79220cb8730de3f8c37e1b3fd584b444614a31bd4c4d2bc98"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_reroll.png",
+      "bytes": 904,
+      "sha256": "65569075ed17239e14232fba17feca4f24f7d854f5c429a27f35b7569754a3c3"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_rune_invocation.png",
+      "bytes": 1744,
+      "sha256": "78f89b3bc3a60b16bba2c921ef218637e290e4406caff049e038968fdc18c68b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_rune_ritual.png",
+      "bytes": 1630,
+      "sha256": "8d3724c9c58fc0362a8a8d475d53566b5dbd71ecd6661bc61de526da5a0eed75"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_defensive.png",
+      "bytes": 1582,
+      "sha256": "1d07e01170e74ea06fd279945893b4a90d584f5752edcb4143bd530f33b5387e"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_mobility.png",
+      "bytes": 1804,
+      "sha256": "74219cbb1c41d068111559ee6711728efd8e7c82c992753ffa9f6b464bbab7fb"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_offensive.png",
+      "bytes": 1620,
+      "sha256": "b03b6e26717c4155f81928fbe163d4b1b95608fbbd233818b57c174f6b0f185e"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_resource.png",
+      "bytes": 1661,
+      "sha256": "7e3c29b97176880a5f6085399a5d5f4bb312cf46b45e1955f89b161b6ca6d942"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_utility.png",
+      "bytes": 1717,
+      "sha256": "99a2907a3c86417195a03c5719b949c6274f1aade571ff55a6bce13db09b3cbb"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-affixes_temper_weapons.png",
+      "bytes": 1881,
+      "sha256": "d3df270125646bfbc2b93ba27c381419381036b218648fb93e857d9ac2c873f4"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-aspects_legendary.png",
+      "bytes": 1127,
+      "sha256": "9e7966813d18c0815f953d6304ced90efa5ea7f6f46448d41ad9817c107235b5"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-aspects_mythic.png",
+      "bytes": 1716,
+      "sha256": "56bf05636c0aba9b172e8e33ab9a6fb3550ea54ff77e332d459391d75251fc3b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-aspects_unique.png",
+      "bytes": 1659,
+      "sha256": "03b4594222ebbf6aa3fe5564690dab97978e6286d6dffb7fce20ab7855c9d635"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-socket_1.png",
+      "bytes": 2916,
+      "sha256": "e9b8e2517420bd26b9a0fc808deb70d7dee32ea90d7a952f812df08a036e2388"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-socket_1_mask.png",
+      "bytes": 371,
+      "sha256": "f639aa99582ba8d50c948ae7743f1c99fc00d1964b5a61203026b97a8b367777"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-socket_invocation.png",
+      "bytes": 6273,
+      "sha256": "5ca9ced4d5e159fe2e560ffe0e0e537adb01c58dd78b27708b339b70dc897e5d"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-socket_invocation_mask.png",
+      "bytes": 4330,
+      "sha256": "dc32281f20a268a0e481525dc04069d7705a8304cf690f3e920da0f7aea8ad9f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-socket_ritual.png",
+      "bytes": 6411,
+      "sha256": "3c6bac3409b0109a266b5ccd958851add895805a1d411694cec5c108c4f0ff03"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-socket_ritual_mask.png",
+      "bytes": 5000,
+      "sha256": "dcb42a8971ed5e5b3767123341b33387cc89f745f5234b4c157a0fef96f1f46b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-splitter_1.png",
+      "bytes": 2169,
+      "sha256": "38978f0aa08b1bdea5ca783c5c84d6687e22c254d8c9c694743092509ff9ba78"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-splitter_top_1.png",
+      "bytes": 2307,
+      "sha256": "3f9cadce53d09a365ec3338aebd59329b878d2540481590a66f72cab5490011c"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_HSF/dot-splitter_top_2.png",
+      "bytes": 2297,
+      "sha256": "0c69eb6bb56c371570d334fabdbe9c462ada4cba7f73a3ddafe6d74b4a92f8aa"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/Tooltips/tooltip_gc_square.png",
+      "bytes": 1767,
+      "sha256": "74fe0d376e73e46a045f5f4a6d287987e1e148779928a2517be36d18b4179baa"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/Tooltips/tooltip_gc_x.png",
+      "bytes": 2745,
+      "sha256": "300aebe7d3bfd0aec5e470b3faf5f9504d8c0652bcb52ac02b8f08c38cec9575"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/Tooltips/tooltip_kb_all.png",
+      "bytes": 3009,
+      "sha256": "39892312969b5cd91b95d6aaabf61f4064cd27fab832b1dcb73f1646d4c00a45"
+    },
+    {
+      "category": "system_preset_config",
+      "path": "assets/original/systempresets/2160p_SSF/config.json",
+      "bytes": 382,
+      "sha256": "a3d580cd56239b710dbd4f17b8dbe436cb8691a81ed67d1018da39ce146bc09e"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_greater.png",
+      "bytes": 2326,
+      "sha256": "9562055e363c18ec9384b9e3972e778dccb8005d0ca1791ec174147252f54a55"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_masterworking.png",
+      "bytes": 1196,
+      "sha256": "6d66fe0479ea134dcd728df041a0011eaea1eef125396da2ac8ce5c45a75b287"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_normal.png",
+      "bytes": 971,
+      "sha256": "bfe12bfe8368d9caf358fb7c891460828698729458a5957e0bc2cfebb2706bae"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_reroll.png",
+      "bytes": 983,
+      "sha256": "fdf49601f100e48076d5e3d5f01e9d85842f7e91a4a4adec56c29c933487ac86"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_rune_invocation.png",
+      "bytes": 1245,
+      "sha256": "b18c0ec6eb1563b7ace7b1ac8a1fa7ae12b99987cef7416540d99894c880917f"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_rune_ritual.png",
+      "bytes": 1222,
+      "sha256": "1b8b0bc3106dfb591d1a9bf11ceca195c1d6662e846c580870b500b778312b1b"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_sanctified.png",
+      "bytes": 978,
+      "sha256": "9dcc4d7966b40868fec306d28c369de17e2efe90a9a49feb46cbbf8f6b261ea7"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_defensive.png",
+      "bytes": 1518,
+      "sha256": "4f78fa20e7d585dbb175118b3658ffcf418bf253b962c6b4f715ce827f5a0e21"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_mobility.png",
+      "bytes": 1698,
+      "sha256": "0e076587c8def9da0db385f58fd1ff2ce7493f9786621de010d0eef2b7be3b34"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_offensive.png",
+      "bytes": 1797,
+      "sha256": "99b5ad19e0970df38217547857298a1f676d7455f708c59fbb052663b9049df0"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_resource.png",
+      "bytes": 1679,
+      "sha256": "b4d2a74e1d67fd11423ae5381777d098484786c3cc2539467b4ed5fba2061065"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_utility.png",
+      "bytes": 1951,
+      "sha256": "830558b81d5093af1d8bf1d82d2671b93b35997ed7b21b62f206e0f7eed291f6"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-affixes_temper_weapons.png",
+      "bytes": 1933,
+      "sha256": "5df8b54473e1ba61f09e68b0c6165d596e92a04a6d8a689d84d45b8df8a459ed"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-aspects_legendary.png",
+      "bytes": 1497,
+      "sha256": "51a81a66fc2cd6d2c4e1824121957bda717a98f37d6fc97a306296ab2e662ca8"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-aspects_mythic.png",
+      "bytes": 1510,
+      "sha256": "7d283fa50b6420d4eab8357b28d8e8a4f01c9c657c5e2c3fd963528f6d2b3eba"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-aspects_unique.png",
+      "bytes": 2084,
+      "sha256": "a4103783ff011e92ccd9c40e854cb564f7016b8bb2ddae5a6a7d5a5b8a5f6fcd"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-socket_1.png",
+      "bytes": 3661,
+      "sha256": "816ff9c3ea4d73d71d84621bfa742209a9be4ff775a72e12ae82293ec0411965"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-socket_1_mask.png",
+      "bytes": 371,
+      "sha256": "702ed14e5326e108108e6014e855d6106eea60a1ece4ac26f13ed701f9ad7cf5"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-socket_2.png",
+      "bytes": 3690,
+      "sha256": "d8829864b4cd28cb1012f8743eae75660023345156a8c96fc0604d252e7d514e"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-socket_2_mask.png",
+      "bytes": 374,
+      "sha256": "bcbcc2fad53d37bf981c88c420d693dc6a2443f051f9b046bdf0054c9e71ef74"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-socket_invocation.png",
+      "bytes": 6553,
+      "sha256": "81988eb651fbc87175b3fcfe1440585d57acd333f9269f489b0242943a5e1393"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-socket_invocation_mask.png",
+      "bytes": 333,
+      "sha256": "2bdf77afe3068aff3b266e354aad97564e8a326eee2a6fb650591b324d02fbbc"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-socket_ritual.png",
+      "bytes": 6755,
+      "sha256": "935b5e18793d0f34261e05f4423e2e7f8e3dcdd53ecbab2df2ff31f6983ab536"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-socket_ritual_mask.png",
+      "bytes": 326,
+      "sha256": "42a339fed116c5376ac6c453c7e8af92d625c681c39050ff7d298da7322db7d4"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-splitter_1.png",
+      "bytes": 3080,
+      "sha256": "475879565c3fb97d137cc9da6296ef623f0b8508854c0eb39dd600c6308ad6b7"
+    },
+    {
+      "category": "system_preset_template",
+      "path": "assets/original/systempresets/2160p_SSF/dot-splitter_top_1.png",
+      "bytes": 3015,
+      "sha256": "faf8e3cf97d2ff4817e39806ebbbb5b3db5a6aca3c69e91b17695715de970197"
+    },
+    {
+      "category": "system_preset_metadata",
+      "path": "assets/original/systempresets/systempresets.json",
+      "bytes": 9114,
+      "sha256": "44830cf4ff8da34673f7542e1e50d9a4a73bd4a733fd992679a64266859d0689"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/1080p_SMF.zip",
+      "bytes": 52295,
+      "sha256": "3d7e2a5e024bff89cbeb7f20e3391859f6f2b4e86e7bca1587183b1a557eaaf1"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/1080p_SSF.zip",
+      "bytes": 44131,
+      "sha256": "48833969796824afb174e48afd23fdffd1e9c8be3333b39ae00a98ed0d0b8be8"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/1440p_HSF.zip",
+      "bytes": 68699,
+      "sha256": "849607250e7a82b599c8c537402257fc0ae29ed622e91c1db5febb9847402b92"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/1440p_SMF.zip",
+      "bytes": 69466,
+      "sha256": "d69ec91e6a6d91a80a67938f5670a1157cc6e815a7aa34f97ae7c2e6f0ee184b"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/1440p_SMF_zhCN.zip",
+      "bytes": 51632,
+      "sha256": "74b7142ec46817c562df449af49c048c98a41603b1f5066d407e5041e7da63d3"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/1440p_SSF.zip",
+      "bytes": 46677,
+      "sha256": "29356001c64d0cc84e462e8ed7e6bc972b6283b3d9e90e7bb3a4b3608ab0b5bb"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/1600p_SMF.zip",
+      "bytes": 20373,
+      "sha256": "80a18345785619e8a4aafa6499a41e7bc9ee22fd78a040a0f1ade45d341cd46b"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/1600p_SMF_zhCN.zip",
+      "bytes": 20153,
+      "sha256": "e91612eeccf523b4fb1f2c8e6812d6fcec95397feaefd230728e799181138c43"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/2160p_HSF.zip",
+      "bytes": 88885,
+      "sha256": "d3e760e119c9f3a8dc4395214216dc37a0088bb66dbae4aa5faa03da12b85823"
+    },
+    {
+      "category": "system_preset_zip",
+      "path": "assets/original/systempresets/zips/2160p_SSF.zip",
+      "bytes": 66169,
+      "sha256": "0624a25f30029d406387172665a842f8e7286948eb06a0d3a6a64d3928f2438c"
+    }
+  ]
+}

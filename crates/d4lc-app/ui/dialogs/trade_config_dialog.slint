@@ -1,0 +1,291 @@
+// Trade config dialog.
+//
+// Upstream: `TradeConfigView.xaml` + `TradeConfigViewModel.cs`.
+//
+// Field shape (`D4Companion/Views/Dialogs/TradeConfigView.xaml`):
+//
+// - `IsTradeOverlayEnabled` (toggle)
+// - `ShowCurrentItem` (toggle)
+// - `OverlayFontSize` (numeric 10..=50)
+//
+// Form contract (no Slint globals):
+//
+// - The three form values are projected on the root `AppWindow` as
+//   the `trade-config-overlay-enabled`, `trade-config-show-current-item`,
+//   and `trade-config-font-size` in-out properties (see
+//   `main_window.slint`). The dialog binds its two toggles and the
+//   numeric row to those root properties, so values flow directly
+//   between Slint and Rust.
+// - Confirm / cancel flow through the shared dialog host
+//   `dialog-confirm` / `dialog-cancel` callbacks, which the
+//   shared `actions::dialogs` router dispatches to
+//   `actions::trade_dialogs::handle_confirm` / `handle_cancel`.
+// - Validation errors are surfaced through the shared
+//   `dialog-error` / `dialog-error-visible` props; the router keeps
+//   the dialog open on failure.
+//
+// Persistence: all three fields persist. The confirm
+// handler applies them to the settings panel state and writes
+// `Config/Settings.json` through the existing
+// `d4lc_config::load_app_settings` / `save_app_settings` path —
+// `ShowCurrentItem` included (upstream SettingsD4.cs:83, default
+// `true`). Trade items JSON persistence (`Config/TradeItems.json`)
+// for the `AddTradeItem` path is handled by the trade effects
+// dispatcher in `actions::trade`.
+//
+// Toggle and numeric input components are inlined to keep the
+// dialog file self-contained (mirrors the `DebugToggleSwitch` /
+// `DebugNumericSpinBox` pattern in `screens/debug_screen.slint`).
+export component TradeConfigDialog {
+    in property <string> dialog-title: @tr("Trade Configuration");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust can read them via
+    // `app.get_trade_config_overlay_enabled()` etc.
+    in-out property <bool> trade-config-overlay-enabled: false;
+    in-out property <bool> trade-config-show-current-item: false;
+    in-out property <int> trade-config-font-size: 18;
+
+    callback confirm();
+    callback cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── IsTradeOverlayEnabled toggle (TradeConfigView.xaml:27-35)
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Trade Overlay");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: trade-config-overlay-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Enable trade overlay");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: trade-config-overlay-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        trade-config-overlay-enabled = !trade-config-overlay-enabled;
+                    }
+                }
+            }
+        }
+
+        // ── ShowCurrentItem toggle (TradeConfigView.xaml:37-45)
+        // Persisted on confirm (see the module notes above).
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Current Item");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: trade-config-show-current-item ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Show current item");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: trade-config-show-current-item ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        trade-config-show-current-item = !trade-config-show-current-item;
+                    }
+                }
+            }
+        }
+
+        // ── OverlayFontSize numeric input (TradeConfigView.xaml:47-57)
+        VerticalLayout {
+            spacing: 4px;
+
+            Text {
+                text: @tr("Font Size");
+                color: #EEEEEE;
+                font-size: 13px;
+                font-weight: 600;
+                vertical-alignment: center;
+            }
+
+            HorizontalLayout {
+                spacing: 6px;
+                preferred-height: 28px;
+
+                Text {
+                    text: trade-config-font-size;
+                    color: #EEEEEE;
+                    font-size: 13px;
+                    vertical-alignment: center;
+                    overflow: elide;
+                    preferred-width: 36px;
+                }
+
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 28px;
+                    preferred-height: 28px;
+                    min-width: 28px;
+                    min-height: 28px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Overlay font size decrement");
+                    Text {
+                        text: "-";
+                        color: #EEEEEE;
+                        font-size: 16px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            trade-config-font-size = max(trade-config-font-size - 1, 10);
+                        }
+                    }
+                }
+
+                Rectangle {
+                    background: #555555;
+                    border-radius: 4px;
+                    preferred-width: 28px;
+                    preferred-height: 28px;
+                    min-width: 28px;
+                    min-height: 28px;
+                    // Accessibility + headless real-input test harness.
+                    accessible-role: button;
+                    accessible-label: @tr("Overlay font size increment");
+                    Text {
+                        text: "+";
+                        color: #EEEEEE;
+                        font-size: 16px;
+                        font-weight: 700;
+                        horizontal-alignment: center;
+                        vertical-alignment: center;
+                    }
+                    TouchArea {
+                        clicked => {
+                            trade-config-font-size = min(trade-config-font-size + 1, 50);
+                        }
+                    }
+                }
+            }
+        }
+
+        // Persistence note for `ShowCurrentItem` (upstream default
+        // `true`, SettingsD4.cs:83; the confirm writes the flip to
+        // `Config/Settings.json` and re-projects the trade screen).
+        Text {
+            text: @tr("'Show current item' persists across restarts and controls the current-item card on the Trade screen.");
+            color: #888888;
+            font-size: 11px;
+            wrap: word-wrap;
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,522 @@
+[
+  {
+    "IdSno": "2530516",
+    "IdName": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Subpower_Brimstone",
+    "Description": "Item_Rune_Effect_Subpower_Brimstone",
+    "DescriptionClean": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneDescription": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Subpower_Brimstone"
+  },
+  {
+    "IdSno": "2531290",
+    "IdName": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Warlock_ChainPrison",
+    "Description": "Item_Rune_Effect_Warlock_ChainPrison",
+    "DescriptionClean": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneDescription": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Warlock_ChainPrison"
+  },
+  {
+    "IdSno": "2080567",
+    "IdName": "Item_Rune_Condition_HitHealthierEnemy",
+    "RuneType": "condition",
+    "Name": "亞胡",
+    "Description": "幸運觸發：對非健康敵人最多有 100% 機率。",
+    "DescriptionClean": "幸運觸發：對非健康敵人最多有 100 機率。",
+    "RuneDescription": "{c_RuneCondition}{c_label}幸運觸發：{/c}對非{c_important}健康{/c}敵人最多有 {c_number}[100|%|]{/c} 機率。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2165976",
+    "IdName": "Item_Rune_Condition_Bomb",
+    "RuneType": "condition",
+    "Name": "伊格尼",
+    "Description": "每 0.3 秒儲存一個奉獻。施放非基本技能以獲得儲存的奉獻。（上限為 500 奉獻）。",
+    "DescriptionClean": "每 0.3 秒儲存一個奉獻。施放非基本技能以獲得儲存的奉獻。（上限為 500 奉獻）。",
+    "RuneDescription": "{c_RuneCondition}每 {c_number}0.3{/c} |4秒:秒;儲存一個奉獻。施放非{c_important}基本{/c}技能以獲得儲存的奉獻。{c_gray}（上限為 500 奉獻）{/c}。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2024156",
+    "IdName": "Item_Rune_Effect_BonusToAllSkills",
+    "RuneType": "effect",
+    "Name": "伐克斯",
+    "Description": "所有技能等級 +1，持續 10 秒。",
+    "DescriptionClean": "所有技能等級 1，持續 10 秒。",
+    "RuneDescription": "{c_RuneEffect}所有技能等級 {c_number}+1{/c}，持續 {c_number}10{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "技能等級最多提高 3。"
+  },
+  {
+    "IdSno": "2432807",
+    "IdName": "Item_Rune_Effect_Paladin_Rally",
+    "RuneType": "effect",
+    "Name": "凱爾",
+    "Description": "喚起聖騎士的奮戰號召技能，獲得資源和攻擊速度，持續 # 秒。",
+    "DescriptionClean": "喚起聖騎士的奮戰號召技能，獲得資源和攻擊速度，持續 秒。",
+    "RuneDescription": "{c_RuneEffect}喚起聖騎士的{c_important}奮戰號召{/c}技能，獲得資源和攻擊速度，持續 {c_number}{s1}{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "資源提高"
+  },
+  {
+    "IdSno": "2081284",
+    "IdName": "Item_Rune_Condition_OnTakeDamage",
+    "RuneType": "condition",
+    "Name": "卡",
+    "Description": "失去生命值上限的 #%。",
+    "DescriptionClean": "失去生命值上限的 。",
+    "RuneDescription": "{c_RuneCondition}失去生命值上限的 {c_number}{s1}%{/c}。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2039542",
+    "IdName": "Item_Rune_Effect_Sorcerer_Teleport",
+    "RuneType": "effect",
+    "Name": "喬",
+    "Description": "以魔法使的傳送術技能取代下一次的閃避。傳送距離更遠、能造成傷害、而且會獲得無阻效果。",
+    "DescriptionClean": "以魔法使的傳送術技能取代下一次的閃避。傳送距離更遠、能造成傷害、而且會獲得無阻效果。",
+    "RuneDescription": "{c_RuneEffect}以魔法使的{c_important}傳送術{/c}技能取代下一次的閃避。傳送距離更遠、能造成傷害、而且會獲得{c_important}{u}無阻{/u}{/c}效果。",
+    "RuneOverflowBehavior": "儲存超量奉獻"
+  },
+  {
+    "IdSno": "2004781",
+    "IdName": "Item_Rune_Effect_Subpower_Grenades",
+    "RuneType": "effect",
+    "Name": "坦恩",
+    "Description": "引發俠盜的震撼榴彈，昏迷敵人並對其造成傷害。",
+    "DescriptionClean": "引發俠盜的震撼榴彈，昏迷敵人並對其造成傷害。",
+    "RuneDescription": "{c_RuneEffect}引發俠盜的{c_important}震撼榴彈{/c}，昏迷敵人並對其造成傷害。{/c}",
+    "RuneOverflowBehavior": "增加生成的榴彈"
+  },
+  {
+    "IdSno": "1968106",
+    "IdName": "Item_Rune_Condition_OnCastCoreSkill",
+    "RuneType": "condition",
+    "Name": "塔姆",
+    "Description": "施放一個非引導核心技能。",
+    "DescriptionClean": "施放一個非引導核心技能。",
+    "RuneDescription": "{c_RuneCondition}施放一個非{c_important}引導{/c}{c_important}核心{/c}技能。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2040870",
+    "IdName": "Item_Rune_Effect_Subpower_Swarm",
+    "RuneType": "effect",
+    "Name": "塔爾",
+    "Description": "引發魂靈師的瘟疫蟲群，對敵人造成傷害。",
+    "DescriptionClean": "引發魂靈師的瘟疫蟲群，對敵人造成傷害。",
+    "RuneDescription": "{c_RuneEffect}引發魂靈師的{c_important}瘟疫蟲群{/c}，對敵人造成傷害。{/c}",
+    "RuneOverflowBehavior": "增加生成的蟲群"
+  },
+  {
+    "IdSno": "1968671",
+    "IdName": "Item_Rune_Effect_ReduceUltimateCD",
+    "RuneType": "effect",
+    "Name": "塞克",
+    "Description": "使你現有的絕招冷卻時間縮短 # 秒。",
+    "DescriptionClean": "使你現有的絕招冷卻時間縮短 秒。",
+    "RuneDescription": "{c_RuneEffect}使你現有的{c_important}絕招{/c}冷卻時間縮短 {c_number}{s1}{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "進一步縮短冷卻時間"
+  },
+  {
+    "IdSno": "2059626",
+    "IdName": "Item_Rune_Effect_ResourceToDamage",
+    "RuneType": "effect",
+    "Name": "夸克斯",
+    "Description": "施放基本或防禦技能以外的技能時，會消耗你所有的主要資源，使你的傷害最多提高 #%，持續 1 秒。",
+    "DescriptionClean": "施放基本或防禦技能以外的技能時，會消耗你所有的主要資源，使你的傷害最多提高 ，持續 1 秒。",
+    "RuneDescription": "{c_RuneEffect}施放{c_important}基本{/c}或{c_important}防禦{/c}技能以外的技能時，會消耗你所有的主要資源，使你的傷害最多提高 {c_number}{s1}%{/c}，持續 {c_number}1{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "進一步提高傷害"
+  },
+  {
+    "IdSno": "2004804",
+    "IdName": "Item_Rune_Effect_Druid_EarthenBulwark",
+    "RuneType": "effect",
+    "Name": "奎",
+    "Description": "引發德魯伊的大地壁壘技能，持續 # 秒，賦予你自身一道屏障。",
+    "DescriptionClean": "引發德魯伊的大地壁壘技能，持續 秒，賦予你自身一道屏障。",
+    "RuneDescription": "{c_RuneEffect}引發德魯伊的{c_important}大地壁壘{/c}技能，持續 {c_number}{s1}{/c} 秒，賦予你自身一道{c_important}{u}屏障{/u}{/c}。{/c}",
+    "RuneOverflowBehavior": "延長持續時間"
+  },
+  {
+    "IdSno": "2060651",
+    "IdName": "Item_Rune_Effect_FlatCDR",
+    "RuneType": "effect",
+    "Name": "奧姆",
+    "Description": "使你現有冷卻時間縮短 # 秒。",
+    "DescriptionClean": "使你現有冷卻時間縮短 秒。",
+    "RuneDescription": "{c_RuneEffect}使你現有冷卻時間縮短 {c_number}{s1}{/c} 秒。",
+    "RuneOverflowBehavior": "進一步縮短冷卻時間"
+  },
+  {
+    "IdSno": "2063987",
+    "IdName": "Item_Rune_Condition_OnAvoidDamage",
+    "RuneType": "condition",
+    "Name": "尼歐",
+    "Description": "在戰鬥中持續 2 秒避免生命值受到傷害。 ",
+    "DescriptionClean": "在戰鬥中持續 2 秒避免生命值受到傷害。",
+    "RuneDescription": "{c_RuneCondition}在戰鬥中持續 2 秒避免生命值受到傷害。{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2060617",
+    "IdName": "Item_Rune_Condition_CastRepeatSkill",
+    "RuneType": "condition",
+    "Name": "希爾",
+    "Description": "施放 5 個技能，然後會精疲力竭持續 3 秒。",
+    "DescriptionClean": "施放 5 個技能，然後會精疲力竭持續 3 秒。",
+    "RuneDescription": "{c_RuneCondition}施放 {c_number}5{/c} 個技能，然後會精疲力竭持續 {c_number}3{/c} 秒。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2043181",
+    "IdName": "Item_Rune_Effect_MobilityBuff",
+    "RuneType": "effect",
+    "Name": "庫亞",
+    "Description": "獲得 10% 移動速度，持續 # 秒，最多提高 50%。",
+    "DescriptionClean": "獲得 10 移動速度，持續 秒，最多提高 50。",
+    "RuneDescription": "{c_RuneEffect}獲得 {c_number}10%{/c} 移動速度，持續 {c_number}{s1}{/c} 秒，最多提高 {c_number}50%{/c}。{/c}",
+    "RuneOverflowBehavior": "延長持續時間"
+  },
+  {
+    "IdSno": "2039678",
+    "IdName": "Item_Rune_Effect_Spiritborn_Vortex",
+    "RuneType": "effect",
+    "Name": "庫萊",
+    "Description": "引發魂靈師的旋風技能，拉近敵人並對其造成傷害。",
+    "DescriptionClean": "引發魂靈師的旋風技能，拉近敵人並對其造成傷害。",
+    "RuneDescription": "{c_RuneEffect}引發魂靈師的{c_important}旋風{/c}技能，拉近敵人並對其造成傷害。{/c}",
+    "RuneOverflowBehavior": "最多提高 100% 範圍"
+  },
+  {
+    "IdSno": "2004875",
+    "IdName": "Item_Rune_Effect_Subpower_Meteorites",
+    "RuneType": "effect",
+    "Name": "彤",
+    "Description": "引發魔法使的小隕石，對敵人造成傷害。",
+    "DescriptionClean": "引發魔法使的小隕石，對敵人造成傷害。",
+    "RuneDescription": "{c_RuneEffect}引發魔法使的{c_important}小隕石{/c}，對敵人造成傷害。{/c}",
+    "RuneOverflowBehavior": "增加生成的小隕石"
+  },
+  {
+    "IdSno": "2090244",
+    "IdName": "Item_Rune_Effect_Barbarian_ChallengingShout",
+    "RuneType": "effect",
+    "Name": "拉克",
+    "Description": "引發野蠻人的挑戰怒吼技能，嘲諷敵人並減少你受到的傷害，持續 # 秒。",
+    "DescriptionClean": "引發野蠻人的挑戰怒吼技能，嘲諷敵人並減少你受到的傷害，持續 秒。",
+    "RuneDescription": "{c_RuneEffect}引發野蠻人的{c_important}挑戰怒吼{/c}技能，嘲諷敵人並減少你受到的傷害，持續 {c_number}{s1}{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "延長持續時間"
+  },
+  {
+    "IdSno": "1969845",
+    "IdName": "Item_Rune_Effect_Sorcerer_FrostNova",
+    "RuneType": "effect",
+    "Name": "書爾",
+    "Description": "引發魔法使的神秘冰霜新星技能，對敵人造成凍結以及易傷效果。",
+    "DescriptionClean": "引發魔法使的神秘冰霜新星技能，對敵人造成凍結以及易傷效果。",
+    "RuneDescription": "{c_RuneEffect}引發魔法使的{c_important}神秘冰霜新星{/c}技能，對敵人造成{c_important}{u}凍結{/u}{/c}以及{c_important}{u}易傷{/u}{/c}效果。{/c}",
+    "RuneOverflowBehavior": "最多提高 100% 範圍"
+  },
+  {
+    "IdSno": "2166984",
+    "IdName": "Item_Rune_Effect_Subpower_LightningBolt",
+    "RuneType": "effect",
+    "Name": "查克",
+    "Description": "引發德魯伊的閃電，攻擊一名附近的敵人。",
+    "DescriptionClean": "引發德魯伊的閃電，攻擊一名附近的敵人。",
+    "RuneDescription": "{c_RuneEffect}引發德魯伊的{c_important}閃電{/c}，攻擊一名附近的敵人。{/c}",
+    "RuneOverflowBehavior": "增加生成的閃電"
+  },
+  {
+    "IdSno": "2047113",
+    "IdName": "Item_Rune_Effect_CriticalOverpower",
+    "RuneType": "effect",
+    "Name": "桑恩",
+    "Description": "你的下一次攻擊會使你命中的攻擊必定造成爆擊和壓制，持續 0.35 秒。",
+    "DescriptionClean": "你的下一次攻擊會使你命中的攻擊必定造成爆擊和壓制，持續 0.35 秒。",
+    "RuneDescription": "{c_RuneEffect}你的下一次攻擊會使你命中的攻擊必定造成爆擊和{c_important}{u}壓制{/u}{/c}，持續 {c_number}0.35{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "延長持續時間"
+  },
+  {
+    "IdSno": "1969850",
+    "IdName": "Item_Rune_Effect_Barbarian_WarCry",
+    "RuneType": "effect",
+    "Name": "歐姆",
+    "Description": "引發野蠻人的戰吼技能，使你造成的傷害提高 15%，持續 # 秒。",
+    "DescriptionClean": "引發野蠻人的戰吼技能，使你造成的傷害提高 15，持續 秒。",
+    "RuneDescription": "{c_RuneEffect}引發野蠻人的{c_important}戰吼{/c}技能，使你造成的傷害提高 {c_number}15%{/c}，持續 {c_number}{s1}{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "延長持續時間"
+  },
+  {
+    "IdSno": "2006150",
+    "IdName": "Item_Rune_Effect_Subpower_DancingBolts",
+    "RuneType": "effect",
+    "Name": "歐諾",
+    "Description": "引發引德魯伊的竄流閃電，此閃電會追尋敵人並對其造成傷害。",
+    "DescriptionClean": "引發引德魯伊的竄流閃電，此閃電會追尋敵人並對其造成傷害。",
+    "RuneDescription": "{c_RuneEffect}引發引德魯伊的{c_important}竄流閃電{/c}，此閃電會追尋敵人並對其造成傷害。{/c}",
+    "RuneOverflowBehavior": "增加生成的閃電"
+  },
+  {
+    "IdSno": "2004453",
+    "IdName": "Item_Rune_Condition_OnSpendResource",
+    "RuneType": "condition",
+    "Name": "波克",
+    "Description": "消耗你資源上限的 #%。",
+    "DescriptionClean": "消耗你資源上限的 。",
+    "RuneDescription": "{c_RuneCondition}消耗你資源上限的 {c_Number}{s1}%{/c}。{/c]",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1983344",
+    "IdName": "Item_Rune_Effect_Subpower_Earthquake",
+    "RuneType": "effect",
+    "Name": "泰克",
+    "Description": "引發野蠻人的裂地之震，對位於其中的敵人造成傷害。",
+    "DescriptionClean": "引發野蠻人的裂地之震，對位於其中的敵人造成傷害。",
+    "RuneDescription": "{c_RuneEffect}引發野蠻人的{c_important}裂地之震{/c}，對位於其中的敵人造成傷害。{/c}",
+    "RuneOverflowBehavior": "最多提高 100% 範圍"
+  },
+  {
+    "IdSno": "2039602",
+    "IdName": "Item_Rune_Effect_Rogue_Concealment",
+    "RuneType": "effect",
+    "Name": "涅爾",
+    "Description": "引發俠盜的反擊隱匿技能，持續 # 秒，獲得閃躲機率、移動速度、無阻，以及匿蹤。",
+    "DescriptionClean": "引發俠盜的反擊隱匿技能，持續 秒，獲得閃躲機率、移動速度、無阻，以及匿蹤。",
+    "RuneDescription": "{c_RuneEffect}引發俠盜的{c_important}反擊隱匿{/c}技能，持續 {s1} 秒，獲得閃躲機率、移動速度、{c_important}{u}無阻{/u}{/c}，以及{c_important}{u}匿蹤{/u}{/c}。{/c}",
+    "RuneOverflowBehavior": "延長持續時間"
+  },
+  {
+    "IdSno": "2020680",
+    "IdName": "Item_Rune_Condition_OnPetKillOrDie",
+    "RuneType": "condition",
+    "Name": "烏爾",
+    "Description": "你的僕從或同伴殺死一名敵人或死亡。",
+    "DescriptionClean": "你的僕從或同伴殺死一名敵人或死亡。",
+    "RuneDescription": "{c_RuneCondition}你的{c_important}僕從{/c}或{c_important}同伴{/c}殺死一名敵人或死亡。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2088916",
+    "IdName": "Item_Rune_Effect_Necromancer_IronMaiden",
+    "RuneType": "effect",
+    "Name": "特伯",
+    "Description": "引發死靈法師的厭憎攻擊反噬技能，反擊來自敵人的傷害，並在其死亡後治療你。",
+    "DescriptionClean": "引發死靈法師的厭憎攻擊反噬技能，反擊來自敵人的傷害，並在其死亡後治療你。",
+    "RuneDescription": "{c_RuneEffect}引發死靈法師的{c_important}厭憎攻擊反噬{/c}技能，反擊來自敵人的傷害，並在其死亡後治療你。{/c}",
+    "RuneOverflowBehavior": "每個奉獻提高 1% 傷害"
+  },
+  {
+    "IdSno": "1968096",
+    "IdName": "Item_Rune_Condition_OnEvade",
+    "RuneType": "condition",
+    "Name": "瑟姆",
+    "Description": "施放閃避。",
+    "DescriptionClean": "施放閃避。",
+    "RuneDescription": "{c_RuneCondition}施放閃避。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2057115",
+    "IdName": "Item_Rune_Effect_SummonSpiritWolf",
+    "RuneType": "effect",
+    "Name": "瑟赫",
+    "Description": "召喚 1 個會攻擊敵人的幽靈狼同伴，持續 8 秒。",
+    "DescriptionClean": "召喚 1 個會攻擊敵人的幽靈狼同伴，持續 8 秒。",
+    "RuneDescription": "{c_RuneEffect}召喚 1 個會攻擊敵人的幽靈狼{c_important}同伴{/c}，持續 {c_number}8{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "召喚多隻惡狼"
+  },
+  {
+    "IdSno": "2004862",
+    "IdName": "Item_Rune_Effect_Necromancer_Decrepify",
+    "RuneType": "effect",
+    "Name": "瓦特",
+    "Description": "引發死靈法師的怨惡衰老技能，緩速敵人，降低其造成的傷害，並讓你能處決這些敵人。",
+    "DescriptionClean": "引發死靈法師的怨惡衰老技能，緩速敵人，降低其造成的傷害，並讓你能處決這些敵人。",
+    "RuneDescription": "{c_RuneEffect}引發死靈法師的{c_important}怨惡衰老{/c}技能，緩速敵人，降低其造成的傷害，並讓你能{c_important}{u}處決{/u}{/c}這些敵人。{/c}",
+    "RuneOverflowBehavior": "延長持續時間"
+  },
+  {
+    "IdSno": "1968585",
+    "IdName": "Item_Rune_Effect_GainResource",
+    "RuneType": "effect",
+    "Name": "盧姆",
+    "Description": "恢復 # 點主要資源。",
+    "DescriptionClean": "恢復 點主要資源。",
+    "RuneDescription": "{c_RuneEffect}恢復 {c_number}{s1}{/c} 點主要資源。{/c}",
+    "RuneOverflowBehavior": "提高恢復的資源"
+  },
+  {
+    "IdSno": "2090793",
+    "IdName": "Item_Rune_Effect_Druid_Petrify",
+    "RuneType": "effect",
+    "Name": "約姆",
+    "Description": "引發德魯伊的石化技能，使敵人昏迷並恢復主要資源。",
+    "DescriptionClean": "引發德魯伊的石化技能，使敵人昏迷並恢復主要資源。",
+    "RuneDescription": "{c_RuneEffect}引發德魯伊的{c_important}石化{/c}技能，使敵人昏迷並恢復主要資源。{/c}",
+    "RuneOverflowBehavior": "延長昏迷持續時間"
+  },
+  {
+    "IdSno": "2004497",
+    "IdName": "Item_Rune_Condition_AllSkillsOnCD",
+    "RuneType": "condition",
+    "Name": "約爾",
+    "Description": "施展一個有冷卻時間的技能。",
+    "DescriptionClean": "施展一個有冷卻時間的技能。",
+    "RuneDescription": "{c_RuneCondition}施展一個有冷卻時間的技能。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2155996",
+    "IdName": "Item_Rune_Condition_Summons",
+    "RuneType": "condition",
+    "Name": "納古",
+    "Description": "保持至少 1 個存活的召喚物持續 5 秒，每個召喚物都能獲得奉獻，擁有 6 個召喚物時可獲得最大效果。",
+    "DescriptionClean": "保持至少 1 個存活的召喚物持續 5 秒，每個召喚物都能獲得奉獻，擁有 6 個召喚物時可獲得最大效果。",
+    "RuneDescription": "{c_RuneCondition}保持至少 {c_number}1{/c} 個存活的{c_important}召喚物{/c}持續 {c_number}5{/c} 秒，每個召喚物都能獲得奉獻，擁有 {c_number}6{/c} 個{c_important}召喚物{/c}時可獲得最大效果。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2040699",
+    "IdName": "Item_Rune_Condition_OnCastCrossClassSkill",
+    "RuneType": "condition",
+    "Name": "艾索",
+    "Description": "引發其他職業的技能。",
+    "DescriptionClean": "引發其他職業的技能。",
+    "RuneDescription": "{c_RuneCondition}引發其他職業的技能。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2060481",
+    "IdName": "Item_Rune_Condition_StandStill",
+    "RuneType": "condition",
+    "Name": "莉斯",
+    "Description": "戰鬥時站立不動 # 秒。",
+    "DescriptionClean": "戰鬥時站立不動 秒。",
+    "RuneDescription": "{c_RuneCondition}戰鬥時站立不動 {c_number}{s1}{/c} |4秒:秒;。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2063886",
+    "IdName": "Item_Rune_Condition_OnStutterStep",
+    "RuneType": "condition",
+    "Name": "莫尼",
+    "Description": "施放 2 個機動或亡駭技能。 ",
+    "DescriptionClean": "施放 2 個機動或亡駭技能。",
+    "RuneDescription": "{c_RuneCondition}施放 {c_number}2{/c} 個{c_important}機動{/c}或{c_important}亡駭{/c}技能。{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2006747",
+    "IdName": "Item_Rune_Condition_OnCCdOrInjured",
+    "RuneType": "condition",
+    "Name": "菲歐",
+    "Description": "成為受傷或受控場狀態。（冷卻時間：10 秒）",
+    "DescriptionClean": "成為受傷或受控場狀態。（冷卻時間：10 秒）",
+    "RuneDescription": "{c_RuneCondition}成為{c_important}{u}受傷{/u}{/c}或受控場狀態。{/c}{c_gray}（冷卻時間：10 秒）{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2004723",
+    "IdName": "Item_Rune_Effect_Subpower_DesecratedGround",
+    "RuneType": "effect",
+    "Name": "蔑特",
+    "Description": "你在身後留下死靈法師的汙穢之地，持續 3 秒，對位於其中的敵人造成傷害。",
+    "DescriptionClean": "你在身後留下死靈法師的汙穢之地，持續 3 秒，對位於其中的敵人造成傷害。",
+    "RuneDescription": "{c_RuneEffect}你在身後留下死靈法師的{c_important}汙穢之地{/c}，持續 {c_number}3{/c} 秒，對位於其中的敵人造成傷害。{/c}",
+    "RuneOverflowBehavior": "延長持續時間"
+  },
+  {
+    "IdSno": "2021640",
+    "IdName": "Item_Rune_Effect_MaxHPIncrease",
+    "RuneType": "effect",
+    "Name": "薩爾",
+    "Description": "獲得 20% 生命值上限，持續 # 秒。",
+    "DescriptionClean": "獲得 20 生命值上限，持續 秒。",
+    "RuneDescription": "{c_RuneEffect}獲得 {c_number}20%{/c} 生命值上限，持續 {c_number}{s1}{/c} 秒。{/c}",
+    "RuneOverflowBehavior": "生命值上限提高"
+  },
+  {
+    "IdSno": "2089874",
+    "IdName": "Item_Rune_Condition_OnCCEnemy",
+    "RuneType": "condition",
+    "Name": "諾克",
+    "Description": "施加控場效果，如果非緩速或冰冷效果，則可獲得雙倍奉獻。",
+    "DescriptionClean": "施加控場效果，如果非緩速或冰冷效果，則可獲得雙倍奉獻。",
+    "RuneDescription": "{c_RuneCondition}施加控場效果，如果非緩速或{c_important}{u}冰冷{/u}{/c}效果，則可獲得雙倍奉獻。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1999351",
+    "IdName": "Item_Rune_Condition_OnMove",
+    "RuneType": "condition",
+    "Name": "貝克",
+    "Description": "移動 # 公尺。",
+    "DescriptionClean": "移動 公尺。",
+    "RuneDescription": "{c_RuneCondition}移動 {c_Number}{s1}{/c} 公尺。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969098",
+    "IdName": "Item_Rune_Effect_CritBuff",
+    "RuneType": "effect",
+    "Name": "賈爾",
+    "Description": "爆擊機率提高 #%，持續 5 秒，最多提高 25%。",
+    "DescriptionClean": "爆擊機率提高 ，持續 5 秒，最多提高 25。",
+    "RuneDescription": "{c_RuneEffect}爆擊機率提高 {c_number}{s1}%{/c}，持續 {c_number}5{/c} 秒，最多提高 {c_number}25%{/c}。{/c}",
+    "RuneOverflowBehavior": "獲得多重堆疊"
+  },
+  {
+    "IdSno": "1968549",
+    "IdName": "Item_Rune_Condition_OnCastUltimateSkill",
+    "RuneType": "condition",
+    "Name": "贊恩",
+    "Description": "施放一個絕招。",
+    "DescriptionClean": "施放一個絕招。",
+    "RuneDescription": "{c_RuneCondition}施放一個{c_important}絕招{/c}。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2093513",
+    "IdName": "Item_Rune_Effect_Spiritborn_ConcussiveStomp",
+    "RuneType": "effect",
+    "Name": "錫克",
+    "Description": "引發魂靈師的震盪重踏技能，造成傷害並擊倒敵人。",
+    "DescriptionClean": "引發魂靈師的震盪重踏技能，造成傷害並擊倒敵人。",
+    "RuneDescription": "{c_RuneEffect}引發魂靈師的{c_important}震盪重踏{/c}技能，造成傷害並擊倒敵人。{/c}",
+    "RuneOverflowBehavior": "每個奉獻提高 1% 傷害"
+  },
+  {
+    "IdSno": "1969053",
+    "IdName": "Item_Rune_Condition_OnPotion",
+    "RuneType": "condition",
+    "Name": "雅克",
+    "Description": "飲用一瓶治療藥水。",
+    "DescriptionClean": "飲用一瓶治療藥水。",
+    "RuneDescription": "{c_RuneCondition}飲用一瓶治療藥水。{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2089934",
+    "IdName": "Item_Rune_Effect_Rogue_DarkShroud",
+    "RuneType": "effect",
+    "Name": "默特",
+    "Description": "獲得 # 個俠盜黑暗籠罩技能的暗影，每道暗影都會進一步降低受到的傷害。",
+    "DescriptionClean": "獲得 個俠盜黑暗籠罩技能的暗影，每道暗影都會進一步降低受到的傷害。",
+    "RuneDescription": "{c_RuneEffect}獲得 {c_number}{s1}{/c} 個俠盜{c_important}黑暗籠罩{/c}技能的|4暗影:暗影;，每道暗影都會進一步降低受到的傷害。{/c}",
+    "RuneOverflowBehavior": "獲得多重暗影"
+  },
+  {
+    "IdSno": "2433257",
+    "IdName": "Item_Rune_Effect_Subpower_Spear",
+    "RuneType": "effect",
+    "Name": "齊德",
+    "Description": "引發聖騎士的祝福之槍，對附近的敵人造成攻擊。",
+    "DescriptionClean": "引發聖騎士的祝福之槍，對附近的敵人造成攻擊。",
+    "RuneDescription": "{c_RuneEffect}引發聖騎士的{c_important}祝福之槍{/c}，對附近的敵人造成攻擊。{/c}",
+    "RuneOverflowBehavior": "提高傷害"
+  }
+]

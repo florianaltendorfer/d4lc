@@ -1,0 +1,1994 @@
+import { AffixScreen, AffixEntry, AffixRailRow, AspectEntry, SigilEntry, UniqueEntry, RuneEntry } from "screens/affix_screen.slint";
+import { Metro } from "theme.slint";
+import { Palette } from "std-widgets.slint";
+import { TradeScreen, TradeItem } from "screens/trade_screen.slint";
+import { LoggingScreen, LogEntry } from "screens/logging_screen.slint";
+import { DebugScreen, DebugArtifactRow, DebugStageRow, DebugDiagnosticRow, DebugOcrPanel } from "screens/debug_screen.slint";
+import { KeyValueRow } from "components/key_value_grid.slint";
+import { SettingsScreen, PresetDetail } from "screens/settings_screen.slint";
+import {
+    GithubIcon,
+    CoffeeOutlineIcon,
+    HelpCircleOutlineIcon,
+    TooltipIcon,
+    ScaleBalanceIcon,
+    TooltipTextOutlineIcon,
+    BugIcon,
+    CogIcon,
+} from "components/icons.slint";
+import { ColorsConfigDialog } from "dialogs/colors_config_dialog.slint";
+import { ControllerConfigDialog, SettingsControllerImageRow } from "dialogs/controller_config_dialog.slint";
+import { HotkeysConfigDialog, SettingsHotkeyRow } from "dialogs/hotkeys_config_dialog.slint";
+import { OverlayConfigDialog } from "dialogs/overlay_config_dialog.slint";
+import { ParagonConfigDialog } from "dialogs/paragon_config_dialog.slint";
+import { AddTradeItemDialog, TradePickerRow, TradeStagedAffix } from "dialogs/add_trade_item_dialog.slint";
+import { AffixConfigDialog } from "dialogs/affix_config_dialog.slint";
+import { AspectConfigDialog } from "dialogs/aspect_config_dialog.slint";
+import { HotkeyConfigDialog } from "dialogs/hotkey_config_dialog.slint";
+import { ImportPresetDialog, ImportBuildRow } from "dialogs/import_preset_dialog.slint";
+import { MultiBuildConfigDialog } from "dialogs/multi_build_config_dialog.slint";
+import { RenamePresetDialog } from "dialogs/rename_preset_dialog.slint";
+import { RuneConfigDialog } from "dialogs/rune_config_dialog.slint";
+import { SetAffixColorDialog } from "dialogs/set_affix_color_dialog.slint";
+import { SetAffixDialog } from "dialogs/set_affix_dialog.slint";
+import { SetPresetNameDialog } from "dialogs/set_preset_name_dialog.slint";
+import { SigilConfigDialog } from "dialogs/sigil_config_dialog.slint";
+import { TradeConfigDialog } from "dialogs/trade_config_dialog.slint";
+import { UniqueConfigDialog } from "dialogs/unique_config_dialog.slint";
+
+// The one generic confirm prompt: upstream's window-modal
+// MahApps `ShowMessageAsync` Yes/No prompt (`AffixViewModel.cs:1764`,
+// `AffixConfigViewModel.cs:116`), hosted by the same dialog host as every
+// other dialog — the host's backdrop pointer guard blocks the window content
+// behind it. The body is the pending action's upstream copy, projected into
+// `dialog-message`; Yes runs the action and No drops it, both through the
+// shared router's `dialog-confirm` / `dialog-cancel` callbacks, which the
+// dialog host's keyboard FocusScope also routes (Enter = Yes, Escape = No).
+component ConfirmPrompt {
+    in property <string> dialog-title: @tr("Confirm");
+    in property <string> dialog-message: "";
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    callback confirm();
+    callback cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: Metro.text;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner (a failed action keeps the prompt open) ────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: Metro.text-error;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Prompt body ─────────────────────────────────────────────
+        Text {
+            text: dialog-message;
+            color: Metro.text;
+            font-size: 13px;
+            wrap: word-wrap;
+        }
+
+        // Spacer pushes the answer buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Answers ─────────────────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            // Negative button (`MessageDialogStyle.AffirmativeAndNegative`):
+            // answers No, so the pending action is dropped.
+            Rectangle {
+                background: Metro.muted;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("No");
+                Text {
+                    text: @tr("No");
+                    color: Metro.text;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            // Affirmative button: answers Yes and runs the pending action.
+            Rectangle {
+                background: Metro.accent-hover;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Yes");
+                Text {
+                    text: @tr("Yes");
+                    color: Metro.text;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}
+
+export component AppWindow inherits Window {
+    in-out property <string> window-title: "d4lc";
+    in-out property <bool> window-topmost: false;
+
+    // App version rendered in the red header caption
+    // ("DIABLO IV COMPANION V<version>"). Read-only seed defaulting to the
+    // d4lc-app crate version; `wiring.rs` may override it with the runtime
+    // version once that projection exists.
+    in property <string> app-version: "0.1.0";
+
+    title: window-title;
+    always-on-top: window-topmost;
+    preferred-width: 1150px;
+    preferred-height: 625px;
+    // Explicit dark base so regions not covered by the layout (and the
+    // window default) stay dark regardless of the ambient widget scheme.
+    background: Metro.panel;
+    // One global dark scheme for the std-widgets (ComboBox, LineEdit,
+    // ScrollView, SpinBox, Switch): the port renders the MahApps dark metro
+    // look, so the ambient widget palette must be dark too (no desktop
+    // portal is consulted for this).
+    init => { Palette.color-scheme = ColorScheme.dark; }
+
+    // Callbacks for interop with Rust
+    callback d4lc-github-clicked();
+    callback upstream-github-clicked();
+    callback upstream-kofi-clicked();
+    callback upstream-wiki-clicked();
+    callback settings-changed();
+
+    // Settings dialog commands
+    callback dialog-open-colors();
+    callback dialog-open-controller();
+    callback dialog-open-hotkeys();
+    callback dialog-open-overlay();
+    callback dialog-open-paragon();
+    callback dialog-confirm();
+    callback dialog-cancel();
+    // Dialog keyboard host: the FocusScope inside the
+    // dialog host routes Escape/Enter pressed while a dialog is open.
+    // The Rust handler (`actions::dialogs::handle_dialog_key`) applies
+    // the upstream-derived per-kind semantics.
+    callback dialog-key(string);
+
+    // Download-preset (OC-4 approved). Forwards
+    // the SettingsScreen `download_preset(string)` callback to the
+    // Rust `actions::settings::handle_download_preset` handler. The
+    // string is the upstream zip filename (e.g. `1080p_SMF.zip`).
+    // The callback is wired in `wiring.rs::wire_settings_actions`.
+    callback download-preset(string);
+    callback preset-selected(string);
+    callback community-preset-selected(string);
+
+    // Display backend selection (Auto / X11 / Wayland). The property
+    // mirrors the persisted `DisplayBackend` setting (as the selector
+    // label); the callback fires from the SettingsScreen ComboBox and is
+    // wired in `wiring.rs::wire_settings_actions` to the Rust handler
+    // that validates and persists the token.
+    in-out property <string> settings-display-backend: "Auto";
+    callback display-backend-changed(string);
+
+    // Game-data language selection (upstream
+    // AffixViewModel.SelectedAffixLanguage): the AffixScreen control row
+    // combo. `wiring.rs::wire_settings_actions` seeds it from the persisted
+    // `SelectedAffixLanguage` and handles the selection.
+    in property <[string]> language-options: [];
+    in-out property <string> selected-language: "";
+    callback language-selected(string);
+
+    // UI language selection (upstream SettingsViewModel.SelectedAppLanguage):
+    // the SettingsScreen sidebar combo. The model holds the selector captions
+    // and the selection is the caption of the persisted
+    // `SelectedAppLanguage`; the handler switches the translation at runtime.
+    in property <[string]> app-language-options: [];
+    in-out property <string> selected-app-language: "";
+    callback app-language-selected(string);
+
+    // Dialog host state.
+    // dialog-id is a stable string id (e.g. "colors_config") mapped
+    // to a Rust DialogKind in actions::dialogs. The host selects
+    // exactly one dialog component to render based on this id.
+    in-out property <string> dialog-id: "";
+    in-out property <bool> dialog-visible: false;
+    in-out property <string> dialog-title: "";
+    // Prompt body of the generic confirm dialog (`dialog-id == "confirm"`);
+    // the router projects the pending action's upstream copy into it
+    // Empty for every other dialog, which renders its own
+    // content.
+    in-out property <string> dialog-message: "";
+    in-out property <string> dialog-error: "";
+    in-out property <bool> dialog-error-visible: false;
+    // Dialog keyboard host observability: the text of the
+    // last Escape/Enter the host routed to Rust, so tests can assert the
+    // route fired instead of inferring it from a no-op.
+    in-out property <string> dialog-last-key: "";
+    // Dialog box footprint (the tabbed import dialog is the one
+    // larger-surface exception; see the DialogHost below). The confirm
+    // prompt takes a compact box the way upstream's message dialog does.
+    // The import dialog shrinks with small or highly scaled windows instead
+    // of being cut off at the window edges.
+    property <length> dialog-box-width: dialog-id == "import_preset" ? min(880px, root.width - 16px)
+        : dialog-id == "add_trade_item" ? 640px
+        : dialog-id == "confirm" ? 460px : 520px;
+    property <length> dialog-box-height: dialog-id == "import_preset" ? min(560px, root.height - 16px)
+        : dialog-id == "add_trade_item" ? 560px
+        : dialog-id == "confirm" ? 200px : 400px;
+
+    // AddTradeItem form values.
+    // Projected on the root so the confirm / cancel handlers in
+    // `actions::trade_dialogs` can read the user input without
+    // a separate Slint global. Cleared on dialog open in the
+    // `add_trade_item` dispatch branch.
+    in-out property <string> trade-form-item-type: "";
+    in-out property <string> trade-form-value-text: "";
+
+    // AddTradeItem picker channels. The
+    // dialog's affix / rune candidate lists and the staged draft
+    // affix rows are root-declared models populated by `wiring.rs`
+    // from the vendored catalogs; the picker gestures forward to the
+    // root callbacks wired there. `trade-edit-mode` seeds the
+    // dialog's edit flow (Cancel hidden), `trade-item-type-is-rune`
+    // switches the candidate list (case-insensitive host match),
+    // and `trade-form-...` stays the free-text form pair whose type
+    // field the host validates against the fixed enumeration on
+    // confirm.
+    in property <[TradePickerRow]> trade-affix-candidates: [];
+    in property <[TradePickerRow]> trade-rune-candidates: [];
+    in property <[TradeStagedAffix]> trade-item-affixes: [];
+    in-out property <string> trade-affix-filter: "";
+    in property <bool> trade-edit-mode: false;
+    in property <bool> trade-item-type-is-rune: false;
+    callback trade-add-affix(string);
+    callback trade-add-rune-affix(string);
+    callback trade-remove-affix(string);
+    callback trade-affix-is-greater(string, bool);
+    callback trade-affix-filter-changed(string);
+    callback trade-form-type-edited(string);
+
+    // Whether the TradeScreen renders the current-item card — the
+    // persisted `ShowCurrentItem` setting (upstream SettingsD4.cs:83,
+    // default true). Seeded at startup and re-projected by
+    // `project_trade_state` after every trade-config confirm.
+    in property <bool> trade-show-current-item: true;
+
+    // TradeConfig form values.
+    // Mirrors the upstream `TradeConfigViewModel` properties
+    // (`IsTradeOverlayEnabled`, `ShowCurrentItem`, `OverlayFontSize`)
+    // projected on the root so the confirm / cancel handlers in
+    // `actions::trade_dialogs` can read the user input without
+    // a separate Slint global. Seeded from `state.shell.settings`
+    // when the dialog opens and cleared on cancel / confirm.
+    in-out property <bool> trade-config-overlay-enabled: false;
+    in-out property <bool> trade-config-show-current-item: false;
+    in-out property <int> trade-config-font-size: 18;
+
+    // Trade screen wanted-item list and current-item card, projected
+    // from AppState by `actions::trade::project_trade_state`
+    // (upstream TradeView.xaml wanted-item card bindings and the
+    // TradeItemCurrent card). The screen-local models are unreachable
+    // from Rust, so these root properties are the single population
+    // path.
+    in property <[TradeItem]> trade-items;
+    in property <string> current-item-type;
+    in property <int> current-item-power;
+    in property <[string]> current-affixes;
+
+    // Settings-family form values.
+    // Mirrors the upstream `SettingsD4` properties that have a
+    // existing `d4lc_config` projection. Form values flow through
+    // root in-out properties (no Slint global) so Rust can read
+    // them via `app.get_*` setters on dialog-confirm. Seeded from
+    // `state.shell.settings` in the matching
+    // `actions::settings::handle_open_*_config` and cleared on
+    // confirm / cancel.
+    //
+    // Controller (SettingsD4.IsControllerModeActive).
+    in-out property <bool> settings-controller-mode: false;
+    // Active controller image count (read-only display seeded by
+    // the open handler; not editable because capture-side wiring
+    // is out of scope for the d4lc Rust port).
+    in property <int> settings-controller-images-count: 0;
+    // Overlay (SettingsD4.OverlayEnabled / IsTopMost /
+    // OverlayFontSize / OverlayMenuLocked / TypeAreaOffsetLeft).
+    in-out property <bool> settings-overlay-enabled: false;
+    in-out property <bool> settings-overlay-top-most: false;
+    in-out property <int> settings-overlay-font-size: 18;
+    in-out property <bool> settings-overlay-menu-locked: false;
+    in-out property <int> settings-overlay-type-area-offset-left: 0;
+    // Paragon (SettingsD4.IsParagonModeActive /
+    // IsShowBrowserMobalyticsEnabled).
+    in-out property <bool> settings-paragon-mode-active: false;
+    in-out property <bool> settings-paragon-show-browser-mobalytics-enabled: false;
+
+    // ── Settings sub-dialog form state (strictly additive) ──
+    // Same host-plumbing contract as the block above: the dialog controls
+    // bind these root in-out properties, Rust seeds them in the matching
+    // `actions::settings::handle_open_*_config` and reads them back on
+    // confirm. Nothing above this block changes.
+    //
+    // Colors dialog (`SettingsD4.DefaultColor*`, `SettingsD4.cs:18-24`).
+    in-out property <string> settings-colors-implicit: "#008000";
+    in-out property <string> settings-colors-normal: "#008000";
+    in-out property <string> settings-colors-greater: "#008000";
+    in-out property <string> settings-colors-tempered: "#008000";
+    in-out property <string> settings-colors-aspects: "#008000";
+    in-out property <string> settings-colors-uniques: "#008000";
+    in-out property <string> settings-colors-runes: "#008000";
+    // Paragon layout dialog (`SettingsD4.cs:28,71-75`).
+    in-out property <bool> settings-paragon-collapsed-board: false;
+    in-out property <int> settings-paragon-border-size: 2;
+    in-out property <int> settings-paragon-node-size: 40;
+    in-out property <int> settings-paragon-node-size-collapsed: 23;
+    in-out property <int> settings-paragon-left-offset-collapsed: -200;
+    in-out property <int> settings-paragon-top-offset-collapsed: -50;
+    // Overlay config dialog — further upstream rows
+    // (`SettingsD4.cs:41-42,59,62,68-69,84,96`).
+    in-out property <bool> settings-overlay-socket-detection: true;
+    in-out property <bool> settings-overlay-tempered-detection: true;
+    in-out property <bool> settings-overlay-aspect-detection: true;
+    // Performance rows (`OverlayConfigView.xaml:192-217`); float because
+    // the stepper component edits floats.
+    in-out property <float> settings-overlay-screen-capture-delay: 50;
+    in-out property <float> settings-overlay-update-delay: 5;
+    in-out property <float> settings-overlay-scan-height: 50;
+    in-out property <bool> settings-overlay-show-icon: false;
+    in-out property <int> settings-overlay-icon-pos-x: 0;
+    in-out property <int> settings-overlay-icon-pos-y: 0;
+    in-out property <bool> settings-overlay-item-power-enabled: false;
+    in-out property <int> settings-overlay-item-power-limit: 800;
+    in-out property <string> settings-overlay-marker-mode: "Show All";
+    in-out property <bool> settings-overlay-trade-overlay: true;
+    // Controller config dialog: the available controller images for the
+    // selected preset + language, each carrying its draft membership.
+    // Rust is the only writer (projection on dialog open and after every
+    // per-row add/remove).
+    in property <[SettingsControllerImageRow]> settings-controller-image-rows: [];
+    callback settings-controller-image-selected(string, bool);
+    // Hotkeys config dialog: the seven binding rows in upstream order
+    // (`actions::settings::project_hotkey_rows` guarantees seven) plus the
+    // per-row draft toggle and the per-row capture-dialog entry.
+    in property <[SettingsHotkeyRow]> settings-hotkey-rows: [];
+    callback settings-hotkey-row-toggled(string, bool);
+    callback settings-hotkey-row-edit(string);
+
+    // Affix preset CRUD
+    callback create-preset();
+    callback rename-preset();
+    callback remove-preset();
+    callback import-preset();
+    // A preset switch from the AffixScreen preset ComboBox must
+    // re-project the selected preset's entries (upstream re-binds
+    // the wanted lists on ComboBox switches). Distinct from the
+    // settings `preset-selected` callback above.
+    callback affix-preset-selected(string);
+
+    // Singleton dialog open callbacks.
+    // `open-rename-preset` is the natural invoker for the
+    // RenamePreset dialog (the pencil icon button on the
+    // AffixScreen reuses the existing `rename-preset()` callback
+    // which we wire to this open handler in `wiring.rs`).
+    // `open-new-preset-dialog` opens the SetPresetName dialog
+    // (alt path to the existing inline `+` button) and
+    // `open-hotkey-config` opens the individual hotkey
+    // binding dialog (HotkeyConfigView, not the list view).
+    callback open-rename-preset();
+    callback open-new-preset-dialog();
+    callback open-hotkey-config();
+
+    // Affix filter notification
+    callback affix-filters-changed([bool], [bool], [bool]);
+
+    // Affix command callbacks
+    callback open-affix-config();
+    callback open-aspect-config();
+    callback open-sigil-config();
+    callback open-unique-config();
+    callback open-rune-config();
+    callback remove-affix-entry(string);
+    callback toggle-affix-overlay();
+    // Live overlay state for the AffixScreen power indicator
+    // (upstream IsAffixOverlayEnabled). Projected from
+    // `state.shell.settings.overlay_enabled` at startup and by every
+    // toggle path (screen power button, Ctrl+F12 hotkey arm) so
+    // runtime/hotkey toggles update the visible indicator.
+    in property <bool> affix-overlay-enabled: false;
+    // Upstream `SystemPresetChangeAllowed`: the inverse of the overlay
+    // gate (SettingsViewModel.cs:379,389).
+    in property <bool> system-preset-change-allowed: true;
+    // Per-family add ("+") callbacks. The kind-tagged key addresses
+    // the entry; the shared handler upserts into the matching
+    // wanted-entry list (upstream Set* commands,
+    // AffixViewModel.cs:856-920).
+    callback set-aspect-entry(string);
+    callback set-sigil-entry(string);
+    callback set-unique-entry(string);
+    callback set-rune-entry(string);
+    // Open-set-affix and open-set-affix-color
+    // open the SetAffix / SetAffixColor dialogs. The string param is
+    // the kind-tagged entry key `"<kind>:<id>:<item-type>"` that
+    // handlers resolve against the mixed-kind preset entry list
+    // (per-kind view indices would address the wrong entry).
+    // Named with `open-` prefix to avoid collision with the
+    // `set-affix-*` root in-out properties below.
+    callback open-set-affix(string);
+    callback open-set-affix-color(string);
+
+    // Affix-family config dialog channels.
+    // The five per-family config dialogs write through on interaction —
+    // upstream saves from every toggle/selector setter — so each gesture
+    // forwards to the root callback wired in `wiring.rs` to the matching
+    // `actions::affix_dialogs` handler, which persists the settings file
+    // and re-projects the live consumers immediately.
+    callback affix-rule-toggle-changed(string, bool);
+    callback affix-rule-selection-changed(string, string);
+    callback affix-config-reset-minimal-values();
+    // SetAffix per-slot add and minimal-value field. The affix id is the
+    // host-seeded `set-affix-entry-id` root property, read by the wired
+    // handlers.
+    callback set-affix-slot-add(string);
+    callback minimal-affix-value-edited(string);
+    // Sigil config per-entry dungeon-tier cycle (upstream
+    // `SetSigilDungeonTierToNextCommand`).
+    callback cycle-sigil-dungeon-tier(string);
+
+    // Trade commands
+    callback add-trade-item();
+    callback edit-trade-item(string);
+    callback remove-trade-item(string);
+    callback open-trade-config();
+
+    // Logging commands
+    callback clear-log();
+    // Debug commands
+    callback take-screenshot();
+    in-out property <float> type-area-offset-left: 5;
+    callback type_area_offset_left_changed(float);
+    callback export-debug-images();
+    callback reload-preset-images();
+    callback reset-perf();
+    callback debug-info-toggled(bool);
+    callback topmost-toggled(bool);
+    // Crash-log export: local copy for a manually opened GitHub
+    // issue only, gated on the opt-in diagnostics setting. No upload.
+    callback export-crash-log(string);
+    in property <[string]> crash-log-entries: [];
+
+    // ── Debug screen functional wiring ─────────────────
+    // Additive debug-named block: the Debug screen's stepper values,
+    // DebugInfo bit, artifact/stage/perf/OCR models and its two new
+    // commands. Rust projects every one of these from AppState (see
+    // `actions::debug`); the screen binds the steppers two-way so a
+    // settings reload re-projects them.
+    in-out property <bool> debug-info-enabled: false;
+    in-out property <float> debug-tooltip-width: 500;
+    in-out property <float> debug-tooltip-max-height: 600;
+    in-out property <float> debug-threshold-min: 70;
+    in-out property <float> debug-threshold-max: 255;
+    in-out property <float> debug-type-area-offset-right: 5;
+    in-out property <float> debug-aspect-area-max-height: 300;
+    in-out property <float> debug-minimal-ocr-match-type: 75;
+    in-out property <float> debug-threshold-similarity-tooltip: 0.05;
+    in-out property <float> debug-threshold-similarity-affix-location: 0.05;
+    in-out property <float> debug-threshold-similarity-aspect-location: 0.05;
+    in-out property <float> debug-threshold-similarity-socket-location: 0.05;
+    in-out property <float> debug-threshold-similarity-splitter-location: 0.05;
+    // The four preset-derived offsets are projected read-only from the
+    // active system preset's config (see `actions::debug`).
+    in-out property <float> debug-affix-area-height-offset-top: 0;
+    in-out property <float> debug-affix-area-height-offset-bottom: 0;
+    in-out property <float> debug-affix-aspect-area-width-offset: 0;
+    in-out property <float> debug-aspect-area-height-offset-top: 0;
+    in property <[DebugArtifactRow]> debug-artifact-rows: [];
+    in property <string> debug-artifact-source: "";
+    in property <[DebugStageRow]> debug-stage-rows: [];
+    in property <[KeyValueRow]> debug-perf-rows: [];
+    in property <string> debug-perf-source: "";
+    in property <[DebugDiagnosticRow]> debug-diagnostics-rows: [];
+    in property <[DebugOcrPanel]> debug-ocr-panels: [];
+    callback debug-stepper-changed(string, float);
+    callback debug-open-artifacts();
+
+    // Runtime bridge commands
+    callback start-live-loop();
+    callback stop-live-loop();
+
+    // Runtime state properties (updated from Rust via setter calls)
+    in property <bool> runtime-running: false;
+    in property <bool> runtime-preparing: false;
+    in property <string> runtime-status-text: "Stopped";
+    in property <string> current-item-name: "";
+    in property <string> current-item-parse-status: "not_item";
+    in property <string> overlay-status-text: "Offline";
+    // The overlay's own text-path state (font assignment / disabled reason /
+    // flagged codepoints) and the accepted snapshot's facts (generation,
+    // source frame, freeze, renderer outcome, evaluation). All of
+    // them are projected from the one snapshot the live loop published, so the
+    // item card and the renderer always describe the same generation.
+    in property <string> overlay-text-status-text: "No overlay surface reported yet";
+    in property <string> accepted-generation-text: "no snapshot yet";
+    in property <string> overlay-renderer-text: "no snapshot yet";
+    in property <string> frame-state-text: "no snapshot yet";
+    in property <bool> debug-frozen: false;
+    in property <string> evaluation-text: "no evaluation yet";
+    in property <string> published-at-text: "—";
+    // Timing provenance: what the live frame number measures and the
+    // live async OCR phase. The stored run's per-stage timings live in the
+    // Debug screen's own `perf-source` line and are never labelled live.
+    in property <string> hotpath-scope-text: "";
+    in property <string> ocr-phase-text: "";
+    in property <string> loop-timings-text: "";
+    // The active UI renderer and any GPU fallback reason.
+    in property <string> ui-renderer-text: "";
+    in property <string> game-window-status-text: "Not observed";
+    in property <string> capture-engine-text: "Not resolved";
+    in property <string> settings-status-text: "Not applied";
+    in property <int> debug-frame-sequence: 0;
+    in property <int> debug-hotpath-ms: 0;
+    in property <bool> debug-tooltip-found: false;
+
+    // Logging screen message list, backed by the `LoggingViewModel` on
+    // `AppState`; refreshed by every
+    // `apply_event_to_ui` call and by `handle_clear_log`.
+    in property <[LogEntry]> log-messages: [];
+
+    // Slint 1.x has no window-state-changed event; the X11 `WM_STATE`
+    // observer in `window_observer.rs` watches the main window instead.
+
+    // State properties
+    in-out property <int> active-tab: 0;
+    in-out property <[string]> tab-labels: [@tr("Current Item"), @tr("Affix Presets"), @tr("Trade Imports"), @tr("Debug"), @tr("Settings")];
+    // Selected Debug-screen pager panel (0-11). Owned by the
+    // shell because the DebugScreen instance below is destroyed whenever
+    // the user leaves the Debug tab (`if active-tab == 3`), which would
+    // otherwise reset the pager to panel 0 on every return.
+    in-out property <int> debug-active-panel-index: 0;
+
+    // Settings toggle state (bidirectional with settings screen)
+    in-out property <bool> debug-mode: false;
+    // Dev mode gate (upstream SettingsD4.DevMode): seeded from the stored
+    // setting; the settings screen shows the Debug Mode toggle only when
+    // it is true (SettingsView.xaml:88,97).
+    in property <bool> dev-mode: false;
+    in-out property <bool> check-updates: true;
+    in-out property <bool> launch-minimized: false;
+    in-out property <bool> minimize-to-tray: false;
+    in-out property <bool> controller-mode: false;
+    in-out property <bool> paragon-mode: false;
+    // Diagnostics export (local crash-log copy for a manual GitHub
+    // issue). Opt-in, persisted, default off — no upload path exists.
+    in-out property <bool> diagnostics-export: false;
+    // Check-only release banner (check-for-new-releases toggle is
+    // persisted through Settings; default on).
+    in-out property <bool> update-check-enabled: true;
+    // Release banner state, set by the bounded GitHub Releases check.
+    // Activation opens the release page in the browser. The check
+    // never downloads, installs, or uploads anything, and its failure
+    // never shows anything here.
+    in property <bool> update-available: false;
+    in property <string> update-version: "";
+    in property <string> update-url: "";
+    callback update-banner-activated();
+    in-out property <string> selected-system-preset: "";
+    in property <[string]> system-presets: [];
+    in-out property <string> selected-community-preset: "";
+    in property <[string]> community-presets: [];
+    in property <bool> preset-download-success: false;
+    // True while a community-preset download runs on its worker
+    // (`CanDownloadSystemPresetExecute`, SettingsViewModel.cs:451-454).
+    in property <bool> preset-downloading: false;
+    // Settings description panel: seeded by
+    // `actions::settings::project_preset_details` from the vendored
+    // catalog / extracted preset config at every preset projection and
+    // forwarded into the SettingsScreen below (Rust setters address
+    // root properties only).
+    in property <PresetDetail> preset-details;
+
+    // Affix preset CRUD state
+    in property <[string]> preset-names: [];
+    in-out property <string> selected-preset: "";
+    in-out property <string> new-preset-name: "";
+
+    // Affix screen entry lists, projected from the selected preset's
+    // entries by `actions::affix::project_affix_entries` (upstream
+    // AffixView.xaml wanted-entry list/card bindings).
+    in property <[AffixEntry]> affix-entries;
+    // Wanted-entry rail rows (section headers + chips), projected by
+    // `actions::affix::rail_rows`.
+    in property <[AffixRailRow]> affix-rail-rows;
+    in property <[AspectEntry]> aspect-entries;
+    in property <[SigilEntry]> sigil-entries;
+    in property <[UniqueEntry]> unique-entries;
+    in property <[RuneEntry]> rune-entries;
+
+    // Affix filter toggle state
+    in-out property <[bool]> class-toggles: [true, true, true, true, true, true, true, true, true];
+    in-out property <[bool]> category-toggles: [true, true, true, true];
+    in-out property <[bool]> rune-toggles: [true, true];
+
+    // Affix catalog filter text (upstream `AffixTextFilter`,
+    // AffixViewModel.cs:248-256). Host-bound because the AffixScreen is
+    // re-instantiated on every tab switch, so the typed filter survives
+    // only on the root; `affix-filter-text-changed` carries each edit to
+    // `actions::affix::handle_affix_filter_text_changed`, which re-projects
+    // the catalog grids with the new `;`-keyword text.
+    in-out property <string> affix-filter-text: "";
+    callback affix-filter-text-changed(string);
+    // Affix catalog render window (rows per tab). Rust windows the
+    // projected catalog models to this many rows so a grid stays
+    // interactive (the port's equivalent of upstream's
+    // VirtualizingWrapPanel, AffixView.xaml:1499-1996); the toolbar's
+    // "Show more" grows it one page at a time through
+    // `affix-catalog-window-changed`.
+    in-out property <int> affix-catalog-window: 60;
+    callback affix-catalog-window-changed(int);
+
+    // SetAffix form values.
+    // Projected on the root so the confirm / cancel handlers in
+    // `actions::affix_dialogs` can read the user input without a
+    // separate Slint global. Seeded by `affix_cmds::handle_set_affix_entry`
+    // and cleared on cancel / confirm.
+    in-out property <int> set-affix-edit-index: -1;
+    in-out property <string> set-affix-entry-id: "";
+    in-out property <string> set-affix-item-type: "";
+    in-out property <string> set-affix-color: "#FF0000";
+    in-out property <bool> set-affix-is-greater: false;
+    in-out property <bool> set-affix-is-implicit: false;
+    in-out property <bool> set-affix-is-tempered: false;
+
+    // SetAffix dialog model. The minimal-value
+    // field and the ten per-slot entry counters are seeded on open by
+    // `affix_cmds::handle_set_affix_entry` from
+    // `d4lc_gui::affix::set_affix_dialog_seed`; the field reports every
+    // complete entry through `minimal-affix-value-edited` and the counters
+    // are re-seeded after a per-slot add. Cleared on cancel / confirm
+    // together with the other SetAffix form values.
+    in-out property <string> set-affix-minimal-value: "";
+    in property <[int]> set-affix-slot-counters: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    // Affix-family config dialog rule-setting values. Two-way bound into the config dialogs; seeded by the open
+    // handlers in `affix_cmds` from `state.shell.settings` and written back
+    // by the dialogs' toggles / display-mode selector, which persist on
+    // every change through the wired root callbacks.
+    in-out property <bool> settings-rule-minimal-affix-value-filter-enabled: false;
+    in-out property <bool> settings-rule-multi-build-enabled: false;
+    in-out property <bool> settings-rule-tempered-affix-detection-enabled: false;
+    in-out property <bool> settings-rule-aspect-detection-enabled: true;
+    in-out property <bool> settings-rule-unique-detection-enabled: true;
+    in-out property <bool> settings-rule-rune-detection-enabled: true;
+    in-out property <bool> settings-rule-tuning-prism-hints-enabled: false;
+    in-out property <bool> settings-rule-dungeon-tiers-enabled: false;
+    in-out property <string> settings-rule-sigil-display-mode: "Whitelisting";
+
+    // Sigil config dialog per-entry tier rows:
+    // index-aligned id / tier pairs seeded by
+    // `affix_cmds::handle_open_sigil_config` from
+    // `d4lc_gui::affix::sigil_tier_rows` and re-seeded after every cycle.
+    in-out property <[string]> sigil-config-entry-ids: [];
+    in-out property <[string]> sigil-config-entry-tiers: [];
+
+    // SetAffixColor form values.
+    // Seeded by `affix_cmds::handle_set_affix_color` and cleared
+    // on cancel / confirm. The target is the kind-tagged entry key
+    // resolved against the mixed-kind preset entry list.
+    in-out property <string> set-affix-color-target-key: "";
+    in-out property <string> set-affix-color-value: "#FF0000";
+
+    // Rename preset form values.
+    // Projected on the root so the confirm / cancel handlers in
+    // `actions::affix_dialogs` can read the user input without a
+    // separate Slint global. Seeded by
+    // `affix_cmds::handle_open_rename_preset` from the currently
+    // selected preset name and cleared on cancel / confirm.
+    in-out property <string> rename-preset-current-name: "";
+    in-out property <string> rename-preset-new-name: "";
+
+    // Set preset name form value.
+    // Projected on the root so the confirm / cancel handlers in
+    // `actions::affix_dialogs` can read the user input without a
+    // separate Slint global. Seeded (cleared) by
+    // `affix_cmds::handle_open_set_preset_name` and cleared on
+    // cancel / confirm.
+    in-out property <string> set-preset-name-input: "";
+
+    // Hotkey config form values.
+    // `hotkey-config-target` is the action name (read-only seed
+    // from `actions::hotkeys_dialogs::handle_open_hotkey_config`),
+    // `hotkey-config-binding` is the key combo text input, and
+    // `hotkey-config-enabled` is the enable toggle. The
+    // confirm body stores the draft in `state.hotkey_drafts`;
+    // no OS-level grab is performed (see `hotkey_config_dialog.slint`).
+    in-out property <string> hotkey-config-target: "";
+    in-out property <string> hotkey-config-binding: "";
+    in-out property <bool> hotkey-config-enabled: false;
+
+    // Build-import form values (tabbed import dialog).
+    // The AffixScreen website combo keeps the upstream display name here
+    // (remember-last-website, persisted through the settings save path).
+    in-out property <string> build-import-provider: "D2Core.com";
+
+    // Tabbed import dialog state (upstream ImportAffixPresetView).
+    // Slint does not permit a `global` for dialog state (per the
+    // project's no-global host-plumbing contract); the values live on
+    // the root and are bound two-way into the dialog component. The
+    // per-provider props keep upstream's per-provider selections.
+    in-out property <int> import-tab-index: 0;
+    in property <[string]> import-preset-names: [];
+    in-out property <string> import-selected-preset: "";
+
+    in-out property <string> import-d2core-url: "";
+    in property <string> import-d2core-extracted-id: "";
+    in property <bool> import-d2core-add-enabled: false;
+    in property <[ImportBuildRow]> import-d2core-builds: [];
+    in property <int> import-d2core-selected-build-index: -1;
+    in property <[string]> import-d2core-variants: [];
+    in property <int> import-d2core-selected-variant-index: -1;
+    in-out property <bool> import-d2core-paragon-enabled: true;
+
+    in-out property <string> import-d4builds-url: "";
+    in property <string> import-d4builds-extracted-id: "";
+    in property <bool> import-d4builds-add-enabled: false;
+    in property <[ImportBuildRow]> import-d4builds-builds: [];
+    in property <int> import-d4builds-selected-build-index: -1;
+    in property <[string]> import-d4builds-variants: [];
+    in property <int> import-d4builds-selected-variant-index: -1;
+    in-out property <bool> import-d4builds-paragon-enabled: true;
+
+    in-out property <string> import-infinity-url: "";
+    in property <string> import-infinity-extracted-id: "";
+    in property <bool> import-infinity-add-enabled: false;
+    in property <[ImportBuildRow]> import-infinity-builds: [];
+    in property <int> import-infinity-selected-build-index: -1;
+    in property <[string]> import-infinity-variants: [];
+    in property <int> import-infinity-selected-variant-index: -1;
+    in-out property <bool> import-infinity-paragon-enabled: true;
+
+    in-out property <string> import-maxroll-url: "";
+    in property <string> import-maxroll-extracted-id: "";
+    in property <bool> import-maxroll-add-enabled: false;
+    in property <[ImportBuildRow]> import-maxroll-builds: [];
+    in property <int> import-maxroll-selected-build-index: -1;
+    in property <[string]> import-maxroll-variants: [];
+    in property <int> import-maxroll-selected-variant-index: -1;
+    in-out property <bool> import-maxroll-paragon-enabled: true;
+
+    in-out property <string> import-mobalytics-url: "";
+    in property <string> import-mobalytics-extracted-id: "";
+    in property <bool> import-mobalytics-add-enabled: false;
+    in property <[ImportBuildRow]> import-mobalytics-builds: [];
+    in property <int> import-mobalytics-selected-build-index: -1;
+    in property <[string]> import-mobalytics-variants: [];
+    in property <int> import-mobalytics-selected-variant-index: -1;
+    in-out property <bool> import-mobalytics-paragon-enabled: true;
+    in property <string> import-mobalytics-url-status: "";
+    in-out property <bool> import-mobalytics-show-browser: false;
+    // Nested Builds/Profiles sub-tabs (upstream SelectedTabIndexMobalytics)
+    // and the stored profiles with the selected profile's published builds.
+    in-out property <int> import-mobalytics-selected-sub-tab: 0;
+    in property <[ImportBuildRow]> import-mobalytics-profiles: [];
+    in property <int> import-mobalytics-selected-profile-index: -1;
+    in property <[ImportBuildRow]> import-mobalytics-profile-variants: [];
+    in property <int> import-mobalytics-selected-profile-variant-index: -1;
+
+    // Compact import progress panel (upstream `{Provider}DownloadView`).
+    in property <bool> import-progress-visible: false;
+    in property <string> import-progress-provider: "";
+    in property <string> import-progress-step: "";
+    in property <string> import-progress-elapsed: "";
+    in property <string> import-progress-status: "";
+    in property <string> import-progress-build-name: "";
+    in property <[string]> import-progress-variants: [];
+    in property <bool> import-progress-failed: false;
+    in property <string> import-progress-error-title: "";
+    in property <string> import-progress-error: "";
+    // Single-active-download guard (set by the Rust download handlers,
+    // released when the job completes or is cancelled).
+    in property <bool> import-download-active: false;
+
+    // Confirm-name overlay (upstream `SetPresetNameView`).
+    in property <bool> import-name-visible: false;
+    in-out property <string> import-name-text: "";
+    in property <[string]> import-name-suggestions: [];
+    in property <bool> import-name-overwrite-warning: false;
+
+    // Delete-preset confirm overlay (upstream `ShowMessageAsync`).
+    in property <bool> import-delete-visible: false;
+
+    // Merge tab rows (upstream `ChangeColorBuild1/2/12`,
+    // `ColorBuild1/2/12`, `SelectedAffixPresetBuild1/2` of the import
+    // dialog's Merge tab). The colors are hex strings seeded with the
+    // default normal color on every dialog open; the embedded color
+    // picker writes the confirmed value back through Rust.
+    in-out property <string> import-merge-build1: "";
+    in-out property <string> import-merge-build2: "";
+    in-out property <bool> import-merge-change-color1: false;
+    in-out property <bool> import-merge-change-color2: false;
+    in-out property <bool> import-merge-change-color12: false;
+    in-out property <string> import-merge-color1: "#008000";
+    in-out property <string> import-merge-color2: "#008000";
+    in-out property <string> import-merge-color12: "#008000";
+
+    // Embedded color-picker overlay (upstream `SetAffixColorView` nested
+    // over the import dialog); `import-color-picker-row` carries the
+    // merge row the confirmed color is written back to.
+    in property <bool> import-color-picker-visible: false;
+    in-out property <string> import-color-picker-value: "#008000";
+    in property <int> import-color-picker-row: 0;
+
+    // Multi-build config form values.
+    // Three parallel arrays so the Slint `for` loop can render
+    // the rows. Indexed access mirrors
+    // `d4lc_config::MultiBuildRuleConfig`.
+    in-out property <[string]> multi-build-names: [];
+    in-out property <[int]> multi-build-indices: [];
+    in-out property <[string]> multi-build-colors: [];
+    // Swatch colours (index-aligned), the add-row preset list / selection /
+    // enabled state and the embedded colour picker overlay.
+    in property <[color]> multi-build-brushes: [];
+    in property <[string]> multi-build-preset-names: [];
+    in-out property <string> multi-build-selected-preset: "";
+    in property <bool> multi-build-can-add: false;
+    in property <bool> multi-build-color-picker-visible: false;
+    in-out property <string> multi-build-color-picker-value: "#008000";
+    in property <int> multi-build-color-picker-row: 0;
+
+    // Tabbed import dialog callbacks. `import-preset`
+    // (declared with the Affix preset CRUD above) opens on the tab
+    // mapped from the website selection; `open-import-preset-tab(int)`
+    // opens on an explicit tab (the AffixScreen provider chips map
+    // 2..6). Errors surface through the shared dialog-error props.
+    callback open-import-preset-tab(int);
+    callback import-url-changed(string, string);
+    callback import-add-clicked(string);
+    callback import-build-selected(string, int);
+    callback import-build-update(string, int);
+    callback import-build-web(string, int);
+    callback import-build-remove(string, int);
+    callback import-variant-add(string, int);
+    callback import-profile-selected(string, int);
+    callback import-profile-update(string, int);
+    callback import-profile-web(string, int);
+    callback import-profile-remove(string, int);
+    callback import-profile-variant-add(string, int);
+    callback import-visit-web(string);
+    callback import-paragon-toggled(string, bool);
+    callback import-show-browser-toggled(bool);
+    callback import-website-changed(string);
+    callback import-preset-remove();
+    callback import-delete-confirm();
+    callback import-delete-cancel();
+    callback import-name-suggestion-selected(string);
+    callback import-name-text-changed();
+    callback import-name-done();
+    callback import-name-cancel();
+    callback import-progress-done();
+    callback import-progress-cancel();
+    // Local tab (file import / export; remove shares import-preset-remove)
+    // and Merge tab (merge + per-row color picker) callbacks.
+    callback import-local-import();
+    callback import-local-export();
+    callback import-merge-clicked();
+    callback import-merge-color-clicked(int);
+    callback import-color-picker-done();
+    callback import-color-picker-cancel();
+    callback open-multi-build-config();
+    callback multi-build-preset-selected(string);
+    callback multi-build-add();
+    callback multi-build-remove(int);
+    callback multi-build-color-clicked(int);
+    callback multi-build-color-picker-done();
+    callback multi-build-color-picker-cancel();
+
+    // Theme colors — upstream MahApps Dark.Red theme + readme screenshots
+    // (readme-002/003/004.png): red title bar and accent, near-black nav
+    // rail, dark charcoal content, dark panels with thin gray borders. The
+    // shell consumes the `Metro` tokens directly instead of re-declaring
+    // its own colour properties.
+    VerticalLayout {
+        spacing: 0px;
+
+        // ===== Red app header =====
+        // Upstream MetroWindow title bar with LeftWindowCommands icon
+        // buttons (MainWindow.xaml:33-51: Github, CoffeeOutline,
+        // HelpCircleOutline) and the white caption. The native window
+        // frame keeps the OS minimize/maximize/close buttons.
+        Rectangle {
+            background: Metro.accent;
+            preferred-height: 40px;
+            min-height: 40px;
+            max-height: 40px;
+
+            HorizontalLayout {
+                padding-left: 10px;
+                padding-right: 10px;
+                spacing: 8px;
+
+                // Upstream GitHub window command (upstream
+                // LaunchGitHubCommand). Accessible labels name the target
+                // for screen readers and the headless real-input harness.
+                github-command := Rectangle {
+                    background: transparent;
+                    border-radius: 16px;
+                    accessible-role: button;
+                    accessible-label: @tr("Diablo4Companion (upstream) on GitHub");
+                    preferred-width: 32px;
+                    min-width: 32px;
+                    max-width: 32px;
+                    // The glyph is centred by a layout, not by pixel offsets.
+                    HorizontalLayout {
+                        alignment: center;
+
+                        VerticalLayout {
+                            alignment: center;
+
+                            GithubIcon {
+                                width: 22px;
+                                height: 22px;
+                                icon-color: Metro.chrome-on-accent;
+                            }
+                        }
+                    }
+                    TouchArea {
+                        clicked => { root.upstream-github-clicked(); }
+                    }
+                }
+
+                // Upstream author's Ko-fi window command
+                // (upstream LaunchKofiCommand).
+                kofi-command := Rectangle {
+                    background: transparent;
+                    border-radius: 16px;
+                    accessible-role: button;
+                    accessible-label: @tr("Support the Diablo4Companion author on Ko-fi");
+                    preferred-width: 32px;
+                    min-width: 32px;
+                    max-width: 32px;
+                    // The glyph is centred by a layout, not by pixel offsets.
+                    HorizontalLayout {
+                        alignment: center;
+
+                        VerticalLayout {
+                            alignment: center;
+
+                            CoffeeOutlineIcon {
+                                width: 22px;
+                                height: 22px;
+                                icon-color: Metro.chrome-on-accent;
+                            }
+                        }
+                    }
+                    TouchArea {
+                        clicked => { root.upstream-kofi-clicked(); }
+                    }
+                }
+
+                // Upstream wiki window command
+                // (upstream LaunchGitHubWikiCommand).
+                wiki-command := Rectangle {
+                    background: transparent;
+                    border-radius: 16px;
+                    accessible-role: button;
+                    accessible-label: @tr("Diablo4Companion (upstream) wiki on GitHub");
+                    preferred-width: 32px;
+                    min-width: 32px;
+                    max-width: 32px;
+                    // The glyph is centred by a layout, not by pixel offsets.
+                    HorizontalLayout {
+                        alignment: center;
+
+                        VerticalLayout {
+                            alignment: center;
+
+                            HelpCircleOutlineIcon {
+                                width: 22px;
+                                height: 22px;
+                                icon-color: Metro.chrome-on-accent;
+                            }
+                        }
+                    }
+                    TouchArea {
+                        clicked => { root.upstream-wiki-clicked(); }
+                    }
+                }
+
+                // Separator between window commands and the caption
+                Rectangle {
+                    background: Metro.separator;
+                    preferred-width: 1px;
+                    min-width: 1px;
+                    max-width: 1px;
+                }
+
+                // App caption (upstream Title binding:
+                // "DIABLO IV COMPANION V<version>")
+                Text {
+                    text: @tr("DIABLO IV COMPANION V{}", app-version);
+                    color: Metro.chrome-on-accent;
+                    font-size: 15px;
+                    vertical-alignment: center;
+                }
+
+                // Spacer keeps the caption left-aligned
+                Rectangle {
+                    background: transparent;
+                }
+
+                // This port's own repository. Not an upstream window
+                // command: it carries a visible text label so it cannot be
+                // mistaken for the upstream GitHub icon on the left.
+                d4lc-github-command := Rectangle {
+                    // Keep its content width; the spacer takes the rest.
+                    horizontal-stretch: 0;
+                    background: transparent;
+                    border-radius: 4px;
+                    accessible-role: button;
+                    accessible-label: @tr("d4lc on GitHub");
+
+                    HorizontalLayout {
+                        padding-left: 6px;
+                        padding-right: 6px;
+                        spacing: 6px;
+
+                        VerticalLayout {
+                            alignment: center;
+
+                            GithubIcon {
+                                width: 18px;
+                                height: 18px;
+                                icon-color: Metro.chrome-on-accent;
+                            }
+                        }
+
+                        Text {
+                            text: @tr("d4lc on GitHub");
+                            color: Metro.chrome-on-accent;
+                            font-size: 13px;
+                            vertical-alignment: center;
+                        }
+                    }
+                    TouchArea {
+                        clicked => { root.d4lc-github-clicked(); }
+                    }
+                }
+            }
+        }
+
+        // ===== Check-only release banner =====
+        // Rendered only when the bounded GitHub Releases check found a
+        // strictly newer version. States the newer version and the
+        // release URL; activating it opens the browser. Non-blocking:
+        // one fixed row, interaction is never interrupted, and a
+        // failed check shows nothing.
+        if update-available: Rectangle {
+            background: Metro.surface-deep;
+            preferred-height: 32px;
+            min-height: 32px;
+            max-height: 32px;
+            // Accessibility + headless real-input test harness (the
+            // label anchors to the row's visible call to action).
+            accessible-role: button;
+            accessible-label: @tr("Open release page");
+
+            HorizontalLayout {
+                padding-left: 10px;
+                padding-right: 10px;
+                spacing: 8px;
+
+                Text {
+                    text: @tr("Update available: {}", update-version);
+                    color: Metro.text-strong;
+                    font-size: 13px;
+                    vertical-alignment: center;
+                }
+
+                Text {
+                    text: update-url;
+                    color: Metro.rail-icon;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                    overflow: elide;
+                    horizontal-stretch: 1;
+                }
+
+                Text {
+                    text: @tr("Open release page");
+                    color: Metro.text-strong;
+                    font-size: 12px;
+                    vertical-alignment: center;
+                }
+            }
+
+            TouchArea {
+                clicked => { root.update-banner-activated(); }
+            }
+        }
+
+        // The build-import controls live in the AffixScreen "Gear Affix
+        // Presets" panel, next to the provider/import flow — upstream nests these
+        // dialogs under the affix preset import (ImportAffixPreset
+        // ViewModel opens the provider download dialogs) and has no
+        // global toolbar row. All eight root callbacks keep exactly one
+        // UI invoker there.
+
+        // ===== Main content area (sidebar + content) =====
+        HorizontalLayout {
+            spacing: 0px;
+
+            // ===== Icon navigation rail =====
+            // Upstream HamburgerMenu compact pane (MainWindow.xaml:105-149,
+            // HamburgerWidth=48): icon-only entries Tooltip (Affixes),
+            // ScaleBalance (Trading), TooltipTextOutline (Logging), Bug
+            // (Debug), with the Settings cog pinned at the bottom via
+            // OptionsItemsSource. Entries follow the Rust-driven
+            // `tab-labels` model; screens switch by index exactly as before.
+            Rectangle {
+                background: Metro.rail;
+                preferred-width: 48px;
+                min-width: 48px;
+                max-width: 48px;
+                horizontal-stretch: 0;
+
+                VerticalLayout {
+                    padding: 0px;
+                    spacing: 0px;
+
+                    for label[idx] in tab-labels: VerticalLayout {
+                        spacing: 0px;
+
+                        // Flexible spacer above Settings (index 4) pins it
+                        // to the bottom like upstream OptionsItemsSource
+                        // (MainWindow.xaml:141-149).
+                        if idx == 4: Rectangle {
+                            background: transparent;
+                            vertical-stretch: 1;
+                        }
+
+                        Rectangle {
+                            background: idx == active-tab ? Metro.accent : transparent;
+                            preferred-height: 48px;
+                            min-height: 48px;
+                            max-height: 48px;
+                            // Accessibility + headless real-input test harness
+                            // (testing_harness.rs finds rail entries by label).
+                            accessible-role: button;
+                            accessible-label: label;
+
+                            // The entry glyph is centred by a layout, not by
+                            // `x:`/`y:` offsets; only the active entry renders.
+                            HorizontalLayout {
+                                alignment: center;
+
+                                VerticalLayout {
+                                    alignment: center;
+
+                                    if idx == 0: TooltipIcon {
+                                        width: 24px;
+                                        height: 24px;
+                                        icon-color: idx == active-tab ? Metro.chrome-on-accent : Metro.rail-icon;
+                                    }
+
+                                    if idx == 1: ScaleBalanceIcon {
+                                        width: 24px;
+                                        height: 24px;
+                                        icon-color: idx == active-tab ? Metro.chrome-on-accent : Metro.rail-icon;
+                                    }
+
+                                    if idx == 2: TooltipTextOutlineIcon {
+                                        width: 24px;
+                                        height: 24px;
+                                        icon-color: idx == active-tab ? Metro.chrome-on-accent : Metro.rail-icon;
+                                    }
+
+                                    if idx == 3: BugIcon {
+                                        width: 24px;
+                                        height: 24px;
+                                        icon-color: idx == active-tab ? Metro.chrome-on-accent : Metro.rail-icon;
+                                    }
+
+                                    if idx == 4: CogIcon {
+                                        width: 24px;
+                                        height: 24px;
+                                        icon-color: idx == active-tab ? Metro.chrome-on-accent : Metro.rail-icon;
+                                        hole-color: idx == active-tab ? Metro.accent : Metro.rail;
+                                    }
+                                }
+                            }
+
+                            TouchArea {
+                                clicked => { root.active-tab = idx; }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // Content area — screen switching via conditional rendering.
+            // Each screen is only instantiated when its tab is active.
+            if active-tab == 0: AffixScreen {
+                preset-names: root.preset-names;
+                selected-preset <=> root.selected-preset;
+                new-preset-name <=> root.new-preset-name;
+                affix-entries: root.affix-entries;
+                affix-rail-rows: root.affix-rail-rows;
+                aspect-entries: root.aspect-entries;
+                sigil-entries: root.sigil-entries;
+                unique-entries: root.unique-entries;
+                rune-entries: root.rune-entries;
+                // Live overlay indicator state (upstream
+                // IsAffixOverlayEnabled): kept current by every
+                // overlay-toggle path so the power button reflects
+                // hotkey/runtime toggles too.
+                overlay-enabled: root.affix-overlay-enabled;
+                selected-import-provider <=> root.build-import-provider;
+                // Game-data language combo.
+                selected-language <=> root.selected-language;
+                languages: root.language-options;
+                language-selected(value) => { root.language-selected(value); }
+                create-preset => { root.create-preset(); }
+                rename-preset => { root.rename-preset(); }
+                remove-preset => { root.remove-preset(); }
+                import-preset => { root.import-preset(); }
+                class-toggles: root.class-toggles;
+                category-toggles: root.category-toggles;
+                rune-toggles: root.rune-toggles;
+                affix-filters-changed(class, category, rune) => { root.affix-filters-changed(class, category, rune); }
+                // Live catalog keyword filter: the field's text lives on
+                // the root so it survives the tab switch, and every edit
+                // re-projects the grids.
+                affix-filter-text <=> root.affix-filter-text;
+                affix-filter-text-changed(text) => { root.affix-filter-text-changed(text); }
+                affix-catalog-window <=> root.affix-catalog-window;
+                affix-catalog-window-changed(size) => { root.affix-catalog-window-changed(size); }
+                open-affix-config => { root.open-affix-config(); }
+                open-aspect-config => { root.open-aspect-config(); }
+                open-sigil-config => { root.open-sigil-config(); }
+                open-unique-config => { root.open-unique-config(); }
+                open-rune-config => { root.open-rune-config(); }
+                remove-affix-entry(key) => { root.remove-affix-entry(key); }
+                toggle-affix-overlay => { root.toggle-affix-overlay(); }
+                // Wire open-set-affix and open-set-affix-color
+                // so the affix screen's edit/color buttons open
+                // the SetAffix / SetAffixColor dialogs. Entry callbacks
+                // carry kind-tagged keys (`kind:id:item-type`); the
+                // per-kind aspect/sigil/unique/rune color/remove
+                // callbacks forward to the same key-addressed root
+                // handlers. The per-family add (+) callbacks forward
+                // to the shared kind-aware add handler, which upserts
+                // the entry into the matching wanted list (upstream
+                // Set* commands, AffixViewModel.cs:856-920).
+                set-affix-entry(key) => { root.open-set-affix(key); }
+                set-aspect-entry(key) => { root.set-aspect-entry(key); }
+                set-sigil-entry(key) => { root.set-sigil-entry(key); }
+                set-unique-entry(key) => { root.set-unique-entry(key); }
+                set-rune-entry(key) => { root.set-rune-entry(key); }
+                set-affix-color(key) => { root.open-set-affix-color(key); }
+                set-aspect-color(key) => { root.open-set-affix-color(key); }
+                remove-aspect-entry(key) => { root.remove-affix-entry(key); }
+                remove-sigil-entry(key) => { root.remove-affix-entry(key); }
+                remove-unique-entry(key) => { root.remove-affix-entry(key); }
+                remove-rune-entry(key) => { root.remove-affix-entry(key); }
+                // The sigil card's dungeon tier button cycles the
+                // configured tier through the same root handler the Sigil
+                // config dialog's tier rows use (upstream
+                // `SetSigilDungeonTierToNextCommand`, SigilInfoVM.cs:139-149).
+                cycle-sigil-tier(key) => { root.cycle-sigil-dungeon-tier(key); }
+                // A preset switch from the ComboBox must re-project the
+                // entries (upstream re-binds the wanted lists).
+                preset-selected(name) => { root.affix-preset-selected(name); }
+                // The website combo row is the single
+                // screen-level import entry point. The Import button opens the
+                // tabbed import dialog on the selected provider's tab
+                // (upstream `ImportAffixPresetCommandExecute`), so the former
+                // provider chips and the port-only Multi-Build / New Preset /
+                // Hotkey buttons are gone: Multi-Build mode lives in the
+                // AffixConfig dialog and the hotkey dialog is reachable from
+                // the Settings screen.
+                import-website-changed(value) => { root.import-website-changed(value); }
+            }
+            if active-tab == 1: TradeScreen {
+                // Projected trade models (upstream TradeView.xaml card
+                // bindings); populated by `project_trade_state`.
+                trade-items: root.trade-items;
+                current-item-type: root.current-item-type;
+                current-item-power: root.current-item-power;
+                current-affixes: root.current-affixes;
+                // CurrentItemCard gate — the persisted ShowCurrentItem
+                // setting (upstream FilterTradeItems filters the current
+                // card out when `Settings.ShowCurrentItem` is false).
+                show-current-item: root.trade-show-current-item;
+                // Clear the AddTradeItem form values when the user
+                // opens the dialog so a previous draft does not
+                // leak into the new session.
+                add_trade_item => { root.trade-form-item-type = ""; root.trade-form-value-text = ""; root.add-trade-item(); }
+                edit_trade_item(item-id) => { root.edit-trade-item(item-id); }
+                remove_trade_item(item-id) => { root.remove-trade-item(item-id); }
+                open_trade_config => { root.open-trade-config(); }
+            }
+            if active-tab == 2: LoggingScreen {
+                log-messages: root.log-messages;
+                clear-log => { root.clear-log(); }
+            }
+            if active-tab == 3: DebugScreen {
+                runtime-running: root.runtime-running;
+                runtime-preparing: root.runtime-preparing;
+                runtime-status-text: root.runtime-status-text;
+                current-item-name: root.current-item-name;
+                current-item-parse-status: root.current-item-parse-status;
+                overlay-status-text: root.overlay-status-text;
+                overlay-text-status-text: root.overlay-text-status-text;
+                accepted-generation-text: root.accepted-generation-text;
+                overlay-renderer-text: root.overlay-renderer-text;
+                frame-state-text: root.frame-state-text;
+                debug-frozen: root.debug-frozen;
+                evaluation-text: root.evaluation-text;
+                published-at-text: root.published-at-text;
+                hotpath-scope-text: root.hotpath-scope-text;
+                ocr-phase-text: root.ocr-phase-text;
+                loop-timings-text: root.loop-timings-text;
+                ui-renderer-text: root.ui-renderer-text;
+                game-window-status-text: root.game-window-status-text;
+                capture-engine-text: root.capture-engine-text;
+                settings-status-text: root.settings-status-text;
+                debug-frame-sequence: root.debug-frame-sequence;
+                debug-hotpath-ms: root.debug-hotpath-ms;
+                debug-tooltip-found: root.debug-tooltip-found;
+                crash-log-entries: root.crash-log-entries;
+                // Pager selection survives leaving and re-entering the
+                // Debug tab: the shell owns the index.
+                active-panel-index <=> root.debug-active-panel-index;
+                type-area-offset-left <=> root.type-area-offset-left;
+                type_area_offset_left_changed(value) => { root.type_area_offset_left_changed(value); }
+                start_live_loop => { root.start-live-loop(); }
+                stop_live_loop => { root.stop-live-loop(); }
+                take-screenshot => { root.take-screenshot(); }
+                export-debug-images => { root.export-debug-images(); }
+                reload-preset-images => { root.reload-preset-images(); }
+                reset-perf => { root.reset-perf(); }
+                debug-info-toggled(enabled) => { root.debug-info-toggled(enabled); }
+                topmost-toggled(enabled) => { root.topmost-toggled(enabled); }
+                export_crash_log(name) => { root.export-crash-log(name); }
+                // ── Debug screen functional wiring ─────
+                // Additive debug-named block: stepper values, DebugInfo
+                // bit, panel models and the two new commands.
+                debug-info-enabled <=> root.debug-info-enabled;
+                topmost-enabled <=> root.window-topmost;
+                tooltip-width <=> root.debug-tooltip-width;
+                tooltip-max-height <=> root.debug-tooltip-max-height;
+                threshold-min <=> root.debug-threshold-min;
+                threshold-max <=> root.debug-threshold-max;
+                type-area-offset-right <=> root.debug-type-area-offset-right;
+                aspect-area-max-height <=> root.debug-aspect-area-max-height;
+                minimal-ocr-match-type <=> root.debug-minimal-ocr-match-type;
+                threshold-similarity-tooltip <=> root.debug-threshold-similarity-tooltip;
+                threshold-similarity-affix-location <=> root.debug-threshold-similarity-affix-location;
+                threshold-similarity-aspect-location <=> root.debug-threshold-similarity-aspect-location;
+                threshold-similarity-socket-location <=> root.debug-threshold-similarity-socket-location;
+                threshold-similarity-splitter-location <=> root.debug-threshold-similarity-splitter-location;
+                affix-area-height-offset-top <=> root.debug-affix-area-height-offset-top;
+                affix-area-height-offset-bottom <=> root.debug-affix-area-height-offset-bottom;
+                affix-aspect-area-width-offset <=> root.debug-affix-aspect-area-width-offset;
+                aspect-area-height-offset-top <=> root.debug-aspect-area-height-offset-top;
+                artifact-rows: root.debug-artifact-rows;
+                artifact-source: root.debug-artifact-source;
+                stage-rows: root.debug-stage-rows;
+                perf-rows: root.debug-perf-rows;
+                perf-source: root.debug-perf-source;
+                diagnostics-rows: root.debug-diagnostics-rows;
+                ocr-panels: root.debug-ocr-panels;
+                debug_stepper_changed(id, value) => { root.debug-stepper-changed(id, value); }
+                debug_open_artifacts => { root.debug-open-artifacts(); }
+            }
+            if active-tab == 4: SettingsScreen {
+                system-preset-change-allowed: root.system-preset-change-allowed;
+                debug-mode <=> root.debug-mode;
+                dev-mode: root.dev-mode;
+                check-updates <=> root.check-updates;
+                launch-minimized <=> root.launch-minimized;
+                minimize-to-tray <=> root.minimize-to-tray;
+                controller-mode <=> root.controller-mode;
+                paragon-mode <=> root.paragon-mode;
+                diagnostics-export <=> root.diagnostics-export;
+                update-check-enabled <=> root.update-check-enabled;
+                selected-system-preset <=> root.selected-system-preset;
+                system-presets: root.system-presets;
+                selected-community-preset <=> root.selected-community-preset;
+                community-presets: root.community-presets;
+                preset-download-success: root.preset-download-success;
+                preset-downloading: root.preset-downloading;
+                // Description panel seed: Rust writes the
+                // root property; the screen renders it.
+                preset-details: root.preset-details;
+                settings-changed => { root.settings-changed(); }
+                preset_selected(name) => { root.preset-selected(name); }
+                community_preset_selected(name) => { root.community-preset-selected(name); }
+                // App language combo (SettingsView.xaml:58-73).
+                selected-app-language <=> root.selected-app-language;
+                app-languages: root.app-language-options;
+                app_language_selected(value) => { root.app-language-selected(value); }
+                // Display backend selector: two-way label binding plus
+                // forwarding to the root callback handled in Rust.
+                settings-display-backend <=> root.settings-display-backend;
+                display_backend_selected(value) => { root.display-backend-changed(value); }
+                open-colors-config => { root.dialog-id = "colors_config"; root.dialog-title = @tr("Default colors config"); root.dialog-visible = true; root.dialog-open-colors(); }
+                open-controller-config => { root.dialog-id = "controller_config"; root.dialog-title = @tr("Controller config"); root.dialog-visible = true; root.dialog-open-controller(); }
+                open-hotkeys-config => { root.dialog-id = "hotkeys_config"; root.dialog-title = @tr("Hotkeys config"); root.dialog-visible = true; root.dialog-open-hotkeys(); }
+                open-overlay-config => { root.dialog-id = "overlay_config"; root.dialog-title = @tr("Overlay config"); root.dialog-visible = true; root.dialog-open-overlay(); }
+                open-paragon-config => { root.dialog-id = "paragon_config"; root.dialog-title = @tr("Paragon config"); root.dialog-visible = true; root.dialog-open-paragon(); }
+                // Download-preset: forward the
+                // SettingsScreen child `download_preset(string)`
+                // callback to the root `download-preset(string)`
+                // callback registered above. The Rust handler
+                // lives in `actions::settings::handle_download_preset`
+                // and is wired in `wiring.rs::wire_settings_actions`.
+                download_preset(name) => { root.download-preset(name); }
+            }
+        }
+    }
+
+    // Dialog host — inline overlay, semi-transparent backdrop.
+    // The host dispatches all 22 dialog
+    // components by string `dialog-id`. Family-specific confirm /
+    // cancel logic lives in `crates/d4lc-app/src/actions/*_dialogs.rs`
+    // and is routed through `actions::dialogs`.
+    if dialog-visible: Rectangle {
+        // The host fills the window; the default origin (0, 0) is the whole
+        // window, so no manual offsets are needed here.
+        width: 100%;
+        height: 100%;
+        background: Metro.scrim;
+
+        // Modal pointer guard: consumes clicks on blank host areas
+        // (the backdrop and blank dialog-box areas). Without it the
+        // click hit-tests through the host to the screen content
+        // behind the modal; upstream MahApps dialogs block underlying
+        // clicks, so this closes that parity gap. Declared before the
+        // keyboard host below, so every dialog control stays on top
+        // and keeps receiving its clicks.
+        TouchArea { }
+
+        // Global dialog keyboard host. The FocusScope
+        // takes focus when the dialog opens and routes Escape/Enter
+        // to the Rust router; every other key passes through. It
+        // wraps the dialog box so Escape/Enter rejected by a focused
+        // dialog input bubbles up to the same route.
+        FocusScope {
+            width: 100%;
+            height: 100%;
+            init => { self.focus(); }
+            key-pressed(event) => {
+                if (event.text == Key.Escape || event.text == Key.Return) {
+                    root.dialog-key(event.text);
+                    return accept;
+                }
+                return reject;
+            }
+
+            // Centered dialog box. The tabbed import dialog (upstream
+            // ImportAffixPresetView) takes the larger footprint its seven
+            // tabs and build/variant lists need; every other dialog keeps
+            // the shared 520x400 box. The box stays at its absolute centre:
+            // wrapping it in centring layouts would re-indent the whole
+            // 22-dialog dispatch below for no visual change, so the two
+            // offsets are kept deliberately.
+            Rectangle {
+                x: (parent.width - dialog-box-width) / 2;
+                y: (parent.height - dialog-box-height) / 2;
+                width: dialog-box-width;
+                height: dialog-box-height;
+                background: Metro.surface-deep;
+                border-width: 1px;
+                border-color: Metro.border-strong;
+                border-radius: 8px;
+    
+                // Layout wraps dialog content
+                VerticalLayout {
+                    // ── Settings family (5) ──
+                    if dialog-id == "colors_config": ColorsConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: two-way bindings on
+                        // the seven default colors. Rust seeds them from
+                        // `state.shell.settings.default_colors` on open
+                        // and validates + persists them on confirm.
+                        settings-colors-implicit <=> root.settings-colors-implicit;
+                        settings-colors-normal <=> root.settings-colors-normal;
+                        settings-colors-greater <=> root.settings-colors-greater;
+                        settings-colors-tempered <=> root.settings-colors-tempered;
+                        settings-colors-aspects <=> root.settings-colors-aspects;
+                        settings-colors-uniques <=> root.settings-colors-uniques;
+                        settings-colors-runes <=> root.settings-colors-runes;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "controller_config": ControllerConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: two-way binding on
+                        // the controller-mode toggle and a one-way
+                        // read-only seed for the active image count.
+                        // No Slint globals; Rust reads via
+                        // `app.get_settings_controller_mode()`.
+                        settings-controller-mode <=> root.settings-controller-mode;
+                        settings-controller-images-count: root.settings-controller-images-count;
+                        // The available-image rows and the
+                        // per-row add/remove channel.
+                        settings-controller-image-rows: root.settings-controller-image-rows;
+                        settings-controller-image-selected(name, selected) => {
+                            root.settings-controller-image-selected(name, selected);
+                        }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "hotkeys_config": HotkeysConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // The seven binding rows (draft
+                        // enabled state + binding + registration status),
+                        // the per-row draft toggle and the per-row
+                        // capture-dialog entry.
+                        settings-hotkey-rows: root.settings-hotkey-rows;
+                        settings-hotkey-row-toggled(name, enabled) => {
+                            root.settings-hotkey-row-toggled(name, enabled);
+                        }
+                        settings-hotkey-row-edit(name) => {
+                            root.settings-hotkey-row-edit(name);
+                        }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "overlay_config": OverlayConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: two-way bindings on
+                        // the five overlay form values (enable, topmost,
+                        // font size, menu lock, type-area offset). Rust
+                        // reads them via `app.get_settings_overlay_*`
+                        // and validates font size + offset ranges.
+                        settings-overlay-enabled <=> root.settings-overlay-enabled;
+                        settings-overlay-top-most <=> root.settings-overlay-top-most;
+                        settings-overlay-font-size <=> root.settings-overlay-font-size;
+                        settings-overlay-menu-locked <=> root.settings-overlay-menu-locked;
+                        settings-overlay-type-area-offset-left <=> root.settings-overlay-type-area-offset-left;
+                        // The upstream rows whose config
+                        // fields already exist (icon visibility and
+                        // placement, item-power rule, marker mode, trade
+                        // overlay, socket / tempered detection).
+                        settings-overlay-show-icon <=> root.settings-overlay-show-icon;
+                        settings-overlay-icon-pos-x <=> root.settings-overlay-icon-pos-x;
+                        settings-overlay-icon-pos-y <=> root.settings-overlay-icon-pos-y;
+                        settings-overlay-item-power-enabled <=> root.settings-overlay-item-power-enabled;
+                        settings-overlay-item-power-limit <=> root.settings-overlay-item-power-limit;
+                        settings-overlay-marker-mode <=> root.settings-overlay-marker-mode;
+                        settings-overlay-trade-overlay <=> root.settings-overlay-trade-overlay;
+                        settings-overlay-socket-detection <=> root.settings-overlay-socket-detection;
+                        settings-overlay-tempered-detection <=> root.settings-overlay-tempered-detection;
+                        settings-overlay-aspect-detection <=> root.settings-overlay-aspect-detection;
+                        settings-overlay-screen-capture-delay <=> root.settings-overlay-screen-capture-delay;
+                        settings-overlay-update-delay <=> root.settings-overlay-update-delay;
+                        settings-overlay-scan-height <=> root.settings-overlay-scan-height;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "paragon_config": ParagonConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: two-way bindings on
+                        // the two persisted paragon form values
+                        // (mode active, Mobalytics browser).
+                        // Rust reads them via
+                        // `app.get_settings_paragon_*`.
+                        settings-paragon-mode-active <=> root.settings-paragon-mode-active;
+                        settings-paragon-show-browser-mobalytics-enabled <=> root.settings-paragon-show-browser-mobalytics-enabled;
+                        // The collapsed-board switch and
+                        // the five paragon layout numerics.
+                        settings-paragon-collapsed-board <=> root.settings-paragon-collapsed-board;
+                        settings-paragon-border-size <=> root.settings-paragon-border-size;
+                        settings-paragon-node-size <=> root.settings-paragon-node-size;
+                        settings-paragon-node-size-collapsed <=> root.settings-paragon-node-size-collapsed;
+                        settings-paragon-left-offset-collapsed <=> root.settings-paragon-left-offset-collapsed;
+                        settings-paragon-top-offset-collapsed <=> root.settings-paragon-top-offset-collapsed;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    // ── Affix family (11) ──
+                    if dialog-id == "affix_config": AffixConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: the four rule-setting
+                        // toggles are two-way bound to root properties seeded
+                        // by `affix_cmds::handle_open_affix_config` from the
+                        // persisted settings. Every toggle click and the
+                        // confirmed minimal-values reset forward to the wired
+                        // root callbacks, which persist and re-project.
+                        settings-rule-minimal-affix-value-filter-enabled <=> root.settings-rule-minimal-affix-value-filter-enabled;
+                        settings-rule-multi-build-enabled <=> root.settings-rule-multi-build-enabled;
+                        settings-rule-tempered-affix-detection-enabled <=> root.settings-rule-tempered-affix-detection-enabled;
+                        settings-rule-tuning-prism-hints-enabled <=> root.settings-rule-tuning-prism-hints-enabled;
+                        rule-toggle-changed(name, value) => { root.affix-rule-toggle-changed(name, value); }
+                        reset-minimal-affix-values => { root.affix-config-reset-minimal-values(); }
+                        open-multi-build-config => { root.open-multi-build-config(); }
+                        open-colors-config => { root.dialog-open-colors(); }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "aspect_config": AspectConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: the aspect-detection and
+                        // multi-build toggles write through on interaction.
+                        settings-rule-aspect-detection-enabled <=> root.settings-rule-aspect-detection-enabled;
+                        settings-rule-multi-build-enabled <=> root.settings-rule-multi-build-enabled;
+                        rule-toggle-changed(name, value) => { root.affix-rule-toggle-changed(name, value); }
+                        open-multi-build-config => { root.open-multi-build-config(); }
+                        open-colors-config => { root.dialog-open-colors(); }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "sigil_config": SigilConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: the dungeon-tiers and
+                        // multi-build toggles plus the display-mode selector
+                        // are two-way bound to root properties seeded on
+                        // open; the per-entry tier rows are host-seeded
+                        // models, re-seeded after every cycle.
+                        settings-rule-dungeon-tiers-enabled <=> root.settings-rule-dungeon-tiers-enabled;
+                        settings-rule-multi-build-enabled <=> root.settings-rule-multi-build-enabled;
+                        settings-rule-sigil-display-mode <=> root.settings-rule-sigil-display-mode;
+                        sigil-config-entry-ids <=> root.sigil-config-entry-ids;
+                        sigil-config-entry-tiers <=> root.sigil-config-entry-tiers;
+                        rule-toggle-changed(name, value) => { root.affix-rule-toggle-changed(name, value); }
+                        rule-selection-changed(name, value) => { root.affix-rule-selection-changed(name, value); }
+                        cycle-sigil-tier(id) => { root.cycle-sigil-dungeon-tier(id); }
+                        open-multi-build-config => { root.open-multi-build-config(); }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "unique_config": UniqueConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: same toggle contract as the
+                        // aspect config dialog.
+                        settings-rule-unique-detection-enabled <=> root.settings-rule-unique-detection-enabled;
+                        settings-rule-multi-build-enabled <=> root.settings-rule-multi-build-enabled;
+                        rule-toggle-changed(name, value) => { root.affix-rule-toggle-changed(name, value); }
+                        open-multi-build-config => { root.open-multi-build-config(); }
+                        open-colors-config => { root.dialog-open-colors(); }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "rune_config": RuneConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: same toggle contract as the
+                        // aspect config dialog.
+                        settings-rule-rune-detection-enabled <=> root.settings-rule-rune-detection-enabled;
+                        settings-rule-multi-build-enabled <=> root.settings-rule-multi-build-enabled;
+                        rule-toggle-changed(name, value) => { root.affix-rule-toggle-changed(name, value); }
+                        open-multi-build-config => { root.open-multi-build-config(); }
+                        open-colors-config => { root.dialog-open-colors(); }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "set_affix": SetAffixDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Two-way bindings: user edits flow into root
+                        // in-out properties; Rust seeds the values on
+                        // open and clears them on cancel / confirm.
+                        // No Slint global.
+                        set-affix-edit-index <=> root.set-affix-edit-index;
+                        set-affix-entry-id <=> root.set-affix-entry-id;
+                        set-affix-item-type <=> root.set-affix-item-type;
+                        set-affix-color <=> root.set-affix-color;
+                        set-affix-is-greater <=> root.set-affix-is-greater;
+                        set-affix-is-implicit <=> root.set-affix-is-implicit;
+                        set-affix-is-tempered <=> root.set-affix-is-tempered;
+                        // Host plumbing: the minimal-value field
+                        // and the per-slot counters come from the host seed
+                        // (`set_affix_dialog_seed`); the slot buttons and the
+                        // field's `edited` report forward to the wired root
+                        // callbacks, which persist and re-seed.
+                        set-affix-minimal-value <=> root.set-affix-minimal-value;
+                        set-affix-slot-counters: root.set-affix-slot-counters;
+                        add-affix-slot(slot) => { root.set-affix-slot-add(slot); }
+                        minimal-affix-value-edited(text) => { root.minimal-affix-value-edited(text); }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "set_affix_color": SetAffixColorDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Two-way bindings for SetAffixColor (no Slint
+                        // global).
+                        set-affix-color-target-key <=> root.set-affix-color-target-key;
+                        set-affix-color-value <=> root.set-affix-color-value;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "set_preset_name": SetPresetNameDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: the form input
+                        // flows through the root in-out prop so
+                        // Rust can read it on confirm and clear it
+                        // on cancel / confirm.
+                        set-preset-name-input <=> root.set-preset-name-input;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "rename_preset": RenamePresetDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: the current name
+                        // is the read-only seed and the new name
+                        // is the user input. Both flow through
+                        // root in-out props (no Slint global).
+                        rename-preset-current-name <=> root.rename-preset-current-name;
+                        rename-preset-new-name <=> root.rename-preset-new-name;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    // ── Trade family (2) ──
+                    if dialog-id == "add_trade_item": AddTradeItemDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Two-way bindings: user typing flows into root
+                        // in-out properties; Rust resets flow back to the
+                        // form. No Slint global.
+                        trade-form-item-type <=> root.trade-form-item-type;
+                        trade-form-value-text <=> root.trade-form-value-text;
+                        // Picker channels: the
+                        // host projects the candidate / staged models and
+                        // the rune / edit-mode flags; every picker gesture
+                        // forwards to the wired root callbacks.
+                        edit-mode: root.trade-edit-mode;
+                        item-type-is-rune: root.trade-item-type-is-rune;
+                        affix-candidates: root.trade-affix-candidates;
+                        rune-candidates: root.trade-rune-candidates;
+                        item-affixes: root.trade-item-affixes;
+                        affix-filter <=> root.trade-affix-filter;
+                        add-affix(affix-id) => { root.trade-add-affix(affix-id); }
+                        add-rune-affix(affix-id) => { root.trade-add-rune-affix(affix-id); }
+                        remove-affix(affix-id) => { root.trade-remove-affix(affix-id); }
+                        toggle-affix-is-greater(affix-id, checked) => { root.trade-affix-is-greater(affix-id, checked); }
+                        filter-edited(text) => { root.trade-affix-filter-changed(text); }
+                        type-edited(text) => { root.trade-form-type-edited(text); }
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    if dialog-id == "trade_config": TradeConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Two-way bindings: user edits flow into root
+                        // in-out properties; Rust seeds the values on
+                        // open and clears them on cancel / confirm.
+                        // No Slint global.
+                        trade-config-overlay-enabled <=> root.trade-config-overlay-enabled;
+                        trade-config-show-current-item <=> root.trade-config-show-current-item;
+                        trade-config-font-size <=> root.trade-config-font-size;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    // ── Hotkeys family (1) ──
+                    if dialog-id == "hotkey_config": HotkeyConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        // Host plumbing: the target name
+                        // is the read-only seed and the binding /
+                        // enabled toggle are the user input. All
+                        // three flow through root in-out props (no
+                        // Slint global). Confirm stores the draft
+                        // in `state.hotkey_drafts` (in-memory
+                        // only); no OS-level grab is performed.
+                        hotkey-config-target <=> root.hotkey-config-target;
+                        hotkey-config-binding <=> root.hotkey-config-binding;
+                        hotkey-config-enabled <=> root.hotkey-config-enabled;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    // ── Build-import family (tabbed import dialog +
+                    //    multi-build config) ──
+                    // The five per-provider download
+                    // dialogs collapsed into the tabbed ImportPreset
+                    // dialog (upstream ImportAffixPresetView). Full
+                    // host plumbing below.
+                    if dialog-id == "import_preset": ImportPresetDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        import-tab-index <=> root.import-tab-index;
+                        import-preset-names <=> root.import-preset-names;
+                        import-selected-preset <=> root.import-selected-preset;
+                        import-d2core-url <=> root.import-d2core-url;
+                        import-d2core-extracted-id <=> root.import-d2core-extracted-id;
+                        import-d2core-add-enabled <=> root.import-d2core-add-enabled;
+                        import-d2core-builds <=> root.import-d2core-builds;
+                        import-d2core-selected-build-index <=> root.import-d2core-selected-build-index;
+                        import-d2core-variants <=> root.import-d2core-variants;
+                        import-d2core-selected-variant-index <=> root.import-d2core-selected-variant-index;
+                        import-d2core-paragon-enabled <=> root.import-d2core-paragon-enabled;
+                        import-d4builds-url <=> root.import-d4builds-url;
+                        import-d4builds-extracted-id <=> root.import-d4builds-extracted-id;
+                        import-d4builds-add-enabled <=> root.import-d4builds-add-enabled;
+                        import-d4builds-builds <=> root.import-d4builds-builds;
+                        import-d4builds-selected-build-index <=> root.import-d4builds-selected-build-index;
+                        import-d4builds-variants <=> root.import-d4builds-variants;
+                        import-d4builds-selected-variant-index <=> root.import-d4builds-selected-variant-index;
+                        import-d4builds-paragon-enabled <=> root.import-d4builds-paragon-enabled;
+                        import-infinity-url <=> root.import-infinity-url;
+                        import-infinity-extracted-id <=> root.import-infinity-extracted-id;
+                        import-infinity-add-enabled <=> root.import-infinity-add-enabled;
+                        import-infinity-builds <=> root.import-infinity-builds;
+                        import-infinity-selected-build-index <=> root.import-infinity-selected-build-index;
+                        import-infinity-variants <=> root.import-infinity-variants;
+                        import-infinity-selected-variant-index <=> root.import-infinity-selected-variant-index;
+                        import-infinity-paragon-enabled <=> root.import-infinity-paragon-enabled;
+                        import-maxroll-url <=> root.import-maxroll-url;
+                        import-maxroll-extracted-id <=> root.import-maxroll-extracted-id;
+                        import-maxroll-add-enabled <=> root.import-maxroll-add-enabled;
+                        import-maxroll-builds <=> root.import-maxroll-builds;
+                        import-maxroll-selected-build-index <=> root.import-maxroll-selected-build-index;
+                        import-maxroll-variants <=> root.import-maxroll-variants;
+                        import-maxroll-selected-variant-index <=> root.import-maxroll-selected-variant-index;
+                        import-maxroll-paragon-enabled <=> root.import-maxroll-paragon-enabled;
+                        import-mobalytics-url <=> root.import-mobalytics-url;
+                        import-mobalytics-extracted-id <=> root.import-mobalytics-extracted-id;
+                        import-mobalytics-add-enabled <=> root.import-mobalytics-add-enabled;
+                        import-mobalytics-builds <=> root.import-mobalytics-builds;
+                        import-mobalytics-selected-build-index <=> root.import-mobalytics-selected-build-index;
+                        import-mobalytics-variants <=> root.import-mobalytics-variants;
+                        import-mobalytics-selected-variant-index <=> root.import-mobalytics-selected-variant-index;
+                        import-mobalytics-paragon-enabled <=> root.import-mobalytics-paragon-enabled;
+                        import-mobalytics-url-status <=> root.import-mobalytics-url-status;
+                        import-mobalytics-show-browser <=> root.import-mobalytics-show-browser;
+                        import-mobalytics-selected-sub-tab <=> root.import-mobalytics-selected-sub-tab;
+                        import-mobalytics-profiles <=> root.import-mobalytics-profiles;
+                        import-mobalytics-selected-profile-index <=> root.import-mobalytics-selected-profile-index;
+                        import-mobalytics-profile-variants <=> root.import-mobalytics-profile-variants;
+                        import-mobalytics-selected-profile-variant-index <=> root.import-mobalytics-selected-profile-variant-index;
+                        import-progress-visible <=> root.import-progress-visible;
+                        import-progress-status <=> root.import-progress-status;
+                        import-progress-build-name <=> root.import-progress-build-name;
+                        import-progress-variants <=> root.import-progress-variants;
+                        import-progress-provider <=> root.import-progress-provider;
+                        import-progress-step <=> root.import-progress-step;
+                        import-progress-elapsed <=> root.import-progress-elapsed;
+                        import-progress-failed <=> root.import-progress-failed;
+                        import-progress-error-title <=> root.import-progress-error-title;
+                        import-progress-error <=> root.import-progress-error;
+                        import-download-active <=> root.import-download-active;
+                        import-name-visible <=> root.import-name-visible;
+                        import-name-text <=> root.import-name-text;
+                        import-name-suggestions <=> root.import-name-suggestions;
+                        import-name-overwrite-warning <=> root.import-name-overwrite-warning;
+                        import-delete-visible <=> root.import-delete-visible;
+                        import-merge-build1 <=> root.import-merge-build1;
+                        import-merge-build2 <=> root.import-merge-build2;
+                        import-merge-change-color1 <=> root.import-merge-change-color1;
+                        import-merge-change-color2 <=> root.import-merge-change-color2;
+                        import-merge-change-color12 <=> root.import-merge-change-color12;
+                        import-merge-color1 <=> root.import-merge-color1;
+                        import-merge-color2 <=> root.import-merge-color2;
+                        import-merge-color12 <=> root.import-merge-color12;
+                        import-color-picker-visible <=> root.import-color-picker-visible;
+                        import-color-picker-value <=> root.import-color-picker-value;
+                        import-color-picker-row <=> root.import-color-picker-row;
+                        import-url-changed(provider, url) => { root.import-url-changed(provider, url); }
+                        import-add-clicked(provider) => { root.import-add-clicked(provider); }
+                        import-build-selected(provider, index) => { root.import-build-selected(provider, index); }
+                        import-build-update(provider, index) => { root.import-build-update(provider, index); }
+                        import-build-web(provider, index) => { root.import-build-web(provider, index); }
+                        import-build-remove(provider, index) => { root.import-build-remove(provider, index); }
+                        import-variant-add(provider, index) => { root.import-variant-add(provider, index); }
+                        import-profile-selected(provider, index) => { root.import-profile-selected(provider, index); }
+                        import-profile-update(provider, index) => { root.import-profile-update(provider, index); }
+                        import-profile-web(provider, index) => { root.import-profile-web(provider, index); }
+                        import-profile-remove(provider, index) => { root.import-profile-remove(provider, index); }
+                        import-profile-variant-add(provider, index) => { root.import-profile-variant-add(provider, index); }
+                        import-visit-web(provider) => { root.import-visit-web(provider); }
+                        import-paragon-toggled(provider, enabled) => { root.import-paragon-toggled(provider, enabled); }
+                        import-show-browser-toggled(enabled) => { root.import-show-browser-toggled(enabled); }
+                        import-preset-remove => { root.import-preset-remove(); }
+                        import-delete-confirm => { root.import-delete-confirm(); }
+                        import-delete-cancel => { root.import-delete-cancel(); }
+                        import-name-suggestion-selected(value) => { root.import-name-suggestion-selected(value); }
+                        import-name-text-changed => { root.import-name-text-changed(); }
+                        import-name-done => { root.import-name-done(); }
+                        import-name-cancel => { root.import-name-cancel(); }
+                        import-progress-done => { root.import-progress-done(); }
+                        import-progress-cancel => { root.import-progress-cancel(); }
+                        import-local-import => { root.import-local-import(); }
+                        import-local-export => { root.import-local-export(); }
+                        import-merge-clicked => { root.import-merge-clicked(); }
+                        import-merge-color-clicked(row) => { root.import-merge-color-clicked(row); }
+                        import-color-picker-done => { root.import-color-picker-done(); }
+                        import-color-picker-cancel => { root.import-color-picker-cancel(); }
+                        done => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                    // MultiBuildConfig dialog edits the
+                    // multi-build rotation list through three
+                    // parallel root props.
+                    if dialog-id == "multi_build_config": MultiBuildConfigDialog {
+                        dialog-title: root.dialog-title;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        multi-build-names <=> root.multi-build-names;
+                        multi-build-indices <=> root.multi-build-indices;
+                        multi-build-colors <=> root.multi-build-colors;
+                        multi-build-brushes: root.multi-build-brushes;
+                        multi-build-preset-names: root.multi-build-preset-names;
+                        multi-build-selected-preset <=> root.multi-build-selected-preset;
+                        multi-build-can-add: root.multi-build-can-add;
+                        multi-build-color-picker-visible: root.multi-build-color-picker-visible;
+                        multi-build-color-picker-value <=> root.multi-build-color-picker-value;
+                        multi-build-preset-selected(value) => { root.multi-build-preset-selected(value); }
+                        multi-build-add => { root.multi-build-add(); }
+                        multi-build-remove(index) => { root.multi-build-remove(index); }
+                        multi-build-color-clicked(index) => { root.multi-build-color-clicked(index); }
+                        multi-build-color-picker-done => { root.multi-build-color-picker-done(); }
+                        multi-build-color-picker-cancel => { root.multi-build-color-picker-cancel(); }
+                        confirm => { root.dialog-confirm(); }
+                    }
+                    // ── Confirm prompt ──
+                    // The one generic window-modal Yes/No prompt every
+                    // destructive action routes through. Its title and body
+                    // come from the pending action's upstream copy; the
+                    // keyboard host above routes Enter to Yes and Escape to
+                    // No (the router's per-kind key table).
+                    if dialog-id == "confirm": ConfirmPrompt {
+                        dialog-title: root.dialog-title;
+                        dialog-message: root.dialog-message;
+                        dialog-error: root.dialog-error;
+                        dialog-error-visible: root.dialog-error-visible;
+                        confirm => { root.dialog-confirm(); }
+                        cancel => { root.dialog-cancel(); }
+                    }
+                }
+            }
+        }
+    }
+}

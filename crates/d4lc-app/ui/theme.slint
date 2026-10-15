@@ -1,0 +1,130 @@
+// Dark metro design tokens.
+//
+// The port renders the upstream MahApps Metro dark palette by hand (the
+// upstream views use MahApps' dark theme with `#333333` surfaces and the
+// Diablo red accent). The tokens below are the single source for the affix
+// surface and its extracted components: no screen or component hardcodes a
+// theme colour of its own.
+//
+// Scope note: the affix screen and its components consume the colour tokens
+// below, and the reusable building blocks in `ui/components/` consume the
+// spacing, radius, typography and status groups. The debug screen consumes
+// them too as of the pager/panel rework, and the shell (main window), logging
+// and settings screens consume them too. No
+// shipping screen carries a theme colour literal of its own; the dialogs
+// still do.
+
+export global Metro {
+    // ── Surfaces ───────────────────────────────────────────────────────
+    // Screen background (upstream window chrome behind the panels).
+    out property <color> panel: #262626;
+    // Raised panel surface (the presets block, upstream MetroGroupBox).
+    out property <color> panel-alt: #2D2D2D;
+    // Input and scroll-viewport backing (upstream MahApps TextBox dark).
+    out property <color> input: #1E1E1E;
+    // Catalog cards and wanted chips (upstream `#333333` template borders).
+    out property <color> card: #333333;
+    // The debug screen's pager: the raised inner panels behind the stage
+    // images, OCR rows and performance cards. It sits one step below the
+    // `panel` background and no existing surface matches its shade.
+    out property <color> surface-deep: #1F1F1F;
+
+    // ── Interaction ────────────────────────────────────────────────────
+    // Upstream Diablo red (active tab caption, accent buttons).
+    out property <color> accent: #B01E24;
+    // Accent hover/active fill (upstream MahApps accent hover).
+    out property <color> accent-hover: #CC3333;
+    // Chrome glyph on an accent surface (upstream's white-on-red window
+    // commands, `MainWindow.xaml:33-51`): the header's icons and the affix
+    // overlay toggle's enabled glyph.
+    out property <color> chrome-on-accent: #FFFFFF;
+    // Upstream's red sigil tier caption (`AffixView.xaml:1769-1784` paints the
+    // dungeon tier bold in red next to the sigil's markers).
+    out property <color> tier-text: #FF0000;
+    // Navigation rail: the near-black icon rail down the window's left edge.
+    out property <color> rail: #1B1B1B;
+    // Inactive rail glyph (and the release banner's dim secondary line).
+    out property <color> rail-icon: #9E9E9E;
+
+    // ── Text ───────────────────────────────────────────────────────────
+    // Primary text (upstream `LightGray` captions render near-white here).
+    out property <color> text: #EEEEEE;
+    // Strong text: the pure-white captions, labels and glyphs the upstream
+    // readme palette uses for page titles, list rows and value boxes, one
+    // step above `text`.
+    out property <color> text-strong: #FFFFFF;
+    // Secondary/placeholder text.
+    out property <color> text-dim: #868686;
+    // Muted fill for disabled controls and empty-state text.
+    out property <color> muted: #555555;
+    // Success text (the preset-download check mark).
+    out property <color> text-ok: #33CC33;
+    // Error text (dialog error banners and the confirm prompt).
+    out property <color> text-error: #FF6666;
+
+    // ── Lines ──────────────────────────────────────────────────────────
+    // Panel and section borders (upstream `#333333` border brush).
+    out property <color> border: #333333;
+    // Heavier input/dialog border (settings panel, dialog boxes, spin boxes).
+    out property <color> border-strong: #3F3F46;
+    // Translucent hairline separating the header commands from the caption.
+    out property <color> separator: #FFFFFF59;
+
+    // ── Overlay ────────────────────────────────────────────────────────
+    // Modal backdrop that dims the window behind a dialog.
+    out property <color> scrim: #00000080;
+    // The hand-rolled hover tooltip on the settings info icons: a popup
+    // darker than any surface, with its own hairline border and text tone.
+    out property <color> tooltip-bg: #1A1A1A;
+    out property <color> tooltip-border: #5A5A5A;
+    out property <color> tooltip-text: #E6E6E6;
+
+    // ── Wanted-chip foregrounds (upstream type colours) ────────────────
+    // These are data-driven, not theme-driven: the upstream
+    // `AffixTypeToFgSolidBrushConverter` paints a wanted affix's description
+    // white, orange while the entry is greater, and the aspect/sigil/unique/
+    // rune chips light gray.
+    out property <color> chip-fg: #FFFFFF;
+    out property <color> chip-fg-greater: #FFA500;
+    out property <color> chip-fg-family: #D3D3D3;
+
+    // ── Spacing raster ─────────────────────────────────────────────────
+    // One 4px raster for every gap, inset and pad. Screens and components
+    // name a step here instead of hardcoding pixel distances, so a group's
+    // rhythm stays consistent and can be retuned in one place.
+    out property <length> spacing-xs: 4px;
+    out property <length> spacing-sm: 8px;
+    out property <length> spacing-md: 12px;
+    out property <length> spacing-lg: 16px;
+    out property <length> spacing-xl: 24px;
+
+    // ── Corner radius ──────────────────────────────────────────────────
+    // sm: inline controls and value boxes; md: cards and raised surfaces;
+    // lg: the rounded pill shapes (badges, toggle tracks).
+    out property <length> radius-sm: 3px;
+    out property <length> radius-md: 6px;
+    out property <length> radius-lg: 10px;
+
+    // ── Typography ─────────────────────────────────────────────────────
+    // Four roles only: caption (labels, hints), body (values), title
+    // (group headings) and mono (numeric/identifier values that must not
+    // jump while they change width).
+    out property <length> font-size-caption: 12px;
+    out property <int> font-weight-caption: 400;
+    out property <length> font-size-body: 13px;
+    out property <int> font-weight-body: 400;
+    out property <length> font-size-title: 15px;
+    out property <int> font-weight-title: 700;
+    out property <length> font-size-mono: 13px;
+    out property <int> font-weight-mono: 400;
+
+    // ── Status colours ─────────────────────────────────────────────────
+    // Port-side status palette for the debug surface (diagnostics, the
+    // live/stale state of a panel). The values are MahApps.Metro's named
+    // brushes (Green/Amber/Red/Cyan), so a status paint sits in the same
+    // family as the hand-drawn Metro surfaces around it.
+    out property <color> status-ok: #60A917;
+    out property <color> status-warn: #F0A30A;
+    out property <color> status-error: #E51400;
+    out property <color> status-info: #1BA1E2;
+}

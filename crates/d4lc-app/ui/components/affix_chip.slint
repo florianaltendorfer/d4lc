@@ -1,0 +1,115 @@
+// One wanted-entry chip of the left rail (upstream `ItemAffix` row:
+// rounded-3px `#333333` backing with a 20px color swatch, the localized
+// description and the remove X, `AffixView.xaml:175-227`).
+//
+// `chip-bg` / `chip-fg` carry the upstream type colors
+// (`AffixTypeToBgSolidBrushConverter`: `IsImplicit || IsTempered` → the muted
+// fill, else the card fill; `AffixTypeToFgSolidBrushConverter`: `IsGreater` →
+// orange, else white). The screen passes them from the row data; the defaults
+// are the plain wanted-affix case.
+
+import { Metro } from "../theme.slint";
+import { CloseIcon } from "icons.slint";
+
+export component AffixChip {
+    in property <string> entry-label;
+    in property <color> entry-color;
+    in property <color> chip-bg: Metro.card;
+    in property <color> chip-fg: Metro.chip-fg;
+    callback color-clicked();
+    callback remove-clicked();
+    callback edit-clicked();
+
+    Rectangle {
+        background: transparent;
+        preferred-height: 28px;
+        min-height: 28px;
+        // Accessibility: the chip is addressable as a list item named by
+        // the entry; its swatch and remove button carry button roles.
+        accessible-role: list-item;
+        accessible-label: entry-label;
+
+        // Double click on the chip body edits the entry like the catalog
+        // card's plus (upstream `EditAffixCommand` MouseBinding,
+        // `AffixView.xaml:204-206`). Declared before the backing and the row
+        // content on purpose: Slint delivers a pointer event to the topmost
+        // area under it, so a chip-wide area declared last would swallow the
+        // swatch's and the remove control's own clicks.
+        TouchArea {
+            width: parent.width;
+            height: parent.height;
+            double-clicked => { edit-clicked(); }
+        }
+
+        // Upstream's outer rounded backing (the `#333333` border plus its
+        // 1px drop shadow): the inner chip sits inset by 3px on top of it.
+        Rectangle {
+            x: 3px;
+            y: 3px;
+            width: parent.width - 6px;
+            height: parent.height - 6px;
+            background: Metro.card;
+            border-radius: 3px;
+        }
+
+        Rectangle {
+            x: 3px;
+            y: 3px;
+            width: parent.width - 6px;
+            height: parent.height - 6px;
+            background: chip-bg;
+            border-radius: 3px;
+
+            HorizontalLayout {
+                spacing: 2px;
+
+                // Color indicator (clickable — opens SetAffixColor)
+                // (upstream SetAffixColorCommand anchor).
+                Rectangle {
+                    background: entry-color;
+                    preferred-width: 20px;
+                    min-width: 20px;
+                    max-width: 20px;
+                    height: parent.height;
+                    accessible-role: button;
+                    accessible-label: @tr("Set color: {}", entry-label);
+
+                    TouchArea {
+                        clicked => { color-clicked(); }
+                    }
+                }
+
+                // Localized affix description (upstream
+                // `AffixIdToDescriptionConverter`, `AffixView.xaml:200-207`).
+                Text {
+                    text: entry-label;
+                    color: chip-fg;
+                    font-size: 13px;
+                    vertical-alignment: center;
+                    overflow: elide;
+                }
+
+                // Remove (upstream RemoveAffixCommand anchor)
+                Rectangle {
+                    background: transparent;
+                    preferred-width: 20px;
+                    min-width: 20px;
+                    max-width: 20px;
+                    height: parent.height;
+                    accessible-role: button;
+                    accessible-label: @tr("Remove {}", entry-label);
+                    CloseIcon {
+                        width: 10px;
+                        height: 10px;
+                        x: (parent.width - self.width) / 2;
+                        y: (parent.height - self.height) / 2;
+                        icon-color: Metro.text;
+                    }
+                    TouchArea {
+                        clicked => { remove-clicked(); }
+                    }
+                }
+            }
+        }
+    }
+}

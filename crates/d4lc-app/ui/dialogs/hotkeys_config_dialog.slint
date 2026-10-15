@@ -1,0 +1,654 @@
+// Hotkeys config dialog — the 7-binding manager.
+//
+// Upstream: `HotkeysConfigView.xaml:29-115` +
+// `HotkeysConfigViewModel.cs:78-181`. The manager lists every upstream
+// binding (`D4Companion.Entities/SettingsD4.cs:99-153`, seven
+// `KeyBindingConfig*` fields) with an enable switch and a button that
+// opens the per-binding capture dialog
+// (`HotkeysConfigView.xaml:37-111` — one gesture button per target);
+// enabling or editing a binding re-registers the global grabs without an
+// app restart (`MainWindowViewModel.cs:204-208,425-432`).
+//
+// d4lc layout: Rust projects the seven rows from
+// `d4lc_config::HotkeyConfig::bindings` into `settings-hotkey-rows`
+// (`SettingsHotkeyRow`) in the stable upstream order — the row count is a
+// hard projection invariant (see `actions::settings::project_hotkey_rows`),
+// so each row can be addressed directly. The enable switch flips the
+// in-memory draft through `settings-hotkey-row-toggled(name, enabled)`;
+// the edit button opens the single-binding dialog for that target through
+// `settings-hotkey-row-edit(name)`. Confirm persists every draft and
+// restarts the hotkey backend so the new grab set is live without an app
+// restart; the per-row status text reports what the backend did with the
+// last registration attempt (Registered / Conflict / unavailable / parse
+// error / disabled — `crates/d4lc-app/src/hotkeys.rs`
+// `HotkeyRegistrationStatus`).
+//
+// The seven rows are written out explicitly (upstream's view does the
+// same) so every row keeps a static accessibility label and a stable
+// identity in the real-input harness.
+export struct SettingsHotkeyRow {
+    name: string,
+    label: string,
+    binding: string,
+    enabled: bool,
+    status: string,
+    problem: bool,
+}
+
+export component HotkeysConfigDialog {
+    in property <string> dialog-title: @tr("Hotkeys config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // The seven binding rows, projected by Rust in upstream order.
+    in property <[SettingsHotkeyRow]> settings-hotkey-rows: [];
+    callback settings-hotkey-row-toggled(string, bool);
+    callback settings-hotkey-row-edit(string);
+
+    callback confirm();
+    callback cancel();
+
+    // Row accessor: the projection always carries seven rows, but a
+    // render before the first projection must not read out of bounds.
+    function binding-row(index: int) -> SettingsHotkeyRow {
+        if index < settings-hotkey-rows.length {
+            return settings-hotkey-rows[index];
+        }
+        return {
+            name: "", label: "", binding: "", enabled: false, status: "", problem: false
+        };
+    }
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 4px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        Text {
+            text: @tr("Enable a binding, then edit its key combination. Confirming re-registers the global hotkeys immediately; X11 uses passive grabs and Wayland the GlobalShortcuts portal when available.");
+            color: #AAAAAA;
+            font-size: 10px;
+            wrap: word-wrap;
+        }
+
+        // ── Row 1: KeyBindingConfigSwitchPreset ────────────────────
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: center;
+            Text {
+                text: @tr("Switch Preset");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 150px;
+            }
+            Text {
+                text: binding-row(0).binding;
+                color: #AAAAAA;
+                font-size: 11px;
+                vertical-alignment: center;
+                preferred-width: 70px;
+            }
+            Text {
+                text: binding-row(0).status;
+                color: binding-row(0).problem ? #FFAA55 : #7FBF7F;
+                font-size: 10px;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 44px;
+                preferred-height: 22px;
+                min-width: 44px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Edit switch preset binding");
+                Text {
+                    text: @tr("Edit");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-edit(binding-row(0).name);
+                    }
+                }
+            }
+            Rectangle {
+                background: binding-row(0).enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Switch preset enabled");
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: binding-row(0).enabled ? 18px : 2px;
+                    y: 2px;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-toggled(binding-row(0).name, !binding-row(0).enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Row 2: KeyBindingConfigSwitchOverlay ───────────────────
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: center;
+            Text {
+                text: @tr("Switch Overlay");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 150px;
+            }
+            Text {
+                text: binding-row(1).binding;
+                color: #AAAAAA;
+                font-size: 11px;
+                vertical-alignment: center;
+                preferred-width: 70px;
+            }
+            Text {
+                text: binding-row(1).status;
+                color: binding-row(1).problem ? #FFAA55 : #7FBF7F;
+                font-size: 10px;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 44px;
+                preferred-height: 22px;
+                min-width: 44px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Edit switch overlay binding");
+                Text {
+                    text: @tr("Edit");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-edit(binding-row(1).name);
+                    }
+                }
+            }
+            Rectangle {
+                background: binding-row(1).enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Switch overlay enabled");
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: binding-row(1).enabled ? 18px : 2px;
+                    y: 2px;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-toggled(binding-row(1).name, !binding-row(1).enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Row 3: KeyBindingConfigTakeScreenshot ──────────────────
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: center;
+            Text {
+                text: @tr("Take Screenshot");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 150px;
+            }
+            Text {
+                text: binding-row(2).binding;
+                color: #AAAAAA;
+                font-size: 11px;
+                vertical-alignment: center;
+                preferred-width: 70px;
+            }
+            Text {
+                text: binding-row(2).status;
+                color: binding-row(2).problem ? #FFAA55 : #7FBF7F;
+                font-size: 10px;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 44px;
+                preferred-height: 22px;
+                min-width: 44px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Edit take screenshot binding");
+                Text {
+                    text: @tr("Edit");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-edit(binding-row(2).name);
+                    }
+                }
+            }
+            Rectangle {
+                background: binding-row(2).enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Take screenshot enabled");
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: binding-row(2).enabled ? 18px : 2px;
+                    y: 2px;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-toggled(binding-row(2).name, !binding-row(2).enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Row 4: KeyBindingConfigToggleController ────────────────
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: center;
+            Text {
+                text: @tr("Toggle Controller");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 150px;
+            }
+            Text {
+                text: binding-row(3).binding;
+                color: #AAAAAA;
+                font-size: 11px;
+                vertical-alignment: center;
+                preferred-width: 70px;
+            }
+            Text {
+                text: binding-row(3).status;
+                color: binding-row(3).problem ? #FFAA55 : #7FBF7F;
+                font-size: 10px;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 44px;
+                preferred-height: 22px;
+                min-width: 44px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Edit toggle controller binding");
+                Text {
+                    text: @tr("Edit");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-edit(binding-row(3).name);
+                    }
+                }
+            }
+            Rectangle {
+                background: binding-row(3).enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Toggle controller mode enabled");
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: binding-row(3).enabled ? 18px : 2px;
+                    y: 2px;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-toggled(binding-row(3).name, !binding-row(3).enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Row 5: KeyBindingConfigToggleOverlay ───────────────────
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: center;
+            Text {
+                text: @tr("Toggle Overlay");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 150px;
+            }
+            Text {
+                text: binding-row(4).binding;
+                color: #AAAAAA;
+                font-size: 11px;
+                vertical-alignment: center;
+                preferred-width: 70px;
+            }
+            Text {
+                text: binding-row(4).status;
+                color: binding-row(4).problem ? #FFAA55 : #7FBF7F;
+                font-size: 10px;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 44px;
+                preferred-height: 22px;
+                min-width: 44px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Edit toggle overlay binding");
+                Text {
+                    text: @tr("Edit");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-edit(binding-row(4).name);
+                    }
+                }
+            }
+            Rectangle {
+                background: binding-row(4).enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Toggle overlay enabled");
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: binding-row(4).enabled ? 18px : 2px;
+                    y: 2px;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-toggled(binding-row(4).name, !binding-row(4).enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Row 6: KeyBindingConfigToggleDebugLockScreencapture ────
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: center;
+            Text {
+                text: @tr("Debug: Toggle Lock Screencapture");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 150px;
+            }
+            Text {
+                text: binding-row(5).binding;
+                color: #AAAAAA;
+                font-size: 11px;
+                vertical-alignment: center;
+                preferred-width: 70px;
+            }
+            Text {
+                text: binding-row(5).status;
+                color: binding-row(5).problem ? #FFAA55 : #7FBF7F;
+                font-size: 10px;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 44px;
+                preferred-height: 22px;
+                min-width: 44px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Edit debug lock capture binding");
+                Text {
+                    text: @tr("Edit");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-edit(binding-row(5).name);
+                    }
+                }
+            }
+            Rectangle {
+                background: binding-row(5).enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Debug lock capture enabled");
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: binding-row(5).enabled ? 18px : 2px;
+                    y: 2px;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-toggled(binding-row(5).name, !binding-row(5).enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Row 7: KeyBindingConfigToggleTuningPrismHints ──────────
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: center;
+            Text {
+                text: @tr("Toggle Tuning Prism Hints");
+                color: #EEEEEE;
+                font-size: 12px;
+                vertical-alignment: center;
+                preferred-width: 150px;
+            }
+            Text {
+                text: binding-row(6).binding;
+                color: #AAAAAA;
+                font-size: 11px;
+                vertical-alignment: center;
+                preferred-width: 70px;
+            }
+            Text {
+                text: binding-row(6).status;
+                color: binding-row(6).problem ? #FFAA55 : #7FBF7F;
+                font-size: 10px;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 44px;
+                preferred-height: 22px;
+                min-width: 44px;
+                min-height: 22px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Edit tuning prism hints binding");
+                Text {
+                    text: @tr("Edit");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-edit(binding-row(6).name);
+                    }
+                }
+            }
+            Rectangle {
+                background: binding-row(6).enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Tuning prism hints enabled");
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: binding-row(6).enabled ? 18px : 2px;
+                    y: 2px;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-hotkey-row-toggled(binding-row(6).name, !binding-row(6).enabled);
+                    }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

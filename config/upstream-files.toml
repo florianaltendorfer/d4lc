@@ -1,0 +1,112 @@
+[upstream]
+url = "https://github.com/josdemmers/Diablo4Companion.git"
+branch = "master"
+local_path = "upstream/Diablo4Companion"
+
+[critical_files]
+services = [
+  "D4Companion.Services/ScreenProcessHandler.cs",
+  "D4Companion.Services/OcrHandler.cs",
+  "D4Companion.Services/ScreenCaptureHandler.cs",
+  "D4Companion.Services/SystemPresetManager.cs",
+  "D4Companion.Services/SettingsManager.cs",
+  "D4Companion.Services/AffixManager.cs",
+  "D4Companion.Services/OverlayHandler.cs",
+  "D4Companion.Services/TradeItemManager.cs",
+  "D4Companion.Services/BuildsManagerD4Builds.cs",
+  "D4Companion.Services/BuildsManagerMaxroll.cs",
+  "D4Companion.Services/BuildsManagerMobalytics.cs",
+  "D4Companion.Services/BuildsManagerD2Core.cs",
+]
+entities = [
+  "D4Companion.Entities/SettingsD4.cs",
+  "D4Companion.Entities/ItemTooltipDescriptor.cs",
+  "D4Companion.Entities/OcrResults.cs",
+  "D4Companion.Entities/AffixPreset.cs",
+  "D4Companion.Entities/ParagonBoard.cs",
+]
+data_globs = [
+  "D4Companion/Data/*.json",
+]
+# The upstream UI images the port vendors byte-identically under
+# assets/original/images (the Affix screen's slot, class, website, overlay and
+# filter-strip icons). Listed explicitly so the manifest covers exactly the
+# copied files the parity gate hashes.
+images_globs = [
+  "D4Companion/Images/aspect_icon.png",
+  "D4Companion/Images/affix_tempered.png",
+  "D4Companion/Images/aspect_codex.png",
+  "D4Companion/Images/aspect_drop.png",
+  "D4Companion/Images/aspect_seasonal.png",
+  "D4Companion/Images/rune_condition.png",
+  "D4Companion/Images/rune_effect.png",
+  "D4Companion/Images/seasonal_icon.png",
+  "D4Companion/Images/class_icon_barb.png",
+  "D4Companion/Images/class_icon_druid.png",
+  "D4Companion/Images/class_icon_necro.png",
+  "D4Companion/Images/class_icon_paladin.png",
+  "D4Companion/Images/class_icon_rogue.png",
+  "D4Companion/Images/class_icon_sorc.png",
+  "D4Companion/Images/class_icon_spiritborn.png",
+  "D4Companion/Images/class_icon_warlock.png",
+  "D4Companion/Images/feet_icon.png",
+  "D4Companion/Images/filter_icon_barb_off.png",
+  "D4Companion/Images/filter_icon_barb_on.png",
+  "D4Companion/Images/filter_icon_core_off.png",
+  "D4Companion/Images/filter_icon_core_on.png",
+  "D4Companion/Images/filter_icon_druid_off.png",
+  "D4Companion/Images/filter_icon_druid_on.png",
+  "D4Companion/Images/filter_icon_dungeon_loc_off.png",
+  "D4Companion/Images/filter_icon_dungeon_loc_on.png",
+  "D4Companion/Images/filter_icon_dungeon_neg1_off.png",
+  "D4Companion/Images/filter_icon_dungeon_neg1_on.png",
+  "D4Companion/Images/filter_icon_dungeon_neg2_off.png",
+  "D4Companion/Images/filter_icon_dungeon_neg2_on.png",
+  "D4Companion/Images/filter_icon_dungeon_pos_off.png",
+  "D4Companion/Images/filter_icon_dungeon_pos_on.png",
+  "D4Companion/Images/filter_icon_necro_off.png",
+  "D4Companion/Images/filter_icon_necro_on.png",
+  "D4Companion/Images/filter_icon_paladin_off.png",
+  "D4Companion/Images/filter_icon_paladin_on.png",
+  "D4Companion/Images/filter_icon_rogue_off.png",
+  "D4Companion/Images/filter_icon_rogue_on.png",
+  "D4Companion/Images/filter_icon_rune_condition_off.png",
+  "D4Companion/Images/filter_icon_rune_condition_on.png",
+  "D4Companion/Images/filter_icon_rune_effect_off.png",
+  "D4Companion/Images/filter_icon_rune_effect_on.png",
+  "D4Companion/Images/filter_icon_sorc_off.png",
+  "D4Companion/Images/filter_icon_sorc_on.png",
+  "D4Companion/Images/filter_icon_spiritborn_off.png",
+  "D4Companion/Images/filter_icon_spiritborn_on.png",
+  "D4Companion/Images/filter_icon_warlock_off.png",
+  "D4Companion/Images/filter_icon_warlock_on.png",
+  "D4Companion/Images/hands_icon.png",
+  "D4Companion/Images/head_icon.png",
+  "D4Companion/Images/legs_icon.png",
+  "D4Companion/Images/mainhand_icon.png",
+  "D4Companion/Images/neck_icon.png",
+  "D4Companion/Images/offhand_icon.png",
+  "D4Companion/Images/overlay-off.png",
+  "D4Companion/Images/overlay-on.png",
+  "D4Companion/Images/ranged_icon.png",
+  "D4Companion/Images/sigil_icon.png",
+  "D4Companion/Images/ring_icon.png",
+  "D4Companion/Images/rune_icon.png",
+  "D4Companion/Images/torso_icon.png",
+  "D4Companion/Images/unique_icon.png",
+  "D4Companion/Images/website_icon_d4builds.png",
+  "D4Companion/Images/website_icon_infinitybuilds.png",
+  "D4Companion/Images/website_icon_maxroll.png",
+  "D4Companion/Images/website_icon_mobalytics.png",
+]
+preset_globs = [
+  "downloads/systempresets/*.zip",
+  "downloads/systempresets/systempresets.json",
+]
+ui_globs = [
+  "D4Companion/ViewModels/**/*.cs",
+  "D4Companion/Views/**/*.xaml",
+]
+wiki_globs = [
+  ".github/wiki/*.md",
+]

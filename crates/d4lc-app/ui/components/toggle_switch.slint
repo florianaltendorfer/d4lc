@@ -1,0 +1,61 @@
+// Toggle switch component with label.
+// Upstream: SettingsView.xaml ToggleSwitch bindings (MahApps.Metro).
+//
+// Usage: ToggleSwitch { label: "Debug mode"; checked: debug-mode; toggled(v) => { debug-mode = v; } }
+export component ToggleSwitch {
+    in property <string> label;
+    in-out property <bool> checked;
+    // A disabled switch is dimmed and ignores clicks (WPF `IsEnabled`).
+    in property <bool> enabled: true;
+    callback toggled(bool);
+
+    preferred-height: 32px;
+    opacity: root.enabled ? 1.0 : 0.4;
+
+    HorizontalLayout {
+        spacing: 8px;
+
+        // Toggle track (upstream: toggle left of the label, red accent on)
+        // Accessibility + headless real-input test harness: the track
+        // carries the switch role and the row label.
+        Rectangle {
+            background: checked ? #B01E24 : #4A4A4A;
+            accessible-role: switch;
+            accessible-label: root.label;
+            border-radius: 10px;
+            preferred-width: 36px;
+            min-width: 36px;
+            max-width: 36px;
+            preferred-height: 20px;
+            min-height: 20px;
+            max-height: 20px;
+
+            // Toggle thumb
+            Rectangle {
+                background: #FFFFFF;
+                border-radius: 9px;
+                width: 16px;
+                height: 16px;
+                x: checked ? 18px : 2px;
+                y: 2px;
+            }
+
+            TouchArea {
+                enabled: root.enabled;
+                clicked => {
+                    checked = !checked;
+                    toggled(checked);
+                }
+            }
+        }
+
+        // Label text
+        Text {
+            text: label;
+            color: #FFFFFF;
+            font-size: 13px;
+            vertical-alignment: center;
+            horizontal-alignment: start;
+        }
+    }
+}

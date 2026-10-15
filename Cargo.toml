@@ -1,0 +1,52 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/d4lc-core",
+  "crates/d4lc-config",
+  "crates/d4lc-assets",
+  "crates/d4lc-app",
+  "crates/d4lc-capture",
+  "crates/d4lc-vision",
+  "crates/d4lc-detect",
+  "crates/d4lc-ocr",
+  "crates/d4lc-fuzzy",
+  "crates/d4lc-parse",
+  "crates/d4lc-rules",
+  "crates/d4lc-runtime",
+  "crates/d4lc-overlay-x11",
+  "crates/d4lc-overlay-wayland",
+  "crates/d4lc-gui",
+  "crates/d4lc-cli",
+  "crates/d4lc-debug",
+  "xtask",
+]
+
+[workspace.dependencies]
+clap = { version = "4.5", features = ["derive"] }
+# `preserve_order` writes JSON objects in insertion order, so reports and
+# traces keep their documented field order in every build.
+serde_json = { version = "1.0", features = ["preserve_order"] }
+
+[workspace.package]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/florianaltendorfer/d4lc"
+rust-version = "1.92"
+
+[workspace.lints.rust]
+unsafe_code = "deny"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+unwrap_used = "deny"
+expect_used = "deny"
+
+# The template matcher is the detection hot loop; unoptimized it makes every
+# debug build and test that scans a real frame several times slower.
+[profile.dev.package.d4lc-vision]
+opt-level = 3
+
+# Fuzzy matching scans every catalog label per OCR line; unoptimized, the
+# matcher and its reference-equivalence test dominate debug test time.
+[profile.dev.package.d4lc-fuzzy]
+opt-level = 3

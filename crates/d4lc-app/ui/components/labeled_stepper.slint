@@ -1,0 +1,76 @@
+// LabeledStepper — one labelled stepper row: label, stepper, unit, hint.
+//
+// The debug screen's Tooltip & Bereiche group is a raster of numeric settings
+// (DebugView.xaml NumericUpDown block). Rows written one by one gave every
+// label its own width and let values jump; this component pins the label and
+// unit columns, so a stack of rows with the default widths lines up down the
+// group, and the stepper itself is the existing `NumericSpinBox`
+// (`show-label: false`) rather than a second +/- implementation.
+//
+// Colours, type and spacing come from the `Metro` tokens. The column widths
+// are intrinsic layout parameters with documented defaults (a raster needs
+// pinned columns); no colour or font literal is used here.
+//
+// Usage:
+//   LabeledStepper { label: "Tooltip width"; minimum: 100; maximum: 1000;
+//                    value <=> tooltip-width; unit: "px"; hint: "upstream width"; }
+
+import { Metro } from "../theme.slint";
+import { NumericSpinBox } from "numeric_spin_box.slint";
+
+export component LabeledStepper inherits GridLayout {
+    in property <string> label;
+    in property <float> minimum: 0;
+    in property <float> maximum: 100;
+    in property <float> step-size: 1;
+    in-out property <float> value;
+    in property <string> unit: "";
+    in property <string> hint: "";
+    // Fixed label/stepper/unit columns so values and hints align across rows.
+    in property <length> label-width: 168px;
+    in property <length> stepper-width: 120px;
+    in property <length> unit-width: 44px;
+    callback changed(float);
+
+    spacing: Metro.spacing-sm;
+
+    Row {
+        step-label := Text {
+            text: root.label;
+            color: Metro.text;
+            font-size: Metro.font-size-caption;
+            vertical-alignment: center;
+            min-width: root.label-width;
+            max-width: root.label-width;
+            overflow: elide;
+        }
+
+        NumericSpinBox {
+            label: root.label;
+            show-label: false;
+            minimum: root.minimum;
+            maximum: root.maximum;
+            step-size: root.step-size;
+            width: root.stepper-width;
+            value <=> root.value;
+            changed(val) => { root.changed(val); }
+        }
+
+        unit-text := Text {
+            text: root.unit;
+            color: Metro.text-dim;
+            font-size: Metro.font-size-caption;
+            vertical-alignment: center;
+            min-width: root.unit-width;
+            max-width: root.unit-width;
+        }
+
+        hint-text := Text {
+            text: root.hint;
+            color: Metro.text-dim;
+            font-size: Metro.font-size-caption;
+            vertical-alignment: center;
+            overflow: elide;
+        }
+    }
+}

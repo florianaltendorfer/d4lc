@@ -1,0 +1,6 @@
+{
+  "data": "{\"profiles\":[{\"name\":\"Starter\",\"items\":{\"4\":100,\"5\":101,\"99\":999},\"paragon\":{\"steps\":[]}}],\"items\":{\"100\":{\"id\":\"Helm_Unique_Generic_001\",\"explicits\":[{\"nid\":578834,\"greater\":false}],\"implicits\":[{\"nid\":9999991}],\"tempered\":[],\"aspects\":[],\"sockets\":[null,\"Rune_Condition_HitHealthierEnemy\"]},\"101\":{\"id\":\"Chest_Legendary_Generic_001\",\"explicits\":[{\"nid\":9999992,\"greater\":false}],\"implicits\":[],\"tempered\":[{\"nid\":9999993}],\"aspects\":[{\"nid\":9999994}],\"sockets\":[]},\"999\":{\"id\":\"Helm_Legendary_Generic_999\",\"explicits\":[],\"implicits\":[],\"tempered\":[],\"aspects\":[],\"sockets\":[]}}}",
+  "date": "2026-05-31",
+  "id": "sorc-arc-lash",
+  "name": "Arc Lash"
+}

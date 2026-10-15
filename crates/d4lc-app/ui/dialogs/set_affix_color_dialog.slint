@@ -1,0 +1,222 @@
+// Set affix color dialog.
+//
+// Upstream: `SetAffixColorView.xaml` + `SetAffixColorViewModel.cs`.
+// Opens when user clicks the color indicator on an affix entry.
+//
+// Form contract (no Slint globals):
+//
+// - The form values are projected on the root `AppWindow` as
+//   the `set-affix-color-value` and
+//   `set-affix-color-target-key` in-out properties (see
+//   `main_window.slint`). The dialog binds its hex input to
+//   `set-affix-color-value` so the value flows directly
+//   between Slint and Rust. The target is the kind-tagged
+//   entry key `"<kind>:<id>:<item-type>"` that handlers
+//   resolve against the mixed-kind preset entry list.
+// - The color palette is a hardcoded set of 10 named colors
+//   (mirrors the upstream palette in
+//   `d4lc_gui::affix::AFFIX_COLOR_PALETTE`). Clicking a
+//   palette swatch writes its hex value into the
+//   `set-affix-color-value` root prop so it shows up in the
+//   hex input and is submitted on confirm.
+// - Confirm / cancel flow through the shared dialog host
+//   `dialog-confirm` / `dialog-cancel` callbacks, which the
+//   shared `actions::dialogs` router dispatches to
+//   `actions::affix_dialogs::handle_confirm` /
+//   `handle_cancel`.
+import { LineEdit } from "std-widgets.slint";
+
+// Predefined color palette (mirrors
+// `d4lc_gui::affix::AFFIX_COLOR_PALETTE`).
+//
+// Each entry has both a `hex` string (for comparison with the
+// text input) and a `color` brush (for swatch backgrounds).
+// Slint's `background` property requires a brush, not a
+// string, so we need both fields. The two lists must stay
+// in sync with `d4lc_gui::affix::AFFIX_COLOR_PALETTE`.
+struct PaletteEntry {
+    name: string,
+    hex: string,
+    color: color,
+}
+
+export component SetAffixColorDialog {
+    in property <string> dialog-title: @tr("Set Affix Color");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Palette as an in property so it lives in the component scope.
+    in property <[PaletteEntry]> palette-entries: [
+        { name: @tr("White"), hex: "#FFFFFF", color: #FFFFFF },
+        { name: @tr("Red"), hex: "#FF0000", color: #FF0000 },
+        { name: @tr("Orange"), hex: "#FF8800", color: #FF8800 },
+        { name: @tr("Yellow"), hex: "#FFFF00", color: #FFFF00 },
+        { name: @tr("Green"), hex: "#00FF00", color: #00FF00 },
+        { name: @tr("Cyan"), hex: "#00FFFF", color: #00FFFF },
+        { name: @tr("Blue"), hex: "#0088FF", color: #0088FF },
+        { name: @tr("Purple"), hex: "#8800FF", color: #8800FF },
+        { name: @tr("Magenta"), hex: "#FF00FF", color: #FF00FF },
+        { name: @tr("Gray"), hex: "#888888", color: #888888 },
+    ];
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust can read them via
+    // `app.get_set_affix_color_value()` and
+    // `app.get_set_affix_color_target_key()`.
+    in-out property <string> set-affix-color-target-key: "";
+    in-out property <string> set-affix-color-value: "#FF0000";
+
+    callback confirm();
+    callback cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Hex color input ────────────────────────────────────────
+        Text {
+            text: @tr("Color (hex)");
+            color: #CCCCCC;
+            font-size: 12px;
+        }
+        LineEdit {
+            text <=> set-affix-color-value;
+            placeholder-text: "#FF0000";
+        }
+
+        // ── Color preview swatch ───────────────────────────────────
+        // Uses a fixed preview text instead of a dynamic swatch
+        // because Slint cannot convert a `string` property to a
+        // `brush` for `background` at compile time. The palette
+        // swatches below provide the visual color selection.
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: start;
+
+            Text {
+                text: @tr("Current: {}", set-affix-color-value);
+                color: #CCCCCC;
+                font-size: 12px;
+                vertical-alignment: center;
+            }
+        }
+
+        // ── Color palette ──────────────────────────────────────────
+        Text {
+            text: @tr("Palette");
+            color: #CCCCCC;
+            font-size: 12px;
+        }
+
+        // Palette row 1: 5 swatches
+        HorizontalLayout {
+            spacing: 4px;
+            for entry[idx] in palette-entries: Rectangle {
+                if idx < 5: Rectangle {
+                    background: entry.color;
+                    border-radius: 4px;
+                    preferred-width: 36px;
+                    preferred-height: 36px;
+                    border-width: 2px;
+                    border-color: set-affix-color-value == entry.hex ? #EEEEEE : #555555;
+                    // Accessibility + headless real-input test harness
+                    // (swatches are addressable by color name).
+                    accessible-role: button;
+                    accessible-label: entry.name;
+                    TouchArea {
+                        clicked => {
+                            set-affix-color-value = entry.hex;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Palette row 2: 5 swatches
+        HorizontalLayout {
+            spacing: 4px;
+            for entry[idx] in palette-entries: Rectangle {
+                if idx >= 5: Rectangle {
+                    background: entry.color;
+                    border-radius: 4px;
+                    preferred-width: 36px;
+                    preferred-height: 36px;
+                    border-width: 2px;
+                    border-color: set-affix-color-value == entry.hex ? #EEEEEE : #555555;
+                    // Accessibility + headless real-input test harness
+                    // (swatches are addressable by color name).
+                    accessible-role: button;
+                    accessible-label: entry.name;
+                    TouchArea {
+                        clicked => {
+                            set-affix-color-value = entry.hex;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

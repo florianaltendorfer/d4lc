@@ -1,0 +1,22 @@
+{
+  "schema_version": 1,
+  "fonts": [
+    {
+      "family": "Inconsolata",
+      "style": "Bold",
+      "version": "3.000",
+      "copyright": "Copyright 2006 The Inconsolata Project Authors (https://github.com/cyrealtype/Inconsolata)",
+      "spdx": "OFL-1.1",
+      "source_url": "https://github.com/googlefonts/Inconsolata/releases/download/v3.000/fonts_ttf.zip",
+      "source_member": "fonts/ttf/Inconsolata-Bold.ttf",
+      "source_archive_sha256": "626e8ee07501dbb544b50aa59ac2e4b9ec86b810670158a59c7a3cbaf475548a",
+      "destination_path": "crates/d4lc-overlay-x11/assets/fonts/Inconsolata-Bold.ttf",
+      "sha256": "263faa57f6c00c43a04e77df7abd5cb5cd4aae9f93507002c1217e02641fc7e6",
+      "bytes": 109728,
+      "license_url": "https://github.com/googlefonts/Inconsolata/releases/download/v3.000/OFL.txt",
+      "license_path": "licenses/Inconsolata-OFL.txt",
+      "license_sha256": "5d362a6f8690517fd9a5573128a081d8bbbb2f92714cf00556e08fbbe9600426",
+      "used_by": "crates/d4lc-overlay-x11/src/text.rs (include_bytes!), selected when Consolas Bold is not installed"
+    }
+  ]
+}

@@ -1,0 +1,1343 @@
+import { ScrollView } from "std-widgets.slint";
+import { Metro } from "../theme.slint";
+import { ToggleSwitch } from "../components/toggle_switch.slint";
+import { Card } from "../components/card.slint";
+import { IconButton } from "../components/icon_button.slint";
+import { KeyValueGrid, KeyValueRow } from "../components/key_value_grid.slint";
+import { LabeledStepper } from "../components/labeled_stepper.slint";
+import { StatusBadge, StatusKind } from "../components/status_badge.slint";
+import {
+    CameraIcon,
+    ExportIcon,
+    RefreshIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon,
+} from "../components/icons.slint";
+
+// Debug screen — Slint rendering of DebugView.xaml.
+// Upstream: DebugView.xaml:1-444, DebugViewModel.cs:1-739.
+//
+// The upstream structure stays: the page title, the left control column and
+// the right FlipView-style pager (dots + prev/next chevrons, panel caption).
+// Within it, the execution follows the design tokens: the left column groups
+// its controls into named cards built from `ui/components/` (Card,
+// IconButton, StatusBadge, LabeledStepper); the pager centres its chevrons
+// with layouts and wraps its image/OCR/performance panels into cards with an
+// source line (live snapshot vs stored run); every colour comes from
+// `theme.slint`, no element carries a literal.
+//
+// Panels 0-7 show the processed-screen stages (the live debug bundle's own
+// bitmaps when DebugInfo is on, the newest stored export otherwise); panels
+// 8-10 show the OCR lines/text; panel 11 the live and stored performance
+// cards plus the bounded diagnostics event list.
+//
+// The Start/Stop runtime bridge controls are port-specific (live capture
+// loop) and keep their validated wiring in the actions card.
+
+// ActionButton — the flat text button of the control column.
+//
+// The port-specific runtime bridge pair (start/stop) and the artifact folder
+// link are the same box: an accent fill that mutes while the action is
+// unavailable, a caption centred by a layout, and the accessible-name/button
+// contract the headless real-input harness addresses by label. The box owns
+// its height; the call site decides the width, so the pair pins one control
+// width and the single-action link spans its card.
+component ActionButton inherits Rectangle {
+    in property <string> label;
+    in property <bool> dim: false;
+    callback clicked();
+
+    background: root.dim ? Metro.muted : Metro.accent;
+    border-radius: Metro.radius-sm;
+    preferred-height: 26px;
+    min-height: 26px;
+    max-height: 26px;
+    accessible-role: button;
+    accessible-label: root.label;
+
+    HorizontalLayout {
+        alignment: center;
+
+        Text {
+            text: root.label;
+            color: root.dim ? Metro.text-dim : Metro.text;
+            font-size: Metro.font-size-caption;
+            vertical-alignment: center;
+        }
+    }
+
+    TouchArea {
+        clicked => { root.clicked(); }
+    }
+}
+
+// StepperRow — one row of the debug column's numeric raster.
+//
+// `LabeledStepper` with this screen's fixed columns: the label column carries
+// the longest upstream caption ("Threshold Similarity Splitter Location:",
+// 12px) without eliding, the stepper keeps its value box plus the two 28px
+// buttons, and the unit keeps its short slot — so every row of the tooltip &
+// areas card lines up down the group, and the whole raster fits the control
+// column above it.
+component StepperRow {
+    in property <string> label;
+    in property <float> minimum: 0;
+    in property <float> maximum: 100;
+    in property <float> step-size: 1;
+    in-out property <float> value;
+    in property <string> unit: "";
+    callback changed(float);
+
+    LabeledStepper {
+        label: root.label;
+        minimum: root.minimum;
+        maximum: root.maximum;
+        step-size: root.step-size;
+        value <=> root.value;
+        unit: root.unit;
+        label-width: 232px;
+        stepper-width: 116px;
+        unit-width: 24px;
+        changed(val) => { root.changed(val); }
+    }
+}
+
+// PagerButton — one chevron of the pager's prev/next navigation.
+//
+// Upstream's FlipView puts its prev/next buttons in a 44px box
+// (`DebugView.xaml:188-441`). The box is centred vertically by the layout
+// that holds it (never by a `y: (parent.height - …)` computation), and the
+// glyph is centred on both axes by nested layouts. `label` is the accessible
+// name the headless real-input harness addresses and the element carries the
+// button role, so the pager's navigation contract survives the rework.
+component PagerButton inherits Rectangle {
+    in property <string> label;
+    callback clicked();
+
+    background: transparent;
+    preferred-width: 44px;
+    min-width: 44px;
+    max-width: 44px;
+
+    VerticalLayout {
+        alignment: center;
+
+        Rectangle {
+            width: 44px;
+            height: 44px;
+            background: Metro.surface-deep;
+            border-width: 1px;
+            border-color: Metro.border;
+            border-radius: 4px;
+            accessible-role: button;
+            accessible-label: root.label;
+
+            HorizontalLayout {
+                alignment: center;
+
+                VerticalLayout {
+                    alignment: center;
+                    @children
+                }
+            }
+
+            TouchArea {
+                clicked => { root.clicked(); }
+            }
+        }
+    }
+}
+
+// ── Panel row models ─────────────────────────────────────────────────
+// Projected from `AppState` by `actions::debug` (see
+// `project_debug_panels`); the models carry the real bundle files and
+// live parse values, never synthesized rows.
+
+// One artifact-link row (upstream has no artifact UI; the port renders
+// the `DebugPanelState.artifacts` contract).
+export struct DebugArtifactRow {
+    label: string,
+    path: string,
+    present: bool,
+}
+
+// One processed-screen stage panel (`DebugView.xaml:200-247`).
+//
+// `source` is the panel's provenance line: "Live, generation N" when
+// the image comes from the accepted live snapshot, or the stored export run
+// it came from otherwise (with the off/empty state named). Live and stored
+// content never appear in one panel.
+export struct DebugStageRow {
+    label: string,
+    path: string,
+    source: string,
+    note: string,
+    has-image: bool,
+    image: image,
+}
+
+// One diagnostics event row of the performance panel:
+// phase, outcome, reason and the tooltip generation it belongs to.
+export struct DebugDiagnosticRow {
+    phase: string,
+    outcome: string,
+    reason: string,
+    generation: int,
+}
+
+// One OCR result row (`DebugView.xaml:249-419`).
+export struct DebugOcrRow {
+    id: string,
+    text: string,
+    source: string,
+}
+
+// One OCR result panel: title, provenance line, column headers and rows.
+export struct DebugOcrPanel {
+    title: string,
+    source: string,
+    note: string,
+    columns: [string],
+    rows: [DebugOcrRow],
+}
+
+export component DebugScreen {
+    // ── Toggle state properties ────────────────────────────────────────
+    in-out property <bool> debug-info-enabled: false;
+    in-out property <bool> topmost-enabled: false;
+
+    // ── Numeric control properties (all from DebugView.xaml:74-184) ───
+    in-out property <float> tooltip-width: 500;
+    in-out property <float> tooltip-max-height: 600;
+    in-out property <float> threshold-min: 0;
+    in-out property <float> threshold-max: 100;
+    in-out property <float> affix-area-height-offset-top: 0;
+    in-out property <float> affix-area-height-offset-bottom: 0;
+    in-out property <float> affix-aspect-area-width-offset: 0;
+    in-out property <float> aspect-area-height-offset-top: 0;
+    in-out property <float> minimal-ocr-match-type: 50;
+    in-out property <float> threshold-similarity-tooltip: 0.05;
+    in-out property <float> threshold-similarity-affix-location: 0.05;
+    in-out property <float> threshold-similarity-aspect-location: 0.05;
+    in-out property <float> threshold-similarity-socket-location: 0.05;
+    in-out property <float> threshold-similarity-splitter-location: 0.05;
+    in-out property <float> type-area-offset-left: 5;
+    in-out property <float> type-area-offset-right: 5;
+    in-out property <float> aspect-area-max-height: 300;
+
+    // ── Active panel index (0-11) ──────────────────────────────────────
+    in-out property <int> active-panel-index: 0;
+    in property <[string]> panel-names: [
+        @tr("Item Tooltip"),
+        @tr("Item Type"),
+        @tr("Item Affixes Locations"),
+        @tr("Item Affixes Areas"),
+        @tr("Item Aspect Location"),
+        @tr("Item Aspect Area"),
+        @tr("Item Socket Locations"),
+        @tr("Item Splitter Locations"),
+        @tr("OCR Results (Affixes)"),
+        @tr("OCR Results (Aspect)"),
+        // Upstream's banner caption (`rsCapItemTypePowerOcrResults`,
+        // `DebugView.xaml:387`).
+        @tr("OCR Results (ItemType + Power)"),
+        @tr("Performance"),
+    ];
+
+    // ── Panel content models (projected from the live debug bundle, the
+    //    debug-output bundle and the live parse state by `actions::debug`)
+    in property <[DebugArtifactRow]> artifact-rows: [];
+    in property <string> artifact-source: "";
+    in property <[DebugStageRow]> stage-rows: [];
+    // The stored run's per-stage timing rows (`timings.json` of the newest
+    // export bundle). The live card of the performance panel is built inline
+    // from the live root properties above it.
+    in property <[KeyValueRow]> perf-rows: [];
+    in property <string> perf-source: "";
+    // The newest diagnostics events of the running loop, newest first.
+    in property <[DebugDiagnosticRow]> diagnostics-rows: [];
+    in property <[DebugOcrPanel]> ocr-panels: [];
+
+    // ── Runtime bridge state properties ─────────────────────────────────
+    in property <bool> runtime-running: false;
+    // Started but still preparing (portal dialog, first stream frame).
+    in property <bool> runtime-preparing: false;
+    in property <string> runtime-status-text: "Stopped";
+    in property <string> current-item-name: "";
+    in property <string> current-item-parse-status: "not_item";
+    in property <string> overlay-status-text: "Offline";
+    // The overlay's own text path and the facts of the one accepted
+    // snapshot the live loop published. Projected together from that
+    // snapshot by `actions::runtime`; every field names the same generation.
+    in property <string> overlay-text-status-text: "No overlay surface reported yet";
+    in property <string> accepted-generation-text: "no snapshot yet";
+    in property <string> overlay-renderer-text: "no snapshot yet";
+    in property <string> frame-state-text: "no snapshot yet";
+    in property <bool> debug-frozen: false;
+    in property <string> evaluation-text: "no evaluation yet";
+    in property <string> published-at-text: "—";
+    // What the live frame number measures, and the live async OCR phase
+    // the stored run's per-stage timings below are never this
+    // frame's numbers.
+    in property <string> hotpath-scope-text: "";
+    in property <string> ocr-phase-text: "";
+    // Per-tick stage-cost percentiles of the live loop: one
+    // p50/p95/p99 triple (µs) per field, empty until ticks were recorded.
+    in property <string> loop-timings-text: "";
+    // The active UI renderer and any GPU fallback reason.
+    in property <string> ui-renderer-text: "";
+    in property <string> game-window-status-text: "Not observed";
+    in property <string> capture-engine-text: "Not resolved";
+    in property <string> settings-status-text: "Not applied";
+    in property <int> debug-frame-sequence: 0;
+    in property <int> debug-hotpath-ms: 0;
+    in property <bool> debug-tooltip-found: false;
+
+    // ── Local crash-log list (newest first) ─────────────────────────────
+    // Export copies one log locally so the user can attach it to a
+    // GitHub issue they open manually; the app never uploads.
+    in property <[string]> crash-log-entries: [];
+
+    // ── Runtime bridge commands ─────────────────────────────────────────
+    callback start_live_loop();
+    callback stop_live_loop();
+
+    // ── Callbacks (4 commands from DebugViewModel.cs:101-104) ──────────
+    callback take_screenshot();
+    callback export_debug_images();
+    callback reload_preset_images();
+    callback reset_perf();
+
+    // ── Toggle callbacks (2) ───────────────────────────────────────────
+    callback debug_info_toggled(bool);
+    callback topmost_toggled(bool);
+
+    // ── Crash-log export (opt-in, local copy only) ──────────────────────
+    callback export_crash_log(string);
+
+    // ── Numeric value change callbacks ─────────────────────────────────
+    // Every editable stepper sends its stable id and value; Rust maps the
+    // id to the persisted settings field (DebugViewModel.cs:106-454).
+    callback debug_stepper_changed(string, float);
+    callback type_area_offset_left_changed(float);
+
+    // ── Open the debug-output folder (upstream explorer-open,
+    //    DebugViewModel.cs:693-696) ─────────────────────────────────────
+    callback debug_open_artifacts();
+
+    // ── Palette (pager and panel area) ─────────────────────────────────
+    // The pager and the panels read `Metro` tokens only. The screen-local
+    // names below are aliases the screen's many bindings share, so no
+    // element carries a colour literal of its own.
+    // The OCR tables' fixed columns (id / kind); the text column takes the
+    // remaining width.
+    property <length> ocr-id-column-width: 72px;
+    property <length> ocr-kind-column-width: 120px;
+    property <color> bg-color: Metro.panel;
+    // The raised inner panels (stage image boxes, OCR rows, perf cards) sit
+    // one step below the page background.
+    property <color> panel-color: Metro.surface-deep;
+    property <color> text-color: Metro.text;
+    property <color> dim-color: Metro.text-dim;
+    property <color> accent-color: Metro.accent;
+    property <color> border-color: Metro.border;
+
+    // ── Layout (upstream readme-003: title + controls column + pager) ──
+    VerticalLayout {
+        spacing: 0px;
+
+        // ── Page title (upstream ContentTemplate header label) ────────
+        HorizontalLayout {
+            padding-left: 24px;
+            padding-top: 10px;
+            padding-bottom: 4px;
+
+            Text {
+                text: @tr("Debug");
+                color: text-color;
+                font-size: 40px;
+                font-weight: 300;
+                vertical-alignment: center;
+            }
+        }
+
+        HorizontalLayout {
+            spacing: 0px;
+
+            // ═══════════════════════════════════════════════════════
+            // Left column: the control groups of DebugView.xaml:27-186,
+            // one named card per group
+            // ═══════════════════════════════════════════════════════
+            left-column := Rectangle {
+                background: Metro.panel;
+                // The control column is as wide as its widest row needs: the
+                // stepper raster's pinned label column carries the longest
+                // upstream caption unelided, the stepper and unit columns
+                // keep their fixed slots, and the card plus scroll insets are
+                // part of the same arithmetic.
+                preferred-width: 460px;
+                min-width: 460px;
+                max-width: 460px;
+                horizontal-stretch: 0;
+
+                ScrollView {
+                    VerticalLayout {
+                        padding-left: Metro.spacing-md;
+                        padding-right: Metro.spacing-lg;
+                        padding-top: Metro.spacing-xs;
+                        padding-bottom: Metro.spacing-sm;
+                        spacing: Metro.spacing-md;
+
+                        // ── Display ────────────────────────────────
+                        // The two upstream toggles (DebugView.xaml:35-41,
+                        // 65-72).
+                        Card {
+                            title: @tr("Display");
+
+                            VerticalLayout {
+                                spacing: Metro.spacing-xs;
+
+                                // Upstream shows the on/off state as the
+                                // caption of this switch.
+                                ToggleSwitch {
+                                    label: debug-info-enabled ? @tr("On") : @tr("Off");
+                                    checked <=> debug-info-enabled;
+                                    toggled(v) => {
+                                        debug_info_toggled(v);
+                                    }
+                                }
+
+                                // What the bit gates: the
+                                // runtime attaches the live debug images to
+                                // the accepted snapshot, and the OCR worker's
+                                // gate follows the toggle without a restart.
+                                // The caption is upstream's On/Off, so the
+                                // line names the setting.
+                                Text {
+                                    text: @tr("Enable the debug images for troubleshooting.");
+                                    color: Metro.text-dim;
+                                    font-size: Metro.font-size-caption;
+                                    wrap: word-wrap;
+                                }
+
+                                ToggleSwitch {
+                                    label: @tr("Top Most");
+                                    checked <=> topmost-enabled;
+                                    toggled(v) => {
+                                        topmost_toggled(v);
+                                    }
+                                }
+                            }
+                        }
+
+                        // ── Actions ────────────────────────────────
+                        // The three upstream commands (DebugView.xaml:43-62)
+                        // and the port-specific runtime bridge.
+                        Card {
+                            title: @tr("Actions");
+
+                            VerticalLayout {
+                                spacing: Metro.spacing-sm;
+
+                                HorizontalLayout {
+                                    spacing: Metro.spacing-xs;
+
+                                    // Upstream TakeScreenshotCommand anchor.
+                                    IconButton {
+                                        label: @tr("Take screenshot");
+                                        clicked => { take_screenshot(); }
+
+                                        CameraIcon {
+                                            width: 16px;
+                                            height: 16px;
+                                            icon-color: Metro.text;
+                                            hole-color: Metro.panel;
+                                        }
+                                    }
+
+                                    // Upstream ExportDebugImagesCommand
+                                    // anchor.
+                                    IconButton {
+                                        label: @tr("Export debug images");
+                                        clicked => { export_debug_images(); }
+
+                                        ExportIcon {
+                                            width: 16px;
+                                            height: 16px;
+                                            icon-color: Metro.text;
+                                        }
+                                    }
+
+                                    // Upstream ReloadSystemPresetImagesCommand
+                                    // anchor.
+                                    IconButton {
+                                        label: @tr("Reload preset images");
+                                        clicked => { reload_preset_images(); }
+
+                                        RefreshIcon {
+                                            width: 16px;
+                                            height: 16px;
+                                            icon-color: Metro.text;
+                                        }
+                                    }
+                                }
+
+                                Text {
+                                    text: @tr("Screenshot, export debug images, reload preset images.");
+                                    color: Metro.text-dim;
+                                    font-size: Metro.font-size-caption;
+                                    wrap: word-wrap;
+                                }
+
+                                HorizontalLayout {
+                                    spacing: Metro.spacing-xs;
+
+                                    // Port-specific live capture loop: the
+                                    // two bridge commands keep their
+                                    // validated wiring.
+                                    ActionButton {
+                                        label: @tr("Start");
+                                        dim: runtime-running;
+                                        preferred-width: 70px;
+                                        min-width: 70px;
+                                        max-width: 70px;
+                                        clicked => {
+                                            if (!runtime-running) {
+                                                start_live_loop();
+                                            }
+                                        }
+                                    }
+
+                                    ActionButton {
+                                        label: @tr("Stop");
+                                        dim: !runtime-running;
+                                        preferred-width: 70px;
+                                        min-width: 70px;
+                                        max-width: 70px;
+                                        clicked => {
+                                            if (runtime-running) {
+                                                stop_live_loop();
+                                            }
+                                        }
+                                    }
+
+                                    StatusBadge {
+                                        kind: runtime-preparing ? StatusKind.warn : runtime-running ? StatusKind.ok : StatusKind.info;
+                                        text: runtime-preparing ? @tr("Starting") : runtime-running ? @tr("Running") : @tr("Stopped");
+                                    }
+                                }
+                            }
+                        }
+
+                        // ── Tooltip & areas ────────────────────────
+                        // Every numeric setting of DebugView.xaml:74-184 as
+                        // one raster. All of them are live settings: each
+                        // two-way bound value reports its change
+                        // through `debug_stepper_changed(id, value)`, which
+                        // Rust clamps, stores and saves.
+                        Card {
+                            title: @tr("Tooltip & areas");
+
+                            VerticalLayout {
+                                spacing: Metro.spacing-xs;
+
+                                StepperRow {
+                                    label: @tr("Tooltip width:");
+                                    minimum: 100;
+                                    maximum: 1000;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> tooltip-width;
+                                    changed(val) => { debug_stepper_changed("tooltip_width", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Tooltip max height:");
+                                    minimum: 100;
+                                    maximum: 1000;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> tooltip-max-height;
+                                    changed(val) => { debug_stepper_changed("tooltip_max_height", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Brightness Threshold (Min):");
+                                    minimum: 0;
+                                    maximum: 255;
+                                    step-size: 1;
+                                    unit: "";
+                                    value <=> threshold-min;
+                                    changed(val) => { debug_stepper_changed("threshold_min", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Brightness Threshold (Max):");
+                                    minimum: 0;
+                                    maximum: 255;
+                                    step-size: 1;
+                                    unit: "";
+                                    value <=> threshold-max;
+                                    changed(val) => { debug_stepper_changed("threshold_max", val); }
+                                }
+
+                                // The four area offsets are live settings
+                                // (AppSettings, upstream SettingsD4.cs:9-12):
+                                // the OCR region assembly reads the stored
+                                // values and a system-preset change re-seeds
+                                // them (SettingsViewModel.cs:258-273).
+                                StepperRow {
+                                    label: @tr("Affix Area Height Offset (Top):");
+                                    minimum: 0;
+                                    maximum: 50;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> affix-area-height-offset-top;
+                                    changed(val) => { debug_stepper_changed("affix_area_height_offset_top", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Affix Area Height Offset (Bottom):");
+                                    minimum: 0;
+                                    maximum: 50;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> affix-area-height-offset-bottom;
+                                    changed(val) => { debug_stepper_changed("affix_area_height_offset_bottom", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Affix/Aspect Area Width Offset:");
+                                    minimum: 0;
+                                    maximum: 50;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> affix-aspect-area-width-offset;
+                                    changed(val) => { debug_stepper_changed("affix_aspect_area_width_offset", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Aspect Area Height Offset (Top):");
+                                    minimum: 0;
+                                    maximum: 50;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> aspect-area-height-offset-top;
+                                    changed(val) => { debug_stepper_changed("aspect_area_height_offset_top", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Type Area Offset (Left):");
+                                    minimum: 0;
+                                    maximum: 25;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> type-area-offset-left;
+                                    changed(val) => { type_area_offset_left_changed(val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Minimal OCR Match (Type):");
+                                    minimum: 1;
+                                    maximum: 100;
+                                    step-size: 1;
+                                    unit: "%";
+                                    value <=> minimal-ocr-match-type;
+                                    changed(val) => { debug_stepper_changed("minimal_ocr_match_type", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Similarity Threshold (Tooltip):");
+                                    minimum: 0.01;
+                                    maximum: 0.09;
+                                    step-size: 0.01;
+                                    unit: "";
+                                    value <=> threshold-similarity-tooltip;
+                                    changed(val) => { debug_stepper_changed("threshold_similarity_tooltip", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Similarity Threshold (Affix location):");
+                                    minimum: 0.01;
+                                    maximum: 0.09;
+                                    step-size: 0.01;
+                                    unit: "";
+                                    value <=> threshold-similarity-affix-location;
+                                    changed(val) => { debug_stepper_changed("threshold_similarity_affix_location", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Similarity Threshold (Aspect location):");
+                                    minimum: 0.01;
+                                    maximum: 0.09;
+                                    step-size: 0.01;
+                                    unit: "";
+                                    value <=> threshold-similarity-aspect-location;
+                                    changed(val) => { debug_stepper_changed("threshold_similarity_aspect_location", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Similarity Threshold (Socket location):");
+                                    minimum: 0.01;
+                                    maximum: 0.09;
+                                    step-size: 0.01;
+                                    unit: "";
+                                    value <=> threshold-similarity-socket-location;
+                                    changed(val) => { debug_stepper_changed("threshold_similarity_socket_location", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Similarity Threshold (Splitter location):");
+                                    minimum: 0.01;
+                                    maximum: 0.09;
+                                    step-size: 0.01;
+                                    unit: "";
+                                    value <=> threshold-similarity-splitter-location;
+                                    changed(val) => { debug_stepper_changed("threshold_similarity_splitter_location", val); }
+                                }
+
+                                // Upstream's TypeAreaOffsetRight
+                                // (DebugView.xaml:114-120) and
+                                // AspectAreaMaxHeight (:154-160) close the
+                                // block; both persist through the same
+                                // generic callback as the rest.
+                                StepperRow {
+                                    label: @tr("Type Area Offset (Right):");
+                                    minimum: 0;
+                                    maximum: 250;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> type-area-offset-right;
+                                    changed(val) => { debug_stepper_changed("type_area_offset_right", val); }
+                                }
+
+                                StepperRow {
+                                    label: @tr("Aspect Area Max Height:");
+                                    minimum: 100;
+                                    maximum: 999;
+                                    step-size: 1;
+                                    unit: "px";
+                                    value <=> aspect-area-max-height;
+                                    changed(val) => { debug_stepper_changed("aspect_area_max_height", val); }
+                                }
+                            }
+
+                            // Apply behaviour, stated: the values are
+                            // stored in the settings file, and the runtime
+                            // re-reads them — a running loop through the
+                            // settings watcher's re-preparation (every value
+                            // here is a detector or OCR-preparation setting),
+                            // a stopped one at its next start.
+                            Text {
+                                text: @tr("Saved to Config/Settings.json. A running loop re-prepares with the new values; a stopped runtime reads them at its next start.");
+                                color: Metro.text-dim;
+                                font-size: Metro.font-size-caption;
+                                font-italic: true;
+                                wrap: word-wrap;
+                            }
+                        }
+
+                        // ── Crash logs ─────────────────────────────
+                        // Local diagnostics: a row click copies the log next
+                        // to the config for a bug report, gated by the
+                        // Settings toggle — the app never uploads.
+                        Card {
+                            title: @tr("Crash logs");
+
+                            VerticalLayout {
+                                spacing: Metro.spacing-xs;
+
+                                if crash-log-entries.length == 0: Text {
+                                    text: @tr("No crash logs recorded.");
+                                    color: Metro.text-dim;
+                                    font-size: Metro.font-size-caption;
+                                    font-italic: true;
+                                }
+
+                                for entry in crash-log-entries: Rectangle {
+                                    background: Metro.input;
+                                    border-width: 1px;
+                                    border-color: Metro.border;
+                                    border-radius: Metro.radius-sm;
+                                    preferred-height: 24px;
+                                    min-height: 24px;
+                                    // Accessibility: the row click exports the
+                                    // log (upstream ExportCrashLog anchor);
+                                    // the row is addressable by its file name.
+                                    accessible-role: button;
+                                    accessible-label: entry;
+
+                                    HorizontalLayout {
+                                        padding-left: Metro.spacing-xs;
+                                        padding-right: Metro.spacing-xs;
+
+                                        Text {
+                                            text: entry;
+                                            color: Metro.text;
+                                            font-size: Metro.font-size-caption;
+                                            vertical-alignment: center;
+                                            overflow: elide;
+                                        }
+                                    }
+
+                                    TouchArea {
+                                        clicked => { export_crash_log(entry); }
+                                    }
+                                }
+                            }
+                        }
+
+                        // ── Artifacts ──────────────────────────────
+                        // The debug-output bundle rows and the
+                        // upstream folder-open command
+                        // (DebugViewModel.cs:693-696).
+                        Card {
+                            title: @tr("Artifacts");
+
+                            Text {
+                                text: artifact-source;
+                                color: Metro.text-dim;
+                                font-size: Metro.font-size-caption;
+                                font-italic: true;
+                                wrap: word-wrap;
+                            }
+
+                            for row in artifact-rows: Rectangle {
+                                background: Metro.input;
+                                border-width: 1px;
+                                border-color: Metro.border;
+                                border-radius: Metro.radius-sm;
+                                preferred-height: 30px;
+                                min-height: 30px;
+                                // Accessibility: each row is addressable by
+                                // its artifact label.
+                                accessible-role: text;
+                                accessible-label: row.label;
+
+                                VerticalLayout {
+                                    padding: Metro.spacing-xs;
+                                    spacing: 0px;
+
+                                    Text {
+                                        text: row.present ? row.label : @tr("{} (missing)", row.label);
+                                        color: row.present ? Metro.text : Metro.text-dim;
+                                        font-size: Metro.font-size-caption;
+                                        font-weight: Metro.font-weight-title;
+                                    }
+
+                                    Text {
+                                        text: row.present ? row.path : @tr("no artifact under debug-output/");
+                                        color: Metro.text-dim;
+                                        font-size: Metro.font-size-caption;
+                                        overflow: elide;
+                                    }
+                                }
+                            }
+
+                            ActionButton {
+                                label: @tr("Open debug output folder");
+                                preferred-width: 100%;
+                                clicked => { debug_open_artifacts(); }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ═══════════════════════════════════════════════════════
+            // Right area: FlipView-style pager (upstream
+            // DebugView.xaml:188-441, 12 panels)
+            // ═══════════════════════════════════════════════════════
+            Rectangle {
+                background: bg-color;
+
+                VerticalLayout {
+                    spacing: 0px;
+
+                    // ── Pager dots (active red, rest muted) ───────────
+                    HorizontalLayout {
+                        padding-top: Metro.spacing-md;
+                        padding-bottom: Metro.spacing-xs;
+                        alignment: center;
+                        spacing: Metro.spacing-md;
+
+                        for name[idx] in panel-names: Rectangle {
+                            background: idx == active-panel-index ? accent-color : Metro.muted;
+                            border-radius: Metro.radius-md;
+                            preferred-width: 12px;
+                            min-width: 12px;
+                            max-width: 12px;
+                            preferred-height: 12px;
+                            min-height: 12px;
+                            max-height: 12px;
+                        }
+                    }
+
+                    // ── Panel content with prev/next chevrons ──────────
+                    HorizontalLayout {
+                        spacing: Metro.spacing-sm;
+
+                        // Prev page (wraps to the last panel; both chevrons
+                        // stay usable, so neither is dimmed at an end)
+                        pager-prev := PagerButton {
+                            label: @tr("Previous panel");
+                            clicked => {
+                                active-panel-index = active-panel-index > 0 ? active-panel-index - 1 : panel-names.length - 1;
+                            }
+
+                            ChevronLeftIcon {
+                                width: 20px;
+                                height: 20px;
+                                icon-color: Metro.text;
+                            }
+                        }
+
+                        // Active panel content. The slot is not a layout,
+                        // so every panel pins itself to the slot's size and
+                        // the slot clips: a panel never widens the pager past
+                        // the window and both chevrons stay on screen
+                        // (upstream's FlipView keeps its arrows over the item
+                        // at every window size).
+                        pager-content := Rectangle {
+                            background: bg-color;
+                            clip: true;
+
+                            // Panels 0-7: the 8 processed-screen stages
+                            // (DebugView.xaml:200-247). Each panel is one card:
+                            // the stage bitmap scaled with `image-fit: contain`
+                            // plus the provenance line — "Live,
+                            // generation N" from the accepted snapshot, or the
+                            // stored export run it came from. Live and stored
+                            // content never mix in one panel.
+                            if active-panel-index >= 0 && active-panel-index <= 7
+                                && active-panel-index < stage-rows.length: Card {
+                                width: parent.width;
+                                height: parent.height;
+                                title: stage-rows[active-panel-index].label;
+
+                                VerticalLayout {
+                                    spacing: Metro.spacing-sm;
+
+                                    Rectangle {
+                                        background: panel-color;
+                                        border-width: 1px;
+                                        border-color: border-color;
+                                        border-radius: Metro.radius-sm;
+
+                                        if stage-rows[active-panel-index].has-image: Image {
+                                            source: stage-rows[active-panel-index].image;
+                                            image-fit: contain;
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+
+                                        if !stage-rows[active-panel-index].has-image: Text {
+                                            text: stage-rows[active-panel-index].note;
+                                            color: dim-color;
+                                            font-size: Metro.font-size-caption;
+                                            font-italic: true;
+                                            horizontal-alignment: center;
+                                            vertical-alignment: center;
+                                            wrap: word-wrap;
+                                            width: 100%;
+                                            height: 100%;
+                                        }
+                                    }
+
+                                    // The provenance line, addressable as its
+                                    // own text (live vs stored is a contract,
+                                    // not a decoration).
+                                    Text {
+                                        text: stage-rows[active-panel-index].source;
+                                        color: dim-color;
+                                        font-size: Metro.font-size-caption;
+                                        font-italic: true;
+                                        wrap: word-wrap;
+                                        accessible-role: text;
+                                        accessible-label: stage-rows[active-panel-index].source;
+                                    }
+
+                                    if stage-rows[active-panel-index].path != "": Text {
+                                        text: @tr("Artifact: {}", stage-rows[active-panel-index].path);
+                                        color: dim-color;
+                                        font-size: Metro.font-size-caption;
+                                        overflow: elide;
+                                    }
+                                }
+                            }
+
+                            // Panels 8-10: the 3 OCR result panels
+                            // (DebugView.xaml:249-419). The live segments/lines
+                            // of the accepted snapshot when it carries them,
+                            // the stored/parse content otherwise; the source
+                            // line says which, so the two never mix.
+                            if active-panel-index >= 8 && active-panel-index <= 10
+                                && (active-panel-index - 8) < ocr-panels.length: Card {
+                                width: parent.width;
+                                height: parent.height;
+                                title: ocr-panels[active-panel-index - 8].title;
+
+                                VerticalLayout {
+                                    spacing: Metro.spacing-sm;
+
+                                    Text {
+                                        text: ocr-panels[active-panel-index - 8].source;
+                                        color: dim-color;
+                                        font-size: Metro.font-size-caption;
+                                        font-italic: true;
+                                        wrap: word-wrap;
+                                        accessible-role: text;
+                                        accessible-label: ocr-panels[active-panel-index - 8].source;
+                                    }
+
+                                    Text {
+                                        text: ocr-panels[active-panel-index - 8].note;
+                                        color: dim-color;
+                                        font-size: Metro.font-size-caption;
+                                        wrap: word-wrap;
+                                    }
+
+                                    // Header and rows share one column
+                                    // raster (fixed id and kind columns,
+                                    // the text column takes the rest; the
+                                    // same insets), so every cell sits
+                                    // under its header.
+                                    ocr-header := HorizontalLayout {
+                                        spacing: Metro.spacing-sm;
+                                        padding-left: 7px;
+                                        padding-right: 7px;
+
+                                        Text {
+                                            text: ocr-panels[active-panel-index - 8].columns[0];
+                                            color: dim-color;
+                                            font-size: Metro.font-size-caption;
+                                            font-weight: Metro.font-weight-title;
+                                            width: ocr-id-column-width;
+                                            overflow: elide;
+                                        }
+
+                                        Text {
+                                            text: ocr-panels[active-panel-index - 8].columns[1];
+                                            color: dim-color;
+                                            font-size: Metro.font-size-caption;
+                                            font-weight: Metro.font-weight-title;
+                                            min-width: 0px;
+                                            horizontal-stretch: 1;
+                                            overflow: elide;
+                                        }
+
+                                        Text {
+                                            text: ocr-panels[active-panel-index - 8].columns[2];
+                                            color: dim-color;
+                                            font-size: Metro.font-size-caption;
+                                            font-weight: Metro.font-weight-title;
+                                            width: ocr-kind-column-width;
+                                            overflow: elide;
+                                        }
+                                    }
+
+                                    ScrollView {
+                                        VerticalLayout {
+                                            // Rows keep their own height;
+                                            // spare viewport height stays
+                                            // below the last row.
+                                            alignment: start;
+                                            spacing: Metro.spacing-xs;
+
+                                            for row in ocr-panels[active-panel-index - 8].rows: ocr-row := Rectangle {
+                                                background: panel-color;
+                                                border-width: 1px;
+                                                border-color: border-color;
+                                                border-radius: Metro.radius-sm;
+                                                height: 24px;
+                                                // Accessibility: each OCR row
+                                                // is addressable by its leading
+                                                // column.
+                                                accessible-role: text;
+                                                accessible-label: row.id + " " + row.text;
+
+                                                HorizontalLayout {
+                                                    spacing: Metro.spacing-sm;
+                                                    padding-left: 6px;
+                                                    padding-right: 6px;
+
+                                                    Text {
+                                                        text: row.id;
+                                                        color: text-color;
+                                                        font-size: Metro.font-size-caption;
+                                                        vertical-alignment: center;
+                                                        width: ocr-id-column-width;
+                                                        overflow: elide;
+                                                    }
+
+                                                    ocr-row-text := Text {
+                                                        text: row.text;
+                                                        color: text-color;
+                                                        font-size: Metro.font-size-caption;
+                                                        vertical-alignment: center;
+                                                        horizontal-alignment: left;
+                                                        min-width: 0px;
+                                                        horizontal-stretch: 1;
+                                                        overflow: elide;
+                                                    }
+
+                                                    Text {
+                                                        text: row.source;
+                                                        color: dim-color;
+                                                        font-size: Metro.font-size-caption;
+                                                        vertical-alignment: center;
+                                                        width: ocr-kind-column-width;
+                                                        overflow: elide;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            // Panel 11: Performance (DebugView.xaml:421-438)
+                            if active-panel-index == 11: VerticalLayout {
+                                width: parent.width;
+                                height: parent.height;
+                                spacing: Metro.spacing-md;
+                                padding: Metro.spacing-md;
+
+                                HorizontalLayout {
+                                    alignment: space-between;
+
+                                    Text {
+                                        text: @tr("Performance");
+                                        color: text-color;
+                                        font-size: Metro.font-size-title;
+                                        font-weight: Metro.font-weight-title;
+                                        vertical-alignment: center;
+                                        overflow: elide;
+                                    }
+
+                                    // Reset performance button (upstream
+                                    // `ResetPerformceResultsCommand`).
+                                    Rectangle {
+                                        background: accent-color;
+                                        border-radius: Metro.radius-sm;
+                                        preferred-width: 110px;
+                                        min-width: 110px;
+                                        preferred-height: 28px;
+                                        min-height: 28px;
+                                        accessible-role: button;
+                                        accessible-label: @tr("Reset Perf");
+
+                                        HorizontalLayout {
+                                            alignment: center;
+                                            Text {
+                                                text: @tr("Reset Perf");
+                                                color: text-color;
+                                                font-size: Metro.font-size-caption;
+                                                vertical-alignment: center;
+                                            }
+                                        }
+
+                                        TouchArea {
+                                            clicked => { reset_perf(); }
+                                        }
+                                    }
+                                }
+
+                                ScrollView {
+                                    VerticalLayout {
+                                        spacing: Metro.spacing-md;
+
+                                        // ── Live card ──────────────────────
+                                        // Everything here is the running
+                                        // loop's own values, never a stored
+                                        // measurement. The status values are
+                                        // badges; the frame scope note keeps the
+                                        // live number from being read into the
+                                        // stored run below.
+                                        Card {
+                                            title: @tr("Live");
+
+                                            VerticalLayout {
+                                                spacing: Metro.spacing-sm;
+
+                                                HorizontalLayout {
+                                                    spacing: Metro.spacing-sm;
+                                                    StatusBadge {
+                                                        kind: runtime-preparing ? StatusKind.warn : runtime-running ? StatusKind.ok : StatusKind.info;
+                                                        text: runtime-preparing ? @tr("Starting") : runtime-running ? @tr("Running") : @tr("Stopped");
+                                                    }
+                                                    StatusBadge {
+                                                        kind: debug-frozen ? StatusKind.warn : StatusKind.ok;
+                                                        text: debug-frozen ? @tr("Frozen capture") : @tr("Live frame");
+                                                    }
+                                                    StatusBadge {
+                                                        kind: debug-tooltip-found ? StatusKind.ok : StatusKind.info;
+                                                        text: debug-tooltip-found ? @tr("Tooltip found") : @tr("No tooltip");
+                                                    }
+                                                }
+
+                                                KeyValueGrid {
+                                                    label-width: 170px;
+                                                    rows: [
+                                                        { key: @tr("Status"), value: runtime-status-text },
+                                                        { key: @tr("Frame"), value: debug-frame-sequence },
+                                                        { key: @tr("Hotpath (ms)"), value: debug-hotpath-ms },
+                                                        { key: @tr("d4lc" => "OCR"), value: ocr-phase-text },
+                                                        { key: @tr("Loop p50/95/99 (µs)"), value: loop-timings-text },
+                                                        { key: @tr("UI renderer"), value: ui-renderer-text },
+                                                        { key: @tr("d4lc" => "Overlay"), value: overlay-status-text },
+                                                        { key: @tr("Accepted generation"), value: accepted-generation-text },
+                                                        { key: @tr("Published"), value: published-at-text },
+                                                        { key: @tr("Frame source"), value: frame-state-text },
+                                                        { key: @tr("Renderer"), value: overlay-renderer-text },
+                                                        { key: @tr("Evaluation"), value: evaluation-text },
+                                                        { key: @tr("Overlay text"), value: overlay-text-status-text },
+                                                        { key: @tr("Capture engine"), value: capture-engine-text },
+                                                        { key: @tr("Game window"), value: game-window-status-text },
+                                                        { key: @tr("d4lc" => "Settings"), value: settings-status-text },
+                                                        { key: @tr("Current item"), value: current-item-name },
+                                                    ];
+                                                }
+
+                                                Text {
+                                                    text: hotpath-scope-text;
+                                                    color: dim-color;
+                                                    font-size: Metro.font-size-caption;
+                                                    font-italic: true;
+                                                    wrap: word-wrap;
+                                                }
+                                            }
+                                        }
+
+                                        // ── Stored run card ────────────────
+                                        // The per-stage detect timings of the
+                                        // newest export bundle (upstream plots
+                                        // 11 LiveCharts series here,
+                                        // DebugViewModel.cs:236-238,589-607).
+                                        // The provenance line names the run and
+                                        // its age so it is never read as live.
+                                        Card {
+                                            title: @tr("Stored run — not live");
+                                            subtitle: perf-source;
+
+                                            KeyValueGrid {
+                                                label-width: 170px;
+                                                rows: perf-rows;
+                                            }
+                                        }
+
+                                        // ── Diagnostics events ─────────────
+                                        // The last bounded window of the live
+                                        // loop's diagnostics ring: phase, outcome, reason and the
+                                        // tooltip generation, newest first.
+                                        Card {
+                                            title: @tr("Diagnostics (last 20 events)");
+
+                                            if diagnostics-rows.length == 0: Text {
+                                                text: @tr("No diagnostics events yet — start the live runtime.");
+                                                color: dim-color;
+                                                font-size: Metro.font-size-caption;
+                                                font-italic: true;
+                                                wrap: word-wrap;
+                                            }
+
+                                            for row in diagnostics-rows: Rectangle {
+                                                background: panel-color;
+                                                border-width: 1px;
+                                                border-color: border-color;
+                                                border-radius: Metro.radius-sm;
+                                                preferred-height: 22px;
+                                                min-height: 22px;
+                                                // Accessibility: each event row
+                                                // is addressable by its phase.
+                                                accessible-role: text;
+                                                accessible-label: row.phase;
+
+                                                HorizontalLayout {
+                                                    spacing: Metro.spacing-sm;
+                                                    padding-left: 6px;
+                                                    padding-right: 6px;
+
+                                                    Text {
+                                                        text: row.phase;
+                                                        color: text-color;
+                                                        font-size: Metro.font-size-caption;
+                                                        horizontal-stretch: 2;
+                                                        overflow: elide;
+                                                    }
+
+                                                    Text {
+                                                        text: row.outcome;
+                                                        color: dim-color;
+                                                        font-size: Metro.font-size-caption;
+                                                        horizontal-stretch: 1;
+                                                        overflow: elide;
+                                                    }
+
+                                                    Text {
+                                                        text: row.reason;
+                                                        color: dim-color;
+                                                        font-size: Metro.font-size-caption;
+                                                        horizontal-stretch: 2;
+                                                        overflow: elide;
+                                                    }
+
+                                                    Text {
+                                                        text: row.generation;
+                                                        color: dim-color;
+                                                        font-size: Metro.font-size-caption;
+                                                        horizontal-stretch: 1;
+                                                        overflow: elide;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        // Next page (wraps to the first panel; both chevrons
+                        // stay usable, so neither is dimmed at an end)
+                        pager-next := PagerButton {
+                            label: @tr("Next panel");
+                            clicked => {
+                                active-panel-index = active-panel-index < panel-names.length - 1 ? active-panel-index + 1 : 0;
+                            }
+
+                            ChevronRightIcon {
+                                width: 20px;
+                                height: 20px;
+                                icon-color: Metro.text;
+                            }
+                        }
+                    }
+
+                    // ── Caption (upstream FlipView banner text) ─────────
+                    HorizontalLayout {
+                        padding-left: 56px;
+                        padding-top: 4px;
+                        padding-bottom: 12px;
+
+                        Text {
+                            text: panel-names[active-panel-index];
+                            color: text-color;
+                            font-size: 16px;
+                            font-weight: 700;
+                            vertical-alignment: center;
+                            // Accessibility: the active panel's caption is
+                            // addressable, so the headless harness can assert
+                            // the upstream caption set without pixel probing.
+                            accessible-role: text;
+                            accessible-label: panel-names[active-panel-index];
+                        }
+
+                        Rectangle {
+                            background: transparent;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

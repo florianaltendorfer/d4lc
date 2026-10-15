@@ -1,0 +1,310 @@
+// Controller config dialog — real workflow.
+//
+// Upstream: `ControllerConfigView.xaml` + `ControllerConfigViewModel.cs`.
+// The view shows the selected controller images (each with a remove "−")
+// above the available images for the selected system preset (each with an
+// add "+"); both lists come from `SystemPresetManager` and every add /
+// remove writes `Config/Controllers.json` (`SystemPresetManager.cs:89-103`
+// AddController/RemoveController, `:130-153` load/save), which
+// `LoadControllerImages` feeds from `Images\{preset}\Tooltips\tooltip_gc_*`.
+//
+// d4lc adaptation: `Controllers.json` is written on confirm instead of on
+// every click (the draft/confirm dialog pattern shared by the other config
+// dialogs). The rows are projected by Rust into
+// `settings-controller-image-rows` (`SettingsControllerImageRow`), the
+// per-row add/remove clicks forward through
+// `settings-controller-image-selected(file-name, selected)`, and the
+// selected count stays on the existing `settings-controller-images-count`
+// display property. Confirm persists the selection to
+// `Config/Controllers.json` through `d4lc_config::save_controller_config`
+// and the loaded list is what the controller-mode runtime preparation
+// consumes; Cancel restores the list read from disk when the dialog
+// opened.
+import { ScrollView } from "std-widgets.slint";
+
+// One controller tooltip image. `selected` mirrors the membership in the
+// persisted `Controllers.json` list (upstream AddController/RemoveController).
+export struct SettingsControllerImageRow {
+    file-name: string,
+    selected: bool,
+}
+
+export component ControllerConfigDialog {
+    in property <string> dialog-title: @tr("Controller config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust reads them via
+    // `app.get_settings_controller_mode()`.
+    in-out property <bool> settings-controller-mode: false;
+    in property <int> settings-controller-images-count: 0;
+    // Available controller images for the selected system preset +
+    // language, each carrying its current draft membership.
+    in property <[SettingsControllerImageRow]> settings-controller-image-rows: [];
+    // Per-row add (selected = true) / remove (selected = false) click.
+    callback settings-controller-image-selected(string, bool);
+
+    callback confirm();
+    callback cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 8px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── IsControllerModeActive toggle
+        // (ControllerConfigView.xaml / SettingsView.xaml:144)
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Enable controller mode");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-controller-mode ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Enable controller mode");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-controller-mode ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-controller-mode = !settings-controller-mode;
+                    }
+                }
+            }
+        }
+
+        // ── Selected images (upstream ItemsControl over
+        // `SelectedImages`, ScrollViewer MaxHeight 150)
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: start;
+
+            Text {
+                text: @tr("Selected controller images:");
+                color: #AAAAAA;
+                font-size: 12px;
+                vertical-alignment: center;
+            }
+
+            Text {
+                text: settings-controller-images-count;
+                color: #EEEEEE;
+                font-size: 12px;
+                font-weight: 600;
+                vertical-alignment: center;
+            }
+        }
+
+        Rectangle {
+            background: #1F1F1F;
+            border-width: 1px;
+            border-color: #3F3F46;
+            border-radius: 4px;
+            preferred-height: 72px;
+            min-height: 72px;
+
+            ScrollView {
+                VerticalLayout {
+                    padding: 4px;
+                    spacing: 2px;
+
+                    for row in settings-controller-image-rows: HorizontalLayout {
+                        if row.selected: HorizontalLayout {
+                            spacing: 6px;
+                            alignment: start;
+
+                            Text {
+                                text: row.file-name;
+                                color: #EEEEEE;
+                                font-size: 11px;
+                                vertical-alignment: center;
+                                overflow: elide;
+                            }
+
+                            Rectangle {
+                                background: #555555;
+                                border-radius: 3px;
+                                preferred-width: 20px;
+                                preferred-height: 18px;
+                                min-width: 20px;
+                                min-height: 18px;
+                                // Accessibility + headless real-input test harness.
+                                accessible-role: button;
+                                accessible-label: @tr("Remove {}", row.file-name);
+                                Text {
+                                    text: "−";
+                                    color: #EEEEEE;
+                                    font-size: 12px;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                                TouchArea {
+                                    clicked => {
+                                        settings-controller-image-selected(row.file-name, false);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if settings-controller-images-count == 0: Text {
+                        text: @tr("No controller images selected.");
+                        color: #888888;
+                        font-size: 11px;
+                    }
+                }
+            }
+        }
+
+        // ── Available images label (upstream "Available images" header)
+        Text {
+            text: @tr("Available Images");
+            color: #AAAAAA;
+            font-size: 12px;
+        }
+
+        Rectangle {
+            background: #1F1F1F;
+            border-width: 1px;
+            border-color: #3F3F46;
+            border-radius: 4px;
+            preferred-height: 108px;
+            min-height: 108px;
+
+            ScrollView {
+                VerticalLayout {
+                    padding: 4px;
+                    spacing: 2px;
+
+                    for row in settings-controller-image-rows: HorizontalLayout {
+                        spacing: 6px;
+                        alignment: start;
+
+                        Rectangle {
+                            background: #555555;
+                            border-radius: 3px;
+                            preferred-width: 20px;
+                            preferred-height: 18px;
+                            min-width: 20px;
+                            min-height: 18px;
+                            // Accessibility + headless real-input test harness.
+                            accessible-role: button;
+                            accessible-label: @tr("Add {}", row.file-name);
+                            Text {
+                                text: row.selected ? "✓" : "+";
+                                color: #EEEEEE;
+                                font-size: 12px;
+                                horizontal-alignment: center;
+                                vertical-alignment: center;
+                            }
+                            TouchArea {
+                                clicked => {
+                                    settings-controller-image-selected(row.file-name, true);
+                                }
+                            }
+                        }
+
+                        Text {
+                            text: row.file-name;
+                            color: row.selected ? #EEEEEE : #AAAAAA;
+                            font-size: 11px;
+                            vertical-alignment: center;
+                            overflow: elide;
+                        }
+                    }
+
+                    if settings-controller-image-rows.length == 0: Text {
+                        text: @tr("No controller tooltip images found for the selected system preset.");
+                        color: #888888;
+                        font-size: 11px;
+                        wrap: word-wrap;
+                    }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

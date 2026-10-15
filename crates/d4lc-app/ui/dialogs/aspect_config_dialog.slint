@@ -1,0 +1,249 @@
+// Aspect config dialog — upstream `AspectConfigView.xaml` +
+// `AspectConfigViewModel.cs`.
+//
+// Control set (upstream XAML lines in brackets):
+//
+// - "Aspect detection" toggle [AspectConfigView.xaml:31-33] →
+//   `IsAspectDetectionEnabled` (AspectConfigViewModel.cs:63-73). Consumer:
+//   the OCR segment plan, no aspect OCR for non-unique items
+//   (`ScreenProcessHandler.cs:471` and `:1830`).
+// - "Multi-build mode" toggle [AspectConfigView.xaml:40-46] →
+//   `IsMultiBuildModeEnabled` (AspectConfigViewModel.cs:75-85). Consumer:
+//   the multi-build rule projection and the build-import rotation mirror.
+// - "Multi-build config" / "Manage colors" buttons [XAML:45-48, 68-75] →
+//   `SetMultiBuildCommand` / `SetColorsCommand`: they open the existing
+//   `multi_build_config` and `colors_config` dialogs through the host's
+//   `open-multi-build-config` / `dialog-open-colors` callbacks.
+// - Close [XAML:80-81, upstream `AspectConfigDoneCommand`]: the upstream
+//   toggle saves from its setter, so Done only closes; this dialog keeps
+//   the port's existing "Close" label (the harness's config-dialog cycle
+//   asserts it).
+//
+// Not ported, with the reason recorded instead of a decorative control:
+//
+// - `AspectIconOffset` [XAML:51-61, `SettingsD4.cs:14`, default 50]: upstream
+//   collapses the control (`Visibility="Collapsed"`) and no upstream code
+//   reads the value; the port persists it in `Settings.json` and shows no
+//   control, like upstream.
+//
+// ## Host contract
+//
+// `settings-rule-multi-build-enabled` and
+// `settings-rule-aspect-detection-enabled` are two-way bound to host root
+// properties seeded from `state.shell.settings` when the dialog opens. The
+// toggles report through `rule-toggle-changed`, which the host forwards to
+// the root callback wired to
+// `actions::affix_dialogs::handle_rule_setting_toggled`.
+//
+// Harness: the toggles are UI toggles, so `TOGGLE_SWEEP_TABLE` in
+// `testing_harness.rs` needs rows for "Aspect detection" and "Multi-build mode"
+// with source `ui/dialogs/aspect_config_dialog.slint` —
+// the toggle-table source scan asserts the table matches the .slint sources
+// exactly.
+
+export component AspectConfigDialog {
+    in property <string> dialog-title: @tr("Aspect Config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    in-out property <bool> settings-rule-aspect-detection-enabled: true;
+    in-out property <bool> settings-rule-multi-build-enabled: false;
+
+    callback confirm();
+    callback cancel();
+    callback rule-toggle-changed(string, bool);
+    callback open-multi-build-config();
+    callback open-colors-config();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Aspect detection ───────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Aspect Detection");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-rule-aspect-detection-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Aspect detection");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-rule-aspect-detection-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-rule-aspect-detection-enabled = !settings-rule-aspect-detection-enabled;
+                        rule-toggle-changed("aspect_detection_enabled", settings-rule-aspect-detection-enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Multi-build mode ───────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Multi Build Mode");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-rule-multi-build-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Multi-build mode");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-rule-multi-build-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-rule-multi-build-enabled = !settings-rule-multi-build-enabled;
+                        rule-toggle-changed("multi_build_mode_enabled", settings-rule-multi-build-enabled);
+                    }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 130px;
+                preferred-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Multi-build config");
+                Text {
+                    text: @tr("Multi-build config");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { open-multi-build-config(); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 110px;
+                preferred-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Manage colors");
+                Text {
+                    text: @tr("Manage Colors");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { open-colors-config(); }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Close / Cancel ─────────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Close");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

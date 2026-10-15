@@ -1,0 +1,546 @@
+// Set affix dialog — upstream `SetAffixView.xaml` + `SetAffixViewModel.cs`.
+//
+// Form contract (matches the port's host-plumbing pattern, no Slint
+// globals):
+//
+// - The form values are projected on the root `AppWindow` as the
+//   `set-affix-edit-index`, `set-affix-entry-id`, `set-affix-item-type`,
+//   `set-affix-color`, and the three boolean toggle root in-out
+//   properties (see `main_window.slint`). The dialog binds its two text
+//   inputs, hex color input, and three toggles to those root
+//   properties, so values flow directly between Slint and Rust.
+// - Confirm / cancel flow through the shared dialog host
+//   `dialog-confirm` / `dialog-cancel` callbacks, which the shared
+//   `actions::dialogs` router dispatches to
+//   `actions::affix_dialogs::handle_confirm` / `handle_cancel`.
+// - Validation errors are surfaced through the shared
+//   `dialog-error` / `dialog-error-visible` props; the router
+//   keeps the dialog open on failure.
+//
+// ## Upstream controls ported here
+//
+// - Per-slot add buttons [SetAffixView.xaml:31-98]: the ten upstream item
+//   types (`ItemTypeConstants`), each appending one typed entry through
+//   `add-affix-slot` (upstream `AddAffixExecute`,
+//   SetAffixViewModel.cs:211-248 → `AffixManager.AddAffix`,
+//   AffixManager.cs:141-158).
+// - Per-slot counters [XAML:32-97 badges, SetAffixViewModel.cs:88-176]: the
+//   button caption shows the entry count for that slot from the host-seeded
+//   `set-affix-slot-counters` model
+//   (`d4lc_gui::affix::set_affix_dialog_seed`).
+// - Minimal affix value [XAML:105-113, SetAffixViewModel.cs:178-182]: the
+//   numeric field reports every complete entry through
+//   `minimal-affix-value-edited`, which the host forwards to
+//   `actions::affix_dialogs::handle_set_affix_minimal_value`. The upstream
+//   `NumericUpDown` bounds (`Minimum="0" Maximum="9999" Interval="0.1"`)
+//   are enforced by that handler, so the text field is the port's
+//   equivalent of the control's own input mask.
+// - Done gate [SetAffixViewModel.cs:274-280]: upstream disables Done while
+//   the selected affixes of the edited id contain a duplicate
+//   (Type, IsImplicit, IsGreater, IsTempered) group; the port reports the
+//   same condition as a dialog error from `confirm_set_affix_draft`'s
+//   confirm path (a Slint button cannot be disabled from Rust).
+//
+// `edit_index` is `-1` for a new entry and `>= 0` for editing an existing
+// entry. The form does not expose a `label` field (upstream
+// `SetAffixInfoView` is an id+color+flags form; the label is preserved on
+// edit by the confirm body).
+//
+// ## Host contract
+//
+// The host seeds `set-affix-slot-counters` from
+// `d4lc_gui::affix::set_affix_dialog_seed(entries, id, minimal_values)` when
+// it opens the dialog, and forwards `add-affix-slot` /
+// `minimal-affix-value-edited` to the root callbacks wired to
+// `actions::affix_dialogs::handle_add_affix_slot` /
+// `handle_set_affix_minimal_value` (the affix id is the seeded
+// `set-affix-entry-id` root property).
+
+import { LineEdit } from "std-widgets.slint";
+
+export component SetAffixDialog {
+    in property <string> dialog-title: @tr("Set Affix");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust can read them via
+    // `app.get_set_affix_entry_id()` etc.
+    in-out property <int> set-affix-edit-index: -1;
+    in-out property <string> set-affix-entry-id: "";
+    in-out property <string> set-affix-item-type: "";
+    in-out property <string> set-affix-color: "#FF0000";
+    in-out property <bool> set-affix-is-greater: false;
+    in-out property <bool> set-affix-is-implicit: false;
+    in-out property <bool> set-affix-is-tempered: false;
+
+    // Minimal-value field and the per-slot entry counters (host-seeded).
+    in-out property <string> set-affix-minimal-value: "";
+    in property <[int]> set-affix-slot-counters: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+
+    callback confirm();
+    callback cancel();
+    callback add-affix-slot(string);
+    callback minimal-affix-value-edited(string);
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Entry id / item type ───────────────────────────────────
+        // Two columns keep the form inside the shared 520x400 dialog box
+        // (`dialog-box-height` in main_window.slint) with the per-slot rows
+        // and the flag toggles below.
+        HorizontalLayout {
+            spacing: 10px;
+
+            VerticalLayout {
+                horizontal-stretch: 1;
+                spacing: 4px;
+
+                Text {
+                    text: @tr("Affix");
+                    color: #CCCCCC;
+                    font-size: 12px;
+                }
+                LineEdit {
+                    text <=> set-affix-entry-id;
+                    placeholder-text: @tr("e.g. AttackSpeed, CritChance");
+                }
+            }
+
+            VerticalLayout {
+                horizontal-stretch: 1;
+                spacing: 4px;
+
+                Text {
+                    text: @tr("Type");
+                    color: #CCCCCC;
+                    font-size: 12px;
+                }
+                LineEdit {
+                    text <=> set-affix-item-type;
+                    placeholder-text: @tr("e.g. Amulet, Two-Handed Sword");
+                }
+            }
+        }
+
+        // ── Color / minimal affix value ────────────────────────────
+        HorizontalLayout {
+            spacing: 10px;
+
+            VerticalLayout {
+                horizontal-stretch: 1;
+                spacing: 4px;
+
+                Text {
+                    text: @tr("Color (hex)");
+                    color: #CCCCCC;
+                    font-size: 12px;
+                }
+                LineEdit {
+                    text <=> set-affix-color;
+                    placeholder-text: "#FF0000";
+                }
+            }
+
+            VerticalLayout {
+                horizontal-stretch: 1;
+                spacing: 4px;
+
+                Text {
+                    text: @tr("Minimal Affix Value");
+                    color: #CCCCCC;
+                    font-size: 12px;
+                }
+                LineEdit {
+                    text <=> set-affix-minimal-value;
+                    placeholder-text: "e.g. 12.5";
+                    edited(text) => { minimal-affix-value-edited(text); }
+                }
+            }
+        }
+
+        // ── Per-slot add buttons with counters ─────────────────────
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: start;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Helm");
+                Text {
+                    text: set-affix-slot-counters[0] > 0 ? @tr("d4lc" => "Helm") + " " + set-affix-slot-counters[0] : @tr("d4lc" => "Helm");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("helm"); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Chest");
+                Text {
+                    text: set-affix-slot-counters[1] > 0 ? @tr("d4lc" => "Chest") + " " + set-affix-slot-counters[1] : @tr("d4lc" => "Chest");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("chest"); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Gloves");
+                Text {
+                    text: set-affix-slot-counters[2] > 0 ? @tr("d4lc" => "Gloves") + " " + set-affix-slot-counters[2] : @tr("d4lc" => "Gloves");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("gloves"); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Pants");
+                Text {
+                    text: set-affix-slot-counters[3] > 0 ? @tr("d4lc" => "Pants") + " " + set-affix-slot-counters[3] : @tr("d4lc" => "Pants");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("pants"); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Boots");
+                Text {
+                    text: set-affix-slot-counters[4] > 0 ? @tr("d4lc" => "Boots") + " " + set-affix-slot-counters[4] : @tr("d4lc" => "Boots");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("boots"); }
+                }
+            }
+        }
+        HorizontalLayout {
+            spacing: 6px;
+            alignment: start;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Amulet");
+                Text {
+                    text: set-affix-slot-counters[5] > 0 ? @tr("d4lc" => "Amulet") + " " + set-affix-slot-counters[5] : @tr("d4lc" => "Amulet");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("amulet"); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Ring");
+                Text {
+                    text: set-affix-slot-counters[6] > 0 ? @tr("d4lc" => "Ring") + " " + set-affix-slot-counters[6] : @tr("d4lc" => "Ring");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("ring"); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Weapon");
+                Text {
+                    text: set-affix-slot-counters[7] > 0 ? @tr("d4lc" => "Weapon") + " " + set-affix-slot-counters[7] : @tr("d4lc" => "Weapon");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("weapon"); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("Ranged Weapon");
+                Text {
+                    text: set-affix-slot-counters[8] > 0 ? @tr("d4lc" => "Ranged") + " " + set-affix-slot-counters[8] : @tr("d4lc" => "Ranged");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("ranged"); }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 92px;
+                preferred-height: 26px;
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Offhand");
+                Text {
+                    text: set-affix-slot-counters[9] > 0 ? @tr("d4lc" => "Offhand") + " " + set-affix-slot-counters[9] : @tr("d4lc" => "Offhand");
+                    color: #EEEEEE;
+                    font-size: 11px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { add-affix-slot("offhand"); }
+                }
+            }
+        }
+
+        // ── Toggles ────────────────────────────────────────────────
+        // is_greater toggle
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Greater");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: set-affix-is-greater ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Greater affix");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: set-affix-is-greater ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        set-affix-is-greater = !set-affix-is-greater;
+                    }
+                }
+            }
+        }
+
+        // is_implicit toggle
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Implicit");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: set-affix-is-implicit ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Implicit affix");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: set-affix-is-implicit ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        set-affix-is-implicit = !set-affix-is-implicit;
+                    }
+                }
+            }
+
+            // is_tempered toggle
+            Text {
+                text: @tr("Tempered");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: set-affix-is-tempered ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Tempered affix");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: set-affix-is-tempered ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        set-affix-is-tempered = !set-affix-is-tempered;
+                    }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

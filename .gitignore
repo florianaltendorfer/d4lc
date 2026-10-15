@@ -1,0 +1,13 @@
+/target/
+/debug-output/
+# Runtime-created personal state (settings, controller list, presets)
+/Config/
+*.log
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+.DS_Store
+/.idea/
+/.tmp/

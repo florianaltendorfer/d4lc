@@ -1,0 +1,27 @@
+// Catalog grid — the port's replacement for upstream's VirtualizingWrapPanel
+// (`AffixView.xaml:1499-2007`: `wpftoolkit:VirtualizingWrapPanel`, cards with
+// a 5px margin and fixed per-kind sizes, packed left-to-right and wrapping at
+// the viewport edge).
+//
+// One wrapping FlexboxLayout carries every catalog tab, so no per-tab
+// column-count or x/width math exists in the screen: the cells keep their
+// upstream sizes (250x75 affix, 300x130 aspect/unique, 250x130 sigil,
+// 250x90 rune) and the row/column placement follows the viewport width.
+// `spacing` reproduces upstream's 5px card margin on both axes (10px between
+// neighbours).
+//
+// The grid is a layout only: it reports the wrapped content height, so the
+// owning ScrollView scrolls it and the cells stay a bounded, windowed set
+// (`actions::affix` windows the projected models).
+
+export component CatalogGrid inherits FlexboxLayout {
+    spacing-horizontal: 10px;
+    spacing-vertical: 10px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    // Upstream packs the panel to the left (`HorizontalAlignment="Left"` on
+    // the wrap panel); the cells keep their own sizes.
+    alignment: start;
+    cross-axis-alignment: start;
+    cross-axis-line-alignment: start;
+}

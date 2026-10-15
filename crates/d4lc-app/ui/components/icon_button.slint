@@ -1,0 +1,60 @@
+// IconButton — the square, border-boxed glyph button of the debug toolbar.
+//
+// The screenshot/export/reload controls (DebugView.xaml:43-62) repeat the same
+// 28px box, 1px border, TouchArea and accessibility contract; the start/stop
+// control repeats the same box with the upstream red fill. This is that box
+// once, with the glyph supplied as content so the caller keeps the icon's own
+// `icon-color` and size. The glyph is centred by nested layouts, never by a
+// per-call `x:`/`y:` offset.
+//
+// Colour, radius and border come from the `Metro` tokens. The 28px control
+// size is the component's own intrinsic dimension (the same one
+// `NumericSpinBox` uses), not a token.
+//
+// `label` is the button's accessible name (the same convention
+// `NumericSpinBox` uses: the builtin `accessible-label` carries it on the root).
+//
+// Usage:
+//   IconButton { label: "Reload"; RefreshIcon { width: 16px; height: 16px; } }
+
+import { Metro } from "../theme.slint";
+
+export component IconButton {
+    // Accessible name of the action (upstream command anchor).
+    in property <string> label;
+    // Upstream red action fill (start/stop) instead of the neutral panel fill.
+    in property <bool> accent: false;
+    // Muted fill for an inactive action (upstream `runtime-running` dim state).
+    in property <bool> dim: false;
+    callback clicked();
+
+    Rectangle {
+        background: root.dim ? Metro.muted : (root.accent ? Metro.accent : Metro.panel);
+        border-width: (root.accent || root.dim) ? 0px : 1px;
+        border-color: Metro.border;
+        border-radius: Metro.radius-sm;
+        preferred-width: 28px;
+        min-width: 28px;
+        max-width: 28px;
+        preferred-height: 28px;
+        min-height: 28px;
+        max-height: 28px;
+        // Accessibility + headless real-input harness: the box carries the
+        // button role and the accessible name (upstream command anchor).
+        accessible-role: button;
+        accessible-label: root.label;
+
+        // The glyph keeps its own size and is centred on both axes.
+        HorizontalLayout {
+            alignment: center;
+            VerticalLayout {
+                alignment: center;
+                @children
+            }
+        }
+
+        TouchArea {
+            clicked => { root.clicked(); }
+        }
+    }
+}

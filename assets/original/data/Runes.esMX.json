@@ -1,0 +1,522 @@
+[
+  {
+    "IdSno": "2080567",
+    "IdName": "Item_Rune_Condition_HitHealthierEnemy",
+    "RuneType": "condition",
+    "Name": "Ahu",
+    "Description": "Golpe afortunado: Hasta un 100% de probabilidad contra enemigos que no estén saludables.",
+    "DescriptionClean": "Golpe afortunado: Hasta un 100 de probabilidad contra enemigos que no estén saludables.",
+    "RuneDescription": "{c_RuneCondition}{c_label}Golpe afortunado:{/c} Hasta un {c_number}[100|%|]{/c} de probabilidad contra enemigos que no estén {c_important}saludables{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1999351",
+    "IdName": "Item_Rune_Condition_OnMove",
+    "RuneType": "condition",
+    "Name": "Bac",
+    "Description": "Recorre # metros.",
+    "DescriptionClean": "Recorre metros.",
+    "RuneDescription": "{c_RuneCondition}Recorre {c_Number}{s1}{/c} metros.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2057115",
+    "IdName": "Item_Rune_Effect_SummonSpiritWolf",
+    "RuneType": "effect",
+    "Name": "Ceh",
+    "Description": "Invocas a un compañero Lobo Espiritual que ataca a los enemigos durante 8 segundos.",
+    "DescriptionClean": "Invocas a un compañero Lobo Espiritual que ataca a los enemigos durante 8 segundos.",
+    "RuneDescription": "{c_RuneEffect}Invocas a un {c_important}compañero{/c} Lobo Espiritual que ataca a los enemigos durante {c_number}8{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Invocas múltiples lobos"
+  },
+  {
+    "IdSno": "1968096",
+    "IdName": "Item_Rune_Condition_OnEvade",
+    "RuneType": "condition",
+    "Name": "Cem",
+    "Description": "Lanza Evadir.",
+    "DescriptionClean": "Lanza Evadir.",
+    "RuneDescription": "{c_RuneCondition}Lanza Evadir.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2166984",
+    "IdName": "Item_Rune_Effect_Subpower_LightningBolt",
+    "RuneType": "effect",
+    "Name": "Chac",
+    "Description": "Invoca el Rayo del Druida, que ataca a un enemigo cercano.",
+    "DescriptionClean": "Invoca el Rayo del Druida, que ataca a un enemigo cercano.",
+    "RuneDescription": "{c_RuneEffect}Invoca el {c_important}Rayo{/c} del Druida, que ataca a un enemigo cercano.{/c}",
+    "RuneOverflowBehavior": "Aumento de descargas generadas"
+  },
+  {
+    "IdSno": "2060617",
+    "IdName": "Item_Rune_Condition_CastRepeatSkill",
+    "RuneType": "condition",
+    "Name": "Cir",
+    "Description": "Lanza 5 habilidades y agota tus energías durante 3 segundos.",
+    "DescriptionClean": "Lanza 5 habilidades y agota tus energías durante 3 segundos.",
+    "RuneDescription": "{c_RuneCondition}Lanza {c_number}5{/c} habilidades y agota tus energías durante {c_number}3{/c} segundos.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2060651",
+    "IdName": "Item_Rune_Effect_FlatCDR",
+    "RuneType": "effect",
+    "Name": "Eom",
+    "Description": "Reduce tus recuperaciones activas en # segundos.",
+    "DescriptionClean": "Reduce tus recuperaciones activas en segundos.",
+    "RuneDescription": "{c_RuneEffect}Reduce tus recuperaciones activas en {c_number}{s1}{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Recuperaciones aún más reducidas"
+  },
+  {
+    "IdSno": "2006747",
+    "IdName": "Item_Rune_Condition_OnCCdOrInjured",
+    "RuneType": "condition",
+    "Name": "Feo",
+    "Description": "Resulta herido o cae bajo efectos de control de multitudes (recuperación: 10 segundos).",
+    "DescriptionClean": "Resulta herido o cae bajo efectos de control de multitudes (recuperación: 10 segundos).",
+    "RuneDescription": "{c_RuneCondition}Resulta {c_important}{u}herido{/u}{/c} o cae bajo efectos de control de multitudes{/c} {c_gray}(recuperación: 10 segundos){/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969098",
+    "IdName": "Item_Rune_Effect_CritBuff",
+    "RuneType": "effect",
+    "Name": "Gar",
+    "Description": "Obtienes un #% de probabilidad de golpe crítico durante 5 segundos, hasta un máximo de un 25%.",
+    "DescriptionClean": "Obtienes un de probabilidad de golpe crítico durante 5 segundos, hasta un máximo de un 25.",
+    "RuneDescription": "{c_RuneEffect}Obtienes un {c_number}{s1}%{/c} de probabilidad de golpe crítico durante {c_number}5{/c} segundos, hasta un máximo de un {c_number}25%{/c}.{/c}",
+    "RuneOverflowBehavior": "Obtención de acumulaciones múltiples"
+  },
+  {
+    "IdSno": "2165976",
+    "IdName": "Item_Rune_Condition_Bomb",
+    "RuneType": "condition",
+    "Name": "Igni",
+    "Description": "Almacena ofrenda cada 0.3 segundos. Lanza una habilidad que no sea básica para obtener la ofrenda almacenada. (Hasta 500 de ofrenda).",
+    "DescriptionClean": "Almacena ofrenda cada 0.3 segundos. Lanza una habilidad que no sea básica para obtener la ofrenda almacenada. (Hasta 500 de ofrenda).",
+    "RuneDescription": "{c_RuneCondition}Almacena ofrenda cada {c_number}0.3{/c} |4segundo:segundos;. Lanza una habilidad que no sea {c_important}básica{/c} para obtener la ofrenda almacenada. {c_gray}(Hasta 500 de ofrenda){/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2530516",
+    "IdName": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Subpower_Brimstone",
+    "Description": "Item_Rune_Effect_Subpower_Brimstone",
+    "DescriptionClean": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneDescription": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Subpower_Brimstone"
+  },
+  {
+    "IdSno": "2531290",
+    "IdName": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Warlock_ChainPrison",
+    "Description": "Item_Rune_Effect_Warlock_ChainPrison",
+    "DescriptionClean": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneDescription": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Warlock_ChainPrison"
+  },
+  {
+    "IdSno": "2039542",
+    "IdName": "Item_Rune_Effect_Sorcerer_Teleport",
+    "RuneType": "effect",
+    "Name": "Jah",
+    "Description": "Reemplaza tu próximo Evadir con la habilidad de Teletransportación del Hechicero, lo cual te desplaza más lejos, inflige daño y te vuelve imparable.",
+    "DescriptionClean": "Reemplaza tu próximo Evadir con la habilidad de Teletransportación del Hechicero, lo cual te desplaza más lejos, inflige daño y te vuelve imparable.",
+    "RuneDescription": "{c_RuneEffect}Reemplaza tu próximo Evadir con la habilidad de {c_important}Teletransportación{/c} del Hechicero, lo cual te desplaza más lejos, inflige daño y te vuelve {c_important}{u}imparable{/u}{/c}.",
+    "RuneOverflowBehavior": "Almacena el exceso de ofrenda"
+  },
+  {
+    "IdSno": "2081284",
+    "IdName": "Item_Rune_Condition_OnTakeDamage",
+    "RuneType": "condition",
+    "Name": "Kaa",
+    "Description": "Pierde un #% de tu Vida máxima.",
+    "DescriptionClean": "Pierde un de tu Vida máxima.",
+    "RuneDescription": "{c_RuneCondition}Pierde un {c_number}{s1}%{/c} de tu Vida máxima.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2432807",
+    "IdName": "Item_Rune_Effect_Paladin_Rally",
+    "RuneType": "effect",
+    "Name": "Kel",
+    "Description": "Invoca la habilidad Arenga del Paladín y obtiene un incremento de recurso y velocidad de movimiento durante # segundos.",
+    "DescriptionClean": "Invoca la habilidad Arenga del Paladín y obtiene un incremento de recurso y velocidad de movimiento durante segundos.",
+    "RuneDescription": "{c_RuneEffect}Invoca la habilidad {c_important}Arenga{/c} del Paladín y obtiene un incremento de recurso y velocidad de movimiento durante {c_number}{s1}{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Recurso incrementado"
+  },
+  {
+    "IdSno": "2039678",
+    "IdName": "Item_Rune_Effect_Spiritborn_Vortex",
+    "RuneType": "effect",
+    "Name": "Kry",
+    "Description": "Invocas la habilidad Vórtice del Encarnaespíritu, el cual inflige daño y atrae a los enemigos.",
+    "DescriptionClean": "Invocas la habilidad Vórtice del Encarnaespíritu, el cual inflige daño y atrae a los enemigos.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Vórtice{/c} del Encarnaespíritu, el cual inflige daño y atrae a los enemigos.{/c}",
+    "RuneOverflowBehavior": "Tamaño hasta un 100% mayor"
+  },
+  {
+    "IdSno": "2090244",
+    "IdName": "Item_Rune_Effect_Barbarian_ChallengingShout",
+    "RuneType": "effect",
+    "Name": "Lac",
+    "Description": "Invocas la habilidad Grito Desafiante del Bárbaro, el cual provoca a los enemigos y reduce el daño que recibes durante # segundos.",
+    "DescriptionClean": "Invocas la habilidad Grito Desafiante del Bárbaro, el cual provoca a los enemigos y reduce el daño que recibes durante segundos.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Grito Desafiante{/c} del Bárbaro, el cual provoca a los enemigos y reduce el daño que recibes durante {c_number}{s1}{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Duración aumentada"
+  },
+  {
+    "IdSno": "2060481",
+    "IdName": "Item_Rune_Condition_StandStill",
+    "RuneType": "condition",
+    "Name": "Lith",
+    "Description": "Quédate inmóvil mientras luchas durante # segundos.",
+    "DescriptionClean": "Quédate inmóvil mientras luchas durante segundos.",
+    "RuneDescription": "{c_RuneCondition}Quédate inmóvil mientras luchas durante {c_number}{s1}{/c} |4segundo:segundos;.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968585",
+    "IdName": "Item_Rune_Effect_GainResource",
+    "RuneType": "effect",
+    "Name": "Lum",
+    "Description": "Restaura # de recurso primario.",
+    "DescriptionClean": "Restaura de recurso primario.",
+    "RuneDescription": "{c_RuneEffect}Restaura {c_number}{s1}{/c} de recurso primario.{/c}",
+    "RuneOverflowBehavior": "Aumento de recurso recuperado"
+  },
+  {
+    "IdSno": "2004723",
+    "IdName": "Item_Rune_Effect_Subpower_DesecratedGround",
+    "RuneType": "effect",
+    "Name": "Met",
+    "Description": "Dejas un rastro de Tierra Profanada del Nigromante durante 3 segundos, lo cual inflige daño a los enemigos en su interior.",
+    "DescriptionClean": "Dejas un rastro de Tierra Profanada del Nigromante durante 3 segundos, lo cual inflige daño a los enemigos en su interior.",
+    "RuneDescription": "{c_RuneEffect}Dejas un rastro de {c_important}Tierra Profanada{/c} del Nigromante durante {c_number}3{/c} segundos, lo cual inflige daño a los enemigos en su interior.{/c}",
+    "RuneOverflowBehavior": "Duración aumentada"
+  },
+  {
+    "IdSno": "2063886",
+    "IdName": "Item_Rune_Condition_OnStutterStep",
+    "RuneType": "condition",
+    "Name": "Moni",
+    "Description": "Lanza 2 habilidades de Movilidad o Macabras. ",
+    "DescriptionClean": "Lanza 2 habilidades de Movilidad o Macabras.",
+    "RuneDescription": "{c_RuneCondition}Lanza {c_number}2{/c} habilidades de {c_important}Movilidad{/c} o {c_important}Macabras{/c}.{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2089934",
+    "IdName": "Item_Rune_Effect_Rogue_DarkShroud",
+    "RuneType": "effect",
+    "Name": "Mot",
+    "Description": "Obtienes # sombras de la habilidad Sudario Oscuro del Renegado, lo cual reduce el daño recibido por sombra.",
+    "DescriptionClean": "Obtienes sombras de la habilidad Sudario Oscuro del Renegado, lo cual reduce el daño recibido por sombra.",
+    "RuneDescription": "{c_RuneEffect}Obtienes {c_number}{s1}{/c} |4sombra:sombras; de la habilidad {c_important}Sudario Oscuro{/c} del Renegado, lo cual reduce el daño recibido por sombra.{/c}",
+    "RuneOverflowBehavior": "Obtención de sombras múltiples"
+  },
+  {
+    "IdSno": "2155996",
+    "IdName": "Item_Rune_Condition_Summons",
+    "RuneType": "condition",
+    "Name": "Nagu",
+    "Description": "Conserva al menos 1 invocación activa durante 5 segundos y obtén ofrenda por cada una, hasta un máximo de 6 invocaciones.",
+    "DescriptionClean": "Conserva al menos 1 invocación activa durante 5 segundos y obtén ofrenda por cada una, hasta un máximo de 6 invocaciones.",
+    "RuneDescription": "{c_RuneCondition}Conserva al menos {c_number}1{/c} {c_important}invocación{/c} activa durante {c_number}5{/c} segundos y obtén ofrenda por cada una, hasta un máximo de {c_number}6{/c} {c_important}invocaciones{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2063987",
+    "IdName": "Item_Rune_Condition_OnAvoidDamage",
+    "RuneType": "condition",
+    "Name": "Neo",
+    "Description": "Evita perder Vida durante 2 segundos mientras luchas. ",
+    "DescriptionClean": "Evita perder Vida durante 2 segundos mientras luchas.",
+    "RuneDescription": "{c_RuneCondition}Evita perder Vida durante 2 segundos mientras luchas.{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2039602",
+    "IdName": "Item_Rune_Effect_Rogue_Concealment",
+    "RuneType": "effect",
+    "Name": "Ner",
+    "Description": "Invocas la habilidad Ocultamiento Contrarrestante del Renegado durante # segundos, el cual te otorga probabilidad de esquivar, velocidad de movimiento, Sigilo y te vuelve imparable.",
+    "DescriptionClean": "Invocas la habilidad Ocultamiento Contrarrestante del Renegado durante segundos, el cual te otorga probabilidad de esquivar, velocidad de movimiento, Sigilo y te vuelve imparable.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Ocultamiento Contrarrestante{/c} del Renegado durante {s1} segundos, el cual te otorga probabilidad de esquivar, velocidad de movimiento, {c_important}{u}Sigilo{/u}{/c} y te vuelve {c_important}{u}imparable{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "Duración aumentada"
+  },
+  {
+    "IdSno": "2089874",
+    "IdName": "Item_Rune_Condition_OnCCEnemy",
+    "RuneType": "condition",
+    "Name": "Noc",
+    "Description": "Inflige un efecto de control de multitudes y obtén el doble de ofrenda si no es una ralentización ni un helamiento.",
+    "DescriptionClean": "Inflige un efecto de control de multitudes y obtén el doble de ofrenda si no es una ralentización ni un helamiento.",
+    "RuneDescription": "{c_RuneCondition}Inflige un efecto de control de multitudes y obtén el doble de ofrenda si no es una ralentización ni un {c_important}{u}helamiento{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969850",
+    "IdName": "Item_Rune_Effect_Barbarian_WarCry",
+    "RuneType": "effect",
+    "Name": "Ohm",
+    "Description": "Invocas la habilidad Grito de Guerra del Bárbaro, lo que aumenta el daño que infliges un 15% durante # segundos.",
+    "DescriptionClean": "Invocas la habilidad Grito de Guerra del Bárbaro, lo que aumenta el daño que infliges un 15 durante segundos.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Grito de Guerra{/c} del Bárbaro, lo que aumenta el daño que infliges un {c_number}15%{/c} durante {c_number}{s1}{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Duración aumentada"
+  },
+  {
+    "IdSno": "2006150",
+    "IdName": "Item_Rune_Effect_Subpower_DancingBolts",
+    "RuneType": "effect",
+    "Name": "Ono",
+    "Description": "Invoca la Descarga Danzante del Druida, la cual busca a los enemigos y les inflige daño.",
+    "DescriptionClean": "Invoca la Descarga Danzante del Druida, la cual busca a los enemigos y les inflige daño.",
+    "RuneDescription": "{c_RuneEffect}Invoca la {c_important}Descarga Danzante{/c} del Druida, la cual busca a los enemigos y les inflige daño.{/c}",
+    "RuneOverflowBehavior": "Aumento de descargas generadas"
+  },
+  {
+    "IdSno": "2004453",
+    "IdName": "Item_Rune_Condition_OnSpendResource",
+    "RuneType": "condition",
+    "Name": "Poc",
+    "Description": "Gasta un #% de tu recurso máximo.",
+    "DescriptionClean": "Gasta un de tu recurso máximo.",
+    "RuneDescription": "{c_RuneCondition}Gasta un {c_Number}{s1}%{/c} de tu recurso máximo.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2059626",
+    "IdName": "Item_Rune_Effect_ResourceToDamage",
+    "RuneType": "effect",
+    "Name": "Qax",
+    "Description": "Lanzar una habilidad que no sea básica o defensiva consume todo tu recurso primario para aumentar tu daño hasta un #% durante 1 segundo.",
+    "DescriptionClean": "Lanzar una habilidad que no sea básica o defensiva consume todo tu recurso primario para aumentar tu daño hasta un durante 1 segundo.",
+    "RuneDescription": "{c_RuneEffect}Lanzar una habilidad que no sea {c_important}básica{/c} o {c_important}defensiva{/c} consume todo tu recurso primario para aumentar tu daño hasta un {c_number}{s1}%{/c} durante {c_number}1{/c} segundo.{/c}",
+    "RuneOverflowBehavior": "Daño aumentado aún más"
+  },
+  {
+    "IdSno": "2043181",
+    "IdName": "Item_Rune_Effect_MobilityBuff",
+    "RuneType": "effect",
+    "Name": "Qua",
+    "Description": "Obtienes un 10% de velocidad de movimiento durante # segundos, hasta un máximo de un 50%.",
+    "DescriptionClean": "Obtienes un 10 de velocidad de movimiento durante segundos, hasta un máximo de un 50.",
+    "RuneDescription": "{c_RuneEffect}Obtienes un {c_number}10%{/c} de velocidad de movimiento durante {c_number}{s1}{/c} segundos, hasta un máximo de un {c_number}50%{/c}.{/c}",
+    "RuneOverflowBehavior": "Duración aumentada"
+  },
+  {
+    "IdSno": "2004804",
+    "IdName": "Item_Rune_Effect_Druid_EarthenBulwark",
+    "RuneType": "effect",
+    "Name": "Que",
+    "Description": "Invocas la habilidad Baluarte Rocoso del Druida durante # segundos, lo cual te otorga una barrera.",
+    "DescriptionClean": "Invocas la habilidad Baluarte Rocoso del Druida durante segundos, lo cual te otorga una barrera.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Baluarte Rocoso{/c} del Druida durante {c_number}{s1}{/c} segundos, lo cual te otorga una {c_important}{u}barrera{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "Duración aumentada"
+  },
+  {
+    "IdSno": "2040870",
+    "IdName": "Item_Rune_Effect_Subpower_Swarm",
+    "RuneType": "effect",
+    "Name": "Tal",
+    "Description": "Invoca el Enjambre Pestilente del Encarnaespíritu, el cual inflige daño a los enemigos.",
+    "DescriptionClean": "Invoca el Enjambre Pestilente del Encarnaespíritu, el cual inflige daño a los enemigos.",
+    "RuneDescription": "{c_RuneEffect}Invoca el {c_important}Enjambre Pestilente{/c} del Encarnaespíritu, el cual inflige daño a los enemigos.{/c}",
+    "RuneOverflowBehavior": "Aumento de enjambres generados"
+  },
+  {
+    "IdSno": "1968106",
+    "IdName": "Item_Rune_Condition_OnCastCoreSkill",
+    "RuneType": "condition",
+    "Name": "Tam",
+    "Description": "Lanza una habilidad principal no canalizada.",
+    "DescriptionClean": "Lanza una habilidad principal no canalizada.",
+    "RuneDescription": "{c_RuneCondition}Lanza una habilidad {c_important}principal{/c} no {c_important}canalizada{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2088916",
+    "IdName": "Item_Rune_Effect_Necromancer_IronMaiden",
+    "RuneType": "effect",
+    "Name": "Teb",
+    "Description": "Invocas la habilidad Doncella de Hierro Abominable del Nigromante, la cual contraataca a los enemigos y te sana cuando mueren.",
+    "DescriptionClean": "Invocas la habilidad Doncella de Hierro Abominable del Nigromante, la cual contraataca a los enemigos y te sana cuando mueren.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Doncella de Hierro Abominable{/c} del Nigromante, la cual contraataca a los enemigos y te sana cuando mueren.{/c}",
+    "RuneOverflowBehavior": "Aumenta el daño un 1% por ofrenda"
+  },
+  {
+    "IdSno": "1983344",
+    "IdName": "Item_Rune_Effect_Subpower_Earthquake",
+    "RuneType": "effect",
+    "Name": "Tec",
+    "Description": "Invoca el Terremoto del Bárbaro, el cual inflige daño a los enemigos en su interior.",
+    "DescriptionClean": "Invoca el Terremoto del Bárbaro, el cual inflige daño a los enemigos en su interior.",
+    "RuneDescription": "{c_RuneEffect}Invoca el {c_important}Terremoto{/c} del Bárbaro, el cual inflige daño a los enemigos en su interior.{/c}",
+    "RuneOverflowBehavior": "Tamaño hasta un 100% mayor."
+  },
+  {
+    "IdSno": "1969845",
+    "IdName": "Item_Rune_Effect_Sorcerer_FrostNova",
+    "RuneType": "effect",
+    "Name": "Thul",
+    "Description": "Invocas la habilidad Nova Gélida Mística del Hechicero, la cual congela y vuelve vulnerables a los enemigos.",
+    "DescriptionClean": "Invocas la habilidad Nova Gélida Mística del Hechicero, la cual congela y vuelve vulnerables a los enemigos.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Nova Gélida Mística{/c} del Hechicero, la cual {c_important}{u}congela{/u}{/c} y vuelve {c_important}{u}vulnerables{/u}{/c} a los enemigos.{/c}",
+    "RuneOverflowBehavior": "Tamaño hasta un 100% mayor"
+  },
+  {
+    "IdSno": "2004875",
+    "IdName": "Item_Rune_Effect_Subpower_Meteorites",
+    "RuneType": "effect",
+    "Name": "Ton",
+    "Description": "Invoca los Meteoritos del Hechicero, los cuales infligen daño a los enemigos.",
+    "DescriptionClean": "Invoca los Meteoritos del Hechicero, los cuales infligen daño a los enemigos.",
+    "RuneDescription": "{c_RuneEffect}Invoca los {c_important}Meteoritos{/c} del Hechicero, los cuales infligen daño a los enemigos.{/c}",
+    "RuneOverflowBehavior": "Aumento de meteoritos generados"
+  },
+  {
+    "IdSno": "2004781",
+    "IdName": "Item_Rune_Effect_Subpower_Grenades",
+    "RuneType": "effect",
+    "Name": "Tun",
+    "Description": "Invoca las Granadas Aturdidoras del Renegado, las cuales aturden a los enemigos y les infligen daño.",
+    "DescriptionClean": "Invoca las Granadas Aturdidoras del Renegado, las cuales aturden a los enemigos y les infligen daño.",
+    "RuneDescription": "{c_RuneEffect}Invoca las {c_important}Granadas Aturdidoras{/c} del Renegado, las cuales aturden a los enemigos y les infligen daño.{/c}",
+    "RuneOverflowBehavior": "Aumento de granadas generadas"
+  },
+  {
+    "IdSno": "2093513",
+    "IdName": "Item_Rune_Effect_Spiritborn_ConcussiveStomp",
+    "RuneType": "effect",
+    "Name": "Tzic",
+    "Description": "Invocas la habilidad Pisotón Conmocionante del Encarnaespíritu, el cual inflige daño y derriba a los enemigos.",
+    "DescriptionClean": "Invocas la habilidad Pisotón Conmocionante del Encarnaespíritu, el cual inflige daño y derriba a los enemigos.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Pisotón Conmocionante{/c} del Encarnaespíritu, el cual inflige daño y derriba a los enemigos.{/c}",
+    "RuneOverflowBehavior": "Aumenta el daño un 1% por ofrenda"
+  },
+  {
+    "IdSno": "2020680",
+    "IdName": "Item_Rune_Condition_OnPetKillOrDie",
+    "RuneType": "condition",
+    "Name": "Ur",
+    "Description": "Tu esbirro o compañero mata a un enemigo o muere.",
+    "DescriptionClean": "Tu esbirro o compañero mata a un enemigo o muere.",
+    "RuneDescription": "{c_RuneCondition}Tu {c_important}esbirro{/c} o {c_important}compañero{/c} mata a un enemigo o muere.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2024156",
+    "IdName": "Item_Rune_Effect_BonusToAllSkills",
+    "RuneType": "effect",
+    "Name": "Vex",
+    "Description": "Obtienes +1 para todas las habilidades durante 10 segundos.",
+    "DescriptionClean": "Obtienes 1 para todas las habilidades durante 10 segundos.",
+    "RuneDescription": "{c_RuneEffect}Obtienes {c_number}+1{/c} para todas las habilidades durante {c_number}10{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Más rangos de habilidad, hasta un máximo de 3."
+  },
+  {
+    "IdSno": "2004862",
+    "IdName": "Item_Rune_Effect_Necromancer_Decrepify",
+    "RuneType": "effect",
+    "Name": "Wat",
+    "Description": "Invoca la habilidad Decrepitación Horrenda del Nigromante, la cual ralentiza a los enemigos, reduce su daño y te permite ejecutarlos.",
+    "DescriptionClean": "Invoca la habilidad Decrepitación Horrenda del Nigromante, la cual ralentiza a los enemigos, reduce su daño y te permite ejecutarlos.",
+    "RuneDescription": "{c_RuneEffect}Invoca la habilidad {c_important}Decrepitación Horrenda{/c} del Nigromante, la cual ralentiza a los enemigos, reduce su daño y te permite {c_important}{u}ejecutarlos{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "Duración aumentada"
+  },
+  {
+    "IdSno": "2021640",
+    "IdName": "Item_Rune_Effect_MaxHPIncrease",
+    "RuneType": "effect",
+    "Name": "Xal",
+    "Description": "Obtienes un 20% de tu Vida máxima durante # segundos.",
+    "DescriptionClean": "Obtienes un 20 de tu Vida máxima durante segundos.",
+    "RuneDescription": "{c_RuneEffect}Obtienes un {c_number}20%{/c} de tu Vida máxima durante {c_number}{s1}{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Obtienes más Vida máxima."
+  },
+  {
+    "IdSno": "2047113",
+    "IdName": "Item_Rune_Effect_CriticalOverpower",
+    "RuneType": "effect",
+    "Name": "Xan",
+    "Description": "Tu siguiente ataque hará que tus golpes asesten golpes críticos garantizados y abrumen durante 0.35 segundos.",
+    "DescriptionClean": "Tu siguiente ataque hará que tus golpes asesten golpes críticos garantizados y abrumen durante 0.35 segundos.",
+    "RuneDescription": "{c_RuneEffect}Tu siguiente ataque hará que tus golpes asesten golpes críticos garantizados y {c_important}{u}abrumen{/u}{/c} durante {c_number}0.35{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Duración aumentada"
+  },
+  {
+    "IdSno": "2040699",
+    "IdName": "Item_Rune_Condition_OnCastCrossClassSkill",
+    "RuneType": "condition",
+    "Name": "Xol",
+    "Description": "Invoca una habilidad de otra clase",
+    "DescriptionClean": "Invoca una habilidad de otra clase",
+    "RuneDescription": "{c_RuneCondition}Invoca una habilidad de otra clase{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969053",
+    "IdName": "Item_Rune_Condition_OnPotion",
+    "RuneType": "condition",
+    "Name": "Yax",
+    "Description": "Bebe una Poción de vida.",
+    "DescriptionClean": "Bebe una Poción de vida.",
+    "RuneDescription": "{c_RuneCondition}Bebe una Poción de vida.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2090793",
+    "IdName": "Item_Rune_Effect_Druid_Petrify",
+    "RuneType": "effect",
+    "Name": "Yom",
+    "Description": "Invocas la habilidad Petrificación del Druida, aturdes a los enemigos y restauras recurso primario.",
+    "DescriptionClean": "Invocas la habilidad Petrificación del Druida, aturdes a los enemigos y restauras recurso primario.",
+    "RuneDescription": "{c_RuneEffect}Invocas la habilidad {c_important}Petrificación{/c} del Druida, aturdes a los enemigos y restauras recurso primario.{/c}",
+    "RuneOverflowBehavior": "Aumenta la duración del aturdimiento"
+  },
+  {
+    "IdSno": "2004497",
+    "IdName": "Item_Rune_Condition_AllSkillsOnCD",
+    "RuneType": "condition",
+    "Name": "Yul",
+    "Description": "Lanza una habilidad con recuperación.",
+    "DescriptionClean": "Lanza una habilidad con recuperación.",
+    "RuneDescription": "{c_RuneCondition}Lanza una habilidad con recuperación.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968549",
+    "IdName": "Item_Rune_Condition_OnCastUltimateSkill",
+    "RuneType": "condition",
+    "Name": "Zan",
+    "Description": "Lanza una habilidad máxima.",
+    "DescriptionClean": "Lanza una habilidad máxima.",
+    "RuneDescription": "{c_RuneCondition}Lanza una habilidad {c_important}máxima{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968671",
+    "IdName": "Item_Rune_Effect_ReduceUltimateCD",
+    "RuneType": "effect",
+    "Name": "Zec",
+    "Description": "Reduce la recuperación de tu habilidad máxima activa en # segundos.",
+    "DescriptionClean": "Reduce la recuperación de tu habilidad máxima activa en segundos.",
+    "RuneDescription": "{c_RuneEffect}Reduce la recuperación de tu habilidad {c_important}máxima{/c} activa en {c_number}{s1}{/c} segundos.{/c}",
+    "RuneOverflowBehavior": "Recuperación aún más reducida"
+  },
+  {
+    "IdSno": "2433257",
+    "IdName": "Item_Rune_Effect_Subpower_Spear",
+    "RuneType": "effect",
+    "Name": "Zid",
+    "Description": "Invoca la Lanza Bendita y ataca a enemigos cercanos.",
+    "DescriptionClean": "Invoca la Lanza Bendita y ataca a enemigos cercanos.",
+    "RuneDescription": "{c_RuneEffect}Invoca la {c_important}Lanza Bendita{/c} y ataca a enemigos cercanos{/c}.",
+    "RuneOverflowBehavior": "Daño aumentado"
+  }
+]

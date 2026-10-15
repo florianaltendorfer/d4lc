@@ -1,0 +1,196 @@
+# Upstream resource keys (D4Companion.Localization/Resources.resx) the port consumes.
+# A UI string is localized when its @tr msgid is the English value of one of these keys;
+# `cargo xtask import-upstream-locales` turns this list into the .po catalogues.
+# Add a key here when a control aligns to an upstream `{loc:LocExtension <key>}`.
+rsCapSettings  # main_window.slint, screens/debug_screen.slint, screens/settings_screen.slint
+rsCapDebug  # main_window.slint, screens/debug_screen.slint
+rsCapLogging  # screens/logging_screen.slint
+rsCapAffixes  # dialogs/add_trade_item_dialog.slint, screens/affix_screen.slint
+rsTooltipRemovePreset  # screens/affix_screen.slint
+rsTooltipDropOnly  # screens/affix_screen.slint
+rsTooltipSeasonal  # screens/affix_screen.slint
+rsCapSigils  # screens/affix_screen.slint
+rsCapAspects  # dialogs/colors_config_dialog.slint, screens/affix_screen.slint
+rsCapGearAffixPresets  # screens/affix_screen.slint
+rsCapHelm  # dialogs/set_affix_dialog.slint
+rsCapChest  # dialogs/set_affix_dialog.slint
+rsCapGloves  # dialogs/set_affix_dialog.slint
+rsCapPants  # dialogs/set_affix_dialog.slint
+rsCapBoots  # dialogs/set_affix_dialog.slint
+rsCapAmulet  # dialogs/set_affix_dialog.slint
+rsCapRing  # dialogs/set_affix_dialog.slint
+rsCapWeapon  # dialogs/set_affix_dialog.slint
+rsCapRanged  # dialogs/set_affix_dialog.slint
+rsCapOffhand  # dialogs/set_affix_dialog.slint
+rsCapCore  # screens/affix_screen.slint
+rsCapBarbarian  # components/catalog_card.slint, screens/affix_screen.slint
+rsCapDruid  # components/catalog_card.slint, screens/affix_screen.slint
+rsCapNecromancer  # components/catalog_card.slint, screens/affix_screen.slint
+rsCapRogue  # components/catalog_card.slint, screens/affix_screen.slint
+rsCapSorcerer  # screens/affix_screen.slint
+rsCapDungeons  # screens/affix_screen.slint
+rsCapPositive  # screens/affix_screen.slint
+rsCapMinor  # screens/affix_screen.slint
+rsCapMajor  # screens/affix_screen.slint
+rsCapTooltipWidth  # screens/debug_screen.slint, screens/settings_screen.slint
+rsCapBrightnessThreshold  # screens/settings_screen.slint
+rsCapSimilarityThresholdTooltip  # screens/debug_screen.slint
+rsCapSimilarityThresholdAffixlocation  # screens/debug_screen.slint
+rsCapSimilarityThresholdAspectlocation  # screens/debug_screen.slint
+rsCapItemTooltip  # screens/debug_screen.slint
+rsCapItemType  # dialogs/add_trade_item_dialog.slint, screens/debug_screen.slint
+rsCapItemAffixesLocations  # screens/debug_screen.slint
+rsCapItemAffixesAreas  # screens/debug_screen.slint
+rsCapItemAspectLocation  # screens/debug_screen.slint
+rsCapItemAspectArea  # screens/debug_screen.slint
+rsTooltipDebugMode  # screens/settings_screen.slint
+rsTooltipCheckforUpdates  # screens/settings_screen.slint
+rsTooltipControllerMode  # screens/settings_screen.slint
+rsCapDebugMode  # screens/settings_screen.slint
+rsCapCheckforUpdates  # screens/settings_screen.slint
+rsCapControllerMode  # screens/settings_screen.slint
+rsCapSwitchPreset  # dialogs/hotkeys_config_dialog.slint
+rsCapToggleOverlay  # dialogs/hotkeys_config_dialog.slint
+rsCapSystempresets  # screens/settings_screen.slint
+rsCapHotkeys  # screens/settings_screen.slint
+rsCapAvailableSystemPresets  # screens/settings_screen.slint
+rsCapDescription  # screens/settings_screen.slint
+rsCapFileName  # screens/settings_screen.slint
+rsCapResolution  # screens/settings_screen.slint
+rsCapConfig  # screens/settings_screen.slint
+rsCapAppsettings  # screens/settings_screen.slint
+rsCapMarkers  # dialogs/overlay_config_dialog.slint
+rsCapOverlayFontSize  # dialogs/overlay_config_dialog.slint, dialogs/trade_config_dialog.slint
+rsCapAvailableImages  # dialogs/controller_config_dialog.slint
+rsCapDone  # dialogs/affix_config_dialog.slint, dialogs/aspect_config_dialog.slint, dialogs/colors_config_dialog.slint, dialogs/controller_config_dialog.slint, dialogs/hotkey_config_dialog.slint, dialogs/hotkeys_config_dialog.slint, dialogs/import_preset_dialog.slint, dialogs/multi_build_config_dialog.slint, dialogs/overlay_config_dialog.slint, dialogs/paragon_config_dialog.slint, dialogs/rename_preset_dialog.slint, dialogs/rune_config_dialog.slint, dialogs/set_affix_color_dialog.slint, dialogs/set_affix_dialog.slint, dialogs/set_preset_name_dialog.slint, dialogs/sigil_config_dialog.slint, dialogs/trade_config_dialog.slint, dialogs/unique_config_dialog.slint
+rsCapLocal  # dialogs/import_preset_dialog.slint
+rsCapMaxroll  # dialogs/import_preset_dialog.slint
+rsCapAffix  # dialogs/set_affix_dialog.slint
+rsCapClearLog  # screens/logging_screen.slint
+rsCapItemSocketLocations  # screens/debug_screen.slint
+rsCapSimilarityThresholdSocketLocation  # screens/debug_screen.slint
+rsTooltipAdd  # dialogs/import_preset_dialog.slint
+rsTooltipRemove  # dialogs/import_preset_dialog.slint
+rsTooltipPresetDownloadTip  # screens/settings_screen.slint
+rsCapConfirmName  # dialogs/import_preset_dialog.slint
+rsCapD4Builds  # dialogs/import_preset_dialog.slint
+rsCapDownloadingWait  # dialogs/import_preset_dialog.slint
+rsCapOcrResults  # screens/debug_screen.slint
+rsCapAspectOcrResults  # screens/debug_screen.slint
+rsCapAffixAreaHeightOffsetTop  # screens/debug_screen.slint, screens/settings_screen.slint
+rsCapAffixAreaHeightOffsetBottom  # screens/debug_screen.slint, screens/settings_screen.slint
+rsCapAffixAspectAreaWidthOffset  # screens/debug_screen.slint, screens/settings_screen.slint
+rsCapAspectAreaHeightOffsetTop  # screens/debug_screen.slint, screens/settings_screen.slint
+rsCapMerge  # dialogs/import_preset_dialog.slint
+rsCapBuild1  # dialogs/import_preset_dialog.slint
+rsTooltipMergeBuild1  # dialogs/import_preset_dialog.slint
+rsCapBuild2  # dialogs/import_preset_dialog.slint
+rsTooltipMergeBuild2  # dialogs/import_preset_dialog.slint
+rsCapBuild12  # dialogs/import_preset_dialog.slint
+rsTooltipMergeBuild12  # dialogs/import_preset_dialog.slint
+rsCapTopMost  # screens/debug_screen.slint
+rsCapPerformance  # dialogs/overlay_config_dialog.slint, screens/debug_screen.slint
+rsCapItemSplitterLocations  # screens/debug_screen.slint
+rsCapSimilarityThresholdSplitterLocation  # screens/debug_screen.slint
+rsTooltipManageHotkeys  # screens/settings_screen.slint
+rsCapToggleDebugLockScreencapture  # dialogs/hotkeys_config_dialog.slint
+rsCapOverlayConfig  # screens/settings_screen.slint
+rsTooltipOverlayConfig  # screens/settings_screen.slint
+rsCapItemTypePowerOcrResults  # screens/debug_screen.slint
+rsCapItemPowerLimit  # dialogs/overlay_config_dialog.slint
+rsCapMinimalOcrMatchType  # screens/debug_screen.slint
+rsCapTooltipMaxHeight  # screens/debug_screen.slint
+rsCapTakeScreenshot  # dialogs/hotkeys_config_dialog.slint
+rsCapDungeonTiers  # dialogs/sigil_config_dialog.slint
+rsTooltipIsTemperingAvailable  # screens/affix_screen.slint
+rsCapCancel  # dialogs/add_trade_item_dialog.slint, dialogs/affix_config_dialog.slint, dialogs/aspect_config_dialog.slint, dialogs/colors_config_dialog.slint, dialogs/controller_config_dialog.slint, dialogs/hotkey_config_dialog.slint, dialogs/hotkeys_config_dialog.slint, dialogs/import_preset_dialog.slint, dialogs/overlay_config_dialog.slint, dialogs/paragon_config_dialog.slint, dialogs/rename_preset_dialog.slint, dialogs/rune_config_dialog.slint, dialogs/set_affix_color_dialog.slint, dialogs/set_affix_dialog.slint, dialogs/set_preset_name_dialog.slint, dialogs/sigil_config_dialog.slint, dialogs/trade_config_dialog.slint, dialogs/unique_config_dialog.slint
+rsCapOn  # screens/debug_screen.slint
+rsCapOff  # screens/debug_screen.slint
+rsTooltipDebugToggle  # screens/debug_screen.slint
+rsCapTooltipHeight  # screens/settings_screen.slint
+rsCapToggleController  # dialogs/hotkeys_config_dialog.slint
+rsCapMobalytics  # dialogs/import_preset_dialog.slint
+rsCapType  # dialogs/set_affix_dialog.slint
+rsCapImplicit  # dialogs/colors_config_dialog.slint, dialogs/set_affix_dialog.slint
+rsCapGreater  # dialogs/colors_config_dialog.slint, dialogs/set_affix_dialog.slint
+rsCapTempered  # dialogs/colors_config_dialog.slint, dialogs/set_affix_dialog.slint
+rsCapManageColors  # dialogs/affix_config_dialog.slint, dialogs/aspect_config_dialog.slint, dialogs/rune_config_dialog.slint, dialogs/unique_config_dialog.slint, screens/settings_screen.slint
+rsTooltipManageColors  # screens/settings_screen.slint
+rsCapNormal  # dialogs/colors_config_dialog.slint
+rsCapGeneral  # dialogs/overlay_config_dialog.slint
+rsCapFeatures  # dialogs/overlay_config_dialog.slint
+rsCapScreenCaptureDelay  # dialogs/overlay_config_dialog.slint
+rsTooltipScreenCaptureDelay  # dialogs/overlay_config_dialog.slint
+rsCapTemperedAffixDetection  # dialogs/affix_config_dialog.slint, dialogs/overlay_config_dialog.slint
+rsCapAspectDetection  # dialogs/aspect_config_dialog.slint, dialogs/overlay_config_dialog.slint
+rsCapTrading  # screens/trade_screen.slint
+rsCapTradeOverlay  # dialogs/overlay_config_dialog.slint, dialogs/trade_config_dialog.slint
+rsCapCurrentItem  # dialogs/trade_config_dialog.slint, main_window.slint, screens/debug_screen.slint, screens/trade_screen.slint
+rsCapOverwriteWarningPreset  # dialogs/import_preset_dialog.slint
+rsCapUniques  # dialogs/colors_config_dialog.slint, screens/affix_screen.slint
+rsCapUniqueDetection  # dialogs/unique_config_dialog.slint
+rsCapScanHeight  # dialogs/overlay_config_dialog.slint
+rsTooltipScanHeight  # dialogs/overlay_config_dialog.slint
+rsCapSpiritborn  # components/catalog_card.slint, screens/affix_screen.slint
+rsCapRunes  # dialogs/colors_config_dialog.slint, screens/affix_screen.slint
+rsCapRuneDetection  # dialogs/rune_config_dialog.slint
+rsTooltipRuneEffect  # screens/affix_screen.slint
+rsTooltipRuneCondition  # screens/affix_screen.slint
+rsTooltipSorc  # components/catalog_card.slint
+rsCapMultiBuildMode  # dialogs/affix_config_dialog.slint, dialogs/aspect_config_dialog.slint, dialogs/rune_config_dialog.slint, dialogs/sigil_config_dialog.slint, dialogs/unique_config_dialog.slint
+rsCapMinimalAffixValue  # dialogs/set_affix_dialog.slint
+rsCapMinimalAffixValueFilter  # dialogs/affix_config_dialog.slint
+rsTooltipToggleOverlayOn  # screens/affix_screen.slint
+rsTooltipToggleOverlayOff  # screens/affix_screen.slint
+rsCapShowOverlayIcon  # dialogs/overlay_config_dialog.slint
+rsCapOverlayUpdateDelay  # dialogs/overlay_config_dialog.slint
+rsTooltipOverlayUpdateDelay  # dialogs/overlay_config_dialog.slint
+rsMinimizeToTray  # screens/settings_screen.slint
+rsTooltipMinimizeToTray  # screens/settings_screen.slint
+rsLaunchMinimized  # screens/settings_screen.slint
+rsTooltipLaunchMinimized  # screens/settings_screen.slint
+rsCapImportParagon  # dialogs/import_preset_dialog.slint
+rsCapParagonMode  # dialogs/paragon_config_dialog.slint, screens/settings_screen.slint
+rsTooltipParagonMode  # screens/settings_screen.slint
+rsCapParagonNodeSize  # dialogs/paragon_config_dialog.slint
+rsCapSwitchOverlay  # dialogs/hotkeys_config_dialog.slint
+rsCapParagonNodeSizeDescription  # screens/settings_screen.slint
+rsCapParagonBorderSize  # dialogs/paragon_config_dialog.slint
+rsCapGerman  # screens/settings_screen.slint
+rsCapEnglish  # screens/settings_screen.slint
+rsCapSpanishEU  # screens/settings_screen.slint
+rsCapSpanishLA  # screens/settings_screen.slint
+rsCapFrench  # screens/settings_screen.slint
+rsCapItalian  # screens/settings_screen.slint
+rsCapJapanese  # screens/settings_screen.slint
+rsCapKorean  # screens/settings_screen.slint
+rsCapPolish  # screens/settings_screen.slint
+rsCapPortuguese  # screens/settings_screen.slint
+rsCapRussian  # screens/settings_screen.slint
+rsCapTurkish  # screens/settings_screen.slint
+rsCapChineseSimplified  # screens/settings_screen.slint
+rsCapChineseTraditional  # screens/settings_screen.slint
+rsCapUseCollapsedBoard  # dialogs/paragon_config_dialog.slint
+rsCapParagonNodeSizeCollapsed  # dialogs/paragon_config_dialog.slint
+rsCapParagonNodeSizeCollapsedDescription  # screens/settings_screen.slint
+rsCapLeftOffsetCollapsed  # dialogs/paragon_config_dialog.slint
+rsCapTopOffsetCollapsed  # dialogs/paragon_config_dialog.slint
+rsCapImportPreset  # dialogs/import_preset_dialog.slint, screens/affix_screen.slint
+rsCapPaladin  # components/catalog_card.slint, screens/affix_screen.slint
+rsCapD2Core  # dialogs/import_preset_dialog.slint
+rsCapSocketDetection  # dialogs/overlay_config_dialog.slint
+rsCapWarlock  # components/catalog_card.slint, screens/affix_screen.slint
+rsCapShowBrowser  # dialogs/import_preset_dialog.slint, dialogs/paragon_config_dialog.slint
+rsCapTypeAreaOffsetLeft  # dialogs/overlay_config_dialog.slint, screens/debug_screen.slint
+rsCapAspectAreaMaxHeight  # screens/debug_screen.slint
+rsCapTypeAreaOffsetRight  # screens/debug_screen.slint
+rsCapInfinityBuilds  # dialogs/import_preset_dialog.slint
+rsCapTuningPrismHints  # dialogs/affix_config_dialog.slint
+rsCapToggleTuningPrismHints  # dialogs/hotkeys_config_dialog.slint
+# Strings Rust builds itself (looked up through `i18n::tr`; the importer must carry them):
+rsCapId  # src/actions/debug/output.rs
+rsCapText  # src/actions/debug/output.rs, src/actions/debug/live.rs
+rsCapRenamePreset  # src/app_state/dialog.rs
+rsCapBuildUrlDetected  # src/actions/build_import_dialogs/gates.rs
+rsCapProfileUrlDetected  # src/actions/build_import_dialogs/gates.rs
+rsCapBuildProfileUrlMissing  # src/actions/build_import_dialogs/gates.rs

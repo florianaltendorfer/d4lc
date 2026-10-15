@@ -1,0 +1,450 @@
+// Add trade item dialog.
+//
+// Upstream: AddTradeItemView.xaml + AddTradeItemViewModel.cs.
+//
+// Form contract:
+//
+// - Form values are projected on the root `AppWindow` as the
+//   `trade-form-item-type` and `trade-form-value-text` in-out
+//   string properties (see `main_window.slint`). The dialog binds
+//   its type and value `LineEdit` controls to those root
+//   properties, so the form values flow directly between Slint and
+//   Rust without a separate Slint global.
+// - Confirm / cancel flow through the shared dialog host
+//   `dialog-confirm` / `dialog-cancel` callbacks, which the
+//   shared `actions::dialogs` router dispatches to
+//   `actions::trade_dialogs::handle_confirm` / `handle_cancel`.
+// - Validation errors are surfaced through the shared
+//   `dialog-error` / `dialog-error-visible` props.
+//
+// Item editing: the type field stays a
+// free-text `LineEdit` whose placeholder is load-bearing for the
+// headless real-input harness (`e.g. Amulet, Two-Handed Sword`);
+// the host enforces the fixed type enumeration on confirm
+// (`d4lc_gui::trade::TRADE_ITEM_TYPES` / `is_known_item_type`).
+// The affix editing surface is the port of the upstream right-hand
+// picker column (AddTradeItemView.xaml:124-235): a `;`-keyword
+// filter box, the filtered affix / rune candidate lists with
+// per-row add buttons, and the attached-affix rows with the
+// IsGreater checkbox (hidden for runes, xaml:87-88) and the remove
+// button. The dialog renders whatever the host projects into the
+// models and forwards every picker gesture to the root callbacks
+// wired in `wiring.rs`; the host applies the staged affix rows to
+// the real `d4lc_gui::trade` ViewModel on confirm.
+import { LineEdit, ScrollView } from "std-widgets.slint";
+
+// One row of the affix / rune candidate picker. `label` is the
+// resolved catalog description (affixes) or rune name (runes).
+export struct TradePickerRow {
+    affix-id: string,
+    label: string,
+}
+
+// One staged (not yet confirmed) affix row of the dialog draft —
+// the port of the upstream `TradeItem.Affixes` ObservableCollection
+// the AddTradeItemViewModel mutates live.
+export struct TradeStagedAffix {
+    affix-id: string,
+    label: string,
+    is-greater: bool,
+}
+
+export component AddTradeItemDialog {
+    in property <string> dialog-title: @tr("Add Trade Item");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+    // Edit mode hides the Cancel button exactly like upstream
+    // (AddTradeItemView.xaml:240-242 binds the Cancel visibility to
+    // `EditMode` with the inverse visibility converter). The dialog
+    // host must seed this property for the edit flow.
+    in property <bool> edit-mode: false;
+    // Whether the current form type is the rune type — switches the
+    // candidate list to runes and hides the IsGreater checkboxes
+    // (upstream `IsItemTypeRune`, AddTradeItemView.xaml:128/183).
+    // Projected by the host (case-insensitive match in Rust).
+    in property <bool> item-type-is-rune: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust can read them via
+    // `app.get_trade_form_item_type()` / `app.get_trade_form_value_text()`.
+    in-out property <string> trade-form-item-type: "";
+    in-out property <string> trade-form-value-text: "";
+
+    // Picker channels (host-projected models, see the module notes).
+    in property <[TradePickerRow]> affix-candidates: [];
+    in property <[TradePickerRow]> rune-candidates: [];
+    in property <[TradeStagedAffix]> item-affixes: [];
+    in-out property <string> affix-filter: "";
+
+    callback confirm();
+    callback cancel();
+    callback add-affix(string);
+    callback add-rune-affix(string);
+    callback remove-affix(string);
+    callback toggle-affix-is-greater(string, bool);
+    // Change notifications so the host can re-filter the candidate
+    // models (upstream `AffixTextFilter` setter refreshes the
+    // filtered views) and apply the rune-boundary affix clearing
+    // (upstream `SelectedItemType` setter).
+    callback filter-edited(string);
+    callback type-edited(string);
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+            vertical-stretch: 0;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+            vertical-stretch: 0;
+        }
+
+        // ── Two-column core (upstream AddTradeItemView.xaml grid:
+        //    left = type / value / affixes, right = filter / picker) ──
+        // vertical-stretch: 0 pins every row to the top of the dialog
+        // and lets only the spacer below absorb the leftover height
+        // (layout stretch would otherwise distribute the extra space
+        // into the core and push the picker off the dialog box).
+        HorizontalLayout {
+            spacing: 12px;
+            vertical-stretch: 0;
+
+            // ── Left column ────────────────────────────────────────
+            VerticalLayout {
+                spacing: 6px;
+
+                Text {
+                    text: @tr("d4lc" => "Item Type");
+                    color: #CCCCCC;
+                    font-size: 12px;
+                }
+                LineEdit {
+                    text <=> trade-form-item-type;
+                    placeholder-text: @tr("e.g. Amulet, Two-Handed Sword");
+                    edited(text) => { type-edited(text); }
+                }
+
+                Text {
+                    text: @tr("Value (gold)");
+                    color: #CCCCCC;
+                    font-size: 12px;
+                }
+                LineEdit {
+                    text <=> trade-form-value-text;
+                    placeholder-text: "e.g. 10M, 5b";
+                }
+
+                Text {
+                    text: @tr("d4lc" => "Affixes");
+                    color: #CCCCCC;
+                    font-size: 12px;
+                }
+                // Attached affix rows (upstream xaml:68-121): the
+                // IsGreater checkbox is hidden for runes, the description
+                // text carries the Orange/White IsGreater color split,
+                // and every row has the CloseThick remove button.
+                Rectangle {
+                    border-width: 1px;
+                    border-color: #333333;
+                    // A plain Rectangle does not size from its children,
+                    // and a ScrollView derives its preferred size from its
+                    // (long) content — so both get explicit heights.
+                    min-height: 72px;
+                    max-height: 72px;
+
+                    if item-affixes.length == 0: Text {
+                        text: @tr("No affixes picked.");
+                        color: #868686;
+                        font-size: 11px;
+                        vertical-alignment: center;
+                    }
+
+                    if item-affixes.length > 0: ScrollView {
+                        min-height: 72px;
+                        max-height: 72px;
+
+                        VerticalLayout {
+                            spacing: 2px;
+
+                            for affix in item-affixes: Rectangle {
+                                background: #333333;
+                                border-radius: 3px;
+                                min-height: 22px;
+
+                                HorizontalLayout {
+                                    padding-left: 4px;
+                                    padding-right: 14px;
+                                    spacing: 4px;
+
+                                    if !item-type-is-rune: Rectangle {
+                                        background: affix.is-greater ? #CC3333 : transparent;
+                                        border-width: 1px;
+                                        border-color: #777777;
+                                        border-radius: 3px;
+                                        preferred-width: 14px;
+                                        preferred-height: 14px;
+                                        accessible-role: checkbox;
+                                        accessible-label: @tr("Greater affix {}", affix.label);
+
+                                        if affix.is-greater: Text {
+                                            text: "✓";
+                                            color: #EEEEEE;
+                                            font-size: 10px;
+                                            horizontal-alignment: center;
+                                            vertical-alignment: center;
+                                        }
+
+                                        TouchArea {
+                                            clicked => {
+                                                toggle-affix-is-greater(affix.affix-id, !affix.is-greater);
+                                            }
+                                        }
+                                    }
+
+                                    Text {
+                                        text: affix.label;
+                                        color: affix.is-greater ? #FFA500 : #FFFFFF;
+                                        font-size: 11px;
+                                        vertical-alignment: center;
+                                        overflow: elide;
+                                    }
+
+                                    Rectangle { background: transparent; }
+
+                                    Rectangle {
+                                        background: transparent;
+                                        preferred-width: 18px;
+                                        preferred-height: 18px;
+                                        accessible-role: button;
+                                        accessible-label: @tr("Remove affix {}", affix.label);
+                                        Text {
+                                            text: "✖";
+                                            color: #B01E24;
+                                            font-size: 12px;
+                                            horizontal-alignment: center;
+                                            vertical-alignment: center;
+                                        }
+                                        TouchArea {
+                                            clicked => { remove-affix(affix.affix-id); }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ── Right column ───────────────────────────────────────
+            VerticalLayout {
+                spacing: 6px;
+
+                // The upstream filter box watermark (xaml:125).
+                LineEdit {
+                    text <=> affix-filter;
+                    placeholder-text: @tr("Enter filter");
+                    edited(text) => { filter-edited(text); }
+                }
+
+                // Affix candidates (upstream xaml:127-180) — hidden for
+                // rune types, exactly like the upstream visibility
+                // bindings on the two candidate borders.
+                if !item-type-is-rune: Rectangle {
+                    border-width: 1px;
+                    border-color: #333333;
+                    // A plain Rectangle does not size from its children,
+                    // and a ScrollView derives its preferred size from its
+                    // (long) content — so both get explicit heights.
+                    min-height: 200px;
+                    max-height: 200px;
+
+                    ScrollView {
+                        min-height: 200px;
+                        max-height: 200px;
+
+                        VerticalLayout {
+                            spacing: 2px;
+
+                            for candidate in affix-candidates: Rectangle {
+                                background: #333333;
+                                border-radius: 3px;
+                                min-height: 22px;
+
+                                HorizontalLayout {
+                                    padding-left: 4px;
+                                    padding-right: 14px;
+                                    spacing: 4px;
+
+                                    Text {
+                                        text: candidate.label;
+                                        color: #FFFFFF;
+                                        font-size: 11px;
+                                        vertical-alignment: center;
+                                        overflow: elide;
+                                    }
+
+                                    Rectangle { background: transparent; }
+
+                                    Rectangle {
+                                        background: transparent;
+                                        preferred-width: 18px;
+                                        preferred-height: 18px;
+                                        accessible-role: button;
+                                        accessible-label: @tr("Add affix {}", candidate.label);
+                                        Text {
+                                            text: "+";
+                                            color: #EEEEEE;
+                                            font-size: 13px;
+                                            font-weight: 700;
+                                            horizontal-alignment: center;
+                                            vertical-alignment: center;
+                                        }
+                                        TouchArea {
+                                            clicked => { add-affix(candidate.affix-id); }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                // Rune candidates (upstream xaml:182-235) — shown only
+                // for rune types; the add button is gated on the draft
+                // holding no affix yet (upstream `CanAddAffixRuneExecute`,
+                // AddTradeItemViewModel.cs:177-180).
+                if item-type-is-rune: Rectangle {
+                    border-width: 1px;
+                    border-color: #333333;
+                    min-height: 200px;
+                    max-height: 200px;
+
+                    ScrollView {
+                        min-height: 200px;
+                        max-height: 200px;
+
+                        VerticalLayout {
+                            spacing: 2px;
+
+                            for candidate in rune-candidates: Rectangle {
+                                background: #333333;
+                                border-radius: 3px;
+                                min-height: 22px;
+
+                                HorizontalLayout {
+                                    padding-left: 4px;
+                                    padding-right: 14px;
+                                    spacing: 4px;
+
+                                    Text {
+                                        text: candidate.label;
+                                        color: #FFFFFF;
+                                        font-size: 11px;
+                                        vertical-alignment: center;
+                                        overflow: elide;
+                                    }
+
+                                    Rectangle { background: transparent; }
+
+                                    Rectangle {
+                                        background: transparent;
+                                        preferred-width: 18px;
+                                        preferred-height: 18px;
+                                        accessible-role: button;
+                                        accessible-label: @tr("Add rune {}", candidate.label);
+                                        Text {
+                                            text: "+";
+                                            color: item-affixes.length == 0 ? #EEEEEE : #666666;
+                                            font-size: 13px;
+                                            font-weight: 700;
+                                            horizontal-alignment: center;
+                                            vertical-alignment: center;
+                                        }
+                                        TouchArea {
+                                            enabled: item-affixes.length == 0;
+                                            clicked => { add-rune-affix(candidate.affix-id); }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ── Supported types note ────────────────────────────────────
+        Text {
+            text: @tr("Supported item types: Amulet, Boots, Chest, Gloves, Helm, Offhand, Pants, Ranged, Ring, Rune, Weapon. Rune items hold at most one affix.");
+            color: #888888;
+            font-size: 11px;
+            wrap: word-wrap;
+            vertical-stretch: 0;
+        }
+
+        // Spacer pushes buttons to the bottom (absorbs the leftover
+        // dialog height).
+        Rectangle {
+            background: transparent;
+            vertical-stretch: 1;
+        }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        // Upstream hides Cancel in edit mode (AddTradeItemView.xaml:240-242).
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+            vertical-stretch: 0;
+
+            if !edit-mode: Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Cancel");
+                Text {
+                    text: @tr("Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Confirm");
+                Text {
+                    text: @tr("Confirm");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

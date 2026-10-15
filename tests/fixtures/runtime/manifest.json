@@ -1,0 +1,1471 @@
+{
+  "manifest_version": 1,
+  "document": "Inventory of the reference fixtures the detection, OCR and build-import tests read.",
+  "game": "Diablo IV",
+  "generated_on": "2026-09-25",
+  "field_semantics": {
+    "origin": "synthetic = constructed, sanitized or non-capture material; real = recorded from an actual game session",
+    "availability": "present = every declared file exists and its sha256 matches",
+    "null_fields": "A null language, geometry, tooltip or affix-row value means the case does not carry that information yet. It is never guessed and never back-filled from look-alike material.",
+    "capture_only_fields": "game_ui_language, window_geometry, expected_tooltip_selection and expected_affix_rows describe capture cases. Import payload cases set them to null because they are rule-import inputs and expectations, not tooltip captures.",
+    "expected_affix_rows": "For an import expectation this field names the fixture that defines the expected rows and the row count of its affix_preset.affixes list; the manifest never restates rows that the fixture already owns."
+  },
+  "catalog_binding": {
+    "gate_command": "cargo run -q -p d4lc-cli -- upstream-asset-parity",
+    "gate_success_line": "UPSTREAM_ASSET_PARITY_OK=true",
+    "upstream_lock_file": "upstream.lock",
+    "upstream_lock_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+    "upstream_lock_release": "v5.4.0.0",
+    "local_run": {
+      "ran_on": "2026-09-25",
+      "exit_code": 0,
+      "copied_files_expected": 513,
+      "missing_files": 0,
+      "extra_files": 0,
+      "changed_files": 0,
+      "manifest_mismatches": 0,
+      "baseline_enus_failures": 0
+    }
+  },
+  "cases": [
+    {
+      "case_id": "real-frame-mouse-hover-outside-cursor",
+      "origin": "real",
+      "availability": "present",
+      "kind": "capture_frame",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/d4lc-livecap.png",
+          "sha256": "701d89931cb96c2441ae00bb6a2400b0e53894ea9a22b15fdaae52b4bb515e98"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": {
+        "capture_pixels": [
+          1920,
+          1080
+        ],
+        "window_rect": null,
+        "monitor_origin": null,
+        "scale": null,
+        "note": "Only the capture size is recorded; window rectangle, monitor origin and scale were never recorded with this capture (see blocked cases)."
+      },
+      "expected_tooltip_selection": {
+        "input_mode": "mouse",
+        "cursor": {
+          "x": 397,
+          "y": 462
+        },
+        "template": "tooltip_kb_all.png",
+        "marker_rect": {
+          "x": 1094,
+          "y": 843,
+          "width": 41,
+          "height": 22
+        },
+        "final_crop_rect": {
+          "x": 1094,
+          "y": 0,
+          "width": 375,
+          "height": 843
+        },
+        "oracle": "crates/d4lc-cli/src/detect.rs::mouse_mode_detects_the_live_capture_tooltip_outside_the_cursor_neighbourhood"
+      },
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Maintainer live screen capture of a running Diablo IV session, used as the detection regression frame.",
+        "evidence": [
+          "crates/d4lc-cli/src/detect.rs live-frame regression tests"
+        ]
+      },
+      "notes": [
+        "Regression frame for the full-frame marker search: the tooltip marker sits 697 px right of the hover position.",
+        "Tooltip selection is oracle-backed by the committed detection test; the capture itself is not re-validated by this manifest."
+      ]
+    },
+    {
+      "case_id": "real-frame-mouse-keyboard-tooltip",
+      "origin": "real",
+      "availability": "present",
+      "kind": "capture_frame",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/frame-KB.png",
+          "sha256": "a657799e5556f92fcb5ce7f124f1e2485f621c1c95aaf51c59392e002d2715df"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": {
+        "capture_pixels": [
+          1920,
+          1080
+        ],
+        "window_rect": null,
+        "monitor_origin": null,
+        "scale": null,
+        "note": "Only the capture size is recorded; window rectangle, monitor origin and scale were never recorded with this capture (see blocked cases)."
+      },
+      "expected_tooltip_selection": {
+        "input_mode": "mouse",
+        "cursor": {
+          "x": 397,
+          "y": null
+        },
+        "template": "tooltip_kb_all.png",
+        "marker_rect": {
+          "x": 1038,
+          "y": 882,
+          "width": 41,
+          "height": 22
+        },
+        "final_crop_rect": {
+          "x": 1038,
+          "y": 0,
+          "width": 375,
+          "height": 882
+        },
+        "oracle": "crates/d4lc-cli/src/detect.rs::mouse_mode_detects_the_tooltip_of_the_keyboard_live_frame"
+      },
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Maintainer live screen capture of a running Diablo IV session, used as the detection regression frame.",
+        "evidence": [
+          "crates/d4lc-cli/src/detect.rs live-frame regression tests"
+        ]
+      },
+      "notes": [
+        "Second maintainer frame of the keyboard tooltip; the committed detection test passes only the hover x coordinate, so the hover y is not recorded.",
+        "No OCR ground truth is attached to this capture."
+      ]
+    },
+    {
+      "case_id": "real-frame-controller-tooltip",
+      "origin": "real",
+      "availability": "present",
+      "kind": "capture_frame",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/frame-CTRL.png",
+          "sha256": "617c07d093d884b0f41960fb120410fb53e1fc9b218d8068336a0b5f5768d2b1"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": {
+        "capture_pixels": [
+          1920,
+          1080
+        ],
+        "window_rect": null,
+        "monitor_origin": null,
+        "scale": null,
+        "note": "Only the capture size is recorded; window rectangle, monitor origin and scale were never recorded with this capture (see blocked cases)."
+      },
+      "expected_tooltip_selection": {
+        "input_mode": "controller",
+        "cursor": {
+          "x": null,
+          "y": null
+        },
+        "template": "tooltip_gc_x.png",
+        "marker_rect": {
+          "x": 825,
+          "y": 869,
+          "width": 26,
+          "height": 22
+        },
+        "final_crop_rect": {
+          "x": 825,
+          "y": 0,
+          "width": 375,
+          "height": 869
+        },
+        "oracle": "crates/d4lc-cli/src/detect.rs::controller_mode_detects_the_tooltip_of_the_controller_live_frame"
+      },
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Maintainer live screen capture of a running Diablo IV session, used as the detection regression frame.",
+        "evidence": [
+          "crates/d4lc-cli/src/detect.rs live-frame regression tests"
+        ]
+      },
+      "notes": [
+        "Controller-input maintainer frame; the gamepad marker template differs from the keyboard template.",
+        "No OCR ground truth is attached to this capture."
+      ]
+    },
+    {
+      "case_id": "real-tooltip-tempered-greater-affix",
+      "origin": "real",
+      "availability": "present",
+      "kind": "tooltip_crop",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/tooltip-tempered-greater-affix.png",
+          "sha256": "bad862b4a369e6ff28891e5774b98c72e24ccc142a664beaf2e1c12239284172"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Maintainer live session 2026-10-02 (native 1920x1080, preset 1080p_SMF, mouse mode): the 375x883 tooltip crop the d4lc tooltip detection selected for an Ancestral Unique Sword whose \"+12.0% Attack Speed\" is a tempered affix rolled greater.",
+        "evidence": [
+          "crates/d4lc-runtime/src/ocr_parity.rs::tempered_greater_affix_marker_is_found_through_the_supplement",
+          "assets/d4lc/README.md"
+        ]
+      },
+      "notes": [
+        "Regression crop for the tempered greater affix marker (orange-rimmed star): the upstream 1080p_SMF preset alone finds four affix markers, the d4lc supplement template adds the fifth.",
+        "The crop shows the d4lc overlay dots of that session overlapping its leftmost ~9 px columns; the marker column starts at x=18 and is not affected.",
+        "The crop carries no OCR ground truth."
+      ]
+    },
+    {
+      "case_id": "import-d2core-expected-warning-cases",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d2core/expected/warning_cases.json",
+          "sha256": "b56fd3e391d468ee12216fe99085c73899c8051d109e3eccc24e92d20821267e"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/d2core/expected/warning_cases.json",
+        "row_count": 1
+      },
+      "provenance": {
+        "source": "Static sanitized D2Core provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d2core/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-d2core-expected-whirlwind-arsenal",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d2core/expected/whirlwind_arsenal.json",
+          "sha256": "424b0e07114ede2300f21aa8c83ffb3009f3509cb6116a98fc1979830620dc36"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/d2core/expected/whirlwind_arsenal.json",
+        "row_count": 3
+      },
+      "provenance": {
+        "source": "Static sanitized D2Core provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d2core/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-d2core-source-warning-cases",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d2core/source/warning_cases.json",
+          "sha256": "8073aa53dd185b123038f12ac6f6329533e942c2c3f0660831efae060e4e6142"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized D2Core provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d2core/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-d2core-source-whirlwind-arsenal",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d2core/source/whirlwind_arsenal.json",
+          "sha256": "e1189d22cb0fc93a3d2200dac4e94561badf00c0ca0de3dc3ca2549fcb8e73f5"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized D2Core provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d2core/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-d4builds-arc-lash-unknown",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d4builds/arc_lash_unknown.json",
+          "sha256": "d825237e4408605b87d718595c7a80471158e313f91916fec8d9bc5c1c434f69"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized D4Builds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d4builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-d4builds-expected-arc-lash-unknown",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d4builds/expected/arc_lash_unknown.json",
+          "sha256": "3dc2ca69c41458b3d44e609be676bf27c862fa8822006e7c0ee2aecb53dafbcf"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/d4builds/expected/arc_lash_unknown.json",
+        "row_count": 1
+      },
+      "provenance": {
+        "source": "Static sanitized D4Builds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d4builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-d4builds-expected-whirlwind-endgame",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d4builds/expected/whirlwind_endgame.json",
+          "sha256": "026c588cc0e821d1a3fe9aeccdaefa7bba9f2b95f852b6edc31cd97834b74534"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/d4builds/expected/whirlwind_endgame.json",
+        "row_count": 3
+      },
+      "provenance": {
+        "source": "Static sanitized D4Builds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d4builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-d4builds-site-extraction-ancients-barbarian-endgame",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_site_extraction",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d4builds/site-extraction/ancients-barbarian-endgame.json",
+          "sha256": "ca2cba143e0d6f0f78e3fdfcb58933f4a6c7b3e6a0bcba87d92a5be413af4e9d"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized D4Builds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d4builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Sanitized site-extraction fixture: per-variant texts as extracted from the provider page before fuzzy conversion.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-d4builds-whirlwind-endgame",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/d4builds/whirlwind_endgame.json",
+          "sha256": "6ad8a9431061a223c21d456737bce5559a667544a569d132a7e07243d04e5bee"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized D4Builds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/d4builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-infinitybuilds-expected-whirlwind-endgame",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/infinitybuilds/expected/whirlwind_endgame.json",
+          "sha256": "379cdcb715be638e02184e5352caa2c309b2b159fe445a86dede53b85ee8b699"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/infinitybuilds/expected/whirlwind_endgame.json",
+        "row_count": 6
+      },
+      "provenance": {
+        "source": "Static sanitized InfinityBuilds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/infinity_builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-infinitybuilds-share-warning-cases",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_share_page",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/infinitybuilds/share/warning_cases.html",
+          "sha256": "b016dc55af19453c1d0edb464b675bbddb594f8d19b5e4ebacce772f70b2b992"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized InfinityBuilds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/infinity_builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Sanitized share-page markup used as the offline navigation regression for this provider.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-infinitybuilds-share-whirlwind-endgame",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_share_page",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/infinitybuilds/share/whirlwind_endgame.html",
+          "sha256": "c8191ed8d2fea3c399cb67cf6f86e44c4ef496550c44e5fbaedc9ef3e338163b"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized InfinityBuilds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/infinity_builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Sanitized share-page markup used as the offline navigation regression for this provider.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-infinitybuilds-share-whirlwind-endgame-multisegment",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_share_page",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/infinitybuilds/share/whirlwind_endgame_multisegment.html",
+          "sha256": "7128002fe43976d7b449cccb363899035b62cdd0f962c229edf1e816272772ea"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized InfinityBuilds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/infinity_builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Sanitized share-page markup used as the offline navigation regression for this provider.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-infinitybuilds-share-whirlwind-endgame-direct-wrapper",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_share_page",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/infinitybuilds/share/whirlwind_endgame_direct_wrapper.html",
+          "sha256": "0acc9510a722467eba4fe8c66808e02043441244ba26c6d7ccf877b588821e66"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized InfinityBuilds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/infinity_builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Share-page markup whose flight payload opens with the build wrapper array itself; the live shape of blazing-scream-warlock-VVnCwkWiey.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-infinitybuilds-source-whirlwind-endgame",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/infinitybuilds/source/whirlwind_endgame.json",
+          "sha256": "7b7576b7308742a78d6f525734236b651522dcb544990068175d39b3b704246d"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized InfinityBuilds provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/infinity_builds/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-maxroll-expected-whirlwind-charm-seal",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/maxroll/expected/whirlwind_charm_seal.json",
+          "sha256": "e5d91b78db3a3ff4fa466ecd8716daada977b83aae11314ec80f7aa15b99ec24"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/maxroll/expected/whirlwind_charm_seal.json",
+        "row_count": 1
+      },
+      "provenance": {
+        "source": "Static sanitized Maxroll provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/maxroll/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-maxroll-expected-whirlwind-endgame",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/maxroll/expected/whirlwind_endgame.json",
+          "sha256": "bd69a02a193d7683b5eaad2c754a4d58e5262ef69440c1fb538c98690e94d565"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/maxroll/expected/whirlwind_endgame.json",
+        "row_count": 6
+      },
+      "provenance": {
+        "source": "Static sanitized Maxroll provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/maxroll/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-maxroll-expected-whirlwind-unknown-implicit",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/maxroll/expected/whirlwind_unknown_implicit.json",
+          "sha256": "b71568fb78be2ff707f6e4c2ebed2afae5fbcbf2a742e46c6925ff996a7553f3"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/maxroll/expected/whirlwind_unknown_implicit.json",
+        "row_count": 0
+      },
+      "provenance": {
+        "source": "Static sanitized Maxroll provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/maxroll/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-maxroll-source-whirlwind-charm-seal",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/maxroll/source/whirlwind_charm_seal.json",
+          "sha256": "cbc8b28d010caf6c487de5ef7bc822fe199857dcdd4067d2a60df5a92c5cc88b"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Maxroll provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/maxroll/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-maxroll-source-whirlwind-endgame",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/maxroll/source/whirlwind_endgame.json",
+          "sha256": "7580fc23d38bff3cace827406fffd3c7da3d77562cd42b8c2b1f859cde44d07e"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Maxroll provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/maxroll/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-maxroll-source-whirlwind-speedfarm",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/maxroll/source/whirlwind_speedfarm.json",
+          "sha256": "0e332e53c8411b526a9ee3fc1b0b42baa68aa31b341c87cd46e061fd619c3242"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Maxroll provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/maxroll/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-maxroll-source-whirlwind-unknown-implicit",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/maxroll/source/whirlwind_unknown_implicit.json",
+          "sha256": "5fb00e63a4ac7ff7da0ccfb9cfa68dd8056ec561b0ccb39351d21d0efa3f63f3"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Maxroll provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/maxroll/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-mobalytics-expected-build-multi-token-ids",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/expected/build_multi_token_ids.json",
+          "sha256": "1bf881e00b667abd33048646f9b6c93fe8eb74f3252cbd5d87ff4ffbe973bb57"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/expected/build_multi_token_ids.json",
+        "row_count": 3
+      },
+      "provenance": {
+        "source": "Static sanitized Mobalytics provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-mobalytics-expected-build-slugified-rotation",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/expected/build_slugified_rotation.json",
+          "sha256": "24e49f4dd7e2d8fff557f4c4bf5ed3b75eb6987708a62e521eb553153ea22ea9"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/expected/build_slugified_rotation.json",
+        "row_count": 6
+      },
+      "provenance": {
+        "source": "Static sanitized Mobalytics provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-mobalytics-expected-build-unknown-ids",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_expected_preset",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/expected/build_unknown_ids.json",
+          "sha256": "30e8dcc8c359eb4787eb5522b0ecd59e5c190bdd892091f66274bee46c9ef9c9"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": {
+        "kind": "import_affix_preset",
+        "defined_by": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/expected/build_unknown_ids.json",
+        "row_count": 0
+      },
+      "provenance": {
+        "source": "Static sanitized Mobalytics provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "This fixture is the expected imported affix preset for its sibling source fixture; row_count mirrors affix_preset.affixes.",
+        "Import payloads are rule-import inputs and expectations, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-mobalytics-profiles-test-profile",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_profile",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/profiles/Test Profile.json",
+          "sha256": "0852d165e363426a3140cffab0036ccc5f57563f2360e3b980d1a342bf89bbd8"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Mobalytics provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider profile page fixture used by the profile import path.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-mobalytics-source-build-multi-token-ids",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/source/build_multi_token_ids.json",
+          "sha256": "f1e34ee3be7e318e87c344b4f78e4a6fbd84e62184c2335400e8e1cd1cd71044"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Mobalytics provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-mobalytics-source-build-slugified-rotation",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/source/build_slugified_rotation.json",
+          "sha256": "92ba0e729677a4f9b26b6062a524f8783917c9e89ac957892b5b04b8fe637dff"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Mobalytics provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-mobalytics-source-build-unknown-ids",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/source/build_unknown_ids.json",
+          "sha256": "484089d122ea9b9bfea3e1e8685b1097ff2e1c7a9f45c59bef41faf1a9410776"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Mobalytics provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "import-mobalytics-source-profile-graphql-v2",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/source/profile_graphql_v2.json",
+          "sha256": "7da5753321608408eeee83feb6732d5ef382220168262f662f80f4b12aef689e"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Static sanitized Mobalytics provider fixture for the rule-import tests: no live provider call is made by the default suite.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs import test module"
+        ]
+      },
+      "notes": [
+        "Provider build source payload consumed by the import conversion; where an expected fixture exists it is inventoried as the separate case for the same provider and build.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    },
+    {
+      "case_id": "recorded-mouse-legendary-ring-comparison",
+      "kind": "capture_frame",
+      "origin": "real",
+      "availability": "present",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/mouse-legendary-ring-comparison.png",
+          "sha256": "56984d02a352db90b8160e209f12590245e6278b47d8c38117d1837e1dae061d"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": {
+        "capture_pixels": [
+          455,
+          1080
+        ],
+        "monitor_origin": null,
+        "note": "A 455 px wide strip of a 1920x1080 game window capture: the tooltip plus 40 px on each side, full height. The cursor is relative to the strip and may lie right of it (the hovered inventory slot).",
+        "scale": null,
+        "window_rect": null
+      },
+      "expected_tooltip_selection": {
+        "cursor": {
+          "x": 469,
+          "y": 760
+        },
+        "final_crop_rect": {
+          "x": 40,
+          "y": 0,
+          "width": 375,
+          "height": 883
+        },
+        "input_mode": "mouse",
+        "oracle": "crates/d4lc-app/src/runtime_prepare.rs::recorded_tooltips_read_through_the_live_chain"
+      },
+      "expected_affix_rows": null,
+      "notes": [
+        "Legendary ring in a comparison tooltip pair.",
+        "Item type, item power and the affix rows are asserted by the oracle test."
+      ],
+      "provenance": {
+        "evidence": [
+          "crates/d4lc-app/src/runtime_prepare.rs recorded tooltip regression test"
+        ],
+        "source": "Maintainer live capture of the Diablo IV game window on X11 (1080p_SMF preset, mouse mode), 2026-10-10."
+      }
+    },
+    {
+      "case_id": "recorded-mouse-unique-focus-comparison",
+      "kind": "capture_frame",
+      "origin": "real",
+      "availability": "present",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/mouse-unique-focus-comparison.png",
+          "sha256": "ba1ab6b14e2ac27e7f35c92a083709a98d54dc386d05d130e00efc1b1675a9fe"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": {
+        "capture_pixels": [
+          455,
+          1080
+        ],
+        "monitor_origin": null,
+        "note": "A 455 px wide strip of a 1920x1080 game window capture: the tooltip plus 40 px on each side, full height. The cursor is relative to the strip and may lie right of it (the hovered inventory slot).",
+        "scale": null,
+        "window_rect": null
+      },
+      "expected_tooltip_selection": {
+        "cursor": {
+          "x": 458,
+          "y": 747
+        },
+        "final_crop_rect": {
+          "x": 40,
+          "y": 0,
+          "width": 375,
+          "height": 883
+        },
+        "input_mode": "mouse",
+        "oracle": "crates/d4lc-app/src/runtime_prepare.rs::recorded_tooltips_read_through_the_live_chain"
+      },
+      "expected_affix_rows": null,
+      "notes": [
+        "Unique focus (offhand) in a comparison tooltip pair.",
+        "Item type, item power and the affix rows are asserted by the oracle test."
+      ],
+      "provenance": {
+        "evidence": [
+          "crates/d4lc-app/src/runtime_prepare.rs recorded tooltip regression test"
+        ],
+        "source": "Maintainer live capture of the Diablo IV game window on X11 (1080p_SMF preset, mouse mode), 2026-10-10."
+      }
+    },
+    {
+      "case_id": "recorded-mouse-legendary-gloves-comparison",
+      "kind": "capture_frame",
+      "origin": "real",
+      "availability": "present",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/mouse-legendary-gloves-comparison.png",
+          "sha256": "99436fa148af34df9539be4bee062701162a922f52188927fc1ee7839b37ef4b"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": {
+        "capture_pixels": [
+          455,
+          1080
+        ],
+        "monitor_origin": null,
+        "note": "A 455 px wide strip of a 1920x1080 game window capture: the tooltip plus 40 px on each side, full height. The cursor is relative to the strip and may lie right of it (the hovered inventory slot).",
+        "scale": null,
+        "window_rect": null
+      },
+      "expected_tooltip_selection": {
+        "cursor": {
+          "x": 465,
+          "y": 738
+        },
+        "final_crop_rect": {
+          "x": 40,
+          "y": 0,
+          "width": 375,
+          "height": 883
+        },
+        "input_mode": "mouse",
+        "oracle": "crates/d4lc-app/src/runtime_prepare.rs::recorded_tooltips_read_through_the_live_chain"
+      },
+      "expected_affix_rows": null,
+      "notes": [
+        "Legendary gloves in a comparison tooltip pair.",
+        "Item type, item power and the affix rows are asserted by the oracle test."
+      ],
+      "provenance": {
+        "evidence": [
+          "crates/d4lc-app/src/runtime_prepare.rs recorded tooltip regression test"
+        ],
+        "source": "Maintainer live capture of the Diablo IV game window on X11 (1080p_SMF preset, mouse mode), 2026-10-10."
+      }
+    },
+    {
+      "case_id": "recorded-mouse-legendary-ring-greater-affixes",
+      "kind": "capture_frame",
+      "origin": "real",
+      "availability": "present",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/mouse-legendary-ring-greater-affixes.png",
+          "sha256": "ff91a12650cb31f779038400a0dbe733f068a9483391fc929c6396716f4301f3"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": {
+        "capture_pixels": [
+          455,
+          1080
+        ],
+        "monitor_origin": null,
+        "note": "A 455 px wide strip of a 1920x1080 game window capture: the tooltip plus 40 px on each side, full height. The cursor is relative to the strip and may lie right of it (the hovered inventory slot).",
+        "scale": null,
+        "window_rect": null
+      },
+      "expected_tooltip_selection": {
+        "cursor": {
+          "x": 465,
+          "y": 419
+        },
+        "final_crop_rect": {
+          "x": 40,
+          "y": 0,
+          "width": 375,
+          "height": 942
+        },
+        "input_mode": "mouse",
+        "oracle": "crates/d4lc-app/src/runtime_prepare.rs::recorded_tooltips_read_through_the_live_chain"
+      },
+      "expected_affix_rows": null,
+      "notes": [
+        "Legendary ring with three greater affixes.",
+        "Item type, item power and the affix rows are asserted by the oracle test."
+      ],
+      "provenance": {
+        "evidence": [
+          "crates/d4lc-app/src/runtime_prepare.rs recorded tooltip regression test"
+        ],
+        "source": "Maintainer live capture of the Diablo IV game window on X11 (1080p_SMF preset, mouse mode), 2026-10-10."
+      }
+    },
+    {
+      "case_id": "recorded-mouse-legendary-boots",
+      "kind": "capture_frame",
+      "origin": "real",
+      "availability": "present",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/mouse-legendary-boots.png",
+          "sha256": "374e59d9155b930e1acc326e060f5127c1d012e19cdd70671a46b976f2a4cff9"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": {
+        "capture_pixels": [
+          455,
+          1080
+        ],
+        "monitor_origin": null,
+        "note": "A 455 px wide strip of a 1920x1080 game window capture: the tooltip plus 40 px on each side, full height. The cursor is relative to the strip and may lie right of it (the hovered inventory slot).",
+        "scale": null,
+        "window_rect": null
+      },
+      "expected_tooltip_selection": {
+        "cursor": {
+          "x": 477,
+          "y": 536
+        },
+        "final_crop_rect": {
+          "x": 40,
+          "y": 0,
+          "width": 375,
+          "height": 941
+        },
+        "input_mode": "mouse",
+        "oracle": "crates/d4lc-app/src/runtime_prepare.rs::recorded_tooltips_read_through_the_live_chain"
+      },
+      "expected_affix_rows": null,
+      "notes": [
+        "Legendary boots with a greater affix.",
+        "Item type, item power and the affix rows are asserted by the oracle test."
+      ],
+      "provenance": {
+        "evidence": [
+          "crates/d4lc-app/src/runtime_prepare.rs recorded tooltip regression test"
+        ],
+        "source": "Maintainer live capture of the Diablo IV game window on X11 (1080p_SMF preset, mouse mode), 2026-10-10."
+      }
+    },
+    {
+      "case_id": "recorded-mouse-charm",
+      "kind": "capture_frame",
+      "origin": "real",
+      "availability": "present",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/mouse-charm.png",
+          "sha256": "bea4363181b435db417ee9f9705b5c93de001b3a7f1c7a8b86e631114353dea8"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": {
+        "capture_pixels": [
+          455,
+          1080
+        ],
+        "monitor_origin": null,
+        "note": "A 455 px wide strip of a 1920x1080 game window capture: the tooltip plus 40 px on each side, full height. The cursor is relative to the strip and may lie right of it (the hovered inventory slot).",
+        "scale": null,
+        "window_rect": null
+      },
+      "expected_tooltip_selection": {
+        "cursor": {
+          "x": 456,
+          "y": 770
+        },
+        "final_crop_rect": {
+          "x": 40,
+          "y": 0,
+          "width": 375,
+          "height": 883
+        },
+        "input_mode": "mouse",
+        "oracle": "crates/d4lc-app/src/runtime_prepare.rs::recorded_tooltips_read_through_the_live_chain"
+      },
+      "expected_affix_rows": null,
+      "notes": [
+        "Charm: its affix areas are cleared like upstream FindItemAffixes.",
+        "Item type, item power and the affix rows are asserted by the oracle test."
+      ],
+      "provenance": {
+        "evidence": [
+          "crates/d4lc-app/src/runtime_prepare.rs recorded tooltip regression test"
+        ],
+        "source": "Maintainer live capture of the Diablo IV game window on X11 (1080p_SMF preset, mouse mode), 2026-10-10."
+      }
+    },
+    {
+      "case_id": "recorded-mouse-horadric-seal",
+      "kind": "capture_frame",
+      "origin": "real",
+      "availability": "present",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/mouse-horadric-seal.png",
+          "sha256": "fdf5ce7d03a2358642b722b8b4eea4b6737698eb1a2e006fedb20afb07dd5fa1"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": {
+        "capture_pixels": [
+          455,
+          1080
+        ],
+        "monitor_origin": null,
+        "note": "A 455 px wide strip of a 1920x1080 game window capture: the tooltip plus 40 px on each side, full height. The cursor is relative to the strip and may lie right of it (the hovered inventory slot).",
+        "scale": null,
+        "window_rect": null
+      },
+      "expected_tooltip_selection": {
+        "cursor": {
+          "x": 486,
+          "y": 743
+        },
+        "final_crop_rect": {
+          "x": 40,
+          "y": 0,
+          "width": 375,
+          "height": 882
+        },
+        "input_mode": "mouse",
+        "oracle": "crates/d4lc-app/src/runtime_prepare.rs::recorded_tooltips_read_through_the_live_chain"
+      },
+      "expected_affix_rows": null,
+      "notes": [
+        "Horadric seal: its affix areas are cleared like upstream FindItemAffixes.",
+        "Item type, item power and the affix rows are asserted by the oracle test."
+      ],
+      "provenance": {
+        "evidence": [
+          "crates/d4lc-app/src/runtime_prepare.rs recorded tooltip regression test"
+        ],
+        "source": "Maintainer live capture of the Diablo IV game window on X11 (1080p_SMF preset, mouse mode), 2026-10-10."
+      }
+    },
+    {
+      "case_id": "recorded-mouse-nightmare-sigil",
+      "kind": "capture_frame",
+      "origin": "real",
+      "availability": "present",
+      "files": [
+        {
+          "path": "tests/fixtures/live-frames/mouse-nightmare-sigil.png",
+          "sha256": "be8abd441b022c9d9d577cfeb0e1f26df20b0f1454901377a0f546c484b9e599"
+        }
+      ],
+      "game_ui_language": "enUS",
+      "window_geometry": {
+        "capture_pixels": [
+          455,
+          1080
+        ],
+        "monitor_origin": null,
+        "note": "A 455 px wide strip of a 1920x1080 game window capture: the tooltip plus 40 px on each side, full height. The cursor is relative to the strip and may lie right of it (the hovered inventory slot).",
+        "scale": null,
+        "window_rect": null
+      },
+      "expected_tooltip_selection": {
+        "cursor": {
+          "x": 449,
+          "y": 772
+        },
+        "final_crop_rect": {
+          "x": 40,
+          "y": 0,
+          "width": 375,
+          "height": 912
+        },
+        "input_mode": "mouse",
+        "oracle": "crates/d4lc-app/src/runtime_prepare.rs::recorded_tooltips_read_through_the_live_chain"
+      },
+      "expected_affix_rows": null,
+      "notes": [
+        "Nightmare sigil.",
+        "Item type, item power and the affix rows are asserted by the oracle test."
+      ],
+      "provenance": {
+        "evidence": [
+          "crates/d4lc-app/src/runtime_prepare.rs recorded tooltip regression test"
+        ],
+        "source": "Maintainer live capture of the Diablo IV game window on X11 (1080p_SMF preset, mouse mode), 2026-10-10."
+      }
+    },
+    {
+      "case_id": "import-mobalytics-live-site-shapes-2026-10",
+      "origin": "synthetic",
+      "availability": "present",
+      "kind": "import_build_source",
+      "files": [
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/live/README.md",
+          "sha256": "b1dabb7b99d52d743573e00363866793e151209e1f3db34114d6ff8939d0dcd3"
+        },
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/live/build-by-id.graphql.json",
+          "sha256": "33d70c67c14e627d43dcc56b4f5fa4c9cebbb7ffff888c580961a83a051c64f4"
+        },
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/live/build-by-slug.diablo4state.json",
+          "sha256": "3880ed0b31625bf5dcb484385a2c047804780423eeec01b2f53756ce06b354f0"
+        },
+        {
+          "path": "crates/d4lc-rules/tests/fixtures/imports/mobalytics/live/profile-builds.diablo4state.json",
+          "sha256": "dcff920e0851ff7dd398c85aea23ba391701acb35b7353d482b9d77e08644e07"
+        }
+      ],
+      "game_ui_language": null,
+      "window_geometry": null,
+      "expected_tooltip_selection": null,
+      "expected_affix_rows": null,
+      "provenance": {
+        "source": "Live mobalytics.gg answers captured 2026-10-15 (a GraphQL build body and two server-rendered preloaded states), reduced to the fields the parsers read; see the README beside them.",
+        "evidence": [
+          "crates/d4lc-rules/src/import/mobalytics/tests.rs live_* tests"
+        ]
+      },
+      "notes": [
+        "Pins the site shapes that broke the Mobalytics import in October 2026: null lists and null list entries, a foreign query with an object data, a null query entry, the empty no-variant-id builder state.",
+        "Import payloads are rule-import inputs, not tooltip captures, so language, geometry and tooltip fields stay empty by design."
+      ]
+    }
+  ]
+}

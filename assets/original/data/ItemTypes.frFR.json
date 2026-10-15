@@ -1,0 +1,2097 @@
+[
+  {
+    "Name": "Amulette ordinaire",
+    "Rarerity": "Normal",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette magique",
+    "Rarerity": "Magic",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette rare",
+    "Rarerity": "Rare",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette légendaire",
+    "Rarerity": "Legendary",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette unique",
+    "Rarerity": "Unique",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Amulette ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "amulet"
+  },
+  {
+    "Name": "Hache ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache (tranchante) ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Hache à deux mains (tranchante) ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bottes ordinaires",
+    "Rarerity": "Normal",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes magiques",
+    "Rarerity": "Magic",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes rares",
+    "Rarerity": "Rare",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes légendaires",
+    "Rarerity": "Legendary",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes uniques",
+    "Rarerity": "Unique",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes ancestrales ordinaires",
+    "Rarerity": "Normal",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes ancestrales magiques",
+    "Rarerity": "Magic",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes ancestrales rares",
+    "Rarerity": "Rare",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes ancestrales légendaires",
+    "Rarerity": "Legendary",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes ancestrales uniques",
+    "Rarerity": "Unique",
+    "Type": "boots"
+  },
+  {
+    "Name": "Bottes ancestrales Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "boots"
+  },
+  {
+    "Name": "Arc ordinaire",
+    "Rarerity": "Normal",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc magique",
+    "Rarerity": "Magic",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc rare",
+    "Rarerity": "Rare",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc légendaire",
+    "Rarerity": "Legendary",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc unique",
+    "Rarerity": "Unique",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc ancestral ordinaire",
+    "Rarerity": "Normal",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arc ancestral Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Cuirasse ordinaire",
+    "Rarerity": "Normal",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse magique",
+    "Rarerity": "Magic",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse rare",
+    "Rarerity": "Rare",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse légendaire",
+    "Rarerity": "Legendary",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse unique",
+    "Rarerity": "Unique",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "chest"
+  },
+  {
+    "Name": "Cuirasse ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "chest"
+  },
+  {
+    "Name": "Arbalète ordinaire",
+    "Rarerity": "Normal",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète magique",
+    "Rarerity": "Magic",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète rare",
+    "Rarerity": "Rare",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète légendaire",
+    "Rarerity": "Legendary",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète unique",
+    "Rarerity": "Unique",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Arbalète ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "ranged"
+  },
+  {
+    "Name": "Dague ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Dague ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau ancestral ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Fléau ancestral Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Catalyseur ordinaire",
+    "Rarerity": "Normal",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur magique",
+    "Rarerity": "Magic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur rare",
+    "Rarerity": "Rare",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur légendaire",
+    "Rarerity": "Legendary",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur unique",
+    "Rarerity": "Unique",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur ancestral ordinaire",
+    "Rarerity": "Normal",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Catalyseur ancestral Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Couteau de brèche ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche ancestral ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Couteau de brèche ancestral Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Gants ordinaires",
+    "Rarerity": "Normal",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants magiques",
+    "Rarerity": "Magic",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants rares",
+    "Rarerity": "Rare",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants légendaires",
+    "Rarerity": "Legendary",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants uniques",
+    "Rarerity": "Unique",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants ancestraux ordinaires",
+    "Rarerity": "Normal",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants ancestraux magiques",
+    "Rarerity": "Magic",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants ancestraux rares",
+    "Rarerity": "Rare",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants ancestraux légendaires",
+    "Rarerity": "Legendary",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants ancestraux uniques",
+    "Rarerity": "Unique",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Gants ancestraux Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "gloves"
+  },
+  {
+    "Name": "Heaume ordinaire",
+    "Rarerity": "Normal",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume magique",
+    "Rarerity": "Magic",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume rare",
+    "Rarerity": "Rare",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume légendaire",
+    "Rarerity": "Legendary",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume unique",
+    "Rarerity": "Unique",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume ancestral ordinaire",
+    "Rarerity": "Normal",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "helm"
+  },
+  {
+    "Name": "Heaume ancestral Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "helm"
+  },
+  {
+    "Name": "Jambières ordinaires",
+    "Rarerity": "Normal",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières magiques",
+    "Rarerity": "Magic",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières rares",
+    "Rarerity": "Rare",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières légendaires",
+    "Rarerity": "Legendary",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières uniques",
+    "Rarerity": "Unique",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières ancestrales ordinaires",
+    "Rarerity": "Normal",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières ancestrales magiques",
+    "Rarerity": "Magic",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières ancestrales rares",
+    "Rarerity": "Rare",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières ancestrales légendaires",
+    "Rarerity": "Legendary",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières ancestrales uniques",
+    "Rarerity": "Unique",
+    "Type": "pants"
+  },
+  {
+    "Name": "Jambières ancestrales Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "pants"
+  },
+  {
+    "Name": "Masse ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse (contondante) ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Masse à deux mains (contondante) ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Totem ordinaire",
+    "Rarerity": "Normal",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem magique",
+    "Rarerity": "Magic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem rare",
+    "Rarerity": "Rare",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem légendaire",
+    "Rarerity": "Legendary",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem unique",
+    "Rarerity": "Unique",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem ancestral ordinaire",
+    "Rarerity": "Normal",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Totem ancestral Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Arme d’hast ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Arme d’hast (tranchante) ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton ancestral ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bâton ancestral Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bague ordinaire",
+    "Rarerity": "Normal",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague magique",
+    "Rarerity": "Magic",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague rare",
+    "Rarerity": "Rare",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague légendaire",
+    "Rarerity": "Legendary",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague unique",
+    "Rarerity": "Unique",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "ring"
+  },
+  {
+    "Name": "Bague ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "ring"
+  },
+  {
+    "Name": "Faux ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Faux à deux mains ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Bouclier ordinaire",
+    "Rarerity": "Normal",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier magique",
+    "Rarerity": "Magic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier rare",
+    "Rarerity": "Rare",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier légendaire",
+    "Rarerity": "Legendary",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier unique",
+    "Rarerity": "Unique",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier ancestral ordinaire",
+    "Rarerity": "Normal",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Bouclier ancestral Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "offhand"
+  },
+  {
+    "Name": "Épée ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée (tranchante) ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Épée à deux mains (tranchante) ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette ancestrale ordinaire",
+    "Rarerity": "Normal",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette ancestrale magique",
+    "Rarerity": "Magic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette ancestrale rare",
+    "Rarerity": "Rare",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette ancestrale légendaire",
+    "Rarerity": "Legendary",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette ancestrale unique",
+    "Rarerity": "Unique",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Baguette ancestrale Mythique unique",
+    "Rarerity": "Mythic",
+    "Type": "weapon"
+  },
+  {
+    "Name": "Charme magique",
+    "Rarerity": "Magic",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme rare",
+    "Rarerity": "Rare",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme légendaire",
+    "Rarerity": "Legendary",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme unique",
+    "Rarerity": "Unique",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme d’ensemble",
+    "Rarerity": "Set",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme ancestral magique",
+    "Rarerity": "Magic",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme ancestral rare",
+    "Rarerity": "Rare",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme ancestral légendaire",
+    "Rarerity": "Legendary",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme ancestral unique",
+    "Rarerity": "Unique",
+    "Type": "charm"
+  },
+  {
+    "Name": "Charme ancestral d’ensemble",
+    "Rarerity": "Set",
+    "Type": "charm"
+  },
+  {
+    "Name": "Sceau horadrique magique",
+    "Rarerity": "Magic",
+    "Type": "horadricseal"
+  },
+  {
+    "Name": "Sceau horadrique rare",
+    "Rarerity": "Rare",
+    "Type": "horadricseal"
+  },
+  {
+    "Name": "Sceau horadrique légendaire",
+    "Rarerity": "Legendary",
+    "Type": "horadricseal"
+  },
+  {
+    "Name": "Rune de rituel magique",
+    "Rarerity": "Magic",
+    "Type": "rune"
+  },
+  {
+    "Name": "Rune de rituel rare",
+    "Rarerity": "Rare",
+    "Type": "rune"
+  },
+  {
+    "Name": "Rune de rituel légendaire",
+    "Rarerity": "Legendary",
+    "Type": "rune"
+  },
+  {
+    "Name": "Rune d’invocation magique",
+    "Rarerity": "Magic",
+    "Type": "rune"
+  },
+  {
+    "Name": "Rune d’invocation rare",
+    "Rarerity": "Rare",
+    "Type": "rune"
+  },
+  {
+    "Name": "Rune d’invocation légendaire",
+    "Rarerity": "Legendary",
+    "Type": "rune"
+  },
+  {
+    "Name": "Emblème du Cauchemar",
+    "Rarerity": "",
+    "Type": "sigil"
+  },
+  {
+    "Name": "Bois chuchotant",
+    "Rarerity": "",
+    "Type": "witchersigil"
+  },
+  {
+    "Name": "Emblème d’intensification",
+    "Rarerity": "",
+    "Type": "dungeonescalation"
+  },
+  {
+    "Name": "Joyau horadrique unique",
+    "Rarerity": "",
+    "Type": "horadricjewel"
+  }
+]

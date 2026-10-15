@@ -1,0 +1,212 @@
+{
+  "apollo": {
+    "graphqlV2": {
+      "queries": [
+        {
+          "state": {
+            "data": [
+              {
+                "game": {
+                  "documents": {
+                    "userGeneratedDocumentBySlug": {
+                      "data": {
+                        "id": "",
+                        "data": {
+                          "name": "",
+                          "buildVariants": {
+                            "values": []
+                          }
+                        },
+                        "updatedAt": "",
+                        "content": []
+                      }
+                    },
+                    "userGeneratedDocumentBySlugifiedName": {
+                      "data": {
+                        "id": "moba-build-001",
+                        "data": {
+                          "name": "Spiritborn Leveling",
+                          "buildVariants": {
+                            "values": [
+                              {
+                                "id": "variant-endgame",
+                                "genericBuilder": {
+                                  "slots": [
+                                    {
+                                      "gameSlotSlug": "helm",
+                                      "gameEntity": {
+                                        "slug": "harlequin-crest",
+                                        "title": "Harlequin Crest",
+                                        "type": "uniqueItems",
+                                        "modifiers": {
+                                          "gearStats": [
+                                            {
+                                              "id": "Attack Speed",
+                                              "isGreater": true
+                                            }
+                                          ],
+                                          "implicitStats": [
+                                            {
+                                              "id": "Basic Attack Speed"
+                                            }
+                                          ],
+                                          "socketStats": [
+                                            {
+                                              "slug": "Ahu",
+                                              "type": "runes"
+                                            }
+                                          ],
+                                          "temperingStats": []
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "gameSlotSlug": "chest-armor",
+                                      "gameEntity": {
+                                        "slug": "generic-chest",
+                                        "title": "Legendary Chest",
+                                        "type": "legendaryItems",
+                                        "modifiers": {
+                                          "gearStats": [
+                                            {
+                                              "id": "Barrier Generation",
+                                              "isGreater": false
+                                            }
+                                          ],
+                                          "implicitStats": [],
+                                          "socketStats": [],
+                                          "temperingStats": [
+                                            {
+                                              "id": "Barrier Generation"
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "gameSlotSlug": "amulet",
+                                      "gameEntity": {
+                                        "slug": "generic-amulet",
+                                        "title": "Legendary Amulet",
+                                        "type": "legendaryItems",
+                                        "modifiers": {
+                                          "gearStats": [
+                                            {
+                                              "id": "Damage while Berserking",
+                                              "isGreater": false
+                                            }
+                                          ],
+                                          "implicitStats": [],
+                                          "socketStats": [],
+                                          "temperingStats": []
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "gameSlotSlug": "ring-1",
+                                      "gameEntity": {
+                                        "slug": "generic-ring",
+                                        "title": "Legendary Ring",
+                                        "type": "legendaryItems",
+                                        "modifiers": {
+                                          "gearStats": [
+                                            {
+                                              "id": "Attack Speed",
+                                              "isGreater": false
+                                            }
+                                          ],
+                                          "implicitStats": [],
+                                          "socketStats": [],
+                                          "temperingStats": []
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "gameSlotSlug": "aspect-slot",
+                                      "gameEntity": {
+                                        "slug": "accelerating",
+                                        "title": "Accelerating",
+                                        "type": "aspects",
+                                        "modifiers": {
+                                          "gearStats": [],
+                                          "implicitStats": [],
+                                          "socketStats": [],
+                                          "temperingStats": []
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                "paragon": {
+                                  "nodes": [
+                                    {
+                                      "slug": "spiritborn-starting-board-x1-y1"
+                                    },
+                                    {
+                                      "slug": "spiritborn-starting-board-x2-y3"
+                                    },
+                                    {
+                                      "slug": "warlock-starting-board-x1-y1"
+                                    },
+                                    {
+                                      "slug": "warlock-starting-board-x2-y2"
+                                    }
+                                  ],
+                                  "boards": [
+                                    {
+                                      "x": 0,
+                                      "y": 0,
+                                      "rotation": 450,
+                                      "board": {
+                                        "slug": "spiritborn-starter-board"
+                                      },
+                                      "glyph": {
+                                        "slug": "enchanter"
+                                      },
+                                      "glyphLevel": 15
+                                    },
+                                    {
+                                      "x": 1,
+                                      "y": 0,
+                                      "rotation": 0,
+                                      "board": {
+                                        "slug": "warlock-starter-board"
+                                      },
+                                      "glyph": {
+                                        "slug": "abyssal"
+                                      },
+                                      "glyphLevel": 1
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        "updatedAt": "2026-05-31T12:00:00Z",
+                        "content": [
+                          {
+                            "__typename": "NgfDocumentCmWidgetContentVariantsV1",
+                            "data": {
+                              "title": "Build Variants",
+                              "childrenVariants": [
+                                {
+                                  "id": "variant-endgame",
+                                  "title": "Endgame"
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

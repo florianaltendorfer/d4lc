@@ -1,0 +1,1308 @@
+# Simplified Chinese translations the port wrote where upstream has none.
+#
+# Upstream's zh-CN resources cover only part of the strings the port uses, and the
+# port adds controls of its own. The project owner translated the rest. The importer
+# (`cargo xtask import-upstream-locales`) merges this file into the zh-CN catalogue
+# and marks every row from it `#. d4lc translation, not from upstream`.
+#
+# Terms follow the upstream zh-CN resources and the zh-CN game data under
+# assets/original/data: 词缀 affix, 威能 aspect, 符印 sigil, 符文 rune, 暗金 unique,
+# 巅峰 paragon, 覆盖 overlay, 预设 preset, 淬炼 tempered, 强效 greater, 灵巫 Spiritborn.
+#
+# An entry here must not repeat a string upstream already translates, and every
+# string without an upstream zh-CN value needs one.
+msgid ""
+msgstr ""
+"Language: zh-CN\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Item Splitter Locations"
+msgstr "物品分隔线位置"
+
+msgid "Similarity Threshold (Splitter location):"
+msgstr "相似度阈值（分隔线位置）："
+
+msgid "Enable/disable and change your hotkeys."
+msgstr "启用/禁用并更改你的热键。"
+
+msgid "Debug: Toggle Lock Screencapture"
+msgstr "调试：切换锁定截屏"
+
+msgid "Overlay Config"
+msgstr "覆盖设置"
+
+msgid "Change settings for the ingame overlay."
+msgstr "更改游戏内覆盖的设置。"
+
+msgid "OCR Results (ItemType + Power)"
+msgstr "OCR结果（物品种类+强度）"
+
+msgid "Item Power Limit"
+msgstr "物品强度限制"
+
+msgid "Minimal OCR Match (Type):"
+msgstr "最低OCR匹配（种类）："
+
+msgid "Tooltip max height:"
+msgstr "工具提示最大高度："
+
+msgid "Take Screenshot"
+msgstr "截图"
+
+msgid "Dungeon Tiers"
+msgstr "地下城层级"
+
+msgid "Tempering available."
+msgstr "可淬炼。"
+
+msgid "Cancel"
+msgstr "取消"
+
+msgid "On"
+msgstr "开"
+
+msgid "Off"
+msgstr "关"
+
+msgid "Enable the debug images for troubleshooting."
+msgstr "启用调试图片以排查问题。"
+
+msgid "Tooltip height (type):"
+msgstr "工具提示高度（种类）："
+
+msgid "Toggle Controller"
+msgstr "切换控制器"
+
+msgid "Type"
+msgstr "种类"
+
+msgid "Implicit"
+msgstr "固有"
+
+msgid "Greater"
+msgstr "强效"
+
+msgid "Tempered"
+msgstr "淬炼"
+
+msgid "Manage Colors"
+msgstr "管理颜色"
+
+msgid "Set the default colors."
+msgstr "设置默认颜色。"
+
+msgid "Normal"
+msgstr "普通"
+
+msgid "General"
+msgstr "常规"
+
+msgid "Features"
+msgstr "功能"
+
+msgid "Screencapture Delay"
+msgstr "截屏延迟"
+
+msgid "Time in ms between screencaptures. Default 50ms."
+msgstr "两次截屏之间的间隔（毫秒）。默认50毫秒。"
+
+msgid "Tempered Affix Detection"
+msgstr "淬炼词缀检测"
+
+msgid "Aspect Detection"
+msgstr "威能检测"
+
+msgid "Trading"
+msgstr "交易"
+
+msgid "Trade Overlay"
+msgstr "交易覆盖"
+
+msgid "Current Item"
+msgstr "当前物品"
+
+msgid "This name will overwrite an existing preset."
+msgstr "此名称会覆盖已有的预设。"
+
+msgid "Uniques"
+msgstr "暗金"
+
+msgid "Unique Detection"
+msgstr "暗金检测"
+
+msgid "Scan Height (%)"
+msgstr "扫描高度（%）"
+
+msgid "Percentage of screen to scan for item tooltip."
+msgstr "扫描物品工具提示的屏幕百分比。"
+
+msgid "Spiritborn"
+msgstr "灵巫"
+
+msgid "Id"
+msgstr "ID"
+
+msgid "Text"
+msgstr "文本"
+
+msgid "Runes"
+msgstr "符文"
+
+msgid "Rune Detection"
+msgstr "符文检测"
+
+msgid "Rune of Invocation"
+msgstr "祈唤符文"
+
+msgid "Rune of Ritual"
+msgstr "仪式符文"
+
+msgid "Sorceress"
+msgstr "巫师"
+
+msgid "Multi Build Mode"
+msgstr "多Build模式"
+
+msgid "Minimal Affix Value"
+msgstr "最低词缀值"
+
+msgid "Minimal Affix Value Filter"
+msgstr "最低词缀值过滤"
+
+msgid "Enabled the in-game overlay"
+msgstr "已启用游戏内覆盖"
+
+msgid "Disable the in-game overlay"
+msgstr "禁用游戏内覆盖"
+
+msgid "Show Overlay Icon"
+msgstr "显示覆盖图标"
+
+msgid "Overlay Update Delay"
+msgstr "覆盖更新延迟"
+
+msgid "Time in ms between overlay updates. Default 5ms."
+msgstr "两次覆盖更新之间的间隔（毫秒）。默认5毫秒。"
+
+msgid "Rename"
+msgstr "重命名"
+
+msgid "Minimize to Tray"
+msgstr "最小化到托盘"
+
+msgid "Minimize to Tray."
+msgstr "最小化到托盘。"
+
+msgid "Launch Minimized"
+msgstr "最小化启动"
+
+msgid "Launch Minimized."
+msgstr "最小化启动。"
+
+msgid "Import paragon boards"
+msgstr "导入巅峰盘"
+
+msgid "Paragon Mode"
+msgstr "巅峰模式"
+
+msgid "Enables the overlay to show paragon boards."
+msgstr "让覆盖显示巅峰盘。"
+
+msgid "Node Size"
+msgstr "节点大小"
+
+msgid "Switch Overlay"
+msgstr "切换覆盖"
+
+msgid "Paragon Node Size:"
+msgstr "巅峰节点大小："
+
+msgid "Border Size"
+msgstr "边框大小"
+
+msgid "German"
+msgstr "德语"
+
+msgid "English"
+msgstr "英语"
+
+msgid "Spanish (EU)"
+msgstr "西班牙语（欧洲）"
+
+msgid "Spanish (LA)"
+msgstr "西班牙语（拉美）"
+
+msgid "French"
+msgstr "法语"
+
+msgid "Italian"
+msgstr "意大利语"
+
+msgid "Japanese"
+msgstr "日语"
+
+msgid "Korean"
+msgstr "韩语"
+
+msgid "Polish"
+msgstr "波兰语"
+
+msgid "Portuguese"
+msgstr "葡萄牙语"
+
+msgid "Russian"
+msgstr "俄语"
+
+msgid "Turkish"
+msgstr "土耳其语"
+
+msgid "Chinese (Simplified)"
+msgstr "简体中文"
+
+msgid "Chinese (Traditional)"
+msgstr "繁体中文"
+
+msgid "Use Collapsed Board"
+msgstr "使用折叠盘"
+
+msgid "Node Size (Collapsed)"
+msgstr "节点大小（折叠）"
+
+msgid "Paragon Node Size (Collapsed):"
+msgstr "巅峰节点大小（折叠）："
+
+msgid "Left Offset (Collapsed)"
+msgstr "左偏移（折叠）"
+
+msgid "Top Offset (Collapsed)"
+msgstr "上偏移（折叠）"
+
+msgid "Build url detected."
+msgstr "检测到Build链接。"
+
+msgid "Profile url detected."
+msgstr "检测到个人资料链接。"
+
+msgid "Error: Invalid url. Build or profile id missing."
+msgstr "错误：链接无效，缺少Build或个人资料ID。"
+
+msgid "Paladin"
+msgstr "圣骑士"
+
+msgid "Socket Detection"
+msgstr "插槽检测"
+
+msgid "Warlock"
+msgstr "术士"
+
+msgid "Show browser"
+msgstr "显示浏览器"
+
+msgid "Type Area Offset (Left):"
+msgstr "种类区域偏移（左）："
+
+msgid "Aspect Area Max Height:"
+msgstr "威能区域最大高度："
+
+msgid "Type Area Offset (Right):"
+msgstr "种类区域偏移（右）："
+
+msgid "Show Tuning Prism Hints"
+msgstr "显示调谐棱镜提示"
+
+msgid "Toggle Tuning Prism Hints"
+msgstr "切换调谐棱镜提示"
+
+# ---- strings the port renders that have no upstream key ----
+
+msgid "  No affixes available."
+msgstr "  无可用词缀。"
+
+msgid "#RRGGBB or color name"
+msgstr "#RRGGBB或颜色名称"
+
+msgid "'Show current item' persists across restarts and controls the current-item card on the Trade screen."
+msgstr "“显示当前物品”会在重启后保留，并控制交易界面中的当前物品卡片。"
+
+msgid "(no builds configured)"
+msgstr "（未配置Build）"
+
+msgid "(no preset selected)"
+msgstr "（未选择预设）"
+
+msgid "(no target selected)"
+msgstr "（未选择目标）"
+
+msgid "Accepted generation"
+msgstr "已接受代数"
+
+msgid "Actions"
+msgstr "操作"
+
+msgid "Add Trade Item"
+msgstr "添加交易物品"
+
+msgid "Add affix {}"
+msgstr "添加词缀{}"
+
+msgid "Add build"
+msgstr "添加Build"
+
+msgid "Add entry: {}"
+msgstr "添加条目：{}"
+
+msgid "Add profile build to URL field"
+msgstr "将个人资料中的Build添加到链接栏"
+
+msgid "Add rune {}"
+msgstr "添加符文{}"
+
+msgid "Add trade item"
+msgstr "添加交易物品"
+
+msgid "Add {}"
+msgstr "添加{}"
+
+msgid "Affix Config"
+msgstr "词缀设置"
+
+msgid "Affix Presets"
+msgstr "词缀预设"
+
+msgid "Affix config"
+msgstr "词缀设置"
+
+msgid "Affix language"
+msgstr "词缀语言"
+
+msgid "Affixes:"
+msgstr "词缀："
+
+msgid "Allow exporting local crash logs (a plain local copy) so you can attach one to a GitHub issue you open manually. The app never uploads anything."
+msgstr "允许导出本地崩溃日志（仅为本地副本），以便你手动附加到自己创建的GitHub问题中。应用不会上传任何内容。"
+
+msgid "Always on top"
+msgstr "窗口置顶"
+
+msgid "App language"
+msgstr "应用语言"
+
+msgid "Applies at next runtime start. Auto detects the engine at start: an X11 Diablo window selects X11 capture; without one, a Wayland session uses the ScreenCast portal (wayland-portal builds only)."
+msgstr "下次运行时生效。自动模式在启动时检测引擎：存在X11暗黑破坏神窗口时使用X11捕获；否则Wayland会话使用ScreenCast门户（仅限wayland-portal构建）。"
+
+msgid "Apply"
+msgstr "应用"
+
+msgid "Are you sure you want to delete preset \"{}\""
+msgstr "确定要删除预设“{}”吗"
+
+msgid "Artifact: {}"
+msgstr "文件：{}"
+
+msgid "Artifacts"
+msgstr "调试文件"
+
+msgid "Aspect Config"
+msgstr "威能设置"
+
+msgid "Aspect config"
+msgstr "威能设置"
+
+msgid "Aspect detection"
+msgstr "威能检测"
+
+msgid "Aspects default color swatch"
+msgstr "威能默认颜色"
+
+msgid "Blue"
+msgstr "蓝色"
+
+msgid "Brightness Threshold (Max):"
+msgstr "亮度阈值（最大）："
+
+msgid "Brightness Threshold (Min):"
+msgstr "亮度阈值（最小）："
+
+msgid "Build color {}"
+msgstr "Build颜色{}"
+
+msgid "Builds"
+msgstr "Build"
+
+msgid "Capture engine"
+msgstr "捕获引擎"
+
+msgid "Change color Build 1"
+msgstr "更改Build 1颜色"
+
+msgid "Change color Build 1+2"
+msgstr "更改Build 1+2颜色"
+
+msgid "Change color Build 2"
+msgstr "更改Build 2颜色"
+
+msgid "Check for New Releases"
+msgstr "检查新版本"
+
+msgid "Check this project's GitHub Releases for a newer version and show a banner with the release link. Check only — the app never downloads, installs, or uploads anything."
+msgstr "检查本项目的GitHub发布页是否有新版本，并显示带发布链接的横幅。仅检查，应用不会下载、安装或上传任何内容。"
+
+msgid "Clear Log"
+msgstr "清除日志"
+
+msgid "Close"
+msgstr "关闭"
+
+msgid "Codex ({})"
+msgstr "典籍（{}）"
+
+msgid "Collapsed node size decrement"
+msgstr "减小折叠节点大小"
+
+msgid "Collapsed node size increment"
+msgstr "增大折叠节点大小"
+
+msgid "Color (hex)"
+msgstr "颜色（十六进制）"
+
+msgid "Color {}"
+msgstr "颜色{}"
+
+msgid "Community preset"
+msgstr "社区预设"
+
+msgid "Confirm"
+msgstr "确认"
+
+msgid "Confirming persists the binding and re-registers the global hotkeys immediately. On X11 the combo registers as a passive grab. On Wayland it registers through the desktop GlobalShortcuts portal: the first registration shows a compositor consent dialog, and a refused dialog is reported as refused, never as active. The outcome per binding is listed in the Hotkeys config dialog."
+msgstr "确认后会保存该绑定并立即重新注册全局热键。X11下组合键注册为被动抓取；Wayland下通过桌面GlobalShortcuts门户注册：首次注册会显示合成器授权对话框，被拒绝时会如实报告为已拒绝，不会显示为已激活。每个绑定的结果列在热键设置对话框中。"
+
+msgid "Controller config"
+msgstr "控制器设置"
+
+msgid "Crash logs"
+msgstr "崩溃日志"
+
+msgid "Create preset"
+msgstr "创建预设"
+
+msgid "Current item"
+msgstr "当前物品"
+
+msgid "Current preset name"
+msgstr "当前预设名称"
+
+msgid "Current: {}"
+msgstr "当前：{}"
+
+msgid "Cyan"
+msgstr "青色"
+
+msgid "Cycle tier for {}"
+msgstr "切换{}的层级"
+
+msgid "DIABLO IV COMPANION V{}"
+msgstr "暗黑4 COMPANION V{}"
+
+msgid "Debug lock capture enabled"
+msgstr "调试锁定截屏已启用"
+
+msgid "Default colors config"
+msgstr "默认颜色设置"
+
+msgid "Defaults for new preset entries; existing entry colors stay untouched. Click a swatch to cycle the palette or type a hex value."
+msgstr "新预设条目的默认颜色；已有条目的颜色保持不变。点击色块循环切换调色板，或输入十六进制值。"
+
+msgid "Delete"
+msgstr "删除"
+
+msgid "Diablo4Companion (upstream) on GitHub"
+msgstr "GitHub上的Diablo4Companion（上游项目）"
+
+msgid "Diablo4Companion (upstream) wiki on GitHub"
+msgstr "GitHub上的Diablo4Companion（上游项目）Wiki"
+
+msgid "Diagnostics (last 20 events)"
+msgstr "诊断（最近20个事件）"
+
+msgid "Diagnostics Export"
+msgstr "诊断导出"
+
+msgid "Display"
+msgstr "显示"
+
+msgid "Display backend"
+msgstr "显示后端"
+
+msgid "Display backend:"
+msgstr "显示后端："
+
+msgid "Download"
+msgstr "下载"
+
+msgid "Download preset"
+msgstr "下载预设"
+
+msgid "Dungeon tier"
+msgstr "地下城层级"
+
+msgid "Dungeon tiers"
+msgstr "地下城层级"
+
+msgid "Edit"
+msgstr "编辑"
+
+msgid "Edit debug lock capture binding"
+msgstr "编辑调试锁定截屏绑定"
+
+msgid "Edit switch overlay binding"
+msgstr "编辑切换覆盖绑定"
+
+msgid "Edit switch preset binding"
+msgstr "编辑切换预设绑定"
+
+msgid "Edit take screenshot binding"
+msgstr "编辑截图绑定"
+
+msgid "Edit toggle controller binding"
+msgstr "编辑切换控制器绑定"
+
+msgid "Edit toggle overlay binding"
+msgstr "编辑开关覆盖绑定"
+
+msgid "Edit tuning prism hints binding"
+msgstr "编辑调谐棱镜提示绑定"
+
+msgid "Edit {}"
+msgstr "编辑{}"
+
+msgid "Enable a binding, then edit its key combination. Confirming re-registers the global hotkeys immediately; X11 uses passive grabs and Wayland the GlobalShortcuts portal when available."
+msgstr "启用绑定后再编辑其组合键。确认后会立即重新注册全局热键；X11使用被动抓取，Wayland在可用时使用GlobalShortcuts门户。"
+
+msgid "Enable controller mode"
+msgstr "启用控制器模式"
+
+msgid "Enable overlay"
+msgstr "启用覆盖"
+
+msgid "Enable paragon mode"
+msgstr "启用巅峰模式"
+
+msgid "Enable trade overlay"
+msgstr "启用交易覆盖"
+
+msgid "Enabled"
+msgstr "已启用"
+
+msgid "Enter filter"
+msgstr "输入过滤条件"
+
+msgid "Enter name"
+msgstr "输入名称"
+
+msgid "Evaluation"
+msgstr "评估"
+
+msgid "Export"
+msgstr "导出"
+
+msgid "Export debug images"
+msgstr "导出调试图片"
+
+msgid "Export local preset"
+msgstr "导出本地预设"
+
+msgid "Frame"
+msgstr "帧"
+
+msgid "Frame source"
+msgstr "帧来源"
+
+msgid "Frozen capture"
+msgstr "已冻结的截图"
+
+msgid "Game window"
+msgstr "游戏窗口"
+
+msgid "Gray"
+msgstr "灰色"
+
+msgid "Greater affix"
+msgstr "强效词缀"
+
+msgid "Greater affix {}"
+msgstr "强效词缀{}"
+
+msgid "Greater default color swatch"
+msgstr "强效默认颜色"
+
+msgid "Green"
+msgstr "绿色"
+
+msgid "Hide Unwanted"
+msgstr "隐藏不需要的"
+
+msgid "Hotkey Configuration"
+msgstr "热键设置"
+
+msgid "Hotkey action"
+msgstr "热键操作"
+
+msgid "Hotkeys config"
+msgstr "热键设置"
+
+msgid "Hotpath (ms)"
+msgstr "热路径（毫秒）"
+
+msgid "Implicit affix"
+msgstr "固有词缀"
+
+msgid "Implicit default color swatch"
+msgstr "固有默认颜色"
+
+msgid "Import"
+msgstr "导入"
+
+msgid "Import local preset"
+msgstr "导入本地预设"
+
+msgid "Import preset target"
+msgstr "导入预设目标"
+
+msgid "Import provider"
+msgstr "导入来源"
+
+msgid "Item Power: {}"
+msgstr "物品强度：{}"
+
+msgid "Item Type: {}"
+msgstr "物品种类：{}"
+
+msgid "Item power limit"
+msgstr "物品强度限制"
+
+msgid "Item power limit decrement"
+msgstr "降低物品强度限制"
+
+msgid "Item power limit increment"
+msgstr "提高物品强度限制"
+
+msgid "Item power minimum"
+msgstr "最低物品强度"
+
+msgid "Key combination (e.g. Ctrl+F5)"
+msgstr "组合键（例如Ctrl+F5）"
+
+msgid "Left offset collapsed decrement"
+msgstr "减小折叠左偏移"
+
+msgid "Left offset collapsed increment"
+msgstr "增大折叠左偏移"
+
+msgid "Live"
+msgstr "实时"
+
+msgid "Live frame"
+msgstr "实时帧"
+
+msgid "Lock overlay menu"
+msgstr "锁定覆盖菜单"
+
+msgid "Loop p50/95/99 (µs)"
+msgstr "循环p50/95/99（微秒）"
+
+msgid "Made with Slint"
+msgstr "使用Slint制作"
+
+msgid "Magenta"
+msgstr "品红"
+
+msgid "Manage colors"
+msgstr "管理颜色"
+
+msgid "Marker mode hide unwanted"
+msgstr "标记模式：隐藏不需要的"
+
+msgid "Marker mode show all"
+msgstr "标记模式：显示全部"
+
+msgid "Merge Build 1 preset"
+msgstr "合并Build 1预设"
+
+msgid "Merge Build 2 preset"
+msgstr "合并Build 2预设"
+
+msgid "Minimal affix value filter"
+msgstr "最低词缀值过滤"
+
+msgid "Multi-build config"
+msgstr "多Build设置"
+
+msgid "Multi-build mode"
+msgstr "多Build模式"
+
+msgid "Multi-build preset"
+msgstr "多Build预设"
+
+msgid "New preset name"
+msgstr "新预设名称"
+
+msgid "Next panel"
+msgstr "下一个面板"
+
+msgid "Next tier"
+msgstr "下一层级"
+
+msgid "No"
+msgstr "否"
+
+msgid "No affix entries. Use the sidebar to add presets."
+msgstr "没有词缀条目。请使用侧栏添加预设。"
+
+msgid "No affixes picked."
+msgstr "未选择词缀。"
+
+msgid "No affixes specified."
+msgstr "未指定词缀。"
+
+msgid "No catalog entries available."
+msgstr "没有可用的目录条目。"
+
+msgid "No controller images selected."
+msgstr "未选择控制器图片。"
+
+msgid "No controller tooltip images found for the selected system preset."
+msgstr "所选系统预设中没有控制器工具提示图片。"
+
+msgid "No crash logs recorded."
+msgstr "没有崩溃日志记录。"
+
+msgid "No debug data available."
+msgstr "没有可用的调试数据。"
+
+msgid "No diagnostics events yet — start the live runtime."
+msgstr "还没有诊断事件——请启动实时运行。"
+
+msgid "No entries match the filter."
+msgstr "没有符合过滤条件的条目。"
+
+msgid "No log messages yet. Runtime events will appear here."
+msgstr "还没有日志消息。运行事件会显示在这里。"
+
+msgid "No sigil entries in the selected preset."
+msgstr "所选预设中没有符印条目。"
+
+msgid "No stored builds for this provider yet."
+msgstr "此来源还没有已保存的Build。"
+
+msgid "No stored profiles for this provider yet."
+msgstr "此来源还没有已保存的个人资料。"
+
+msgid "No tooltip"
+msgstr "无工具提示"
+
+msgid "No trade items. Click the plus button to get started."
+msgstr "没有交易物品。点击加号按钮开始添加。"
+
+msgid "Normal default color swatch"
+msgstr "普通默认颜色"
+
+msgid "OK"
+msgstr "确定"
+
+msgid "Open colors config"
+msgstr "打开颜色设置"
+
+msgid "Open controller config"
+msgstr "打开控制器设置"
+
+msgid "Open debug output folder"
+msgstr "打开调试输出文件夹"
+
+msgid "Open hotkeys config"
+msgstr "打开热键设置"
+
+msgid "Open overlay config"
+msgstr "打开覆盖设置"
+
+msgid "Open paragon config"
+msgstr "打开巅峰设置"
+
+msgid "Open release page"
+msgstr "打开发布页"
+
+msgid "Orange"
+msgstr "橙色"
+
+msgid "Overlay config"
+msgstr "覆盖设置"
+
+msgid "Overlay features section"
+msgstr "覆盖功能分组"
+
+msgid "Overlay font size decrement"
+msgstr "减小覆盖字号"
+
+msgid "Overlay font size increment"
+msgstr "增大覆盖字号"
+
+msgid "Overlay general section"
+msgstr "覆盖常规分组"
+
+msgid "Overlay icon X"
+msgstr "覆盖图标X"
+
+msgid "Overlay icon X decrement"
+msgstr "减小覆盖图标X"
+
+msgid "Overlay icon X increment"
+msgstr "增大覆盖图标X"
+
+msgid "Overlay icon Y"
+msgstr "覆盖图标Y"
+
+msgid "Overlay icon Y decrement"
+msgstr "减小覆盖图标Y"
+
+msgid "Overlay icon Y increment"
+msgstr "增大覆盖图标Y"
+
+msgid "Overlay performance section"
+msgstr "覆盖性能分组"
+
+msgid "Overlay text"
+msgstr "覆盖文本"
+
+msgid "Overlay trade overlay"
+msgstr "交易覆盖"
+
+msgid "Palette"
+msgstr "调色板"
+
+msgid "Paragon border size decrement"
+msgstr "减小巅峰边框大小"
+
+msgid "Paragon border size increment"
+msgstr "增大巅峰边框大小"
+
+msgid "Paragon config"
+msgstr "巅峰设置"
+
+msgid "Paragon node size decrement"
+msgstr "减小巅峰节点大小"
+
+msgid "Paragon node size increment"
+msgstr "增大巅峰节点大小"
+
+msgid "Preset"
+msgstr "预设"
+
+msgid "Preset name"
+msgstr "预设名称"
+
+msgid "Preset name suggestions"
+msgstr "预设名称建议"
+
+msgid "Previous panel"
+msgstr "上一个面板"
+
+msgid "Profiles"
+msgstr "个人资料"
+
+msgid "Published"
+msgstr "发布时间"
+
+msgid "Purple"
+msgstr "紫色"
+
+msgid "Ranged Weapon"
+msgstr "远程武器"
+
+msgid "Red"
+msgstr "红色"
+
+msgid "Reload preset images"
+msgstr "重新加载预设图片"
+
+msgid "Remove affix {}"
+msgstr "移除词缀{}"
+
+msgid "Remove build {}"
+msgstr "移除Build{}"
+
+msgid "Remove local preset"
+msgstr "移除本地预设"
+
+msgid "Remove {}"
+msgstr "移除{}"
+
+msgid "Rename preset"
+msgstr "重命名预设"
+
+msgid "Renderer"
+msgstr "渲染器"
+
+msgid "Reset Perf"
+msgstr "重置性能"
+
+msgid "Reset minimal affix values"
+msgstr "重置最低词缀值"
+
+msgid "Reset values"
+msgstr "重置数值"
+
+msgid "Rune Config"
+msgstr "符文设置"
+
+msgid "Rune condition"
+msgstr "符文条件"
+
+msgid "Rune config"
+msgstr "符文设置"
+
+msgid "Rune detection"
+msgstr "符文检测"
+
+msgid "Rune effect"
+msgstr "符文效果"
+
+msgid "Runes default color swatch"
+msgstr "符文默认颜色"
+
+msgid "Running"
+msgstr "运行中"
+
+msgid "Saved to Config/Settings.json. A running loop re-prepares with the new values; a stopped runtime reads them at its next start."
+msgstr "已保存到Config/Settings.json。运行中的循环会用新值重新准备；已停止的运行会在下次启动时读取。"
+
+msgid "Screenshot, export debug images, reload preset images."
+msgstr "截图、导出调试图片、重新加载预设图片。"
+
+msgid "Select a build to list its variants."
+msgstr "选择一个Build以列出其变体。"
+
+msgid "Select a profile to list its builds."
+msgstr "选择一个个人资料以列出其Build。"
+
+msgid "Selected controller images:"
+msgstr "已选控制器图片："
+
+msgid "Set Affix"
+msgstr "设置词缀"
+
+msgid "Set Affix Color"
+msgstr "设置词缀颜色"
+
+msgid "Set affix color"
+msgstr "设置词缀颜色"
+
+msgid "Set affix: {}"
+msgstr "设置词缀：{}"
+
+msgid "Set build color"
+msgstr "设置Build颜色"
+
+msgid "Set color: {}"
+msgstr "设置颜色：{}"
+
+msgid "Show All"
+msgstr "显示全部"
+
+msgid "Show Mobalytics browser"
+msgstr "显示Mobalytics浏览器"
+
+msgid "Show current item"
+msgstr "显示当前物品"
+
+msgid "Show overlay icon"
+msgstr "显示覆盖图标"
+
+msgid "Sigil Config"
+msgstr "符印设置"
+
+msgid "Sigil config"
+msgstr "符印设置"
+
+msgid "Sigil display mode"
+msgstr "符印显示模式"
+
+msgid "Sigil entries in the selected preset"
+msgstr "所选预设中的符印条目"
+
+msgid "Socket detection"
+msgstr "插槽检测"
+
+msgid "Start"
+msgstr "开始"
+
+msgid "Starting"
+msgstr "启动中"
+
+msgid "Status"
+msgstr "状态"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Stopped"
+msgstr "已停止"
+
+msgid "Stored run — not live"
+msgstr "已保存的运行——非实时"
+
+msgid "Suggestions"
+msgstr "建议"
+
+msgid "Support the Diablo4Companion author on Ko-fi"
+msgstr "在Ko-fi上支持Diablo4Companion的作者"
+
+msgid "Supported item types: Amulet, Boots, Chest, Gloves, Helm, Offhand, Pants, Ranged, Ring, Rune, Weapon. Rune items hold at most one affix."
+msgstr "支持的物品种类：护符、靴子、胸甲、手套、头盔、副手、裤子、远程武器、戒指、符文、武器。符文物品最多只能有一个词缀。"
+
+msgid "Switch overlay enabled"
+msgstr "切换覆盖已启用"
+
+msgid "Switch preset enabled"
+msgstr "切换预设已启用"
+
+msgid "System preset"
+msgstr "系统预设"
+
+msgid "Take screenshot"
+msgstr "截图"
+
+msgid "Take screenshot enabled"
+msgstr "截图已启用"
+
+msgid "Tempered affix"
+msgstr "淬炼词缀"
+
+msgid "Tempered affix detection"
+msgstr "淬炼词缀检测"
+
+msgid "Tempered default color swatch"
+msgstr "淬炼默认颜色"
+
+msgid "Toggle affix overlay"
+msgstr "开关词缀覆盖"
+
+msgid "Toggle controller mode enabled"
+msgstr "切换控制器模式已启用"
+
+msgid "Toggle overlay enabled"
+msgstr "开关覆盖已启用"
+
+msgid "Tooltip & areas"
+msgstr "工具提示与区域"
+
+msgid "Tooltip found"
+msgstr "已找到工具提示"
+
+msgid "Top offset collapsed decrement"
+msgstr "减小折叠上偏移"
+
+msgid "Top offset collapsed increment"
+msgstr "增大折叠上偏移"
+
+msgid "Trade Configuration"
+msgstr "交易设置"
+
+msgid "Trade Imports"
+msgstr "交易导入"
+
+msgid "Trade config"
+msgstr "交易设置"
+
+msgid "Tuning prism hints"
+msgstr "调谐棱镜提示"
+
+msgid "Tuning prism hints enabled"
+msgstr "调谐棱镜提示已启用"
+
+msgid "Type-area offset left decrement"
+msgstr "减小种类区域左偏移"
+
+msgid "Type-area offset left increment"
+msgstr "增大种类区域左偏移"
+
+msgid "UI renderer"
+msgstr "界面渲染器"
+
+msgid "Unique Config"
+msgstr "暗金设置"
+
+msgid "Unique config"
+msgstr "暗金设置"
+
+msgid "Unique detection"
+msgstr "暗金检测"
+
+msgid "Uniques default color swatch"
+msgstr "暗金默认颜色"
+
+msgid "Upd"
+msgstr "更新"
+
+msgid "Update available: {}"
+msgstr "有可用更新：{}"
+
+msgid "Use collapsed board"
+msgstr "使用折叠盘"
+
+msgid "Value (gold)"
+msgstr "价值（金币）"
+
+msgid "Web"
+msgstr "网页"
+
+msgid "White"
+msgstr "白色"
+
+msgid "Yellow"
+msgstr "黄色"
+
+msgid "Yes"
+msgstr "是"
+
+msgid "d4lc on GitHub"
+msgstr "GitHub上的d4lc"
+
+msgid "e.g. 660881f7-cb6a-4162-be62-29f0afeb37bf"
+msgstr "例如 660881f7-cb6a-4162-be62-29f0afeb37bf"
+
+msgid "e.g. Amulet, Two-Handed Sword"
+msgstr "例如：护符、双手剑"
+
+msgid "e.g. AttackSpeed, CritChance"
+msgstr "例如：AttackSpeed、CritChance"
+
+msgid "e.g. Speed, Boss, AoE"
+msgstr "例如：速刷、Boss、AoE"
+
+msgid "e.g. https://infinitybuilds.gg/en/builds/pestilent-swarmskuna-spiritborn-vAB2c3aMt2"
+msgstr "例如 https://infinitybuilds.gg/en/builds/pestilent-swarmskuna-spiritborn-vAB2c3aMt2"
+
+msgid "e.g. t3jx0916"
+msgstr "例如 t3jx0916"
+
+msgid "no artifact under debug-output/"
+msgstr "debug-output/下没有文件"
+
+msgid "{}  tier {}"
+msgstr "{}  层级 {}"
+
+msgid "{} (missing)"
+msgstr "{}（缺失）"
+
+msgid "{} decrement"
+msgstr "减小{}"
+
+msgid "{} increment"
+msgstr "增大{}"
+
+msgctxt "d4lc"
+msgid "Affixes"
+msgstr "词缀"
+
+msgctxt "d4lc"
+msgid "Amulet"
+msgstr "护符"
+
+msgctxt "d4lc"
+msgid "Boots"
+msgstr "靴子"
+
+msgctxt "d4lc"
+msgid "Cancel"
+msgstr "取消"
+
+msgctxt "d4lc"
+msgid "Chest"
+msgstr "胸甲"
+
+msgctxt "d4lc"
+msgid "Done"
+msgstr "完成"
+
+msgctxt "d4lc"
+msgid "Gloves"
+msgstr "手套"
+
+msgctxt "d4lc"
+msgid "Helm"
+msgstr "头盔"
+
+msgctxt "d4lc"
+msgid "Item Type"
+msgstr "物品种类"
+
+msgctxt "d4lc"
+msgid "OCR"
+msgstr "OCR"
+
+msgctxt "d4lc"
+msgid "Offhand"
+msgstr "副手"
+
+msgctxt "d4lc"
+msgid "Overlay"
+msgstr "覆盖"
+
+msgctxt "d4lc"
+msgid "Pants"
+msgstr "裤子"
+
+msgctxt "d4lc"
+msgid "Ranged"
+msgstr "远程武器"
+
+msgctxt "d4lc"
+msgid "Ring"
+msgstr "戒指"
+
+msgctxt "d4lc"
+msgid "Settings"
+msgstr "设置"
+
+msgctxt "d4lc"
+msgid "Update"
+msgstr "更新"
+
+msgctxt "d4lc"
+msgid "Weapon"
+msgstr "武器"
+
+# Build import: unified URL row and the compact import progress panel
+# (written without the owner, pending owner review).
+msgid "Build ID"
+msgstr "Build ID"
+
+msgid "Planner ID"
+msgstr "规划器 ID"
+
+msgid "Open provider website"
+msgstr "打开网站"
+
+msgid "Open entered build in browser"
+msgstr "在浏览器中打开输入的Build"
+
+msgid "Paste a build URL, then press Add."
+msgstr "粘贴Build链接，然后点击添加。"
+
+msgid "Build URL detected."
+msgstr "检测到Build链接。"
+
+msgid "Not a valid build URL for this provider."
+msgstr "不是此网站的有效Build链接。"
+
+msgid "e.g. https://www.d2core.com/d4/planner?bd=23tb"
+msgstr "例如 https://www.d2core.com/d4/planner?bd=23tb"
+
+msgid "e.g. https://mobalytics.gg/diablo-4/builds/warlock-blazing-scream"
+msgstr "例如 https://mobalytics.gg/diablo-4/builds/warlock-blazing-scream"
+
+msgid "Importing build"
+msgstr "正在导入Build"
+
+msgid "{} — {} variant(s)"
+msgstr "{} — {} 个变体"

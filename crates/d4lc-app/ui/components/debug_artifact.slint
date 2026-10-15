@@ -1,0 +1,42 @@
+// Debug artifact placeholder — displays debug image/text regions.
+// Upstream: DebugView.xaml:200-438 (12 FlipView panels with Image/ItemsControl)
+//
+// Usage: DebugArtifact { label: "Tooltip Image"; }
+
+export component DebugArtifact {
+    in property <string> label;
+    in property <string> placeholder-text: @tr("No debug data available.");
+
+    VerticalLayout {
+        spacing: 8px;
+        padding: 12px;
+
+        // Header label
+        Text {
+            text: label;
+            color: #FFFFFF;
+            font-size: 16px;
+            font-weight: 700;
+            horizontal-alignment: center;
+        }
+
+        // Main area — placeholder for debug image or text content
+        Rectangle {
+            background: #1F1F1F;
+            border-width: 1px;
+            border-color: #3F3F46;
+            border-radius: 6px;
+
+            Text {
+                text: placeholder-text;
+                color: #868686;
+                font-size: 14px;
+                font-italic: true;
+                horizontal-alignment: center;
+                vertical-alignment: center;
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}

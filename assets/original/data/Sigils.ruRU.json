@@ -1,0 +1,2873 @@
+[
+  {
+    "IdSno": 2382540,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_01_Cellar",
+    "Name": "[PH] Sphinx 01 Cellar",
+    "Description": "missing description",
+    "DungeonZoneInfo": "в области Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2380546,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_03",
+    "Name": "[PH] The Mountain's Hidden Heart",
+    "Description": "PH",
+    "DungeonZoneInfo": "в области Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2454812,
+    "IdName": "World_DGN_QST_Skov_Skar_Sphinx_03_Part02",
+    "Name": "[PH] The Temple Swallowed to Time",
+    "Description": "missing description",
+    "DungeonZoneInfo": "в области Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2266169,
+    "IdName": "DungeonAffix_Major_CultistLure",
+    "Name": "Агнцы на заклание",
+    "Description": "Заманивайте противников к святилищу, чтобы принести их в жертву и получить дополнительную награду.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2004860,
+    "IdName": "DungeonAffix_Major_Hellfire",
+    "Name": "Адское пламя",
+    "Description": "На монстров действует адское пламя, которое после их смерти переходит к игрокам. Адское пламя увеличивает наносимый урон, но каждый его эффект наносит периодический урон. Зелья утоляют адское пламя и вызывают огненный взрыв.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2361576,
+    "IdName": "DungeonAffix_Positive_TreasureGoblins",
+    "Name": "Алчное вторжение",
+    "Description": "Здесь собралось подозрительно много алчных гоблинов.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2358422,
+    "IdName": "DungeonAffix_Major_Astaroth_MeteorPersist",
+    "Name": "Армагеддон Астарота",
+    "Description": "С неба постоянно падают метеориты.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2321691,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_BloodBlisters",
+    "Name": "Астарот – кровавые волдыри",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321618,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_LifeSteal",
+    "Name": "Астарот – похищение здоровья",
+    "Description": "Астарот получает 15% похищения здоровья.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321901,
+    "IdName": "DungeonAffix_Minor_Monster_Astaroth_DeathPulse",
+    "Name": "Астарот – смертоносный импульс",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321552,
+    "IdName": "DungeonAffix_Positive_Astaroth_Jewels",
+    "Name": "Астральное пророчество",
+    "Description": "Награда за победу над Астаротом включает ценное хорадримское украшение.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114114,
+    "IdName": "World_DGN_Hawe_BastionOfFaith",
+    "Name": "Бастион веры",
+    "Description": "Голодные заблудившиеся рыцари превратились в чудовищ.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114196,
+    "IdName": "World_DGN_Scos_JalalsVigil",
+    "Name": "Бдение Джалала",
+    "Description": "Лес раздирает агония его бывшего хранителя.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113988,
+    "IdName": "World_DGN_Kehj_RenegadesRetreat",
+    "Name": "Бегство изменника",
+    "Description": "Рыцари-отступники пожинают плоды похода Инария.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113728,
+    "IdName": "World_DGN_Step_PallidDelve",
+    "Name": "Безжизненная впадина",
+    "Description": "Каннибалы охраняют источник темной силы в старой шахте.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114071,
+    "IdName": "World_DGN_Hawe_FacelessShrine",
+    "Name": "Безликое святилище",
+    "Description": "В отличие от многих других, этот культ Хавезара почти не скрывается. Для грешников вход свободный.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114081,
+    "IdName": "World_DGN_Hawe_EndlessGates",
+    "Name": "Бесконечные врата",
+    "Description": "Твари тьмы бешено несутся из-за грани миров.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585610,
+    "IdName": "World_DGN_Naha_SleeplessHollow",
+    "Name": "Бессонная лощина",
+    "Description": "Когда о мертвых забывают, плоть и кости восстают вновь.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314229,
+    "IdName": "DungeonAffix_Positive_DamageReductionForMissingHealth",
+    "Name": "Боевая закалка",
+    "Description": "Вы получаете на 6% меньше урона за каждые 10% недостающего здоровья.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321114,
+    "IdName": "DungeonAffix_Positive_ExtraResplendent",
+    "Name": "Больше великолепных сундуков",
+    "Description": "В подземелье появятся дополнительные великолепные сундуки.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336723,
+    "IdName": "DungeonAffix_Positive_Chests_Armor",
+    "Name": "Бонусные сундуки с доспехами",
+    "Description": "Сундуки с доспехами появляются с очень высокой вероятностью.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336855,
+    "IdName": "DungeonAffix_Positive_Chests_BossMaterials",
+    "Name": "Бонусные сундуки с материалами для призыва",
+    "Description": "Сундуки с материалами для призыва появляются с очень высокой вероятностью.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336917,
+    "IdName": "DungeonAffix_Positive_Chests_Weapons",
+    "Name": "Бонусные сундуки с оружием",
+    "Description": "Сундуки с оружием появляются с очень высокой вероятностью.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336914,
+    "IdName": "DungeonAffix_Positive_Chests_SigilPowder",
+    "Name": "Бонусные сундуки с порошком печатей",
+    "Description": "Сундуки с порошком печатей появляются с очень высокой вероятностью.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336911,
+    "IdName": "DungeonAffix_Positive_Chests_Runes",
+    "Name": "Бонусные сундуки с рунами",
+    "Description": "Сундуки с рунами появляются с очень высокой вероятностью.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336861,
+    "IdName": "DungeonAffix_Positive_Chests_Herbs",
+    "Name": "Бонусные сундуки с травами",
+    "Description": "Сундуки с травами появляются с очень высокой вероятностью.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336863,
+    "IdName": "DungeonAffix_Positive_Chests_Jewelry",
+    "Name": "Бонусные сундуки с украшениями",
+    "Description": "Сундуки с украшениями появляются с очень высокой вероятностью.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336857,
+    "IdName": "DungeonAffix_Positive_Chests_Elixirs",
+    "Name": "Бонусные сундуки с эликсирами",
+    "Description": "Сундуки с эликсирами появляются с очень высокой вероятностью.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2373251,
+    "IdName": "DungeonAffix_Major_Berserkers",
+    "Name": "Буйство",
+    "Description": "Монстры в подземелье безрассудны и получают на 20%, а наносят – на 50% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314297,
+    "IdName": "DungeonAffix_Positive_AttackMoveSpeedOnKill",
+    "Name": "Быстрый убийца",
+    "Description": "При убийстве монстров скорость атаки и передвижения повышается на 2%. Суммируется до 20%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511865,
+    "IdName": "DungeonAffix_Positive_GildedElites",
+    "Name": "Великолепие мерзости",
+    "Description": "Здесь предаются излишествам и купаются в роскоши, а особые противники получают свойство \"Золочение\".",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2322097,
+    "IdName": "DungeonAffix_Major_Astaroth_Invuln",
+    "Name": "Верный зверь Астарота",
+    "Description": "Когда здоровье Астарота опускается до определенных уровней, он становится невосприимчив к урону, пока не будет уничтожено слияние гнева.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113291,
+    "IdName": "World_DGN_Frac_ImmortalEmanation",
+    "Name": "Вечная энергия",
+    "Description": "Любой, кто по глупости забредет внутрь, сам пойдет в пасть к хищнику. ",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314288,
+    "IdName": "DungeonAffix_Positive_StunCausesBurning",
+    "Name": "Взрывы от эффектов контроля",
+    "Description": "Когда вы попадаете под действие эффекта контроля, вокруг вас происходит взрыв.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113504,
+    "IdName": "World_DGN_Scos_HowlingWarren",
+    "Name": "Воющий лабиринт",
+    "Description": "Оскверненная берлога волков и варгов, изголодавшихся по человеческой плоти.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113847,
+    "IdName": "World_DGN_Frac_CalderaGate",
+    "Name": "Врата в кратер",
+    "Description": "Демоны в ледяной пещере с каждым днем все сильнее.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314233,
+    "IdName": "DungeonAffix_Positive_CooldownReductionOnKill",
+    "Name": "Время восстановления способностей сокращается при убийствах",
+    "Description": "При убийстве монстра время восстановления способностей сокращается на 0,25 сек.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314256,
+    "IdName": "DungeonAffix_Major_Volcanic",
+    "Name": "Вулкан",
+    "Description": "В бою под ногами игроков иногда взрываются фонтаны пламени.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2229221,
+    "IdName": "DungeonAffix_Positive_TreasureHunt",
+    "Name": "Вылазка за снаряжением",
+    "Description": "Находите хорадримские артефакты, чтобы увеличивать ценность снаряжения в награде.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321165,
+    "IdName": "DungeonAffix_Positive_MoreGoblins",
+    "Name": "Гарантированные алчные гоблины",
+    "Description": "В подземелье появятся алчные гоблины.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113997,
+    "IdName": "World_DGN_Frac_HoarfrostDemise",
+    "Name": "Гибель Инея",
+    "Description": "Ледяная пещера козлоногих, усеянная трупами и костями.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314350,
+    "IdName": "DungeonAffix_Major_DeathPulse",
+    "Name": "Гибельные тени",
+    "Description": "После того как вы убиваете монстра, через какое-то время может появиться импульс нестабильной энергии, который наносит значительный урон по области.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113468,
+    "IdName": "World_DGN_Hawe_BlindBurrows",
+    "Name": "Глухие туннели",
+    "Description": "Здешние пауки пристрастились к мясу. ",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314213,
+    "IdName": "DungeonAffix_Major_StormbanesWrath",
+    "Name": "Гнев громовержца",
+    "Description": "Игроков преследует темный монолит. Оказавшись рядом с целью, он излучает импульсы, наносящие значительный урон.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2330767,
+    "IdName": "DungeonAffix_Major_Astaroth_EliteSummons",
+    "Name": "Гнев стаи",
+    "Description": "Слияние гнева теперь призывает особых волков-оборотней.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113919,
+    "IdName": "World_DGN_Scos_DemonsWake",
+    "Name": "Гнездо демонов",
+    "Description": "После нападения Лилит в крепости не угасает пламя.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113763,
+    "IdName": "World_DGN_Scos_TwistedHollow",
+    "Name": "Гнилая низина",
+    "Description": "Богатый заповедник дикой природы, где могут скрываться разгадки тайн.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2346041,
+    "IdName": "DungeonAffix_Positive_Astaroth_Gold",
+    "Name": "Горы золота",
+    "Description": "Награда за победу над Астаротом включает большое количество золота.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321590,
+    "IdName": "DungeonAffix_Positive_Astaroth_RareKeys",
+    "Name": "Горы ключей",
+    "Description": "Награда за победу над Астаротом включает ценные ключи от подземелий.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2346039,
+    "IdName": "DungeonAffix_Positive_Astaroth_Materials",
+    "Name": "Горы материалов",
+    "Description": "Награда за победу над Астаротом включает большое количество ремесленных материалов.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321549,
+    "IdName": "DungeonAffix_Positive_Astaroth_SeasonalCurrency",
+    "Name": "Горы флаконов",
+    "Description": "Награда за победу над Астаротом включает большое количество хорадримских флаконов.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1498609,
+    "IdName": "World_DGN_S02_Kehj_TombofHallows",
+    "Name": "Гробница Мощей",
+    "Description": "В этих залах царит смерть. Древняя и новая. Вечная и преходящая.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113343,
+    "IdName": "World_DGN_Kehj_TomboftheSaints",
+    "Name": "Гробница Святых",
+    "Description": "Опустевшая гробница, когда-то полная золота. ",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314209,
+    "IdName": "DungeonAffix_Major_Lightning Storm",
+    "Name": "Грозовой шторм",
+    "Description": "Над игроками постепенно накапливается электричество. Успевайте укрыться под защитным куполом, чтобы вас не ударило молнией.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113451,
+    "IdName": "World_DGN_Frac_LightsWatch",
+    "Name": "Дозор Света",
+    "Description": "Форт рыцарей, захваченный бандитами и другими мерзкими тварями.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1719009,
+    "IdName": "DungeonAffix_Positive_ExtraShrines",
+    "Name": "Дополнительные святилища",
+    "Description": "В подземелье появятся дополнительные святилища.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113084,
+    "IdName": "World_DGN_Hawe_AncientReservoir",
+    "Name": "Древний резервуар",
+    "Description": "Зараженный ручей бежит под руинами.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113530,
+    "IdName": "World_DGN_Hawe_IronHold",
+    "Name": "Железный форт",
+    "Description": "Зловещая тьма расползается из недр обветшавшей тюрьмы.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113931,
+    "IdName": "World_DGN_Hawe_Oblivion",
+    "Name": "Забвение",
+    "Description": "Демоны Костра Эримана сбежали в полуразрушенную тюрьму.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114262,
+    "IdName": "World_DGN_Frac_ForsakenQuarry",
+    "Name": "Заброшенная каменоломня",
+    "Description": "Опустевшие рудники стали прибежищем для кошмарных ритуалов.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113710,
+    "IdName": "World_DGN_Kehj_ForgottenRuins",
+    "Name": "Заброшенные руины",
+    "Description": "Змеи заполонили остов запретных магических залов.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113289,
+    "IdName": "World_DGN_Kehj_AbandonedMineworks",
+    "Name": "Заброшенный рудник",
+    "Description": "Лабиринт туннелей, где еще бродят бывшие рабочие.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113401,
+    "IdName": "World_DGN_Step_ForgottenDepths",
+    "Name": "Забытые глубины",
+    "Description": "Тьма скрывается под священными камнями.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2282166,
+    "IdName": "DungeonAffix_Positive_ExperiencePools",
+    "Name": "Забытые знания",
+    "Description": "Здесь собрались искусные противники, за убийство которых можно получить больше опыта.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585586,
+    "IdName": "World_DGN_Naha_ForgottenRemains",
+    "Name": "Забытые останки",
+    "Description": "Где-то здесь без вести пропадают простые горожане.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2236740,
+    "IdName": "DungeonAffix_Positive_S07_ForgottenAltar",
+    "Name": "Забытый алтарь",
+    "Description": "Здесь всегда появляется забытый алтарь.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585596,
+    "IdName": "World_DGN_Naha_RuinedWild",
+    "Name": "Загубленная чаща",
+    "Description": "Духовная святыня пала под натиском непрошеных гостей.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113905,
+    "IdName": "World_DGN_Scos_FloodedDepths",
+    "Name": "Залитые глубины",
+    "Description": "В обломки разбитых кораблей пробралась не только вода.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314374,
+    "IdName": "DungeonAffix_Minor_Monster_ChanceSlow",
+    "Name": "Замедляющие снаряды",
+    "Description": "Когда монстр атакует в дальнем бою, он с вероятностью 50% может замедлить цель.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2360127,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Diamond",
+    "Name": "Запас алмазов",
+    "Description": "В этом месте спрятано много сундуков с бриллиантами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360109,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Amethyst",
+    "Name": "Запас аметистов",
+    "Description": "В этом месте спрятано много сундуков с аметистами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2281775,
+    "IdName": "DungeonAffix_Positive_Chests_Gold",
+    "Name": "Запас золота",
+    "Description": "В этом месте спрятано много сундуков с золотом.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360150,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Emerald",
+    "Name": "Запас изумрудов",
+    "Description": "В этом месте спрятано много сундуков с изумрудами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336905,
+    "IdName": "DungeonAffix_Positive_Chests_Materials",
+    "Name": "Запас материалов",
+    "Description": "В этом месте спрятано много сундуков с материалами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336907,
+    "IdName": "DungeonAffix_Positive_Chests_Obols",
+    "Name": "Запас оболов",
+    "Description": "В этом месте спрятано много сундуков с оболами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360152,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Ruby",
+    "Name": "Запас рубинов",
+    "Description": "В этом месте спрятано много сундуков с рубинами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2336859,
+    "IdName": "DungeonAffix_Positive_Chests_Gems",
+    "Name": "Запас самоцветов",
+    "Description": "В этом месте спрятано много сундуков с осколками самоцветов.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360156,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Sapphire",
+    "Name": "Запас сапфиров",
+    "Description": "В этом месте спрятано много сундуков с сапфирами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360160,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Topaz",
+    "Name": "Запас топазов",
+    "Description": "В этом месте спрятано много сундуков с топазами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2360158,
+    "IdName": "DungeonAffix_Positive_Chests_Gems_Skull",
+    "Name": "Запас черепов",
+    "Description": "В этом месте спрятано много сундуков с черепами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2361559,
+    "IdName": "DungeonAffix_Positive_Chests_SeasonalCurrency",
+    "Name": "Запасы инфернальных искажений",
+    "Description": "В этом месте спрятано много сундуков с инфернальным искажением.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113836,
+    "IdName": "World_DGN_Step_SealedArchives",
+    "Name": "Запечатанные архивы",
+    "Description": "Чертог древних магов. Когда-то убежище, теперь кладбище. ",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314370,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceHealing",
+    "Name": "Запрет на зелья здоровья",
+    "Description": "Атаки монстров в дальнем бою продлевают время восстановления вашего следующего зелья на 0,75 сек. вплоть до 7 сек.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113156,
+    "IdName": "World_DGN_Frac_ForbiddenCity",
+    "Name": "Запретный город",
+    "Description": "Распахнутые двери древней гробницы больше не удерживают тьму внутри.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113636,
+    "IdName": "World_DGN_Frac_DefiledCatacomb",
+    "Name": "Зараженная крипта",
+    "Description": "Грабители могил предупреждают, что сокровища этого склепа того не стоят.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113576,
+    "IdName": "World_DGN_Kehj_SunkenLibrary",
+    "Name": "Затонувшая библиотека",
+    "Description": "Мертвые оберегают тайны древнего хранилища.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114193,
+    "IdName": "World_DGN_Scos_SunkenRuins",
+    "Name": "Затонувшие руины",
+    "Description": "Все чаще звучат слухи о целителе, что обратился к самой темной некромантии.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314384,
+    "IdName": "DungeonAffix_Minor_Monster_LessMelee",
+    "Name": "Защита в ближнем бою",
+    "Description": "Монстры получают на 40% меньше урона от целей вблизи.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314386,
+    "IdName": "DungeonAffix_Minor_Monster_LessRanged",
+    "Name": "Защита в дальнем бою",
+    "Description": "Монстры получают на 60% меньше урона от целей на расстоянии.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1585511,
+    "IdName": "World_DGN_Naha_BeastGraveyard",
+    "Name": "Звериное кладбище",
+    "Description": "Падальщики нередко наведываются к священным великанам за добычей.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314356,
+    "IdName": "DungeonAffix_Minor_Monster_HPBonus",
+    "Name": "Здоровье монстров",
+    "Description": "Максимальный запас здоровья монстров увеличивается на 30%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114205,
+    "IdName": "World_DGN_Frac_Zenith",
+    "Name": "Зенит",
+    "Description": "Под горой раскинулась сеть забытых и заброшенных тоннелей. ",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114067,
+    "IdName": "World_DGN_Hawe_HauntedRefuge",
+    "Name": "Зловещее убежище",
+    "Description": "Старая церковь медленно погружается все глубже в ил.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114046,
+    "IdName": "World_DGN_Hawe_FetidMausoleum",
+    "Name": "Зловонный мавзолей",
+    "Description": "Забытая гробница для неупокоенных мертвецов Эриду.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113297,
+    "IdName": "World_DGN_Hawe_SerpentsLair",
+    "Name": "Змеиная нора",
+    "Description": "Бывший престол Мохлон. Теперь они хотят другую королеву.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113768,
+    "IdName": "World_DGN_Step_ShiftingCity",
+    "Name": "Изменчивый город",
+    "Description": "Эти руины когда-то служили убежищем для жителей Кара-Ису.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2373228,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraSparking",
+    "Name": "Искрящиеся удары",
+    "Description": "Монстры наносят еще 30% физического урона как урон от искр за 3 сек.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113896,
+    "IdName": "World_DGN_Frac_KorDraganBarracks",
+    "Name": "Казармы Кор Драгана",
+    "Description": "В величественных залах теперь бродят одни мертвецы.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114146,
+    "IdName": "World_DGN_Step_GuulrahnCanals",
+    "Name": "Каналы Гуулрана",
+    "Description": "Даже тиран-каннибал не осмеливается приближаться к гниющей нечисти внизу.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585603,
+    "IdName": "World_DGN_Naha_SkatsimiFane",
+    "Name": "Капище скатсим",
+    "Description": "Кто знает, во что превратились старые божества, когда верующие забыли о них.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1975499,
+    "IdName": "DungeonAffix_Positive_S05_Rep_Shrines",
+    "Name": "Касание Преисподней",
+    "Description": "Больше инфернальных святилищ и +20% к опыту символов после прохождения подземелья.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321159,
+    "IdName": "DungeonAffix_Positive_MoreObducite",
+    "Name": "Кладезь маревита",
+    "Description": "Вы получаете больше маревита за убийство монстров в этом месте.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585486,
+    "IdName": "World_DGN_Naha_SeethingUnderpass",
+    "Name": "Клокочущая червоточина",
+    "Description": "Из затопленных каналов поднимается подводная скверна.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114338,
+    "IdName": "World_DGN_Hawe_Witchwater",
+    "Name": "Колдовские воды",
+    "Description": "Сектанты-нангари заманивают добычу песнями, звучащими во снах.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 410196226,
+    "IdName": "ItemDungeonAffixResses",
+    "Name": "Количество воскрешений: ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Misc"
+  },
+  {
+    "IdSno": 1113153,
+    "IdName": "World_DGN_Hawe_BelfryZakara",
+    "Name": "Колокольня Закары",
+    "Description": "Этот собор построили служители Закарума. Теперь в ней поклоняются морю. ",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113194,
+    "IdName": "World_DGN_Kehj_Conclave",
+    "Name": "Конклав",
+    "Description": "Слухи о темных ритуалах приводят жителей в ужас.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113629,
+    "IdName": "World_DGN_Frac_AnicasClaim",
+    "Name": "Копи Аники",
+    "Description": "Не человек прорыл эти темные туннели. ",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113208,
+    "IdName": "World_DGN_Scos_Underroot",
+    "Name": "Корневище",
+    "Description": "Руины глубоко под Тур Дулра, наполненные гнилью и нечистотами.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314252,
+    "IdName": "DungeonAffix_Major_Nightmare Portal",
+    "Name": "Кошмарный портал",
+    "Description": "В бою рядом с игроками время от времени открываются порталы в кошмар, откуда выходят опасные чудовища.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113708,
+    "IdName": "World_DGN_Step_Mournfield",
+    "Name": "Край горя",
+    "Description": "Оно живое. Оно мертвое. Оно нападет.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114168,
+    "IdName": "World_DGN_Frac_MercysReach",
+    "Name": "Край милосердия",
+    "Description": "Через полуразрушенную крепость когда-то шла горная дорога. ",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113805,
+    "IdName": "World_DGN_Hawe_SteadfastBarracks",
+    "Name": "Крепкие казармы",
+    "Description": "Гнездо безумных фанатиков, служащих давно погребенному злу.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113366,
+    "IdName": "World_DGN_Scos_GaranHold",
+    "Name": "Крепость Гарана",
+    "Description": "Когда-то могучая крепость, обреченная погибнуть в огне.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113145,
+    "IdName": "World_DGN_Frac_SanguineChapel",
+    "Name": "Кровавая часовня",
+    "Description": "Заброшенная закарумская церковь, захваченная вампирами.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314352,
+    "IdName": "DungeonAffix_Major_Blood Blister",
+    "Name": "Кровавые волдыри",
+    "Description": "После смерти монстра иногда возникает кровавый волдырь, который вскоре взрывается и наносит значительный урон по области.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1585504,
+    "IdName": "World_DGN_Naha_FeedingGrounds",
+    "Name": "Кровавые угодья",
+    "Description": "Свежих жертв там скармливают демонам.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585629,
+    "IdName": "World_DGN_Naha_ForgeofMalice",
+    "Name": "Кузня злобы",
+    "Description": "Огонь ненависти продолжает пылать в далеком углу Санктуария.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113294,
+    "IdName": "World_DGN_Scos_PenitentCairns",
+    "Name": "Курганы покаяния",
+    "Description": "К гротам, священным для духов, жители Скосглена стараются не подходить.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321559,
+    "IdName": "DungeonAffix_Positive_Astaroth_Ancestral",
+    "Name": "Легендарные трофеи",
+    "Description": "Награда за победу над Астаротом гарантированно включает предмет предков.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114264,
+    "IdName": "World_DGN_Scos_Aldurwood",
+    "Name": "Лес Альдура",
+    "Description": "В этом оскверненном лесу стволы деревьев сочатся кровью.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113584,
+    "IdName": "World_DGN_Frac_Maulwood",
+    "Name": "Лес терзаний",
+    "Description": "Бандиты обосновались в этом лесу и укротили его чудовищ.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113484,
+    "IdName": "World_DGN_Scos_SaratsLair",
+    "Name": "Логово Сарат",
+    "Description": "Когда-то логово диких зверей, теперь гнездо адских тварей.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113946,
+    "IdName": "World_DGN_Scos_FeralsDen",
+    "Name": "Логово диких зверей",
+    "Description": "Хижина стала жертвой ненависти друидов.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114287,
+    "IdName": "World_DGN_Scos_MadduxWatch",
+    "Name": "Маддукский дозор",
+    "Description": "Заброшенный аванпост раскинулся прямо на старых могилах.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2354533,
+    "IdName": "DungeonAffix_Minor_S9_Barrier",
+    "Name": "Малая эгида",
+    "Description": "Некоторые монстры получают барьер с прочностью 50% максимального запаса здоровья.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113049,
+    "IdName": "World_DGN_Hawe_MaugansWorks",
+    "Name": "Мастерская Маугана",
+    "Description": "Притон для преступников и дезертиров.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321163,
+    "IdName": "DungeonAffix_Positive_SeasonalReputation",
+    "Name": "Место почета",
+    "Description": "В этом месте за убийство монстров дается дополнительное божественное одобрение.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2330764,
+    "IdName": "DungeonAffix_Major_Astaroth_Meteor",
+    "Name": "Метеоритная буря",
+    "Description": "Теперь Астарот применяет больше атак с метеоритами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1828297,
+    "IdName": "DungeonAffix_Positive_GlyphXP",
+    "Name": "Милость предков",
+    "Description": "В этом подземелье вы получаете на 10% больше опыта.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2511992,
+    "IdName": "DungeonAffix_Positive_MythicElites",
+    "Name": "Мифический рай",
+    "Description": "Такие места являлись вам ранее лишь в самых безумных снах...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314372,
+    "IdName": "DungeonAffix_Minor_Monster_LifeSteal",
+    "Name": "Монстры похищают здоровье",
+    "Description": "Монстры, не являющиеся боссами, получают 15% похищения здоровья.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314415,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraCold",
+    "Name": "Морозные удары",
+    "Description": "Монстры наносят дополнительный урон от холода в размере 20% от физического урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113695,
+    "IdName": "World_DGN_Frac_NostravaDeepwood",
+    "Name": "Мрачнолесье Ностравы",
+    "Description": "Ожившие мертвецы бродят среди деревьев.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2358424,
+    "IdName": "DungeonAffix_Positive_Astaroth_Reputation",
+    "Name": "Мрачные секреты",
+    "Description": "За убийство Астарота вы получаете большое количество хорадримских знаний.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314260,
+    "IdName": "DungeonAffix_Major_Avenger",
+    "Name": "Мстители",
+    "Description": "Когда монстр погибает, после короткого перерыва другие чудовища поблизости приходят в неистовство. Наносимый ими урон увеличивается.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2354687,
+    "IdName": "DungeonAffix_Minor_S9_Explosive",
+    "Name": "Нестабильные эксперименты",
+    "Description": "Убитые монстры иногда взрываются через некоторое время, нанося значительный урон по области.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314366,
+    "IdName": "DungeonAffix_Minor_Monster_Unstoppable",
+    "Name": "Неудержимые монстры",
+    "Description": "Когда здоровье монстров опускается ниже 30%, они получают неудержимость.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314417,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceResistance",
+    "Name": "Неффективное сопротивление",
+    "Description": "Атаки монстров в дальнем бою снижают сопротивление стихиям на 5%. Эффект длится 6 сек. и суммируется до 25%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1898340,
+    "IdName": "DungeonAffix_Major_Monster_Barrier",
+    "Name": "Нечестивая эгида",
+    "Description": "Монстры получают барьер с прочностью, равной 50% их максимального запаса здоровья.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314368,
+    "IdName": "DungeonAffix_Minor_Monster_AttackBehind",
+    "Name": "Ножи в спину",
+    "Description": "Когда монстры вблизи поражают вас со спины, вы становитесь уязвимы. Получаемый урон при уязвимости увеличивается на 35%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113392,
+    "IdName": "World_DGN_Kehj_CrumblingHekma",
+    "Name": "Обветшавшая Хекма",
+    "Description": "Полные ненависти катакомбы закарумитов. ",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2373236,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraFrostbiting",
+    "Name": "Обмораживающие удары",
+    "Description": "Монстры наносят еще 30% физического урона как урон от обморожения за 3 сек.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113098,
+    "IdName": "World_DGN_Frac_KorValarRamparts",
+    "Name": "Оборона Кор Валара",
+    "Description": "Оскверненная крепость, прячущая грехи Кающихся Рыцарей.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113350,
+    "IdName": "World_DGN_Kehj_CollapsedVault",
+    "Name": "Обрушенное хранилище",
+    "Description": "Сокровища в руках мертвеца.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113649,
+    "IdName": "World_DGN_Step_BuriedHalls",
+    "Name": "Обрушенные чертоги",
+    "Description": "Церковь Трех пытается отвоевать эти древние залы.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1690800,
+    "IdName": "DungeonAffix_Minor_Monster_Traps_Fire01",
+    "Name": "Огненные ловушки",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314424,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraFire",
+    "Name": "Огненные удары",
+    "Description": "Монстры наносят дополнительный урон от огня в размере 20% от физического урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113784,
+    "IdName": "World_DGN_Step_BloodsoakedCrag",
+    "Name": "Окровавленный утес",
+    "Description": "Охотничьи угодья каннибалов. ",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113909,
+    "IdName": "World_DGN_Step_OnyxHold",
+    "Name": "Ониксовая крепость",
+    "Description": "Мертвые надзиратели по-прежнему патрулируют коридоры тюрьмы.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113793,
+    "IdName": "World_DGN_Hawe_HeathensKeep",
+    "Name": "Оплот язычника",
+    "Description": "Эти Рыцари поклялись в верности новому лидеру.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114021,
+    "IdName": "World_DGN_Kehj_DesertedUnderpass",
+    "Name": "Опустевший тоннель",
+    "Description": "В пещерах под разрушенным лагерем затаилось зло.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2381224,
+    "IdName": "DungeonAffix_Major_Horde_Demons",
+    "Name": "Орда демонов",
+    "Description": "Подземелье захвачено злобными порождениями Преисподней, запас здоровья которых увеличен на 30%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381222,
+    "IdName": "DungeonAffix_Major_Horde_Cannibals",
+    "Name": "Орда каннибалов",
+    "Description": "Подземелье осквернили гнусные каннибалы, запас здоровья которых увеличен на 30%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381226,
+    "IdName": "DungeonAffix_Major_Horde_Insects",
+    "Name": "Орда насекомых",
+    "Description": "Подземелье кишит заразными насекомыми, запас здоровья которых увеличен на 30%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381230,
+    "IdName": "DungeonAffix_Major_Horde_Undead",
+    "Name": "Орда нежити",
+    "Description": "В подземелье восстала оскверненная нежить, запас здоровья которой увеличен на 30%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381199,
+    "IdName": "DungeonAffix_Major_Horde_Cultists",
+    "Name": "Орда сектантов",
+    "Description": "В подземелье молятся обезумевшие фанатики, запас здоровья которых увеличен на 30%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2381228,
+    "IdName": "DungeonAffix_Major_Horde_Khazra",
+    "Name": "Орда хазра",
+    "Description": "В подземелье обосновались шумные козлоногие, запас здоровья которых увеличен на 30%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2343032,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Artillery",
+    "Name": "Орудийные святилища",
+    "Description": "На вашем пути будут появляться орудийные святилища.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113500,
+    "IdName": "World_DGN_Frac_HallowedOssuary",
+    "Name": "Освященный склеп",
+    "Description": "Усыпальница мучеников, оскверненная и наполненная страшной силой.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113980,
+    "IdName": "World_DGN_Step_GrinningLabyrinth",
+    "Name": "Оскаленный лабиринт",
+    "Description": "Запутанные коридоры перемалывали еще и не таких воинов.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113107,
+    "IdName": "World_DGN_Kehj_CorruptedGrotto",
+    "Name": "Оскверненный грот",
+    "Description": "Забытые мертвецы томятся под толщей голого камня.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314399,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraCorruption",
+    "Name": "Оскверняющие удары",
+    "Description": "Монстры наносят дополнительный урон от порчи в размере 30% от физического урона в течение 3\u00A0сек.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2511905,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Infested)",
+    "Name": "Особые зараженные противники ",
+    "Description": "Особые монстры получают свойство \"Заражение\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2354691,
+    "IdName": "DungeonAffix_Minor_S9_ChillingWinds",
+    "Name": "Особые монстры леденящего ветра",
+    "Description": "Особые монстры получают свойство \"Леденящий ветер\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2355998,
+    "IdName": "DungeonAffix_Minor_S9_Tethering",
+    "Name": "Особые монстры с адскими цепями",
+    "Description": "Особые монстры получают свойство \"Адские цепи\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2511957,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Frenzied)",
+    "Name": "Особые монстры с бешенством",
+    "Description": "Особые монстры получают свойство \"Бешенство\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314339,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Electric Lance)",
+    "Name": "Особые монстры с копьем молний",
+    "Description": "Особые монстры получают свойство \"Копье молний\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511964,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Saw Blades)",
+    "Name": "Особые монстры с пилами",
+    "Description": "Особые монстры получают свойство \"Пилы\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511827,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Illusory)",
+    "Name": "Особые монстры – иллюзии ",
+    "Description": "Особые монстры получают свойство \"Иллюзия\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511947,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Sinful Torment)",
+    "Name": "Особые монстры, несущие греховное истязание ",
+    "Description": "Особые монстры получают свойство \"Греховное истязание\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511979,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Veiled)",
+    "Name": "Особые монстры, скрытые вуалью",
+    "Description": "Особые монстры получают свойство \"Вуаль\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511968,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Shadow Enchanted)",
+    "Name": "Особые монстры, усиленные темной магией",
+    "Description": "Особые монстры получают свойство \"Усиление темной магией\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314342,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Poison)",
+    "Name": "Особые монстры, усиленные ядом",
+    "Description": "Особые монстры получают свойство \"Усиление ядом\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314333,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Suppressor)",
+    "Name": "Особые монстры-душители",
+    "Description": "Особые монстры получают свойство \"Душитель\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2355995,
+    "IdName": "DungeonAffix_Minor_S9_Suppressor",
+    "Name": "Особые монстры-душители",
+    "Description": "Особые монстры получают свойство \"Душитель\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2355993,
+    "IdName": "DungeonAffix_Minor_S9_Summoner",
+    "Name": "Особые монстры-призыватели",
+    "Description": "Особые монстры получают свойство \"Призыватель\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2511973,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Splitter)",
+    "Name": "Особые монстры-расщепители",
+    "Description": "Особые монстры получают свойство \"Расщепление\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373215,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Explosive)",
+    "Name": "Особые противники с взрывчаткой",
+    "Description": "Особые монстры получают свойство \"Взрывчатка\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511951,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Berserker)",
+    "Name": "Особые противники – берсерки",
+    "Description": "Особые монстры получают свойство \"Берсерк\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373211,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Vampiric)",
+    "Name": "Особые противники – вампиры",
+    "Description": "Особые монстры получают свойство \"Вампир\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511949,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Anguished Souls)",
+    "Name": "Особые противники – измученные души ",
+    "Description": "Особые монстры получают свойство \"Измученные души\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2373219,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Waller)",
+    "Name": "Особые противники – каменщики",
+    "Description": "Особые монстры получают свойство \"Каменщик\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 2511953,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Executioner)",
+    "Name": "Особые противники – палачи",
+    "Description": "Особые монстры получают свойство \"Палач\" и наносят на 20% больше урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1585530,
+    "IdName": "World_DGN_Naha_VileHive",
+    "Name": "Отвратительный улей",
+    "Description": "Звуки копошащейся нечисти не умолкают в этом гадком гнезде ни на секунду.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585554,
+    "IdName": "World_DGN_Naha_RemnantsofRage",
+    "Name": "Отголоски гнева",
+    "Description": "В этой темнице обитают неспокойные силы зла.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314391,
+    "IdName": "DungeonAffix_Positive_EvadePushesEnemies",
+    "Name": "Отталкивающее ускользание",
+    "Description": "При ускользании вы отбрасываете противников.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314354,
+    "IdName": "DungeonAffix_Minor_Monster_AttackFaster",
+    "Name": "Охотники",
+    "Description": "Монстры в подземелье неестественно быстры. Их скорость атаки и передвижения повышается на 33%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113184,
+    "IdName": "World_DGN_Step_ChampionsDemise",
+    "Name": "Падение победителя",
+    "Description": "Когда-то прекрасные земли, теперь захваченные демонами.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113063,
+    "IdName": "World_DGN_Kehj_Inferno",
+    "Name": "Пекло",
+    "Description": "Мы вгрызались в камень, пробивая путь в ад.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113937,
+    "IdName": "World_DGN_Frac_RimescarCavern",
+    "Name": "Пещера Ледяного Шрама",
+    "Description": "Пещера, которую захватили демоны. Теперь она отравлена их темной магией. ",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114151,
+    "IdName": "World_DGN_Kehj_UldursCave",
+    "Name": "Пещера Ульдура",
+    "Description": "Логово убийц и трупных падальщиков.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585570,
+    "IdName": "World_DGN_Naha_CavesofKutokue",
+    "Name": "Пещеры Кутоке",
+    "Description": "Крики отчаяния эхом отдаются среди стен.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113581,
+    "IdName": "World_DGN_Kehj_SiroccoCaverns",
+    "Name": "Пещеры Сирокко",
+    "Description": "Мерзкая зараза поразила эти пещеры.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113315,
+    "IdName": "World_DGN_Step_AncientsLament",
+    "Name": "Плач Древних",
+    "Description": "Могила и одновременно тюрьма для страдающих душ. ",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314244,
+    "IdName": "DungeonAffix_Positive_IncreasedCritChance",
+    "Name": "Повышенная вероятность критического удара",
+    "Description": "Ваша вероятность критического удара повышена на 9%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585561,
+    "IdName": "World_DGN_Naha_HierophantPyre",
+    "Name": "Погребальный костер жреца",
+    "Description": "Костры, на которых когда-то сжигали недругов Санкекура, загорелись вновь.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314409,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraBurning",
+    "Name": "Поджигающие удары",
+    "Description": "Монстры наносят дополнительный урон от горения в размере 30% от физического урона в течение 3 сек.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2321540,
+    "IdName": "DungeonAffix_Positive_Astaroth_AndarielBossMats",
+    "Name": "Подношение Андариэль",
+    "Description": "Награда за победу над Астаротом включает утыканных булавками кукол, открывающих сокровищницу Андариэль.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321556,
+    "IdName": "DungeonAffix_Positive_Astaroth_BelialBossMats",
+    "Name": "Подношение Белиалу",
+    "Description": "Награда за победу над Астаротом включает оболочки предателя, открывающие сокровищницу Белиала.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321564,
+    "IdName": "DungeonAffix_Positive_Astaroth_Varshaan",
+    "Name": "Подношение Варшану",
+    "Description": "Награда за победу над Астаротом включает чумные сердца, открывающие сокровищницу Варшана.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2420535,
+    "IdName": "DungeonAffix_Positive_Astaroth_MephistoBossMats",
+    "Name": "Подношение Вестника Ненависти",
+    "Description": "Награды за победу над Астаротом включают в себя омерзительные сердца, необходимые для открытия сокровищницы Вестника Ненависти.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321566,
+    "IdName": "DungeonAffix_Positive_Astaroth_Grigoire",
+    "Name": "Подношение Грегуару",
+    "Description": "Награда за победу над Астаротом включает живую сталь, открывающую сокровищницу Грегуара.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321538,
+    "IdName": "DungeonAffix_Positive_Astaroth_DurielBossMats",
+    "Name": "Подношение Дюриэлю",
+    "Description": "Награда за победу над Астаротом включает осколки агонии, открывающие сокровищницу Дюриэля.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321562,
+    "IdName": "DungeonAffix_Positive_Astaroth_Urivar",
+    "Name": "Подношение Уривару",
+    "Description": "Награда за победу над Астаротом включает маски вершителя, открывающие сокровищницу Уривара.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2321574,
+    "IdName": "DungeonAffix_Positive_Astaroth_LordZir",
+    "Name": "Подношение лорду Зиру",
+    "Description": "Награда за победу над Астаротом включает отборную кровь, открывающую сокровищницу лорда Зира.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113981,
+    "IdName": "World_DGN_Step_BetrayersRow",
+    "Name": "Позор предателя",
+    "Description": "Истерзанные руины города, обезумевшего от зависти. ",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314215,
+    "IdName": "DungeonAffix_Positive_GoldFind",
+    "Name": "Поиск золота",
+    "Description": "Вы получаете на 30% больше золота.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314240,
+    "IdName": "DungeonAffix_Positive_MagicFind",
+    "Name": "Поиск магических предметов",
+    "Description": "Вы получаете больше добычи за убийство противников.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113803,
+    "IdName": "World_DGN_Frac_DerelictLodge",
+    "Name": "Покинутая обитель",
+    "Description": "Бывший охотничий домик оказался во власти демонов.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113112,
+    "IdName": "World_DGN_Scos_LubansRest",
+    "Name": "Покой Лубан",
+    "Description": "Воительница и ее последователи восстали из могил.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314211,
+    "IdName": "DungeonAffix_Major_Drifting Shade",
+    "Name": "Ползучие тени",
+    "Description": "За игроками гонятся ползучие тени. Настигнув цель, тени взрываются и наносят значительный урон. На месте взрыва остается область кошмаров, вызывающая головокружение.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113331,
+    "IdName": "World_DGN_Step_CarrionFields",
+    "Name": "Поля падали",
+    "Description": "Осквернители этих земель прокляты и обречены вечно скитаться по ним.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113337,
+    "IdName": "World_DGN_Hawe_LostKeep",
+    "Name": "Потерянная крепость",
+    "Description": "Еще одна из множества крепостей, заброшенных Собором.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585475,
+    "IdName": "World_DGN_Naha_BetrayedTomb",
+    "Name": "Предательская гробница",
+    "Description": "Духи корчатся в судорогах, пока оболочки визжат в чудовищной агонии.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314420,
+    "IdName": "DungeonAffix_Minor_Monster_ReduceDodge",
+    "Name": "Препятствие уклонению",
+    "Description": "Когда монстр атакует в дальнем бою, он снижает вероятность уклонения цели на 12%. Эффект длится 6 сек. и суммируется вплоть до 60%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113549,
+    "IdName": "World_DGN_Step_SeasideDescent",
+    "Name": "Прибрежный спуск",
+    "Description": "Бухта, окруженная кладбищем разбитых кораблей.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314217,
+    "IdName": "DungeonAffix_Positive_PeriodicLightning",
+    "Name": "Призыв молний",
+    "Description": "Время от времени вы призываете разряды молнии, наносящие урон ближайшим врагам.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1114156,
+    "IdName": "World_DGN_Hawe_LightsRefuge",
+    "Name": "Пристанище Света",
+    "Description": "В брошенном доме находится гнездо из зубов и частей доспехов.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114247,
+    "IdName": "World_DGN_Kehj_HakansRefuge",
+    "Name": "Пристанище Хакана",
+    "Description": "Богатое поместье превратилось в развалины – язву из гниющих воспоминаний прошлого.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113270,
+    "IdName": "World_DGN_Kehj_HereticsAsylum",
+    "Name": "Приют еретиков",
+    "Description": "Темница для падших и бессердечных.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1894518,
+    "IdName": "DungeonAffix_Positive_GlyphXP_EvergreenVersion",
+    "Name": "Пробуждение предков",
+    "Description": "Вы получите на 20% больше опыта для символов после прохождения подземелья.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1585540,
+    "IdName": "World_DGN_Naha_PutrescentLarder",
+    "Name": "Прогнивший чулан",
+    "Description": "Места, где лакуни хранят мясо, можно найти по зловонному запаху.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2232949,
+    "IdName": "World_DGN_QST_Skov_DeathCurse_02",
+    "Name": "Проклятие утопленника",
+    "Description": "",
+    "DungeonZoneInfo": "в области Skovos",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314407,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraBleeding",
+    "Name": "Пускающие кровь удары",
+    "Description": "Монстры наносят еще 30% физического урона как урон от кровотечения за 3 сек.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114299,
+    "IdName": "World_DGN_Scos_BrokenBulwark",
+    "Name": "Разрушенный бастион",
+    "Description": "Эта часть усадьбы Донана превратилась в развалины вместе со всем остальным.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314450,
+    "IdName": "DungeonAffix_Minor_Monster_BarrierKiller",
+    "Name": "Разрушители барьеров",
+    "Description": "Монстры наносят на 100% больше урона барьерам.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314422,
+    "IdName": "DungeonAffix_Minor_Monster_SunderArmor",
+    "Name": "Разрушители брони",
+    "Description": "Когда монстр атакует в дальнем бою, он снижает показатель брони цели на 7%. Эффект длится 6 сек. и суммируется вплоть до 35%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113105,
+    "IdName": "World_DGN_Hawe_EarthenWound",
+    "Name": "Рана земли",
+    "Description": "Здешние демоны отправились на корм каннибалам.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314454,
+    "IdName": "DungeonAffix_Minor_Monster_HPRegen",
+    "Name": "Регенерация монстров",
+    "Description": "Монстры, не являющиеся боссами, восполняют 1,5% максимального запаса здоровья в секунду.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1113192,
+    "IdName": "World_DGN_Scos_RaethwindWilds",
+    "Name": "Ретвиндские леса",
+    "Description": "Слишком многие не вернулись из чащи.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113542,
+    "IdName": "World_DGN_Frac_DeadMansDredge",
+    "Name": "Ров Мертвеца",
+    "Description": "Любимая добыча хищных обитателей этой пещеры – люди.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114192,
+    "IdName": "World_DGN_Hawe_GhoaRuins",
+    "Name": "Руины Гхоа",
+    "Description": "Бывшая крепость. Смертные строят высокие стены, но болото все равно берет свое.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114092,
+    "IdName": "World_DGN_Kehj_ShivtaRuins",
+    "Name": "Руины Шивты",
+    "Description": "Порча Алькарна проросла до этих руин.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114038,
+    "IdName": "World_DGN_Hawe_RuinsofEridu",
+    "Name": "Руины Эриду",
+    "Description": "Когда-то неприступная крепость наполовину скрылась в болоте.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2343034,
+    "IdName": "DungeonAffix_Positive_PowerShrines_BlastWave",
+    "Name": "Святилища взрывной волны",
+    "Description": "На вашем пути будут появляться святилища взрывной волны.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2343040,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Protection",
+    "Name": "Святилища защиты",
+    "Description": "На вашем пути будут появляться святилища защиты.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2361572,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Channeling",
+    "Name": "Святилища поддержания",
+    "Description": "В подземелье появляются святилища поддержания.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2343038,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Lethal",
+    "Name": "Святилища смерти",
+    "Description": "На вашем пути будут появляться святилища смерти.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2343014,
+    "IdName": "DungeonAffix_Positive_PowerShrines_Conduit",
+    "Name": "Святилища-проводники",
+    "Description": "На вашем пути будут появляться святилища-проводники.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113567,
+    "IdName": "World_DGN_Kehj_YshariSanctum",
+    "Name": "Святилище Ишари",
+    "Description": "Сектанты разорили древнее святилище.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585547,
+    "IdName": "World_DGN_Naha_HallowedStones",
+    "Name": "Священные камни",
+    "Description": "Сквозь бурю порока слабо пробивается луч надежды.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314364,
+    "IdName": "DungeonAffix_Minor_Monster_DrainResource",
+    "Name": "Сжигание ресурса",
+    "Description": "Когда вы тратите ресурсы, вы дополнительно теряете ресурс в объеме 30% потраченного количества за каждый удар, полученный от противников вдалеке.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 2330769,
+    "IdName": "DungeonAffix_Major_Astaroth_Pounce",
+    "Name": "Скачущее слияние",
+    "Description": "Теперь слияние гнева продолжает применять атаку с наскоком, даже после того как Астарот спешивается.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1114026,
+    "IdName": "World_DGN_Kehj_SepulcherOfTheForsworn",
+    "Name": "Склеп отступников",
+    "Description": "Зло пробуждается под алтарем Баала.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585460,
+    "IdName": "World_DGN_Naha_RazaksDescent",
+    "Name": "Склон Разака",
+    "Description": "Где свет теряется среди тьмы, а воля разума слабеет в тисках корней.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2511994,
+    "IdName": "DungeonAffix_Positive_AncestralElites",
+    "Name": "Скрытая оружейная",
+    "Description": "Здесь скрыты невероятные предметы, а сторожат их особые монстры, за победу над которыми вы получите добычу с мощными свойствами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2516764,
+    "IdName": "DungeonAffix_Positive_LegendaryElites",
+    "Name": "Скрытая оружейная",
+    "Description": "Здесь скрыты невероятные предметы, а сторожат их особые монстры, за победу над которыми вы получите добычу с мощными свойствами.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2226100,
+    "IdName": "DungeonAffix_Positive_LegendaryVendor",
+    "Name": "Скрытый продавец легендарных предметов",
+    "Description": "Где-то в подземелье скрывается тайный торговец...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2358423,
+    "IdName": "DungeonAffix_Major_Astaroth_TeleDoT",
+    "Name": "След телепортации",
+    "Description": "Теперь при телепортации Астарот создает участок, наносящий периодический урон.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113900,
+    "IdName": "World_DGN_Kehj_CrusadersCathedral",
+    "Name": "Собор крестоносцев",
+    "Description": "Рыцари завладели храмом со всеми его мертвыми воинами.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314382,
+    "IdName": "DungeonAffix_Minor_Monster_LessBurning",
+    "Name": "Сопротивление монстров горению",
+    "Description": "Монстры получают на 60% меньше урона от горения.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314446,
+    "IdName": "DungeonAffix_Minor_Monster_AntiCC",
+    "Name": "Сопротивление монстров контролю",
+    "Description": "Действие эффектов контроля на монстров сокращено на 40%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314448,
+    "IdName": "DungeonAffix_Minor_Monster_AntiCrit",
+    "Name": "Сопротивление монстров критическим ударам",
+    "Description": "Атаки монстров уменьшают урон от ваших критических ударов на 3 сек. на 6% вплоть до 60%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314380,
+    "IdName": "DungeonAffix_Minor_Monster_LessBleeding",
+    "Name": "Сопротивление монстров кровотечению",
+    "Description": "Монстры получают на 60% меньше урона от кровотечения.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314395,
+    "IdName": "DungeonAffix_Minor_Monster_LessLightning",
+    "Name": "Сопротивление монстров молнии",
+    "Description": "Монстры получают на 40% меньше урона от молнии.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314437,
+    "IdName": "DungeonAffix_Minor_Monster_LessFire",
+    "Name": "Сопротивление монстров огню",
+    "Description": "Монстры получают на 40% меньше урона от огня.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314378,
+    "IdName": "DungeonAffix_Minor_Monster_LessCorruption",
+    "Name": "Сопротивление монстров периодическому урону от темной магии",
+    "Description": "Монстры получают на 60% меньше периодического урона от темной магии.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314444,
+    "IdName": "DungeonAffix_Minor_Monster_AntiOverpower",
+    "Name": "Сопротивление монстров подавляющему урону",
+    "Description": "Атаки монстров уменьшают урон от вашего следующего подавляющего удара на 12%, вплоть до 60%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314376,
+    "IdName": "DungeonAffix_Minor_Monster_LessShadow",
+    "Name": "Сопротивление монстров темной магии",
+    "Description": "Монстры получают на 40% меньше урона от темной магии.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314388,
+    "IdName": "DungeonAffix_Minor_Monster_LessPhysical",
+    "Name": "Сопротивление монстров физическому урону",
+    "Description": "Монстры получают на 30% меньше физического урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314397,
+    "IdName": "DungeonAffix_Minor_Monster_LessCold",
+    "Name": "Сопротивление монстров холоду",
+    "Description": "Монстры получают на 40% меньше урона от холода.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314442,
+    "IdName": "DungeonAffix_Minor_Monster_AntiVulnerable",
+    "Name": "Сопротивление монстров эффектам уязвимости",
+    "Description": "Действие эффектов уязвимости на монстров сокращено на 60%.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314393,
+    "IdName": "DungeonAffix_Minor_Monster_LessPoison",
+    "Name": "Сопротивление монстров яду",
+    "Description": "Монстры получают на 60% меньше урона от яда.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1585468,
+    "IdName": "World_DGN_Naha_IronCenotaph",
+    "Name": "Стальной кенотаф",
+    "Description": "Первый дом Стальных Волков до падения Кураста.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113090,
+    "IdName": "World_DGN_Scos_Oldstones",
+    "Name": "Старые камни",
+    "Description": "Хазра заселили руины форта, не ведая о его проклятии.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2379014,
+    "IdName": "DungeonAffix_Major_Bloody_Mess",
+    "Name": "Темное знамение",
+    "Description": "Здесь творится неладное. Кто-то или что-то следит за каждым вашим шагом...",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113590,
+    "IdName": "World_DGN_Step_DarkRavine",
+    "Name": "Темное ущелье",
+    "Description": " Здесь служители Церкви Трех проводят свои ритуалы. Эхо криков далеко разносится по округе. ",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314411,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraShadow",
+    "Name": "Темные удары",
+    "Description": "Монстры наносят дополнительный урон от темной магии в размере 20% от физического урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1114271,
+    "IdName": "World_DGN_Hawe_ShadowedPlunge",
+    "Name": "Темный колодец",
+    "Description": "Змеиные сектанты приносят в жертву невинных.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113852,
+    "IdName": "World_DGN_Kehj_PutridAquifer",
+    "Name": "Тлетворные подземные воды",
+    "Description": "Смерть разлита в воде.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113196,
+    "IdName": "World_DGN_Frac_RitualTower",
+    "Name": "Тоскливые руины",
+    "Description": "В дозорную башню уже много веков не ступала нога смертных.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1582559,
+    "IdName": "DungeonAffix_Major_Elemental_Totems",
+    "Name": "Тотемы стихий",
+    "Description": "В бою иногда появляются случайные тотемы стихий. Они усиливают ближайших противников, пока не будут уничтожены.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113766,
+    "IdName": "World_DGN_Step_CharnelHouse",
+    "Name": "Траурный дом",
+    "Description": "Хранилище тел... некоторые еще живы. Мясо для демонов.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113431,
+    "IdName": "World_DGN_Step_PathoftheBlind",
+    "Name": "Тропа слепых",
+    "Description": "Кровавая арена испытаний сектантов Церкви Трех.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113676,
+    "IdName": "World_DGN_Step_GuulrahnSlums",
+    "Name": "Трущобы Гуулрана",
+    "Description": "Каннибалы все еще не желают убираться из Гуулрана.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113857,
+    "IdName": "World_DGN_Scos_DomhainneTunnels",
+    "Name": "Туннели Домхейна",
+    "Description": "Жители Корбаха говорят, что из логова хазра доносятся чьи-то крики.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1114089,
+    "IdName": "World_DGN_Scos_Stockades",
+    "Name": "Тюрьма",
+    "Description": "После бунта тюрьму отгородили, похоронив ее узников заживо.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113085,
+    "IdName": "World_DGN_Kehj_PrisonofCaldeum",
+    "Name": "Тюрьма Калдея",
+    "Description": "Тьма сгущается в стенах тюрьмы.",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113188,
+    "IdName": "World_DGN_Scos_MarinersRefuge",
+    "Name": "Убежище моряка",
+    "Description": "Утопленники заманивают в глубину моряков с разбитых кораблей.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113472,
+    "IdName": "World_DGN_Frac_CultistRefuge",
+    "Name": "Убежище сектантов",
+    "Description": "Последний оплот сектантов Ностравы.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113440,
+    "IdName": "World_DGN_Scos_WretchedDelve",
+    "Name": "Угрюмая лощина",
+    "Description": "Демоническая чума разлагает старые склепы в Тур Дулра.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585521,
+    "IdName": "World_DGN_Naha_UlarianSepulcher",
+    "Name": "Уларианская гробница",
+    "Description": "Проклятый некрополь, внушающий страх всей округе.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113738,
+    "IdName": "World_DGN_Scos_Hive",
+    "Name": "Улей",
+    "Description": "Ненасытный голод и чья-то воля ведет этих тварей на охоту.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321525,
+    "IdName": "DungeonAffix_Positive_Astaroth_MoreUniques",
+    "Name": "Уникальные трофеи",
+    "Description": "Награда за победу над Астаротом включает больше уникальных предметов.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 966310656,
+    "IdName": "MonsterLevel",
+    "Name": "Уровень монстров: ",
+    "Description": "",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Misc"
+  },
+  {
+    "IdSno": 1314248,
+    "IdName": "DungeonAffix_Positive_FrostDamage",
+    "Name": "Урон от льда",
+    "Description": "Вы наносите на 15% больше урона от магии льда.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314238,
+    "IdName": "DungeonAffix_Positive_LightningDamage",
+    "Name": "Урон от молнии",
+    "Description": "Вы наносите на 15% больше урона от молнии.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314313,
+    "IdName": "DungeonAffix_Positive_FireDamage",
+    "Name": "Урон от огня",
+    "Description": "Вы наносите на 15% больше урона от огня.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314231,
+    "IdName": "DungeonAffix_Positive_ShadowDamage",
+    "Name": "Урон от темной магии",
+    "Description": "Вы наносите на 15% больше урона от темной магии.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314227,
+    "IdName": "DungeonAffix_Positive_PoisonDamage",
+    "Name": "Урон от яда",
+    "Description": "Вы наносите на 15% больше урона от яда.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314246,
+    "IdName": "DungeonAffix_Positive_IncreasedHealing",
+    "Name": "Усиленное исцеление",
+    "Description": "Вы получаете на 15% больше исцеления.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314335,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Teleporter)",
+    "Name": "Усиленные особые монстры (Телепортаторы)",
+    "Description": "Все особые монстры наделены свойством \"Телепортатор\".",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314346,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Shadow)",
+    "Name": "Усиленные особые монстры (Усиление темной магией)",
+    "Description": "Все особые монстры наделены свойством \"Усиление темной магией\".",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1314344,
+    "IdName": "DungeonAffix_Major_Empowered Elites (Frost)",
+    "Name": "Усиленные особые монстры (Усиление холодом)",
+    "Description": "Все особые монстры наделены свойством \"Усиление холодом\".",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113127,
+    "IdName": "World_DGN_Frac_LostArchives",
+    "Name": "Утерянные архивы",
+    "Description": "Многие гадают, что таится внутри, но лишь единицы осмеливаются увидеть своими глазами.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585622,
+    "IdName": "World_DGN_Naha_FaraiCliffs",
+    "Name": "Утесы Фарай",
+    "Description": "Кровь случайных путников поблескивает в лунном свете.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113928,
+    "IdName": "World_DGN_Kehj_FadingEcho",
+    "Name": "Утихающее эхо",
+    "Description": "Руины кишат демонами, и их армия растет день ото дня. ",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113903,
+    "IdName": "World_DGN_Hawe_LeviathansMaw",
+    "Name": "Утроба Левиафана",
+    "Description": "В затопленных руинах затаились сектанты.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2347209,
+    "IdName": "DungeonAffix_Positive_S08_Apparition",
+    "Name": "Фантомы Белиала",
+    "Description": "В это подземелье вторглись особые фантомы.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314293,
+    "IdName": "DungeonAffix_Positive_PhysicalDamage",
+    "Name": "Физический урон",
+    "Description": "Вы наносите на 15% больше физического урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113455,
+    "IdName": "World_DGN_Hawe_AkkhansGrasp",
+    "Name": "Хватка Аккана",
+    "Description": "Кровь и тьма сочатся сквозь треснувшие обереги гробницы.",
+    "DungeonZoneInfo": "в области Хавезар",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 2321161,
+    "IdName": "DungeonAffix_Positive_SeasonalCurrency",
+    "Name": "Хорадримские флаконы",
+    "Description": "За убийство монстров в этом подземелье можно получить больше хорадримских флаконов.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2332268,
+    "IdName": "DungeonAffix_Positive_S09_Horadric_Secret",
+    "Name": "Хорадримское хранилище",
+    "Description": "Здесь гарантированно находится хорадримское хранилище.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1113877,
+    "IdName": "World_DGN_Step_KomdorTemple",
+    "Name": "Храм Комдор",
+    "Description": "Сектанты Церкви Трех, навеки превращенные в козлоногих. ",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113861,
+    "IdName": "World_DGN_Scos_VaultofTheForsaken",
+    "Name": "Хранилище отверженных",
+    "Description": "В этих затопленных пещерах звучат голоса, заманивающие навстречу погибели.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113478,
+    "IdName": "World_DGN_Frac_BlackAsylum",
+    "Name": "Черное убежище",
+    "Description": "Заброшенную тюрьму оглашает скорбный вой ее узников.",
+    "DungeonZoneInfo": "в области Расколотые вершины",
+    "IsSeasonal": false,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113361,
+    "IdName": "World_DGN_Kehj_HallsoftheDamned",
+    "Name": "Чертоги проклятых",
+    "Description": "Маги Церкви Трех когда-то первыми изучали здесь неизведанные магические искусства...",
+    "DungeonZoneInfo": "в области Кеджистан",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1894221,
+    "IdName": "DungeonAffix_Major_Boss_MegaDemon_Tier96",
+    "Name": "Чудовище во льду",
+    "Description": "Сразитесь с более мощным чудовищем во льду в дальней части его замерзшей пещеры.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Major"
+  },
+  {
+    "IdSno": 1113092,
+    "IdName": "World_DGN_Scos_CalibelsMine",
+    "Name": "Шахты Калибела",
+    "Description": "Бандиты поселились в руднике, но их никто не предупредил о его тайнах.",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1585493,
+    "IdName": "World_DGN_Naha_MurmuringSpiral",
+    "Name": "Шепчущая спираль",
+    "Description": "Чешуя и спирали завораживают, заставляя путников подойти слишком близко.",
+    "DungeonZoneInfo": "в области Наханту",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113812,
+    "IdName": "World_DGN_Step_WhisperingVault",
+    "Name": "Шепчущее хранилище",
+    "Description": "Чуть слышное бормотание безумных призраков разносится по бывшему храму знаний.",
+    "DungeonZoneInfo": "в области Сухие степи",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1113148,
+    "IdName": "World_DGN_Scos_WhisperingPines",
+    "Name": "Шепчущие сосны",
+    "Description": "Астарота больше нет, но эта крепость не забыла своего хозяина. ",
+    "DungeonZoneInfo": "в области Скосглен",
+    "IsSeasonal": true,
+    "Type": "Dungeon"
+  },
+  {
+    "IdSno": 1314236,
+    "IdName": "DungeonAffix_Positive_Thorns",
+    "Name": "Шипы",
+    "Description": "Когда вы атакуете противника, ваш показатель эффекта шипов увеличивается на 200 на 3 сек. вплоть до 1000 при максимальном количестве эффектов.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 1314360,
+    "IdName": "DungeonAffix_Minor_Monster_ReflectNonPhysical",
+    "Name": "Шипы монстров",
+    "Description": "Монстры отражают 8% урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314413,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraLightning",
+    "Name": "Электрические удары",
+    "Description": "Монстры наносят дополнительный урон от молнии в размере 20% от физического урона.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314358,
+    "IdName": "DungeonAffix_Positive_EvadeLeavesPoison",
+    "Name": "Ядовитое ускользание",
+    "Description": "При ускользании вы создаете наносящую урон область яда под первым противником, через которого проходите, или на том месте, где оказываетесь. ",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Positive"
+  },
+  {
+    "IdSno": 2373240,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraPoisonDirect",
+    "Name": "Ядовитые удары",
+    "Description": "Монстры наносят еще 20% физического урона как урон от яда.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  },
+  {
+    "IdSno": 1314405,
+    "IdName": "DungeonAffix_Minor_Monster_ExtraPoison",
+    "Name": "Ядовитые удары",
+    "Description": "Монстры наносят еще 30% физического урона как урон от отравления за 3 сек.",
+    "DungeonZoneInfo": "",
+    "IsSeasonal": false,
+    "Type": "Minor"
+  }
+]

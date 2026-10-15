@@ -1,0 +1,140 @@
+// Rename preset dialog.
+//
+// Upstream: `RenamePresetNameView.xaml` + `RenamePresetNameViewModel.cs`.
+// Opens when the user clicks the pencil (✎) icon next to the
+// preset ComboBox in the AffixScreen. The Slint form value
+// contract mirrors the no-Slint-global host plumbing used by the
+// SetAffix / SetAffixColor / AddTradeItem / BuildImport dialogs:
+//
+// - The current preset name (read-only seed) and the new
+//   preset name (text input) are projected on the root
+//   `AppWindow` as `rename-preset-current-name` and
+//   `rename-preset-new-name` (see `main_window.slint`). The
+//   dialog binds its text input to those root in-out
+//   properties, so the values flow directly between Slint and
+//   Rust.
+// - The current name is also displayed read-only so the user
+//   can see what they are renaming from.
+// - Confirm / cancel flow through the shared dialog host
+//   `dialog-confirm` / `dialog-cancel` callbacks, which the
+//   shared `actions::dialogs` router dispatches to
+//   `actions::affix_dialogs::handle_confirm` / `handle_cancel`.
+// - Validation errors (empty name, collision) are surfaced
+//   through the shared `dialog-error` / `dialog-error-visible`
+//   props; the router keeps the dialog open on failure.
+//
+// Confirm renames the preset in `state.affix_preset_editor`, refreshes the
+// `preset-names` model and the `selected-preset` projection, and saves the
+// preset file.
+import { DarkLineEdit } from "dark_line_edit.slint";
+
+export component RenamePresetDialog {
+    in property <string> dialog-title: @tr("Rename");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust can read them via
+    // `app.get_rename_preset_new_name()` and seed the current
+    // name via `app.set_rename_preset_current_name()`.
+    in-out property <string> rename-preset-current-name: "";
+    in-out property <string> rename-preset-new-name: "";
+
+    callback confirm();
+    callback cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Current name (read-only) ───────────────────────────────
+        Text {
+            text: @tr("Current preset name");
+            color: #CCCCCC;
+            font-size: 12px;
+        }
+        Text {
+            text: rename-preset-current-name == "" ? @tr("(no preset selected)") : rename-preset-current-name;
+            color: #EEEEEE;
+            font-size: 13px;
+            wrap: word-wrap;
+        }
+
+        // ── New name input ─────────────────────────────────────────
+        Text {
+            text: @tr("New preset name");
+            color: #CCCCCC;
+            font-size: 12px;
+        }
+        // Shared dark field (same component as the import/set-preset
+        // dialog family): the std-widgets LineEdit renders a light field
+        // on the dark dialogs.
+        DarkLineEdit {
+            text <=> rename-preset-new-name;
+            placeholder-text: @tr("e.g. Speed, Boss, AoE");
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Cancel");
+                Text {
+                    text: @tr("Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

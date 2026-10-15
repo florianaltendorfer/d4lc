@@ -1,0 +1,91 @@
+{
+  "affix_preset": {
+    "affixes": [
+      {
+        "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "amulet",
+        "label": "Attack Speed",
+        "tuning_prisms": [
+          "TuningStone_1"
+        ]
+      }
+    ],
+    "name": "Starter"
+  },
+  "affix_preset_name": "Starter",
+  "aspects": [],
+  "class_name": null,
+  "items": [
+    {
+      "affixes": [
+        {
+          "affix_id": "AttackSpeed;AttackSpeed_Greater;AttackSpeed_UBERUNIQUE;S04_AttackSpeed;Talisman_Charm_Affix_AttackSpeed;Talisman_Charm_Affix_UNIQUE_AttackSpeed_Higher;Talisman_SealAffix_Normal_AttackSpeed;Tempered_Generic_AttackSpeed_BarbRogue_Tier1;Tempered_Generic_AttackSpeed_BarbRogue_Tier2;Tempered_Generic_AttackSpeed_BarbRogue_Tier3;Tempered_Generic_AttackSpeed_Tier1;Tempered_Generic_AttackSpeed_Tier2;Tempered_Generic_AttackSpeed_Tier3;UBERUNIQUE_AttackSpeed_AndarielsVisage;UBERUNIQUE_AttackSpeed_HeirOfPerdition;UBERUNIQUE_AttackSpeed_RingofStarlessSkies;UBERUNIQUE_AttackSpeed_TyraelsMight;UNIQUE_AttackSpeed_GIGA;UNIQUE_AttackSpeed_HighVariance;UNIQUE_AttackSpeed_Higher;UNIQUE_INHERENT_AttackSpeed;X2_Transfiguration_AttackSpeed",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "amulet",
+          "label": "Attack Speed",
+          "tuning_prisms": [
+            "TuningStone_1"
+          ]
+        }
+      ],
+      "item_type": "amulet"
+    }
+  ],
+  "non_affix_preset": {
+    "name": "Starter",
+    "powers": [],
+    "runes": [],
+    "sigils": []
+  },
+  "paragon_boards": [],
+  "provider": "D2Core",
+  "runes": [],
+  "source_build_id": "barb-d2-warning",
+  "source_build_name": "Warning Cases",
+  "source_trace": [
+    "BuildsManagerD2Core.LoadAvailableD2CoreBuilds",
+    "BuildsManagerD2Core.CreatePresetFromD2CoreBuild"
+  ],
+  "source_url_or_file": "tests/fixtures/imports/d2core/source/warning_cases.json",
+  "uniques": [],
+  "unmapped_entries": [
+    {
+      "message": "Imported D2Core build contains unknown affix: Imaginary_Affix.",
+      "source_field": "gear.gloves.mods[0].name",
+      "source_value": "Imaginary_Affix",
+      "upstream_method": "AffixManager.GetAffixInfoByIdName"
+    },
+    {
+      "message": "Imported D2Core build contains unknown itemtype id: Totem.",
+      "source_field": "gear.totem.itemType",
+      "source_value": "Totem",
+      "upstream_method": "BuildsManagerD2Core.CreatePresetFromD2CoreBuild"
+    }
+  ],
+  "variant_name": "Starter",
+  "warnings": [
+    {
+      "message": "Imported D2Core build contains unknown affix: Imaginary_Affix.",
+      "provider": "D2Core",
+      "source_field": "gear.gloves.mods[0].name",
+      "source_value": "Imaginary_Affix",
+      "upstream_method": "AffixManager.GetAffixInfoByIdName"
+    },
+    {
+      "message": "Imported D2Core build contains unknown itemtype id: Totem.",
+      "provider": "D2Core",
+      "source_field": "gear.totem.itemType",
+      "source_value": "Totem",
+      "upstream_method": "BuildsManagerD2Core.CreatePresetFromD2CoreBuild"
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "affix_preset": {
+    "affixes": [
+      {
+        "affix_id": "Life;LifePercent;LifePercent_Double_UBERUNIQUE;Life_Flat_Quadruple_UBERUNIQUE;Life_Greater;S04_Life;Talisman_Charm_Affix_Life;Talisman_Charm_MaxLife_Percent;Talisman_Charm_MaxLife_Percent_MagicOnly;Talisman_Charm_Virtue_Vitality;Talisman_SealAffix_Normal_LifePercent;Tempered_Generic_LifeMax_Tier1;Tempered_Generic_LifeMax_Tier2;Tempered_Generic_LifeMax_Tier3;UBERUNIQUE_FlatLife_Grandfather;UBERUNIQUE_FlatLife_Greater;UBERUNIQUE_FlatLife_NesekemTheHerald;UBERUNIQUE_LifeFlat_HarlequinCrest;UBERUNIQUE_LifeFlat_ShroudOfFalseDeath;UBERUNIQUE_LifePercent_Doombringer;UNIQUE_LifeFlat_Higher;UNIQUE_LifeFlat_HigherHigher;UNIQUE_LifePercent;UNIQUE_LifePercent_Higher;UNIQUE_LifePercent_Higher_Necro;UNIQUE_LifePercent_LessHigher;UNIQUE_LifePercent_Lesser;X2_Life_Greater;X2_Transfiguration_LifePercent;X2_Transfiguration_LifePercent_Lesser",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": true,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "helm",
+        "label": "Maximum Life",
+        "tuning_prisms": [
+          "TuningStone_2"
+        ]
+      },
+      {
+        "affix_id": "Life;LifePercent;LifePercent_Double_UBERUNIQUE;Life_Flat_Quadruple_UBERUNIQUE;Life_Greater;S04_Life;Talisman_Charm_Affix_Life;Talisman_Charm_MaxLife_Percent;Talisman_Charm_MaxLife_Percent_MagicOnly;Talisman_Charm_Virtue_Vitality;Talisman_SealAffix_Normal_LifePercent;Tempered_Generic_LifeMax_Tier1;Tempered_Generic_LifeMax_Tier2;Tempered_Generic_LifeMax_Tier3;UBERUNIQUE_FlatLife_Grandfather;UBERUNIQUE_FlatLife_Greater;UBERUNIQUE_FlatLife_NesekemTheHerald;UBERUNIQUE_LifeFlat_HarlequinCrest;UBERUNIQUE_LifeFlat_ShroudOfFalseDeath;UBERUNIQUE_LifePercent_Doombringer;UNIQUE_LifeFlat_Higher;UNIQUE_LifeFlat_HigherHigher;UNIQUE_LifePercent;UNIQUE_LifePercent_Higher;UNIQUE_LifePercent_Higher_Necro;UNIQUE_LifePercent_LessHigher;UNIQUE_LifePercent_Lesser;X2_Life_Greater;X2_Transfiguration_LifePercent;X2_Transfiguration_LifePercent_Lesser",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": true,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "ring",
+        "label": "Maximum Life",
+        "tuning_prisms": [
+          "TuningStone_2"
+        ]
+      },
+      {
+        "affix_id": "CooldownReductionCDR;CooldownReductionCDR_UBERUNIQUE;INHERENT_CooldownReductionCDR;INHERENT_Resource_Cost_Reduction_Druid;S04_CooldownReductionCDR;Talisman_Charm_Affix_CooldownReductionCDR;Talisman_Charm_Virtue_Elegance;Talisman_SealAffix_Normal_CooldownCDR;Tempered_Generic_CDR_Tier1;Tempered_Generic_CDR_Tier2;Tempered_Generic_CDR_Tier3;UBERUNIQUE_CooldownReductionCDR_HarlequinCrest;UNIQUE_CooldownReductionCDR_Higher;X2_Transfiguration_CooldownReductionCDR",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "ring",
+        "label": "Cooldown Reduction",
+        "tuning_prisms": [
+          "TuningStone_3"
+        ]
+      },
+      {
+        "affix_id": "CoreStat_Intelligence;CoreStat_IntelligencePercent;CoreStat_Intelligence_Weapon;S04_CoreStat_Intelligence;S04_CoreStat_IntelligencePercent;S11_CoreStat_Intelligence_Greater;Talisman_Charm_Affix_UNIQUE_CoreStat_Intelligence_Higher;Talisman_SealAffix_Normal_CoreStat_IntelligencePercent;UNIQUE_CoreStat_IntelligencePercent_Higher;UNIQUE_CoreStat_IntelligencePercent_HigherHigher;UNIQUE_CoreStat_IntelligencePercent_HigherHigherHigher;UNIQUE_CoreStat_Intelligence_Higher;UNIQUE_CoreStat_Intelligence_HigherHigher;UNIQUE_CoreStat_Intelligence_HigherHigherHigher;X2_CoreStat_Intelligence_Greater;X2_Transfiguration_CoreStat_Intelligence;X2_Transfiguration_CoreStat_IntelligencePercent;X2_Transfiguration_CoreStat_Intelligence_Lesser",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "weapon",
+        "label": "Intelligence",
+        "tuning_prisms": [
+          "TuningStone_6"
+        ]
+      },
+      {
+        "affix_id": "CooldownReductionCDR;CooldownReductionCDR_UBERUNIQUE;INHERENT_CooldownReductionCDR;INHERENT_Resource_Cost_Reduction_Druid;S04_CooldownReductionCDR;Talisman_Charm_Affix_CooldownReductionCDR;Talisman_Charm_Virtue_Elegance;Talisman_SealAffix_Normal_CooldownCDR;Tempered_Generic_CDR_Tier1;Tempered_Generic_CDR_Tier2;Tempered_Generic_CDR_Tier3;UBERUNIQUE_CooldownReductionCDR_HarlequinCrest;UNIQUE_CooldownReductionCDR_Higher;X2_Transfiguration_CooldownReductionCDR",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": false,
+        "item_type": "weapon",
+        "label": "Cooldown Reduction",
+        "tuning_prisms": [
+          "TuningStone_3"
+        ]
+      },
+      {
+        "affix_id": "Life;LifePercent;LifePercent_Double_UBERUNIQUE;Life_Flat_Quadruple_UBERUNIQUE;Life_Greater;S04_Life;Talisman_Charm_Affix_Life;Talisman_Charm_MaxLife_Percent;Talisman_Charm_MaxLife_Percent_MagicOnly;Talisman_Charm_Virtue_Vitality;Talisman_SealAffix_Normal_LifePercent;Tempered_Generic_LifeMax_Tier1;Tempered_Generic_LifeMax_Tier2;Tempered_Generic_LifeMax_Tier3;UBERUNIQUE_FlatLife_Grandfather;UBERUNIQUE_FlatLife_Greater;UBERUNIQUE_FlatLife_NesekemTheHerald;UBERUNIQUE_LifeFlat_HarlequinCrest;UBERUNIQUE_LifeFlat_ShroudOfFalseDeath;UBERUNIQUE_LifePercent_Doombringer;UNIQUE_LifeFlat_Higher;UNIQUE_LifeFlat_HigherHigher;UNIQUE_LifePercent;UNIQUE_LifePercent_Higher;UNIQUE_LifePercent_Higher_Necro;UNIQUE_LifePercent_LessHigher;UNIQUE_LifePercent_Lesser;X2_Life_Greater;X2_Transfiguration_LifePercent;X2_Transfiguration_LifePercent_Lesser",
+        "color": "#008000",
+        "is_any_type": false,
+        "is_greater": false,
+        "is_implicit": false,
+        "is_tempered": true,
+        "item_type": "helm",
+        "label": "Maximum Life",
+        "tuning_prisms": [
+          "TuningStone_2"
+        ]
+      }
+    ],
+    "name": "Endgame"
+  },
+  "affix_preset_name": "Endgame",
+  "aspects": [
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "helm",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "chest",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "gloves",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "pants",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "boots",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "amulet",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "ring",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "weapon",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "ranged",
+      "kind": "Aspect"
+    },
+    {
+      "color": "#008000",
+      "id": "legendary_paladin_031",
+      "item_type": "offhand",
+      "kind": "Aspect"
+    }
+  ],
+  "class_name": null,
+  "items": [
+    {
+      "affixes": [
+        {
+          "affix_id": "Life;LifePercent;LifePercent_Double_UBERUNIQUE;Life_Flat_Quadruple_UBERUNIQUE;Life_Greater;S04_Life;Talisman_Charm_Affix_Life;Talisman_Charm_MaxLife_Percent;Talisman_Charm_MaxLife_Percent_MagicOnly;Talisman_Charm_Virtue_Vitality;Talisman_SealAffix_Normal_LifePercent;Tempered_Generic_LifeMax_Tier1;Tempered_Generic_LifeMax_Tier2;Tempered_Generic_LifeMax_Tier3;UBERUNIQUE_FlatLife_Grandfather;UBERUNIQUE_FlatLife_Greater;UBERUNIQUE_FlatLife_NesekemTheHerald;UBERUNIQUE_LifeFlat_HarlequinCrest;UBERUNIQUE_LifeFlat_ShroudOfFalseDeath;UBERUNIQUE_LifePercent_Doombringer;UNIQUE_LifeFlat_Higher;UNIQUE_LifeFlat_HigherHigher;UNIQUE_LifePercent;UNIQUE_LifePercent_Higher;UNIQUE_LifePercent_Higher_Necro;UNIQUE_LifePercent_LessHigher;UNIQUE_LifePercent_Lesser;X2_Life_Greater;X2_Transfiguration_LifePercent;X2_Transfiguration_LifePercent_Lesser",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": true,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "helm",
+          "label": "Maximum Life",
+          "tuning_prisms": [
+            "TuningStone_2"
+          ]
+        },
+        {
+          "affix_id": "Life;LifePercent;LifePercent_Double_UBERUNIQUE;Life_Flat_Quadruple_UBERUNIQUE;Life_Greater;S04_Life;Talisman_Charm_Affix_Life;Talisman_Charm_MaxLife_Percent;Talisman_Charm_MaxLife_Percent_MagicOnly;Talisman_Charm_Virtue_Vitality;Talisman_SealAffix_Normal_LifePercent;Tempered_Generic_LifeMax_Tier1;Tempered_Generic_LifeMax_Tier2;Tempered_Generic_LifeMax_Tier3;UBERUNIQUE_FlatLife_Grandfather;UBERUNIQUE_FlatLife_Greater;UBERUNIQUE_FlatLife_NesekemTheHerald;UBERUNIQUE_LifeFlat_HarlequinCrest;UBERUNIQUE_LifeFlat_ShroudOfFalseDeath;UBERUNIQUE_LifePercent_Doombringer;UNIQUE_LifeFlat_Higher;UNIQUE_LifeFlat_HigherHigher;UNIQUE_LifePercent;UNIQUE_LifePercent_Higher;UNIQUE_LifePercent_Higher_Necro;UNIQUE_LifePercent_LessHigher;UNIQUE_LifePercent_Lesser;X2_Life_Greater;X2_Transfiguration_LifePercent;X2_Transfiguration_LifePercent_Lesser",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": true,
+          "item_type": "helm",
+          "label": "Maximum Life",
+          "tuning_prisms": [
+            "TuningStone_2"
+          ]
+        }
+      ],
+      "item_type": "helm"
+    },
+    {
+      "affixes": [
+        {
+          "affix_id": "Life;LifePercent;LifePercent_Double_UBERUNIQUE;Life_Flat_Quadruple_UBERUNIQUE;Life_Greater;S04_Life;Talisman_Charm_Affix_Life;Talisman_Charm_MaxLife_Percent;Talisman_Charm_MaxLife_Percent_MagicOnly;Talisman_Charm_Virtue_Vitality;Talisman_SealAffix_Normal_LifePercent;Tempered_Generic_LifeMax_Tier1;Tempered_Generic_LifeMax_Tier2;Tempered_Generic_LifeMax_Tier3;UBERUNIQUE_FlatLife_Grandfather;UBERUNIQUE_FlatLife_Greater;UBERUNIQUE_FlatLife_NesekemTheHerald;UBERUNIQUE_LifeFlat_HarlequinCrest;UBERUNIQUE_LifeFlat_ShroudOfFalseDeath;UBERUNIQUE_LifePercent_Doombringer;UNIQUE_LifeFlat_Higher;UNIQUE_LifeFlat_HigherHigher;UNIQUE_LifePercent;UNIQUE_LifePercent_Higher;UNIQUE_LifePercent_Higher_Necro;UNIQUE_LifePercent_LessHigher;UNIQUE_LifePercent_Lesser;X2_Life_Greater;X2_Transfiguration_LifePercent;X2_Transfiguration_LifePercent_Lesser",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": true,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "ring",
+          "label": "Maximum Life",
+          "tuning_prisms": [
+            "TuningStone_2"
+          ]
+        },
+        {
+          "affix_id": "CooldownReductionCDR;CooldownReductionCDR_UBERUNIQUE;INHERENT_CooldownReductionCDR;INHERENT_Resource_Cost_Reduction_Druid;S04_CooldownReductionCDR;Talisman_Charm_Affix_CooldownReductionCDR;Talisman_Charm_Virtue_Elegance;Talisman_SealAffix_Normal_CooldownCDR;Tempered_Generic_CDR_Tier1;Tempered_Generic_CDR_Tier2;Tempered_Generic_CDR_Tier3;UBERUNIQUE_CooldownReductionCDR_HarlequinCrest;UNIQUE_CooldownReductionCDR_Higher;X2_Transfiguration_CooldownReductionCDR",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "ring",
+          "label": "Cooldown Reduction",
+          "tuning_prisms": [
+            "TuningStone_3"
+          ]
+        }
+      ],
+      "item_type": "ring"
+    },
+    {
+      "affixes": [
+        {
+          "affix_id": "CoreStat_Intelligence;CoreStat_IntelligencePercent;CoreStat_Intelligence_Weapon;S04_CoreStat_Intelligence;S04_CoreStat_IntelligencePercent;S11_CoreStat_Intelligence_Greater;Talisman_Charm_Affix_UNIQUE_CoreStat_Intelligence_Higher;Talisman_SealAffix_Normal_CoreStat_IntelligencePercent;UNIQUE_CoreStat_IntelligencePercent_Higher;UNIQUE_CoreStat_IntelligencePercent_HigherHigher;UNIQUE_CoreStat_IntelligencePercent_HigherHigherHigher;UNIQUE_CoreStat_Intelligence_Higher;UNIQUE_CoreStat_Intelligence_HigherHigher;UNIQUE_CoreStat_Intelligence_HigherHigherHigher;X2_CoreStat_Intelligence_Greater;X2_Transfiguration_CoreStat_Intelligence;X2_Transfiguration_CoreStat_IntelligencePercent;X2_Transfiguration_CoreStat_Intelligence_Lesser",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "weapon",
+          "label": "Intelligence",
+          "tuning_prisms": [
+            "TuningStone_6"
+          ]
+        },
+        {
+          "affix_id": "CooldownReductionCDR;CooldownReductionCDR_UBERUNIQUE;INHERENT_CooldownReductionCDR;INHERENT_Resource_Cost_Reduction_Druid;S04_CooldownReductionCDR;Talisman_Charm_Affix_CooldownReductionCDR;Talisman_Charm_Virtue_Elegance;Talisman_SealAffix_Normal_CooldownCDR;Tempered_Generic_CDR_Tier1;Tempered_Generic_CDR_Tier2;Tempered_Generic_CDR_Tier3;UBERUNIQUE_CooldownReductionCDR_HarlequinCrest;UNIQUE_CooldownReductionCDR_Higher;X2_Transfiguration_CooldownReductionCDR",
+          "color": "#008000",
+          "is_any_type": false,
+          "is_greater": false,
+          "is_implicit": false,
+          "is_tempered": false,
+          "item_type": "weapon",
+          "label": "Cooldown Reduction",
+          "tuning_prisms": [
+            "TuningStone_3"
+          ]
+        }
+      ],
+      "item_type": "weapon"
+    }
+  ],
+  "non_affix_preset": {
+    "name": "Endgame",
+    "powers": [
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "helm",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "chest",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "gloves",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "pants",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "boots",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "amulet",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "ring",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "weapon",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "ranged",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "legendary_paladin_031",
+        "item_type": "offhand",
+        "kind": "Aspect"
+      },
+      {
+        "color": "#008000",
+        "id": "Helm_Unique_Sorc_102_x2",
+        "item_type": null,
+        "kind": "Unique"
+      }
+    ],
+    "runes": [
+      {
+        "color": "#008000",
+        "id": "Item_Rune_Effect_SummonSpiritWolf",
+        "item_type": null,
+        "kind": "Rune"
+      }
+    ],
+    "sigils": []
+  },
+  "paragon_boards": [
+    {
+      "active_nodes": [
+        105
+      ],
+      "glyph": "",
+      "name": "Start",
+      "rotation": "0°"
+    },
+    {
+      "active_nodes": [
+        36,
+        57
+      ],
+      "glyph": "Enchanter",
+      "name": "Hemorrhage",
+      "rotation": "90°"
+    }
+  ],
+  "paragon_routes": [
+    {
+      "boards": [
+        {
+          "active_nodes": [
+            105
+          ],
+          "glyph": "",
+          "name": "Start",
+          "rotation": "0°"
+        },
+        {
+          "active_nodes": [
+            36,
+            57
+          ],
+          "glyph": "Enchanter",
+          "name": "Hemorrhage",
+          "rotation": "90°"
+        }
+      ],
+      "step_name": null
+    }
+  ],
+  "provider": "InfinityBuilds",
+  "runes": [
+    {
+      "color": "#008000",
+      "id": "Item_Rune_Effect_SummonSpiritWolf",
+      "item_type": null,
+      "kind": "Rune"
+    }
+  ],
+  "source_build_id": "barb-infinity-whirlwind",
+  "source_build_name": "Infinity Whirlwind",
+  "source_trace": [
+    "BuildsManagerInfinityBuilds.LoadAvailableInfinityBuildsBuilds",
+    "BuildsManagerInfinityBuilds.CreatePresetFromInfinityBuildsBuild",
+    "BuildsManagerInfinityBuilds.GetAllParagonBoards"
+  ],
+  "source_url_or_file": "tests/fixtures/imports/infinitybuilds/source/whirlwind_endgame.json",
+  "uniques": [
+    {
+      "color": "#008000",
+      "id": "Helm_Unique_Sorc_102_x2",
+      "item_type": null,
+      "kind": "Unique"
+    }
+  ],
+  "unmapped_entries": [],
+  "variant_name": "Endgame",
+  "warnings": []
+}

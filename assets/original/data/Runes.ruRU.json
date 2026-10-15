@@ -1,0 +1,522 @@
+[
+  {
+    "IdSno": "2530516",
+    "IdName": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Subpower_Brimstone",
+    "Description": "Item_Rune_Effect_Subpower_Brimstone",
+    "DescriptionClean": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneDescription": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Subpower_Brimstone"
+  },
+  {
+    "IdSno": "2531290",
+    "IdName": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Warlock_ChainPrison",
+    "Description": "Item_Rune_Effect_Warlock_ChainPrison",
+    "DescriptionClean": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneDescription": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Warlock_ChainPrison"
+  },
+  {
+    "IdSno": "2080567",
+    "IdName": "Item_Rune_Condition_HitHealthierEnemy",
+    "RuneType": "condition",
+    "Name": "Аху",
+    "Description": "Удачный удар: вероятность до 100% против противников с уровнем здоровья ниже высокого.",
+    "DescriptionClean": "Удачный удар: вероятность до 100 против противников с уровнем здоровья ниже высокого.",
+    "RuneDescription": "{c_RuneCondition}{c_label}Удачный удар:{/c} вероятность до {c_number}[100|%|]{/c} против противников с уровнем здоровья ниже {c_important}высокого{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1999351",
+    "IdName": "Item_Rune_Condition_OnMove",
+    "RuneType": "condition",
+    "Name": "Бак",
+    "Description": "Переместитесь на # м.",
+    "DescriptionClean": "Переместитесь на м.",
+    "RuneDescription": "{c_RuneCondition}Переместитесь на {c_Number}{s1}{/c} м.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2004862",
+    "IdName": "Item_Rune_Effect_Necromancer_Decrepify",
+    "RuneType": "effect",
+    "Name": "Ват",
+    "Description": "Применяет \"Ужасную немощь\" некроманта, замедляя врагов, уменьшая наносимый ими урон и позволяя вам казнить их.",
+    "DescriptionClean": "Применяет \"Ужасную немощь\" некроманта, замедляя врагов, уменьшая наносимый ими урон и позволяя вам казнить их.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Ужасную немощь\"{/c} некроманта, замедляя врагов, уменьшая наносимый ими урон и позволяя вам {c_important}{u}казнить{/u}{/c} их.{/c}",
+    "RuneOverflowBehavior": "Увеличение времени действия"
+  },
+  {
+    "IdSno": "2024156",
+    "IdName": "Item_Rune_Effect_BonusToAllSkills",
+    "RuneType": "effect",
+    "Name": "Векс",
+    "Description": "Дает +1 к уровню всех умений на 10 сек.",
+    "DescriptionClean": "Дает 1 к уровню всех умений на 10 сек.",
+    "RuneDescription": "{c_RuneEffect}Дает {c_number}+1{/c} к уровню всех умений на {c_number}10{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Повышает уровни умений до +3"
+  },
+  {
+    "IdSno": "1969098",
+    "IdName": "Item_Rune_Effect_CritBuff",
+    "RuneType": "effect",
+    "Name": "Гар",
+    "Description": "Повышает вероятность критического удара на #% на 5 сек. Максимальный бонус – 25%.",
+    "DescriptionClean": "Повышает вероятность критического удара на на 5 сек. Максимальный бонус – 25.",
+    "RuneDescription": "{c_RuneEffect}Повышает вероятность критического удара на {c_number}{s1}%{/c} на {c_number}5{/c} сек. Максимальный бонус – {c_number}25%{/c}.{/c}",
+    "RuneOverflowBehavior": "Дает несколько эффектов"
+  },
+  {
+    "IdSno": "2039542",
+    "IdName": "Item_Rune_Effect_Sorcerer_Teleport",
+    "RuneType": "effect",
+    "Name": "Джа",
+    "Description": "Заменяет следующее \"Ускользание\" на \"Телепортацию\" волшебника, позволяя перенестись дальше, нанося урон и давая неудержимость.",
+    "DescriptionClean": "Заменяет следующее \"Ускользание\" на \"Телепортацию\" волшебника, позволяя перенестись дальше, нанося урон и давая неудержимость.",
+    "RuneDescription": "{c_RuneEffect}Заменяет следующее \"Ускользание\" на {c_important}\"Телепортацию\"{/c} волшебника, позволяя перенестись дальше, нанося урон и давая {c_important}{u}неудержимость{/u}{/c}.",
+    "RuneOverflowBehavior": "Сохранение лишних подношений"
+  },
+  {
+    "IdSno": "2021640",
+    "IdName": "Item_Rune_Effect_MaxHPIncrease",
+    "RuneType": "effect",
+    "Name": "Зал",
+    "Description": "Увеличивает максимальный запас здоровья на 20% на # сек.",
+    "DescriptionClean": "Увеличивает максимальный запас здоровья на 20 на сек.",
+    "RuneDescription": "{c_RuneEffect}Увеличивает максимальный запас здоровья на {c_number}20%{/c} на {c_number}{s1}{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Увеличивает максимальный запас здоровья"
+  },
+  {
+    "IdSno": "2047113",
+    "IdName": "Item_Rune_Effect_CriticalOverpower",
+    "RuneType": "effect",
+    "Name": "Зан",
+    "Description": "После следующей атаки ваши удары будут критическими и будут наносить подавляющий урон в течение 0,35 сек.",
+    "DescriptionClean": "После следующей атаки ваши удары будут критическими и будут наносить подавляющий урон в течение 0,35 сек.",
+    "RuneDescription": "{c_RuneEffect}После следующей атаки ваши удары будут критическими и будут наносить {c_important}{u}подавляющий{/u}{/c} урон в течение {c_number}0,35{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Увеличение времени действия"
+  },
+  {
+    "IdSno": "1968671",
+    "IdName": "Item_Rune_Effect_ReduceUltimateCD",
+    "RuneType": "effect",
+    "Name": "Зек",
+    "Description": "Сокращает время восстановления мощного умения на # сек.",
+    "DescriptionClean": "Сокращает время восстановления мощного умения на сек.",
+    "RuneDescription": "{c_RuneEffect}Сокращает время восстановления {c_important}мощного{/c} умения на {c_number}{s1}{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Еще больше сокращает время восстановления"
+  },
+  {
+    "IdSno": "2433257",
+    "IdName": "Item_Rune_Effect_Subpower_Spear",
+    "RuneType": "effect",
+    "Name": "Зид",
+    "Description": "Призывает \"Благословенное копье\" паладина, разящее ближайших врагов.",
+    "DescriptionClean": "Призывает \"Благословенное копье\" паладина, разящее ближайших врагов.",
+    "RuneDescription": "{c_RuneEffect}Призывает {c_important}\"Благословенное копье\"{/c} паладина, разящее ближайших врагов.{/c}",
+    "RuneOverflowBehavior": "Увеличенный урон"
+  },
+  {
+    "IdSno": "2165976",
+    "IdName": "Item_Rune_Condition_Bomb",
+    "RuneType": "condition",
+    "Name": "Игни",
+    "Description": "Накапливает подношения раз в 0,3 сек. Примените небазовое умение, чтобы получить накопленные подношения. (Максимум 500 подношений).",
+    "DescriptionClean": "Накапливает подношения раз в 0,3 сек. Примените небазовое умение, чтобы получить накопленные подношения. (Максимум 500 подношений).",
+    "RuneDescription": "{c_RuneCondition}Накапливает подношения раз в {c_number}0,3{/c} сек. Примените {c_important}небазовое{/c} умение, чтобы получить накопленные подношения. {c_gray}(Максимум 500 подношений){/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2090793",
+    "IdName": "Item_Rune_Effect_Druid_Petrify",
+    "RuneType": "effect",
+    "Name": "Йом",
+    "Description": "Применяет \"Окаменение\" друида, оглушающее противников и восполняющее вам основной ресурс.",
+    "DescriptionClean": "Применяет \"Окаменение\" друида, оглушающее противников и восполняющее вам основной ресурс.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Окаменение\"{/c} друида, оглушающее противников и восполняющее вам основной ресурс.{/c}",
+    "RuneOverflowBehavior": "Увеличение времени действия оглушения"
+  },
+  {
+    "IdSno": "2081284",
+    "IdName": "Item_Rune_Condition_OnTakeDamage",
+    "RuneType": "condition",
+    "Name": "Каа",
+    "Description": "Потеряйте #% максимального запаса здоровья.",
+    "DescriptionClean": "Потеряйте максимального запаса здоровья.",
+    "RuneDescription": "{c_RuneCondition}Потеряйте {c_number}{s1}%{/c} максимального запаса здоровья.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2004804",
+    "IdName": "Item_Rune_Effect_Druid_EarthenBulwark",
+    "RuneType": "effect",
+    "Name": "Кве",
+    "Description": "Применяет \"Земляной бастион\" друида и дает вам барьер на # сек.",
+    "DescriptionClean": "Применяет \"Земляной бастион\" друида и дает вам барьер на сек.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Земляной бастион\"{/c} друида и дает вам {c_important}{u}барьер{/u}{/c} на {c_number}{s1}{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Действует дольше"
+  },
+  {
+    "IdSno": "2432807",
+    "IdName": "Item_Rune_Effect_Paladin_Rally",
+    "RuneType": "effect",
+    "Name": "Кел",
+    "Description": "Используйте умение паладина \"Воодушевление\", чтобы увеличить запас ресурса и повысить скорость передвижения на # сек.",
+    "DescriptionClean": "Используйте умение паладина \"Воодушевление\", чтобы увеличить запас ресурса и повысить скорость передвижения на сек.",
+    "RuneDescription": "{c_RuneEffect}Используйте умение паладина {c_important}\"Воодушевление\"{/c}, чтобы увеличить запас ресурса и повысить скорость передвижения на {c_number}{s1}{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Увеличенный запас ресурса"
+  },
+  {
+    "IdSno": "2039678",
+    "IdName": "Item_Rune_Effect_Spiritborn_Vortex",
+    "RuneType": "effect",
+    "Name": "Край",
+    "Description": "Применяет \"Циклон\" наследника духов, нанося урон и притягивая противников.",
+    "DescriptionClean": "Применяет \"Циклон\" наследника духов, нанося урон и притягивая противников.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Циклон\"{/c} наследника духов, нанося урон и притягивая противников.{/c}",
+    "RuneOverflowBehavior": "Область действия увеличивается максимум на 100%"
+  },
+  {
+    "IdSno": "2040699",
+    "IdName": "Item_Rune_Condition_OnCastCrossClassSkill",
+    "RuneType": "condition",
+    "Name": "Ксол",
+    "Description": "Примените умение другого класса.",
+    "DescriptionClean": "Примените умение другого класса.",
+    "RuneDescription": "{c_RuneCondition}Примените умение другого класса.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2043181",
+    "IdName": "Item_Rune_Effect_MobilityBuff",
+    "RuneType": "effect",
+    "Name": "Куа",
+    "Description": "Повышает скорость передвижения на 10% на # сек. Максимальный бонус – 50%.",
+    "DescriptionClean": "Повышает скорость передвижения на 10 на сек. Максимальный бонус – 50.",
+    "RuneDescription": "{c_RuneEffect}Повышает скорость передвижения на {c_number}10%{/c} на {c_number}{s1}{/c} сек. Максимальный бонус – {c_number}50%{/c}.{/c}",
+    "RuneOverflowBehavior": "Действует дольше"
+  },
+  {
+    "IdSno": "2059626",
+    "IdName": "Item_Rune_Effect_ResourceToDamage",
+    "RuneType": "effect",
+    "Name": "Куакс",
+    "Description": "Небазовые умения, не относящиеся к категории \"Защита\", расходуют весь основной ресурс и увеличивают наносимый вами урон максимум на #% на 1 сек.",
+    "DescriptionClean": "Небазовые умения, не относящиеся к категории \"Защита\", расходуют весь основной ресурс и увеличивают наносимый вами урон максимум на на 1 сек.",
+    "RuneDescription": "{c_RuneEffect}{c_important}Небазовые{/c} умения, не относящиеся к категории {c_important}\"Защита\"{/c}, расходуют весь основной ресурс и увеличивают наносимый вами урон максимум на {c_number}{s1}%{/c} на {c_number}1{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Еще больше повышает урон"
+  },
+  {
+    "IdSno": "2090244",
+    "IdName": "Item_Rune_Effect_Barbarian_ChallengingShout",
+    "RuneType": "effect",
+    "Name": "Лак",
+    "Description": "Применяет \"Подстрекающий крик\" варвара, провоцирующий противников и уменьшающий получаемый вами урон на # сек.",
+    "DescriptionClean": "Применяет \"Подстрекающий крик\" варвара, провоцирующий противников и уменьшающий получаемый вами урон на сек.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Подстрекающий крик\"{/c} варвара, провоцирующий противников и уменьшающий получаемый вами урон на {c_number}{s1}{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Действует дольше"
+  },
+  {
+    "IdSno": "2060481",
+    "IdName": "Item_Rune_Condition_StandStill",
+    "RuneType": "condition",
+    "Name": "Лит",
+    "Description": "Сражайтесь, стоя на месте, в течение # сек.",
+    "DescriptionClean": "Сражайтесь, стоя на месте, в течение сек.",
+    "RuneDescription": "{c_RuneCondition}Сражайтесь, стоя на месте, в течение {c_number}{s1}{/c} сек.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968585",
+    "IdName": "Item_Rune_Effect_GainResource",
+    "RuneType": "effect",
+    "Name": "Лум",
+    "Description": "Восстанавливает # ед. основного ресурса.",
+    "DescriptionClean": "Восстанавливает ед. основного ресурса.",
+    "RuneDescription": "{c_RuneEffect}Восстанавливает {c_number}{s1}{/c} ед. основного ресурса.{/c}",
+    "RuneOverflowBehavior": "Восполняет больше ресурса"
+  },
+  {
+    "IdSno": "2004723",
+    "IdName": "Item_Rune_Effect_Subpower_DesecratedGround",
+    "RuneType": "effect",
+    "Name": "Мет",
+    "Description": "За вами тянется след \"Оскверненной земли\" некроманта, существующий 3 сек. и наносящий урон врагам в области действия.",
+    "DescriptionClean": "За вами тянется след \"Оскверненной земли\" некроманта, существующий 3 сек. и наносящий урон врагам в области действия.",
+    "RuneDescription": "{c_RuneEffect}За вами тянется след {c_important}\"Оскверненной земли\"{/c} некроманта, существующий {c_number}3{/c} сек. и наносящий урон врагам в области действия.{/c}",
+    "RuneOverflowBehavior": "Действует дольше"
+  },
+  {
+    "IdSno": "2063886",
+    "IdName": "Item_Rune_Condition_OnStutterStep",
+    "RuneType": "condition",
+    "Name": "Мони",
+    "Description": "Примените 2 умения категории \"Подвижность\" или \"Макабр\". ",
+    "DescriptionClean": "Примените 2 умения категории \"Подвижность\" или \"Макабр\".",
+    "RuneDescription": "{c_RuneCondition}Примените {c_number}2{/c} умения категории {c_important}\"Подвижность\"{/c} или {c_important}\"Макабр\"{/c}.{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2089934",
+    "IdName": "Item_Rune_Effect_Rogue_DarkShroud",
+    "RuneType": "effect",
+    "Name": "Мот",
+    "Description": "Создает \"Теневую завесу\" разбойника с # тенями, уменьшая получаемый урон за каждую тень.",
+    "DescriptionClean": "Создает \"Теневую завесу\" разбойника с тенями, уменьшая получаемый урон за каждую тень.",
+    "RuneDescription": "{c_RuneEffect}Создает {c_important}\"Теневую завесу\"{/c} разбойника с {c_number}{s1}{/c} |4тенью:тенями:тенями;, уменьшая получаемый урон за каждую тень.{/c}",
+    "RuneOverflowBehavior": "Создает несколько теневых завес"
+  },
+  {
+    "IdSno": "2155996",
+    "IdName": "Item_Rune_Condition_Summons",
+    "RuneType": "condition",
+    "Name": "Нагу",
+    "Description": "Вы получаете подношения за каждое призванное существо, существующее в течение 5 сек. Учитывается до 6 существ.",
+    "DescriptionClean": "Вы получаете подношения за каждое призванное существо, существующее в течение 5 сек. Учитывается до 6 существ.",
+    "RuneDescription": "{c_RuneCondition}Вы получаете подношения за каждое {c_important}призванное существо{/c}, существующее в течение {c_number}5{/c} сек. Учитывается до {c_number}6{/c} существ.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2063987",
+    "IdName": "Item_Rune_Condition_OnAvoidDamage",
+    "RuneType": "condition",
+    "Name": "Нео",
+    "Description": "Избегайте урона здоровью во время боя в течение 2 сек. ",
+    "DescriptionClean": "Избегайте урона здоровью во время боя в течение 2 сек.",
+    "RuneDescription": "{c_RuneCondition}Избегайте урона здоровью во время боя в течение 2 сек.{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2039602",
+    "IdName": "Item_Rune_Effect_Rogue_Concealment",
+    "RuneType": "effect",
+    "Name": "Нер",
+    "Description": "Применяет \"Ответную маскировку\" разбойника на # сек., повышая вашу вероятность уклонения и скорость передвижения. Вы получаете неудержимость и незаметность.",
+    "DescriptionClean": "Применяет \"Ответную маскировку\" разбойника на сек., повышая вашу вероятность уклонения и скорость передвижения. Вы получаете неудержимость и незаметность.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Ответную маскировку\"{/c} разбойника на {s1} сек., повышая вашу вероятность уклонения и скорость передвижения. Вы получаете {c_important}{u}неудержимость{/u}{/c} и {c_important}{u}незаметность{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "Действует дольше"
+  },
+  {
+    "IdSno": "2089874",
+    "IdName": "Item_Rune_Condition_OnCCEnemy",
+    "RuneType": "condition",
+    "Name": "Нок",
+    "Description": "Примените эффект контроля. Подношения удваиваются, если это не эффект замедления или окоченения.",
+    "DescriptionClean": "Примените эффект контроля. Подношения удваиваются, если это не эффект замедления или окоченения.",
+    "RuneDescription": "{c_RuneCondition}Примените эффект контроля. Подношения удваиваются, если это не эффект замедления или {c_important}{u}окоченения{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969850",
+    "IdName": "Item_Rune_Effect_Barbarian_WarCry",
+    "RuneType": "effect",
+    "Name": "Ом",
+    "Description": "Применяет \"Воинственный клич\" варвара, увеличивающий наносимый вами урон на 15% на # сек.",
+    "DescriptionClean": "Применяет \"Воинственный клич\" варвара, увеличивающий наносимый вами урон на 15 на сек.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Воинственный клич\"{/c} варвара, увеличивающий наносимый вами урон на {c_number}15%{/c} на {c_number}{s1}{/c} сек.{/c}",
+    "RuneOverflowBehavior": "Действует дольше"
+  },
+  {
+    "IdSno": "2006150",
+    "IdName": "Item_Rune_Effect_Subpower_DancingBolts",
+    "RuneType": "effect",
+    "Name": "Оно",
+    "Description": "Применяет \"Пляшущие молнии\" друида, которые преследуют врагов и наносят им урон.",
+    "DescriptionClean": "Применяет \"Пляшущие молнии\" друида, которые преследуют врагов и наносят им урон.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Пляшущие молнии\"{/c} друида, которые преследуют врагов и наносят им урон.{/c}",
+    "RuneOverflowBehavior": "Больше молний"
+  },
+  {
+    "IdSno": "2004453",
+    "IdName": "Item_Rune_Condition_OnSpendResource",
+    "RuneType": "condition",
+    "Name": "Пок",
+    "Description": "Израсходуйте #% максимального запаса ресурса.",
+    "DescriptionClean": "Израсходуйте максимального запаса ресурса.",
+    "RuneDescription": "{c_RuneCondition}Израсходуйте {c_Number}{s1}%{/c} максимального запаса ресурса.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2040870",
+    "IdName": "Item_Rune_Effect_Subpower_Swarm",
+    "RuneType": "effect",
+    "Name": "Тал",
+    "Description": "Применяет \"Тлетворный рой\" наследника духов, наносящий урон противникам.",
+    "DescriptionClean": "Применяет \"Тлетворный рой\" наследника духов, наносящий урон противникам.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Тлетворный рой\"{/c} наследника духов, наносящий урон противникам.{/c}",
+    "RuneOverflowBehavior": "Больше роев"
+  },
+  {
+    "IdSno": "1968106",
+    "IdName": "Item_Rune_Condition_OnCastCoreSkill",
+    "RuneType": "condition",
+    "Name": "Там",
+    "Description": "Примените основное умение, не требующее поддержания.",
+    "DescriptionClean": "Примените основное умение, не требующее поддержания.",
+    "RuneDescription": "{c_RuneCondition}Примените {c_important}основное умение{/c}, {c_important}не требующее поддержания{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2088916",
+    "IdName": "Item_Rune_Effect_Necromancer_IronMaiden",
+    "RuneType": "effect",
+    "Name": "Теб",
+    "Description": "Применяет \"Омерзительную железную деву\" некроманта, которая наносит урон атакующим противникам и восполняет вам здоровье, когда они погибают.",
+    "DescriptionClean": "Применяет \"Омерзительную железную деву\" некроманта, которая наносит урон атакующим противникам и восполняет вам здоровье, когда они погибают.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Омерзительную железную деву\"{/c} некроманта, которая наносит урон атакующим противникам и восполняет вам здоровье, когда они погибают.{/c}",
+    "RuneOverflowBehavior": "Увеличивает урон на 1% за каждое подношение"
+  },
+  {
+    "IdSno": "1983344",
+    "IdName": "Item_Rune_Effect_Subpower_Earthquake",
+    "RuneType": "effect",
+    "Name": "Тек",
+    "Description": "Применяет \"Землетрясение\" варвара, нанося урон врагам в области действия.",
+    "DescriptionClean": "Применяет \"Землетрясение\" варвара, нанося урон врагам в области действия.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Землетрясение\"{/c} варвара, нанося урон врагам в области действия.{/c}",
+    "RuneOverflowBehavior": "Область действия увеличивается максимум на 100%"
+  },
+  {
+    "IdSno": "2093513",
+    "IdName": "Item_Rune_Effect_Spiritborn_ConcussiveStomp",
+    "RuneType": "effect",
+    "Name": "Тзик",
+    "Description": "Применяет \"Контузящий топот\" наследника духов, нанося урон и сбивая противников с ног.",
+    "DescriptionClean": "Применяет \"Контузящий топот\" наследника духов, нанося урон и сбивая противников с ног.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Контузящий топот\"{/c} наследника духов, нанося урон и сбивая противников с ног.{/c}",
+    "RuneOverflowBehavior": "Увеличивает урон на 1% за каждое подношение"
+  },
+  {
+    "IdSno": "2004875",
+    "IdName": "Item_Rune_Effect_Subpower_Meteorites",
+    "RuneType": "effect",
+    "Name": "Тон",
+    "Description": "Применяет \"Кометы\" волшебника, наносящие урон противникам.",
+    "DescriptionClean": "Применяет \"Кометы\" волшебника, наносящие урон противникам.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Кометы\"{/c} волшебника, наносящие урон противникам.{/c}",
+    "RuneOverflowBehavior": "Больше комет"
+  },
+  {
+    "IdSno": "1969845",
+    "IdName": "Item_Rune_Effect_Sorcerer_FrostNova",
+    "RuneType": "effect",
+    "Name": "Тул",
+    "Description": "Применяет \"Таинственное кольцо льда\" волшебника, замораживая противников и делая их уязвимыми.",
+    "DescriptionClean": "Применяет \"Таинственное кольцо льда\" волшебника, замораживая противников и делая их уязвимыми.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Таинственное кольцо льда\"{/c} волшебника, {c_important}{u}замораживая{/u}{/c} противников и делая их {c_important}{u}уязвимыми{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "Область действия увеличивается максимум на 100%"
+  },
+  {
+    "IdSno": "2004781",
+    "IdName": "Item_Rune_Effect_Subpower_Grenades",
+    "RuneType": "effect",
+    "Name": "Тун",
+    "Description": "Применяет \"Оглушающие гранаты\" разбойника, оглушающие врагов и наносящие им урон.",
+    "DescriptionClean": "Применяет \"Оглушающие гранаты\" разбойника, оглушающие врагов и наносящие им урон.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Оглушающие гранаты\"{/c} разбойника, оглушающие врагов и наносящие им урон.{/c}",
+    "RuneOverflowBehavior": "Больше гранат"
+  },
+  {
+    "IdSno": "2020680",
+    "IdName": "Item_Rune_Condition_OnPetKillOrDie",
+    "RuneType": "condition",
+    "Name": "Ур",
+    "Description": "Ваш прислужник или питомец должен убить врага или умереть сам.",
+    "DescriptionClean": "Ваш прислужник или питомец должен убить врага или умереть сам.",
+    "RuneDescription": "{c_RuneCondition}Ваш {c_important}прислужник{/c} или {c_important}питомец{/c} должен убить врага или умереть сам.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2006747",
+    "IdName": "Item_Rune_Condition_OnCCdOrInjured",
+    "RuneType": "condition",
+    "Name": "Фео",
+    "Description": "К вам должны применить эффект контроля, или уровень вашего здоровья должен опуститься до низкого. (Время восстановления: 10 сек.)",
+    "DescriptionClean": "К вам должны применить эффект контроля, или уровень вашего здоровья должен опуститься до низкого. (Время восстановления: 10 сек.)",
+    "RuneDescription": "{c_RuneCondition}К вам должны применить эффект контроля, или уровень вашего здоровья должен опуститься до {c_important}{u}низкого{/u}{/c}.{/c} {c_gray}(Время восстановления: 10 сек.){/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968549",
+    "IdName": "Item_Rune_Condition_OnCastUltimateSkill",
+    "RuneType": "condition",
+    "Name": "Цан",
+    "Description": "Примените мощное умение.",
+    "DescriptionClean": "Примените мощное умение.",
+    "RuneDescription": "{c_RuneCondition}Примените {c_important}мощное{/c} умение.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2057115",
+    "IdName": "Item_Rune_Effect_SummonSpiritWolf",
+    "RuneType": "effect",
+    "Name": "Це",
+    "Description": "На 8 сек. призывает призрачного волка-питомца, который атакует врагов.",
+    "DescriptionClean": "На 8 сек. призывает призрачного волка-питомца, который атакует врагов.",
+    "RuneDescription": "{c_RuneEffect}На {c_number}8{/c} сек. призывает призрачного волка-{c_important}питомца{/c}, который атакует врагов.{/c}",
+    "RuneOverflowBehavior": "Призывает несколько волков"
+  },
+  {
+    "IdSno": "1968096",
+    "IdName": "Item_Rune_Condition_OnEvade",
+    "RuneType": "condition",
+    "Name": "Цем",
+    "Description": "Примените \"Ускользание\".",
+    "DescriptionClean": "Примените \"Ускользание\".",
+    "RuneDescription": "{c_RuneCondition}Примените \"Ускользание\".{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2060617",
+    "IdName": "Item_Rune_Condition_CastRepeatSkill",
+    "RuneType": "condition",
+    "Name": "Цир",
+    "Description": "Примените 5 умений и получите эффект изнеможения на 3 сек.",
+    "DescriptionClean": "Примените 5 умений и получите эффект изнеможения на 3 сек.",
+    "RuneDescription": "{c_RuneCondition}Примените {c_number}5{/c} умений и получите эффект изнеможения на {c_number}3{/c} сек.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2166984",
+    "IdName": "Item_Rune_Effect_Subpower_LightningBolt",
+    "RuneType": "effect",
+    "Name": "Чак",
+    "Description": "Применяет \"Разряд молнии\" друида, поражая ближайшего противника.",
+    "DescriptionClean": "Применяет \"Разряд молнии\" друида, поражая ближайшего противника.",
+    "RuneDescription": "{c_RuneEffect}Применяет {c_important}\"Разряд молнии\"{/c} друида, поражая ближайшего противника.{/c}",
+    "RuneOverflowBehavior": "Больше молний"
+  },
+  {
+    "IdSno": "2060651",
+    "IdName": "Item_Rune_Effect_FlatCDR",
+    "RuneType": "effect",
+    "Name": "Эом",
+    "Description": "Время восстановления умений сокращается на # сек.",
+    "DescriptionClean": "Время восстановления умений сокращается на сек.",
+    "RuneDescription": "{c_RuneEffect}Время восстановления умений сокращается на {c_number}{s1}{/c} сек.",
+    "RuneOverflowBehavior": "Еще больше сокращает время восстановления"
+  },
+  {
+    "IdSno": "2004497",
+    "IdName": "Item_Rune_Condition_AllSkillsOnCD",
+    "RuneType": "condition",
+    "Name": "Юл",
+    "Description": "Примените умение с временем восстановления.",
+    "DescriptionClean": "Примените умение с временем восстановления.",
+    "RuneDescription": "{c_RuneCondition}Примените умение с временем восстановления.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969053",
+    "IdName": "Item_Rune_Condition_OnPotion",
+    "RuneType": "condition",
+    "Name": "Якс",
+    "Description": "Выпейте зелье здоровья.",
+    "DescriptionClean": "Выпейте зелье здоровья.",
+    "RuneDescription": "{c_RuneCondition}Выпейте зелье здоровья.{/c}",
+    "RuneOverflowBehavior": ""
+  }
+]

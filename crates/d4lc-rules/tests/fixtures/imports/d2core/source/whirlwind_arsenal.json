@@ -1,0 +1,72 @@
+{
+  "data": {
+    "_id": "barb-d2-whirlwind",
+    "title": "Whirlwind Arsenal",
+    "_createTime": 1717200000000,
+    "_updateTime": 1717203600000,
+    "variants": [
+      {
+        "name": "",
+        "gear": {
+          "helm": {
+            "itemType": "Helm",
+            "key": "Helm_Unique_Generic_002",
+            "mods": [
+              {
+                "greater": true,
+                "name": "AttackSpeed"
+              }
+            ],
+            "sockets": [
+              {
+                "key": "Rune_Condition_AllSkillsOnCD",
+                "type": "rune"
+              }
+            ],
+            "type": "uniqueItem"
+          },
+          "ring1": {
+            "itemType": "Ring",
+            "key": "aFfIx_legendary_barb_057",
+            "mods": [
+              {
+                "greater": false,
+                "name": "AttackSpeed"
+              },
+              {
+                "greater": false,
+                "name": "Tempered_Generic_AttackSpeed_Tier1"
+              }
+            ],
+            "sockets": [],
+            "type": "legendary"
+          }
+        },
+        "paragon": {
+          "Paragon_Barb_02": {
+            "data": [
+              "0_0",
+              "1_0"
+            ],
+            "glyph": {
+              "slot0": "Glyph_027"
+            },
+            "index": 2,
+            "rotate": 0
+          },
+          "Paragon_Barb_00": {
+            "data": [
+              "0_0",
+              "0_1"
+            ],
+            "glyph": {
+              "slot0": "Glyph_028"
+            },
+            "index": 1,
+            "rotate": 1
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,99 @@
+# cargo-deny configuration for the d4lc workspace.
+#
+# The upstream project is MIT-licensed, like this workspace, so dependencies
+# are held to a
+# permissive MIT/Apache/BSD/ISC license family.
+#
+# Gates:
+# - licenses: hard allow-list; anything outside the family fails.
+# - advisories: the RustSec advisory database is fetched and vulnerable,
+#   unmaintained, or yanked crates fail the build.
+# - bans: duplicate crate versions are reported at warning level; they are a
+#   code-health signal, not a hard failure.
+#
+# The Slint-stack license exceptions below are permanent. Every advisory
+# ignore records why the finding is not reachable from untrusted input and
+# the concrete condition under which it must be re-evaluated.
+
+[licenses]
+version = 2
+confidence-threshold = 0.93
+allow = [
+  "MIT",
+  "Apache-2.0",
+  "Apache-2.0 WITH LLVM-exception",
+  "BSD-2-Clause",
+  "BSD-3-Clause",
+  "ISC",
+  # Permissive companions required by the current tree; each is BSD/MIT-style
+  # permissive but not strictly MIT/Apache/BSD/ISC, so it is called out here:
+  "Unicode-3.0",         # ICU4X stack (icu_*, writeable, yoke, zerovec, tinystr, ...)
+  "Zlib",                # foldhash, tinystr, slotmap
+  "BSL-1.0",             # clipboard-win, error-code (Windows clipboard stack)
+  "MPL-2.0",             # option-ext (via directories)
+  "CDLA-Permissive-2.0", # webpki-roots root certificate data
+  "Unlicense",           # ksni (tray icon); public-domain-equivalent
+]
+
+# Licensing decision: Slint stays, the royalty-free Slint License is
+# elected (visible AboutSlint attribution in the GUI). The stack ships as
+# "GPL-3.0-only OR LicenseRef-Slint-Royalty-free-2.0 OR
+# LicenseRef-Slint-Software-3.0"; all three options stay allowed per crate and
+# the entries are unpinned so they track the locked Slint stack.
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "slint"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "slint-build"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "slint-macros"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-backend-selector"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-backend-winit"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-common"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-compiler"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-core"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-core-macros"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-renderer-femtovg"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-renderer-skia"
+[[licenses.exceptions]]
+allow = ["GPL-3.0-only", "LicenseRef-Slint-Royalty-free-2.0", "LicenseRef-Slint-Software-3.0"]
+name = "i-slint-renderer-software"
+[advisories]
+version = 2
+yanked = "deny"
+ignore = [
+  # ttf-parser 0.25.1 is unmaintained (informational, no patched release).
+  # Path: winit 0.30 (`wayland-csd-adwaita`, enabled by Slint's winit
+  # backend) -> sctk-adwaita 0.10 -> ab_glyph -> owned_ttf_parser. It parses
+  # locally installed system fonts to draw Wayland client-side decoration
+  # titles; no network, preset-archive or capture data reaches it.
+  # Re-evaluate when Slint ships a winit whose sctk-adwaita no longer uses
+  # ttf-parser (sctk-adwaita >= 0.12), or when a ttf-parser vulnerability
+  # advisory is published.
+  "RUSTSEC-2026-0192",
+]
+
+[bans]
+# Duplicate crate versions are a code-health signal only: warn, do not fail.
+multiple-versions = "warn"
+# Workspace members depend on each other with path-only requirements, which
+# cargo-deny counts as wildcard requirements; keep them out of the check.
+wildcards = "allow"

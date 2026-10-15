@@ -1,0 +1,1091 @@
+{
+  "build_id": "ancients-barbarian-endgame",
+  "name": "Singer Ancient \"Bro\" Barb (S14) ",
+  "date": "Updated on July 4, 2026.",
+  "variants": [
+    {
+      "name": "Base",
+      "affix_groups": [
+        {
+          "slot": "Helm",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Resource",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Fury Per Second",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life (Worldly Endurance - Defensive)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "ChestArmor",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Resource",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Resistance To All Elements",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life (Worldly Endurance - Defensive)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Gloves",
+          "affixes": [
+            {
+              "text": "Critical Strike Chance",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Vulnerable Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage (Worldly Finesse - Offensive)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Pants",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Barrier Generation",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Resistance To All Elements",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life (Worldly Endurance - Defensive)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Boots",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Armor",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "War Cry",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Movement Speed (Barbarian Motion - Mobility)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Amulet",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Resource",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Vulnerable Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction (Worldly Stability - Resource)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            },
+            {
+              "text": "Aspect Of Anger Management",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Ring1",
+          "affixes": [
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Vulnerable Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction (Worldly Stability - Resource)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Ring2",
+          "affixes": [
+            {
+              "text": "Critical Strike Chance",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Vulnerable Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Lucky Hit: Up To A 15% Chance To Restore X Primary Resource (Worldly Stability - Resource)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "BludgeoningWeapon",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Weapon Damage",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "All Damage Multipler",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance (Worldly Destruction - Weapons)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "SlashingWeapon",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critcal Strike Chance",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance (Worldly Destruction - Weapons)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            },
+            {
+              "text": "Physical Damage",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Dual-WieldWeapon1",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "All Damage Multiplier",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance (Worldly Destruction - Weapons)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Dual-WieldWeapon2",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Resource",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Life",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance (Worldly Destruction - Weapons)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            },
+            {
+              "text": "Physical Damage",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        }
+      ],
+      "aspects": [
+        "Aspect of Heavenly Strength",
+        "Edgemaster's Aspect",
+        "Wildbolt Aspect",
+        "Crushing Aspect",
+        "Conceited Aspect",
+        "Progenitor's Aspect",
+        "Vehement Brawler's Aspect",
+        "Aspect of Apogeic Furor"
+      ],
+      "uniques": [
+        "Tuskhelm of Joritz the Mighty",
+        "Arreat's Bearing",
+        "The Grandfather",
+        "Ramaladni's Magnum Opus"
+      ],
+      "runes": [
+        "Cir",
+        "Vex",
+        "Zan",
+        "Gar"
+      ],
+      "paragon_boards": [
+        {
+          "name": "1\nStarting Board \n(Might)\nStr 105\n•\nDex 59\n•\nInt 25\n•\nWill 64",
+          "glyph": "(Might)",
+          "style": "top: 0px; left: 0px; transform: rotate(0deg);",
+          "tiles": [
+            "paragon__board__tile r2 c11 active enabled",
+            "paragon__board__tile r2 c12 active enabled",
+            "paragon__board__tile r3 c12 active enabled",
+            "paragon__board__tile r4 c10 active enabled",
+            "paragon__board__tile r4 c12 active enabled",
+            "paragon__board__tile r5 c10 active enabled radius",
+            "paragon__board__tile r2 c10 enabled",
+            "paragon__board__tile r3 c10 enabled"
+          ]
+        },
+        {
+          "name": "3\nBlood Rage \n(Challenger)\nStr 115\n•\nDex 51\n•\nInt 25\n•\nWill 59",
+          "glyph": "(Challenger)",
+          "style": "top: -1258px; left: 1258px; transform: rotate(540deg);",
+          "tiles": [
+            "paragon__board__tile r4 c14 active enabled",
+            "paragon__board__tile r4 c15 active enabled",
+            "paragon__board__tile r5 c7 active enabled",
+            "paragon__board__tile r5 c13 active enabled",
+            "paragon__board__tile r5 c14 active enabled",
+            "paragon__board__tile r6 c6 active enabled",
+            "paragon__board__tile r2 c11 enabled",
+            "paragon__board__tile r2 c12"
+          ]
+        },
+        {
+          "name": "3\nDecimator \n(Imbiber)\nStr 110\n•\nDex 54\n•\nInt 15\n•\nWill 69",
+          "glyph": "(Imbiber)",
+          "style": "top: -2516px; left: 1258px; transform: rotate(180deg);",
+          "tiles": [
+            "paragon__board__tile r2 c11 active enabled",
+            "paragon__board__tile r3 c11 active enabled",
+            "paragon__board__tile r4 c11 active enabled",
+            "paragon__board__tile r4 c12 active enabled",
+            "paragon__board__tile r5 c12 active enabled radius",
+            "paragon__board__tile r6 c9 active enabled",
+            "paragon__board__tile r2 c10 enabled",
+            "paragon__board__tile r2 c12 enabled"
+          ]
+        },
+        {
+          "name": "4\nWarbringer \n(Wrath)\nStr 110\n•\nDex 74\n•\nInt 10\n•\nWill 54",
+          "glyph": "(Wrath)",
+          "style": "top: -1258px; left: 0px; transform: rotate(270deg);",
+          "tiles": [
+            "paragon__board__tile r6 c13 active enabled",
+            "paragon__board__tile r7 c6 active enabled",
+            "paragon__board__tile r7 c7 active enabled",
+            "paragon__board__tile r7 c8 active enabled",
+            "paragon__board__tile r7 c9 active enabled",
+            "paragon__board__tile r7 c12 active enabled",
+            "paragon__board__tile r2 c10",
+            "paragon__board__tile r2 c11 enabled"
+          ]
+        },
+        {
+          "name": "5\nFlawless Technique \n(Marshal)\nStr 90\n•\nDex 64\n•\nInt 25\n•\nWill 69",
+          "glyph": "(Marshal)",
+          "style": "top: -2516px; left: 2516px; transform: rotate(360deg);",
+          "tiles": [
+            "paragon__board__tile r3 c6 active enabled",
+            "paragon__board__tile r4 c6 active enabled",
+            "paragon__board__tile r5 c6 active enabled",
+            "paragon__board__tile r6 c4 active enabled",
+            "paragon__board__tile r6 c5 active enabled",
+            "paragon__board__tile r6 c6 active enabled",
+            "paragon__board__tile r2 c7",
+            "paragon__board__tile r2 c8"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Melted Heart Version",
+      "affix_groups": [
+        {
+          "slot": "Helm",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Resource",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Fury Per Second",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Armor (Worldly Endurance - Defensive)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "ChestArmor",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Resource",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Armor",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Resistance To All Elements",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Armor (Worldly Endurance - Defensive)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Gloves",
+          "affixes": [
+            {
+              "text": "Critical Strike Chance",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Vulnerable Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage (Worldly Finesse - Offensive)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Pants",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Armor",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Barrier Generation",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Resistance To All Elements",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Armor (Worldly Endurance - Defensive)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Boots",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Armor",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "War Cry",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Resistance To All Elements",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Movement Speed (Barbarian Motion - Mobility)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Amulet",
+          "affixes": [
+            {
+              "text": "% Strength",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Resource",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Vulnerable Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction (Worldly Stability - Resource)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            },
+            {
+              "text": "Exploiter's Aspect",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Ring1",
+          "affixes": [
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Vulnerable Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction (Worldly Stability - Resource)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Ring2",
+          "affixes": [
+            {
+              "text": "Critical Strike Chance",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Vulnerable Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Cooldown Reduction",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Lucky Hit: Up To A 15% Chance To Restore X Primary Resource (Worldly Stability - Resource)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "BludgeoningWeapon",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Weapon Damage",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "All Damage Multipler",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance (Worldly Destruction - Weapons)",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "SlashingWeapon",
+          "affixes": [
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critcal Strike Chance",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "All Damage Multiplier",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance (Worldly Destruction - Weapons)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            },
+            {
+              "text": "Physical Damage",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Dual-WieldWeapon1",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Lucky Hit: Up To A 15% Chance To Restore +[6 - 8] Primary Resource",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "All Damage Multiplier",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance (Worldly Destruction - Weapons)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        },
+        {
+          "slot": "Dual-WieldWeapon2",
+          "affixes": [
+            {
+              "text": "Strength",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Maximum Resource",
+              "is_greater": true,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Damage Multiplier",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Lucky Hit: Up To A 15% Chance To Restore +[6 - 8] Primary Resource",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": false
+            },
+            {
+              "text": "Critical Strike Chance (Worldly Destruction - Weapons)",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            },
+            {
+              "text": "Physical Damage",
+              "is_greater": false,
+              "is_implicit": false,
+              "is_tempered": true
+            }
+          ]
+        }
+      ],
+      "aspects": [
+        "Aspect of Heavenly Strength",
+        "Progenitor's Aspect",
+        "Wildbolt Aspect",
+        "Crushing Aspect",
+        "Conceited Aspect",
+        "Vehement Brawler's Aspect",
+        "Aspect of Apogeic Furor"
+      ],
+      "uniques": [
+        "Tuskhelm of Joritz the Mighty",
+        "Arreat's Bearing",
+        "Melted Heart of Selig",
+        "The Grandfather",
+        "Ramaladni's Magnum Opus"
+      ],
+      "runes": [
+        "Cir",
+        "Vex",
+        "Zan",
+        "Gar"
+      ],
+      "paragon_boards": [
+        {
+          "name": "1\nStarting Board \n(Might)\nStr 105\n•\nDex 59\n•\nInt 25\n•\nWill 64",
+          "glyph": "(Might)",
+          "style": "top: 0px; left: 0px; transform: rotate(0deg);",
+          "tiles": [
+            "paragon__board__tile r2 c11 active enabled",
+            "paragon__board__tile r2 c12 active enabled",
+            "paragon__board__tile r3 c12 active enabled",
+            "paragon__board__tile r4 c10 active enabled",
+            "paragon__board__tile r4 c12 active enabled",
+            "paragon__board__tile r5 c10 active enabled radius",
+            "paragon__board__tile r2 c10 enabled",
+            "paragon__board__tile r3 c10 enabled"
+          ]
+        },
+        {
+          "name": "3\nBlood Rage \n(Challenger)\nStr 115\n•\nDex 51\n•\nInt 25\n•\nWill 59",
+          "glyph": "(Challenger)",
+          "style": "top: -1258px; left: 1258px; transform: rotate(540deg);",
+          "tiles": [
+            "paragon__board__tile r5 c7 active enabled",
+            "paragon__board__tile r6 c6 active enabled",
+            "paragon__board__tile r6 c7 active enabled",
+            "paragon__board__tile r6 c8 active enabled",
+            "paragon__board__tile r7 c8 active enabled",
+            "paragon__board__tile r7 c9 active enabled",
+            "paragon__board__tile r2 c11 enabled",
+            "paragon__board__tile r2 c12"
+          ]
+        },
+        {
+          "name": "5\nFlawless Technique \n(Marshal)\nStr 90\n•\nDex 64\n•\nInt 25\n•\nWill 69",
+          "glyph": "(Marshal)",
+          "style": "top: -2516px; left: 1258px; transform: rotate(540deg);",
+          "tiles": [
+            "paragon__board__tile r2 c10 active enabled",
+            "paragon__board__tile r2 c11 active enabled",
+            "paragon__board__tile r3 c7 active enabled",
+            "paragon__board__tile r3 c8 active enabled",
+            "paragon__board__tile r3 c9 active enabled",
+            "paragon__board__tile r3 c10 active enabled",
+            "paragon__board__tile r2 c7 enabled",
+            "paragon__board__tile r2 c8 enabled"
+          ]
+        },
+        {
+          "name": "4\nWarbringer \n(Wrath)\nStr 110\n•\nDex 74\n•\nInt 10\n•\nWill 54",
+          "glyph": "(Wrath)",
+          "style": "top: -1258px; left: 0px; transform: rotate(270deg);",
+          "tiles": [
+            "paragon__board__tile r7 c6 active enabled",
+            "paragon__board__tile r7 c7 active enabled",
+            "paragon__board__tile r7 c8 active enabled",
+            "paragon__board__tile r7 c9 active enabled",
+            "paragon__board__tile r8 c6 active enabled",
+            "paragon__board__tile r8 c7 active enabled",
+            "paragon__board__tile r2 c10",
+            "paragon__board__tile r2 c11 enabled"
+          ]
+        },
+        {
+          "name": "3\nDecimator \n(Imbiber)\nStr 110\n•\nDex 54\n•\nInt 15\n•\nWill 69",
+          "glyph": "(Imbiber)",
+          "style": "top: -2516px; left: 2516px; transform: rotate(270deg);",
+          "tiles": [
+            "paragon__board__tile r2 c11 active enabled",
+            "paragon__board__tile r3 c11 active enabled",
+            "paragon__board__tile r4 c11 active enabled",
+            "paragon__board__tile r4 c12 active enabled",
+            "paragon__board__tile r5 c12 active enabled radius",
+            "paragon__board__tile r6 c9 active enabled",
+            "paragon__board__tile r2 c10 enabled",
+            "paragon__board__tile r2 c12 enabled"
+          ]
+        }
+      ]
+    }
+  ]
+}

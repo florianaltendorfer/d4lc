@@ -1,0 +1,247 @@
+// Multi-build config dialog.
+//
+// Upstream: `MultiBuildConfigView.xaml` + `MultiBuildConfigViewModel.cs`.
+// - Add row (`MultiBuildConfigView.xaml:20-32`): a ComboBox over the affix
+//   presets plus a "+" button (`AddBuildCommand`). Upstream disables it
+//   while the selected preset is already in the list
+//   (`MultiBuildConfigViewModel.cs:93-96`); a new build gets `Colors.Green`
+//   and the next index (`:98-112`).
+// - Build rows (`:34-66`): a colour label (click → `SetColorBuildCommand`,
+//   `:142-163`), the preset name, and a remove button (`RemoveBuildCommand`,
+//   `:125-143`, which renumbers the indices).
+//
+// The rotation is projected through three parallel root in-out properties
+// (`multi-build-names`, `multi-build-indices`, `multi-build-colors`) plus
+// the index-aligned `multi-build-brushes` for the swatches (Slint cannot
+// turn a string into a brush). Rust seeds them on open; like upstream, every
+// add / remove / colour click is saved at once and re-projected, and the
+// only button is "Done" (`MultiBuildConfigDoneExecute` just closes). The
+// colour picker is the shared `SetAffixColorDialog` embedded as an overlay,
+// like in the import dialog.
+import { ComboBox, ScrollView } from "std-widgets.slint";
+import { SetAffixColorDialog } from "set_affix_color_dialog.slint";
+
+export component MultiBuildConfigDialog {
+    in property <string> dialog-title: @tr("Multi-build config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+    // Multi-build rotation rows. Three parallel arrays
+    // mirror `d4lc_config::MultiBuildRuleConfig` (name,
+    // index, color) and are two-way bound to the root
+    // in-out props on `main_window.slint`.
+    in-out property <[string]> multi-build-names: [];
+    in-out property <[int]> multi-build-indices: [];
+    in-out property <[string]> multi-build-colors: [];
+    // Swatch colours, index-aligned with the rows.
+    in property <[color]> multi-build-brushes: [];
+    // Add row: the affix presets, the selected one, and whether "+" is
+    // enabled (the preset is not in the rotation yet).
+    in property <[string]> multi-build-preset-names: [];
+    in-out property <string> multi-build-selected-preset: "";
+    in property <bool> multi-build-can-add: false;
+    // Embedded colour picker overlay (`SetAffixColorView` upstream).
+    in property <bool> multi-build-color-picker-visible: false;
+    in-out property <string> multi-build-color-picker-value: "#008000";
+
+    callback confirm();
+    callback multi-build-preset-selected(string);
+    callback multi-build-add();
+    callback multi-build-remove(int);
+    callback multi-build-color-clicked(int);
+    callback multi-build-color-picker-done();
+    callback multi-build-color-picker-cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 8px;
+
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Add build (upstream ComboBox + AddBuildCommand) ─────────
+        HorizontalLayout {
+            spacing: 4px;
+            alignment: start;
+
+            ComboBox {
+                model: multi-build-preset-names;
+                current-value <=> multi-build-selected-preset;
+                min-width: 175px;
+                preferred-width: 175px;
+                max-width: 175px;
+                max-height: 28px;
+                selected(value) => { root.multi-build-preset-selected(value); }
+                accessible-role: combobox;
+                accessible-label: @tr("Multi-build preset");
+            }
+
+            Rectangle {
+                background: multi-build-can-add ? #CC3333 : #555555;
+                border-radius: 4px;
+                preferred-width: 28px;
+                min-width: 28px;
+                preferred-height: 28px;
+                min-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Add build");
+                Text {
+                    text: "+";
+                    color: multi-build-can-add ? #EEEEEE : #999999;
+                    font-size: 16px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    enabled: multi-build-can-add;
+                    clicked => { root.multi-build-add(); }
+                }
+            }
+        }
+
+        // ── Builds (upstream ItemsControl over MultiBuildList) ──────
+        Rectangle {
+            background: #1E1E1E;
+            border-width: 1px;
+            border-color: #333333;
+            border-radius: 4px;
+            preferred-height: 160px;
+            min-height: 160px;
+
+            ScrollView {
+                VerticalLayout {
+                    padding: 4px;
+                    spacing: 4px;
+                    if multi-build-names.length == 0: Text {
+                        text: @tr("(no builds configured)");
+                        color: #999999;
+                        font-size: 11px;
+                    }
+                    for name[idx] in multi-build-names: Rectangle {
+                        background: #333333;
+                        border-radius: 3px;
+                        preferred-height: 28px;
+                        min-height: 28px;
+
+                        HorizontalLayout {
+                            padding: 3px;
+                            spacing: 6px;
+
+                            // Colour label (click opens the picker).
+                            Rectangle {
+                                background: idx < multi-build-brushes.length ? multi-build-brushes[idx] : #008000;
+                                border-width: 1px;
+                                border-color: #8A8A8A;
+                                border-radius: 3px;
+                                preferred-width: 20px;
+                                min-width: 20px;
+                                max-width: 20px;
+                                // Accessibility + headless real-input test harness.
+                                accessible-role: button;
+                                accessible-label: @tr("Build color {}", name);
+                                TouchArea {
+                                    clicked => { root.multi-build-color-clicked(idx); }
+                                }
+                            }
+
+                            Text {
+                                text: name;
+                                color: #EEEEEE;
+                                font-size: 14px;
+                                vertical-alignment: center;
+                                overflow: elide;
+                                horizontal-stretch: 1;
+                            }
+
+                            // Remove button.
+                            Rectangle {
+                                preferred-width: 20px;
+                                min-width: 20px;
+                                max-width: 20px;
+                                // Accessibility + headless real-input test harness.
+                                accessible-role: button;
+                                accessible-label: @tr("Remove build {}", name);
+                                Text {
+                                    text: "x";
+                                    color: #EEEEEE;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                                TouchArea {
+                                    clicked => { root.multi-build-remove(idx); }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        Rectangle { background: transparent; vertical-stretch: 1; }
+
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Done");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+
+    // ── Overlay: set build colour (upstream `SetAffixColorView`) ────
+    if multi-build-color-picker-visible: Rectangle {
+        background: #1F1F1FE8;
+
+        Rectangle {
+            background: #2A2A2A;
+            border-width: 1px;
+            border-color: #4A4A4A;
+            border-radius: 6px;
+            width: 420px;
+            height: 400px;
+            x: (parent.width - self.width) / 2;
+            y: (parent.height - self.height) / 2;
+
+            SetAffixColorDialog {
+                width: 420px;
+                height: 400px;
+                dialog-title: @tr("Set build color");
+                dialog-error: root.dialog-error;
+                dialog-error-visible: root.dialog-error-visible;
+                set-affix-color-value <=> root.multi-build-color-picker-value;
+                confirm => { root.multi-build-color-picker-done(); }
+                cancel => { root.multi-build-color-picker-cancel(); }
+            }
+        }
+    }
+}

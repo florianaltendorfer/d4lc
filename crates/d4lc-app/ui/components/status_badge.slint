@@ -1,0 +1,61 @@
+// StatusBadge — a compact status pill for the debug panels.
+//
+// The debug surface reports state (live/stale, phase outcome, generation
+// freshness) as a coloured pill instead of bare text. The colour comes from
+// the `Metro.status-*` tokens through the semantic `StatusKind`, so a caller
+// never writes a colour literal and every status in the app renders with one
+// palette. `info` is the neutral default.
+//
+// Colours, type, padding and radius all come from the `Metro` tokens; the
+// component carries no literal value.
+
+import { Metro } from "../theme.slint";
+
+export enum StatusKind {
+    ok,
+    warn,
+    error,
+    info,
+}
+
+export component StatusBadge {
+    in property <StatusKind> kind: StatusKind.info;
+    in property <string> text;
+
+    // The tone of the requested status kind. One private helper keeps the
+    // border and the caption from repeating the same four-way choice.
+    function tone() -> color {
+        root.kind == StatusKind.ok ? Metro.status-ok
+            : root.kind == StatusKind.warn ? Metro.status-warn
+            : root.kind == StatusKind.error ? Metro.status-error
+            : Metro.status-info
+    }
+
+    Rectangle {
+        background: transparent;
+        border-width: 1px;
+        border-color: tone();
+        border-radius: Metro.radius-lg;
+        // The pill announces its status text to screen readers. The role is
+        // qualified because the component's own `text` property shadows the
+        // bare enum value (same reason Slint's text widgets qualify it).
+        accessible-role: AccessibleRole.text;
+        accessible-label: root.text;
+
+        HorizontalLayout {
+            padding-left: Metro.spacing-sm;
+            padding-right: Metro.spacing-sm;
+            padding-top: Metro.spacing-xs;
+            padding-bottom: Metro.spacing-xs;
+
+            Text {
+                text: root.text;
+                color: tone();
+                font-size: Metro.font-size-caption;
+                font-weight: Metro.font-weight-caption;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+        }
+    }
+}

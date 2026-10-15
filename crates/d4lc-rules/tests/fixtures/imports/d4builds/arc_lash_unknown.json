@@ -1,0 +1,30 @@
+{
+  "Date": "2026-05-30",
+  "Id": "sorc-arc-lash-starter",
+  "Name": "Arc Lash Starter",
+  "Variants": [
+    {
+      "Name": "Starter",
+      "Amulet": [
+        {
+          "AffixText": "Attack Speed"
+        }
+      ],
+      "Gloves": [
+        {
+          "AffixText": "Imaginary Affix"
+        }
+      ],
+      "Aspect": [
+        "Missing Aspect"
+      ],
+      "Runes": [
+        "Bogus Rune"
+      ],
+      "Uniques": [
+        "Not A Real Unique"
+      ],
+      "ParagonBoards": []
+    }
+  ]
+}

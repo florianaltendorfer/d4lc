@@ -1,0 +1,24 @@
+name: upstream-check
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * 1"
+
+permissions:
+  contents: read
+
+# The check fails (red run, notification) when upstream moved past the last
+# reviewed commit (exit 1) and when its state cannot be determined (exit 2);
+# only a confirmed "unchanged" is green.
+jobs:
+  check:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    steps:
+      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Check upstream head
+        run: ./scripts/check_upstream.sh

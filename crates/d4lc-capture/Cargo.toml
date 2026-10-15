@@ -1,0 +1,49 @@
+[package]
+name = "d4lc-capture"
+version = "1.0.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+d4lc-core = { path = "../d4lc-core" }
+# Wayland ScreenCast portal client (xdg-desktop-portal over DBus).
+# `async-io` flavor on purpose: this workspace keeps zbus on its
+# async-io executor process-wide (see the ksni note in
+# crates/d4lc-app/Cargo.toml — the tokio flavor would flip that flavor,
+# which double-panics the Slint stack).
+ashpd = { version = "0.13", default-features = false, features = [
+  "async-io",
+  "screencast",
+], optional = true }
+# PipeWire stream consumption for ScreenCast frames. Links the system
+# libpipewire-0.3 C library; kept strictly behind the `wayland-portal`
+# feature so X11/default builds never link it.
+pipewire = { version = "0.10", optional = true }
+# Sync bridge for the ashpd portal futures. Stays on zbus's default
+# async-io flavor (the tokio flavor would flip the process-wide zbus
+# executor and double-panic the Slint stack, see the ksni note in
+# crates/d4lc-app/Cargo.toml). zbus drives its internal connection
+# tasks on its own executor thread, so `zbus::block_on` from this
+# synchronous crate is safe.
+zbus = { version = "5", optional = true }
+# Already in the tree as ashpd's flag type; declared directly so the
+# portal adapter can convert the portal's advertised-mode bitflags into
+# the pure session boundary's u32 masks.
+enumflags2 = { version = "0.7", optional = true }
+# RandR refresh-rate query for the X11 loop pacing. Safe
+# Rust client; a display-less environment simply fails the connect and
+# the caller falls back to 60 Hz.
+x11rb = { version = "0.13", features = ["randr"] }
+
+[features]
+# Wayland capture via the ScreenCast portal + PipeWire. Opt-in build
+# feature: the release app target enables it through d4lc-app's
+# `real-runtime` chain once its CI installs libpipewire-0.3-dev.
+wayland-portal = ["dep:ashpd", "dep:pipewire", "dep:enumflags2", "dep:zbus"]
+
+# Workspace lints, including `unsafe_code = "deny"`: the Xlib/MIT-SHM FFI
+# in src/native_x11.rs is the only module that opts out.
+[lints]
+workspace = true

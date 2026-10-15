@@ -1,0 +1,75 @@
+// Dark-styled single-line text input for the build-import dialog family.
+//
+// Mirrors the private `DarkLineEdit` on the AffixScreen (upstream MahApps
+// dark TextBox look, AffixView.xaml). The std-widgets `LineEdit` follows
+// the ambient widget color scheme and renders as a light field on the dark
+// dialogs, so
+// the import family uses this shared dark field instead.
+//
+// The inner `TextInput` keeps the element id `DarkLineEdit::input`, so the
+// real-input harness addresses dialog fields the same way as the AffixScreen
+// fields. Enter fires `accepted` inside the field's own scope; there is no
+// global keyboard host here.
+export component DarkLineEdit {
+    in property <string> placeholder-text: "";
+    // Upstream watermark behavior of the import dialog URL fields
+    // (GotFocus hides, LostFocus shows again): when true the placeholder
+    // also hides while the field holds focus.
+    in property <bool> watermark-hides-on-focus: false;
+    in-out property <string> text <=> input.text;
+    // Enter pressed while the field holds focus (per-field confirm scope).
+    callback accepted();
+    // The text changed because the user modified it
+    // (upstream UpdateSourceTrigger=PropertyChanged live updates).
+    callback edited();
+
+    Rectangle {
+        background: #1F1F1F;
+        border-width: 1px;
+        border-color: input.has-focus ? #868686 : #3F3F46;
+        border-radius: 3px;
+        preferred-height: 28px;
+        min-height: 28px;
+        max-height: 28px;
+        // Text stays inside the field frame (same as the std LineEditBase).
+        clip: true;
+
+        // Placeholder shown while the field is empty (and, with
+        // watermark-hides-on-focus, unfocused).
+        if input.text == "" && !(root.watermark-hides-on-focus && input.has-focus): Text {
+            x: 8px;
+            width: parent.width - 16px;
+            height: parent.height;
+            text: root.placeholder-text;
+            color: #868686;
+            font-size: 13px;
+            vertical-alignment: center;
+        }
+
+        // Center like the std LineEditBase: let the input fill the field
+        // and rely on vertical-alignment. Y-centering against
+        // `preferred-height` collapses (an empty input reports ~zero
+        // height) and bottom-pins the glyphs.
+        input := TextInput {
+            x: 8px;
+            width: parent.width - 16px;
+            height: parent.height;
+            color: #FFFFFF;
+            font-size: 13px;
+            vertical-alignment: center;
+            accepted => {
+                root.accepted();
+            }
+            edited => {
+                root.edited();
+            }
+            // Accessibility + headless real-input test harness: the
+            // placeholder doubles as the accessible label and is
+            // exposed as the accessible placeholder text (the std
+            // LineEdit this component replaces exposed the same
+            // field).
+            accessible-label: root.placeholder-text;
+            accessible-placeholder-text: root.placeholder-text;
+        }
+    }
+}

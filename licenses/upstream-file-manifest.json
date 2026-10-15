@@ -1,0 +1,1730 @@
+{
+  "schema_version": 1,
+  "upstream": {
+    "url": "https://github.com/josdemmers/Diablo4Companion.git",
+    "branch": "master",
+    "local_path": "upstream/Diablo4Companion",
+    "last_reviewed_commit": "d508a473515fb6239a93a7a1a146b7ad007f01b1",
+    "last_reviewed_release": "v5.4.0.0"
+  },
+  "source_config": "config/upstream-files.toml",
+  "items": [
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.deDE.json",
+      "sha256": "a03c1875a543ed7176cc31ccf0889aaf81a8131e78a870ebfcbbbf8ae99dd5c0",
+      "bytes": 1210883
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.enUS.json",
+      "sha256": "49519f7fed0d633ca2db2eebb01f44fb36eab26c43094961faffbbd23ac8a72c",
+      "bytes": 1255981
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.esES.json",
+      "sha256": "de6512195616ce4b985b93e7d7f3c599930df924707174627f1e3c7c4105db5c",
+      "bytes": 1210733
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.esMX.json",
+      "sha256": "85d3bb8fd11660f5a028c4238e841f7d3f5117a03dcac381fb5509afeed34033",
+      "bytes": 1207709
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.frFR.json",
+      "sha256": "597fabbfe95205824d984c15dff7b21e5a907db81e091c139ceef18fa48dc68c",
+      "bytes": 1240467
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.itIT.json",
+      "sha256": "f46ce365292088beeb6e841329f513fb0c00979a0e7867e0a32e0538a5df70df",
+      "bytes": 1196995
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.jaJP.json",
+      "sha256": "92ab19b4e856f4954386d9575afe9cd7fbe1e1e8bf79ce2bca41c752c15c41dc",
+      "bytes": 1212571
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.koKR.json",
+      "sha256": "9ac4f52a082d4517f1f699b01fddda74b62aff46c48ebe771a319ec347731eb1",
+      "bytes": 1189513
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.plPL.json",
+      "sha256": "8ec8ce3d5c236b24710658e652c55d6861c3c984e915ed1311e44a71f471444d",
+      "bytes": 1213151
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.ptBR.json",
+      "sha256": "a04fc54be833a9de6c0e58d05bf4ceb8fe03d965b3c54e707b008393b639ca81",
+      "bytes": 1204940
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.ruRU.json",
+      "sha256": "0088295e0c52c903d720ded8792417408e5f72141c8bf50d3a4cf0b41fc751c5",
+      "bytes": 1305710
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.trTR.json",
+      "sha256": "02c7f9bc8d40dd025474fb5c01e2e74ecc1b6985efee699d63d14eaf2b261968",
+      "bytes": 1192479
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.zhCN.json",
+      "sha256": "5959064468dc027b8acc40615871040ff341b43e63779d5176cb2b644e5c17e1",
+      "bytes": 1187459
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Affixes.zhTW.json",
+      "sha256": "77bd865fa1d135bd155b6468ac6c83e274bf1d7f504ec327fa9262dc56ddb4fd",
+      "bytes": 1175469
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.deDE.json",
+      "sha256": "6fb32803dedeaf3414b7ee40545eff767a1d9b7f46367d0812f8bc96a75c9c04",
+      "bytes": 440728
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.enUS.json",
+      "sha256": "3292c217581eca2c953dab6e197b021b90f9a0c740338c4f6ea3b158b55567e1",
+      "bytes": 531252
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.esES.json",
+      "sha256": "ca9ab1782c42a798b7a2431a09062f11dc0ba61a006cb26713ac44c0a88e5855",
+      "bytes": 434264
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.esMX.json",
+      "sha256": "53ac8baaca850d53a521ffc20d02b9db6c90620467beacf499070e2f8829c5a2",
+      "bytes": 436375
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.frFR.json",
+      "sha256": "5d3cf62fd1c2b92e622c472f44f08631fe30e5820270333d2acaf91609bed6db",
+      "bytes": 468388
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.itIT.json",
+      "sha256": "65599744ad79a3987cb3de47ebe32e8a60be53d48c91d24718845ab3a2cd86d0",
+      "bytes": 430042
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.jaJP.json",
+      "sha256": "c8c0abcd47a1632dd9af3475ec108c96e734dba0810157b8f60ec3eb511d9374",
+      "bytes": 448844
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.koKR.json",
+      "sha256": "caae3af0270a871203e64947e92425b97a8bc59b2419e32c9cc3f6acea847032",
+      "bytes": 436889
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.plPL.json",
+      "sha256": "5f64bc75bcb5129e8f7ca9f749297cbf772a8cc7f076d983bb1f1ae5d56e6c42",
+      "bytes": 442266
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.ptBR.json",
+      "sha256": "302609c59ea93903f788504d14d0972911da5863ba6b32bdfe3ab668596a4eae",
+      "bytes": 420965
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.ruRU.json",
+      "sha256": "a09b6eea2f6faf687174f8e9481432bd07fe37d527eb93881cc925c4b0349453",
+      "bytes": 563695
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.trTR.json",
+      "sha256": "1581bffc8f4755a95235dbc394979f4fe2599b04998fad5fc0ae582387b9cc95",
+      "bytes": 426999
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.zhCN.json",
+      "sha256": "f9c3936c4de5efd151b3bf985f2b217c0d08a9ff5c1517bcbade4d16f270f979",
+      "bytes": 400548
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Aspects.zhTW.json",
+      "sha256": "f5e8fb0b0abbc01d4f932d01d6690b9fc0cc60db7a6e77a07f2cde98bfd5fed8",
+      "bytes": 400012
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.deDE.json",
+      "sha256": "8e2dc9d4bb2b7aea3b48a137bc9e9d27fc5ee318865b1b7c9c20e0918cfedc69",
+      "bytes": 43809
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.enUS.json",
+      "sha256": "df3a042c7764eb433751bb20f18d4fb6b3057c2db9d507b1dc7c62a5759eb6f6",
+      "bytes": 40464
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.esES.json",
+      "sha256": "57823a9306dd5b632b6fa2cbccb97448139aa3356a4841d1c9e20a12745bbe77",
+      "bytes": 41843
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.esMX.json",
+      "sha256": "180f9a91512ff9df305e0f0b7b5cabff6b858eb6d447a7052db54626392cade0",
+      "bytes": 41975
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.frFR.json",
+      "sha256": "acb6c68818654853999ec4485b905340ba1049eeb8d8420621d640785ca506ad",
+      "bytes": 41600
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.itIT.json",
+      "sha256": "0a9f04172e182a3693c91a92400c6fee4d232420dfb3d1857798f4e7f3b51e8b",
+      "bytes": 42233
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.jaJP.json",
+      "sha256": "e1b0b803eb1850e34e22ba756fac715eb68d8d3c8b8783e009b8e393fcbbca04",
+      "bytes": 43774
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.koKR.json",
+      "sha256": "339b0ad95907839798e337bd5ef8e7bfea083265b87fb0ef156ac66f9d6e1fcc",
+      "bytes": 40672
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.plPL.json",
+      "sha256": "7cfe38897fcb96b0e0a2717f698aa045829524226b669c4a184665d6b029e634",
+      "bytes": 42877
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.ptBR.json",
+      "sha256": "da70d9aa2e07e8d58b7c103a559673a59672e72f4c3eb43e8a2e1843faf224f8",
+      "bytes": 41522
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.ruRU.json",
+      "sha256": "929bf270a54075ca0fa1d73828e8f8523d26a65a22ea101c010813b2a1633195",
+      "bytes": 53411
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.trTR.json",
+      "sha256": "9fb2d8fa84cbd320d8b53c4ec57287b561d44aa7480b887dd2a6076462f51fe6",
+      "bytes": 23515
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.zhCN.json",
+      "sha256": "1365a8596e2a47bd051c152a6e0889aeb51bd0256c92dc01f9042933b4e8a526",
+      "bytes": 38791
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ItemTypes.zhTW.json",
+      "sha256": "77042366637da5078a7bdbaeae6d719377ed66639e5ca602fa49b69b9d48c7f5",
+      "bytes": 39898
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.deDE.json",
+      "sha256": "04b15bf2b26f3e4bf338f43301ccd66462b7fac7662caad7770f13be69a20a9d",
+      "bytes": 5783
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.enUS.json",
+      "sha256": "8dfd492989b7ef74aae021400942eac5826ec420e196a231e01a08c46dc86b36",
+      "bytes": 5585
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.esES.json",
+      "sha256": "9e47e0b8f8ebd18d795833477e8167450a80ebbbbfbf88d2aaca0b676b57a135",
+      "bytes": 5819
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.esMX.json",
+      "sha256": "8796153d9666b2ef754c37b42209f92cc44b84165558afc983d00fca270581ad",
+      "bytes": 5831
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.frFR.json",
+      "sha256": "ce260aadbba7f338ccd3fe05bb2471bbdb0db8636443d334a4e9588352afb7f5",
+      "bytes": 5823
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.itIT.json",
+      "sha256": "ed603781a0a3945916002a77d696a60eeb4fe0f9bca6660b95b3db13ddab1f84",
+      "bytes": 5817
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.jaJP.json",
+      "sha256": "64027698ef1584c4214ae91c514599470cee1f32a8329bb8264475ac636325a1",
+      "bytes": 5742
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.koKR.json",
+      "sha256": "fd29c7ae105bd683a62a7a3d3f8b1297e8eddac14bb63a3c51a1645754c6b071",
+      "bytes": 5740
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.plPL.json",
+      "sha256": "24032bf008b0fb54750ef3e3b7689ca1ac057a7ace1518b35b9dcb628e88a7f2",
+      "bytes": 5802
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.ptBR.json",
+      "sha256": "de468ab6fbe7852a757696627a44b6ecdd5887d1de117d05f4ffde7a3c0921cb",
+      "bytes": 5836
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.ruRU.json",
+      "sha256": "731af8e7260b7a5d759192616e695eac5cc491b3d9fa0f1cb27ce2cefb6378bc",
+      "bytes": 6642
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.trTR.json",
+      "sha256": "c158cee8ce60dbcb2fe195da031b0ae91c17fe7949207dd09e6766b148a37e8c",
+      "bytes": 5713
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.zhCN.json",
+      "sha256": "ac0112857ef6bc44675249b7e8bee813dfeb38cd3d67eff2e845bee01133b14b",
+      "bytes": 5565
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonBoards.zhTW.json",
+      "sha256": "bcbdf301df2f48f93b9efe5a77f9e66de603441f794215425b43c469d746b245",
+      "bytes": 5550
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.deDE.json",
+      "sha256": "b15da15c156af35962771d074437d20d83dae042745f6837d9f75e6c5a882932",
+      "bytes": 10189
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.enUS.json",
+      "sha256": "8ed6034a0c6d1ade5fd82baf079ff30667958bb49aab609b02435fac06b78798",
+      "bytes": 11840
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.esES.json",
+      "sha256": "6f5562b3c45f5a603962c78758060bcfadc6d99be63c7a36c056e248fa0b09f0",
+      "bytes": 10195
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.esMX.json",
+      "sha256": "7d5ea608b9f5e8df7cfdc2a92e89e5768eeaf534a914bddf19e38c961f36fdbd",
+      "bytes": 10267
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.frFR.json",
+      "sha256": "0d7176bbef33dac7f603c69e87e690b6e5c5fa0fb074b189613d233f869fefaa",
+      "bytes": 10323
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.itIT.json",
+      "sha256": "c5686a6a320829719b66e3d54b75eb6c6c270c5f50234228d8141f105dc43184",
+      "bytes": 10355
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.jaJP.json",
+      "sha256": "cd990ef49f505737ded62a1d0004c628a41ca702445c4f2e55a77c0b35979a93",
+      "bytes": 10125
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.koKR.json",
+      "sha256": "26ad2dc72100ac87194b25ebfa14ad465b4aa506a1c4701f36691f84d78271b8",
+      "bytes": 10125
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.plPL.json",
+      "sha256": "f61943a9976b0c2aa9abe3d1b49be731a14b875a3631016a452466dcbbffc8cf",
+      "bytes": 10326
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.ptBR.json",
+      "sha256": "ce5d0937f026124f072de1a10a6694820c731f59f7854ef86756be15e01d6270",
+      "bytes": 10225
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.ruRU.json",
+      "sha256": "33da27c88a7f73df8fe3a0e806b727d9911ab88ed8d99e18becf0b3b203e7f25",
+      "bytes": 11307
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.trTR.json",
+      "sha256": "0b9fdd2723bcbbcb4ca0c265863fd111fe5d09cb0fda5e43666a046d11655974",
+      "bytes": 10170
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.zhCN.json",
+      "sha256": "dc2d7bd56eed813279228915478ccfa9723881995427276797f94176a0dc1c2e",
+      "bytes": 9963
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/ParagonGlyphs.zhTW.json",
+      "sha256": "e6503002ecf983031401b8d693bd6cde590b4736f4251552d502b6fbac2cdf89",
+      "bytes": 9945
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.deDE.json",
+      "sha256": "00d4c3f4bc8917e962d22d07625bea25cfeecb0de6f39d4c39b878147dd90048",
+      "bytes": 28788
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.enUS.json",
+      "sha256": "e4c2310d9ef30805d9ab1d39ec900125e3d2adb20115b467fd80ba37d7828dc2",
+      "bytes": 25622
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.esES.json",
+      "sha256": "520a8b6bec5ca584ef14a3745c02189fe9f9160e7ee995599e488a27608c4094",
+      "bytes": 28075
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.esMX.json",
+      "sha256": "e022756226ff51ad7134c632185ce72f55d4395ef40eb222b2679bdeb11e5310",
+      "bytes": 28408
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.frFR.json",
+      "sha256": "0f3520ee7a503c9c89e66b16eb0267eb2cee6e36708a66db4bd725828e49c8a2",
+      "bytes": 31278
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.itIT.json",
+      "sha256": "2d991185c7c654a3deb20d5dfb835db2ea46248838b81af4a8d2ed9c939ba88c",
+      "bytes": 27412
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.jaJP.json",
+      "sha256": "bf9a2eff228c71812e69dbbbfa1abf035d8a7eadd9612508ae94f8917cf6377f",
+      "bytes": 29340
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.koKR.json",
+      "sha256": "47005dea99479788280eeed2fbb9710fce53670692ba5ba30d3e306e3a721496",
+      "bytes": 28065
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.plPL.json",
+      "sha256": "39b367506573361d41ca11419ba1d5c27f0330b3fc66b7acc506e2c998a9334f",
+      "bytes": 27840
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.ptBR.json",
+      "sha256": "6ac32ca6538786a8d4efd21d761833db1e957cba3b247de4c9cc5106d876848b",
+      "bytes": 26586
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.ruRU.json",
+      "sha256": "83b7febdfdb1f2a215fd5f978d987ba333f756f83421846462f777bbb3d73d0f",
+      "bytes": 37777
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.trTR.json",
+      "sha256": "22f79ee2333a86f43bb4ad3c294cdfb8deacf56393070a7482d69245198fd78c",
+      "bytes": 28131
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.zhCN.json",
+      "sha256": "bc11ccedba4a540b958fac25914ad769e085a572fcc3a459e7750844f2f97f9a",
+      "bytes": 25859
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Runes.zhTW.json",
+      "sha256": "f04524993af96c5d8485faf637d342a67b9dfa8fd176ba40f83c372c4aa1ecb5",
+      "bytes": 25827
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.deDE.json",
+      "sha256": "b7a22f8542bac1d2605141d895aafa45719a2001e15c62aaba738efb894b3c5e",
+      "bytes": 92915
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.enUS.json",
+      "sha256": "3fb253c2c17ef56c16d788a0fc20dda657fd1202229d055f6d4272e1c99f7b06",
+      "bytes": 93138
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.esES.json",
+      "sha256": "b052a4721b85c396d11ad02cc7168f8d3a36d13d252d7ced5aab6de065b81f8d",
+      "bytes": 93353
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.esMX.json",
+      "sha256": "656084b7d80c1805967161175d4056a567a027c77422006a60815bd406a8059f",
+      "bytes": 93521
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.frFR.json",
+      "sha256": "317468c2d70f76dd04993af8047b60bb02826c70009c15b79ac9910ef1ea3371",
+      "bytes": 98139
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.itIT.json",
+      "sha256": "3cec42a097d64cdf3b9b1bb926bd73f0ed91bb0c6463ca7070e58a0385c4d8e3",
+      "bytes": 93190
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.jaJP.json",
+      "sha256": "2081ed66907aa83ca723d4e59efdadb192b080d935c789b3788dabbc479f3be6",
+      "bytes": 97494
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.koKR.json",
+      "sha256": "016ebf5a0fae17bab101274e448ef896382c1abe5a0d4d5d518c9ed8c557fd16",
+      "bytes": 94975
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.plPL.json",
+      "sha256": "46bda2f5f302ac66132f981e5eee942a698fe2b7463b98f68b261c3a1b2f8923",
+      "bytes": 93080
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.ptBR.json",
+      "sha256": "044eda452a0d708bcd672d825fbd79973aaafadbdfba50b683cf6c5454576cf2",
+      "bytes": 90894
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.ruRU.json",
+      "sha256": "508ed8bbf8d2abbf6935a46c612e078d519467a2bf79f11b21e201246d5a3d67",
+      "bytes": 116363
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.trTR.json",
+      "sha256": "5850670a4cc73da283ac2e2f995db8af88aaf9d19c1b37db2e216c6fe0257f1e",
+      "bytes": 93078
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.zhCN.json",
+      "sha256": "90244dd1d35ec6638a9d3bf44179b3e1fcd27b75e920ade7e174de627acc7f7a",
+      "bytes": 88261
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Sigils.zhTW.json",
+      "sha256": "589bb958823d658ef8740d14877752f272e37e1ad377b9d45290e1d63c8ad412",
+      "bytes": 86804
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.deDE.json",
+      "sha256": "d8456da021be5d50b371a4d85188f7b53d001768c57403d7b0baeaed46e524ec",
+      "bytes": 239023
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.enUS.json",
+      "sha256": "1226120e18c66b1034acf2dcfbc40c449c1c72dd73041fb1abfae917bf1bb84b",
+      "bytes": 403055
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.esES.json",
+      "sha256": "1b9b4279fbb5f81816cc707ee85775c6c36ae9b2aaf0707b3fb3fd0b5caba608",
+      "bytes": 233906
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.esMX.json",
+      "sha256": "da77aa290b3ff4d5e9e87673dcd9e433cff44e9136a0e297541faa1a19ca0667",
+      "bytes": 235873
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.frFR.json",
+      "sha256": "5522f493fdc372a5efde0553a9674ec6813c60e72aa4696bf2aa514f1d6cb8d6",
+      "bytes": 255788
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.itIT.json",
+      "sha256": "419d88da2b4cd016609bc5ccb134258c78b8f05ccfc3ddbab43cb531a03108cf",
+      "bytes": 232460
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.jaJP.json",
+      "sha256": "28b69e49dfa12b385fda7c465315fdc48b1f4e8d63d06e5d15944d77cbe1fa89",
+      "bytes": 246997
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.koKR.json",
+      "sha256": "c10b879ee509c6495c37f546a1827924d11eec92c5b97ccebd02d08ce73615c0",
+      "bytes": 236402
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.plPL.json",
+      "sha256": "1747368f5b6d07a7c9d17ac58117fde3b02bd6ad6737ef2bbfd362c497357069",
+      "bytes": 238583
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.ptBR.json",
+      "sha256": "5bb58051887a432c6237ca7e1f3a2bd0dc88271692aa6e157233c1449daa99c1",
+      "bytes": 226498
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.ruRU.json",
+      "sha256": "2f4d52dde227f6ccc1e887e32481d784a86b65a4b75e71c1e783aadc120230ab",
+      "bytes": 314964
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.trTR.json",
+      "sha256": "4da80612d0a182a5bb03429b6fd1f0ca8539b5e7f98d9dd30d9bd543f3ca4a5a",
+      "bytes": 230961
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.zhCN.json",
+      "sha256": "e1b5fa30bbc398ce0d39dc26b8a1cffda755208be089f36c42f6a0c2ff5ab556",
+      "bytes": 216889
+    },
+    {
+      "category": "data_globs",
+      "source_path": "D4Companion/Data/Uniques.zhTW.json",
+      "sha256": "ac5f1374dbf764698d7cc9048632a9fe14dea76a5c81d786fe053f73209af4f4",
+      "bytes": 212605
+    },
+    {
+      "category": "entities",
+      "source_path": "D4Companion.Entities/AffixPreset.cs",
+      "sha256": "eda4c9889c5a890d1bd336a12aa10d5241f8d4d571477babfddc1a6f1ab18d95",
+      "bytes": 760
+    },
+    {
+      "category": "entities",
+      "source_path": "D4Companion.Entities/ItemTooltipDescriptor.cs",
+      "sha256": "0ba97b732ed42316209a1149c8df741269a0e07daafb58c45bd839cbe3cf9d27",
+      "bytes": 3211
+    },
+    {
+      "category": "entities",
+      "source_path": "D4Companion.Entities/OcrResults.cs",
+      "sha256": "d7ed647d3b12aec760d0fa37e852a5846b0136f129676e2edeff15a9613637da",
+      "bytes": 945
+    },
+    {
+      "category": "entities",
+      "source_path": "D4Companion.Entities/ParagonBoard.cs",
+      "sha256": "1a21d80ddca0eabe400a32948ce157e5e70968372b2e632b04b1ef2def2c1fc9",
+      "bytes": 602
+    },
+    {
+      "category": "entities",
+      "source_path": "D4Companion.Entities/SettingsD4.cs",
+      "sha256": "7e2d0ad454f4d9b8ef7659b7cfd9e2da25b1da5438a1fb4231a25f92d98bc5f9",
+      "bytes": 7972
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/affix_tempered.png",
+      "sha256": "f8c971480cdbffc9753ed11ff5e3707cd965967b06ab33e861d3106b70181ff4",
+      "bytes": 1907
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/aspect_codex.png",
+      "sha256": "77dabd49b4226dd5227cd9de37f968a5b4d5c55331a5d09a098c0c338f7299ef",
+      "bytes": 1234
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/aspect_drop.png",
+      "sha256": "19f5d93b38aee94ec89d4c39423a7ec2a2c4364a6f2acbc54b0e7e1ef61ce5e4",
+      "bytes": 3485
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/aspect_icon.png",
+      "sha256": "34bf76c131d10f0babb01f2b19cc036a4a64073ae5fb7350cc59e31304978af9",
+      "bytes": 4808
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/aspect_seasonal.png",
+      "sha256": "28537404f380a4ffa561ffabe19a6007586d86e901661d0a821cdec8f91980d7",
+      "bytes": 2561
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/class_icon_barb.png",
+      "sha256": "c52420a39e4880a636e4861b31ac7d247928c7e980be6cf7d10e032f346aaceb",
+      "bytes": 7446
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/class_icon_druid.png",
+      "sha256": "2e1c46ec56cd248140ad5498f6c4933b6fbedcd4c304ca29a62d5364e0ac1bad",
+      "bytes": 8534
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/class_icon_necro.png",
+      "sha256": "1731d46a08d6221bb26c2cbf3afbecf42566388a826b36127deafe3ecde891b6",
+      "bytes": 9813
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/class_icon_paladin.png",
+      "sha256": "bb27dd222e8b8b20904a290ae4654878e66402bfa40b67f1e1798dd3afe9659d",
+      "bytes": 12612
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/class_icon_rogue.png",
+      "sha256": "c990f503b7104b7533aa1180b680ca2e29b5e07af56c38611f8ff74db8f30013",
+      "bytes": 8484
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/class_icon_sorc.png",
+      "sha256": "ae405f49696858193b94788b8ddac866bd70d205e99508af88087b625b0b502f",
+      "bytes": 8223
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/class_icon_spiritborn.png",
+      "sha256": "4f46035d9b2e8e8deecb34cb93b924634171d2222b0fa368ad02ce844675ffb2",
+      "bytes": 12407
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/class_icon_warlock.png",
+      "sha256": "e38545668b6bdb59115bcc4ea6690eca4ae9639ef6baff9d5cbc9275df70fdc6",
+      "bytes": 13866
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/feet_icon.png",
+      "sha256": "6fd74ba85695300ba424000d18dca38921c365fd2d5b24a551a8f12fe8695d57",
+      "bytes": 3025
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_barb_off.png",
+      "sha256": "be7c479afcac546486bb3a7b757bb31eaa15f287f82b6b5dcfc927ce47e15f4e",
+      "bytes": 18403
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_barb_on.png",
+      "sha256": "2dadbd7cc255463a5268eaed0eea0fec3e30a00b4cb8381064d9f271c2cd862c",
+      "bytes": 15409
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_core_off.png",
+      "sha256": "79cb114f74b8a0bc40ac8e0065cc2e8337b571fb5df7e13be375dbde176057e6",
+      "bytes": 16033
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_core_on.png",
+      "sha256": "7d05a89cf67d986e091421eeac1c229caef67423ac0bb98ce54396472bab15f3",
+      "bytes": 13755
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_druid_off.png",
+      "sha256": "fd396240b5e53407f0c6419ea2903c9ef821c2227f53db9cfb22c07006428c23",
+      "bytes": 18597
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_druid_on.png",
+      "sha256": "99ceb33c7893f6a948da1abf22efe2286375e9c2f226a4f9e08cceb7ce60d1ef",
+      "bytes": 15528
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_loc_off.png",
+      "sha256": "841cee9479ad9e8602b299c41ca03ac82ea1c5c85da10babb8a6031a0fbc4867",
+      "bytes": 17853
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_loc_on.png",
+      "sha256": "05926d5a5b0e003e9d7bb6cc106b06c4f3c03e02a3ccbe09636c68f830982a05",
+      "bytes": 15059
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_neg1_off.png",
+      "sha256": "1b0d16ca62463a9d5caacd5b0b200dd1c4448a7fa793c5d076f2cde742a09169",
+      "bytes": 17287
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_neg1_on.png",
+      "sha256": "8668becd1b452701be76ae456ae4cbe00274de3841e31bd28599c94526a0b713",
+      "bytes": 14505
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_neg2_off.png",
+      "sha256": "cc4aa89004a799bd516d6da0b8f1c92c03d655631a1c615aa25ab9bf9a9460df",
+      "bytes": 18269
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_neg2_on.png",
+      "sha256": "6041e51df5ffe57484962ad60d600a11fcb41237655795588a401213237c2673",
+      "bytes": 15417
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_pos_off.png",
+      "sha256": "eb9145af653b5e4588d9772e1696ea1a5091b75b94841d6eb57651d2ba795066",
+      "bytes": 17999
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_dungeon_pos_on.png",
+      "sha256": "0d8ff529727c9443b969611512e339775dbc7e61a61d120fd455a4d0096243f4",
+      "bytes": 15071
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_necro_off.png",
+      "sha256": "489999bb0462bb719e0fd98c13fcc4f939df545a217a01bac35d0a4221ac7654",
+      "bytes": 18556
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_necro_on.png",
+      "sha256": "ef5685a3d9644c9c8fc508350ba802c2a6ba751f8256c6e9d2b2e637f58559dc",
+      "bytes": 15603
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_paladin_off.png",
+      "sha256": "612e26d5f4bbc1537e8237bf3d424116a5639889a8e88e47224623f4924d0d79",
+      "bytes": 14337
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_paladin_on.png",
+      "sha256": "092e9a4645d1fa03ee7a28a546a9286ddea94fde4cd2fc34856ba8b512229be3",
+      "bytes": 11623
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_rogue_off.png",
+      "sha256": "5e30c536417f40166ce9a40a8941f96de21bb9c18ec1fbb5b69e362d422641ca",
+      "bytes": 18164
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_rogue_on.png",
+      "sha256": "977d2aa3285d9dcd5c9d57bae23b025b62944b41f0d591b0329a326ce4252d2a",
+      "bytes": 15359
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_rune_condition_off.png",
+      "sha256": "13f5c4c333d02ba4e9628adc9b03cf5430276b8583d087de3e90582a01ba4b0f",
+      "bytes": 18097
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_rune_condition_on.png",
+      "sha256": "6b325e5589dca149e55708c7f56c47712c3fada9cc3f4a13dc6f60fca73136c8",
+      "bytes": 15275
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_rune_effect_off.png",
+      "sha256": "0fc7952cfb7a8417496767106a42c6f4867ce5b08a062d5957b23df964952fc6",
+      "bytes": 18301
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_rune_effect_on.png",
+      "sha256": "bde1d40d150d308864d704a2778a17dfb01ff650112dfbbb48f422b486448351",
+      "bytes": 15371
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_sorc_off.png",
+      "sha256": "38ecc691302e14fdf33dfbd6f6c4148bab458bba4ee46c68dfa44e64a771cf7f",
+      "bytes": 18016
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_sorc_on.png",
+      "sha256": "9628f3daa6d16a315e09fb98235c92dd859466b864b476bc1252995b3470f34b",
+      "bytes": 15218
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_spiritborn_off.png",
+      "sha256": "430ee681e7892d1aa77946071626ef3db65b1ea2b97e665e77ff2b5d913de416",
+      "bytes": 19752
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_spiritborn_on.png",
+      "sha256": "f030d66901a9b6c91b9169def47ddf9a553e4c6c0ef7d33ffd2fca8b139219bd",
+      "bytes": 16253
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_warlock_off.png",
+      "sha256": "23efa3d5a570137f83e08d18343f03ce261b2b95e86525cdb838fe8ebf9805ea",
+      "bytes": 14605
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/filter_icon_warlock_on.png",
+      "sha256": "43b1e6164a3d7f383158fbae10e0578f2e7f53b8b0f062af57cbc5dd0f0de73e",
+      "bytes": 11643
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/hands_icon.png",
+      "sha256": "6c0372354f0b651ae7fbae91ecf64ac1c9a6ad3acc1cf73c3c9c563417011920",
+      "bytes": 2866
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/head_icon.png",
+      "sha256": "a57c940dd4252d7b40f75326c66c5143b3d17ef832a23a551d321819f0610ab6",
+      "bytes": 2575
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/legs_icon.png",
+      "sha256": "9b6d0b0a4b81e25d17a9f47cb1ec0f3612e8d13a455c03949ccf111d06c61189",
+      "bytes": 2835
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/mainhand_icon.png",
+      "sha256": "2a035e6651c117e8b2751d9b87e0aedeab66214f1a24681be35301668841e8ff",
+      "bytes": 1702
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/neck_icon.png",
+      "sha256": "7ef84e690aa0ebbed3d68beb7d4b7e496618c62904d13ce081bf5df51d3f61db",
+      "bytes": 1983
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/offhand_icon.png",
+      "sha256": "a3c4afce00c96c4f8574d65a87499abaf8c93032b815f6a3cb3bef45fdc89ac0",
+      "bytes": 1986
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/overlay-off.png",
+      "sha256": "f094b407a802a0b7c01701e0dd7a7aeec2445a93f5146fc2ff6555bc9aa0a424",
+      "bytes": 17620
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/overlay-on.png",
+      "sha256": "5008393c040872b82d7da977c44c70218959eca7828d5f2eab71ed10d863a233",
+      "bytes": 15652
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/ranged_icon.png",
+      "sha256": "e087014430f06b4419b9cfff805b8287a42c7f277bd24aedbc668e21bbb07dae",
+      "bytes": 2184
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/ring_icon.png",
+      "sha256": "c95d01aacd035839c6c8edf2cb3b06518c7798d3721a7dc0a49df32b691d934d",
+      "bytes": 2433
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/rune_condition.png",
+      "sha256": "d400332328da6a4bddadae1f104d8de58a666fb201835ec83b23196b45668d7a",
+      "bytes": 370
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/rune_effect.png",
+      "sha256": "98572011e2727ff7c315e962abe44ac90669c4776195efa64ef3ea29f76af5e8",
+      "bytes": 449
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/rune_icon.png",
+      "sha256": "912c99945bcfedb8b34ae2905c22279171b601cf96b34e06c77398b485b23fec",
+      "bytes": 15107
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/seasonal_icon.png",
+      "sha256": "78d9a34b90e19f2a2d45f9cb4057f58ef258c3f38eedfb7890bf26db9859cb6d",
+      "bytes": 41500
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/sigil_icon.png",
+      "sha256": "114d60975b75e898d95ec162b6f7249813dc1c9fc878884db94bb272f762867d",
+      "bytes": 8584
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/torso_icon.png",
+      "sha256": "4df8c37d73bbd598665d5c80aae8af23b4f78d986ba056f4be5795bace622a84",
+      "bytes": 3154
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/unique_icon.png",
+      "sha256": "58ea523d64e2ed12f0e7404e9948ff4ea6987caa6c436b388e9b6f859e30ee68",
+      "bytes": 5164
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/website_icon_d4builds.png",
+      "sha256": "3e99e5fe1963216fd9311259be7a4784b0093ce17c5e39a9bd537767394c38a0",
+      "bytes": 1586
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/website_icon_infinitybuilds.png",
+      "sha256": "40586eaa75ad7e79db603b4cb038d33800c5f78c09935808132d30a10b8ed4ce",
+      "bytes": 23763
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/website_icon_maxroll.png",
+      "sha256": "c09a96538dd0d48ede934efb043adf845b1782c34c17b3e38a6b156e321c1232",
+      "bytes": 1169
+    },
+    {
+      "category": "images_globs",
+      "source_path": "D4Companion/Images/website_icon_mobalytics.png",
+      "sha256": "f64182a540a518dfdf20a8240a4b7d88b53af31f440d663f38baccf38e2718cc",
+      "bytes": 2649
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/1080p_SMF.zip",
+      "sha256": "32063bd577edc0b829ecbc5c4a727ca851bcf94784d873d90232cf533ea46149",
+      "bytes": 53216
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/1080p_SSF.zip",
+      "sha256": "bd2682cdfffcc4bb40dc4e44dfebf68cea7d24737c3088cc8ec6344ea00bf6ff",
+      "bytes": 45520
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/1440p_HSF.zip",
+      "sha256": "849607250e7a82b599c8c537402257fc0ae29ed622e91c1db5febb9847402b92",
+      "bytes": 68699
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/1440p_SMF.zip",
+      "sha256": "a14f530ece73fd6f4ee82d57647f83e22df08512935517b0ae35a7ddd9353fa3",
+      "bytes": 71692
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/1440p_SMF_zhCN.zip",
+      "sha256": "f67cdcd1f99b0097f68398d31afd726796e007fa1c7f5677cdb69738afeb382b",
+      "bytes": 52944
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/1440p_SSF.zip",
+      "sha256": "8d648e940f145960b7dae26011dba1d167b46d4ff5a9b03f2d4c8126b3698eaf",
+      "bytes": 48633
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/1600p_SMF.zip",
+      "sha256": "8e44c6e2fc78edbf86f9e4e1ddd7911f6faae276b9e39275935261c423912dfa",
+      "bytes": 71141
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/1600p_SMF_zhCN.zip",
+      "sha256": "e91612eeccf523b4fb1f2c8e6812d6fcec95397feaefd230728e799181138c43",
+      "bytes": 20153
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/2160p_HSF.zip",
+      "sha256": "d3e760e119c9f3a8dc4395214216dc37a0088bb66dbae4aa5faa03da12b85823",
+      "bytes": 88885
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/2160p_SSF.zip",
+      "sha256": "a1ccc03d24b6256e7ee5b5004b3edb022717d51dd6e162d09496bdcb3db2d41a",
+      "bytes": 68784
+    },
+    {
+      "category": "preset_globs",
+      "source_path": "downloads/systempresets/systempresets.json",
+      "sha256": "3f074a7777d00e90adc38fd9cdabdcc47286bff4ad2a15b5238865244a814f2e",
+      "bytes": 9109
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/AffixManager.cs",
+      "sha256": "a31744d207da3d198bc5f48277d66451889b8a8726e744c3822ca64184263b04",
+      "bytes": 41970
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/BuildsManagerD2Core.cs",
+      "sha256": "e76b345106efa8b44c1b247a5cc52c4cfe39444bec4e328e63057795456c5e96",
+      "bytes": 31684
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/BuildsManagerD4Builds.cs",
+      "sha256": "3e319d6d25f5bb988260225b144a9799f852b3a41c537a403517f96b5053fb82",
+      "bytes": 42536
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/BuildsManagerMaxroll.cs",
+      "sha256": "d44f9bcfe6c42f2258cf2534d987cecba7445a1364584bd2056a9b2a5eff6478",
+      "bytes": 30053
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/BuildsManagerMobalytics.cs",
+      "sha256": "f96e860e2f410e91b1bfd6cdf9bf0a04e132ad5ece8f5dc90d77c9ebbb1bb382",
+      "bytes": 63964
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/OcrHandler.cs",
+      "sha256": "779e641de13282fb2c9119b0cb346a2a14b8417c0cf7b2d071b89fc8cd475897",
+      "bytes": 48280
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/OverlayHandler.cs",
+      "sha256": "8d5baf0430e83f307689dcbc833c2a3c85435aee49ef2041bf53863bb4dd53f5",
+      "bytes": 62218
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/ScreenCaptureHandler.cs",
+      "sha256": "883e0fa9a131a6b56b505ecbbc8aebd415d8353a99003ecdc3f5bb769d8308e8",
+      "bytes": 12598
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/ScreenProcessHandler.cs",
+      "sha256": "63fc54d9465a2696440cba04f4cd701c3ddd4f4a1fa037344374d184b6026bfc",
+      "bytes": 91675
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/SettingsManager.cs",
+      "sha256": "dc1554caad1ca1da07f73bf8d5ea306db7a1a61ea4bcf1db54e9d4c67fe180dc",
+      "bytes": 1663
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/SystemPresetManager.cs",
+      "sha256": "6c3f95ff32e18dc5569f196aa05035701c976f433946b9d5270009691a248dc3",
+      "bytes": 11024
+    },
+    {
+      "category": "services",
+      "source_path": "D4Companion.Services/TradeItemManager.cs",
+      "sha256": "74a3057b7cf7bc9a2ba3382bb1a9c482fdaf7709267cf9dde31be0d23e7358df",
+      "bytes": 3220
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/AffixViewModel.cs",
+      "sha256": "3931260cffc0f60aeccf29ed322c882e0886bfea92d19cb4f77b8903aec4a0da",
+      "bytes": 70612
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/DebugViewModel.cs",
+      "sha256": "e18dd7ccd5ef6c5cd34cb6296f213aca1e5c5cb108b6acb6db1234cdc4b5c76f",
+      "bytes": 32186
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/AddTradeItemViewModel.cs",
+      "sha256": "3bde5aa9f0650db94608f2dbc4e6781cec55d8b7712bf4aaad273444ba46661b",
+      "bytes": 12775
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/AffixConfigViewModel.cs",
+      "sha256": "d17e38e1dad4cc1524b844d9f8056f4c5c41f0ebe9528cc4e5c4847a2ba7d936",
+      "bytes": 5499
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/AspectConfigViewModel.cs",
+      "sha256": "57f48cb50d9d18b4e5beef0eefa99e7ec6d0a6992d11f55389a6b78fe504bf11",
+      "bytes": 4282
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/ColorsConfigViewModel.cs",
+      "sha256": "bc84239460d9fa51973b53f2bb83c7bd0fab27ae3e9f00d14bca8eadea1a7f88",
+      "bytes": 6632
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/ControllerConfigViewModel.cs",
+      "sha256": "2beb379e789ea84e3baa05e5e8d8c35be484024a81ae639b16b588fcd0b47d84",
+      "bytes": 4315
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/D2CoreDownloadViewModel.cs",
+      "sha256": "fc1b71b71b376b74cbbb1df7f9a783de228930eb01897a42401ba02c0d1c3282",
+      "bytes": 3442
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/D4BuildsDownloadViewModel.cs",
+      "sha256": "c8aa5c35c5626c42dd0b21e4bd66f4cbd1f6ad7571d2f82735ba2474ebee7181",
+      "bytes": 3537
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/HotkeyConfigViewModel.cs",
+      "sha256": "143be42afb185d75f740e68f082e3f94ae4248478421e7cdf1487de5407fb8c2",
+      "bytes": 3525
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/HotkeysConfigViewModel.cs",
+      "sha256": "747684621175bf8fa6be48c6349c9e684d42ecb911efe46f9d0ad56a1148f838",
+      "bytes": 9260
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/ImportAffixPresetViewModel.cs",
+      "sha256": "731770934585102508a24669b7418b88b90afad410ac225180bf30108545b6b0",
+      "bytes": 71451
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/InfinityBuildsDownloadViewModel.cs",
+      "sha256": "5a34385e8c215146d7775b0f310ac278b652ae948d4af4394bfbe64b09959766",
+      "bytes": 3557
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/MobalyticsDownloadViewModel.cs",
+      "sha256": "90f91cbc1e67ce506ab783045c52e4bd7eab0550969a80edd7cbbbca335a058a",
+      "bytes": 3497
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/MultiBuildConfigViewModel.cs",
+      "sha256": "f353a8a79362b1bf81b9dc002a6948f44bfc6f8d259357f3d8a5e1a1fef09eed",
+      "bytes": 6556
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/OverlayConfigViewModel.cs",
+      "sha256": "8a54fd38111b9726379710c62222dcadc870f86d6c8be0a047fc65822809c3e9",
+      "bytes": 9048
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/ParagonConfigViewModel.cs",
+      "sha256": "a90180c359cfab8bede410547861d9bd3f35559775501d75d35d28c2623530d2",
+      "bytes": 3874
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/RenamePresetNameViewModel.cs",
+      "sha256": "4ea32d89267f8d8d99fe68ffe9e03ead588ef244fbda01f0198ec5ae39ac5bc4",
+      "bytes": 2571
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/RuneConfigViewModel.cs",
+      "sha256": "e9235fcfcd346455dad5703abfebcc5528bb432acb2029625789ab32001c3910",
+      "bytes": 3915
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/SelectAffixColorViewModel.cs",
+      "sha256": "62df348cfd578f1a36741709bd895d9db41cf2e311cca333188c4bef34107e14",
+      "bytes": 2998
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/SetAffixColorViewModel.cs",
+      "sha256": "1785e579f9e13906cff68c5e8fedfb25bdd4941cbf280ccfad934eba7c265e8f",
+      "bytes": 3325
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/SetAffixTypeColorViewModel.cs",
+      "sha256": "0feb3d54923a8819b90e5684c7fb595d8b3824e9cfb2119db1a7ea98c6fe0e17",
+      "bytes": 3005
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/SetAffixViewModel.cs",
+      "sha256": "94d54a841e8c11b6de2d740df7c82449b8fd76a9d57513833b90f71cfe2a2baa",
+      "bytes": 12281
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/SetPresetNameViewModel.cs",
+      "sha256": "6b348956e5a04b1d5d9a0021a4f5dbc6027266dad1ee0190772fa1f66bebecbd",
+      "bytes": 3152
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/SigilConfigViewModel.cs",
+      "sha256": "858b13872103616021d3c99f8f3f686e0a5c7c347bc9e1248a8cf5125698ef49",
+      "bytes": 4515
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/TradeConfigViewModel.cs",
+      "sha256": "7f08afb4472e657b5505a5ef54ccbeb52e22bf43b1d45edf8e55847499431eae",
+      "bytes": 2633
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Dialogs/UniqueConfigViewModel.cs",
+      "sha256": "be46c336e23f2fa91a7138b267ea196c071bfdf542b0fd8bef73e789a0a4d14f",
+      "bytes": 3939
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/AffixInfoVM.cs",
+      "sha256": "7d2e0ed15e9320cedaaedda99292a2450dd4ebc9fb68cae14e3e5a5591496351",
+      "bytes": 3490
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/AspectInfoVM.cs",
+      "sha256": "0da1343d53b5e7e759a19677a0602a210363264971d08ee7fee28e1607296756",
+      "bytes": 3925
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/ControllerImageVM.cs",
+      "sha256": "1739e2f4ba6955b873083cf4e24e147728445a17c2808ecb76bd93252a190ad3",
+      "bytes": 999
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/ItemAffixTradeVM.cs",
+      "sha256": "e7a3570f993026a916876fef459adcc0990d563dad978fcbbee8cb57a065d603",
+      "bytes": 2223
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/ItemAffixVM.cs",
+      "sha256": "dca65676340a970c355d7d3d235353b0eb7993fed5c02ed13b58f7a0a440752b",
+      "bytes": 6120
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/RuneInfoVM.cs",
+      "sha256": "b01f4cd0d068fc03a3027218eacc39d0de078ae38a90451d7b71e73a072576ea",
+      "bytes": 2648
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/SigilInfoVM.cs",
+      "sha256": "3b7bfff065d396b903f24b8e86adeeca301e78d5f635db4bec45fd9d07c10d33",
+      "bytes": 4850
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/TradeItemVM.cs",
+      "sha256": "47beba5ee9625a69792be206a9f93c898e6a429fca44289ca9ab007ca4401283",
+      "bytes": 4349
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/Entities/UniqueInfoVM.cs",
+      "sha256": "1268958a7c1e8ec321071217f222e960c005eb30d04db4fd05a435ea0f20bba1",
+      "bytes": 3480
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/LoggingViewModel.cs",
+      "sha256": "74311a3132f007eed5a8350b40c579482b75743398e7b64c05f1eaf14388965d",
+      "bytes": 4637
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/MainWindowViewModel.cs",
+      "sha256": "b0cf01904a8e7edd1b14bab3684b97eb717987de9b91ed8c0d529041bfff1d64",
+      "bytes": 19977
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/SettingsViewModel.cs",
+      "sha256": "46f9947289900872cc2d36acfcd84105f6b3b28b0e52ed90c19b19a29d9cc441",
+      "bytes": 21860
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/ViewModels/TradeViewModel.cs",
+      "sha256": "a6a5e601186f0f366429ef267c9512ad0b3ec425de7b5e141ae2c95dd656e6c3",
+      "bytes": 8735
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/AffixView.xaml",
+      "sha256": "9fc56bda346ae96aa926e97e95111eaaa3ee3955e7cf2d63428c5fc1cc528de5",
+      "bytes": 150525
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/DebugView.xaml",
+      "sha256": "2dcf0bacefa3cff066886db4311eb2f81c71ce7f4055da8e5c7ced2910026c93",
+      "bytes": 30447
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/AddTradeItemView.xaml",
+      "sha256": "20b9524b7f9e77df6ba1e61abf938643d485849e1d3b4e5f984faed12738583b",
+      "bytes": 16830
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/AffixConfigView.xaml",
+      "sha256": "65c01f22c31920f4edd7cf6d64e7f922a02d9e58b54e9c8505d3916aaad9287e",
+      "bytes": 5993
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/AspectConfigView.xaml",
+      "sha256": "9d12e53f13ba7a7477b67661cc4471cff624256e4cea64fd55d433197f2bdda3",
+      "bytes": 4929
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/ColorsConfigView.xaml",
+      "sha256": "d3a0ccb3cb07a9ef1201480c35e51bf084d7dc9419c2e7c90e64b3a9634f9c38",
+      "bytes": 7431
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/ControllerConfigView.xaml",
+      "sha256": "481d9770559ef266607591ba2745e8376bfe9c855932740ff740703420cd264e",
+      "bytes": 8441
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/D2CoreDownloadView.xaml",
+      "sha256": "33236fdaee9a1a1c05565b8bd6511c77908299ec09ac85bf6410ac970713fbe6",
+      "bytes": 1796
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/D4BuildsDownloadView.xaml",
+      "sha256": "f10231e87514de22222561f8b8026e6801981cbbd0e6e2d2c877fd02b37ed02d",
+      "bytes": 1798
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/HotkeyConfigView.xaml",
+      "sha256": "95a7033247d972810ee5314c3c0db8e8fd0c2f3386554125b105c67b6a6e2ee2",
+      "bytes": 1858
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/HotkeysConfigView.xaml",
+      "sha256": "545affcf41e1230a557c574c307a3a3e14b84608cabdbf6d0588fe627bebc7eb",
+      "bytes": 7201
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/ImportAffixPresetView.xaml",
+      "sha256": "babbb15af2db66291642560a69082fb234a3f3b82d072bb0b62ee508cc908d6c",
+      "bytes": 85838
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/InfinityBuildsDownloadView.xaml",
+      "sha256": "081bace3f6251c47767749233951b86ca73773d7fe7391184272c60cf2a80425",
+      "bytes": 1804
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/MobalyticsDownloadView.xaml",
+      "sha256": "7074ea0483b546c9325b9cf61e58206cbf37d92ead62add995c4963af536c0fb",
+      "bytes": 1800
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/MultiBuildConfigView.xaml",
+      "sha256": "389da2e760eb620138709666bc8876daed84f606bd65565fb9f16afffdb20af4",
+      "bytes": 5460
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/OverlayConfigView.xaml",
+      "sha256": "e030303b8b85c5a811ae0811aa77525e180b18c276dbeea78eb82af6912f1215",
+      "bytes": 17323
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/ParagonConfigView.xaml",
+      "sha256": "c6445169ae10e8c3be1538a9dbd63e3e643100d50aa43b051139ff7001772ff3",
+      "bytes": 6474
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/RenamePresetNameView.xaml",
+      "sha256": "377f84c44ef9d28e58d54b2d26985e5520d340eba2b4869a28fbd8d8de599fba",
+      "bytes": 1826
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/RuneConfigView.xaml",
+      "sha256": "d5c09c5fdd85aebc199e348d62984783ba458213e3dd29e2f5341f629f28407d",
+      "bytes": 4142
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/SetAffixColorView.xaml",
+      "sha256": "31ece81e26b900db6cd039b8251a98f82f10349e000fe83075879bd3c3442d6a",
+      "bytes": 2244
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/SetAffixView.xaml",
+      "sha256": "356f37252548cdad9e648a912e6233e7fb6bc8380be99a2d5ac2530f99224c46",
+      "bytes": 11642
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/SetPresetNameView.xaml",
+      "sha256": "ba27f5252d33e73356c18a2eb2b1e7fe526436c7ba15b33a476d4bfe0f073e5f",
+      "bytes": 2355
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/SigilConfigView.xaml",
+      "sha256": "d73f890e9c005d50aeacaf2285b6e07f57b58735836f0c19b0f419954863773d",
+      "bytes": 3878
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/TradeConfigView.xaml",
+      "sha256": "df45a1e6b26b1fb9654157e1b834a7382282775d5e857187d194d1347a4a05fa",
+      "bytes": 3652
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/Dialogs/UniqueConfigView.xaml",
+      "sha256": "a1dc4204cbb3359f8e55b2ecc244987bf4da91c13ef0a0797345c93cf3d117dc",
+      "bytes": 4156
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/LoggingView.xaml",
+      "sha256": "6b74df783cf6731e9e541de064080dc07e21eaa6c94616f7c7007194c0fd9a71",
+      "bytes": 935
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/MainWindow.xaml",
+      "sha256": "c2eca7f065204733731880cb2c5b1da2d099fa1d4f1eb3ca36c85b5679075973",
+      "bytes": 9079
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/SettingsView.xaml",
+      "sha256": "3e61e84980cf7dfc39dbd33dcd94b980400bbef6cf82499dd1a06aee038c884d",
+      "bytes": 27028
+    },
+    {
+      "category": "ui_globs",
+      "source_path": "D4Companion/Views/TradeView.xaml",
+      "sha256": "2a5c6ee70172bc1ea8c59fd402e718f33d2c69e61799c0d3417ea6cf4baa38c6",
+      "bytes": 14388
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/Frequently-asked-questions.md",
+      "sha256": "9529c330ffed21c3afcdf910042fee993fe90ecdc290caed46c6d6561317b580",
+      "bytes": 3389
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/Home.md",
+      "sha256": "f59802c17aed338425cc2f2864d19c8e6ce214db954a2e84400946433cfafdeb",
+      "bytes": 2253
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-create-a-new-System-Preset.md",
+      "sha256": "7e110e11609bd3ba047c8dd5c57a8054852fe75e4968744390fc502a70fbe6a6",
+      "bytes": 8052
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-create-translations.md",
+      "sha256": "2c13b2f7a1b057a72fd61a150157dd33cb3e0b3413527d510f18b8243dbdd838",
+      "bytes": 1563
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-import-and-export-builds.md",
+      "sha256": "346aae7bbdee2b1f5cac5f63d861209f2b53bbd2a40ff7135dd25f335db85740",
+      "bytes": 3172
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-use-the-affix-value-filter.md",
+      "sha256": "34e299ccbd102670cee740a7524ac71d5ac09c2da54ef1750fe6ac144fc107d2",
+      "bytes": 582
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-use-the-merge-feature.md",
+      "sha256": "cbdcad11cb23b7a5564481c3e1f470f16227e00068766168f60504ba5e241739",
+      "bytes": 609
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-use-the-multi-build-feature.md",
+      "sha256": "774481aa7bb814f6e87eed0c39107690461f30ebe2c03f8c0f5996ba2f53ffe7",
+      "bytes": 1165
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-use-the-paragon-overlay.md",
+      "sha256": "6052d561d03ba75581105cb36f65479653ce604f89ef2d3478d4b62b51f9635d",
+      "bytes": 1078
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-use-the-trading-feature.md",
+      "sha256": "c7851808f402e7a7980a7972b096a9edb41d4bfa6f0d34410ba8bed5c02df8f2",
+      "bytes": 604
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/How-to-use-the-tuning-prim-hints.md",
+      "sha256": "ce89ec1aa1a0f94039b0133b714720a18c653f7b9c4a1a205d3938ce298275a2",
+      "bytes": 770
+    },
+    {
+      "category": "wiki_globs",
+      "source_path": ".github/wiki/_Sidebar.md",
+      "sha256": "f002df1bfa7a69cdd7eb6466435628fc34b9bbfa40bcab5910d8e6cf983e11ed",
+      "bytes": 500
+    }
+  ],
+  "unresolved_patterns": []
+}

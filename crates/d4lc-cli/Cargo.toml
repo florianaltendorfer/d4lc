@@ -1,0 +1,40 @@
+[package]
+name = "d4lc-cli"
+version = "1.0.0-rc.1"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "d4lc"
+path = "src/main.rs"
+
+[features]
+default = []
+leptess-backend = ["d4lc-ocr/leptess-backend"]
+
+[dependencies]
+clap.workspace = true
+d4lc-assets = { path = "../d4lc-assets" }
+d4lc-capture = { path = "../d4lc-capture" }
+d4lc-config = { path = "../d4lc-config" }
+d4lc-core = { path = "../d4lc-core" }
+d4lc-debug = { path = "../d4lc-debug" }
+d4lc-detect = { path = "../d4lc-detect" }
+d4lc-fuzzy = { path = "../d4lc-fuzzy" }
+d4lc-ocr = { path = "../d4lc-ocr" }
+d4lc-overlay-x11 = { path = "../d4lc-overlay-x11", features = ["real-x11"] }
+d4lc-parse = { path = "../d4lc-parse" }
+d4lc-rules = { path = "../d4lc-rules" }
+d4lc-runtime = { path = "../d4lc-runtime" }
+d4lc-vision = { path = "../d4lc-vision" }
+# d4lc code only reads and writes PNG, so it requests no other codec.
+# Slint still enables `jpeg` on the shared `image` crate in the app build.
+image = { version = "0.25", default-features = false, features = ["png"] }
+serde_json.workspace = true
+sha2 = "0.10"
+zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+
+[lints]
+workspace = true

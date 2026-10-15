@@ -1,0 +1,19 @@
+[package]
+name = "d4lc-assets"
+version = "1.0.0"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+d4lc-core = { path = "../d4lc-core" }
+serde = "1.0"
+serde_json.workspace = true
+
+[dev-dependencies]
+# Per-test roots that clean up even when a test panics.
+tempfile = "3"
+
+[lints]
+workspace = true

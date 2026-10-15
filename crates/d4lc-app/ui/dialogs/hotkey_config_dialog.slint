@@ -1,0 +1,203 @@
+// Hotkey config dialog (individual hotkey binding) — draft / validation
+// UI plus live re-registration.
+//
+// Upstream: `HotkeyConfigView.xaml` + `HotkeyConfigViewModel.cs`
+// (`MainWindowViewModel.cs:282-317`). This is the individual
+// hotkey assignment dialog (HotkeyConfigView), not the list view
+// (HotkeysConfigView).
+//
+// Scope:
+//
+// This dialog implements the draft / validation UI for a single
+// hotkey binding. Confirming persists the draft through
+// `AppState::hotkey_drafts` → `AppSettings::hotkey_config` and then
+// restarts the hotkey backend, so the edited grab is re-registered
+// without an app restart (upstream `UpdateHotkeysRequestMessage` →
+// `MainWindowViewModel.InitKeyBindings`, `MainWindowViewModel.cs:204-208`,
+// `:380-441`). Registration is X11 passive `XGrabKey` grabs; on Wayland
+// the GlobalShortcuts portal is used (the first registration triggers the
+// compositor's consent dialog, and refused/unconfirmed bindings are
+// reported rather than claimed as active). The per-binding
+// outcome is listed in the Hotkeys config manager dialog and logged.
+//
+// The Slint form value contract mirrors the no-Slint-global
+// host plumbing used by the SetAffix / SetAffixColor /
+// AddTradeItem / BuildImport dialogs:
+//
+// - The target hotkey name (read-only seed), the binding
+//   string (text input), and the enabled toggle are projected
+//   on the root `AppWindow` as `hotkey-config-target`,
+//   `hotkey-config-binding`, and `hotkey-config-enabled` (see
+//   `main_window.slint`). The dialog binds its text input
+//   and toggle to those root in-out properties, so the values
+//   flow directly between Slint and Rust.
+// - Confirm / cancel flow through the shared dialog host
+//   `dialog-confirm` / `dialog-cancel` callbacks, which the
+//   shared `actions::dialogs` router dispatches to
+//   `actions::hotkeys_dialogs::handle_confirm` /
+//   `handle_cancel`.
+// - Validation errors (empty binding, malformed combo) are
+//   surfaced through the shared `dialog-error` /
+//   `dialog-error-visible` props; the router keeps the dialog
+//   open on failure.
+import { LineEdit } from "std-widgets.slint";
+
+export component HotkeyConfigDialog {
+    in property <string> dialog-title: @tr("Hotkey Configuration");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    // Form values — bound to the root in-out properties in
+    // `main_window.slint` so Rust can read them via
+    // `app.get_hotkey_config_target()` /
+    // `app.get_hotkey_config_binding()` /
+    // `app.get_hotkey_config_enabled()` and seed them via the
+    // matching setters.
+    in-out property <string> hotkey-config-target: "";
+    in-out property <string> hotkey-config-binding: "";
+    in-out property <bool> hotkey-config-enabled: false;
+
+    callback confirm();
+    callback cancel();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Registration note (X11 grabs / Wayland portal) ─────────
+        Text {
+            text: @tr("Confirming persists the binding and re-registers the global hotkeys immediately. On X11 the combo registers as a passive grab. On Wayland it registers through the desktop GlobalShortcuts portal: the first registration shows a compositor consent dialog, and a refused dialog is reported as refused, never as active. The outcome per binding is listed in the Hotkeys config dialog.");
+            color: #AAAA88;
+            font-size: 11px;
+            wrap: word-wrap;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Target hotkey name (read-only) ────────────────────────
+        Text {
+            text: @tr("Hotkey action");
+            color: #CCCCCC;
+            font-size: 12px;
+        }
+        Text {
+            text: hotkey-config-target == "" ? @tr("(no target selected)") : hotkey-config-target;
+            color: #EEEEEE;
+            font-size: 13px;
+            wrap: word-wrap;
+        }
+
+        // ── Binding combo input ────────────────────────────────────
+        Text {
+            text: @tr("Key combination (e.g. Ctrl+F5)");
+            color: #CCCCCC;
+            font-size: 12px;
+        }
+        LineEdit {
+            text <=> hotkey-config-binding;
+            placeholder-text: "Ctrl+F5";
+        }
+
+        // ── Enabled toggle ─────────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Enabled");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: hotkey-config-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Enabled");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: hotkey-config-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        hotkey-config-enabled = !hotkey-config-enabled;
+                    }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Confirm / Cancel ───────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Apply");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

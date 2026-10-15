@@ -1,0 +1,343 @@
+// Sigil config dialog — upstream `SigilConfigView.xaml` +
+// `SigilConfigViewModel.cs`.
+//
+// Control set (upstream XAML lines in brackets):
+//
+// - "Dungeon tiers" toggle [SigilConfigView.xaml:40-42] →
+//   `IsDungeonTiersEnabled` (SigilConfigViewModel.cs:60-71). Consumer: the
+//   sigil marker tier text (`app_state::sigil_dungeon_tier_text` draws the
+//   `Config/DungeonTiers.json` entry on dungeon sigil markers while the
+//   flag is on).
+// - Display mode selector [XAML:30-33] → `SelectedSigilDisplayMode`
+//   (SigilConfigViewModel.cs:85-98). Consumer: the unmatched-sigil color in
+//   the rule evaluation (`SigilDisplayMode::Whitelisting`/`Blacklisting`).
+// - Per-entry dungeon tier [XAML:1769-1784 on the sigil card,
+//   `SigilInfoVM.cs:98-101,130-149`]: upstream cycles the tier on the sigil
+//   card (`SetSigilDungeonTierToNextCommand`) and offers the `Tiers` list
+//   through a context menu. The card gesture belongs to the affix screen;
+//   this dialog carries the same cycle per listed sigil entry so the tier
+//   stays editable from the dialog the tier gate lives in. Every cycle
+//   reports through `cycle-sigil-tier` and persists
+//   `Config/DungeonTiers.json` immediately (upstream
+//   `AffixManager.SetSigilDungeonTier`, AffixManager.cs:1094-1099).
+// - "Multi-build mode" toggle + "Multi-build config" button [XAML:49-56] →
+//   `IsMultiBuildModeEnabled` / `SetMultiBuildCommand`.
+// - Close [XAML:65-66, upstream `SigilConfigDoneCommand`]: the upstream
+//   controls save from their setters, so Done only closes; this dialog keeps
+//   the port's existing "Close" label (the harness's config-dialog cycle
+//   asserts it).
+//
+// ## Host contract
+//
+// The host binds and seeds, when the dialog opens:
+//
+//     settings-rule-dungeon-tiers-enabled  ← state.shell.settings.dungeon_tiers_enabled
+//     settings-rule-multi-build-enabled    ← state.shell.settings.multi_build_mode_enabled
+//     settings-rule-sigil-display-mode     ← state.shell.settings.sigil_display_mode.as_str()
+//     sigil-config-entry-ids / sigil-config-entry-tiers
+//         ← d4lc_gui::affix::sigil_tier_rows(selected preset entries, state.dungeon_tiers)
+//
+// and forwards `rule-toggle-changed` / `rule-selection-changed` /
+// `cycle-sigil-tier` to the root callbacks wired to
+// `actions::affix_dialogs::{handle_rule_setting_toggled,
+// handle_rule_setting_selected, handle_cycle_sigil_dungeon_tier}`.
+// `open-multi-build-config` forwards to the existing root callback.
+//
+// Harness: the two switches are new UI toggles, so `TOGGLE_SWEEP_TABLE` in
+// `testing_harness.rs` needs a row per switch (labels "Dungeon tiers" and
+// "Multi-build mode", source `ui/dialogs/sigil_config_dialog.slint`) — the
+// toggle-table source scan asserts the table matches the .slint sources
+// exactly.
+
+import { ScrollView } from "std-widgets.slint";
+
+export component SigilConfigDialog {
+    in property <string> dialog-title: @tr("Sigil Config");
+    in property <string> dialog-error: "";
+    in property <bool> dialog-error-visible: false;
+
+    in-out property <bool> settings-rule-dungeon-tiers-enabled: false;
+    in-out property <bool> settings-rule-multi-build-enabled: false;
+    in-out property <string> settings-rule-sigil-display-mode: "Whitelisting";
+
+    // Per-entry tier rows, index-aligned and projected by the host.
+    in-out property <[string]> sigil-config-entry-ids: [];
+    in-out property <[string]> sigil-config-entry-tiers: [];
+
+    callback confirm();
+    callback cancel();
+    callback rule-toggle-changed(string, bool);
+    callback rule-selection-changed(string, string);
+    callback cycle-sigil-tier(string);
+    callback open-multi-build-config();
+
+    VerticalLayout {
+        padding: 16px;
+        spacing: 10px;
+
+        // ── Title ───────────────────────────────────────────────────
+        Text {
+            text: dialog-title;
+            color: #EEEEEE;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        // ── Error banner ───────────────────────────────────────────
+        if dialog-error-visible: Text {
+            text: dialog-error;
+            color: #FF6666;
+            font-size: 12px;
+            wrap: word-wrap;
+        }
+
+        // ── Display mode selector ──────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Sigil display mode");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 120px;
+                preferred-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Sigil display mode");
+                Text {
+                    text: settings-rule-sigil-display-mode;
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => {
+                        settings-rule-sigil-display-mode = settings-rule-sigil-display-mode == "Whitelisting" ? "Blacklisting" : "Whitelisting";
+                        rule-selection-changed("sigil_display_mode", settings-rule-sigil-display-mode);
+                    }
+                }
+            }
+        }
+
+        // ── Dungeon tiers gate ─────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Dungeon Tiers");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-rule-dungeon-tiers-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Dungeon tiers");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-rule-dungeon-tiers-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-rule-dungeon-tiers-enabled = !settings-rule-dungeon-tiers-enabled;
+                        rule-toggle-changed("dungeon_tiers_enabled", settings-rule-dungeon-tiers-enabled);
+                    }
+                }
+            }
+        }
+
+        // ── Per-entry tiers ────────────────────────────────────────
+        Text {
+            text: @tr("Sigil entries in the selected preset");
+            color: #CCCCCC;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        if sigil-config-entry-ids.length == 0: Text {
+            text: @tr("No sigil entries in the selected preset.");
+            color: #888888;
+            font-size: 11px;
+            wrap: word-wrap;
+        }
+
+        // Bounded scroll area: a preset can hold many sigil entries, and the
+        // shared dialog box is a fixed 520x400 (main_window.slint
+        // `dialog-box-height`), so the list must not push the buttons out of
+        // the box.
+        if sigil-config-entry-ids.length > 0: ScrollView {
+            min-height: 110px;
+            max-height: 110px;
+
+            VerticalLayout {
+                spacing: 6px;
+
+                for entry-id[idx] in sigil-config-entry-ids: HorizontalLayout {
+                    spacing: 8px;
+                    alignment: center;
+
+                    Text {
+                        text: @tr("{}  tier {}", entry-id, sigil-config-entry-tiers[idx]);
+                        color: #EEEEEE;
+                        font-size: 12px;
+                        horizontal-alignment: left;
+                        vertical-alignment: center;
+                    }
+
+                    Rectangle {
+                        background: #555555;
+                        border-radius: 4px;
+                        preferred-width: 90px;
+                        preferred-height: 22px;
+                        // Accessibility + headless real-input test harness.
+                        accessible-role: button;
+                        accessible-label: @tr("Cycle tier for {}", entry-id);
+                        Text {
+                            text: @tr("Next tier");
+                            color: #EEEEEE;
+                            font-size: 11px;
+                            horizontal-alignment: center;
+                            vertical-alignment: center;
+                        }
+                        TouchArea {
+                            clicked => { cycle-sigil-tier(entry-id); }
+                        }
+                    }
+                }
+            }
+        }
+
+        // ── Multi-build mode ───────────────────────────────────────
+        HorizontalLayout {
+            spacing: 8px;
+            alignment: center;
+
+            Text {
+                text: @tr("Multi Build Mode");
+                color: #EEEEEE;
+                font-size: 13px;
+                horizontal-alignment: left;
+                vertical-alignment: center;
+            }
+
+            Rectangle {
+                background: settings-rule-multi-build-enabled ? #CC3333 : #555555;
+                border-radius: 10px;
+                preferred-width: 36px;
+                preferred-height: 20px;
+                min-width: 36px;
+                min-height: 20px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: switch;
+                accessible-label: @tr("Multi-build mode");
+
+                Rectangle {
+                    background: #EEEEEE;
+                    border-radius: 9px;
+                    width: 16px;
+                    height: 16px;
+                    x: settings-rule-multi-build-enabled ? 18px : 2px;
+                    y: 2px;
+                }
+
+                TouchArea {
+                    clicked => {
+                        settings-rule-multi-build-enabled = !settings-rule-multi-build-enabled;
+                        rule-toggle-changed("multi_build_mode_enabled", settings-rule-multi-build-enabled);
+                    }
+                }
+            }
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 130px;
+                preferred-height: 24px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Multi-build config");
+                Text {
+                    text: @tr("Multi-build config");
+                    color: #EEEEEE;
+                    font-size: 12px;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { open-multi-build-config(); }
+                }
+            }
+        }
+
+        // Spacer pushes buttons to the bottom.
+        Rectangle { background: transparent; }
+
+        // ── Close / Cancel ─────────────────────────────────────────
+        HorizontalLayout {
+            alignment: end;
+            spacing: 8px;
+
+            Rectangle {
+                background: #555555;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("d4lc" => "Cancel");
+                Text {
+                    text: @tr("d4lc" => "Cancel");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { cancel(); }
+                }
+            }
+
+            Rectangle {
+                background: #CC3333;
+                border-radius: 4px;
+                preferred-width: 80px;
+                preferred-height: 28px;
+                // Accessibility + headless real-input test harness.
+                accessible-role: button;
+                accessible-label: @tr("Close");
+                Text {
+                    text: @tr("Done");
+                    color: #EEEEEE;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+                TouchArea {
+                    clicked => { confirm(); }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,963 @@
+// Settings screen — Slint rendering of SettingsView.xaml.
+// Upstream: SettingsView.xaml:1-404, SettingsViewModel.cs:94-99.
+// Left column: the language and system-preset dropdowns plus the
+// toggle / config-button list (SettingsView.xaml:30-249). Right column:
+// the "Available system presets" download row above the Description grid
+// (SettingsView.xaml:251-404), restyled to the upstream readme-004 dark
+// palette (red DESCRIPTION banner).
+
+// ── Imports ───────────────────────────────────────────────────────────
+import { AboutSlint, ComboBox, ScrollView } from "std-widgets.slint";
+import { Metro } from "../theme.slint";
+import { ToggleSwitch } from "../components/toggle_switch.slint";
+import { InfoOutlineIcon, CogIcon } from "../components/icons.slint";
+
+// ── Data structs for Rust → Slint binding ─────────────────────────────
+
+export struct PresetDetail {
+    filename: string,
+    resolution: string,
+    config: string,
+    // Every value row carries the raw display string the upstream
+    // catalog / preset config provides (SettingsView.xaml:303-327 binds
+    // the SystemPreset strings verbatim); an empty string renders as an
+    // empty cell wherever the metadata does not provide a value
+    tooltip-width: string,
+    tooltip-height-type: string,
+    brightness-threshold: string,
+    affix-area-height-offset-top: string,
+    affix-area-height-offset-bottom: string,
+    affix-aspect-area-width-offset: string,
+    aspect-area-height-offset-top: string,
+    paragon-node-size: string,
+    paragon-node-size-collapsed: string,
+    language-ready-de-de: bool,
+    language-ready-en-us: bool,
+    language-ready-es-es: bool,
+    language-ready-es-mx: bool,
+    language-ready-fr-fr: bool,
+    language-ready-it-it: bool,
+    language-ready-ja-jp: bool,
+    language-ready-ko-kr: bool,
+    language-ready-pl-pl: bool,
+    language-ready-pt-br: bool,
+    language-ready-ru-ru: bool,
+    language-ready-tr-tr: bool,
+    language-ready-zh-cn: bool,
+    language-ready-zh-tw: bool,
+}
+
+// ── Reusable sub-components (internal to this file) ───────────────────
+
+// Info icon carrying the upstream row help text (the MahApps `ToolTip` on
+// the InformationOutline labels, SettingsView.xaml:95-100, 109-113, ...).
+// Hovering the icon shows the text; while hidden the tooltip is skipped by
+// hit-testing, so the icon stays a passive label like upstream.
+component InfoButton {
+    in property <string> tooltip-text;
+
+    Rectangle {
+        background: transparent;
+        preferred-width: 22px;
+        min-width: 22px;
+        max-width: 22px;
+        preferred-height: 22px;
+        min-height: 22px;
+        max-height: 22px;
+
+        hover := TouchArea {}
+
+        // The glyph is centred by a layout, not by a per-element `x:`/`y:`
+        // offset (the same pattern `IconButton` uses).
+        HorizontalLayout {
+            alignment: center;
+
+            VerticalLayout {
+                alignment: center;
+
+                InfoOutlineIcon {
+                    width: 16px;
+                    height: 16px;
+                    icon-color: Metro.text-dim;
+                }
+            }
+        }
+
+        Rectangle {
+            visible: hover.has-hover && tooltip-text != "";
+            // Anchored to the icon's right edge and drawn above it, so the
+            // text stays inside the column instead of running off the
+            // panel edge. This is floating-overlay geometry that the layout
+            // system cannot express, so the two offsets stay.
+            x: parent.width - self.width;
+            y: -self.height - 6px;
+            width: 240px;
+            height: tip.preferred-height + 12px;
+            background: Metro.tooltip-bg;
+            border-width: 1px;
+            border-color: Metro.tooltip-border;
+            border-radius: Metro.radius-sm;
+            // Accessibility + headless real-input test harness.
+            accessible-role: text;
+            accessible-label: tooltip-text;
+
+            HorizontalLayout {
+                padding: 6px;
+
+                tip := Text {
+                    text: tooltip-text;
+                    color: Metro.tooltip-text;
+                    font-size: 11px;
+                    wrap: word-wrap;
+                }
+            }
+        }
+    }
+}
+
+// Cog config button — mirrors the PackIconMaterial Cog buttons
+// in SettingsView.xaml:152-157, 176-181, etc. `label` carries the
+// accessible button name per instance (upstream Set*ConfigCommand
+// anchor).
+component CogButton {
+    in property <string> label;
+    callback clicked();
+
+    Rectangle {
+        background: transparent;
+        preferred-width: 22px;
+        min-width: 22px;
+        max-width: 22px;
+        preferred-height: 22px;
+        min-height: 22px;
+        max-height: 22px;
+        // Accessibility + headless real-input test harness.
+        accessible-role: button;
+        accessible-label: root.label;
+
+        // Centred by a layout rather than a per-element `x:`/`y:` offset.
+        HorizontalLayout {
+            alignment: center;
+
+            VerticalLayout {
+                alignment: center;
+
+                CogIcon {
+                    width: 16px;
+                    height: 16px;
+                    icon-color: Metro.text-strong;
+                    hole-color: Metro.panel;
+                }
+            }
+        }
+
+        TouchArea {
+            clicked => { clicked(); }
+        }
+    }
+}
+
+// One sidebar row: the control (toggle switch or plain label) on the left,
+// then the fixed cog slot and the right-aligned info icon — the three
+// columns of the upstream sidebar grid (SettingsView.xaml:52-56). The cog
+// slot is reserved on every row so the info icons line up in a single
+// column across rows with and without a cog, exactly like upstream's shared
+// grid column, and every row is as tall as that icon slot, so toggle rows
+// and label rows keep one height.
+component SidebarRow {
+    in property <string> info-text;
+    in property <string> cog-label: "";
+    in property <bool> has-cog: false;
+    callback cog-clicked();
+
+    HorizontalLayout {
+        spacing: 4px;
+        // Keep the row at its natural height when the sidebar has room to
+        // spare, so the rows stay packed at the top of the list.
+        vertical-stretch: 0;
+
+        @children
+
+        if has-cog: CogButton {
+            label: cog-label;
+            clicked => { root.cog-clicked(); }
+        }
+        if !has-cog: Rectangle {
+            background: transparent;
+            preferred-width: 22px;
+            min-width: 22px;
+            max-width: 22px;
+        }
+
+        InfoButton {
+            tooltip-text: info-text;
+        }
+    }
+}
+
+// Description grid label cell (upstream TextBlock, SettingsView.xaml:303-327
+// column 0). The grid sizes the column to the widest caption, so every value
+// starts at the same x — upstream's `Auto` label column.
+component DetailLabel {
+    in property <string> caption;
+    in property <bool> bold: false;
+
+    Text {
+        text: caption;
+        color: Metro.text-strong;
+        font-size: 12px;
+        font-weight: bold ? 700 : 400;
+        vertical-alignment: center;
+        overflow: elide;
+        horizontal-alignment: start;
+        // Fill the grid cell so the caption starts at its left edge
+        // instead of being centered at its own text width, and keep every
+        // row the same height.
+        width: 100%;
+        min-height: 20px;
+        max-height: 20px;
+    }
+}
+
+// Description grid value cell (upstream TextBlock, column 1).
+component DetailValue {
+    in property <string> value;
+
+    Text {
+        text: value;
+        color: Metro.text-strong;
+        font-size: 12px;
+        vertical-alignment: center;
+        overflow: elide;
+        horizontal-alignment: start;
+        // Fill the grid cell so every value starts at the same x (the
+        // upstream `Auto` value column) and every row keeps the same
+        // height.
+        width: 100%;
+        min-height: 20px;
+        max-height: 20px;
+    }
+}
+
+// Language readiness flag — flag badge + language name, dimmed while the
+// selected preset has no data for that language
+// (LanguageReadyBoolToOpacityConverter: ready 1.0, not ready 0.25).
+// Mirrors the flag StackPanels in SettingsView.xaml:329-399.
+component LanguageFlag {
+    in property <string> flag-label;
+    in property <string> language-name;
+    in property <bool> ready;
+
+    Rectangle {
+        opacity: ready ? 1.0 : 0.25;
+
+        HorizontalLayout {
+            spacing: 4px;
+
+            // Flag badge
+            Rectangle {
+                background: Metro.accent;
+                border-radius: 2px;
+                preferred-width: 28px;
+                min-width: 28px;
+                max-width: 28px;
+                preferred-height: 18px;
+                min-height: 18px;
+                max-height: 18px;
+
+                Text {
+                    text: flag-label;
+                    color: Metro.chrome-on-accent;
+                    font-size: 9px;
+                    font-weight: 700;
+                    horizontal-alignment: center;
+                    vertical-alignment: center;
+                }
+            }
+
+            // Language name
+            Text {
+                text: language-name;
+                color: Metro.text-strong;
+                font-size: 11px;
+                vertical-alignment: center;
+                overflow: elide;
+            }
+        }
+    }
+}
+
+export component SettingsScreen {
+    // ── State properties (set from Rust) ───────────────────────────────
+
+    // Toggle states (6 total, mirrors SettingsView.xaml:86-183)
+    in-out property <bool> debug-mode: false;
+    in-out property <bool> check-updates: true;
+    in-out property <bool> launch-minimized: false;
+    in-out property <bool> minimize-to-tray: false;
+    in-out property <bool> controller-mode: false;
+    in-out property <bool> paragon-mode: false;
+    // Diagnostics export (port-specific, opt-in): allows copying a
+    // local crash log for manual attachment to a GitHub issue. The
+    // app itself never uploads anything.
+    in-out property <bool> diagnostics-export: false;
+    // Release check (port-specific, default on): bounded GitHub
+    // Releases lookup with a non-blocking banner. Check only — the
+    // app never downloads, installs, or uploads anything.
+    in-out property <bool> update-check-enabled: true;
+
+    // Dev mode gate (visibility for DebugMode toggle)
+    in property <bool> dev-mode: false;
+
+    // UI language selection (SettingsView.xaml:58-73): the selector captions
+    // and the caption of the selected language. The model and the seed come
+    // from the persisted `SelectedAppLanguage` via `wiring.rs`.
+    in-out property <string> selected-app-language: "";
+    in property <[string]> app-languages: [];
+
+    // Display backend selection (Auto / X11 / Wayland). The property
+    // holds the selector label; the persisted token lives in
+    // `Config/Settings.json` (`DisplayBackend`) and the handler maps
+    // between label and token.
+    in-out property <string> settings-display-backend: "Auto";
+    in property <[string]> display-backend-options: ["Auto", "X11", "Wayland"];
+
+    // System preset selection
+    in-out property <string> selected-system-preset: "";
+    // Upstream `SystemPresetChangeAllowed` (SettingsViewModel.cs:283-289):
+    // false while the overlay is enabled; disables the system preset
+    // ComboBox, the Debug Mode toggle and the community preset download
+    // (SettingsView.xaml:83,91; SettingsViewModel.cs:453).
+    in property <bool> system-preset-change-allowed: true;
+    in property <[string]> system-presets: [];
+
+    // Community preset
+    in-out property <string> selected-community-preset: "";
+    in property <[string]> community-presets: [];
+    // Description panel (SettingsView.xaml:277-401). Seeded by Rust at
+    // every preset projection — startup, selection, post-download — from
+    // the vendored catalog / extracted preset config; the
+    // value is forwarded from the root `preset-details` property.
+    in property <PresetDetail> preset-details;
+    in property <bool> preset-download-success: false;
+    in property <bool> preset-downloading: false;
+
+    // ── Callbacks (6 commands from SettingsViewModel.cs:94-99) ──────────
+    callback download_preset(string);
+    callback community_preset_selected(string);
+    callback open_controller_config();
+    callback open_colors_config();
+    callback open_hotkeys_config();
+    callback open_overlay_config();
+    callback open_paragon_config();
+
+    // UI language selection: fires with the chosen caption.
+    callback app_language_selected(string);
+    // Additional callback for system preset selection
+    callback preset_selected(string);
+    // Display backend selection: fires with the chosen selector label
+    // ("Auto" / "X11" / "Wayland"); the Rust handler validates and
+    // persists the token.
+    callback display_backend_selected(string);
+
+    /// Aggregated callback: fires when any toggle changes.
+    callback settings-changed();
+
+    // ── Layout (upstream readme-004) ───────────────────────────────────
+    // Colours come from the `Metro` tokens, so this screen carries no
+    // literal of its own.
+    VerticalLayout {
+        spacing: 0px;
+
+        // ── Page title (upstream ContentTemplate header label) ────────
+        HorizontalLayout {
+            padding-left: 24px;
+            padding-top: 10px;
+            padding-bottom: 4px;
+
+            Text {
+                text: @tr("Settings");
+                color: Metro.text-strong;
+                font-size: 40px;
+                font-weight: 300;
+                vertical-alignment: center;
+            }
+        }
+
+        HorizontalLayout {
+            spacing: 0px;
+
+            // ═══════════════════════════════════════════════════════
+            // Left column: language, system presets, toggle list
+            // (mirrors SettingsView.xaml:30-249)
+            // ═══════════════════════════════════════════════════════
+            Rectangle {
+                background: Metro.panel;
+                preferred-width: 320px;
+                min-width: 320px;
+                max-width: 320px;
+                horizontal-stretch: 0;
+
+                ScrollView {
+                    VerticalLayout {
+                        padding-left: 24px;
+                        padding-right: 24px;
+                        padding-top: 4px;
+                        padding-bottom: 8px;
+                        spacing: 10px;
+                        // Pack the rows at the top and leave any spare
+                        // viewport height below them (the default stretch
+                        // would inflate the rows instead).
+                        alignment: start;
+
+                        // ── App language ComboBox (SettingsView.xaml:58-73)
+                        app-language-combobox := ComboBox {
+                            model: app-languages;
+                            max-height: 28px;
+                            current-value <=> selected-app-language;
+                            selected(value) => {
+                                app_language_selected(value);
+                            }
+                            // Accessibility + headless real-input test harness.
+                            accessible-role: combobox;
+                            accessible-label: @tr("App language");
+                        }
+
+                        // ── System preset ComboBox (SettingsView.xaml:75-84)
+                        VerticalLayout {
+                            spacing: 2px;
+
+                            Text {
+                                text: @tr("System presets:");
+                                color: Metro.text-strong;
+                                font-size: 13px;
+                            }
+
+                            system-preset-combobox := ComboBox {
+                                enabled: system-preset-change-allowed;
+                                model: system-presets;
+                                    max-height: 28px;
+                                current-value <=> selected-system-preset;
+                                selected(value) => {
+                                    preset_selected(value);
+                                }
+                                // Accessibility + headless real-input test harness.
+                                accessible-role: combobox;
+                                accessible-label: @tr("System preset");
+                            }
+                        }
+
+                        // ── Display backend ComboBox (Auto / X11 /
+                        //    Wayland). The choice persists to
+                        //    `DisplayBackend` in Config/Settings.json
+                        //    and applies at the next runtime start.
+                        //    The note describes the Auto detection
+                        //    semantics instead of promising a live
+                        //    hot-swap.
+                        VerticalLayout {
+                            spacing: 2px;
+
+                            Text {
+                                text: @tr("Display backend:");
+                                color: Metro.text-strong;
+                                font-size: 13px;
+                            }
+
+                            display-backend-combobox := ComboBox {
+                                model: display-backend-options;
+                                max-height: 28px;
+                                current-value <=> settings-display-backend;
+                                selected(value) => {
+                                    display_backend_selected(value);
+                                }
+                                // Accessibility + headless real-input test harness.
+                                accessible-role: combobox;
+                                accessible-label: @tr("Display backend");
+                            }
+
+                            Text {
+                                text: @tr("Applies at next runtime start. Auto detects the engine at start: an X11 Diablo window selects X11 capture; without one, a Wayland session uses the ScreenCast portal (wayland-portal builds only).");
+                                color: Metro.text-dim;
+                                font-size: 11px;
+                                wrap: word-wrap;
+                            }
+                        }
+
+                        // ═══════════════════════════════════════════════
+                        // Toggle switches (SettingsView.xaml:86-183)
+                        // ═══════════════════════════════════════════════
+
+                        // 1. DebugMode — visible only when dev-mode is true
+                        //    (SettingsView.xaml:86-101)
+                        if dev-mode: SidebarRow {
+                            info-text: @tr("Test template matching without running Diablo IV.");
+
+                            ToggleSwitch {
+                                label: @tr("Debug Mode");
+                                enabled: system-preset-change-allowed;
+                                checked <=> debug-mode;
+                                toggled(_) => { settings-changed(); }
+                            }
+                        }
+
+                        // 2. CheckForUpdates (SettingsView.xaml:102-113)
+                        SidebarRow {
+                            info-text: @tr("Check for updates at startup.");
+
+                            ToggleSwitch {
+                                label: @tr("Check for Updates");
+                                checked <=> check-updates;
+                                toggled(_) => { settings-changed(); }
+                            }
+                        }
+
+                        // 3. LaunchMinimized (SettingsView.xaml:115-126)
+                        SidebarRow {
+                            info-text: @tr("Launch Minimized.");
+
+                            ToggleSwitch {
+                                label: @tr("Launch Minimized");
+                                checked <=> launch-minimized;
+                                toggled(_) => { settings-changed(); }
+                            }
+                        }
+
+                        // 4. MinimizeToTray (SettingsView.xaml:128-139)
+                        SidebarRow {
+                            info-text: @tr("Minimize to Tray.");
+
+                            ToggleSwitch {
+                                label: @tr("Minimize to Tray");
+                                checked <=> minimize-to-tray;
+                                toggled(_) => { settings-changed(); }
+                            }
+                        }
+
+                        // Diagnostics export (port-specific, opt-in;
+                        // default off). Local crash-log copy only.
+                        SidebarRow {
+                            info-text: @tr("Allow exporting local crash logs (a plain local copy) so you can attach one to a GitHub issue you open manually. The app never uploads anything.");
+
+                            ToggleSwitch {
+                                label: @tr("Diagnostics Export");
+                                checked <=> diagnostics-export;
+                                toggled(_) => { settings-changed(); }
+                            }
+                        }
+
+                        // Release check (port-specific, default on).
+                        // Check-only: bounded GitHub Releases lookup
+                        // with a non-blocking banner; `--no-updates`
+                        // suppresses it for one session.
+                        SidebarRow {
+                            info-text: @tr("Check this project's GitHub Releases for a newer version and show a banner with the release link. Check only — the app never downloads, installs, or uploads anything.");
+
+                            ToggleSwitch {
+                                label: @tr("Check for New Releases");
+                                checked <=> update-check-enabled;
+                                toggled(_) => { settings-changed(); }
+                            }
+                        }
+
+                        // 5. ControllerMode + config button (SettingsView.xaml:141-159)
+                        SidebarRow {
+                            info-text: @tr("Allows you to use a controller instead of a mouse. Warning: This method is 70+ ms slower.");
+                            has-cog: true;
+                            cog-label: @tr("Open controller config");
+                            cog-clicked => { open_controller_config(); }
+
+                            ToggleSwitch {
+                                label: @tr("Controller Mode");
+                                checked <=> controller-mode;
+                                toggled(_) => { settings-changed(); }
+                            }
+                        }
+
+                        // 6. ParagonMode + config button (SettingsView.xaml:161-183)
+                        SidebarRow {
+                            info-text: @tr("Enables the overlay to show paragon boards.");
+                            has-cog: true;
+                            cog-label: @tr("Open paragon config");
+                            cog-clicked => { open_paragon_config(); }
+
+                            ToggleSwitch {
+                                label: @tr("Paragon Mode");
+                                checked <=> paragon-mode;
+                                toggled(_) => { settings-changed(); }
+                            }
+                        }
+
+                        // ═══════════════════════════════════════════════
+                        // Config buttons with cog icon (SettingsView.xaml:184-246)
+                        // ═══════════════════════════════════════════════
+
+                        // Manage Colors (SettingsView.xaml:189-206)
+                        SidebarRow {
+                            info-text: @tr("Set the default colors.");
+                            has-cog: true;
+                            cog-label: @tr("Open colors config");
+                            cog-clicked => { open_colors_config(); }
+
+                            Text {
+                                text: @tr("Manage Colors");
+                                color: Metro.text-strong;
+                                font-size: 13px;
+                                vertical-alignment: center;
+                                horizontal-alignment: start;
+                            }
+                        }
+
+                        // Hotkeys (SettingsView.xaml:208-226)
+                        SidebarRow {
+                            info-text: @tr("Enable/disable and change your hotkeys.");
+                            has-cog: true;
+                            cog-label: @tr("Open hotkeys config");
+                            cog-clicked => { open_hotkeys_config(); }
+
+                            Text {
+                                text: @tr("Manage Hotkeys");
+                                color: Metro.text-strong;
+                                font-size: 13px;
+                                vertical-alignment: center;
+                                horizontal-alignment: start;
+                            }
+                        }
+
+                        // Overlay Config (SettingsView.xaml:228-246)
+                        SidebarRow {
+                            info-text: @tr("Change settings for the ingame overlay.");
+                            has-cog: true;
+                            cog-label: @tr("Open overlay config");
+                            cog-clicked => { open_overlay_config(); }
+
+                            Text {
+                                text: @tr("Overlay Config");
+                                color: Metro.text-strong;
+                                font-size: 13px;
+                                vertical-alignment: center;
+                                horizontal-alignment: start;
+                            }
+                        }
+
+                        // ── Slint attribution — the royalty-free Slint
+                        //    License electing the GUI requires disclosing
+                        //    the use of Slint; this standard AboutSlint
+                        //    widget is that disclosure.
+                        Rectangle {
+                            preferred-height: 120px;
+                            min-height: 120px;
+                            max-height: 120px;
+                            // Accessibility + headless real-input test harness.
+                            accessible-role: text;
+                            accessible-label: @tr("Made with Slint");
+
+                            about-slint := AboutSlint {
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+
+            // ═══════════════════════════════════════════════════════
+            // Right detail panel (mirrors SettingsView.xaml:251-404)
+            // ═══════════════════════════════════════════════════════
+            Rectangle {
+                background: Metro.panel;
+
+                ScrollView {
+                    VerticalLayout {
+                        padding-left: 10px;
+                        padding-right: 24px;
+                        padding-top: 4px;
+                        padding-bottom: 8px;
+                        spacing: 8px;
+                        // Same as the sidebar: keep the download row and the
+                        // description grid at their natural heights and let
+                        // spare height fall below the content.
+                        alignment: start;
+
+                        // ── Community preset section (SettingsView.xaml:252-275)
+                        Text {
+                            text: @tr("Available system presets:");
+                            color: Metro.text-strong;
+                            font-size: 13px;
+                        }
+
+                        HorizontalLayout {
+                            spacing: 8px;
+                            // Keep the download row at its natural height;
+                            // spare panel height belongs below the content,
+                            // not inside this row.
+                            vertical-stretch: 0;
+
+                            // Community preset ComboBox
+                            community-preset-combobox := ComboBox {
+                                model: community-presets;
+                                    max-height: 28px;
+                                preferred-width: 220px;
+                                current-value <=> selected-community-preset;
+                                selected(value) => {
+                                    community_preset_selected(value);
+                                }
+                                // Accessibility + headless real-input test harness.
+                                accessible-role: combobox;
+                                accessible-label: @tr("Community preset");
+                            }
+
+                            // Download button (mirrors PresetDownloadButtonCaption)
+                            // (upstream DownloadSystemPresetCommand anchor).
+                            // Caption parity (`SettingsViewModel.cs:214-220`):
+                            // "Update" when the selected system preset equals
+                            // the selected community zip's file stem, else
+                            // "Download" — a live binding over the same two
+                            // two-way selections the VM property reads.
+                            download-preset-button := Rectangle {
+                                background: Metro.accent;
+                                opacity: system-preset-change-allowed && !preset-downloading ? 1.0 : 0.4;
+                                border-radius: 4px;
+                                preferred-width: 110px;
+                                min-width: 110px;
+                                max-width: 110px;
+                                preferred-height: 28px;
+                                min-height: 28px;
+                                max-height: 28px;
+                                // Accessibility + headless real-input test harness.
+                                accessible-role: button;
+                                accessible-label: @tr("Download preset");
+                                Text {
+                                    text: selected-community-preset != ""
+                                          && selected-community-preset == selected-system-preset + ".zip"
+                                          ? @tr("d4lc" => "Update") : @tr("Download");
+                                    color: Metro.text-strong;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    horizontal-alignment: center;
+                                    vertical-alignment: center;
+                                }
+                                TouchArea {
+                                    enabled: system-preset-change-allowed && !preset-downloading;
+                                    // Download the currently selected community preset
+                                    clicked => {
+                                        if selected-community-preset != "" {
+                                            download_preset(selected-community-preset);
+                                        }
+                                    }
+                                }
+                            }
+
+                            // Download success indicator (mirrors SettingsView.xaml:267-270)
+                            if preset-download-success: Text {
+                                text: "✓"; // ✓ checkmark
+                                color: Metro.text-ok;
+                                font-size: 16px;
+                                font-weight: 700;
+                                vertical-alignment: center;
+                            }
+
+                            // Info tooltip for download tip
+                            InfoButton {
+                                tooltip-text: @tr("Download the preset matching your configuration and follow the recommended app settings. If the button is disabled turn off the overlay first.");
+                            }
+
+                            Rectangle {
+                                background: transparent;
+                            }
+                        }
+
+                        // ── Preset Description GroupBox (SettingsView.xaml:277-401)
+                        // Red banner header (upstream readme-004)
+                        Rectangle {
+                            background: Metro.accent;
+                            preferred-height: 26px;
+                            min-height: 26px;
+                            max-height: 26px;
+
+                            HorizontalLayout {
+                                padding-left: 10px;
+
+                                Text {
+                                    text: @tr("Description").to-uppercase();
+                                    color: Metro.text-strong;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    vertical-alignment: center;
+                                }
+
+                                Rectangle {
+                                    background: transparent;
+                                }
+                            }
+                        }
+
+                        // Description grid — the 4-column Grid in
+                        // SettingsView.xaml:278-400: column 0 the caption,
+                        // column 1 its value, columns 2-3 the two
+                        // language-ready blocks. The uniform 5px spacing is
+                        // the upstream `Margin="5 0 0 0"` on every cell right
+                        // of the caption column, so values and language rows
+                        // line up exactly as upstream.
+                        GridLayout {
+                            spacing: 5px;
+                            vertical-stretch: 0;
+                            padding-left: 8px;
+                            padding-right: 8px;
+                            padding-top: 6px;
+                            padding-bottom: 6px;
+
+                            // Row 0: Filename (SettingsView.xaml:303-304)
+                            DetailLabel { row: 0; col: 0; caption: @tr("File Name: "); }
+                            DetailValue { row: 0; col: 1; value: preset-details.filename; }
+                            LanguageFlag {
+                                row: 0;
+                                col: 2;
+                                flag-label: "DE";
+                                language-name: @tr("German");
+                                ready: preset-details.language-ready-de-de;
+                            }
+                            LanguageFlag {
+                                row: 0;
+                                col: 3;
+                                flag-label: "KO";
+                                language-name: @tr("Korean");
+                                ready: preset-details.language-ready-ko-kr;
+                            }
+
+                            // Row 1: Resolution (SettingsView.xaml:305-306)
+                            DetailLabel { row: 1; col: 0; caption: @tr("Resolution: "); }
+                            DetailValue { row: 1; col: 1; value: preset-details.resolution; }
+                            LanguageFlag {
+                                row: 1;
+                                col: 2;
+                                flag-label: "EN";
+                                language-name: @tr("English");
+                                ready: preset-details.language-ready-en-us;
+                            }
+                            LanguageFlag {
+                                row: 1;
+                                col: 3;
+                                flag-label: "PL";
+                                language-name: @tr("Polish");
+                                ready: preset-details.language-ready-pl-pl;
+                            }
+
+                            // Row 2: Config (SettingsView.xaml:307-308)
+                            DetailLabel { row: 2; col: 0; caption: @tr("Config: "); }
+                            DetailValue { row: 2; col: 1; value: preset-details.config; }
+                            LanguageFlag {
+                                row: 2;
+                                col: 2;
+                                flag-label: "ES";
+                                language-name: @tr("Spanish (EU)");
+                                ready: preset-details.language-ready-es-es;
+                            }
+                            LanguageFlag {
+                                row: 2;
+                                col: 3;
+                                flag-label: "BR";
+                                language-name: @tr("Portuguese");
+                                ready: preset-details.language-ready-pt-br;
+                            }
+
+                            // Row 3: AppSettings header (SettingsView.xaml:309)
+                            DetailLabel { row: 3; col: 0; caption: @tr("App settings"); bold: true; }
+                            LanguageFlag {
+                                row: 3;
+                                col: 2;
+                                flag-label: "MX";
+                                language-name: @tr("Spanish (LA)");
+                                ready: preset-details.language-ready-es-mx;
+                            }
+                            LanguageFlag {
+                                row: 3;
+                                col: 3;
+                                flag-label: "RU";
+                                language-name: @tr("Russian");
+                                ready: preset-details.language-ready-ru-ru;
+                            }
+
+                            // Row 4: TooltipWidth (SettingsView.xaml:310-311)
+                            DetailLabel { row: 4; col: 0; caption: @tr("Tooltip width:"); }
+                            DetailValue { row: 4; col: 1; value: preset-details.tooltip-width; }
+                            LanguageFlag {
+                                row: 4;
+                                col: 2;
+                                flag-label: "FR";
+                                language-name: @tr("French");
+                                ready: preset-details.language-ready-fr-fr;
+                            }
+                            LanguageFlag {
+                                row: 4;
+                                col: 3;
+                                flag-label: "TR";
+                                language-name: @tr("Turkish");
+                                ready: preset-details.language-ready-tr-tr;
+                            }
+
+                            // Row 5: TooltipHeight (SettingsView.xaml:312-313)
+                            DetailLabel { row: 5; col: 0; caption: @tr("Tooltip height (type):"); }
+                            DetailValue { row: 5; col: 1; value: preset-details.tooltip-height-type; }
+                            LanguageFlag {
+                                row: 5;
+                                col: 2;
+                                flag-label: "IT";
+                                language-name: @tr("Italian");
+                                ready: preset-details.language-ready-it-it;
+                            }
+                            LanguageFlag {
+                                row: 5;
+                                col: 3;
+                                flag-label: "CN";
+                                language-name: @tr("Chinese (Simplified)");
+                                ready: preset-details.language-ready-zh-cn;
+                            }
+
+                            // Row 6: BrightnessThreshold (SettingsView.xaml:314-315)
+                            DetailLabel { row: 6; col: 0; caption: @tr("Brightness Threshold:"); }
+                            DetailValue { row: 6; col: 1; value: preset-details.brightness-threshold; }
+                            LanguageFlag {
+                                row: 6;
+                                col: 2;
+                                flag-label: "JA";
+                                language-name: @tr("Japanese");
+                                ready: preset-details.language-ready-ja-jp;
+                            }
+                            LanguageFlag {
+                                row: 6;
+                                col: 3;
+                                flag-label: "TW";
+                                language-name: @tr("Chinese (Traditional)");
+                                ready: preset-details.language-ready-zh-tw;
+                            }
+
+                            // Row 7: AffixAreaHeightOffsetTop (SettingsView.xaml:316-317)
+                            DetailLabel { row: 7; col: 0; caption: @tr("Affix Area Height Offset (Top):"); }
+                            DetailValue { row: 7; col: 1; value: preset-details.affix-area-height-offset-top; }
+
+                            // Row 8: AffixAreaHeightOffsetBottom (SettingsView.xaml:318-319)
+                            DetailLabel { row: 8; col: 0; caption: @tr("Affix Area Height Offset (Bottom):"); }
+                            DetailValue { row: 8; col: 1; value: preset-details.affix-area-height-offset-bottom; }
+
+                            // Row 9: AffixAspectAreaWidthOffset (SettingsView.xaml:320-321)
+                            DetailLabel { row: 9; col: 0; caption: @tr("Affix/Aspect Area Width Offset:"); }
+                            DetailValue { row: 9; col: 1; value: preset-details.affix-aspect-area-width-offset; }
+
+                            // Row 10: AspectAreaHeightOffsetTop (SettingsView.xaml:322-323)
+                            DetailLabel { row: 10; col: 0; caption: @tr("Aspect Area Height Offset (Top):"); }
+                            DetailValue { row: 10; col: 1; value: preset-details.aspect-area-height-offset-top; }
+
+                            // Row 11: ParagonNodeSize (SettingsView.xaml:324-325)
+                            DetailLabel { row: 11; col: 0; caption: @tr("Paragon Node Size:"); }
+                            DetailValue { row: 11; col: 1; value: preset-details.paragon-node-size; }
+
+                            // Row 12: ParagonNodeSizeCollapsed (SettingsView.xaml:326-327)
+                            DetailLabel { row: 12; col: 0; caption: @tr("Paragon Node Size (Collapsed):"); }
+                            DetailValue { row: 12; col: 1; value: preset-details.paragon-node-size-collapsed; }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,39 @@
+[package]
+name = "d4lc-fuzz"
+version = "0.0.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+d4lc-assets = { path = "../crates/d4lc-assets" }
+d4lc-fuzzy = { path = "../crates/d4lc-fuzzy" }
+d4lc-parse = { path = "../crates/d4lc-parse" }
+libfuzzer-sys = "0.4"
+
+[[bin]]
+name = "parse_text_value"
+path = "fuzz_targets/parse_text_value.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "parse_conversions_cached"
+path = "fuzz_targets/parse_conversions_cached.rs"
+test = false
+doc = false
+bench = false
+
+[[bin]]
+name = "parse_rune_sigil"
+path = "fuzz_targets/parse_rune_sigil.rs"
+test = false
+doc = false
+bench = false
+
+# Keep this crate out of the parent workspace: fuzzing is a dev-machine-only
+# activity with its own dependency graph and nightly toolchain requirements.
+[workspace]

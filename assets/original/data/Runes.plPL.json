@@ -1,0 +1,522 @@
+[
+  {
+    "IdSno": "2080567",
+    "IdName": "Item_Rune_Condition_HitHealthierEnemy",
+    "RuneType": "condition",
+    "Name": "Ahu",
+    "Description": "Szczęśliwy traf: maksymalnie 100% szans przeciwko wrogom nie w pełni sił.",
+    "DescriptionClean": "Szczęśliwy traf: maksymalnie 100 szans przeciwko wrogom nie w pełni sił.",
+    "RuneDescription": "{c_RuneCondition}{c_label}Szczęśliwy traf:{/c} maksymalnie {c_number}[100|%|]{/c} szans przeciwko wrogom nie {c_important}w pełni sił{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1999351",
+    "IdName": "Item_Rune_Condition_OnMove",
+    "RuneType": "condition",
+    "Name": "Bac",
+    "Description": "Przemieść się o # m.",
+    "DescriptionClean": "Przemieść się o m.",
+    "RuneDescription": "{c_RuneCondition}Przemieść się o {c_Number}{s1}{/c} m.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2057115",
+    "IdName": "Item_Rune_Effect_SummonSpiritWolf",
+    "RuneType": "effect",
+    "Name": "Ceh",
+    "Description": "Przywołujesz kompana – ducha wilka, który atakuje wrogów przez 8 sek.",
+    "DescriptionClean": "Przywołujesz kompana – ducha wilka, który atakuje wrogów przez 8 sek.",
+    "RuneDescription": "{c_RuneEffect}Przywołujesz {c_important}kompana{/c} – ducha wilka, który atakuje wrogów przez {c_number}8{/c} sek.{/c}",
+    "RuneOverflowBehavior": "więcej wilków"
+  },
+  {
+    "IdSno": "1968096",
+    "IdName": "Item_Rune_Condition_OnEvade",
+    "RuneType": "condition",
+    "Name": "Cem",
+    "Description": "Użyj Odskoku.",
+    "DescriptionClean": "Użyj Odskoku.",
+    "RuneDescription": "{c_RuneCondition}Użyj Odskoku.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2166984",
+    "IdName": "Item_Rune_Effect_Subpower_LightningBolt",
+    "RuneType": "effect",
+    "Name": "Chac",
+    "Description": "Używasz Pioruna druida i razisz nim pobliskiego wroga.",
+    "DescriptionClean": "Używasz Pioruna druida i razisz nim pobliskiego wroga.",
+    "RuneDescription": "{c_RuneEffect}Używasz {c_important}Pioruna{/c} druida i razisz nim pobliskiego wroga.{/c}",
+    "RuneOverflowBehavior": "więcej przywołanych piorunów"
+  },
+  {
+    "IdSno": "2060617",
+    "IdName": "Item_Rune_Condition_CastRepeatSkill",
+    "RuneType": "condition",
+    "Name": "Cir",
+    "Description": "Użyj 5 umiejętności, a następnie ulegnij wycieńczeniu na 3 sek.",
+    "DescriptionClean": "Użyj 5 umiejętności, a następnie ulegnij wycieńczeniu na 3 sek.",
+    "RuneDescription": "{c_RuneCondition}Użyj {c_number}5{/c} umiejętności, a następnie ulegnij wycieńczeniu na {c_number}3{/c} sek.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2060651",
+    "IdName": "Item_Rune_Effect_FlatCDR",
+    "RuneType": "effect",
+    "Name": "Eom",
+    "Description": "Aktywne czasy odnowienia zostają skrócone o # sek.",
+    "DescriptionClean": "Aktywne czasy odnowienia zostają skrócone o sek.",
+    "RuneDescription": "{c_RuneEffect}Aktywne czasy odnowienia zostają skrócone o {c_number}{s1}{/c} sek.",
+    "RuneOverflowBehavior": "dodatkowe skrócenie czasów odnowienia"
+  },
+  {
+    "IdSno": "2006747",
+    "IdName": "Item_Rune_Condition_OnCCdOrInjured",
+    "RuneType": "condition",
+    "Name": "Feo",
+    "Description": "Ulegnij efektowi ograniczenia kontroli lub okaleczenia. (Czas odnowienia: 10 sek.)",
+    "DescriptionClean": "Ulegnij efektowi ograniczenia kontroli lub okaleczenia. (Czas odnowienia: 10 sek.)",
+    "RuneDescription": "{c_RuneCondition}Ulegnij efektowi ograniczenia kontroli lub {c_important}{u}okaleczenia{/u}{/c}.{/c} {c_gray}(Czas odnowienia: 10 sek.){/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969098",
+    "IdName": "Item_Rune_Effect_CritBuff",
+    "RuneType": "effect",
+    "Name": "Gar",
+    "Description": "Zyskujesz #% szans na trafienie krytyczne na 5 sek., maksymalnie 25%.",
+    "DescriptionClean": "Zyskujesz szans na trafienie krytyczne na 5 sek., maksymalnie 25.",
+    "RuneDescription": "{c_RuneEffect}Zyskujesz {c_number}{s1}%{/c} szans na trafienie krytyczne na {c_number}5{/c} sek., maksymalnie {c_number}25%{/c}.{/c}",
+    "RuneOverflowBehavior": "zyskujesz kilka ładunków"
+  },
+  {
+    "IdSno": "2165976",
+    "IdName": "Item_Rune_Condition_Bomb",
+    "RuneType": "condition",
+    "Name": "Igni",
+    "Description": "Zachowuje dodatkowe punkty ofiary co 0,3 sek. Użyj umiejętności innej niż Podstawowa, aby odzyskać zachowane punkty ofiary (maksymalnie 500).",
+    "DescriptionClean": "Zachowuje dodatkowe punkty ofiary co 0,3 sek. Użyj umiejętności innej niż Podstawowa, aby odzyskać zachowane punkty ofiary (maksymalnie 500).",
+    "RuneDescription": "{c_RuneCondition}Zachowuje dodatkowe punkty ofiary co {c_number}0,3{/c} sek. Użyj umiejętności innej niż {c_important}Podstawowa{/c}, aby odzyskać zachowane punkty ofiary {c_gray}(maksymalnie 500){/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2530516",
+    "IdName": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Subpower_Brimstone",
+    "Description": "Item_Rune_Effect_Subpower_Brimstone",
+    "DescriptionClean": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneDescription": "Item_Rune_Effect_Subpower_Brimstone",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Subpower_Brimstone"
+  },
+  {
+    "IdSno": "2531290",
+    "IdName": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneType": "effect",
+    "Name": "Item_Rune_Effect_Warlock_ChainPrison",
+    "Description": "Item_Rune_Effect_Warlock_ChainPrison",
+    "DescriptionClean": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneDescription": "Item_Rune_Effect_Warlock_ChainPrison",
+    "RuneOverflowBehavior": "Item_Rune_Effect_Warlock_ChainPrison"
+  },
+  {
+    "IdSno": "2039542",
+    "IdName": "Item_Rune_Effect_Sorcerer_Teleport",
+    "RuneType": "effect",
+    "Name": "Jah",
+    "Description": "Następny Odskok jest zastępowany Teleportacją czarodzieja, która przenosi cię dalej, zadaje obrażenia i powoduje nieustępliwość.",
+    "DescriptionClean": "Następny Odskok jest zastępowany Teleportacją czarodzieja, która przenosi cię dalej, zadaje obrażenia i powoduje nieustępliwość.",
+    "RuneDescription": "{c_RuneEffect}Następny Odskok jest zastępowany {c_important}Teleportacją{/c} czarodzieja, która przenosi cię dalej, zadaje obrażenia i powoduje {c_important}{u}nieustępliwość{/u}{/c}.",
+    "RuneOverflowBehavior": "zachowuje dodatkowe punkty ofiary"
+  },
+  {
+    "IdSno": "2081284",
+    "IdName": "Item_Rune_Condition_OnTakeDamage",
+    "RuneType": "condition",
+    "Name": "Kaa",
+    "Description": "Strać #% maksymalnego zdrowia.",
+    "DescriptionClean": "Strać maksymalnego zdrowia.",
+    "RuneDescription": "{c_RuneCondition}Strać {c_number}{s1}%{/c} maksymalnego zdrowia.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2432807",
+    "IdName": "Item_Rune_Effect_Paladin_Rally",
+    "RuneType": "effect",
+    "Name": "Kel",
+    "Description": "Używasz Mobilizacji paladyna, zyskując zasoby i szybkość ruchu na # sek.",
+    "DescriptionClean": "Używasz Mobilizacji paladyna, zyskując zasoby i szybkość ruchu na sek.",
+    "RuneDescription": "{c_RuneEffect}Używasz {c_important}Mobilizacji{/c} paladyna, zyskując zasoby i szybkość ruchu na {c_number}{s1}{/c} sek.{/c}",
+    "RuneOverflowBehavior": "zwiększone zasoby"
+  },
+  {
+    "IdSno": "2039678",
+    "IdName": "Item_Rune_Effect_Spiritborn_Vortex",
+    "RuneType": "effect",
+    "Name": "Kry",
+    "Description": "Wywołujesz Wir spirytysty, który zadaje obrażenia i przyciąga wrogów.",
+    "DescriptionClean": "Wywołujesz Wir spirytysty, który zadaje obrażenia i przyciąga wrogów.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Wir{/c} spirytysty, który zadaje obrażenia i przyciąga wrogów.{/c}",
+    "RuneOverflowBehavior": "promień zwiększony maksymalnie o 100%"
+  },
+  {
+    "IdSno": "2090244",
+    "IdName": "Item_Rune_Effect_Barbarian_ChallengingShout",
+    "RuneType": "effect",
+    "Name": "Lac",
+    "Description": "Używasz Wyzywającego Okrzyku barbarzyńcy, który prowokuje wrogów i zmniejsza odnoszone przez ciebie obrażenia na # sek.",
+    "DescriptionClean": "Używasz Wyzywającego Okrzyku barbarzyńcy, który prowokuje wrogów i zmniejsza odnoszone przez ciebie obrażenia na sek.",
+    "RuneDescription": "{c_RuneEffect}Używasz {c_important}Wyzywającego Okrzyku{/c} barbarzyńcy, który prowokuje wrogów i zmniejsza odnoszone przez ciebie obrażenia na {c_number}{s1}{/c} sek.{/c}",
+    "RuneOverflowBehavior": "wydłużony czas działania"
+  },
+  {
+    "IdSno": "2060481",
+    "IdName": "Item_Rune_Condition_StandStill",
+    "RuneType": "condition",
+    "Name": "Lith",
+    "Description": "Stój nieruchomo podczas walki przez # sek.",
+    "DescriptionClean": "Stój nieruchomo podczas walki przez sek.",
+    "RuneDescription": "{c_RuneCondition}Stój nieruchomo podczas walki przez {c_number}{s1}{/c} sek.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968585",
+    "IdName": "Item_Rune_Effect_GainResource",
+    "RuneType": "effect",
+    "Name": "Lum",
+    "Description": "Odzyskujesz # pkt. podstawowego zasobu.",
+    "DescriptionClean": "Odzyskujesz pkt. podstawowego zasobu.",
+    "RuneDescription": "{c_RuneEffect}Odzyskujesz {c_number}{s1}{/c} pkt. podstawowego zasobu.{/c}",
+    "RuneOverflowBehavior": "zwiększona regeneracja zasobów"
+  },
+  {
+    "IdSno": "2004723",
+    "IdName": "Item_Rune_Effect_Subpower_DesecratedGround",
+    "RuneType": "effect",
+    "Name": "Met",
+    "Description": "Na 3 sek. pozostawiasz za sobą Zbezczeszczoną Ziemię nekromanty, która zadaje obrażenia wrogom na jej obszarze.",
+    "DescriptionClean": "Na 3 sek. pozostawiasz za sobą Zbezczeszczoną Ziemię nekromanty, która zadaje obrażenia wrogom na jej obszarze.",
+    "RuneDescription": "{c_RuneEffect}Na {c_number}3{/c} sek. pozostawiasz za sobą {c_important}Zbezczeszczoną Ziemię{/c} nekromanty, która zadaje obrażenia wrogom na jej obszarze.{/c}",
+    "RuneOverflowBehavior": "wydłużony czas działania"
+  },
+  {
+    "IdSno": "2063886",
+    "IdName": "Item_Rune_Condition_OnStutterStep",
+    "RuneType": "condition",
+    "Name": "Moni",
+    "Description": "Użyj 2 umiejętności Mobilności lub Makabry. ",
+    "DescriptionClean": "Użyj 2 umiejętności Mobilności lub Makabry.",
+    "RuneDescription": "{c_RuneCondition}Użyj {c_number}2{/c} umiejętności {c_important}Mobilności{/c} lub {c_important}Makabry{/c}.{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2089934",
+    "IdName": "Item_Rune_Effect_Rogue_DarkShroud",
+    "RuneType": "effect",
+    "Name": "Mot",
+    "Description": "Zyskujesz # cieni z Mrocznego Całunu łotra, a każdy z nich zmniejsza odnoszone obrażenia.",
+    "DescriptionClean": "Zyskujesz cieni z Mrocznego Całunu łotra, a każdy z nich zmniejsza odnoszone obrażenia.",
+    "RuneDescription": "{c_RuneEffect}Zyskujesz {c_number}{s1}{/c} |4cień:cienie:cieni; z {c_important}Mrocznego Całunu{/c} łotra, a każdy z nich zmniejsza odnoszone obrażenia.{/c}",
+    "RuneOverflowBehavior": "zyskujesz kilka cieni"
+  },
+  {
+    "IdSno": "2155996",
+    "IdName": "Item_Rune_Condition_Summons",
+    "RuneType": "condition",
+    "Name": "Nagu",
+    "Description": "Zachowaj co najmniej 1 aktywny przywołany byt przez 5 sek. Za każdy przywołany byt (maksymalnie 6) otrzymujesz punkty ofiary.",
+    "DescriptionClean": "Zachowaj co najmniej 1 aktywny przywołany byt przez 5 sek. Za każdy przywołany byt (maksymalnie 6) otrzymujesz punkty ofiary.",
+    "RuneDescription": "{c_RuneCondition}Zachowaj co najmniej {c_number}1{/c} aktywny {c_important}przywołany byt{/c} przez {c_number}5{/c} sek. Za każdy {c_important}przywołany byt{/c} (maksymalnie {c_number}6{/c}) otrzymujesz punkty ofiary.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2063987",
+    "IdName": "Item_Rune_Condition_OnAvoidDamage",
+    "RuneType": "condition",
+    "Name": "Neo",
+    "Description": "Nie trać punktów zdrowia przez odniesione obrażenia podczas walki przez 2 sek. ",
+    "DescriptionClean": "Nie trać punktów zdrowia przez odniesione obrażenia podczas walki przez 2 sek.",
+    "RuneDescription": "{c_RuneCondition}Nie trać punktów zdrowia przez odniesione obrażenia podczas walki przez 2 sek.{/c} ",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2039602",
+    "IdName": "Item_Rune_Effect_Rogue_Concealment",
+    "RuneType": "effect",
+    "Name": "Ner",
+    "Description": "Wywołujesz Kontrujące Maskowanie łotra na # sek., dzięki czemu zyskujesz szansę na unik, szybkość ruchu, nieustępliwość i ukrycie.",
+    "DescriptionClean": "Wywołujesz Kontrujące Maskowanie łotra na sek., dzięki czemu zyskujesz szansę na unik, szybkość ruchu, nieustępliwość i ukrycie.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Kontrujące Maskowanie{/c} łotra na {s1} sek., dzięki czemu zyskujesz szansę na unik, szybkość ruchu, {c_important}{u}nieustępliwość{/u}{/c} i {c_important}{u}ukrycie{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "wydłużony czas działania"
+  },
+  {
+    "IdSno": "2089874",
+    "IdName": "Item_Rune_Condition_OnCCEnemy",
+    "RuneType": "condition",
+    "Name": "Noc",
+    "Description": "Wywołaj ograniczenie kontroli i zyskaj podwojone punkty ofiary, jeśli nie jest to spowolnienie ani wychłodzenie.",
+    "DescriptionClean": "Wywołaj ograniczenie kontroli i zyskaj podwojone punkty ofiary, jeśli nie jest to spowolnienie ani wychłodzenie.",
+    "RuneDescription": "{c_RuneCondition}Wywołaj ograniczenie kontroli i zyskaj podwojone punkty ofiary, jeśli nie jest to spowolnienie ani {c_important}{u}wychłodzenie{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969850",
+    "IdName": "Item_Rune_Effect_Barbarian_WarCry",
+    "RuneType": "effect",
+    "Name": "Ohm",
+    "Description": "Używasz Okrzyku Wojennego barbarzyńcy. Zwiększa on zadawane obrażenia o 15% na # sek.",
+    "DescriptionClean": "Używasz Okrzyku Wojennego barbarzyńcy. Zwiększa on zadawane obrażenia o 15 na sek.",
+    "RuneDescription": "{c_RuneEffect}Używasz {c_important}Okrzyku Wojennego{/c} barbarzyńcy. Zwiększa on zadawane obrażenia o {c_number}15%{/c} na {c_number}{s1}{/c} sek.{/c}",
+    "RuneOverflowBehavior": "wydłużony czas działania"
+  },
+  {
+    "IdSno": "2006150",
+    "IdName": "Item_Rune_Effect_Subpower_DancingBolts",
+    "RuneType": "effect",
+    "Name": "Ono",
+    "Description": "Wywołujesz Tańczące Pioruny druida, które wyszukują wrogów i zadają im obrażenia.",
+    "DescriptionClean": "Wywołujesz Tańczące Pioruny druida, które wyszukują wrogów i zadają im obrażenia.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Tańczące Pioruny{/c} druida, które wyszukują wrogów i zadają im obrażenia.{/c}",
+    "RuneOverflowBehavior": "więcej piorunów"
+  },
+  {
+    "IdSno": "2004453",
+    "IdName": "Item_Rune_Condition_OnSpendResource",
+    "RuneType": "condition",
+    "Name": "Poc",
+    "Description": "Zużyj #% maksimum zasobu.",
+    "DescriptionClean": "Zużyj maksimum zasobu.",
+    "RuneDescription": "{c_RuneCondition}Zużyj {c_Number}{s1}%{/c} maksimum zasobu.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2059626",
+    "IdName": "Item_Rune_Effect_ResourceToDamage",
+    "RuneType": "effect",
+    "Name": "Qax",
+    "Description": "Użycie umiejętności innej niż Podstawowa lub Defensywna zużywa wszystkie punkty podstawowego zasobu i zwiększa twoje obrażenia o maksymalnie #% na 1 sek.",
+    "DescriptionClean": "Użycie umiejętności innej niż Podstawowa lub Defensywna zużywa wszystkie punkty podstawowego zasobu i zwiększa twoje obrażenia o maksymalnie na 1 sek.",
+    "RuneDescription": "{c_RuneEffect}Użycie umiejętności innej niż {c_important}Podstawowa{/c} lub {c_important}Defensywna{/c} zużywa wszystkie punkty podstawowego zasobu i zwiększa twoje obrażenia o maksymalnie {c_number}{s1}%{/c} na {c_number}1{/c} sek.{/c}",
+    "RuneOverflowBehavior": "dodatkowe zwiększenie obrażeń"
+  },
+  {
+    "IdSno": "2043181",
+    "IdName": "Item_Rune_Effect_MobilityBuff",
+    "RuneType": "effect",
+    "Name": "Qua",
+    "Description": "Zyskujesz 10% premii do szybkości ruchu na # sek., maksymalnie 50%.",
+    "DescriptionClean": "Zyskujesz 10 premii do szybkości ruchu na sek., maksymalnie 50.",
+    "RuneDescription": "{c_RuneEffect}Zyskujesz {c_number}10%{/c} premii do szybkości ruchu na {c_number}{s1}{/c} sek., maksymalnie {c_number}50%{/c}.{/c}",
+    "RuneOverflowBehavior": "wydłużony czas działania"
+  },
+  {
+    "IdSno": "2004804",
+    "IdName": "Item_Rune_Effect_Druid_EarthenBulwark",
+    "RuneType": "effect",
+    "Name": "Que",
+    "Description": "Wywołujesz Ziemny Szaniec druida na # sek., dzięki czemu zyskujesz barierę.",
+    "DescriptionClean": "Wywołujesz Ziemny Szaniec druida na sek., dzięki czemu zyskujesz barierę.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Ziemny Szaniec{/c} druida na {c_number}{s1}{/c} sek., dzięki czemu zyskujesz {c_important}{u}barierę{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "wydłużony czas działania"
+  },
+  {
+    "IdSno": "2040870",
+    "IdName": "Item_Rune_Effect_Subpower_Swarm",
+    "RuneType": "effect",
+    "Name": "Tal",
+    "Description": "Używasz Roju Zarazy spirytysty, który zadaje obrażenia wrogom.",
+    "DescriptionClean": "Używasz Roju Zarazy spirytysty, który zadaje obrażenia wrogom.",
+    "RuneDescription": "{c_RuneEffect}Używasz {c_important}Roju Zarazy{/c} spirytysty, który zadaje obrażenia wrogom.{/c}",
+    "RuneOverflowBehavior": "więcej rojów"
+  },
+  {
+    "IdSno": "1968106",
+    "IdName": "Item_Rune_Condition_OnCastCoreSkill",
+    "RuneType": "condition",
+    "Name": "Tam",
+    "Description": "Użyj niepodtrzymywanej umiejętności Głównej.",
+    "DescriptionClean": "Użyj niepodtrzymywanej umiejętności Głównej.",
+    "RuneDescription": "{c_RuneCondition}Użyj {c_important}niepodtrzymywanej{/c} umiejętności {c_important}Głównej{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2088916",
+    "IdName": "Item_Rune_Effect_Necromancer_IronMaiden",
+    "RuneType": "effect",
+    "Name": "Teb",
+    "Description": "Wywołujesz Odrażającą Żelazną Dziewicę nekromanty, która umożliwia odparcie obrażeń zadanych przez wrogów i uleczenie, gdy zginą.",
+    "DescriptionClean": "Wywołujesz Odrażającą Żelazną Dziewicę nekromanty, która umożliwia odparcie obrażeń zadanych przez wrogów i uleczenie, gdy zginą.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Odrażającą Żelazną Dziewicę{/c} nekromanty, która umożliwia odparcie obrażeń zadanych przez wrogów i uleczenie, gdy zginą.{/c}",
+    "RuneOverflowBehavior": "użycie zwiększa obrażenia o 1% za każdy punkt ofiary"
+  },
+  {
+    "IdSno": "1983344",
+    "IdName": "Item_Rune_Effect_Subpower_Earthquake",
+    "RuneType": "effect",
+    "Name": "Tec",
+    "Description": "Wywołujesz Trzęsienie Ziemi barbarzyńcy, które zadaje obrażenia wrogom na jego obszarze.",
+    "DescriptionClean": "Wywołujesz Trzęsienie Ziemi barbarzyńcy, które zadaje obrażenia wrogom na jego obszarze.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Trzęsienie Ziemi{/c} barbarzyńcy, które zadaje obrażenia wrogom na jego obszarze.{/c}",
+    "RuneOverflowBehavior": "promień zwiększony maksymalnie o 100%"
+  },
+  {
+    "IdSno": "1969845",
+    "IdName": "Item_Rune_Effect_Sorcerer_FrostNova",
+    "RuneType": "effect",
+    "Name": "Thul",
+    "Description": "Wywołujesz Mistyczną Novę Mrozu czarodzieja, która zamraża wrogów i powoduje ich odsłonięcie.",
+    "DescriptionClean": "Wywołujesz Mistyczną Novę Mrozu czarodzieja, która zamraża wrogów i powoduje ich odsłonięcie.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Mistyczną Novę Mrozu{/c} czarodzieja, która {c_important}{u}zamraża{/u}{/c} wrogów i powoduje ich {c_important}{u}odsłonięcie{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "promień zwiększony maksymalnie o 100%"
+  },
+  {
+    "IdSno": "2004875",
+    "IdName": "Item_Rune_Effect_Subpower_Meteorites",
+    "RuneType": "effect",
+    "Name": "Ton",
+    "Description": "Używasz Meteorytów czarodzieja, które zadają wrogom obrażenia.",
+    "DescriptionClean": "Używasz Meteorytów czarodzieja, które zadają wrogom obrażenia.",
+    "RuneDescription": "{c_RuneEffect}Używasz {c_important}Meteorytów{/c} czarodzieja, które zadają wrogom obrażenia.{/c}",
+    "RuneOverflowBehavior": "więcej meteorytów"
+  },
+  {
+    "IdSno": "2004781",
+    "IdName": "Item_Rune_Effect_Subpower_Grenades",
+    "RuneType": "effect",
+    "Name": "Tun",
+    "Description": "Używasz Granatów Ogłuszających łotra, które ogłuszają wrogów i zadają im obrażenia.",
+    "DescriptionClean": "Używasz Granatów Ogłuszających łotra, które ogłuszają wrogów i zadają im obrażenia.",
+    "RuneDescription": "{c_RuneEffect}Używasz {c_important}Granatów Ogłuszających{/c} łotra, które ogłuszają wrogów i zadają im obrażenia.{/c}",
+    "RuneOverflowBehavior": "więcej granatów"
+  },
+  {
+    "IdSno": "2093513",
+    "IdName": "Item_Rune_Effect_Spiritborn_ConcussiveStomp",
+    "RuneType": "effect",
+    "Name": "Tzic",
+    "Description": "Wywołujesz Wstrząsające Tąpnięcie spirytysty, które zadaje obrażenia i powala wrogów.",
+    "DescriptionClean": "Wywołujesz Wstrząsające Tąpnięcie spirytysty, które zadaje obrażenia i powala wrogów.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Wstrząsające Tąpnięcie{/c} spirytysty, które zadaje obrażenia i powala wrogów.{/c}",
+    "RuneOverflowBehavior": "użycie zwiększa obrażenia o 1% za każdy punkt ofiary"
+  },
+  {
+    "IdSno": "2020680",
+    "IdName": "Item_Rune_Condition_OnPetKillOrDie",
+    "RuneType": "condition",
+    "Name": "Ur",
+    "Description": "Twój sługa lub kompan zabija wroga lub ginie.",
+    "DescriptionClean": "Twój sługa lub kompan zabija wroga lub ginie.",
+    "RuneDescription": "{c_RuneCondition}Twój {c_important}sługa{/c} lub {c_important}kompan{/c} zabija wroga lub ginie.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2024156",
+    "IdName": "Item_Rune_Effect_BonusToAllSkills",
+    "RuneType": "effect",
+    "Name": "Vex",
+    "Description": "Zyskujesz +1 rangę wszystkich umiejętności na 10 sek.",
+    "DescriptionClean": "Zyskujesz 1 rangę wszystkich umiejętności na 10 sek.",
+    "RuneDescription": "{c_RuneEffect}Zyskujesz {c_number}+1{/c} rangę wszystkich umiejętności na {c_number}10{/c} sek.{/c}",
+    "RuneOverflowBehavior": "więcej rang umiejętności, maksymalnie 3"
+  },
+  {
+    "IdSno": "2004862",
+    "IdName": "Item_Rune_Effect_Necromancer_Decrepify",
+    "RuneType": "effect",
+    "Name": "Wat",
+    "Description": "Wywołujesz Straszliwe Zniedołężnienie nekromanty, które spowalnia wrogów, zmniejsza zadawane przez nich obrażenia i umożliwia ich egzekucję.",
+    "DescriptionClean": "Wywołujesz Straszliwe Zniedołężnienie nekromanty, które spowalnia wrogów, zmniejsza zadawane przez nich obrażenia i umożliwia ich egzekucję.",
+    "RuneDescription": "{c_RuneEffect}Wywołujesz {c_important}Straszliwe Zniedołężnienie{/c} nekromanty, które spowalnia wrogów, zmniejsza zadawane przez nich obrażenia i umożliwia ich {c_important}{u}egzekucję{/u}{/c}.{/c}",
+    "RuneOverflowBehavior": "wydłużony czas działania"
+  },
+  {
+    "IdSno": "2021640",
+    "IdName": "Item_Rune_Effect_MaxHPIncrease",
+    "RuneType": "effect",
+    "Name": "Xal",
+    "Description": "Zyskujesz 20% maksymalnego zdrowia na # sek.",
+    "DescriptionClean": "Zyskujesz 20 maksymalnego zdrowia na sek.",
+    "RuneDescription": "{c_RuneEffect}Zyskujesz {c_number}20%{/c} maksymalnego zdrowia na {c_number}{s1}{/c} sek.{/c}",
+    "RuneOverflowBehavior": "zyskujesz premię do maksymalnego zdrowia"
+  },
+  {
+    "IdSno": "2047113",
+    "IdName": "Item_Rune_Effect_CriticalOverpower",
+    "RuneType": "effect",
+    "Name": "Xan",
+    "Description": "Kolejny atak sprawia, że wszystkie twoje ciosy będą trafiać krytycznie i wywoływać przytłoczenie przez 0,35 sek.",
+    "DescriptionClean": "Kolejny atak sprawia, że wszystkie twoje ciosy będą trafiać krytycznie i wywoływać przytłoczenie przez 0,35 sek.",
+    "RuneDescription": "{c_RuneEffect}Kolejny atak sprawia, że wszystkie twoje ciosy będą trafiać krytycznie i wywoływać {c_important}{u}przytłoczenie{/u}{/c} przez {c_number}0,35{/c} sek.{/c}",
+    "RuneOverflowBehavior": "wydłuża czas działania"
+  },
+  {
+    "IdSno": "2040699",
+    "IdName": "Item_Rune_Condition_OnCastCrossClassSkill",
+    "RuneType": "condition",
+    "Name": "Xol",
+    "Description": "Użyj umiejętności innej klasy.",
+    "DescriptionClean": "Użyj umiejętności innej klasy.",
+    "RuneDescription": "{c_RuneCondition}Użyj umiejętności innej klasy.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1969053",
+    "IdName": "Item_Rune_Condition_OnPotion",
+    "RuneType": "condition",
+    "Name": "Yax",
+    "Description": "Wypij miksturę leczenia.",
+    "DescriptionClean": "Wypij miksturę leczenia.",
+    "RuneDescription": "{c_RuneCondition}Wypij miksturę leczenia.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "2090793",
+    "IdName": "Item_Rune_Effect_Druid_Petrify",
+    "RuneType": "effect",
+    "Name": "Yom",
+    "Description": "Używasz Petryfikacji druida, dzięki czemu ogłuszasz potwory i odzyskujesz punkty podstawowego zasobu.",
+    "DescriptionClean": "Używasz Petryfikacji druida, dzięki czemu ogłuszasz potwory i odzyskujesz punkty podstawowego zasobu.",
+    "RuneDescription": "{c_RuneEffect}Używasz {c_important}Petryfikacji{/c} druida, dzięki czemu ogłuszasz potwory i odzyskujesz punkty podstawowego zasobu.{/c}",
+    "RuneOverflowBehavior": "wydłużony czas ogłuszenia"
+  },
+  {
+    "IdSno": "2004497",
+    "IdName": "Item_Rune_Condition_AllSkillsOnCD",
+    "RuneType": "condition",
+    "Name": "Yul",
+    "Description": "Użyj umiejętności z czasem odnowienia.",
+    "DescriptionClean": "Użyj umiejętności z czasem odnowienia.",
+    "RuneDescription": "{c_RuneCondition}Użyj umiejętności z czasem odnowienia.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968549",
+    "IdName": "Item_Rune_Condition_OnCastUltimateSkill",
+    "RuneType": "condition",
+    "Name": "Zan",
+    "Description": "Użyj Mocy Specjalnej.",
+    "DescriptionClean": "Użyj Mocy Specjalnej.",
+    "RuneDescription": "{c_RuneCondition}Użyj {c_important}Mocy Specjalnej{/c}.{/c}",
+    "RuneOverflowBehavior": ""
+  },
+  {
+    "IdSno": "1968671",
+    "IdName": "Item_Rune_Effect_ReduceUltimateCD",
+    "RuneType": "effect",
+    "Name": "Zec",
+    "Description": "Aktywny czas odnowienia Mocy Specjalnej jest skrócony o # sek.",
+    "DescriptionClean": "Aktywny czas odnowienia Mocy Specjalnej jest skrócony o sek.",
+    "RuneDescription": "{c_RuneEffect}Aktywny czas odnowienia {c_important}Mocy Specjalnej{/c} jest skrócony o {c_number}{s1}{/c} sek.{/c}",
+    "RuneOverflowBehavior": "dodatkowe skrócenie czasu odnowienia"
+  },
+  {
+    "IdSno": "2433257",
+    "IdName": "Item_Rune_Effect_Subpower_Spear",
+    "RuneType": "effect",
+    "Name": "Zid",
+    "Description": "Przywołaj paladyńską Błogosławioną Włócznię, aby zaatakować pobliskich wrogów.",
+    "DescriptionClean": "Przywołaj paladyńską Błogosławioną Włócznię, aby zaatakować pobliskich wrogów.",
+    "RuneDescription": "{c_RuneEffect}Przywołaj paladyńską {c_important}Błogosławioną Włócznię{/c}, aby zaatakować pobliskich wrogów.{/c}",
+    "RuneOverflowBehavior": "zwiększa obrażenia"
+  }
+]

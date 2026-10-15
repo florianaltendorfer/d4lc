@@ -1,0 +1,257 @@
+[package]
+name = "d4lc-app"
+version = "1.0.0-rc.1"
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "d4lc-app"
+path = "src/main.rs"
+
+[dependencies]
+chrono = { version = "0.4", default-features = false, features = ["clock"] }
+# 1.18.1 carries the FlexboxLayout wrap fix (the affix catalog grid is a
+# wrapping FlexboxLayout; 1.18.0 panics on some wrap layouts).
+# `renderer-femtovg` is the UI renderer (OpenGL);
+# `renderer-software` is the named fallback when GL cannot start and the
+# headless screenshot renderer (see `src/ui_renderer.rs`). Both are also in
+# slint's default feature set; they are spelled out because the app selects
+# them by name.
+slint = { version = "1.18.1", features = ["raw-window-handle-06", "unstable-winit-030", "renderer-femtovg", "renderer-software"] }
+dirs = "6"
+# The desktop UI locale, for a stored UI language the selector does not offer.
+sys-locale = "0.3"
+raw-window-handle = "0.6"
+d4lc-core = { path = "../d4lc-core" }
+d4lc-gui = { path = "../d4lc-gui" }
+d4lc-config = { path = "../d4lc-config" }
+d4lc-rules = { path = "../d4lc-rules" }
+d4lc-runtime = { path = "../d4lc-runtime" }
+d4lc-overlay-x11 = { path = "../d4lc-overlay-x11" }
+# The Wayland layer-shell overlay backend, selected by the resolved engine.
+d4lc-overlay-wayland = { path = "../d4lc-overlay-wayland" }
+d4lc-capture = { path = "../d4lc-capture", optional = true }
+d4lc-detect = { path = "../d4lc-detect", optional = true }
+d4lc-ocr = { path = "../d4lc-ocr", optional = true }
+d4lc-debug = { path = "../d4lc-debug", optional = true }
+d4lc-vision = { path = "../d4lc-vision", optional = true }
+# Unconditional: the settings screen seeds the preset detail panel /
+# language-ready flags and the download flow extracts preset zips through
+# `d4lc-assets` in every build, not only with `real-runtime`.
+d4lc-assets = { path = "../d4lc-assets" }
+# d4lc code only reads and writes PNG, so it requests no other codec.
+# Slint still enables `jpeg` on the shared `image` crate in the app build.
+image = { version = "0.25", default-features = false, features = ["png"], optional = true }
+# Typed envelopes for provider downloads (Maxroll planner, D4Builds page
+# extraction) and the JSON-lines diagnostics export.
+serde = { version = "1.0", features = ["derive"] }
+serde_json.workspace = true
+# Direct dependency for the global-hotkey registration backend. Locked at the same 0.13 version the
+# overlay crate uses (see `crates/d4lc-overlay-x11/Cargo.toml`)
+# so the workspace shares a single x11rb build.
+x11rb = { version = "0.13", optional = true }
+# Pure-Rust StatusNotifierItem D-Bus tray backend. Linux-only, no C deps,
+# no spawned binaries.
+# Without default features: ksni's default `tokio` feature would switch the
+# shared zbus crate to its tokio executor for the whole process (cargo
+# feature unification). Slint's accesskit_unix and the winit settings
+# watcher poll zbus futures without a tokio runtime and panic on that
+# executor. `async-io` keeps zbus on its async-io executor, the flavor
+# accesskit_unix already selects, with no new dependency. ksni's
+# `TrayMethods::spawn` API is flavor-independent.
+ksni = { version = "0.3", default-features = false, features = ["async-io"], optional = true }
+# ksni 0.3 exposes `spawn` as an `async fn`; we call it via a
+# dedicated current-thread tokio runtime from the synchronous
+# `tray::init_tray` entry point. The runtime thread parks on the
+# runtime for the process lifetime so the ksni service
+# task stays alive after the registration handshake returns.
+tokio = { version = "1", features = ["rt"], optional = true }
+# Pure-Rust sync HTTP client for the community preset download and the
+# update check: no async runtime, no C deps, rustls + webpki-roots.
+ureq = { version = "2", optional = true }
+# Read/extract downloaded community preset zips under `Images/`. Same
+# declaration the d4lc-cli upstream tooling uses (deflate-only) so both
+# share one locked zip stack. In-process reading only; no spawned unzip.
+zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+# Wayland global hotkeys via the GlobalShortcuts portal
+# (org.freedesktop.portal.GlobalShortcuts over DBus). `async-io`
+# flavor on purpose: this workspace keeps zbus on its async-io
+# executor process-wide (see the ksni note — the tokio flavor would
+# flip that flavor and double-panic the Slint stack), matching the
+# d4lc-capture portal adapter. The `global_shortcuts` feature is a
+# pure gate inside ashpd; no C deps (unlike the pipewire capture
+# path), which is why this one is default-on while `wayland-portal`
+# stays opt-in.
+ashpd = { version = "0.13", default-features = false, features = [
+  "async-io",
+  "global_shortcuts",
+], optional = true }
+# Sync bridge for the ashpd portal futures (`zbus::block_on`),
+# mirroring the d4lc-capture wayland portal adapter. Stays on zbus's
+# default async-io flavor (see the ashpd note above).
+zbus = { version = "5", optional = true }
+# Check-only release banner: opens the release page in the user's
+# browser when the bounded update check finds a newer version. The
+# crate is already in the lock through Slint's winit backend, so this
+# adds no new package.
+webbrowser = "1"
+# Headless-browser build downloads (D2Core, D4Builds, Mobalytics), gated
+# by the default-on `browser-download` feature below. chromiumoxide drives
+# the installed Chromium/Chrome over CDP, mirroring upstream's
+# Selenium/DevTools sniffing.
+# Runtime constraint (see the ksni note above): chromiumoxide 0.9 is
+# tokio-only (async-tungstenite `tokio-runtime`, tokio
+# rt/time/process — crates.io dependency metadata), so the browser
+# worker owns a private CURRENT-THREAD tokio runtime exactly like the
+# tray does. That keeps zbus on its async-io flavor process-wide:
+# flavor unification only happens through zbus's own `tokio` cargo
+# feature, and no dependency in this feature tree enables it (no
+# chromiumoxide dependency reaches zbus); no tokio context is
+# installed on the Slint threads. Unit tests inject fake browser
+# sessions; the tests that launch a real browser are `#[ignore]`d.
+chromiumoxide = { version = "0.9", optional = true }
+# Browser imports never share the user's normal Chromium profile.
+tempfile = { version = "3", optional = true }
+# `futures` under the same feature: chromiumoxide 0.9 needs
+# `futures::StreamExt` in scope for its `EventStream` and requires the
+# caller to drive its `Handler` stream. The crate is already in the
+# dependency tree through chromiumoxide, so this adds no new package.
+futures = { version = "0.3", optional = true }
+# Local-tab preset import file picker (upstream `OpenFileDialog`).
+# `xdg-portal` backend: no GTK build dependency (the portal stack is
+# already in the tree through ashpd/zbus). The second feature is
+# `async-std`, NOT `tokio`: rfd only offers `tokio = ["ashpd?/tokio"]`,
+# and ashpd's tokio feature would switch the shared zbus to its tokio
+# executor (see the ksni note above). ashpd hard-requires one runtime feature
+# (ashpd-0.11.1 lib.rs:11-12), and its `async-std` feature maps to
+# `zbus/async-io`, keeping the process-wide async-io flavor; it pulls
+# only the small async-fs/async-net shims, not the async-std runtime.
+# The sync `FileDialog` API blocks through pollster (rfd
+# xdg_desktop_portal.rs:13), so no async runtime context is needed on
+# the Slint threads.
+rfd = { version = "0.15", default-features = false, features = [
+  "xdg-portal",
+  "async-std",
+] }
+# Wayland game-window state source (`wayland-wm-backend`): the observer's
+# own wl_display connection talks KDE's `org_kde_plasma_window_management`
+# protocol (KWin's native window list / focus / minimize / geometry
+# protocol — KWin implements neither zwlr_foreign_toplevel_management nor
+# focus in ext_foreign_toplevel_list). Bindings come from the maintained
+# `wayland-protocols-plasma` crate, which vendors KDE's
+# plasma-wayland-protocols XML tree verbatim (MIT crate; the protocol XMLs
+# it generates from are LGPL-2.1-or-later — see licenses/README.md). The
+# crate is already in the lock through the portal/overlay Wayland stack, so
+# this adds no new package. `dep:d4lc-capture` keeps window identification
+# on the same `WindowQuery` matcher semantics as the X11 path; the capture
+# crate is otherwise enabled by `real-runtime`, so builds that turn this
+# feature off keep the smaller dependency graph.
+wayland-client = { version = "0.31", optional = true }
+wayland-protocols-plasma = { version = "0.3", default-features = false, features = [
+  "client",
+], optional = true }
+
+[build-dependencies]
+slint-build = "1"
+
+[dev-dependencies]
+# Real-input GUI test harness (headless): replaces the windowing system with
+# the Slint testing backend and embeds its MCP server so tests can drive real
+# clicks through hit-testing and real key events through the window input
+# path. Exact-pinned to the workspace Slint version; `renderer-software`
+# gives the headless windows a rasterizer so `take_screenshot` works.
+# Compiled for test targets only — release binaries never link it.
+i-slint-backend-testing = { version = "=1.18.1", features = ["mcp", "renderer-software"] }
+# Decodes the MCP `take_screenshot` image block; the same major the
+# testing backend encodes it with.
+base64 = "0.23"
+# In-process Wayland compositor double for the game-window observer's
+# protocol handshake smoke (same pattern as
+# `crates/d4lc-overlay-wayland/tests/wayland_protocol.rs`): the server-side
+# plasma bindings answer `get_window_by_uuid` and emit the per-window state
+# the client maps into `GameWindowEvent`s. Test targets only.
+wayland-server = "0.31"
+wayland-protocols-plasma = { version = "0.3", features = ["server"] }
+# Per-test config roots that clean up even when a test panics.
+tempfile = "3"
+
+[features]
+# tray-icon is a default feature (the upstream tray is always present:
+# `MainWindow.xaml:88-103` TaskbarIcon). Release packaging therefore
+# ships the tray without extra build features. Disabled builds log a
+# no-tray capability note (see `tray::init_tray`).
+# browser-download is default: the provider
+# build downloads are core functionality — upstream drives the system
+# Chrome through Selenium in every install, so the port always carries
+# the CDP client too. The browser binary itself is never bundled or
+# downloaded (chromiumoxide's `fetcher` feature stays off); discovery
+# uses the installed Chrome/Chromium or the D4LC_CHROME_BIN override.
+default = ["x11rb-backend", "wayland-hotkeys", "wayland-wm-backend", "preset-download", "update-check", "tray-icon", "browser-download"]
+# The `ksni` StatusNotifierItem backend. When disabled, `tray::init_tray`
+# only logs a capability note.
+tray-icon = ["dep:ksni", "dep:tokio"]
+# The live runtime owns the overlay start, so it also links the real X11
+# backend: `d4lc-overlay-x11` has no default features, and without
+# `real-x11` its `create_overlay` returns a headless no-op handle. Builds
+# without `real-runtime` create no overlay surface.
+real-runtime = [
+  # `dep:` form: `wayland-wm-backend` also enables this dependency, which
+  # removes the implicit `d4lc-capture` feature name.
+  "dep:d4lc-capture",
+  "d4lc-detect",
+  "d4lc-debug",
+  "d4lc-ocr",
+  "d4lc-vision",
+  "image",
+  "d4lc-overlay-x11/real-x11",
+]
+leptess-backend = ["d4lc-ocr/leptess-backend"]
+# Wayland capture via the ScreenCast portal + PipeWire. Opt-in: the
+# release target enables this alongside `real-runtime` once the build
+# environment installs libpipewire-0.3-dev (default CI runners do not,
+# and default builds must keep libpipewire out of the link path). With
+# the feature off, a Wayland selection keeps the structured
+# unavailability naming the missing build piece.
+wayland-portal = ["d4lc-runtime/wayland-portal"]
+# Enable the direct x11rb dependency used by the global-hotkey
+# registration backend. Disabled builds (CI
+# without X11 headers, `cargo test` on headless runners) still
+# compile and the hotkey backend reports
+# `X11Unavailable{reason: "x11rb feature is not enabled"}`.
+x11rb-backend = ["dep:x11rb"]
+# Enable the GlobalShortcuts portal backend for Wayland global hotkeys
+# (ashpd + the zbus block_on sync bridge). Default-on: both crates are
+# pure Rust over the session bus.
+# Disabled builds still compile and a Wayland session keeps a
+# structured unavailable naming the missing build piece.
+wayland-hotkeys = ["dep:ashpd", "dep:zbus"]
+# Wayland game-window state source: observe the captured game window's
+# focus, minimize, close and geometry over KDE's
+# `org_kde_plasma_window_management` protocol on its own wl_display
+# connection (see the dependency note above and
+# `game_window_observer/wayland.rs`). Default-on like the other pure-Rust
+# Wayland stack pieces: disabled builds still compile and a Wayland
+# capture stream keeps the structured unsupported report naming the
+# missing build piece.
+wayland-wm-backend = [
+  "dep:wayland-client",
+  "dep:wayland-protocols-plasma",
+  "dep:d4lc-capture",
+]
+# Enable the `ureq` HTTP client. When disabled, `download_preset` returns
+# an error naming the missing feature.
+preset-download = ["dep:ureq"]
+# Check-only release banner: reuse the same `ureq` sync HTTP
+# client for one bounded GET (hard timeout) per check cycle. When
+# disabled, the check thread never starts.
+update-check = ["dep:ureq"]
+# Headless-browser build downloads from D2Core, D4Builds and Mobalytics.
+# See the chromiumoxide note above for the runtime/zbus-flavor reasoning.
+# Without the feature the handlers report the missing capability
+# ("rebuild with --features browser-download") after the URL/id gates run.
+browser-download = ["dep:chromiumoxide", "dep:futures", "dep:tempfile", "tokio/rt", "tokio/time"]
+
+[lints]
+workspace = true

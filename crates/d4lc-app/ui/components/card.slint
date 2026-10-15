@@ -1,0 +1,40 @@
+// Card — a raised surface that groups related controls.
+//
+// The debug surface replaces its ungrouped left-column stack with named cards
+// (Anzeige, Aktionen, Tooltip & Bereiche, Crash-Logs, Artefakte). A card owns
+// the surface only — raised panel fill, 1px border, radius and the inner
+// padding raster — and its content is whatever the caller places inside.
+//
+// An optional `title` (and `subtitle`) renders the shared `SectionTitle`
+// heading inside the card; `Card` composes it instead of drawing its own
+// heading so a card head and a standalone section heading never drift apart.
+//
+// Colours, radius and padding come from the `Metro` tokens; the header is the
+// only structural composition and carries no literal itself.
+
+import { Metro } from "../theme.slint";
+import { SectionTitle } from "section_title.slint";
+
+export component Card {
+    in property <string> title: "";
+    in property <string> subtitle: "";
+
+    Rectangle {
+        background: Metro.panel-alt;
+        border-width: 1px;
+        border-color: Metro.border;
+        border-radius: Metro.radius-md;
+
+        VerticalLayout {
+            padding: Metro.spacing-lg;
+            spacing: Metro.spacing-md;
+
+            if root.title != "" : SectionTitle {
+                title: root.title;
+                subtitle: root.subtitle;
+            }
+
+            @children
+        }
+    }
+}
