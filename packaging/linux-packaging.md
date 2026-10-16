@@ -136,8 +136,8 @@ flowchart LR
     Review --> Public[Public RC for testing]
 ```
 
-For `1.0.0-rc.1`, commit the verified changes, push `main`, then push tag
-`v1.0.0-rc.1` on that same commit. Alternatively, start the release workflow on
+For `1.0.0-rc.2`, commit the verified changes, push `main`, then push tag
+`v1.0.0-rc.2` on that same commit. Alternatively, start the release workflow on
 that commit with `preflight=false` after the tag exists. Review the resulting
 draft's assets and limitations, then publish it with **Pre-release** still
 checked. Do not mark it **Latest** or create a `v1.0.0` tag for this RC.

@@ -8,7 +8,7 @@ traffic.
 
 [![CI](https://github.com/florianaltendorfer/d4lc/actions/workflows/verify.yml/badge.svg)](https://github.com/florianaltendorfer/d4lc/actions/workflows/verify.yml)
 [![Upstream watch](https://github.com/florianaltendorfer/d4lc/actions/workflows/upstream-check.yml/badge.svg)](https://github.com/florianaltendorfer/d4lc/actions/workflows/upstream-check.yml)
-[![Status: release candidate](https://img.shields.io/badge/status-1.0.0--rc.1-6f42c1.svg)](#release-candidate-status)
+[![Status: release candidate](https://img.shields.io/badge/status-1.0.0--rc.2-6f42c1.svg)](#release-candidate-status)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 [![MSRV: 1.92](https://img.shields.io/badge/MSRV-1.92-dea584.svg?logo=rust)](rust-toolchain.toml)
@@ -35,7 +35,7 @@ traffic.
 > [PayPal](https://paypal.me/josdemmers) ·
 > [Discord](https://th.gl/discord).
 
-> **Release candidate: `1.0.0-rc.1`, not a stable 1.0 release.** Intended for
+> **Release candidate: `1.0.0-rc.2`, not a stable 1.0 release.** Intended for
 > public testing and feedback. X11 is the primary target; Wayland remains
 > experimental. See the [validation limits](#release-candidate-status) before use.
 
@@ -91,7 +91,7 @@ There are intentionally no mock screenshots in this README.
 
 ## Release candidate status
 
-`1.0.0-rc.1` is for trying the Linux port and reporting problems, not a claim
+`1.0.0-rc.2` is for trying the Linux port and reporting problems, not a claim
 that every feature is production-ready:
 
 - Not all character classes, builds, resolutions or game languages have been

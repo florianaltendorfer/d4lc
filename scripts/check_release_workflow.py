@@ -254,8 +254,16 @@ def check_verify(verify: dict) -> list[str]:
     if verify_job is None:
         problems.append("verify.yml has no verify job")
     else:
-        if step_index(verify_job, runs_command("./scripts/verify_local.sh")) is None:
+        verification = step_index(verify_job, runs_command("./scripts/verify_local.sh"))
+        if verification is None:
             problems.append("verify.yml does not run ./scripts/verify_local.sh")
+        desktop_utils = step_index(
+            verify_job,
+            lambda step: runs_command("sudo apt-get install")(step)
+            and "desktop-file-utils" in step["run"].split(),
+        )
+        if desktop_utils is None or (verification is not None and desktop_utils >= verification):
+            problems.append("verify.yml must install desktop-file-utils before local verification")
         for step in job_steps(verify_job):
             run = step.get("run")
             if isinstance(run, str):
@@ -452,6 +460,16 @@ def mutants():
     def echoed_tier(v, _r):
         step = first_step(v, mentions("verify_local.sh"))
         step["run"] = "echo ./scripts/verify_local.sh"
+
+    def drop_desktop_utils(v, _r):
+        step = first_step(v, mentions("desktop-file-utils"))
+        step["run"] = step["run"].replace("desktop-file-utils", "")
+
+    def late_desktop_utils(v, _r):
+        items = v["jobs"]["verify"]["steps"]
+        step = first_step(v, mentions("desktop-file-utils"))
+        items.remove(step)
+        items.append(step)
 
     def drop_msrv(v, _r):
         v["jobs"].pop("msrv", None)
@@ -650,6 +668,8 @@ def mutants():
         ("publishing without the run commit", unbound_publish),
         ("the fast verify tier", fast_tier),
         ("verify_local.sh only echoed", echoed_tier),
+        ("verify without desktop-file-utils", drop_desktop_utils),
+        ("desktop-file-utils installed after verification", late_desktop_utils),
         ("verify without the msrv job", drop_msrv),
         ("verify without cargo deny", drop_deny),
         ("publish if: always()", publish_always),

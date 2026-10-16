@@ -8,7 +8,7 @@ installs the repository's own staged layout:
   to the bundled `lib/` and `TESSDATA_PREFIX` when present)
 - `/usr/share/applications/d4lc.desktop` + hicolor icon — KDE/GNOME menu entry
 
-The recipe targets RC tag `v1.0.0-rc.1` (Arch version `1.0.0rc1`). It requires
+The recipe targets RC tag `v1.0.0-rc.2` (Arch version `1.0.0rc2`). It requires
 the matching public source tag and is not on the AUR. This is a source-build
 recipe, not a promise that every feature has been live-tested.
 

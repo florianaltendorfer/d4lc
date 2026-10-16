@@ -1253,7 +1253,7 @@ checksum = "f27ae1dd37df86211c42e150270f82743308803d90a6f6e6651cd730d5e1732f"
 
 [[package]]
 name = "d4lc-app"
-version = "1.0.0-rc.1"
+version = "1.0.0-rc.2"
 dependencies = [
  "ashpd 0.13.13",
  "base64 0.23.1",
@@ -1320,7 +1320,7 @@ dependencies = [
 
 [[package]]
 name = "d4lc-cli"
-version = "1.0.0-rc.1"
+version = "1.0.0-rc.2"
 dependencies = [
  "clap",
  "d4lc-assets",

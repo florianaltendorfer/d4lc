@@ -8,8 +8,8 @@
 # layout (opt/d4lc + /usr/bin wrappers + desktop entry + icon) unchanged.
 
 pkgname=d4lc
-pkgver=1.0.0rc1
-_tag=1.0.0-rc.1
+pkgver=1.0.0rc2
+_tag=1.0.0-rc.2
 pkgrel=1
 pkgdesc="Linux port of Diablo4Companion: Diablo IV tooltip OCR and loot-filter overlay"
 arch=('x86_64')
