@@ -649,16 +649,44 @@ fn infinity_builds_wrapper_from_array(array: &[Value]) -> Result<InfinityBuildsB
 
 // -- Export (raw variant extraction). ---------------------------------------
 
+/// Upstream `GetAllAffixes` (0dba6d33, v5.4.5.0): on unique / mythic gear
+/// an `affix-…-unique-…` entry is the unique item's own aspect when its id
+/// names a known unique (`affix-1hfocus-unique-warlock-001` ->
+/// `1hfocus_unique_warlock_001`, case-insensitive whole-`IdName` equality).
+/// Such entries are not selectable affixes and are skipped.
+fn infinity_builds_is_unique_aspect_affix(affix_id: &str, unique_id_names: &[String]) -> bool {
+    let has_affix_prefix = affix_id
+        .get(..6)
+        .is_some_and(|prefix| prefix.eq_ignore_ascii_case("affix-"));
+    if !has_affix_prefix || !affix_id.to_ascii_lowercase().contains("-unique-") {
+        return false;
+    }
+    // Remove "affix-" prefix (upstream Substring(6)).
+    let item_id = affix_id[6..].replace('-', "_");
+    unique_id_names
+        .iter()
+        .any(|unique| unique.eq_ignore_ascii_case(&item_id))
+}
+
 fn infinity_builds_affixes_for_slot(
     build_variant: &InfinityBuildsBuildVariantJson,
     item_type: &str,
+    unique_id_names: &[String],
 ) -> Vec<InfinityBuildsAffix> {
     let mut affixes = Vec::new();
     for gear_entry in &build_variant.gear {
         if !gear_entry.slot.eq_ignore_ascii_case(item_type) {
             continue;
         }
+        let is_unique_item = gear_entry.kind.eq_ignore_ascii_case("unique")
+            || gear_entry.kind.eq_ignore_ascii_case("mythic");
         for affix in &gear_entry.affixes {
+            // Skip unique aspects (upstream `GetAllAffixes`).
+            if is_unique_item
+                && infinity_builds_is_unique_aspect_affix(&affix.affix_id, unique_id_names)
+            {
+                continue;
+            }
             affixes.push(InfinityBuildsAffix {
                 affix_text: affix.affix_id.clone(),
                 affix_text_list: affix.affix_id.split('-').map(ToOwned::to_owned).collect(),
@@ -846,6 +874,7 @@ fn infinity_builds_paragon_boards(
 /// `IsImportParagonInfinityBuildsEnabled` gate exactly like upstream.
 fn infinity_builds_export_variant(
     build_variant: &InfinityBuildsBuildVariantJson,
+    unique_id_names: &[String],
 ) -> InfinityBuildsBuildVariant {
     let mut variant = InfinityBuildsBuildVariant {
         name: build_variant.name.clone(),
@@ -876,32 +905,35 @@ fn infinity_builds_export_variant(
     variant.uniques = infinity_builds_uniques(build_variant);
 
     // Armor
-    variant.helm = infinity_builds_affixes_for_slot(build_variant, "helm");
-    variant.chest = infinity_builds_affixes_for_slot(build_variant, "chest");
-    variant.gloves = infinity_builds_affixes_for_slot(build_variant, "gloves");
-    variant.pants = infinity_builds_affixes_for_slot(build_variant, "pants");
-    variant.boots = infinity_builds_affixes_for_slot(build_variant, "boots");
+    variant.helm = infinity_builds_affixes_for_slot(build_variant, "helm", unique_id_names);
+    variant.chest = infinity_builds_affixes_for_slot(build_variant, "chest", unique_id_names);
+    variant.gloves = infinity_builds_affixes_for_slot(build_variant, "gloves", unique_id_names);
+    variant.pants = infinity_builds_affixes_for_slot(build_variant, "pants", unique_id_names);
+    variant.boots = infinity_builds_affixes_for_slot(build_variant, "boots", unique_id_names);
 
     // Accessories. Upstream applies `Distinct()` to Ring / Weapon; on the
     // C# reference-typed `InfinityBuildsAffix` that dedupe is a no-op, so
     // the entries are kept verbatim here.
-    variant.amulet = infinity_builds_affixes_for_slot(build_variant, "amulet");
-    let ring_affixes = infinity_builds_affixes_for_slot(build_variant, "ring1");
+    variant.amulet = infinity_builds_affixes_for_slot(build_variant, "amulet", unique_id_names);
+    let ring_affixes = infinity_builds_affixes_for_slot(build_variant, "ring1", unique_id_names);
     variant.ring.extend(ring_affixes);
-    let ring_affixes = infinity_builds_affixes_for_slot(build_variant, "ring2");
+    let ring_affixes = infinity_builds_affixes_for_slot(build_variant, "ring2", unique_id_names);
     variant.ring.extend(ring_affixes);
 
     // Weapons. Ranged stays empty: InfinityBuilds does not separate melee
     // and ranged weapons (upstream comment).
-    let weapon_affixes = infinity_builds_affixes_for_slot(build_variant, "mainhand");
+    let weapon_affixes =
+        infinity_builds_affixes_for_slot(build_variant, "mainhand", unique_id_names);
     variant.weapon.extend(weapon_affixes);
-    let weapon_affixes = infinity_builds_affixes_for_slot(build_variant, "offhandWeapon");
+    let weapon_affixes =
+        infinity_builds_affixes_for_slot(build_variant, "offhandWeapon", unique_id_names);
     variant.weapon.extend(weapon_affixes);
-    let weapon_affixes = infinity_builds_affixes_for_slot(build_variant, "twoHander");
+    let weapon_affixes =
+        infinity_builds_affixes_for_slot(build_variant, "twoHander", unique_id_names);
     variant.weapon.extend(weapon_affixes);
-    let weapon_affixes = infinity_builds_affixes_for_slot(build_variant, "weapon");
+    let weapon_affixes = infinity_builds_affixes_for_slot(build_variant, "weapon", unique_id_names);
     variant.weapon.extend(weapon_affixes);
-    variant.offhand = infinity_builds_affixes_for_slot(build_variant, "offhand");
+    variant.offhand = infinity_builds_affixes_for_slot(build_variant, "offhand", unique_id_names);
 
     // Runes
     variant.runes = infinity_builds_runes(build_variant);
@@ -1161,7 +1193,7 @@ pub fn import_infinity_builds_share_html(
     };
 
     for variant_json in &build_json.variants {
-        let mut variant = infinity_builds_export_variant(variant_json);
+        let mut variant = infinity_builds_export_variant(variant_json, &lookups.uniques);
         if settings.is_import_paragon_infinity_builds_enabled {
             variant.paragon_boards = infinity_builds_paragon_boards(variant_json, &lookups)?;
         }

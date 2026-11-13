@@ -379,3 +379,98 @@ fn infinity_builds_parse_handles_nested_children_container() {
 fn infinity_builds_parse_rejects_payload_without_share_script() {
     assert!(parse_infinity_builds_share_html("<html><script>idle()</script></html>").is_err());
 }
+
+fn infinity_builds_share_html_from_build(build: serde_json::Value) -> String {
+    let wrapper = serde_json::json!(["$", "$L58", null, { "build": build }]);
+    let segment = String::from("4:") + &wrapper.to_string();
+    let push = serde_json::json!([1, segment]);
+    String::from("<html><script>self.__next_f.push(") + &push.to_string() + ")</script></html>"
+}
+
+fn infinity_builds_affix_texts(affixes: &[InfinityBuildsAffix]) -> Vec<&str> {
+    affixes
+        .iter()
+        .map(|affix| affix.affix_text.as_str())
+        .collect()
+}
+
+#[test]
+fn import_infinity_builds_skips_unique_aspect_affix_on_unique_items() {
+    // Upstream 0dba6d33 / v5.4.5.0 (`GetAllAffixes`): on unique / mythic
+    // gear an `affix-…-unique-…` entry whose id names a known unique item
+    // (`affix-1hfocus-unique-warlock-001` -> `1hfocus_unique_warlock_001`,
+    // case-insensitive `IdName` match) is the unique's own aspect, not a
+    // selectable affix, and is skipped instead of raising an
+    // unknown-affix warning. The same id on non-unique gear, and an
+    // `-unique-` id without a matching unique, are kept as before.
+    let repo = AssetRepository::new(workspace_root());
+    let build = serde_json::json!({
+        "title": "Unique Aspect Skip",
+        "shareSlug": "unique-aspect-skip",
+        "updatedAt": "2026-10-18T00:00:00Z",
+        "variants": [
+            {
+                "name": "Endgame",
+                "gear": [
+                    {
+                        "kind": "Unique",
+                        "slot": "offhand",
+                        "itemId": "1hfocus-unique-warlock-001",
+                        "affixes": [
+                            { "affixId": "affix-1hfocus-unique-warlock-001" },
+                            { "affixId": "AFFIX-1HFocus-Unique-Warlock-002" },
+                            { "affixId": "affix-s04-life" }
+                        ]
+                    },
+                    {
+                        "kind": "mythic",
+                        "slot": "amulet",
+                        "itemId": "amulet-unique-notreal-999",
+                        "affixes": [{ "affixId": "affix-amulet-unique-notreal-999" }]
+                    },
+                    {
+                        "kind": "custom_legendary",
+                        "slot": "helm",
+                        "itemId": "helm-legendary",
+                        "affixes": [{ "affixId": "affix-1hfocus-unique-warlock-001" }]
+                    }
+                ]
+            }
+        ]
+    });
+    let html = infinity_builds_share_html_from_build(build);
+    let share_import = import_infinity_builds_share_html(
+        &repo,
+        &html,
+        "https://infinitybuilds.gg/build/unique-aspect-skip",
+        &AppSettings::default(),
+    )
+    .expect("synthetic share page must import");
+
+    let variant = &share_import.build.variants[0];
+    assert_eq!(
+        infinity_builds_affix_texts(&variant.offhand),
+        vec!["affix-s04-life"]
+    );
+    assert_eq!(
+        infinity_builds_affix_texts(&variant.amulet),
+        vec!["affix-amulet-unique-notreal-999"]
+    );
+    assert_eq!(
+        infinity_builds_affix_texts(&variant.helm),
+        vec!["affix-1hfocus-unique-warlock-001"]
+    );
+
+    let mut warned: Vec<&str> = share_import
+        .warnings
+        .iter()
+        .map(|warning| warning.source_field.as_str())
+        .collect();
+    warned.sort_unstable();
+    assert_eq!(warned, vec!["amulet[0].AffixText", "helm[0].AffixText"]);
+    assert!(variant
+        .affix_preset
+        .affixes
+        .iter()
+        .any(|affix| affix.item_type == "offhand"));
+}
