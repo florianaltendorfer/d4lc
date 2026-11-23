@@ -8,17 +8,90 @@ on:
 permissions:
   contents: read
 
-# The check fails (red run, notification) when upstream moved past the last
-# reviewed commit (exit 1) and when its state cannot be determined (exit 2);
-# only a confirmed "unchanged" is green.
+# A moved upstream is not a failure: the run stays green and keeps exactly
+# one open issue "Upstream-Parität fällig" current (created once, then its
+# body is updated and a comment is added when the upstream head changes).
+# The run fails only when the upstream state cannot be determined
+# (check_upstream.sh exit 2 or any other unexpected exit code).
 jobs:
   check:
     runs-on: ubuntu-24.04
     timeout-minutes: 10
     permissions:
       contents: read
+      issues: write
     steps:
-      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      # actions/checkout v7.0.1 (3d3c42e5aac5ba805825da76410c181273ba90b1)
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - name: Check upstream head
-        run: ./scripts/check_upstream.sh
+        id: check
+        run: |
+          set -uo pipefail
+          report="$RUNNER_TEMP/upstream-report.txt"
+          status=0
+          ./scripts/check_upstream.sh | tee "$report" || status=$?
+          case "$status" in
+            0) echo "changed=false" >> "$GITHUB_OUTPUT" ;;
+            1) echo "changed=true" >> "$GITHUB_OUTPUT" ;;
+            *)
+              echo "::error::upstream state could not be determined (check_upstream.sh exit $status)"
+              exit "$status"
+              ;;
+          esac
+          for key in upstream_url upstream_branch remote_head last_reviewed_commit; do
+            value="$(sed -n "s/^${key}=//p" "$report")"
+            [ -n "$value" ] || { echo "::error::report misses $key"; exit 2; }
+            echo "${key}=${value}" >> "$GITHUB_OUTPUT"
+          done
+      - name: Open or update the parity issue
+        if: steps.check.outputs.changed == 'true'
+        # actions/github-script v9.0.0 (3a2844b7e9c422d3c10d287c895573f7108da1b3)
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3
+        env:
+          UPSTREAM_URL: ${{ steps.check.outputs.upstream_url }}
+          UPSTREAM_BRANCH: ${{ steps.check.outputs.upstream_branch }}
+          REMOTE_HEAD: ${{ steps.check.outputs.remote_head }}
+          LAST_REVIEWED: ${{ steps.check.outputs.last_reviewed_commit }}
+        with:
+          script: |
+            const title = 'Upstream-Parität fällig';
+            const { UPSTREAM_URL, UPSTREAM_BRANCH, REMOTE_HEAD, LAST_REVIEWED } = process.env;
+            const base = UPSTREAM_URL.replace(/\.git$/, '');
+            const repo = { owner: context.repo.owner, repo: context.repo.repo };
+            const runUrl = `${context.serverUrl}/${repo.owner}/${repo.repo}/actions/runs/${context.runId}`;
+            const marker = (sha) => `<!-- upstream-head:${sha} -->`;
+            const body = [
+              marker(REMOTE_HEAD),
+              `Upstream \`${UPSTREAM_BRANCH}\` von ${base} ist über den zuletzt geprüften Commit hinaus.`,
+              '',
+              `- Zuletzt geprüft (\`upstream.lock\`): \`${LAST_REVIEWED}\``,
+              `- Aktueller Upstream-Head: \`${REMOTE_HEAD}\``,
+              `- Diff: ${base}/compare/${LAST_REVIEWED}...${REMOTE_HEAD}`,
+              `- Letzte Prüfung: ${runUrl}`,
+              '',
+              'Parity-Review gemäß `.github/ISSUE_TEMPLATE/upstream-parity-review.md` durchführen, danach `last_reviewed_commit` in `upstream.lock` aktualisieren und dieses Issue schließen.',
+            ].join('\n');
+
+            const open = await github.paginate(github.rest.issues.listForRepo, {
+              ...repo, state: 'open', per_page: 100,
+            });
+            const existing = open
+              .filter((issue) => !issue.pull_request && issue.title === title)
+              .sort((a, b) => a.number - b.number)[0];
+
+            if (!existing) {
+              const { data } = await github.rest.issues.create({ ...repo, title, body });
+              core.notice(`Opened issue #${data.number} for upstream head ${REMOTE_HEAD}`);
+              return;
+            }
+            if ((existing.body || '').includes(marker(REMOTE_HEAD))) {
+              core.notice(`Issue #${existing.number} already tracks upstream head ${REMOTE_HEAD}`);
+              return;
+            }
+            await github.rest.issues.update({ ...repo, issue_number: existing.number, body });
+            await github.rest.issues.createComment({
+              ...repo,
+              issue_number: existing.number,
+              body: `Upstream-Head hat sich auf \`${REMOTE_HEAD}\` bewegt (${runUrl}).`,
+            });
+            core.notice(`Updated issue #${existing.number} to upstream head ${REMOTE_HEAD}`);
