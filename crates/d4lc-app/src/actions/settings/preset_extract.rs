@@ -198,7 +198,12 @@ fn validate_entries(
                 "preset archive '{archive_name}' entry {index} is unreadable: {error}"
             ))
         })?;
-        let name = entry.name();
+        let name = entry.name().map_err(|error| {
+            PresetInstallError::InvalidArchive(format!(
+                "preset archive '{archive_name}' entry {index} has an unreadable name: {error}"
+            ))
+        })?;
+        let name: &str = &name;
         if name.len() > MAX_ENTRY_PATH_BYTES {
             return Err(PresetInstallError::LimitExceeded {
                 what: "entry path length (bytes)",
@@ -280,7 +285,14 @@ fn extract_archive_entries(
                 "preset archive entry {index} is unreadable: {error}"
             ))
         })?;
-        let name = entry.name().to_string();
+        let name = entry
+            .name()
+            .map_err(|error| {
+                PresetInstallError::InvalidArchive(format!(
+                    "preset archive entry {index} has an unreadable name: {error}"
+                ))
+            })?
+            .into_owned();
         let relative = Path::new(name.trim_end_matches('/'))
             .strip_prefix(root_dir)
             .map_err(|_| PresetInstallError::UnsafePath(format!("entry '{name}' left its root")))?
@@ -826,7 +838,7 @@ mod tests {
             if entry.is_file() {
                 let mut contents = Vec::new();
                 entry.read_to_end(&mut contents).unwrap();
-                expected.insert(entry.name().to_string(), contents);
+                expected.insert(entry.name().unwrap().into_owned(), contents);
             }
         }
         let temp = root_with_zip("1080p_SMF.zip", &bytes);
