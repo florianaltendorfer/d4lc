@@ -224,13 +224,16 @@ impl ReusableCapture {
         Self::none()
     }
 
-    /// Whether this value carries a running capture session.
-    #[cfg(test)]
+    /// Whether this value carries no running capture session.
+    #[cfg(all(test, feature = "wayland-portal"))]
     pub fn is_empty(&self) -> bool {
-        #[cfg(feature = "wayland-portal")]
-        if self.wayland.is_some() {
-            return false;
-        }
+        self.wayland.is_none()
+    }
+
+    /// Whether this value carries no running capture session (always without
+    /// the `wayland-portal` feature).
+    #[cfg(all(test, not(feature = "wayland-portal")))]
+    pub fn is_empty(&self) -> bool {
         true
     }
 }
