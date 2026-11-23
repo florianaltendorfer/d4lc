@@ -74,7 +74,7 @@ ureq = { version = "2", optional = true }
 # Read/extract downloaded community preset zips under `Images/`. Same
 # declaration the d4lc-cli upstream tooling uses (deflate-only) so both
 # share one locked zip stack. In-process reading only; no spawned unzip.
-zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+zip = { version = "9.8.2", default-features = false, features = ["deflate"] }
 # Wayland global hotkeys via the GlobalShortcuts portal
 # (org.freedesktop.portal.GlobalShortcuts over DBus). `async-io`
 # flavor on purpose: this workspace keeps zbus on its async-io
