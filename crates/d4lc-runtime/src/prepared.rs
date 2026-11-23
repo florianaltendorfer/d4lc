@@ -347,11 +347,15 @@ impl PreparedRuntime {
     }
 
     /// Whether frames come from a Wayland ScreenCast stream.
+    #[cfg(feature = "wayland-portal")]
     pub fn captures_wayland_stream(&self) -> bool {
-        #[cfg(feature = "wayland-portal")]
-        if matches!(self.frame_source, FrameSource::Wayland(_)) {
-            return true;
-        }
+        matches!(self.frame_source, FrameSource::Wayland(_))
+    }
+
+    /// Whether frames come from a Wayland ScreenCast stream (never without
+    /// the `wayland-portal` feature).
+    #[cfg(not(feature = "wayland-portal"))]
+    pub fn captures_wayland_stream(&self) -> bool {
         false
     }
 

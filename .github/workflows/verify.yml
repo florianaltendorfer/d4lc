@@ -45,8 +45,8 @@ jobs:
             /usr/local/.ghcup \
             /opt/hostedtoolcache/CodeQL
           df -h /
-      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      # actions/checkout v7.0.1 (3d3c42e5aac5ba805825da76410c181273ba90b1)
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           submodules: recursive
       # dtolnay/rust-toolchain@stable (686976e191b89faba57d3206551f0f330d8cb249)
@@ -104,8 +104,8 @@ jobs:
       CARGO_PROFILE_DEV_DEBUG: "0"
       CARGO_PROFILE_TEST_DEBUG: "0"
     steps:
-      # actions/checkout v4 (11d5960a326750d5838078e36cf38b85af677262)
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      # actions/checkout v7.0.1 (3d3c42e5aac5ba805825da76410c181273ba90b1)
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
         with:
           submodules: recursive
       - name: Read the minimum Rust version

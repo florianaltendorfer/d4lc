@@ -89,6 +89,26 @@ ignore = [
   # ttf-parser (sctk-adwaita >= 0.12), or when a ttf-parser vulnerability
   # advisory is published.
   "RUSTSEC-2026-0192",
+  # chrono is unmaintained (informational, no patched release). Used for
+  # local clock/timestamp formatting in d4lc-app and pulled in by
+  # i-slint-core; it parses no untrusted input here. Re-evaluate when Slint
+  # drops chrono (then migrate d4lc-app/src/clock.rs to jiff or time), or
+  # when a chrono vulnerability advisory is published.
+  "RUSTSEC-2026-0543",
+  # pin-utils is unmaintained (repository archived). Only reached through
+  # spin_on in the Slint stack (renderer-skia, slint-build, slint-macros);
+  # it is a pinning macro without input handling. Re-evaluate when Slint
+  # drops spin_on/pin-utils, or when a vulnerability advisory is published.
+  "RUSTSEC-2026-0441",
+  # zbus_names, zvariant and zvariant_derive are unmaintained as standalone
+  # crates (merged into zbus 6). They come with zbus 5, which ashpd 0.11/0.13,
+  # ksni and the accesskit/atspi stack of Slint still require; they only
+  # (de)serialize local session-DBus messages. Re-evaluate when ashpd, ksni
+  # and Slint's accesskit move to zbus >= 6, or when a vulnerability
+  # advisory is published.
+  "RUSTSEC-2026-0371",
+  "RUSTSEC-2026-0370",
+  "RUSTSEC-2026-0372",
 ]
 
 [bans]

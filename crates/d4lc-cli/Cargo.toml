@@ -34,7 +34,7 @@ d4lc-vision = { path = "../d4lc-vision" }
 image = { version = "0.25", default-features = false, features = ["png"] }
 serde_json.workspace = true
 sha2 = "0.10"
-zip = { version = "2.6.1", default-features = false, features = ["deflate"] }
+zip = { version = "9.8.2", default-features = false, features = ["deflate"] }
 
 [lints]
 workspace = true

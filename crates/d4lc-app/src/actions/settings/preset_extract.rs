@@ -198,7 +198,12 @@ fn validate_entries(
                 "preset archive '{archive_name}' entry {index} is unreadable: {error}"
             ))
         })?;
-        let name = entry.name();
+        let name = entry.name().map_err(|error| {
+            PresetInstallError::InvalidArchive(format!(
+                "preset archive '{archive_name}' entry {index} has an unreadable name: {error}"
+            ))
+        })?;
+        let name: &str = &name;
         if name.len() > MAX_ENTRY_PATH_BYTES {
             return Err(PresetInstallError::LimitExceeded {
                 what: "entry path length (bytes)",
@@ -280,7 +285,14 @@ fn extract_archive_entries(
                 "preset archive entry {index} is unreadable: {error}"
             ))
         })?;
-        let name = entry.name().to_string();
+        let name = entry
+            .name()
+            .map_err(|error| {
+                PresetInstallError::InvalidArchive(format!(
+                    "preset archive entry {index} has an unreadable name: {error}"
+                ))
+            })?
+            .into_owned();
         let relative = Path::new(name.trim_end_matches('/'))
             .strip_prefix(root_dir)
             .map_err(|_| PresetInstallError::UnsafePath(format!("entry '{name}' left its root")))?
@@ -826,7 +838,7 @@ mod tests {
             if entry.is_file() {
                 let mut contents = Vec::new();
                 entry.read_to_end(&mut contents).unwrap();
-                expected.insert(entry.name().to_string(), contents);
+                expected.insert(entry.name().unwrap().into_owned(), contents);
             }
         }
         let temp = root_with_zip("1080p_SMF.zip", &bytes);
@@ -934,6 +946,19 @@ mod tests {
         }
     }
 
+    /// A lying entry must be refused before its data lands anywhere: either
+    /// by the extraction limits or by the zip crate, which (since zip 9)
+    /// stops reading an entry at its declared uncompressed size.
+    fn is_refused_lying_entry(error: &PresetInstallError, limit: &str) -> bool {
+        match error {
+            PresetInstallError::LimitExceeded { what, .. } => *what == limit,
+            PresetInstallError::InvalidArchive(message) => {
+                message.contains("larger than its declared uncompressed size")
+            }
+            _ => false,
+        }
+    }
+
     #[test]
     fn lying_entry_metadata_does_not_bypass_the_limits() {
         // Declared 100 bytes per entry; the streams hold the real data.
@@ -943,13 +968,7 @@ mod tests {
         let temp = root_with_zip("1080p_X.zip", &single);
         let error = super::extract_preset(temp.path(), "1080p_X.zip").unwrap_err();
         assert!(
-            matches!(
-                error,
-                PresetInstallError::LimitExceeded {
-                    what: "extracted file size (bytes)",
-                    ..
-                }
-            ),
+            is_refused_lying_entry(&error, "extracted file size (bytes)"),
             "{error}"
         );
         assert!(images_tree(&temp).is_empty());
@@ -965,13 +984,7 @@ mod tests {
         replace_zip(&temp, "1080p_X.zip", &total);
         let error = super::extract_preset(temp.path(), "1080p_X.zip").unwrap_err();
         assert!(
-            matches!(
-                error,
-                PresetInstallError::LimitExceeded {
-                    what: "total extracted size (bytes)",
-                    ..
-                }
-            ),
+            is_refused_lying_entry(&error, "total extracted size (bytes)"),
             "{error}"
         );
         assert!(images_tree(&temp).is_empty());
